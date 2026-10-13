@@ -1,0 +1,472 @@
+{
+  "phase": "PHASE_7T_P3_WICKET_CAUSALITY_DIAGNOSTIC",
+  "status": "RESEARCH_DIAGNOSTIC_ONLY",
+  "target_case": {
+    "player": "N Pooran",
+    "match_id": 1422133,
+    "innings": 1,
+    "runs": 40,
+    "balls": 21,
+    "strike_rate": 190.48,
+    "current_p2": 86.5,
+    "current_p3": 22.3,
+    "current_final": 54.0,
+    "model_t_attributable_p3": 52.2,
+    "model_t_gamma_attr": 0.15
+  },
+  "ball_by_ball_summary": {
+    "total_deliveries_reconstructed": 38,
+    "partner_wickets_lost": 2,
+    "wickets": [
+      {
+        "dismissed_player": "Q de Kock",
+        "over_ball": "16.4",
+        "dismissal_kind": "caught",
+        "team_score_at_dismissal": "143/4",
+        "classification": "CATEGORY B \u2014 INDEPENDENT PARTNER DISMISSAL",
+        "category_code": "B",
+        "evidence": "Pooran faced only 4 of the 17 balls bowled since his entry, rotating strike with singles on 3 occasions. In the preceding 12 balls, Pooran faced 3 balls (3 runs, 0 dots, RR 6.0), while de Kock faced 9 balls (10 runs, 2 boundaries). de Kock was batting on 81 off 56 balls and holed out on an attacking lofted pull to deep midwicket off RJW Topley. Zero evidence of Pooran-generated pressure.",
+        "pressure_windows": {
+          "previous_3_balls": {
+            "balls_in_window": 3,
+            "team_runs": 2,
+            "team_rr_before_wicket": 4.0,
+            "required_rr_before_wicket": null,
+            "team_rr_vs_par_rr": -4.5,
+            "poorans_balls_before_wicket": 1,
+            "poorans_runs_before_wicket": 1,
+            "poorans_dots_before_wicket": 0,
+            "poorans_rr_before_wicket": 6.0,
+            "partner_balls_before_wicket": 2,
+            "partner_runs_before_wicket": 1,
+            "partner_rr_before_wicket": 3.0,
+            "team_boundaries_before_wicket": 0
+          },
+          "previous_6_balls": {
+            "balls_in_window": 6,
+            "team_runs": 7,
+            "team_rr_before_wicket": 7.0,
+            "required_rr_before_wicket": null,
+            "team_rr_vs_par_rr": -1.5,
+            "poorans_balls_before_wicket": 1,
+            "poorans_runs_before_wicket": 1,
+            "poorans_dots_before_wicket": 0,
+            "poorans_rr_before_wicket": 6.0,
+            "partner_balls_before_wicket": 5,
+            "partner_runs_before_wicket": 6,
+            "partner_rr_before_wicket": 7.2,
+            "team_boundaries_before_wicket": 1
+          },
+          "previous_12_balls": {
+            "balls_in_window": 12,
+            "team_runs": 13,
+            "team_rr_before_wicket": 6.5,
+            "required_rr_before_wicket": null,
+            "team_rr_vs_par_rr": -2.0,
+            "poorans_balls_before_wicket": 3,
+            "poorans_runs_before_wicket": 3,
+            "poorans_dots_before_wicket": 0,
+            "poorans_rr_before_wicket": 6.0,
+            "partner_balls_before_wicket": 9,
+            "partner_runs_before_wicket": 10,
+            "partner_rr_before_wicket": 6.67,
+            "team_boundaries_before_wicket": 2
+          },
+          "previous_1_over": {
+            "balls_in_window": 6,
+            "team_runs": 10,
+            "team_rr_before_wicket": 10.0,
+            "required_rr_before_wicket": null,
+            "team_rr_vs_par_rr": 1.5,
+            "poorans_balls_before_wicket": 1,
+            "poorans_runs_before_wicket": 1,
+            "poorans_dots_before_wicket": 0,
+            "poorans_rr_before_wicket": 6.0,
+            "partner_balls_before_wicket": 5,
+            "partner_runs_before_wicket": 9,
+            "partner_rr_before_wicket": 10.8,
+            "team_boundaries_before_wicket": 2
+          },
+          "previous_2_overs": {
+            "balls_in_window": 12,
+            "team_runs": 12,
+            "team_rr_before_wicket": 6.0,
+            "required_rr_before_wicket": null,
+            "team_rr_vs_par_rr": -2.5,
+            "poorans_balls_before_wicket": 2,
+            "poorans_runs_before_wicket": 2,
+            "poorans_dots_before_wicket": 0,
+            "poorans_rr_before_wicket": 6.0,
+            "partner_balls_before_wicket": 10,
+            "partner_runs_before_wicket": 10,
+            "partner_rr_before_wicket": 6.0,
+            "team_boundaries_before_wicket": 2
+          }
+        }
+      },
+      {
+        "dismissed_player": "A Badoni",
+        "over_ball": "17.6",
+        "dismissal_kind": "caught",
+        "team_score_at_dismissal": "148/5",
+        "classification": "CATEGORY B \u2014 INDEPENDENT PARTNER DISMISSAL",
+        "category_code": "B",
+        "evidence": "Badoni arrived in over 16.4 and faced only 3 balls total (0 off 3). He attempted an aerial loft over backward point/cover on the final ball of the 18th over off Yash Dayal. While Pooran played 3 dot balls earlier in over 17 (after hitting a four), Badoni's shot was standard death-overs boundary-seeking behavior for a #6 finisher with 13 balls remaining. Pooran was not bogging down the innings.",
+        "pressure_windows": {
+          "previous_3_balls": {
+            "balls_in_window": 3,
+            "team_runs": 1,
+            "team_rr_before_wicket": 2.0,
+            "required_rr_before_wicket": null,
+            "team_rr_vs_par_rr": -6.5,
+            "poorans_balls_before_wicket": 3,
+            "poorans_runs_before_wicket": 1,
+            "poorans_dots_before_wicket": 2,
+            "poorans_rr_before_wicket": 2.0,
+            "partner_balls_before_wicket": 0,
+            "partner_runs_before_wicket": 0,
+            "partner_rr_before_wicket": 0.0,
+            "team_boundaries_before_wicket": 0
+          },
+          "previous_6_balls": {
+            "balls_in_window": 6,
+            "team_runs": 5,
+            "team_rr_before_wicket": 5.0,
+            "required_rr_before_wicket": null,
+            "team_rr_vs_par_rr": -3.5,
+            "poorans_balls_before_wicket": 5,
+            "poorans_runs_before_wicket": 5,
+            "poorans_dots_before_wicket": 3,
+            "poorans_rr_before_wicket": 6.0,
+            "partner_balls_before_wicket": 1,
+            "partner_runs_before_wicket": 0,
+            "partner_rr_before_wicket": 0.0,
+            "team_boundaries_before_wicket": 1
+          },
+          "previous_12_balls": {
+            "balls_in_window": 12,
+            "team_runs": 8,
+            "team_rr_before_wicket": 4.0,
+            "required_rr_before_wicket": null,
+            "team_rr_vs_par_rr": -4.5,
+            "poorans_balls_before_wicket": 6,
+            "poorans_runs_before_wicket": 6,
+            "poorans_dots_before_wicket": 3,
+            "poorans_rr_before_wicket": 6.0,
+            "partner_balls_before_wicket": 6,
+            "partner_runs_before_wicket": 2,
+            "partner_rr_before_wicket": 2.0,
+            "team_boundaries_before_wicket": 1
+          },
+          "previous_1_over": {
+            "balls_in_window": 6,
+            "team_runs": 2,
+            "team_rr_before_wicket": 2.0,
+            "required_rr_before_wicket": null,
+            "team_rr_vs_par_rr": -6.5,
+            "poorans_balls_before_wicket": 1,
+            "poorans_runs_before_wicket": 1,
+            "poorans_dots_before_wicket": 0,
+            "poorans_rr_before_wicket": 6.0,
+            "partner_balls_before_wicket": 5,
+            "partner_runs_before_wicket": 1,
+            "partner_rr_before_wicket": 1.2,
+            "team_boundaries_before_wicket": 0
+          },
+          "previous_2_overs": {
+            "balls_in_window": 12,
+            "team_runs": 12,
+            "team_rr_before_wicket": 6.0,
+            "required_rr_before_wicket": null,
+            "team_rr_vs_par_rr": -2.5,
+            "poorans_balls_before_wicket": 2,
+            "poorans_runs_before_wicket": 2,
+            "poorans_dots_before_wicket": 0,
+            "poorans_rr_before_wicket": 6.0,
+            "partner_balls_before_wicket": 10,
+            "partner_runs_before_wicket": 10,
+            "partner_rr_before_wicket": 6.0,
+            "team_boundaries_before_wicket": 2
+          }
+        }
+      }
+    ]
+  },
+  "critical_counterfactual": {
+    "actual_pooran_runs": 40,
+    "actual_pooran_balls": 21,
+    "actual_pooran_sr": 190.48,
+    "expected_sr": 132.7,
+    "expected_runs": 18.8,
+    "counterfactual_pooran_runs_par": 27.9,
+    "actual_final_team_score": 181,
+    "counterfactual_final_team_score": 168.9,
+    "pre_wkt1_pooran_runs_actual": 3,
+    "pre_wkt1_pooran_runs_par": 5.3,
+    "pre_wkt1_run_delta": -2.3,
+    "pre_wkt2_pooran_runs_actual": 8,
+    "pre_wkt2_pooran_runs_par": 11.9,
+    "pre_wkt2_run_delta": -3.9,
+    "net_pressure_relief_runs": 21.2,
+    "partner_drag_runs": -40.8,
+    "net_efs_decline": -19.6,
+    "pooran_causal_attribution_percentage": 0.0,
+    "external_partner_attribution_percentage": 100.0,
+    "conclusion": "Pooran did not create pressure. At contextual par tempo, the team would have finished on 169 instead of 181. Pooran's actual batting relieved pressure by +21.2 runs. The -19.6 EFS decline was 100% caused by partner scoring stagnation (11 runs off 14 balls) and 2 independent dismissals."
+  },
+  "three_synthetic_cases": {
+    "CASE_A_SLOW_BATTER_CREATES_PRESSURE": {
+      "description": "Batter scores 10 off 15 balls, increasing RRR from 9.5 to 12.0; partner dismissed taking forced risk.",
+      "metrics": {
+        "match_id": 999901,
+        "season": "2024",
+        "innings": 2,
+        "player": "Synthetic Slow Batter",
+        "actual_runs": 10.0,
+        "expected_runs": 22.0,
+        "run_deviation": -12.0,
+        "run_performance_ratio": 0.45,
+        "actual_sr": 66.67,
+        "expected_sr": 140.0,
+        "sr_deviation": -73.33,
+        "sr_performance_ratio": 0.48,
+        "balls_faced": 15,
+        "opportunity_usage": 0.4,
+        "dot_balls": 9,
+        "dot_ball_percentage": 60.0,
+        "team_score_entry": 90,
+        "team_score_exit": 108,
+        "target": 180,
+        "runs_required_entry": 90,
+        "runs_required_exit": 72,
+        "required_rr_entry": 9.5,
+        "required_rr_exit": 12.0,
+        "required_rr_change": -2.5,
+        "rr_gap_change": -3.0,
+        "target_progress_change": 0.1,
+        "wicket_resource_change": -1,
+        "balls_remaining_exit": 36,
+        "wickets_remaining_exit": 5,
+        "overs_spent": 4.0,
+        "window_team_rr": 4.5,
+        "wickets_lost_during_stay": 2,
+        "dismissal_status": "not out"
+      },
+      "evaluation": {
+        "p2_normalized": 25.4,
+        "p3_current_normalized": 26.4,
+        "adjusted_p2": 26.2,
+        "adjusted_p3_current": 27.2,
+        "leverage": 0.969,
+        "final_score_current": 26.7,
+        "model_t_p3": 26.4,
+        "model_t_final_score": 26.7,
+        "gamma_attribution": 1.0
+      },
+      "expected_interpretation": "P3 should receive a meaningful penalty (P3 <= 35) because batter actively contributed to pressure."
+    },
+    "CASE_B_GOOD_BATTER_INDEPENDENT_WICKET": {
+      "description": "Batter scores 40 off 21 balls (SR 190.5); team RR healthy; partner gets dismissed independently.",
+      "metrics": {
+        "match_id": 999902,
+        "season": "2024",
+        "innings": 1,
+        "player": "Synthetic Elite Finisher",
+        "actual_runs": 40.0,
+        "expected_runs": 18.8,
+        "run_deviation": 21.2,
+        "run_performance_ratio": 2.13,
+        "actual_sr": 190.48,
+        "expected_sr": 132.7,
+        "sr_deviation": 57.78,
+        "sr_performance_ratio": 1.44,
+        "balls_faced": 21,
+        "opportunity_usage": 0.57,
+        "dot_balls": 9,
+        "dot_ball_percentage": 42.86,
+        "team_score_entry": 129,
+        "team_score_exit": 181,
+        "expected_final_entry": 200.6,
+        "expected_final_exit": 181.0,
+        "expected_final_change": -19.6,
+        "trajectory_deviation_change": -12.0,
+        "wicket_resource_change": 0,
+        "balls_remaining_exit": 0,
+        "wickets_remaining_exit": 5,
+        "overs_spent": 6.17,
+        "team_rr_entry": 9.33,
+        "team_rr_exit": 9.05,
+        "window_team_rr": 8.43,
+        "wickets_lost_during_stay": 2,
+        "dismissal_status": "not out"
+      },
+      "evaluation": {
+        "p2_normalized": 80.5,
+        "p3_current_normalized": 23.5,
+        "adjusted_p2": 78.3,
+        "adjusted_p3_current": 25.5,
+        "leverage": 0.926,
+        "final_score_current": 51.9,
+        "model_t_p3": 53.9,
+        "model_t_final_score": 65.9,
+        "gamma_attribution": 0.15
+      },
+      "expected_interpretation": "P3 should remain reasonably strong (P3 >= 50-60); external partner wicket should not collapse P3 into the 20s."
+    },
+    "CASE_C_GOOD_BATTER_TEAM_COLLAPSE": {
+      "description": "Batter scores 40 off 22 balls while 4 wickets collapse at the other end; EFS declines by -40.",
+      "metrics": {
+        "match_id": 999903,
+        "season": "2024",
+        "innings": 1,
+        "player": "Synthetic Lone Warrior",
+        "actual_runs": 40.0,
+        "expected_runs": 20.0,
+        "run_deviation": 20.0,
+        "run_performance_ratio": 2.0,
+        "actual_sr": 181.82,
+        "expected_sr": 130.0,
+        "sr_deviation": 51.82,
+        "sr_performance_ratio": 1.4,
+        "balls_faced": 22,
+        "opportunity_usage": 0.5,
+        "dot_balls": 7,
+        "dot_ball_percentage": 31.8,
+        "team_score_entry": 70,
+        "team_score_exit": 125,
+        "expected_final_entry": 185.0,
+        "expected_final_exit": 145.0,
+        "expected_final_change": -40.0,
+        "trajectory_deviation_change": -25.0,
+        "wicket_resource_change": 0,
+        "balls_remaining_exit": 10,
+        "wickets_remaining_exit": 2,
+        "overs_spent": 7.0,
+        "team_rr_entry": 8.5,
+        "team_rr_exit": 8.0,
+        "window_team_rr": 7.86,
+        "wickets_lost_during_stay": 4,
+        "dismissal_status": "not out"
+      },
+      "evaluation": {
+        "p2_normalized": 79.7,
+        "p3_current_normalized": 9.2,
+        "adjusted_p2": 77.5,
+        "adjusted_p3_current": 12.2,
+        "leverage": 0.926,
+        "final_score_current": 44.9,
+        "model_t_p3": 24.4,
+        "model_t_final_score": 51.9,
+        "gamma_attribution": 0.5
+      },
+      "expected_interpretation": "P3 may decline moderately (e.g. P3 ~40-50) due to genuine team deterioration, but not collapse completely to ~10."
+    }
+  },
+  "historical_population_audit": {
+    "total_historical_appearances": 19111,
+    "total_cohort_count": 346,
+    "cohort_percentage_of_total": 1.81,
+    "overall_average_p2": 86.37,
+    "overall_average_p3": 41.91,
+    "overall_average_final_score": 64.33,
+    "overall_average_efs_decline": -2.33,
+    "overall_average_wickets_during_stay": 2.79,
+    "breakdown": {
+      "A": {
+        "count": 0,
+        "percentage": 0.0,
+        "average_p2": 0.0,
+        "average_p3": 0.0,
+        "average_final_score": 0.0,
+        "average_efs_decline": 0.0,
+        "average_wickets_during_stay": 0.0
+      },
+      "B": {
+        "count": 298,
+        "percentage": 86.13,
+        "average_p2": 86.59,
+        "average_p3": 42.11,
+        "average_final_score": 64.54,
+        "average_efs_decline": -2.14,
+        "average_wickets_during_stay": 2.66
+      },
+      "C": {
+        "count": 48,
+        "percentage": 13.87,
+        "average_p2": 85.0,
+        "average_p3": 40.69,
+        "average_final_score": 62.99,
+        "average_efs_decline": -3.82,
+        "average_wickets_during_stay": 3.54
+      },
+      "D": {
+        "count": 0,
+        "percentage": 0.0,
+        "average_p2": 0.0,
+        "average_p3": 0.0,
+        "average_final_score": 0.0,
+        "average_efs_decline": 0.0,
+        "average_wickets_during_stay": 0.0
+      }
+    },
+    "independent_partner_wickets_count": 298,
+    "independent_partner_wickets_percentage": 86.13
+  },
+  "pooran_12_questions": {
+    "q1_was_pooran_batting_slowly": {
+      "question": "Was Pooran batting slowly?",
+      "answer": "No. Pooran scored 40 runs from 21 deliveries at an actual strike rate of 190.48 (personal run rate of 11.43 rpo). In the final 2 overs he struck at 246.2 SR (5 sixes)."
+    },
+    "q2_did_pooran_create_pressure": {
+      "question": "Did Pooran create pressure?",
+      "answer": "No. Prior to de Kock's dismissal at 16.4, Pooran faced only 4 balls and rotated strike with singles on 3 of them (0 dot balls in previous 12 balls). Prior to Badoni's dismissal, Pooran hit a boundary on 17.1. There was zero sustained dot-ball buildup attributable to Pooran."
+    },
+    "q3_scoring_rate_vs_contextual_par": {
+      "question": "What was Pooran's scoring rate relative to contextual par?",
+      "answer": "Pooran exceeded contextual par by +57.78 strike rate points (actual 190.48 vs expected 132.70) and scored +21.2 runs above expectation (actual 40 vs expected 18.8)."
+    },
+    "q4_team_rr_while_pooran_batted": {
+      "question": "What was team RR while Pooran batted?",
+      "answer": "8.43 rpo across the full 6.17-over window (52 runs scored). In the final 2 overs with Pooran on strike, team RR was 16.50 rpo (33 runs off 12 legal balls)."
+    },
+    "q5_what_was_required_rr": {
+      "question": "What was required RR?",
+      "answer": "Not applicable (Innings 1 - setting a target). The entry projected par score was 200.6 runs (requiring 11.61 rpo from the remaining 37 balls)."
+    },
+    "q6_how_many_wickets_fell_at_other_end": {
+      "question": "How many wickets fell at the other end?",
+      "answer": "2 wickets fell at the other end: Q de Kock at 16.4 (143/4) and A Badoni at 17.6 (148/5). Pooran was not out at 20.0."
+    },
+    "q7_dismissal_types_for_each_wicket": {
+      "question": "For each wicket, what was the dismissal type?",
+      "answer": "Both were caught off aggressive attacking shots: Q de Kock caught at deep midwicket by Mayank Dagar off RJW Topley; A Badoni caught backward point/cover by Faf du Plessis off Yash Dayal."
+    },
+    "q8_evidence_pooran_forced_partner_risk": {
+      "question": "Was there evidence that Pooran's batting forced the partner to take additional risk?",
+      "answer": "No. Q de Kock had batted 56 balls for 81 runs and had faced 9 of the preceding 12 balls himself; he attacked autonomously. Badoni was on ball 3 of his innings on the final ball of the 18th over and attacked by role design."
+    },
+    "q9_would_partner_wicket_occurred_at_par": {
+      "question": "Would the partner's wicket likely have occurred even if Pooran had maintained contextual par tempo?",
+      "answer": "Yes. At par tempo (132.7 SR), team score would have been 4 runs lower at 17.5. In death overs, batters at #2 and #6 attack regardless of whether the non-striker scores at par or above par."
+    },
+    "q10_efs_decline_attributable_to_pooran": {
+      "question": "How much of the -19.6 EFS decline can defensibly be attributed to Pooran?",
+      "answer": "0.0 runs (0%). Pooran personally contributed +21.2 runs above expectation and scored 76.9% of the team runs during his stay. He relieved rather than created team pressure."
+    },
+    "q11_efs_decline_attributed_to_independent_wickets": {
+      "question": "How much can be attributed to independent partner wickets?",
+      "answer": "100% of the team-state decline (-40.8 runs partner scoring stagnation and wicket resource loss, partially offset by Pooran's +21.2 run overperformance, resulting in net -19.6 EFS change)."
+    },
+    "q12_is_p3_22_3_semantically_justified": {
+      "question": "Is P3=22.3 therefore semantically justified?",
+      "answer": "No. P3=22.3 is an outcome-based attribution error. It conflates external partner collapse with batter performance, penalizing Pooran for wickets he had zero causal role in producing."
+    }
+  },
+  "invariance_and_leakage": {
+    "outcome_invariance": true,
+    "player_identity_invariance": true,
+    "p2_independence": true,
+    "window_integrity": true,
+    "all_invariances_passed": true
+  }
+}

@@ -1,0 +1,1091 @@
+{
+  "phase": "PHASE_7P",
+  "sub_topic": "P3_NEUTRAL_STATE_CALIBRATION_DIAGNOSTIC",
+  "protected_files_integrity": {
+    "all_passed": true,
+    "files": {
+      "src/contribution_framework.py": {
+        "exists": true,
+        "passed": true,
+        "actual_hash": "4E71990BC1C5C79B461C136473211366C63E6D8EB54D4B815D7B80246E3FEF9C",
+        "expected_hash": "4E71990BC1C5C79B461C136473211366C63E6D8EB54D4B815D7B80246E3FEF9C"
+      },
+      "src/season_aggregation.py": {
+        "exists": true,
+        "passed": true,
+        "actual_hash": "6E0BE10161FB905B80770C4C950454E88203F524A459154B8C977F05475F8DFC",
+        "expected_hash": "6E0BE10161FB905B80770C4C950454E88203F524A459154B8C977F05475F8DFC"
+      },
+      "data/processed/batter_match_contributions.csv": {
+        "exists": true,
+        "passed": true,
+        "actual_hash": "652C597A09AB0A17542AD0CBA56BC16FDC30440AEC085F1FF24429F55D1FCCBF",
+        "expected_hash": "652C597A09AB0A17542AD0CBA56BC16FDC30440AEC085F1FF24429F55D1FCCBF"
+      },
+      "models/contribution/phase6/phase6_season_metrics.csv": {
+        "exists": true,
+        "passed": true,
+        "actual_hash": "C0C9157523C1EE72EA12B604DD3147BFFDBE511147E5D72A2C3044F46588874A",
+        "expected_hash": "C0C9157523C1EE72EA12B604DD3147BFFDBE511147E5D72A2C3044F46588874A"
+      }
+    }
+  },
+  "synthetic_experiments": {
+    "scenario_a_weak_entry_transform": {
+      "p2": 89.6,
+      "leverage": 1.046,
+      "adj_p2": 91.4,
+      "model_a": {
+        "raw_p3": 2.514,
+        "p3": 89.8,
+        "adj_p3": 91.7,
+        "final": 91.5
+      },
+      "model_b": {
+        "raw_p3": 2.514,
+        "p3": 89.8,
+        "adj_p3": 91.7,
+        "final": 91.5
+      },
+      "model_c": {
+        "raw_p3": 1.915,
+        "p3": 83.5,
+        "adj_p3": 85.1,
+        "final": 88.3
+      },
+      "model_d": {
+        "raw_p3": 2.101,
+        "p3": 85.8,
+        "adj_p3": 87.4,
+        "final": 89.4
+      }
+    },
+    "scenario_b_avg_entry_transform": {
+      "p2": 87.2,
+      "leverage": 0.946,
+      "adj_p2": 85.2,
+      "model_a": {
+        "raw_p3": 1.361,
+        "p3": 75.3,
+        "adj_p3": 73.9,
+        "final": 79.5
+      },
+      "model_b": {
+        "raw_p3": 1.361,
+        "p3": 75.3,
+        "adj_p3": 73.9,
+        "final": 79.5
+      },
+      "model_c": {
+        "raw_p3": 1.191,
+        "p3": 72.2,
+        "adj_p3": 71.0,
+        "final": 78.1
+      },
+      "model_d": {
+        "raw_p3": 1.361,
+        "p3": 75.3,
+        "adj_p3": 73.9,
+        "final": 79.5
+      }
+    },
+    "scenario_c_strong_entry_maintain": {
+      "p2": 84.4,
+      "leverage": 0.908,
+      "adj_p2": 81.2,
+      "model_a": {
+        "raw_p3": 0.266,
+        "p3": 52.5,
+        "adj_p3": 52.2,
+        "final": 66.7
+      },
+      "model_b": {
+        "raw_p3": 0.822,
+        "p3": 64.9,
+        "adj_p3": 63.5,
+        "final": 72.4
+      },
+      "model_c": {
+        "raw_p3": 0.619,
+        "p3": 60.5,
+        "adj_p3": 59.5,
+        "final": 70.4
+      },
+      "model_d": {
+        "raw_p3": 0.377,
+        "p3": 55.0,
+        "adj_p3": 54.6,
+        "final": 67.9
+      }
+    },
+    "scenario_d_strong_entry_deteriorate": {
+      "p2": 25.4,
+      "leverage": 0.908,
+      "adj_p2": 27.6,
+      "model_a": {
+        "raw_p3": -2.572,
+        "p3": 7.4,
+        "adj_p3": 11.3,
+        "final": 19.5
+      },
+      "model_b": {
+        "raw_p3": -2.572,
+        "p3": 7.4,
+        "adj_p3": 11.3,
+        "final": 19.5
+      },
+      "model_c": {
+        "raw_p3": -2.329,
+        "p3": 9.1,
+        "adj_p3": 12.9,
+        "final": 20.3
+      },
+      "model_d": {
+        "raw_p3": -2.572,
+        "p3": 7.4,
+        "adj_p3": 11.3,
+        "final": 19.5
+      }
+    },
+    "counterfactual_passenger_in_strong_platform": {
+      "p2": 18.2,
+      "leverage": 0.908,
+      "adj_p2": 21.1,
+      "model_a": {
+        "raw_p3": 0.164,
+        "p3": 50.1,
+        "adj_p3": 50.1,
+        "final": 35.6
+      },
+      "model_b": {
+        "raw_p3": 0.164,
+        "p3": 50.1,
+        "adj_p3": 50.1,
+        "final": 35.6
+      },
+      "model_c": {
+        "raw_p3": 0.123,
+        "p3": 49.2,
+        "adj_p3": 49.2,
+        "final": 35.2
+      },
+      "model_d": {
+        "raw_p3": 0.275,
+        "p3": 52.7,
+        "adj_p3": 52.4,
+        "final": 36.8
+      }
+    },
+    "counterfactual_golden_duck_in_strong_platform": {
+      "p2": 7.5,
+      "leverage": 0.908,
+      "adj_p2": 11.4,
+      "model_a": {
+        "raw_p3": -1.596,
+        "p3": 16.5,
+        "adj_p3": 19.6,
+        "final": 15.5
+      },
+      "model_b": {
+        "raw_p3": -1.596,
+        "p3": 16.5,
+        "adj_p3": 19.6,
+        "final": 15.5
+      },
+      "model_c": {
+        "raw_p3": -1.596,
+        "p3": 16.5,
+        "adj_p3": 19.6,
+        "final": 15.5
+      },
+      "model_d": {
+        "raw_p3": -1.596,
+        "p3": 16.5,
+        "adj_p3": 19.6,
+        "final": 15.5
+      }
+    }
+  },
+  "edge_case_matrix": [
+    {
+      "id": "Case A",
+      "desc": "0/0 -> Excellent Innings (70 off 35 in PP)",
+      "p2": 95.8,
+      "leverage": 0.926,
+      "adj_p2": 92.4,
+      "model_a": {
+        "raw_p3": 3.155,
+        "p3": 94.1,
+        "adj_p3": 90.8,
+        "final": 91.6
+      },
+      "model_b": {
+        "raw_p3": 3.155,
+        "p3": 94.1,
+        "adj_p3": 90.8,
+        "final": 91.6
+      },
+      "model_c": {
+        "raw_p3": 2.816,
+        "p3": 92.1,
+        "adj_p3": 89.0,
+        "final": 90.7
+      },
+      "model_d": {
+        "raw_p3": 3.155,
+        "p3": 94.1,
+        "adj_p3": 90.8,
+        "final": 91.6
+      }
+    },
+    {
+      "id": "Case B",
+      "desc": "Strong Team State -> Excellent Innings (50 off 22)",
+      "p2": 87.5,
+      "leverage": 0.907,
+      "adj_p2": 84.0,
+      "model_a": {
+        "raw_p3": 0.209,
+        "p3": 51.2,
+        "adj_p3": 51.1,
+        "final": 67.5
+      },
+      "model_b": {
+        "raw_p3": 0.849,
+        "p3": 65.4,
+        "adj_p3": 64.0,
+        "final": 74.0
+      },
+      "model_c": {
+        "raw_p3": 0.627,
+        "p3": 60.7,
+        "adj_p3": 59.7,
+        "final": 71.8
+      },
+      "model_d": {
+        "raw_p3": 0.334,
+        "p3": 54.0,
+        "adj_p3": 53.7,
+        "final": 68.8
+      }
+    },
+    {
+      "id": "Case C",
+      "desc": "Strong Team State -> Average Innings (20 off 18)",
+      "p2": 37.6,
+      "leverage": 0.907,
+      "adj_p2": 38.7,
+      "model_a": {
+        "raw_p3": -1.454,
+        "p3": 18.4,
+        "adj_p3": 21.3,
+        "final": 30.0
+      },
+      "model_b": {
+        "raw_p3": -1.454,
+        "p3": 18.4,
+        "adj_p3": 21.3,
+        "final": 30.0
+      },
+      "model_c": {
+        "raw_p3": -1.091,
+        "p3": 23.9,
+        "adj_p3": 26.4,
+        "final": 32.5
+      },
+      "model_d": {
+        "raw_p3": -1.454,
+        "p3": 18.4,
+        "adj_p3": 21.3,
+        "final": 30.0
+      }
+    },
+    {
+      "id": "Case D",
+      "desc": "Strong Team State -> Poor Innings (4 off 8)",
+      "p2": 13.0,
+      "leverage": 0.907,
+      "adj_p2": 16.5,
+      "model_a": {
+        "raw_p3": -2.374,
+        "p3": 8.8,
+        "adj_p3": 12.6,
+        "final": 14.5
+      },
+      "model_b": {
+        "raw_p3": -2.374,
+        "p3": 8.8,
+        "adj_p3": 12.6,
+        "final": 14.5
+      },
+      "model_c": {
+        "raw_p3": -1.997,
+        "p3": 12.0,
+        "adj_p3": 15.5,
+        "final": 16.0
+      },
+      "model_d": {
+        "raw_p3": -2.374,
+        "p3": 8.8,
+        "adj_p3": 12.6,
+        "final": 14.5
+      }
+    },
+    {
+      "id": "Case E",
+      "desc": "Weak Team State -> Excellent Innings (65 off 32)",
+      "p2": 93.1,
+      "leverage": 1.091,
+      "adj_p2": 97.0,
+      "model_a": {
+        "raw_p3": 3.186,
+        "p3": 94.3,
+        "adj_p3": 98.3,
+        "final": 97.6
+      },
+      "model_b": {
+        "raw_p3": 3.186,
+        "p3": 94.3,
+        "adj_p3": 98.3,
+        "final": 97.6
+      },
+      "model_c": {
+        "raw_p3": 2.489,
+        "p3": 89.6,
+        "adj_p3": 93.2,
+        "final": 95.1
+      },
+      "model_d": {
+        "raw_p3": 2.623,
+        "p3": 90.7,
+        "adj_p3": 94.4,
+        "final": 95.7
+      }
+    },
+    {
+      "id": "Case F",
+      "desc": "Weak Team State -> Poor Innings (5 off 12)",
+      "p2": 19.3,
+      "leverage": 1.091,
+      "adj_p2": 16.5,
+      "model_a": {
+        "raw_p3": -1.365,
+        "p3": 19.6,
+        "adj_p3": 16.8,
+        "final": 16.7
+      },
+      "model_b": {
+        "raw_p3": -1.365,
+        "p3": 19.6,
+        "adj_p3": 16.8,
+        "final": 16.7
+      },
+      "model_c": {
+        "raw_p3": -1.524,
+        "p3": 17.4,
+        "adj_p3": 14.4,
+        "final": 15.5
+      },
+      "model_d": {
+        "raw_p3": -1.365,
+        "p3": 19.6,
+        "adj_p3": 16.8,
+        "final": 16.7
+      }
+    },
+    {
+      "id": "Case G",
+      "desc": "Chase with Low Required RR (30 off 18, RRR 6.15 -> 5.80)",
+      "p2": 73.3,
+      "leverage": 0.884,
+      "adj_p2": 70.6,
+      "model_a": {
+        "raw_p3": 0.113,
+        "p3": 48.9,
+        "adj_p3": 49.1,
+        "final": 59.8
+      },
+      "model_b": {
+        "raw_p3": 0.773,
+        "p3": 63.8,
+        "adj_p3": 62.2,
+        "final": 66.4
+      },
+      "model_c": {
+        "raw_p3": 0.281,
+        "p3": 52.8,
+        "adj_p3": 52.5,
+        "final": 61.5
+      },
+      "model_d": {
+        "raw_p3": 0.113,
+        "p3": 48.9,
+        "adj_p3": 49.1,
+        "final": 59.8
+      }
+    },
+    {
+      "id": "Case H",
+      "desc": "Chase with High Required RR (55 off 25, RRR 12.5 -> 10.7)",
+      "p2": 87.8,
+      "leverage": 0.953,
+      "adj_p2": 86.1,
+      "model_a": {
+        "raw_p3": -0.017,
+        "p3": 45.9,
+        "adj_p3": 46.1,
+        "final": 66.1
+      },
+      "model_b": {
+        "raw_p3": -0.017,
+        "p3": 45.9,
+        "adj_p3": 46.1,
+        "final": 66.1
+      },
+      "model_c": {
+        "raw_p3": -0.346,
+        "p3": 38.5,
+        "adj_p3": 39.1,
+        "final": 62.6
+      },
+      "model_d": {
+        "raw_p3": -0.017,
+        "p3": 45.9,
+        "adj_p3": 46.1,
+        "final": 66.1
+      }
+    },
+    {
+      "id": "Case I",
+      "desc": "First Innings Par Platform (45 off 28 at Par 165)",
+      "p2": 78.1,
+      "leverage": 0.952,
+      "adj_p2": 76.7,
+      "model_a": {
+        "raw_p3": 0.383,
+        "p3": 55.2,
+        "adj_p3": 54.9,
+        "final": 65.8
+      },
+      "model_b": {
+        "raw_p3": 0.383,
+        "p3": 55.2,
+        "adj_p3": 54.9,
+        "final": 65.8
+      },
+      "model_c": {
+        "raw_p3": 0.308,
+        "p3": 53.4,
+        "adj_p3": 53.3,
+        "final": 65.0
+      },
+      "model_d": {
+        "raw_p3": 0.383,
+        "p3": 55.2,
+        "adj_p3": 54.9,
+        "final": 65.8
+      }
+    },
+    {
+      "id": "Case J",
+      "desc": "Shortened Innings (25 off 10 in 5-over match)",
+      "p2": 83.8,
+      "leverage": 1.117,
+      "adj_p2": 87.8,
+      "model_a": {
+        "raw_p3": 1.1,
+        "p3": 70.5,
+        "adj_p3": 72.9,
+        "final": 80.3
+      },
+      "model_b": {
+        "raw_p3": 1.1,
+        "p3": 70.5,
+        "adj_p3": 72.9,
+        "final": 80.3
+      },
+      "model_c": {
+        "raw_p3": 1.075,
+        "p3": 70.0,
+        "adj_p3": 72.3,
+        "final": 80.1
+      },
+      "model_d": {
+        "raw_p3": 1.204,
+        "p3": 72.5,
+        "adj_p3": 75.1,
+        "final": 81.4
+      }
+    },
+    {
+      "id": "Case K",
+      "desc": "Enters After Explosive Over 1 (18/0 -> 40 off 20)",
+      "p2": 69.6,
+      "leverage": 0.926,
+      "adj_p2": 68.2,
+      "model_a": {
+        "raw_p3": -0.543,
+        "p3": 34.3,
+        "adj_p3": 35.5,
+        "final": 51.8
+      },
+      "model_b": {
+        "raw_p3": 0.769,
+        "p3": 63.7,
+        "adj_p3": 62.7,
+        "final": 65.4
+      },
+      "model_c": {
+        "raw_p3": -0.077,
+        "p3": 44.6,
+        "adj_p3": 45.0,
+        "final": 56.6
+      },
+      "model_d": {
+        "raw_p3": -0.449,
+        "p3": 36.3,
+        "adj_p3": 37.3,
+        "final": 52.7
+      }
+    },
+    {
+      "id": "Case L",
+      "desc": "Enters After Slow Opening Over (2/0 -> 45 off 28)",
+      "p2": 84.2,
+      "leverage": 0.947,
+      "adj_p2": 82.4,
+      "model_a": {
+        "raw_p3": 1.856,
+        "p3": 82.8,
+        "adj_p3": 81.0,
+        "final": 81.7
+      },
+      "model_b": {
+        "raw_p3": 1.856,
+        "p3": 82.8,
+        "adj_p3": 81.0,
+        "final": 81.7
+      },
+      "model_c": {
+        "raw_p3": 1.422,
+        "p3": 76.3,
+        "adj_p3": 74.9,
+        "final": 78.7
+      },
+      "model_d": {
+        "raw_p3": 1.643,
+        "p3": 79.8,
+        "adj_p3": 78.2,
+        "final": 80.3
+      }
+    },
+    {
+      "id": "Case M",
+      "desc": "Golden Duck in Strong Platform (0 off 1)",
+      "p2": 7.5,
+      "leverage": 0.907,
+      "adj_p2": 11.4,
+      "model_a": {
+        "raw_p3": -1.746,
+        "p3": 14.6,
+        "adj_p3": 17.9,
+        "final": 14.7
+      },
+      "model_b": {
+        "raw_p3": -1.746,
+        "p3": 14.6,
+        "adj_p3": 17.9,
+        "final": 14.7
+      },
+      "model_c": {
+        "raw_p3": -1.746,
+        "p3": 14.6,
+        "adj_p3": 17.9,
+        "final": 14.7
+      },
+      "model_d": {
+        "raw_p3": -1.746,
+        "p3": 14.6,
+        "adj_p3": 17.9,
+        "final": 14.7
+      }
+    },
+    {
+      "id": "Case N",
+      "desc": "Did Not Bat (DNB: 0 balls, 0 runs)",
+      "p2": null,
+      "leverage": null,
+      "adj_p2": null,
+      "model_a": {
+        "raw_p3": null,
+        "p3": null,
+        "adj_p3": null,
+        "final": null
+      },
+      "model_b": {
+        "raw_p3": null,
+        "p3": null,
+        "adj_p3": null,
+        "final": null
+      },
+      "model_c": {
+        "raw_p3": null,
+        "p3": null,
+        "adj_p3": null,
+        "final": null
+      },
+      "model_d": {
+        "raw_p3": null,
+        "p3": null,
+        "adj_p3": null,
+        "final": null
+      }
+    }
+  ],
+  "population_distribution": {
+    "n_total_innings": 19111,
+    "model_a_stats": {
+      "mean": 48.11,
+      "std": 24.79,
+      "median": 41.34,
+      "q10": 20.33,
+      "q25": 28.79,
+      "q50": 41.34,
+      "q75": 66.79,
+      "q90": 90.58,
+      "pct_below_30": 28.13,
+      "pct_30_50": 32.11,
+      "pct_50_60": 9.64,
+      "pct_60_70": 7.57,
+      "pct_70_80": 6.5,
+      "pct_80_90": 5.74,
+      "pct_above_90": 10.32
+    },
+    "model_b_stats": {
+      "mean": 48.3,
+      "std": 24.85,
+      "median": 41.39,
+      "q10": 20.33,
+      "q25": 28.79,
+      "q50": 41.39,
+      "q75": 66.79,
+      "q90": 90.58,
+      "pct_below_30": 28.12,
+      "pct_30_50": 31.65,
+      "pct_50_60": 8.54,
+      "pct_60_70": 9.14,
+      "pct_70_80": 6.5,
+      "pct_80_90": 5.74,
+      "pct_above_90": 10.32
+    },
+    "model_c_stats": {
+      "mean": 46.62,
+      "std": 24.3,
+      "median": 40.02,
+      "q10": 19.52,
+      "q25": 27.42,
+      "q50": 40.02,
+      "q75": 64.74,
+      "q90": 87.41,
+      "pct_below_30": 31.37,
+      "pct_30_50": 29.97,
+      "pct_50_60": 9.48,
+      "pct_60_70": 7.94,
+      "pct_70_80": 6.46,
+      "pct_80_90": 6.95,
+      "pct_above_90": 7.55
+    },
+    "model_d_stats": {
+      "mean": 48.19,
+      "std": 24.84,
+      "median": 41.34,
+      "q10": 20.43,
+      "q25": 28.82,
+      "q50": 41.34,
+      "q75": 66.9,
+      "q90": 90.66,
+      "pct_below_30": 27.79,
+      "pct_30_50": 31.96,
+      "pct_50_60": 9.28,
+      "pct_60_70": 7.46,
+      "pct_70_80": 6.42,
+      "pct_80_90": 5.87,
+      "pct_above_90": 10.33
+    },
+    "high_p2_analysis": {
+      "n_high_p2_innings": 3247,
+      "current_pct_p3_under_55": 19.46,
+      "current_pct_p3_between_45_60": 15.24,
+      "model_b_pct_p3_under_55": 17.96,
+      "model_b_pct_p3_between_45_60": 12.94
+    },
+    "model_b_population_impact": {
+      "innings_affected": 360,
+      "pct_population_affected": 1.88,
+      "mean_delta_among_affected": 9.98,
+      "max_delta": 37.77
+    }
+  },
+  "real_case_studies": [
+    {
+      "case": "Yuvraj Singh (70 off 41, SR 170.7)",
+      "player": "Yuvraj Singh",
+      "match_id": 1082630,
+      "innings": 1,
+      "actual_runs": 70,
+      "balls_faced": 41,
+      "actual_sr": 170.7,
+      "entry_platform": 185.1,
+      "p2_perf": 91.7,
+      "leverage": 0.952,
+      "model_a": {
+        "raw_p3": 0.098,
+        "p3": 48.6,
+        "adj_p3": 48.7,
+        "final": 69.2
+      },
+      "model_b": {
+        "raw_p3": 0.716,
+        "p3": 62.6,
+        "adj_p3": 62.0,
+        "final": 75.9
+      },
+      "model_c": {
+        "raw_p3": 0.272,
+        "p3": 52.6,
+        "adj_p3": 52.5,
+        "final": 71.1
+      },
+      "model_d": {
+        "raw_p3": 0.098,
+        "p3": 48.6,
+        "adj_p3": 48.7,
+        "final": 69.2
+      }
+    },
+    {
+      "case": "Suryakumar Yadav (79 off 47, SR 168.1)",
+      "player": "SA Yadav",
+      "match_id": 1216511,
+      "innings": 1,
+      "actual_runs": 79,
+      "balls_faced": 47,
+      "actual_sr": 168.1,
+      "entry_platform": 191.9,
+      "p2_perf": 92.4,
+      "leverage": 0.954,
+      "model_a": {
+        "raw_p3": 0.217,
+        "p3": 51.3,
+        "adj_p3": 51.3,
+        "final": 70.8
+      },
+      "model_b": {
+        "raw_p3": 0.752,
+        "p3": 63.4,
+        "adj_p3": 62.8,
+        "final": 76.6
+      },
+      "model_c": {
+        "raw_p3": 0.442,
+        "p3": 56.5,
+        "adj_p3": 56.2,
+        "final": 73.3
+      },
+      "model_d": {
+        "raw_p3": 0.245,
+        "p3": 52.0,
+        "adj_p3": 51.9,
+        "final": 71.2
+      }
+    },
+    {
+      "case": "Hardik Pandya (32 off 14, SR 228.6)",
+      "player": "HH Pandya",
+      "match_id": 1175362,
+      "innings": 1,
+      "actual_runs": 32,
+      "balls_faced": 14,
+      "actual_sr": 228.6,
+      "entry_platform": 185.9,
+      "p2_perf": 89.5,
+      "leverage": 0.934,
+      "model_a": {
+        "raw_p3": 0.103,
+        "p3": 48.7,
+        "adj_p3": 48.8,
+        "final": 67.8
+      },
+      "model_b": {
+        "raw_p3": 0.72,
+        "p3": 62.7,
+        "adj_p3": 61.9,
+        "final": 74.4
+      },
+      "model_c": {
+        "raw_p3": 0.298,
+        "p3": 53.2,
+        "adj_p3": 53.0,
+        "final": 69.9
+      },
+      "model_d": {
+        "raw_p3": 0.123,
+        "p3": 49.2,
+        "adj_p3": 49.2,
+        "final": 68.0
+      }
+    },
+    {
+      "case": "Ben Cutting (16 off 6, SR 266.7)",
+      "player": "BCJ Cutting",
+      "match_id": 1082591,
+      "innings": 1,
+      "actual_runs": 16,
+      "balls_faced": 6,
+      "actual_sr": 266.7,
+      "entry_platform": 206.7,
+      "p2_perf": 88.8,
+      "leverage": 0.899,
+      "model_a": {
+        "raw_p3": 0.329,
+        "p3": 53.9,
+        "adj_p3": 53.5,
+        "final": 69.2
+      },
+      "model_b": {
+        "raw_p3": 0.831,
+        "p3": 65.1,
+        "adj_p3": 63.5,
+        "final": 74.2
+      },
+      "model_c": {
+        "raw_p3": 0.667,
+        "p3": 61.5,
+        "adj_p3": 60.4,
+        "final": 72.6
+      },
+      "model_d": {
+        "raw_p3": 0.348,
+        "p3": 54.4,
+        "adj_p3": 53.9,
+        "final": 69.4
+      }
+    },
+    {
+      "case": "Dinesh Karthik (47 off 25, SR 188.0)",
+      "player": "KD Karthik",
+      "match_id": 1082593,
+      "innings": 1,
+      "actual_runs": 47,
+      "balls_faced": 25,
+      "actual_sr": 188.0,
+      "entry_platform": 185.1,
+      "p2_perf": 84.2,
+      "leverage": 0.958,
+      "model_a": {
+        "raw_p3": -0.071,
+        "p3": 44.7,
+        "adj_p3": 44.9,
+        "final": 63.8
+      },
+      "model_b": {
+        "raw_p3": 0.716,
+        "p3": 62.6,
+        "adj_p3": 62.1,
+        "final": 72.4
+      },
+      "model_c": {
+        "raw_p3": 0.129,
+        "p3": 49.3,
+        "adj_p3": 49.3,
+        "final": 66.0
+      },
+      "model_d": {
+        "raw_p3": -0.071,
+        "p3": 44.7,
+        "adj_p3": 44.9,
+        "final": 63.8
+      }
+    },
+    {
+      "case": "Ishan Kishan (55 off 30, SR 183.3)",
+      "player": "Ishan Kishan",
+      "match_id": 1237177,
+      "innings": 1,
+      "actual_runs": 55,
+      "balls_faced": 30,
+      "actual_sr": 183.3,
+      "entry_platform": 203.7,
+      "p2_perf": 88.0,
+      "leverage": 0.955,
+      "model_a": {
+        "raw_p3": 0.063,
+        "p3": 47.8,
+        "adj_p3": 47.9,
+        "final": 67.1
+      },
+      "model_b": {
+        "raw_p3": 0.063,
+        "p3": 47.8,
+        "adj_p3": 47.9,
+        "final": 67.1
+      },
+      "model_c": {
+        "raw_p3": 0.336,
+        "p3": 54.1,
+        "adj_p3": 53.9,
+        "final": 70.1
+      },
+      "model_d": {
+        "raw_p3": 0.063,
+        "p3": 47.8,
+        "adj_p3": 47.9,
+        "final": 67.1
+      }
+    },
+    {
+      "case": "Rohit Sharma (3 off 7, Failure)",
+      "player": "RG Sharma",
+      "match_id": 1082592,
+      "innings": 1,
+      "actual_runs": 3,
+      "balls_faced": 7,
+      "actual_sr": 42.9,
+      "entry_platform": 201.0,
+      "p2_perf": 12.9,
+      "leverage": 0.96,
+      "model_a": {
+        "raw_p3": -1.363,
+        "p3": 19.7,
+        "adj_p3": 20.9,
+        "final": 17.6
+      },
+      "model_b": {
+        "raw_p3": -1.363,
+        "p3": 19.7,
+        "adj_p3": 20.9,
+        "final": 17.6
+      },
+      "model_c": {
+        "raw_p3": -1.363,
+        "p3": 19.7,
+        "adj_p3": 20.9,
+        "final": 17.6
+      },
+      "model_d": {
+        "raw_p3": -1.363,
+        "p3": 19.7,
+        "adj_p3": 20.9,
+        "final": 17.6
+      }
+    },
+    {
+      "case": "Suresh Raina (1 off 3, Failure)",
+      "player": "SK Raina",
+      "match_id": 1082625,
+      "innings": 1,
+      "actual_runs": 1,
+      "balls_faced": 3,
+      "actual_sr": 33.3,
+      "entry_platform": 190.4,
+      "p2_perf": 10.3,
+      "leverage": 1.003,
+      "model_a": {
+        "raw_p3": -1.999,
+        "p3": 12.0,
+        "adj_p3": 11.8,
+        "final": 11.0
+      },
+      "model_b": {
+        "raw_p3": -1.999,
+        "p3": 12.0,
+        "adj_p3": 11.8,
+        "final": 11.0
+      },
+      "model_c": {
+        "raw_p3": -1.999,
+        "p3": 12.0,
+        "adj_p3": 11.8,
+        "final": 11.0
+      },
+      "model_d": {
+        "raw_p3": -1.999,
+        "p3": 12.0,
+        "adj_p3": 11.8,
+        "final": 11.0
+      }
+    },
+    {
+      "case": "Chris Gayle (7 off 17, Passenger)",
+      "player": "CH Gayle",
+      "match_id": 1082617,
+      "innings": 2,
+      "actual_runs": 7,
+      "balls_faced": 17,
+      "actual_sr": 41.2,
+      "entry_platform": NaN,
+      "p2_perf": 23.3,
+      "leverage": 0.89,
+      "model_a": {
+        "raw_p3": -0.711,
+        "p3": 30.9,
+        "adj_p3": 33.0,
+        "final": 29.6
+      },
+      "model_b": {
+        "raw_p3": -0.711,
+        "p3": 30.9,
+        "adj_p3": 33.0,
+        "final": 29.6
+      },
+      "model_c": {
+        "raw_p3": -0.561,
+        "p3": 33.9,
+        "adj_p3": 35.7,
+        "final": 31.0
+      },
+      "model_d": {
+        "raw_p3": -0.711,
+        "p3": 30.9,
+        "adj_p3": 33.0,
+        "final": 29.6
+      }
+    }
+  ],
+  "leakage_and_invariance_audit": {
+    "future_match_outcome_invariance": {
+      "passed": true,
+      "diff": 0.0
+    },
+    "player_identity_invariance": {
+      "passed": true,
+      "diff": 0.0
+    },
+    "p2_p3_independence_verified": {
+      "low_p2_high_p3_exists": true,
+      "low_p2_score": 44.3,
+      "high_p3_score": 80.9,
+      "high_p2_low_p3_exists": true,
+      "high_p2_score": 87.2,
+      "low_p3_score": 12.1
+    },
+    "golden_duck_exclusion": {
+      "passed": true,
+      "duck_raw_diff": 0.0,
+      "duck_p3_score": 50.1
+    },
+    "dnb_preservation": {
+      "passed": true,
+      "is_dnb": true,
+      "p2": null,
+      "p3": null
+    }
+  },
+  "diagnostic_conclusions": {
+    "root_cause_identified": true,
+    "root_cause_explanation": "Current P3 relies strictly on the first derivative of team state (delta EFS / delta RRR). In strong inherited platforms (e.g. 11.0 RPO, EFS 205), realistic T20 ceiling limits additional delta EFS to +2.0 runs (z ~ 0.17). Dismissal resource penalty wipes this out, compressing raw P3 to near zero (z ~ 0.05 -> score ~ 52.0).",
+    "hypothesis_65_70_evaluated": "A blanket 65-70 score represents the ~75th percentile of historical impact. If awarded purely for state preservation, it risks inflating passive passengers (Gayle 7 off 17) and rewards players simply for being in strong teams. A calibrated floor of 60-64 with strict anti-free-rider personal tempo gating is mathematically and semantically superior.",
+    "production_change_recommended_in_7p": false,
+    "recommended_next_step": "Draft comprehensive Phase 7P diagnostic report. If production refinement is desired, propose Phase 7Q with Model B/C hybrid incorporating personal tempo gating."
+  }
+}

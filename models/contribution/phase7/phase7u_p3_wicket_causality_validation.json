@@ -1,0 +1,166 @@
+{
+  "phase": "PHASE 7U",
+  "objective": "Controlled Implementation of P3 Wicket Causality Attribution (Model T)",
+  "status": "VALIDATED",
+  "governance": {
+    "all_passed": true,
+    "pre_integration_backup": "backups/phase7u_pre_integration/contribution_framework.py",
+    "modified_files": [
+      "src/contribution_framework.py"
+    ],
+    "checksums": {
+      "pre_integration": {
+        "src/contribution_framework.py": {
+          "sha256": "06D948D2B77D51FD2655CFC0E79A4E02814F784D346D2816774BAF73CB4D3FEE",
+          "md5": "0f102bcce9d8e802ac826b87ea44c88e"
+        }
+      },
+      "post_integration": {
+        "src/contribution_framework.py": {
+          "sha256": "8C5CFBC613D583CB7B70887C9F8BCE489912C8370FCBD96EF56FBE7E9C8AA277",
+          "md5": "f4366beb90df010d12e3915561382707"
+        }
+      }
+    }
+  },
+  "model_formulation": {
+    "name": "Phase 7U Model T Attributable Team-State Impact",
+    "decomposition": "Delta EFS = Delta R_batter + External Drag",
+    "attributable_impact": "Attributable Delta EFS = Delta R_batter + gamma_attr * External Drag",
+    "attribution_gammas": {
+      "CATEGORY_A_BATTER_PRESSURE": 1.0,
+      "CATEGORY_B_INDEPENDENT_WICKET": 0.15,
+      "CATEGORY_C_MIXED_COLLAPSE": 0.5,
+      "GENERAL_STAGNATION": 0.7
+    }
+  },
+  "pooran_anchor_case": {
+    "match_id": 1422133,
+    "player": "N Pooran",
+    "performance": "40 off 21 balls (SR 190.48)",
+    "runs": 40.0,
+    "expected_runs": 18.8,
+    "delta_r_batter": 21.2,
+    "raw_efs_change": -19.6,
+    "external_drag": -40.8,
+    "attribution_gamma": 0.15,
+    "attribution_category": "CATEGORY_B",
+    "attributable_efs_change": 15.08,
+    "pre_7u": {
+      "p2": 86.5,
+      "adjusted_p2": 83.7,
+      "p3": 22.3,
+      "adjusted_p3": 24.4,
+      "leverage": 0.922,
+      "final_score": 54.0
+    },
+    "post_7u": {
+      "p2": 86.5,
+      "adjusted_p2": 83.7,
+      "p3": 52.2,
+      "adjusted_p3": 52.0,
+      "leverage": 0.922,
+      "final_score": 67.8,
+      "gamma_attribution": 0.15,
+      "attribution_category": "CATEGORY_B"
+    },
+    "deltas": {
+      "delta_p3": 29.9,
+      "delta_final": 13.8,
+      "p2_invariant": true,
+      "leverage_invariant": true
+    }
+  },
+  "population_audit": {
+    "total_historical_appearances": 19111,
+    "number_changed": 1807,
+    "number_unchanged": 17304,
+    "percentage_changed": 9.46,
+    "percentage_unchanged": 90.54,
+    "category_counts": {
+      "CATEGORY_A": 0,
+      "CATEGORY_B": 768,
+      "CATEGORY_C": 1039,
+      "UNCHANGED": 17304
+    },
+    "gamma_distribution": {
+      "1.00": 17302,
+      "0.70": 261,
+      "0.50": 778,
+      "0.15": 770
+    },
+    "p3_metrics": {
+      "average_p3_before": 46.69,
+      "average_p3_after": 48.33,
+      "median_p3_before": 43.05,
+      "median_p3_after": 45.28,
+      "p3_increases_gt_10": 622,
+      "p3_decreases_gt_10": 0
+    },
+    "high_p2_low_p3_cohort": {
+      "cohort_size": 326,
+      "average_p3_before": 43.0,
+      "average_p3_after": 58.06,
+      "median_p3_before": 45.16,
+      "median_p3_after": 58.43
+    }
+  },
+  "free_rider_audit": {
+    "golden_ducks": {
+      "total_tested": 656,
+      "relief_granted": 0,
+      "pass_zero_leakage": true
+    },
+    "minimal_cameo_stays": {
+      "total_tested": 2797,
+      "relief_granted": 0,
+      "pass_zero_leakage": true
+    },
+    "slow_crawls_sub_100_sr": {
+      "total_tested": 1095,
+      "relief_granted": 0,
+      "pass_zero_leakage": true
+    },
+    "underperforming_innings": {
+      "total_tested": 5697,
+      "relief_granted": 0,
+      "pass_zero_leakage": true
+    },
+    "passenger_test": {
+      "gamma": 1.0,
+      "category": "CATEGORY_A",
+      "p3_score": 20.1,
+      "pass_full_penalty": true
+    },
+    "free_rider_audit_passed": true
+  },
+  "leakage_and_invariance_audit": {
+    "outcome_invariance": {
+      "delta": 0.0,
+      "passed": true
+    },
+    "player_identity_invariance": {
+      "delta": 0.0,
+      "passed": true
+    },
+    "p2_independence": {
+      "delta_p3": 0.0,
+      "passed": true
+    },
+    "future_information_invariance": {
+      "delta": 0.0,
+      "passed": true
+    },
+    "dnb_preservation": {
+      "passed": true
+    },
+    "super_over_exclusion": {
+      "passed": true
+    },
+    "phase7o_compatibility": {
+      "passed": true
+    },
+    "all_invariances_passed": true
+  },
+  "final_recommendation": "APPROVE FOR PRODUCTION"
+}

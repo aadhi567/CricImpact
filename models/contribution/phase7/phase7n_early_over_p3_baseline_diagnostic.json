@@ -1,0 +1,887 @@
+{
+  "phase": "Phase 7N",
+  "title": "Early-Over P3 Baseline Research & Controlled Comparison",
+  "status": "RESEARCH / DIAGNOSTIC ONLY",
+  "governance": {
+    "production_modified": false,
+    "production_scores_changed": false,
+    "protected_files_intact": true
+  },
+  "primary_counterfactual": {
+    "target_case": {
+      "player": "V Suryavanshi",
+      "match_id": 1527686,
+      "entry_over": 1.0,
+      "balls_bowled_at_entry": 6,
+      "team_rr_entry": 22.0,
+      "window_team_rr": 14.5,
+      "runs": 39.0,
+      "balls_faced": 14,
+      "p2": 82.7
+    },
+    "model_comparison": {
+      "Model 0 (Phase 7L)": {
+        "model_name": "Model 0 (Phase 7L)",
+        "par_rr": 10.0,
+        "branch": "rain_shortened_fallback",
+        "team_rr_entry": 22.0,
+        "effective_rr_entry": 22.0,
+        "window_team_rr": 14.5,
+        "raw_accel": -2.5,
+        "clipped_accel": -2.5,
+        "accel_term_weighted": -1.5,
+        "volume_term_weighted": 1.04,
+        "s_res": -0.1023,
+        "raw_p3": -0.5623,
+        "z3": -0.4767,
+        "score_p3": 33.9,
+        "leverage": 0.947,
+        "score_perf": 82.7,
+        "adjusted_p2": 81.0,
+        "adjusted_p3": 34.8,
+        "final_contribution_score": 57.9,
+        "metadata": {
+          "balls_bowled": 6,
+          "entry_over": 1.0,
+          "raw_team_rr_entry": 22.0,
+          "par_rr": 10.0,
+          "alpha": 1.0,
+          "rule": "unmodified_observed_rr"
+        }
+      },
+      "Model 1 (Phase 7M Alpha)": {
+        "model_name": "Model 1 (Phase 7M Alpha)",
+        "par_rr": 10.0,
+        "branch": "rain_shortened_fallback",
+        "team_rr_entry": 22.0,
+        "effective_rr_entry": 13.0,
+        "window_team_rr": 14.5,
+        "raw_accel": 0.5,
+        "clipped_accel": 0.5,
+        "accel_term_weighted": 0.3,
+        "volume_term_weighted": 1.04,
+        "s_res": -0.1023,
+        "raw_p3": 1.2377,
+        "z3": 0.713,
+        "score_p3": 73.1,
+        "leverage": 0.947,
+        "score_perf": 82.7,
+        "adjusted_p2": 81.0,
+        "adjusted_p3": 71.8,
+        "final_contribution_score": 76.4,
+        "metadata": {
+          "balls_bowled": 6,
+          "entry_over": 1.0,
+          "raw_team_rr_entry": 22.0,
+          "par_rr": 10.0,
+          "alpha": 0.25,
+          "rule": "alpha_sample_stabilization"
+        }
+      },
+      "Model 2 (Par Baseline)": {
+        "model_name": "Model 2 (Par Baseline)",
+        "par_rr": 10.0,
+        "branch": "rain_shortened_fallback",
+        "team_rr_entry": 22.0,
+        "effective_rr_entry": 10.0,
+        "window_team_rr": 14.5,
+        "raw_accel": 1.5,
+        "clipped_accel": 1.5,
+        "accel_term_weighted": 0.9,
+        "volume_term_weighted": 1.04,
+        "s_res": -0.1023,
+        "raw_p3": 1.8377,
+        "z3": 1.1095,
+        "score_p3": 82.5,
+        "leverage": 0.947,
+        "score_perf": 82.7,
+        "adjusted_p2": 81.0,
+        "adjusted_p3": 80.8,
+        "final_contribution_score": 80.9,
+        "metadata": {
+          "balls_bowled": 6,
+          "entry_over": 1.0,
+          "raw_team_rr_entry": 22.0,
+          "par_rr": 10.0,
+          "alpha": 0.0,
+          "rule": "early_over_par_override"
+        }
+      },
+      "Model 3 (Transitional)": {
+        "model_name": "Model 3 (Transitional)",
+        "par_rr": 10.0,
+        "branch": "rain_shortened_fallback",
+        "team_rr_entry": 22.0,
+        "effective_rr_entry": 10.0,
+        "window_team_rr": 14.5,
+        "raw_accel": 1.5,
+        "clipped_accel": 1.5,
+        "accel_term_weighted": 0.9,
+        "volume_term_weighted": 1.04,
+        "s_res": -0.1023,
+        "raw_p3": 1.8377,
+        "z3": 1.1095,
+        "score_p3": 82.5,
+        "leverage": 0.947,
+        "score_perf": 82.7,
+        "adjusted_p2": 81.0,
+        "adjusted_p3": 80.8,
+        "final_contribution_score": 80.9,
+        "metadata": {
+          "balls_bowled": 6,
+          "entry_over": 1.0,
+          "raw_team_rr_entry": 22.0,
+          "par_rr": 10.0,
+          "weight": 0.0,
+          "rule": "over_0_to_1_par"
+        }
+      }
+    },
+    "par_sensitivity": {
+      "par_8.0": {
+        "Model 1 (Phase 7M Alpha)": 78.2,
+        "Model 2 (Par Baseline)": 87.3,
+        "Model 3 (Transitional)": 87.3
+      },
+      "par_9.0": {
+        "Model 1 (Phase 7M Alpha)": 75.7,
+        "Model 2 (Par Baseline)": 85.0,
+        "Model 3 (Transitional)": 85.0
+      },
+      "par_10.0": {
+        "Model 1 (Phase 7M Alpha)": 73.1,
+        "Model 2 (Par Baseline)": 82.5,
+        "Model 3 (Transitional)": 82.5
+      },
+      "par_11.0": {
+        "Model 1 (Phase 7M Alpha)": 70.3,
+        "Model 2 (Par Baseline)": 79.7,
+        "Model 3 (Transitional)": 79.7
+      },
+      "par_12.0": {
+        "Model 1 (Phase 7M Alpha)": 67.3,
+        "Model 2 (Par Baseline)": 76.6,
+        "Model 3 (Transitional)": 76.6
+      }
+    }
+  },
+  "historical_shortened_innings": {
+    "total_appearances": 168,
+    "distinct_matches": 26,
+    "bin_counts": {
+      "overs_post_4": 88,
+      "overs_0_to_1": 55,
+      "overs_2_to_3": 12,
+      "overs_1_to_2": 7,
+      "overs_3_to_4": 6
+    },
+    "overall_summary": {
+      "Model 0 (Phase 7L)": {
+        "mean_p3": 49.4,
+        "median_p3": 48.15,
+        "std_p3": 25.59,
+        "mean_final": 50.08,
+        "median_final": 49.2,
+        "scores_under_5": 0,
+        "scores_under_10": 4,
+        "scores_over_90": 10,
+        "mean_accel": 0.364,
+        "mean_diff_from_m0": 0.0,
+        "max_positive_correction": 0.0,
+        "max_negative_correction": 0.0,
+        "appearances_affected": 0
+      },
+      "Model 1 (Phase 7M Alpha)": {
+        "mean_p3": 44.11,
+        "median_p3": 42.2,
+        "std_p3": 25.12,
+        "mean_final": 47.59,
+        "median_final": 46.1,
+        "scores_under_5": 0,
+        "scores_under_10": 5,
+        "scores_over_90": 5,
+        "mean_accel": -0.184,
+        "mean_diff_from_m0": -5.29,
+        "max_positive_correction": 52.7,
+        "max_negative_correction": -43.2,
+        "appearances_affected": 76
+      },
+      "Model 2 (Par Baseline)": {
+        "mean_p3": 43.57,
+        "median_p3": 39.05,
+        "std_p3": 25.37,
+        "mean_final": 47.31,
+        "median_final": 45.3,
+        "scores_under_5": 0,
+        "scores_under_10": 8,
+        "scores_over_90": 4,
+        "mean_accel": -0.243,
+        "mean_diff_from_m0": -5.83,
+        "max_positive_correction": 60.3,
+        "max_negative_correction": -43.2,
+        "appearances_affected": 76
+      },
+      "Model 3 (Transitional)": {
+        "mean_p3": 43.89,
+        "median_p3": 40.35,
+        "std_p3": 25.25,
+        "mean_final": 47.47,
+        "median_final": 45.3,
+        "scores_under_5": 0,
+        "scores_under_10": 6,
+        "scores_over_90": 4,
+        "mean_accel": -0.208,
+        "mean_diff_from_m0": -5.51,
+        "max_positive_correction": 60.3,
+        "max_negative_correction": -43.2,
+        "appearances_affected": 76
+      }
+    },
+    "by_entry_bin": {
+      "overs_0_to_1": {
+        "count": 55,
+        "Model 0 (Phase 7L)": {
+          "mean_p3": 61.42,
+          "median_p3": 64.0,
+          "mean_final": 62.06,
+          "median_final": 63.2
+        },
+        "Model 1 (Phase 7M Alpha)": {
+          "mean_p3": 46.12,
+          "median_p3": 42.2,
+          "mean_final": 54.89,
+          "median_final": 52.3
+        },
+        "Model 2 (Par Baseline)": {
+          "mean_p3": 45.91,
+          "median_p3": 39.2,
+          "mean_final": 54.77,
+          "median_final": 51.1
+        },
+        "Model 3 (Transitional)": {
+          "mean_p3": 45.91,
+          "median_p3": 39.2,
+          "mean_final": 54.77,
+          "median_final": 51.1
+        }
+      },
+      "overs_1_to_2": {
+        "count": 7,
+        "Model 0 (Phase 7L)": {
+          "mean_p3": 28.37,
+          "median_p3": 24.6,
+          "mean_final": 28.07,
+          "median_final": 35.9
+        },
+        "Model 1 (Phase 7M Alpha)": {
+          "mean_p3": 26.59,
+          "median_p3": 20.8,
+          "mean_final": 27.14,
+          "median_final": 33.3
+        },
+        "Model 2 (Par Baseline)": {
+          "mean_p3": 26.59,
+          "median_p3": 28.1,
+          "mean_final": 27.19,
+          "median_final": 32.2
+        },
+        "Model 3 (Transitional)": {
+          "mean_p3": 25.86,
+          "median_p3": 20.5,
+          "mean_final": 26.74,
+          "median_final": 32.3
+        }
+      },
+      "overs_2_to_3": {
+        "count": 12,
+        "Model 0 (Phase 7L)": {
+          "mean_p3": 37.98,
+          "median_p3": 35.65,
+          "mean_final": 40.17,
+          "median_final": 33.95
+        },
+        "Model 1 (Phase 7M Alpha)": {
+          "mean_p3": 35.21,
+          "median_p3": 31.65,
+          "mean_final": 38.71,
+          "median_final": 35.45
+        },
+        "Model 2 (Par Baseline)": {
+          "mean_p3": 31.92,
+          "median_p3": 26.9,
+          "mean_final": 36.98,
+          "median_final": 32.15
+        },
+        "Model 3 (Transitional)": {
+          "mean_p3": 34.0,
+          "median_p3": 31.35,
+          "mean_final": 38.07,
+          "median_final": 35.05
+        }
+      },
+      "overs_3_to_4": {
+        "count": 6,
+        "Model 0 (Phase 7L)": {
+          "mean_p3": 38.22,
+          "median_p3": 32.8,
+          "mean_final": 44.72,
+          "median_final": 36.3
+        },
+        "Model 1 (Phase 7M Alpha)": {
+          "mean_p3": 38.07,
+          "median_p3": 32.9,
+          "mean_final": 44.68,
+          "median_final": 36.9
+        },
+        "Model 2 (Par Baseline)": {
+          "mean_p3": 31.37,
+          "median_p3": 29.4,
+          "mean_final": 41.3,
+          "median_final": 35.7
+        },
+        "Model 3 (Transitional)": {
+          "mean_p3": 37.02,
+          "median_p3": 32.6,
+          "mean_final": 44.12,
+          "median_final": 36.55
+        }
+      },
+      "overs_post_4": {
+        "count": 88,
+        "Model 0 (Phase 7L)": {
+          "mean_p3": 45.88,
+          "median_p3": 47.3,
+          "mean_final": 46.07,
+          "median_final": 45.1
+        },
+        "Model 1 (Phase 7M Alpha)": {
+          "mean_p3": 45.88,
+          "median_p3": 47.3,
+          "mean_final": 46.07,
+          "median_final": 45.1
+        },
+        "Model 2 (Par Baseline)": {
+          "mean_p3": 45.88,
+          "median_p3": 47.3,
+          "mean_final": 46.07,
+          "median_final": 45.1
+        },
+        "Model 3 (Transitional)": {
+          "mean_p3": 45.88,
+          "median_p3": 47.3,
+          "mean_final": 46.07,
+          "median_final": 45.1
+        }
+      }
+    }
+  },
+  "entry_rr_spikes_audit": {
+    "count_above_15": 7,
+    "count_above_18": 3,
+    "count_above_20": 2,
+    "cases_above_15": [
+      {
+        "match_id": 1178424,
+        "player": "AB de Villiers",
+        "entry_over": 0.3,
+        "runs": 10.0,
+        "balls": 4,
+        "team_rr_entry": 26.0,
+        "window_team_rr": 16.54,
+        "p2": 52.2,
+        "m0_p3": 14.0,
+        "m1_p3": 66.7,
+        "m2_p3": 74.3,
+        "m3_p3": 74.3,
+        "m0_final": 34.0,
+        "m1_final": 59.0,
+        "m2_final": 62.6,
+        "m3_final": 62.6
+      },
+      {
+        "match_id": 1178424,
+        "player": "MP Stoinis",
+        "entry_over": 1.5,
+        "runs": 0.0,
+        "balls": 1,
+        "team_rr_entry": 19.09,
+        "window_team_rr": 0.0,
+        "p2": 8.1,
+        "m0_p3": 8.8,
+        "m1_p3": 8.8,
+        "m2_p3": 8.8,
+        "m3_p3": 8.8,
+        "m0_final": 3.4,
+        "m1_final": 3.4,
+        "m2_final": 3.4,
+        "m3_final": 3.4
+      },
+      {
+        "match_id": 1178424,
+        "player": "H Klaasen",
+        "entry_over": 2.0,
+        "runs": 6.0,
+        "balls": 7,
+        "team_rr_entry": 17.5,
+        "window_team_rr": 8.8,
+        "p2": 16.7,
+        "m0_p3": 9.3,
+        "m1_p3": 17.0,
+        "m2_p3": 29.1,
+        "m3_p3": 20.5,
+        "m0_final": 7.2,
+        "m1_final": 11.7,
+        "m2_final": 18.7,
+        "m3_final": 13.7
+      },
+      {
+        "match_id": 1178424,
+        "player": "Gurkeerat Singh",
+        "entry_over": 2.2,
+        "runs": 6.0,
+        "balls": 3,
+        "team_rr_entry": 16.29,
+        "window_team_rr": 12.0,
+        "p2": 51.2,
+        "m0_p3": 20.4,
+        "m1_p3": 29.4,
+        "m2_p3": 45.0,
+        "m3_p3": 34.0,
+        "m0_final": 33.6,
+        "m1_final": 38.8,
+        "m2_final": 47.8,
+        "m3_final": 41.4
+      },
+      {
+        "match_id": 1527686,
+        "player": "V Suryavanshi",
+        "entry_over": 1.0,
+        "runs": 39.0,
+        "balls": 14,
+        "team_rr_entry": 22.0,
+        "window_team_rr": 14.5,
+        "p2": 82.7,
+        "m0_p3": 33.9,
+        "m1_p3": 73.1,
+        "m2_p3": 82.5,
+        "m3_p3": 82.5,
+        "m0_final": 57.9,
+        "m1_final": 76.4,
+        "m2_final": 80.9,
+        "m3_final": 80.9
+      },
+      {
+        "match_id": 1527686,
+        "player": "Dhruv Jurel",
+        "entry_over": 5.1,
+        "runs": 2.0,
+        "balls": 3,
+        "team_rr_entry": 15.87,
+        "window_team_rr": 4.0,
+        "p2": 13.4,
+        "m0_p3": 9.8,
+        "m1_p3": 9.8,
+        "m2_p3": 9.8,
+        "m3_p3": 9.8,
+        "m0_final": 13.8,
+        "m1_final": 13.8,
+        "m2_final": 13.8,
+        "m3_final": 13.8
+      },
+      {
+        "match_id": 336022,
+        "player": "V Sehwag",
+        "entry_over": 0.1,
+        "runs": 51.0,
+        "balls": 26,
+        "team_rr_entry": 18.0,
+        "window_team_rr": 10.62,
+        "p2": 81.1,
+        "m0_p3": 36.8,
+        "m1_p3": 70.6,
+        "m2_p3": 71.9,
+        "m3_p3": 71.9,
+        "m0_final": 58.3,
+        "m1_final": 74.0,
+        "m2_final": 74.5,
+        "m3_final": 74.5
+      }
+    ]
+  },
+  "failure_cases_audit": {
+    "count_early_failures": 12,
+    "cases": [
+      {
+        "match_id": 1136592,
+        "player": "C Munro",
+        "entry_over": 0.3,
+        "runs": 0.0,
+        "balls": 1,
+        "actual_sr": 0.0,
+        "team_rr_entry": 2.0,
+        "window_team_rr": 0.0,
+        "p2": 13.7,
+        "m0_p3": 27.2,
+        "m1_p3": 9.3,
+        "m2_p3": 9.3,
+        "m3_p3": 9.3,
+        "m0_final": 22.0,
+        "m1_final": 13.5,
+        "m2_final": 13.5,
+        "m3_final": 13.5
+      },
+      {
+        "match_id": 1178424,
+        "player": "MP Stoinis",
+        "entry_over": 1.5,
+        "runs": 0.0,
+        "balls": 1,
+        "actual_sr": 0.0,
+        "team_rr_entry": 19.09,
+        "window_team_rr": 0.0,
+        "p2": 8.1,
+        "m0_p3": 8.8,
+        "m1_p3": 8.8,
+        "m2_p3": 8.8,
+        "m3_p3": 8.8,
+        "m0_final": 3.4,
+        "m1_final": 3.4,
+        "m2_final": 3.4,
+        "m3_final": 3.4
+      },
+      {
+        "match_id": 1178424,
+        "player": "H Klaasen",
+        "entry_over": 2.0,
+        "runs": 6.0,
+        "balls": 7,
+        "actual_sr": 85.71,
+        "team_rr_entry": 17.5,
+        "window_team_rr": 8.8,
+        "p2": 16.7,
+        "m0_p3": 9.3,
+        "m1_p3": 17.0,
+        "m2_p3": 29.1,
+        "m3_p3": 20.5,
+        "m0_final": 7.2,
+        "m1_final": 11.7,
+        "m2_final": 18.7,
+        "m3_final": 13.7
+      },
+      {
+        "match_id": 1426298,
+        "player": "SP Narine",
+        "entry_over": 1.0,
+        "runs": 0.0,
+        "balls": 1,
+        "actual_sr": 0.0,
+        "team_rr_entry": 10.0,
+        "window_team_rr": 0.0,
+        "p2": 7.9,
+        "m0_p3": 9.0,
+        "m1_p3": 9.0,
+        "m2_p3": 9.0,
+        "m3_p3": 9.0,
+        "m0_final": 3.6,
+        "m1_final": 3.6,
+        "m2_final": 3.6,
+        "m3_final": 3.6
+      },
+      {
+        "match_id": 1473471,
+        "player": "V Kohli",
+        "entry_over": 2.0,
+        "runs": 1.0,
+        "balls": 3,
+        "actual_sr": 33.33,
+        "team_rr_entry": 9.5,
+        "window_team_rr": 2.99,
+        "p2": 12.1,
+        "m0_p3": 13.3,
+        "m1_p3": 12.7,
+        "m2_p3": 12.2,
+        "m3_p3": 12.6,
+        "m0_final": 10.3,
+        "m1_final": 10.1,
+        "m2_final": 9.8,
+        "m3_final": 10.0
+      },
+      {
+        "match_id": 1473471,
+        "player": "LS Livingstone",
+        "entry_over": 2.4,
+        "runs": 4.0,
+        "balls": 6,
+        "actual_sr": 66.67,
+        "team_rr_entry": 7.88,
+        "window_team_rr": 3.76,
+        "p2": 29.1,
+        "m0_p3": 17.8,
+        "m1_p3": 16.0,
+        "m2_p3": 12.8,
+        "m3_p3": 14.9,
+        "m0_final": 20.5,
+        "m1_final": 19.5,
+        "m2_final": 17.7,
+        "m3_final": 18.9
+      },
+      {
+        "match_id": 336010,
+        "player": "A Chopra",
+        "entry_over": 0.0,
+        "runs": 2.0,
+        "balls": 5,
+        "actual_sr": 40.0,
+        "team_rr_entry": 0.0,
+        "window_team_rr": 4.15,
+        "p2": 24.2,
+        "m0_p3": 48.4,
+        "m1_p3": 12.9,
+        "m2_p3": 12.9,
+        "m3_p3": 12.9,
+        "m0_final": 37.3,
+        "m1_final": 20.9,
+        "m2_final": 20.9,
+        "m3_final": 20.9
+      },
+      {
+        "match_id": 392214,
+        "player": "S Badrinath",
+        "entry_over": 0.0,
+        "runs": 0.0,
+        "balls": 1,
+        "actual_sr": 0.0,
+        "team_rr_entry": 0.0,
+        "window_team_rr": 0.0,
+        "p2": 15.6,
+        "m0_p3": 34.9,
+        "m1_p3": 9.2,
+        "m2_p3": 9.2,
+        "m3_p3": 9.2,
+        "m0_final": 27.1,
+        "m1_final": 15.2,
+        "m2_final": 15.2,
+        "m3_final": 15.2
+      },
+      {
+        "match_id": 501255,
+        "player": "EJG Morgan",
+        "entry_over": 1.0,
+        "runs": 2.0,
+        "balls": 5,
+        "actual_sr": 40.0,
+        "team_rr_entry": 8.0,
+        "window_team_rr": 4.67,
+        "p2": 14.7,
+        "m0_p3": 21.1,
+        "m1_p3": 16.9,
+        "m2_p3": 15.6,
+        "m3_p3": 15.6,
+        "m0_final": 19.6,
+        "m1_final": 17.6,
+        "m2_final": 17.0,
+        "m3_final": 17.0
+      },
+      {
+        "match_id": 548307,
+        "player": "MK Tiwary",
+        "entry_over": 2.4,
+        "runs": 0.0,
+        "balls": 1,
+        "actual_sr": 0.0,
+        "team_rr_entry": 7.5,
+        "window_team_rr": 0.0,
+        "p2": 9.5,
+        "m0_p3": 11.6,
+        "m1_p3": 10.1,
+        "m2_p3": 9.0,
+        "m3_p3": 9.3,
+        "m0_final": 6.2,
+        "m1_final": 5.4,
+        "m2_final": 4.8,
+        "m3_final": 4.9
+      },
+      {
+        "match_id": 548307,
+        "player": "YK Pathan",
+        "entry_over": 2.5,
+        "runs": 0.0,
+        "balls": 4,
+        "actual_sr": 0.0,
+        "team_rr_entry": 7.06,
+        "window_team_rr": 9.4,
+        "p2": 9.8,
+        "m0_p3": 47.1,
+        "m1_p3": 43.2,
+        "m2_p3": 34.1,
+        "m3_p3": 40.4,
+        "m0_final": 25.1,
+        "m1_final": 22.9,
+        "m2_final": 17.6,
+        "m3_final": 21.3
+      },
+      {
+        "match_id": 980989,
+        "player": "AM Rahane",
+        "entry_over": 0.0,
+        "runs": 2.0,
+        "balls": 6,
+        "actual_sr": 33.33,
+        "team_rr_entry": 0.0,
+        "window_team_rr": 7.12,
+        "p2": 22.8,
+        "m0_p3": 67.2,
+        "m1_p3": 24.4,
+        "m2_p3": 24.4,
+        "m3_p3": 24.4,
+        "m0_final": 45.4,
+        "m1_final": 25.5,
+        "m2_final": 25.5,
+        "m3_final": 25.5
+      }
+    ]
+  },
+  "par_rr_sensitivity": {
+    "par_8.0": {
+      "mean_p3": 46.31,
+      "median_p3": 45.0,
+      "std_p3": 25.02,
+      "mean_final": 48.66,
+      "median_final": 47.65
+    },
+    "par_9.0": {
+      "mean_p3": 45.2,
+      "median_p3": 44.2,
+      "std_p3": 25.04,
+      "mean_final": 48.12,
+      "median_final": 46.55
+    },
+    "par_10.0": {
+      "mean_p3": 44.11,
+      "median_p3": 42.2,
+      "std_p3": 25.04,
+      "mean_final": 47.59,
+      "median_final": 46.1
+    },
+    "par_11.0": {
+      "mean_p3": 43.05,
+      "median_p3": 39.45,
+      "std_p3": 25.04,
+      "mean_final": 47.07,
+      "median_final": 45.3
+    },
+    "par_12.0": {
+      "mean_p3": 42.01,
+      "median_p3": 37.65,
+      "std_p3": 25.05,
+      "mean_final": 46.57,
+      "median_final": 44.05
+    }
+  },
+  "controls_20_over_efs": {
+    "cases_checked": 25,
+    "max_delta_in_normal_efs_matches": 0.0,
+    "is_perfectly_isolated_to_fallback": true,
+    "sample_cases": [
+      {
+        "player": "S Dhawan",
+        "match_id": 1082591,
+        "entry_over": 0.4,
+        "m0_p3": 61.3,
+        "m1_p3": 61.3,
+        "delta": 0.0
+      },
+      {
+        "player": "MC Henriques",
+        "match_id": 1082591,
+        "entry_over": 1.4,
+        "m0_p3": 79.2,
+        "m1_p3": 79.2,
+        "delta": 0.0
+      },
+      {
+        "player": "Yuvraj Singh",
+        "match_id": 1082591,
+        "entry_over": 10.4,
+        "m0_p3": 79.6,
+        "m1_p3": 79.6,
+        "delta": 0.0
+      },
+      {
+        "player": "DJ Hooda",
+        "match_id": 1082591,
+        "entry_over": 15.3,
+        "m0_p3": 56.8,
+        "m1_p3": 56.8,
+        "delta": 0.0
+      },
+      {
+        "player": "PA Patel",
+        "match_id": 1082592,
+        "entry_over": 0.0,
+        "m0_p3": 91.2,
+        "m1_p3": 91.2,
+        "delta": 0.0
+      }
+    ]
+  },
+  "invariance_and_leakage_audit": {
+    "outcome_invariance": {
+      "all_deltas_zero": true,
+      "deltas": {
+        "Model 0 (Phase 7L)": 0.0,
+        "Model 1 (Phase 7M Alpha)": 0.0,
+        "Model 2 (Par Baseline)": 0.0,
+        "Model 3 (Transitional)": 0.0
+      }
+    },
+    "player_identity_invariance": {
+      "all_deltas_zero": true,
+      "deltas": {
+        "Model 0 (Phase 7L)": 0.0,
+        "Model 1 (Phase 7M Alpha)": 0.0,
+        "Model 2 (Par Baseline)": 0.0,
+        "Model 3 (Transitional)": 0.0
+      }
+    }
+  },
+  "comparison_matrix": {
+    "model_0": {
+      "name": "Model 0 (Current Phase 7L)",
+      "formula": "raw_accel = (window_rr - team_rr_entry) / 3.0",
+      "pros": "Existing production code; byte-equivalent.",
+      "cons": "Severely distorts P3 when early-over noise spike occurs (e.g. 22 RPO 1st over).",
+      "suryavanshi_p3": 33.9,
+      "suryavanshi_final": 57.9
+    },
+    "model_1": {
+      "name": "Model 1 (Phase 7M Alpha Stabilization)",
+      "formula": "alpha = min(1.0, balls/24.0); eff_rr = alpha*entry_rr + (1-alpha)*par_rr",
+      "pros": "Smooth sample-size blending; perfectly continuous; converges to actual RR at 24 balls.",
+      "cons": "Requires par_rr parameter choice (10.0 RPO recommended).",
+      "suryavanshi_p3": 73.1,
+      "suryavanshi_final": 76.4
+    },
+    "model_2": {
+      "name": "Model 2 (Early-Over Par Baseline)",
+      "formula": "if entry_over < 4.0: eff_rr = par_rr; else team_rr_entry",
+      "pros": "Completely decouples early batting from prior partner's over.",
+      "cons": "Discontinuous cliff at over 4.0; ignores all actual team progress in overs 0-4.",
+      "suryavanshi_p3": 82.5,
+      "suryavanshi_final": 80.9
+    },
+    "model_3": {
+      "name": "Model 3 (Transitional Baseline)",
+      "formula": "over <= 1: par; 1 < over < 4: linear transition; over >= 4: actual",
+      "pros": "Protects overs 0-1 from extreme spikes; continuous blend to over 4.",
+      "cons": "Treats over 0.5 identically to 0.0; slightly less mathematically elegant than alpha balls.",
+      "suryavanshi_p3": 82.5,
+      "suryavanshi_final": 80.9
+    }
+  },
+  "recommendation": {
+    "recommended_model": "Model 1 (Phase 7M Sample-Size Stabilization)",
+    "selected_option": "B. Adopt Phase 7M sample-size stabilization",
+    "justification": "Model 1 provides a rigorous, ball-by-ball sample size stabilization that is strictly continuous, preserves accountability on poor batting, eliminates artificial penalties on explosive opening overs, converges naturally to actual team RR at 24 balls (over 4.0), and has zero side-effects on 20-over EFS matches."
+  }
+}

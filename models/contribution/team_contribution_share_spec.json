@@ -1,0 +1,299 @@
+{
+  "methods_evaluated": [
+    {
+      "method": "rectified_positive",
+      "formula": "max(0, C_i) / sum(max(0, C_j)) * 100",
+      "properties": "Sum to 100%, non-negative, rewards net-positive contributors only.",
+      "negative_handling": "Batters with C_i <= 0 receive 0.0% share.",
+      "zero_sum_handling": "Equal share (100/N) if entire team collapses with negative impact.",
+      "recommended": true
+    },
+    {
+      "method": "softmax",
+      "formula": "exp(C_i / tau) / sum(exp(C_j / tau)) * 100",
+      "properties": "Strictly positive, smooth, sums to 100%.",
+      "negative_handling": "Sub-zero scores still get small positive share.",
+      "recommended": false,
+      "drawback": "Artificially credits negative contributors."
+    },
+    {
+      "method": "linear_offset",
+      "formula": "(C_i - min(C)) / sum(C_j - min(C)) * 100",
+      "properties": "Sets worst batter to 0.0% and shifts others linearly.",
+      "recommended": false
+    },
+    {
+      "method": "signed_net",
+      "formula": "C_i / sum(C_j) * 100",
+      "properties": "Can produce negative percentages and >100% shares.",
+      "recommended": false,
+      "drawback": "Very confusing for public consumption (e.g. 140% share, -40% share)."
+    }
+  ],
+  "sample_innings_comparisons": [
+    {
+      "match_id": "1082591",
+      "innings": 1,
+      "team": "Sunrisers Hyderabad",
+      "batters": [
+        {
+          "player": "DA Warner",
+          "runs": 14,
+          "raw_score": 0.263,
+          "share_rectified_positive": 3.99,
+          "share_softmax": 4.74,
+          "share_linear_offset": 4.08,
+          "share_signed_net": 3.99
+        },
+        {
+          "player": "S Dhawan",
+          "runs": 40,
+          "raw_score": 0.691,
+          "share_rectified_positive": 10.48,
+          "share_softmax": 7.27,
+          "share_linear_offset": 10.53,
+          "share_signed_net": 10.48
+        },
+        {
+          "player": "MC Henriques",
+          "runs": 52,
+          "raw_score": 2.169,
+          "share_rectified_positive": 32.92,
+          "share_softmax": 31.88,
+          "share_linear_offset": 32.8,
+          "share_signed_net": 32.92
+        },
+        {
+          "player": "Yuvraj Singh",
+          "runs": 62,
+          "raw_score": 2.471,
+          "share_rectified_positive": 37.5,
+          "share_softmax": 43.12,
+          "share_linear_offset": 37.34,
+          "share_signed_net": 37.5
+        },
+        {
+          "player": "DJ Hooda",
+          "runs": 16,
+          "raw_score": 0.092,
+          "share_rectified_positive": 1.39,
+          "share_softmax": 3.99,
+          "share_linear_offset": 1.51,
+          "share_signed_net": 1.39
+        },
+        {
+          "player": "BCJ Cutting",
+          "runs": 16,
+          "raw_score": 0.904,
+          "share_rectified_positive": 13.72,
+          "share_softmax": 9.0,
+          "share_linear_offset": 13.74,
+          "share_signed_net": 13.72
+        }
+      ]
+    },
+    {
+      "match_id": "1082591",
+      "innings": 2,
+      "team": "Royal Challengers Bangalore",
+      "batters": [
+        {
+          "player": "CH Gayle",
+          "runs": 32,
+          "raw_score": 0.257,
+          "share_rectified_positive": 40.43,
+          "share_softmax": 19.25,
+          "share_linear_offset": 11.21,
+          "share_signed_net": -1.44
+        },
+        {
+          "player": "Mandeep Singh",
+          "runs": 24,
+          "raw_score": -0.069,
+          "share_rectified_positive": 0.0,
+          "share_softmax": 13.89,
+          "share_linear_offset": 10.85,
+          "share_signed_net": 0.38
+        },
+        {
+          "player": "TM Head",
+          "runs": 30,
+          "raw_score": 0.074,
+          "share_rectified_positive": 11.6,
+          "share_softmax": 16.02,
+          "share_linear_offset": 11.01,
+          "share_signed_net": -0.41
+        },
+        {
+          "player": "KM Jadhav",
+          "runs": 31,
+          "raw_score": 0.306,
+          "share_rectified_positive": 47.98,
+          "share_softmax": 20.2,
+          "share_linear_offset": 11.27,
+          "share_signed_net": -1.71
+        },
+        {
+          "player": "SR Watson",
+          "runs": 22,
+          "raw_score": -0.963,
+          "share_rectified_positive": 0.0,
+          "share_softmax": 5.68,
+          "share_linear_offset": 9.84,
+          "share_signed_net": 5.4
+        },
+        {
+          "player": "Sachin Baby",
+          "runs": 1,
+          "raw_score": -0.732,
+          "share_rectified_positive": 0.0,
+          "share_softmax": 7.16,
+          "share_linear_offset": 10.1,
+          "share_signed_net": 4.1
+        },
+        {
+          "player": "STR Binny",
+          "runs": 11,
+          "raw_score": -0.651,
+          "share_rectified_positive": 0.0,
+          "share_softmax": 7.76,
+          "share_linear_offset": 10.19,
+          "share_signed_net": 3.65
+        },
+        {
+          "player": "S Aravind",
+          "runs": 0,
+          "raw_score": -1.117,
+          "share_rectified_positive": 0.0,
+          "share_softmax": 4.87,
+          "share_linear_offset": 9.66,
+          "share_signed_net": 6.26
+        },
+        {
+          "player": "TS Mills",
+          "runs": 6,
+          "raw_score": -1.097,
+          "share_rectified_positive": 0.0,
+          "share_softmax": 4.97,
+          "share_linear_offset": 9.68,
+          "share_signed_net": 6.15
+        },
+        {
+          "player": "YS Chahal",
+          "runs": 3,
+          "raw_score": -9.566,
+          "share_rectified_positive": 0.0,
+          "share_softmax": 0.0,
+          "share_linear_offset": 0.11,
+          "share_signed_net": 53.62
+        },
+        {
+          "player": "A Choudhary",
+          "runs": 6,
+          "raw_score": -4.284,
+          "share_rectified_positive": 0.0,
+          "share_softmax": 0.21,
+          "share_linear_offset": 6.08,
+          "share_signed_net": 24.01
+        }
+      ]
+    },
+    {
+      "match_id": "1082592",
+      "innings": 1,
+      "team": "Mumbai Indians",
+      "batters": [
+        {
+          "player": "PA Patel",
+          "runs": 19,
+          "raw_score": 1.023,
+          "share_rectified_positive": 24.57,
+          "share_softmax": 17.44,
+          "share_linear_offset": 15.67,
+          "share_signed_net": 99.2
+        },
+        {
+          "player": "JC Buttler",
+          "runs": 38,
+          "raw_score": 0.212,
+          "share_rectified_positive": 5.09,
+          "share_softmax": 7.75,
+          "share_linear_offset": 10.67,
+          "share_signed_net": 20.53
+        },
+        {
+          "player": "RG Sharma",
+          "runs": 3,
+          "raw_score": -1.42,
+          "share_rectified_positive": 0.0,
+          "share_softmax": 1.52,
+          "share_linear_offset": 0.62,
+          "share_signed_net": -137.64
+        },
+        {
+          "player": "N Rana",
+          "runs": 34,
+          "raw_score": -0.452,
+          "share_rectified_positive": 0.0,
+          "share_softmax": 3.99,
+          "share_linear_offset": 6.58,
+          "share_signed_net": -43.78
+        },
+        {
+          "player": "AT Rayudu",
+          "runs": 10,
+          "raw_score": -0.355,
+          "share_rectified_positive": 0.0,
+          "share_softmax": 4.39,
+          "share_linear_offset": 7.18,
+          "share_signed_net": -34.42
+        },
+        {
+          "player": "KH Pandya",
+          "runs": 3,
+          "raw_score": -0.708,
+          "share_rectified_positive": 0.0,
+          "share_softmax": 3.09,
+          "share_linear_offset": 5.0,
+          "share_signed_net": -68.6
+        },
+        {
+          "player": "KA Pollard",
+          "runs": 27,
+          "raw_score": 0.307,
+          "share_rectified_positive": 7.36,
+          "share_softmax": 8.52,
+          "share_linear_offset": 11.25,
+          "share_signed_net": 29.73
+        },
+        {
+          "player": "HH Pandya",
+          "runs": 35,
+          "raw_score": 1.578,
+          "share_rectified_positive": 37.89,
+          "share_softmax": 30.35,
+          "share_linear_offset": 19.08,
+          "share_signed_net": 152.93
+        },
+        {
+          "player": "TG Southee",
+          "runs": 7,
+          "raw_score": 1.045,
+          "share_rectified_positive": 25.09,
+          "share_softmax": 17.82,
+          "share_linear_offset": 15.8,
+          "share_signed_net": 101.28
+        },
+        {
+          "player": "MJ McClenaghan",
+          "runs": 0,
+          "raw_score": -0.198,
+          "share_rectified_positive": 0.0,
+          "share_softmax": 5.14,
+          "share_linear_offset": 8.14,
+          "share_signed_net": -19.23
+        }
+      ]
+    }
+  ]
+}

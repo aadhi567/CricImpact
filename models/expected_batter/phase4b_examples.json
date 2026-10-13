@@ -1,0 +1,2295 @@
+[
+  {
+    "profile": "1. High runs + high SR",
+    "player": "DA Warner",
+    "match_id": "1082596",
+    "season": "2017",
+    "innings_type": "Chase (2nd Innings)",
+    "batting_position": 1,
+    "dismissal_status": "not out",
+    "actual_performance": {
+      "runs": 76,
+      "balls_faced": 45,
+      "strike_rate": 168.89,
+      "runs_per_ball": 1.689,
+      "opportunity_usage": 0.375,
+      "fours": 6,
+      "sixes": 4,
+      "boundary_runs": 48,
+      "boundary_percentage": 63.16,
+      "dot_balls": 12,
+      "dot_ball_percentage": 26.67
+    },
+    "expected_performance": {
+      "expected_runs": 28.7,
+      "run_deviation": 47.3,
+      "run_performance_ratio": 2.648,
+      "expected_sr": 103.3,
+      "sr_deviation": 65.59,
+      "sr_performance_ratio": 1.635
+    },
+    "match_state_entry": {
+      "score": 0,
+      "over": 0.0,
+      "wickets_remaining": 10,
+      "balls_remaining": 120,
+      "team_rr": 0.0
+    },
+    "match_state_exit": {
+      "score": 140,
+      "over": 15.3,
+      "wickets_remaining": 9,
+      "balls_remaining": 27,
+      "team_rr": 9.03
+    },
+    "state_transformation": {
+      "team_runs_added": 140,
+      "overs_spent": 15.5,
+      "window_team_rr": 9.03,
+      "team_rr_change": 9.03,
+      "expected_final_entry": null,
+      "expected_final_exit": null,
+      "expected_final_change": null,
+      "trajectory_deviation_change": null,
+      "target": 136.0,
+      "runs_required_entry": 136.0,
+      "runs_required_exit": 0.0,
+      "required_rr_entry": 6.8,
+      "required_rr_exit": 0.0,
+      "required_rr_change": 6.8,
+      "rr_gap_change": 15.83,
+      "runs_required_reduction": 136.0,
+      "target_progress_change": 1.0294
+    },
+    "resource_transformation": {
+      "wickets_lost_during_stay": 1,
+      "wicket_resource_change": -1,
+      "overs_remaining_entry": 20.0,
+      "overs_remaining_exit": 4.5
+    },
+    "partnership_context": {
+      "partnership_runs": 140,
+      "batter_partnership_runs": 76,
+      "partner_runs": 64,
+      "batter_partnership_share": 0.543,
+      "partnership_duration": 93
+    },
+    "post_exit_retrospective": {
+      "post_exit_runs": 0,
+      "post_exit_overs": 0.0,
+      "post_exit_rr": 0.0,
+      "post_exit_wickets_lost": 0,
+      "post_exit_rr_change": 0.0,
+      "final_team_score": 140,
+      "won_match": true,
+      "winning_margin": 9.0,
+      "margin_type": "wickets",
+      "target_reached": true
+    },
+    "counterfactual_analysis": {
+      "CF_Par": {
+        "hypothetical_runs": 28.7,
+        "simulated_required_rr_exit": 9.56,
+        "simulated_required_rr_change": -2.76,
+        "rrr_relief_gap_vs_actual": -9.56
+      },
+      "CF_Accelerated": {
+        "hypothetical_runs": 85,
+        "additional_runs": 9,
+        "simulated_required_rr_exit": 0.0,
+        "simulated_required_rr_change": 6.8,
+        "additional_rrr_reduction_vs_actual": 0.0
+      },
+      "CF_Wicket_Preserved": {
+        "hypothetical_wickets_remaining": 10,
+        "resource_preserved": 0,
+        "commentary": "Maintains batting depth for subsequent death overs."
+      },
+      "CF_Strike_Rotation": {
+        "hypothetical_runs": 79,
+        "simulated_required_rr_exit": 0.0,
+        "simulated_required_rr_change": 6.8,
+        "rotation_rrr_relief_gain": 0.0
+      }
+    }
+  },
+  {
+    "profile": "2. High runs + low SR",
+    "player": "CA Lynn",
+    "match_id": "1178413",
+    "season": "2019",
+    "innings_type": "First Innings",
+    "batting_position": 1,
+    "dismissal_status": "out",
+    "actual_performance": {
+      "runs": 51,
+      "balls_faced": 47,
+      "strike_rate": 108.51,
+      "runs_per_ball": 1.085,
+      "opportunity_usage": 0.3917,
+      "fours": 4,
+      "sixes": 1,
+      "boundary_runs": 22,
+      "boundary_percentage": 43.14,
+      "dot_balls": 14,
+      "dot_ball_percentage": 29.79
+    },
+    "expected_performance": {
+      "expected_runs": 29.9,
+      "run_deviation": 21.1,
+      "run_performance_ratio": 1.706,
+      "expected_sr": 114.4,
+      "sr_deviation": -5.89,
+      "sr_performance_ratio": 0.949
+    },
+    "match_state_entry": {
+      "score": 0,
+      "over": 0.0,
+      "wickets_remaining": 10,
+      "balls_remaining": 120,
+      "team_rr": 0.0
+    },
+    "match_state_exit": {
+      "score": 133,
+      "over": 17.0,
+      "wickets_remaining": 4,
+      "balls_remaining": 18,
+      "team_rr": 7.82
+    },
+    "state_transformation": {
+      "team_runs_added": 133,
+      "overs_spent": 17.0,
+      "window_team_rr": 7.82,
+      "team_rr_change": 7.82,
+      "expected_final_entry": 155.0,
+      "expected_final_exit": 160.8,
+      "expected_final_change": 5.8,
+      "trajectory_deviation_change": -4.8,
+      "target": null,
+      "runs_required_entry": null,
+      "runs_required_exit": null,
+      "required_rr_entry": null,
+      "required_rr_exit": null,
+      "required_rr_change": null,
+      "rr_gap_change": null,
+      "runs_required_reduction": null,
+      "target_progress_change": null
+    },
+    "resource_transformation": {
+      "wickets_lost_during_stay": 6,
+      "wicket_resource_change": -6,
+      "overs_remaining_entry": 20.0,
+      "overs_remaining_exit": 3.0
+    },
+    "partnership_context": {
+      "partnership_runs": 133,
+      "batter_partnership_runs": 51,
+      "partner_runs": 82,
+      "batter_partnership_share": 0.383,
+      "partnership_duration": 102
+    },
+    "post_exit_retrospective": {
+      "post_exit_runs": 26,
+      "post_exit_overs": 3.0,
+      "post_exit_rr": 8.67,
+      "post_exit_wickets_lost": 2,
+      "post_exit_rr_change": 0.85,
+      "final_team_score": 159,
+      "won_match": false,
+      "winning_margin": 9.0,
+      "margin_type": "wickets",
+      "target_reached": null
+    },
+    "counterfactual_analysis": {
+      "CF_Par": {
+        "hypothetical_runs": 29.9,
+        "simulated_expected_final_exit": 160.5,
+        "simulated_expected_final_change": 5.5,
+        "trajectory_gap_vs_actual": -0.3
+      },
+      "CF_Accelerated": {
+        "hypothetical_runs": 60,
+        "additional_runs": 9,
+        "simulated_expected_final_exit": 183.0,
+        "simulated_expected_final_change": 28.0,
+        "trajectory_gain_vs_actual": 22.2
+      },
+      "CF_Wicket_Preserved": {
+        "hypothetical_wickets_remaining": 10,
+        "simulated_expected_final_exit": 170.6,
+        "simulated_expected_final_change": 15.6,
+        "wicket_preservation_value": 9.8
+      },
+      "CF_Strike_Rotation": {
+        "hypothetical_runs": 54,
+        "simulated_expected_final_exit": 175.8,
+        "simulated_expected_final_change": 20.8,
+        "rotation_gain_vs_actual": 15.0
+      }
+    }
+  },
+  {
+    "profile": "3. Low runs + high SR",
+    "player": "MS Dhoni",
+    "match_id": "1082620",
+    "season": "2017",
+    "innings_type": "First Innings",
+    "batting_position": 4,
+    "dismissal_status": "out",
+    "actual_performance": {
+      "runs": 23,
+      "balls_faced": 11,
+      "strike_rate": 209.09,
+      "runs_per_ball": 2.091,
+      "opportunity_usage": 0.2821,
+      "fours": 1,
+      "sixes": 2,
+      "boundary_runs": 16,
+      "boundary_percentage": 69.57,
+      "dot_balls": 3,
+      "dot_ball_percentage": 27.27
+    },
+    "expected_performance": {
+      "expected_runs": 21.2,
+      "run_deviation": 1.8,
+      "run_performance_ratio": 1.085,
+      "expected_sr": 126.2,
+      "sr_deviation": 82.89,
+      "sr_performance_ratio": 1.657
+    },
+    "match_state_entry": {
+      "score": 112,
+      "over": 13.3,
+      "wickets_remaining": 8,
+      "balls_remaining": 39,
+      "team_rr": 8.3
+    },
+    "match_state_exit": {
+      "score": 148,
+      "over": 17.2,
+      "wickets_remaining": 7,
+      "balls_remaining": 16,
+      "team_rr": 8.54
+    },
+    "state_transformation": {
+      "team_runs_added": 36,
+      "overs_spent": 3.83,
+      "window_team_rr": 9.4,
+      "team_rr_change": 0.24,
+      "expected_final_entry": 179.5,
+      "expected_final_exit": 183.2,
+      "expected_final_change": 3.7,
+      "trajectory_deviation_change": 0.3,
+      "target": null,
+      "runs_required_entry": null,
+      "runs_required_exit": null,
+      "required_rr_entry": null,
+      "required_rr_exit": null,
+      "required_rr_change": null,
+      "rr_gap_change": null,
+      "runs_required_reduction": null,
+      "target_progress_change": null
+    },
+    "resource_transformation": {
+      "wickets_lost_during_stay": 1,
+      "wicket_resource_change": -1,
+      "overs_remaining_entry": 6.5,
+      "overs_remaining_exit": 2.67
+    },
+    "partnership_context": {
+      "partnership_runs": 36,
+      "batter_partnership_runs": 23,
+      "partner_runs": 13,
+      "batter_partnership_share": 0.639,
+      "partnership_duration": 23
+    },
+    "post_exit_retrospective": {
+      "post_exit_runs": 34,
+      "post_exit_overs": 2.67,
+      "post_exit_rr": 12.73,
+      "post_exit_wickets_lost": 2,
+      "post_exit_rr_change": 4.19,
+      "final_team_score": 182,
+      "won_match": false,
+      "winning_margin": 7.0,
+      "margin_type": "wickets",
+      "target_reached": null
+    },
+    "counterfactual_analysis": {
+      "CF_Par": {
+        "hypothetical_runs": 21.2,
+        "simulated_expected_final_exit": 181.5,
+        "simulated_expected_final_change": 2.0,
+        "trajectory_gap_vs_actual": -1.7
+      },
+      "CF_Accelerated": {
+        "hypothetical_runs": 25,
+        "additional_runs": 2,
+        "simulated_expected_final_exit": 184.0,
+        "simulated_expected_final_change": 4.5,
+        "trajectory_gain_vs_actual": 0.8
+      },
+      "CF_Wicket_Preserved": {
+        "hypothetical_wickets_remaining": 10,
+        "simulated_expected_final_exit": 177.7,
+        "simulated_expected_final_change": -1.8,
+        "wicket_preservation_value": -5.5
+      },
+      "CF_Strike_Rotation": {
+        "hypothetical_runs": 26,
+        "simulated_expected_final_exit": 190.7,
+        "simulated_expected_final_change": 11.2,
+        "rotation_gain_vs_actual": 7.5
+      }
+    }
+  },
+  {
+    "profile": "4. 5-ball explosive cameo",
+    "player": "RA Tripathi",
+    "match_id": "1082599",
+    "season": "2017",
+    "innings_type": "Chase (2nd Innings)",
+    "batting_position": 4,
+    "dismissal_status": "out",
+    "actual_performance": {
+      "runs": 10,
+      "balls_faced": 5,
+      "strike_rate": 200.0,
+      "runs_per_ball": 2.0,
+      "opportunity_usage": 0.0556,
+      "fours": 2,
+      "sixes": 0,
+      "boundary_runs": 8,
+      "boundary_percentage": 80.0,
+      "dot_balls": 2,
+      "dot_ball_percentage": 40.0
+    },
+    "expected_performance": {
+      "expected_runs": 26.8,
+      "run_deviation": -16.8,
+      "run_performance_ratio": 0.373,
+      "expected_sr": 121.7,
+      "sr_deviation": 78.3,
+      "sr_performance_ratio": 1.643
+    },
+    "match_state_entry": {
+      "score": 38,
+      "over": 5.0,
+      "wickets_remaining": 8,
+      "balls_remaining": 90,
+      "team_rr": 7.6
+    },
+    "match_state_exit": {
+      "score": 49,
+      "over": 5.5,
+      "wickets_remaining": 7,
+      "balls_remaining": 85,
+      "team_rr": 8.4
+    },
+    "state_transformation": {
+      "team_runs_added": 11,
+      "overs_spent": 0.83,
+      "window_team_rr": 13.25,
+      "team_rr_change": 0.8,
+      "expected_final_entry": null,
+      "expected_final_exit": null,
+      "expected_final_change": null,
+      "trajectory_deviation_change": null,
+      "target": 206.0,
+      "runs_required_entry": 168.0,
+      "runs_required_exit": 157.0,
+      "required_rr_entry": 11.2,
+      "required_rr_exit": 11.08,
+      "required_rr_change": 0.12,
+      "rr_gap_change": 0.92,
+      "runs_required_reduction": 11.0,
+      "target_progress_change": 0.0534
+    },
+    "resource_transformation": {
+      "wickets_lost_during_stay": 1,
+      "wicket_resource_change": -1,
+      "overs_remaining_entry": 15.0,
+      "overs_remaining_exit": 14.17
+    },
+    "partnership_context": {
+      "partnership_runs": 15,
+      "batter_partnership_runs": 10,
+      "partner_runs": 5,
+      "batter_partnership_share": 0.667,
+      "partnership_duration": 6
+    },
+    "post_exit_retrospective": {
+      "post_exit_runs": 59,
+      "post_exit_overs": 10.33,
+      "post_exit_rr": 5.71,
+      "post_exit_wickets_lost": 7,
+      "post_exit_rr_change": -2.69,
+      "final_team_score": 108,
+      "won_match": false,
+      "winning_margin": 97.0,
+      "margin_type": "runs",
+      "target_reached": false
+    },
+    "counterfactual_analysis": {
+      "CF_Par": {
+        "hypothetical_runs": 26.8,
+        "simulated_required_rr_exit": 9.6,
+        "simulated_required_rr_change": 1.6,
+        "rrr_relief_gap_vs_actual": 1.48
+      },
+      "CF_Accelerated": {
+        "hypothetical_runs": 12,
+        "additional_runs": 2,
+        "simulated_required_rr_exit": 10.66,
+        "simulated_required_rr_change": 0.54,
+        "additional_rrr_reduction_vs_actual": 0.42
+      },
+      "CF_Wicket_Preserved": {
+        "hypothetical_wickets_remaining": 10,
+        "resource_preserved": 1,
+        "commentary": "Maintains batting depth for subsequent death overs."
+      },
+      "CF_Strike_Rotation": {
+        "hypothetical_runs": 12,
+        "simulated_required_rr_exit": 10.66,
+        "simulated_required_rr_change": 0.54,
+        "rotation_rrr_relief_gain": 0.42
+      }
+    }
+  },
+  {
+    "profile": "5. Team already scoring quickly",
+    "player": "G Gambhir",
+    "match_id": "1082620",
+    "season": "2017",
+    "innings_type": "Chase (2nd Innings)",
+    "batting_position": 2,
+    "dismissal_status": "out",
+    "actual_performance": {
+      "runs": 62,
+      "balls_faced": 46,
+      "strike_rate": 134.78,
+      "runs_per_ball": 1.348,
+      "opportunity_usage": 0.3932,
+      "fours": 6,
+      "sixes": 1,
+      "boundary_runs": 30,
+      "boundary_percentage": 48.39,
+      "dot_balls": 11,
+      "dot_ball_percentage": 23.91
+    },
+    "expected_performance": {
+      "expected_runs": 31.0,
+      "run_deviation": 31.0,
+      "run_performance_ratio": 2.0,
+      "expected_sr": 125.2,
+      "sr_deviation": 9.58,
+      "sr_performance_ratio": 1.077
+    },
+    "match_state_entry": {
+      "score": 6,
+      "over": 0.3,
+      "wickets_remaining": 10,
+      "balls_remaining": 117,
+      "team_rr": 12.0
+    },
+    "match_state_exit": {
+      "score": 179,
+      "over": 17.4,
+      "wickets_remaining": 7,
+      "balls_remaining": 14,
+      "team_rr": 10.13
+    },
+    "state_transformation": {
+      "team_runs_added": 173,
+      "overs_spent": 17.17,
+      "window_team_rr": 10.08,
+      "team_rr_change": -1.87,
+      "expected_final_entry": null,
+      "expected_final_exit": null,
+      "expected_final_change": null,
+      "trajectory_deviation_change": null,
+      "target": 183.0,
+      "runs_required_entry": 177.0,
+      "runs_required_exit": 4.0,
+      "required_rr_entry": 9.08,
+      "required_rr_exit": 1.71,
+      "required_rr_change": 7.37,
+      "rr_gap_change": 5.5,
+      "runs_required_reduction": 173.0,
+      "target_progress_change": 0.9453
+    },
+    "resource_transformation": {
+      "wickets_lost_during_stay": 3,
+      "wicket_resource_change": -3,
+      "overs_remaining_entry": 19.5,
+      "overs_remaining_exit": 2.33
+    },
+    "partnership_context": {
+      "partnership_runs": 179,
+      "batter_partnership_runs": 62,
+      "partner_runs": 117,
+      "batter_partnership_share": 0.346,
+      "partnership_duration": 106
+    },
+    "post_exit_retrospective": {
+      "post_exit_runs": 5,
+      "post_exit_overs": 0.5,
+      "post_exit_rr": 10.0,
+      "post_exit_wickets_lost": 0,
+      "post_exit_rr_change": -0.13,
+      "final_team_score": 184,
+      "won_match": true,
+      "winning_margin": 7.0,
+      "margin_type": "wickets",
+      "target_reached": true
+    },
+    "counterfactual_analysis": {
+      "CF_Par": {
+        "hypothetical_runs": 31.0,
+        "simulated_required_rr_exit": 12.43,
+        "simulated_required_rr_change": -3.35,
+        "rrr_relief_gap_vs_actual": -10.72
+      },
+      "CF_Accelerated": {
+        "hypothetical_runs": 71,
+        "additional_runs": 9,
+        "simulated_required_rr_exit": 0.0,
+        "simulated_required_rr_change": 9.08,
+        "additional_rrr_reduction_vs_actual": 1.71
+      },
+      "CF_Wicket_Preserved": {
+        "hypothetical_wickets_remaining": 10,
+        "resource_preserved": 1,
+        "commentary": "Maintains batting depth for subsequent death overs."
+      },
+      "CF_Strike_Rotation": {
+        "hypothetical_runs": 65,
+        "simulated_required_rr_exit": 0.0,
+        "simulated_required_rr_change": 9.08,
+        "rotation_rrr_relief_gain": 1.71
+      }
+    }
+  },
+  {
+    "profile": "6. Team struggling below expected RR",
+    "player": "JJ Roy",
+    "match_id": "1082596",
+    "season": "2017",
+    "innings_type": "First Innings",
+    "batting_position": 1,
+    "dismissal_status": "out",
+    "actual_performance": {
+      "runs": 31,
+      "balls_faced": 21,
+      "strike_rate": 147.62,
+      "runs_per_ball": 1.476,
+      "opportunity_usage": 0.175,
+      "fours": 5,
+      "sixes": 0,
+      "boundary_runs": 20,
+      "boundary_percentage": 64.52,
+      "dot_balls": 7,
+      "dot_ball_percentage": 33.33
+    },
+    "expected_performance": {
+      "expected_runs": 29.9,
+      "run_deviation": 1.1,
+      "run_performance_ratio": 1.037,
+      "expected_sr": 114.4,
+      "sr_deviation": 33.22,
+      "sr_performance_ratio": 1.29
+    },
+    "match_state_entry": {
+      "score": 0,
+      "over": 0.0,
+      "wickets_remaining": 10,
+      "balls_remaining": 120,
+      "team_rr": 0.0
+    },
+    "match_state_exit": {
+      "score": 37,
+      "over": 5.2,
+      "wickets_remaining": 8,
+      "balls_remaining": 88,
+      "team_rr": 6.94
+    },
+    "state_transformation": {
+      "team_runs_added": 37,
+      "overs_spent": 5.33,
+      "window_team_rr": 6.94,
+      "team_rr_change": 6.94,
+      "expected_final_entry": 155.0,
+      "expected_final_exit": 156.1,
+      "expected_final_change": 1.1,
+      "trajectory_deviation_change": -4.8,
+      "target": null,
+      "runs_required_entry": null,
+      "runs_required_exit": null,
+      "required_rr_entry": null,
+      "required_rr_exit": null,
+      "required_rr_change": null,
+      "rr_gap_change": null,
+      "runs_required_reduction": null,
+      "target_progress_change": null
+    },
+    "resource_transformation": {
+      "wickets_lost_during_stay": 2,
+      "wicket_resource_change": -2,
+      "overs_remaining_entry": 20.0,
+      "overs_remaining_exit": 14.67
+    },
+    "partnership_context": {
+      "partnership_runs": 37,
+      "batter_partnership_runs": 31,
+      "partner_runs": 6,
+      "batter_partnership_share": 0.838,
+      "partnership_duration": 32
+    },
+    "post_exit_retrospective": {
+      "post_exit_runs": 98,
+      "post_exit_overs": 14.67,
+      "post_exit_rr": 6.68,
+      "post_exit_wickets_lost": 5,
+      "post_exit_rr_change": -0.26,
+      "final_team_score": 135,
+      "won_match": false,
+      "winning_margin": 9.0,
+      "margin_type": "wickets",
+      "target_reached": null
+    },
+    "counterfactual_analysis": {
+      "CF_Par": {
+        "hypothetical_runs": 29.9,
+        "simulated_expected_final_exit": 159.3,
+        "simulated_expected_final_change": 4.3,
+        "trajectory_gap_vs_actual": 3.2
+      },
+      "CF_Accelerated": {
+        "hypothetical_runs": 35,
+        "additional_runs": 4,
+        "simulated_expected_final_exit": 166.4,
+        "simulated_expected_final_change": 11.4,
+        "trajectory_gain_vs_actual": 10.3
+      },
+      "CF_Wicket_Preserved": {
+        "hypothetical_wickets_remaining": 10,
+        "simulated_expected_final_exit": 169.1,
+        "simulated_expected_final_change": 14.1,
+        "wicket_preservation_value": 13.0
+      },
+      "CF_Strike_Rotation": {
+        "hypothetical_runs": 34,
+        "simulated_expected_final_exit": 169.3,
+        "simulated_expected_final_change": 14.3,
+        "rotation_gain_vs_actual": 13.2
+      }
+    }
+  },
+  {
+    "profile": "7. Death-over cameo",
+    "player": "P Kumar",
+    "match_id": "1082596",
+    "season": "2017",
+    "innings_type": "First Innings",
+    "batting_position": 8,
+    "dismissal_status": "not out",
+    "actual_performance": {
+      "runs": 7,
+      "balls_faced": 7,
+      "strike_rate": 100.0,
+      "runs_per_ball": 1.0,
+      "opportunity_usage": 0.4375,
+      "fours": 0,
+      "sixes": 0,
+      "boundary_runs": 0,
+      "boundary_percentage": 0.0,
+      "dot_balls": 0,
+      "dot_ball_percentage": 0.0
+    },
+    "expected_performance": {
+      "expected_runs": 8.3,
+      "run_deviation": -1.3,
+      "run_performance_ratio": 0.843,
+      "expected_sr": 119.3,
+      "sr_deviation": -19.3,
+      "sr_performance_ratio": 0.838
+    },
+    "match_state_entry": {
+      "score": 114,
+      "over": 17.2,
+      "wickets_remaining": 4,
+      "balls_remaining": 16,
+      "team_rr": 6.58
+    },
+    "match_state_exit": {
+      "score": 135,
+      "over": 20.0,
+      "wickets_remaining": 3,
+      "balls_remaining": 0,
+      "team_rr": 6.75
+    },
+    "state_transformation": {
+      "team_runs_added": 21,
+      "overs_spent": 2.67,
+      "window_team_rr": 7.87,
+      "team_rr_change": 0.17,
+      "expected_final_entry": 139.1,
+      "expected_final_exit": 135.0,
+      "expected_final_change": -4.1,
+      "trajectory_deviation_change": -10.1,
+      "target": null,
+      "runs_required_entry": null,
+      "runs_required_exit": null,
+      "required_rr_entry": null,
+      "required_rr_exit": null,
+      "required_rr_change": null,
+      "rr_gap_change": null,
+      "runs_required_reduction": null,
+      "target_progress_change": null
+    },
+    "resource_transformation": {
+      "wickets_lost_during_stay": 1,
+      "wicket_resource_change": -1,
+      "overs_remaining_entry": 2.67,
+      "overs_remaining_exit": 0.0
+    },
+    "partnership_context": {
+      "partnership_runs": 21,
+      "batter_partnership_runs": 7,
+      "partner_runs": 14,
+      "batter_partnership_share": 0.333,
+      "partnership_duration": 16
+    },
+    "post_exit_retrospective": {
+      "post_exit_runs": 0,
+      "post_exit_overs": 0.0,
+      "post_exit_rr": 0.0,
+      "post_exit_wickets_lost": 0,
+      "post_exit_rr_change": 0.0,
+      "final_team_score": 135,
+      "won_match": false,
+      "winning_margin": 9.0,
+      "margin_type": "wickets",
+      "target_reached": null
+    },
+    "counterfactual_analysis": {
+      "CF_Par": {
+        "hypothetical_runs": 8.3,
+        "simulated_expected_final_exit": 136.0,
+        "simulated_expected_final_change": -3.1,
+        "trajectory_gap_vs_actual": 1.0
+      },
+      "CF_Accelerated": {
+        "hypothetical_runs": 9,
+        "additional_runs": 2,
+        "simulated_expected_final_exit": 137.0,
+        "simulated_expected_final_change": -2.1,
+        "trajectory_gain_vs_actual": 2.0
+      },
+      "CF_Wicket_Preserved": {
+        "hypothetical_wickets_remaining": 10,
+        "simulated_expected_final_exit": 135.0,
+        "simulated_expected_final_change": -4.1,
+        "wicket_preservation_value": 0.0
+      },
+      "CF_Strike_Rotation": {
+        "hypothetical_runs": 7,
+        "simulated_expected_final_exit": 135.0,
+        "simulated_expected_final_change": -4.1,
+        "rotation_gain_vs_actual": 0.0
+      }
+    }
+  },
+  {
+    "profile": "8. Middle-over cameo",
+    "player": "Ishan Kishan",
+    "match_id": "1082606",
+    "season": "2017",
+    "innings_type": "First Innings",
+    "batting_position": 4,
+    "dismissal_status": "out",
+    "actual_performance": {
+      "runs": 11,
+      "balls_faced": 14,
+      "strike_rate": 78.57,
+      "runs_per_ball": 0.786,
+      "opportunity_usage": 0.2692,
+      "fours": 1,
+      "sixes": 0,
+      "boundary_runs": 4,
+      "boundary_percentage": 36.36,
+      "dot_balls": 6,
+      "dot_ball_percentage": 42.86
+    },
+    "expected_performance": {
+      "expected_runs": 21.8,
+      "run_deviation": -10.8,
+      "run_performance_ratio": 0.505,
+      "expected_sr": 115.0,
+      "sr_deviation": -36.43,
+      "sr_performance_ratio": 0.683
+    },
+    "match_state_entry": {
+      "score": 82,
+      "over": 11.2,
+      "wickets_remaining": 8,
+      "balls_remaining": 52,
+      "team_rr": 7.24
+    },
+    "match_state_exit": {
+      "score": 153,
+      "over": 17.4,
+      "wickets_remaining": 6,
+      "balls_remaining": 14,
+      "team_rr": 8.66
+    },
+    "state_transformation": {
+      "team_runs_added": 71,
+      "overs_spent": 6.33,
+      "window_team_rr": 11.22,
+      "team_rr_change": 1.42,
+      "expected_final_entry": 164.3,
+      "expected_final_exit": 180.0,
+      "expected_final_change": 15.8,
+      "trajectory_deviation_change": 14.2,
+      "target": null,
+      "runs_required_entry": null,
+      "runs_required_exit": null,
+      "required_rr_entry": null,
+      "required_rr_exit": null,
+      "required_rr_change": null,
+      "rr_gap_change": null,
+      "runs_required_reduction": null,
+      "target_progress_change": null
+    },
+    "resource_transformation": {
+      "wickets_lost_during_stay": 2,
+      "wicket_resource_change": -2,
+      "overs_remaining_entry": 8.67,
+      "overs_remaining_exit": 2.33
+    },
+    "partnership_context": {
+      "partnership_runs": 72,
+      "batter_partnership_runs": 11,
+      "partner_runs": 61,
+      "batter_partnership_share": 0.153,
+      "partnership_duration": 39
+    },
+    "post_exit_retrospective": {
+      "post_exit_runs": 23,
+      "post_exit_overs": 2.33,
+      "post_exit_rr": 9.87,
+      "post_exit_wickets_lost": 0,
+      "post_exit_rr_change": 1.21,
+      "final_team_score": 176,
+      "won_match": false,
+      "winning_margin": 6.0,
+      "margin_type": "wickets",
+      "target_reached": null
+    },
+    "counterfactual_analysis": {
+      "CF_Par": {
+        "hypothetical_runs": 21.8,
+        "simulated_expected_final_exit": 194.5,
+        "simulated_expected_final_change": 30.2,
+        "trajectory_gap_vs_actual": 14.4
+      },
+      "CF_Accelerated": {
+        "hypothetical_runs": 14,
+        "additional_runs": 3,
+        "simulated_expected_final_exit": 188.7,
+        "simulated_expected_final_change": 24.4,
+        "trajectory_gain_vs_actual": 8.6
+      },
+      "CF_Wicket_Preserved": {
+        "hypothetical_wickets_remaining": 10,
+        "simulated_expected_final_exit": 179.0,
+        "simulated_expected_final_change": 14.7,
+        "wicket_preservation_value": -1.1
+      },
+      "CF_Strike_Rotation": {
+        "hypothetical_runs": 14,
+        "simulated_expected_final_exit": 188.7,
+        "simulated_expected_final_change": 24.4,
+        "rotation_gain_vs_actual": 8.6
+      }
+    }
+  },
+  {
+    "profile": "9. Many wickets remaining (>= 8 wkts)",
+    "player": "MC Henriques",
+    "match_id": "1082596",
+    "season": "2017",
+    "innings_type": "Chase (2nd Innings)",
+    "batting_position": 3,
+    "dismissal_status": "not out",
+    "actual_performance": {
+      "runs": 52,
+      "balls_faced": 39,
+      "strike_rate": 133.33,
+      "runs_per_ball": 1.333,
+      "opportunity_usage": 0.3861,
+      "fours": 6,
+      "sixes": 0,
+      "boundary_runs": 24,
+      "boundary_percentage": 46.15,
+      "dot_balls": 10,
+      "dot_ball_percentage": 25.64
+    },
+    "expected_performance": {
+      "expected_runs": 24.4,
+      "run_deviation": 27.6,
+      "run_performance_ratio": 2.131,
+      "expected_sr": 97.5,
+      "sr_deviation": 35.83,
+      "sr_performance_ratio": 1.367
+    },
+    "match_state_entry": {
+      "score": 32,
+      "over": 3.1,
+      "wickets_remaining": 9,
+      "balls_remaining": 101,
+      "team_rr": 10.11
+    },
+    "match_state_exit": {
+      "score": 140,
+      "over": 15.3,
+      "wickets_remaining": 9,
+      "balls_remaining": 27,
+      "team_rr": 9.03
+    },
+    "state_transformation": {
+      "team_runs_added": 108,
+      "overs_spent": 12.33,
+      "window_team_rr": 8.76,
+      "team_rr_change": -1.08,
+      "expected_final_entry": null,
+      "expected_final_exit": null,
+      "expected_final_change": null,
+      "trajectory_deviation_change": null,
+      "target": 136.0,
+      "runs_required_entry": 104.0,
+      "runs_required_exit": 0.0,
+      "required_rr_entry": 6.18,
+      "required_rr_exit": 0.0,
+      "required_rr_change": 6.18,
+      "rr_gap_change": 5.1,
+      "runs_required_reduction": 104.0,
+      "target_progress_change": 0.7941
+    },
+    "resource_transformation": {
+      "wickets_lost_during_stay": 0,
+      "wicket_resource_change": 0,
+      "overs_remaining_entry": 16.83,
+      "overs_remaining_exit": 4.5
+    },
+    "partnership_context": {
+      "partnership_runs": 108,
+      "batter_partnership_runs": 52,
+      "partner_runs": 56,
+      "batter_partnership_share": 0.481,
+      "partnership_duration": 74
+    },
+    "post_exit_retrospective": {
+      "post_exit_runs": 0,
+      "post_exit_overs": 0.0,
+      "post_exit_rr": 0.0,
+      "post_exit_wickets_lost": 0,
+      "post_exit_rr_change": 0.0,
+      "final_team_score": 140,
+      "won_match": true,
+      "winning_margin": 9.0,
+      "margin_type": "wickets",
+      "target_reached": true
+    },
+    "counterfactual_analysis": {
+      "CF_Par": {
+        "hypothetical_runs": 24.4,
+        "simulated_required_rr_exit": 5.33,
+        "simulated_required_rr_change": 0.85,
+        "rrr_relief_gap_vs_actual": -5.33
+      },
+      "CF_Accelerated": {
+        "hypothetical_runs": 60,
+        "additional_runs": 8,
+        "simulated_required_rr_exit": 0.0,
+        "simulated_required_rr_change": 6.18,
+        "additional_rrr_reduction_vs_actual": 0.0
+      },
+      "CF_Wicket_Preserved": {
+        "hypothetical_wickets_remaining": 10,
+        "resource_preserved": 0,
+        "commentary": "Maintains batting depth for subsequent death overs."
+      },
+      "CF_Strike_Rotation": {
+        "hypothetical_runs": 55,
+        "simulated_required_rr_exit": 0.0,
+        "simulated_required_rr_change": 6.18,
+        "rotation_rrr_relief_gain": 0.0
+      }
+    }
+  },
+  {
+    "profile": "10. Few wickets remaining (<= 3 wkts)",
+    "player": "Basil Thampi",
+    "match_id": "1082596",
+    "season": "2017",
+    "innings_type": "First Innings",
+    "batting_position": 9,
+    "dismissal_status": "not out",
+    "actual_performance": {
+      "runs": 13,
+      "balls_faced": 8,
+      "strike_rate": 162.5,
+      "runs_per_ball": 1.625,
+      "opportunity_usage": 0.5714,
+      "fours": 0,
+      "sixes": 1,
+      "boundary_runs": 6,
+      "boundary_percentage": 46.15,
+      "dot_balls": 1,
+      "dot_ball_percentage": 12.5
+    },
+    "expected_performance": {
+      "expected_runs": 5.6,
+      "run_deviation": 7.4,
+      "run_performance_ratio": 2.321,
+      "expected_sr": 97.0,
+      "sr_deviation": 65.5,
+      "sr_performance_ratio": 1.675
+    },
+    "match_state_entry": {
+      "score": 115,
+      "over": 17.4,
+      "wickets_remaining": 3,
+      "balls_remaining": 14,
+      "team_rr": 6.51
+    },
+    "match_state_exit": {
+      "score": 135,
+      "over": 20.0,
+      "wickets_remaining": 3,
+      "balls_remaining": 0,
+      "team_rr": 6.75
+    },
+    "state_transformation": {
+      "team_runs_added": 20,
+      "overs_spent": 2.33,
+      "window_team_rr": 8.58,
+      "team_rr_change": 0.24,
+      "expected_final_entry": 133.3,
+      "expected_final_exit": 135.0,
+      "expected_final_change": 1.7,
+      "trajectory_deviation_change": -7.7,
+      "target": null,
+      "runs_required_entry": null,
+      "runs_required_exit": null,
+      "required_rr_entry": null,
+      "required_rr_exit": null,
+      "required_rr_change": null,
+      "rr_gap_change": null,
+      "runs_required_reduction": null,
+      "target_progress_change": null
+    },
+    "resource_transformation": {
+      "wickets_lost_during_stay": 0,
+      "wicket_resource_change": 0,
+      "overs_remaining_entry": 2.33,
+      "overs_remaining_exit": 0.0
+    },
+    "partnership_context": {
+      "partnership_runs": 20,
+      "batter_partnership_runs": 13,
+      "partner_runs": 7,
+      "batter_partnership_share": 0.65,
+      "partnership_duration": 14
+    },
+    "post_exit_retrospective": {
+      "post_exit_runs": 0,
+      "post_exit_overs": 0.0,
+      "post_exit_rr": 0.0,
+      "post_exit_wickets_lost": 0,
+      "post_exit_rr_change": 0.0,
+      "final_team_score": 135,
+      "won_match": false,
+      "winning_margin": 9.0,
+      "margin_type": "wickets",
+      "target_reached": null
+    },
+    "counterfactual_analysis": {
+      "CF_Par": {
+        "hypothetical_runs": 5.6,
+        "simulated_expected_final_exit": 128.0,
+        "simulated_expected_final_change": -5.3,
+        "trajectory_gap_vs_actual": -7.0
+      },
+      "CF_Accelerated": {
+        "hypothetical_runs": 15,
+        "additional_runs": 2,
+        "simulated_expected_final_exit": 137.0,
+        "simulated_expected_final_change": 3.7,
+        "trajectory_gain_vs_actual": 2.0
+      },
+      "CF_Wicket_Preserved": {
+        "hypothetical_wickets_remaining": 10,
+        "simulated_expected_final_exit": 135.0,
+        "simulated_expected_final_change": 1.7,
+        "wicket_preservation_value": 0.0
+      },
+      "CF_Strike_Rotation": {
+        "hypothetical_runs": 14,
+        "simulated_expected_final_exit": 136.0,
+        "simulated_expected_final_change": 2.7,
+        "rotation_gain_vs_actual": 1.0
+      }
+    }
+  },
+  {
+    "profile": "11. 1st Innings Trajectory Transformation (+20+ runs)",
+    "player": "SV Samson",
+    "match_id": "1082599",
+    "season": "2017",
+    "innings_type": "First Innings",
+    "batting_position": 3,
+    "dismissal_status": "out",
+    "actual_performance": {
+      "runs": 102,
+      "balls_faced": 63,
+      "strike_rate": 161.9,
+      "runs_per_ball": 1.619,
+      "opportunity_usage": 0.5575,
+      "fours": 8,
+      "sixes": 5,
+      "boundary_runs": 62,
+      "boundary_percentage": 60.78,
+      "dot_balls": 16,
+      "dot_ball_percentage": 25.4
+    },
+    "expected_performance": {
+      "expected_runs": 30.8,
+      "run_deviation": 71.2,
+      "run_performance_ratio": 3.312,
+      "expected_sr": 107.6,
+      "sr_deviation": 54.3,
+      "sr_performance_ratio": 1.505
+    },
+    "match_state_entry": {
+      "score": 2,
+      "over": 1.1,
+      "wickets_remaining": 9,
+      "balls_remaining": 113,
+      "team_rr": 1.71
+    },
+    "match_state_exit": {
+      "score": 166,
+      "over": 18.2,
+      "wickets_remaining": 6,
+      "balls_remaining": 10,
+      "team_rr": 9.05
+    },
+    "state_transformation": {
+      "team_runs_added": 164,
+      "overs_spent": 17.17,
+      "window_team_rr": 9.55,
+      "team_rr_change": 7.34,
+      "expected_final_entry": 148.2,
+      "expected_final_exit": 184.5,
+      "expected_final_change": 36.3,
+      "trajectory_deviation_change": 19.2,
+      "target": null,
+      "runs_required_entry": null,
+      "runs_required_exit": null,
+      "required_rr_entry": null,
+      "required_rr_exit": null,
+      "required_rr_change": null,
+      "rr_gap_change": null,
+      "runs_required_reduction": null,
+      "target_progress_change": null
+    },
+    "resource_transformation": {
+      "wickets_lost_during_stay": 3,
+      "wicket_resource_change": -3,
+      "overs_remaining_entry": 18.83,
+      "overs_remaining_exit": 1.67
+    },
+    "partnership_context": {
+      "partnership_runs": 164,
+      "batter_partnership_runs": 102,
+      "partner_runs": 62,
+      "batter_partnership_share": 0.622,
+      "partnership_duration": 103
+    },
+    "post_exit_retrospective": {
+      "post_exit_runs": 39,
+      "post_exit_overs": 1.67,
+      "post_exit_rr": 23.35,
+      "post_exit_wickets_lost": 0,
+      "post_exit_rr_change": 14.3,
+      "final_team_score": 205,
+      "won_match": true,
+      "winning_margin": 97.0,
+      "margin_type": "runs",
+      "target_reached": null
+    },
+    "counterfactual_analysis": {
+      "CF_Par": {
+        "hypothetical_runs": 30.8,
+        "simulated_expected_final_exit": 151.3,
+        "simulated_expected_final_change": 3.1,
+        "trajectory_gap_vs_actual": -33.2
+      },
+      "CF_Accelerated": {
+        "hypothetical_runs": 115,
+        "additional_runs": 13,
+        "simulated_expected_final_exit": 203.7,
+        "simulated_expected_final_change": 55.5,
+        "trajectory_gain_vs_actual": 19.2
+      },
+      "CF_Wicket_Preserved": {
+        "hypothetical_wickets_remaining": 10,
+        "simulated_expected_final_exit": 188.3,
+        "simulated_expected_final_change": 40.1,
+        "wicket_preservation_value": 3.8
+      },
+      "CF_Strike_Rotation": {
+        "hypothetical_runs": 105,
+        "simulated_expected_final_exit": 193.7,
+        "simulated_expected_final_change": 45.5,
+        "rotation_gain_vs_actual": 9.2
+      }
+    }
+  },
+  {
+    "profile": "12. 1st Innings Trajectory Shift with Wicket Loss",
+    "player": "DR Smith",
+    "match_id": "1082596",
+    "season": "2017",
+    "innings_type": "First Innings",
+    "batting_position": 6,
+    "dismissal_status": "out",
+    "actual_performance": {
+      "runs": 37,
+      "balls_faced": 27,
+      "strike_rate": 137.04,
+      "runs_per_ball": 1.37,
+      "opportunity_usage": 0.4219,
+      "fours": 4,
+      "sixes": 1,
+      "boundary_runs": 22,
+      "boundary_percentage": 59.46,
+      "dot_balls": 8,
+      "dot_ball_percentage": 29.63
+    },
+    "expected_performance": {
+      "expected_runs": 18.0,
+      "run_deviation": 19.0,
+      "run_performance_ratio": 2.056,
+      "expected_sr": 96.1,
+      "sr_deviation": 40.94,
+      "sr_performance_ratio": 1.426
+    },
+    "match_state_entry": {
+      "score": 58,
+      "over": 9.2,
+      "wickets_remaining": 6,
+      "balls_remaining": 64,
+      "team_rr": 6.21
+    },
+    "match_state_exit": {
+      "score": 113,
+      "over": 16.4,
+      "wickets_remaining": 5,
+      "balls_remaining": 20,
+      "team_rr": 6.78
+    },
+    "state_transformation": {
+      "team_runs_added": 55,
+      "overs_spent": 7.33,
+      "window_team_rr": 7.5,
+      "team_rr_change": 0.57,
+      "expected_final_entry": 133.2,
+      "expected_final_exit": 145.2,
+      "expected_final_change": 12.0,
+      "trajectory_deviation_change": -7.6,
+      "target": null,
+      "runs_required_entry": null,
+      "runs_required_exit": null,
+      "required_rr_entry": null,
+      "required_rr_exit": null,
+      "required_rr_change": null,
+      "rr_gap_change": null,
+      "runs_required_reduction": null,
+      "target_progress_change": null
+    },
+    "resource_transformation": {
+      "wickets_lost_during_stay": 1,
+      "wicket_resource_change": -1,
+      "overs_remaining_entry": 10.67,
+      "overs_remaining_exit": 3.33
+    },
+    "partnership_context": {
+      "partnership_runs": 56,
+      "batter_partnership_runs": 37,
+      "partner_runs": 19,
+      "batter_partnership_share": 0.661,
+      "partnership_duration": 46
+    },
+    "post_exit_retrospective": {
+      "post_exit_runs": 22,
+      "post_exit_overs": 3.33,
+      "post_exit_rr": 6.61,
+      "post_exit_wickets_lost": 2,
+      "post_exit_rr_change": -0.17,
+      "final_team_score": 135,
+      "won_match": false,
+      "winning_margin": 9.0,
+      "margin_type": "wickets",
+      "target_reached": null
+    },
+    "counterfactual_analysis": {
+      "CF_Par": {
+        "hypothetical_runs": 18.0,
+        "simulated_expected_final_exit": 161.6,
+        "simulated_expected_final_change": 28.4,
+        "trajectory_gap_vs_actual": 16.4
+      },
+      "CF_Accelerated": {
+        "hypothetical_runs": 42,
+        "additional_runs": 5,
+        "simulated_expected_final_exit": 169.4,
+        "simulated_expected_final_change": 36.2,
+        "trajectory_gain_vs_actual": 24.2
+      },
+      "CF_Wicket_Preserved": {
+        "hypothetical_wickets_remaining": 10,
+        "simulated_expected_final_exit": 166.6,
+        "simulated_expected_final_change": 33.4,
+        "wicket_preservation_value": 21.4
+      },
+      "CF_Strike_Rotation": {
+        "hypothetical_runs": 40,
+        "simulated_expected_final_exit": 170.8,
+        "simulated_expected_final_change": 37.6,
+        "rotation_gain_vs_actual": 25.6
+      }
+    }
+  },
+  {
+    "profile": "13. Anchor Supporting Acceleration",
+    "player": "SK Raina",
+    "match_id": "1082606",
+    "season": "2017",
+    "innings_type": "First Innings",
+    "batting_position": 3,
+    "dismissal_status": "out",
+    "actual_performance": {
+      "runs": 28,
+      "balls_faced": 29,
+      "strike_rate": 96.55,
+      "runs_per_ball": 0.966,
+      "opportunity_usage": 0.2458,
+      "fours": 2,
+      "sixes": 0,
+      "boundary_runs": 8,
+      "boundary_percentage": 28.57,
+      "dot_balls": 8,
+      "dot_ball_percentage": 27.59
+    },
+    "expected_performance": {
+      "expected_runs": 26.5,
+      "run_deviation": 1.5,
+      "run_performance_ratio": 1.057,
+      "expected_sr": 110.3,
+      "sr_deviation": -13.75,
+      "sr_performance_ratio": 0.875
+    },
+    "match_state_entry": {
+      "score": 1,
+      "over": 0.2,
+      "wickets_remaining": 9,
+      "balls_remaining": 118,
+      "team_rr": 3.0
+    },
+    "match_state_exit": {
+      "score": 81,
+      "over": 11.1,
+      "wickets_remaining": 8,
+      "balls_remaining": 53,
+      "team_rr": 7.25
+    },
+    "state_transformation": {
+      "team_runs_added": 80,
+      "overs_spent": 10.83,
+      "window_team_rr": 7.39,
+      "team_rr_change": 4.25,
+      "expected_final_entry": 162.1,
+      "expected_final_exit": 162.8,
+      "expected_final_change": 0.7,
+      "trajectory_deviation_change": -4.7,
+      "target": null,
+      "runs_required_entry": null,
+      "runs_required_exit": null,
+      "required_rr_entry": null,
+      "required_rr_exit": null,
+      "required_rr_change": null,
+      "rr_gap_change": null,
+      "runs_required_reduction": null,
+      "target_progress_change": null
+    },
+    "resource_transformation": {
+      "wickets_lost_during_stay": 1,
+      "wicket_resource_change": -1,
+      "overs_remaining_entry": 19.67,
+      "overs_remaining_exit": 8.83
+    },
+    "partnership_context": {
+      "partnership_runs": 80,
+      "batter_partnership_runs": 28,
+      "partner_runs": 52,
+      "batter_partnership_share": 0.35,
+      "partnership_duration": 65
+    },
+    "post_exit_retrospective": {
+      "post_exit_runs": 95,
+      "post_exit_overs": 8.83,
+      "post_exit_rr": 10.76,
+      "post_exit_wickets_lost": 2,
+      "post_exit_rr_change": 3.51,
+      "final_team_score": 176,
+      "won_match": false,
+      "winning_margin": 6.0,
+      "margin_type": "wickets",
+      "target_reached": null
+    },
+    "counterfactual_analysis": {
+      "CF_Par": {
+        "hypothetical_runs": 26.5,
+        "simulated_expected_final_exit": 173.2,
+        "simulated_expected_final_change": 11.1,
+        "trajectory_gap_vs_actual": 10.4
+      },
+      "CF_Accelerated": {
+        "hypothetical_runs": 34,
+        "additional_runs": 6,
+        "simulated_expected_final_exit": 170.7,
+        "simulated_expected_final_change": 8.6,
+        "trajectory_gain_vs_actual": 7.9
+      },
+      "CF_Wicket_Preserved": {
+        "hypothetical_wickets_remaining": 10,
+        "simulated_expected_final_exit": 165.1,
+        "simulated_expected_final_change": 3.0,
+        "wicket_preservation_value": 2.3
+      },
+      "CF_Strike_Rotation": {
+        "hypothetical_runs": 31,
+        "simulated_expected_final_exit": 175.9,
+        "simulated_expected_final_change": 13.8,
+        "rotation_gain_vs_actual": 13.1
+      }
+    }
+  },
+  {
+    "profile": "14. Chase under severe RRR (> 12 RPO)",
+    "player": "R Bhatia",
+    "match_id": "1082599",
+    "season": "2017",
+    "innings_type": "Chase (2nd Innings)",
+    "batting_position": 7,
+    "dismissal_status": "out",
+    "actual_performance": {
+      "runs": 16,
+      "balls_faced": 17,
+      "strike_rate": 94.12,
+      "runs_per_ball": 0.941,
+      "opportunity_usage": 0.2329,
+      "fours": 0,
+      "sixes": 1,
+      "boundary_runs": 6,
+      "boundary_percentage": 37.5,
+      "dot_balls": 6,
+      "dot_ball_percentage": 35.29
+    },
+    "expected_performance": {
+      "expected_runs": 20.7,
+      "run_deviation": -4.7,
+      "run_performance_ratio": 0.773,
+      "expected_sr": 113.4,
+      "sr_deviation": -19.28,
+      "sr_performance_ratio": 0.83
+    },
+    "match_state_entry": {
+      "score": 54,
+      "over": 7.5,
+      "wickets_remaining": 5,
+      "balls_remaining": 73,
+      "team_rr": 6.89
+    },
+    "match_state_exit": {
+      "score": 94,
+      "over": 13.1,
+      "wickets_remaining": 3,
+      "balls_remaining": 41,
+      "team_rr": 7.14
+    },
+    "state_transformation": {
+      "team_runs_added": 40,
+      "overs_spent": 5.33,
+      "window_team_rr": 7.5,
+      "team_rr_change": 0.25,
+      "expected_final_entry": null,
+      "expected_final_exit": null,
+      "expected_final_change": null,
+      "trajectory_deviation_change": null,
+      "target": 206.0,
+      "runs_required_entry": 152.0,
+      "runs_required_exit": 112.0,
+      "required_rr_entry": 12.49,
+      "required_rr_exit": 16.39,
+      "required_rr_change": -3.9,
+      "rr_gap_change": -3.65,
+      "runs_required_reduction": 40.0,
+      "target_progress_change": 0.1942
+    },
+    "resource_transformation": {
+      "wickets_lost_during_stay": 2,
+      "wicket_resource_change": -2,
+      "overs_remaining_entry": 12.17,
+      "overs_remaining_exit": 6.83
+    },
+    "partnership_context": {
+      "partnership_runs": 40,
+      "batter_partnership_runs": 16,
+      "partner_runs": 24,
+      "batter_partnership_share": 0.4,
+      "partnership_duration": 32
+    },
+    "post_exit_retrospective": {
+      "post_exit_runs": 14,
+      "post_exit_overs": 3.0,
+      "post_exit_rr": 4.67,
+      "post_exit_wickets_lost": 3,
+      "post_exit_rr_change": -2.47,
+      "final_team_score": 108,
+      "won_match": false,
+      "winning_margin": 97.0,
+      "margin_type": "runs",
+      "target_reached": false
+    },
+    "counterfactual_analysis": {
+      "CF_Par": {
+        "hypothetical_runs": 20.7,
+        "simulated_required_rr_exit": 15.66,
+        "simulated_required_rr_change": -3.17,
+        "rrr_relief_gap_vs_actual": 0.73
+      },
+      "CF_Accelerated": {
+        "hypothetical_runs": 19,
+        "additional_runs": 3,
+        "simulated_required_rr_exit": 15.95,
+        "simulated_required_rr_change": -3.46,
+        "additional_rrr_reduction_vs_actual": 0.44
+      },
+      "CF_Wicket_Preserved": {
+        "hypothetical_wickets_remaining": 10,
+        "resource_preserved": 1,
+        "commentary": "Maintains batting depth for subsequent death overs."
+      },
+      "CF_Strike_Rotation": {
+        "hypothetical_runs": 19,
+        "simulated_required_rr_exit": 15.95,
+        "simulated_required_rr_change": -3.46,
+        "rotation_rrr_relief_gain": 0.44
+      }
+    }
+  },
+  {
+    "profile": "15. Chase under comfortable RRR (< 7 RPO)",
+    "player": "GJ Maxwell",
+    "match_id": "1082598",
+    "season": "2017",
+    "innings_type": "Chase (2nd Innings)",
+    "batting_position": 4,
+    "dismissal_status": "not out",
+    "actual_performance": {
+      "runs": 43,
+      "balls_faced": 22,
+      "strike_rate": 195.45,
+      "runs_per_ball": 1.955,
+      "opportunity_usage": 0.3099,
+      "fours": 3,
+      "sixes": 4,
+      "boundary_runs": 36,
+      "boundary_percentage": 83.72,
+      "dot_balls": 5,
+      "dot_ball_percentage": 22.73
+    },
+    "expected_performance": {
+      "expected_runs": 21.1,
+      "run_deviation": 21.9,
+      "run_performance_ratio": 2.038,
+      "expected_sr": 109.8,
+      "sr_deviation": 85.65,
+      "sr_performance_ratio": 1.78
+    },
+    "match_state_entry": {
+      "score": 78,
+      "over": 8.1,
+      "wickets_remaining": 8,
+      "balls_remaining": 71,
+      "team_rr": 9.55
+    },
+    "match_state_exit": {
+      "score": 150,
+      "over": 14.3,
+      "wickets_remaining": 8,
+      "balls_remaining": 33,
+      "team_rr": 10.34
+    },
+    "state_transformation": {
+      "team_runs_added": 72,
+      "overs_spent": 6.33,
+      "window_team_rr": 11.37,
+      "team_rr_change": 0.79,
+      "expected_final_entry": null,
+      "expected_final_exit": null,
+      "expected_final_change": null,
+      "trajectory_deviation_change": null,
+      "target": 149.0,
+      "runs_required_entry": 71.0,
+      "runs_required_exit": 0.0,
+      "required_rr_entry": 6.0,
+      "required_rr_exit": 0.0,
+      "required_rr_change": 6.0,
+      "rr_gap_change": 6.79,
+      "runs_required_reduction": 71.0,
+      "target_progress_change": 0.4832
+    },
+    "resource_transformation": {
+      "wickets_lost_during_stay": 0,
+      "wicket_resource_change": 0,
+      "overs_remaining_entry": 11.83,
+      "overs_remaining_exit": 5.5
+    },
+    "partnership_context": {
+      "partnership_runs": 72,
+      "batter_partnership_runs": 43,
+      "partner_runs": 29,
+      "batter_partnership_share": 0.597,
+      "partnership_duration": 38
+    },
+    "post_exit_retrospective": {
+      "post_exit_runs": 0,
+      "post_exit_overs": 0.0,
+      "post_exit_rr": 0.0,
+      "post_exit_wickets_lost": 0,
+      "post_exit_rr_change": 0.0,
+      "final_team_score": 150,
+      "won_match": true,
+      "winning_margin": 8.0,
+      "margin_type": "wickets",
+      "target_reached": true
+    },
+    "counterfactual_analysis": {
+      "CF_Par": {
+        "hypothetical_runs": 21.1,
+        "simulated_required_rr_exit": 3.82,
+        "simulated_required_rr_change": 2.18,
+        "rrr_relief_gap_vs_actual": -3.82
+      },
+      "CF_Accelerated": {
+        "hypothetical_runs": 47,
+        "additional_runs": 4,
+        "simulated_required_rr_exit": 0.0,
+        "simulated_required_rr_change": 6.0,
+        "additional_rrr_reduction_vs_actual": 0.0
+      },
+      "CF_Wicket_Preserved": {
+        "hypothetical_wickets_remaining": 10,
+        "resource_preserved": 0,
+        "commentary": "Maintains batting depth for subsequent death overs."
+      },
+      "CF_Strike_Rotation": {
+        "hypothetical_runs": 46,
+        "simulated_required_rr_exit": 0.0,
+        "simulated_required_rr_change": 6.0,
+        "rotation_rrr_relief_gain": 0.0
+      }
+    }
+  },
+  {
+    "profile": "16. Large required-RR reduction (+2+ RPO relief)",
+    "player": "HM Amla",
+    "match_id": "1082598",
+    "season": "2017",
+    "innings_type": "Chase (2nd Innings)",
+    "batting_position": 2,
+    "dismissal_status": "not out",
+    "actual_performance": {
+      "runs": 58,
+      "balls_faced": 38,
+      "strike_rate": 152.63,
+      "runs_per_ball": 1.526,
+      "opportunity_usage": 0.322,
+      "fours": 4,
+      "sixes": 3,
+      "boundary_runs": 34,
+      "boundary_percentage": 58.62,
+      "dot_balls": 8,
+      "dot_ball_percentage": 21.05
+    },
+    "expected_performance": {
+      "expected_runs": 27.7,
+      "run_deviation": 30.3,
+      "run_performance_ratio": 2.094,
+      "expected_sr": 113.5,
+      "sr_deviation": 39.13,
+      "sr_performance_ratio": 1.345
+    },
+    "match_state_entry": {
+      "score": 1,
+      "over": 0.2,
+      "wickets_remaining": 10,
+      "balls_remaining": 118,
+      "team_rr": 3.0
+    },
+    "match_state_exit": {
+      "score": 150,
+      "over": 14.3,
+      "wickets_remaining": 8,
+      "balls_remaining": 33,
+      "team_rr": 10.34
+    },
+    "state_transformation": {
+      "team_runs_added": 149,
+      "overs_spent": 14.17,
+      "window_team_rr": 10.52,
+      "team_rr_change": 7.34,
+      "expected_final_entry": null,
+      "expected_final_exit": null,
+      "expected_final_change": null,
+      "trajectory_deviation_change": null,
+      "target": 149.0,
+      "runs_required_entry": 148.0,
+      "runs_required_exit": 0.0,
+      "required_rr_entry": 7.53,
+      "required_rr_exit": 0.0,
+      "required_rr_change": 7.53,
+      "rr_gap_change": 14.87,
+      "runs_required_reduction": 148.0,
+      "target_progress_change": 1.0
+    },
+    "resource_transformation": {
+      "wickets_lost_during_stay": 2,
+      "wicket_resource_change": -2,
+      "overs_remaining_entry": 19.67,
+      "overs_remaining_exit": 5.5
+    },
+    "partnership_context": {
+      "partnership_runs": 150,
+      "batter_partnership_runs": 58,
+      "partner_runs": 92,
+      "batter_partnership_share": 0.387,
+      "partnership_duration": 87
+    },
+    "post_exit_retrospective": {
+      "post_exit_runs": 0,
+      "post_exit_overs": 0.0,
+      "post_exit_rr": 0.0,
+      "post_exit_wickets_lost": 0,
+      "post_exit_rr_change": 0.0,
+      "final_team_score": 150,
+      "won_match": true,
+      "winning_margin": 8.0,
+      "margin_type": "wickets",
+      "target_reached": true
+    },
+    "counterfactual_analysis": {
+      "CF_Par": {
+        "hypothetical_runs": 27.7,
+        "simulated_required_rr_exit": 5.09,
+        "simulated_required_rr_change": 2.44,
+        "rrr_relief_gap_vs_actual": -5.09
+      },
+      "CF_Accelerated": {
+        "hypothetical_runs": 66,
+        "additional_runs": 8,
+        "simulated_required_rr_exit": 0.0,
+        "simulated_required_rr_change": 7.53,
+        "additional_rrr_reduction_vs_actual": 0.0
+      },
+      "CF_Wicket_Preserved": {
+        "hypothetical_wickets_remaining": 10,
+        "resource_preserved": 0,
+        "commentary": "Maintains batting depth for subsequent death overs."
+      },
+      "CF_Strike_Rotation": {
+        "hypothetical_runs": 61,
+        "simulated_required_rr_exit": 0.0,
+        "simulated_required_rr_change": 7.53,
+        "rotation_rrr_relief_gain": 0.0
+      }
+    }
+  },
+  {
+    "profile": "17. Strong partnership contribution",
+    "player": "V Kohli",
+    "match_id": "1082646",
+    "season": "2017",
+    "innings_type": "First Innings",
+    "batting_position": 3,
+    "dismissal_status": "out",
+    "actual_performance": {
+      "runs": 58,
+      "balls_faced": 45,
+      "strike_rate": 128.89,
+      "runs_per_ball": 1.289,
+      "opportunity_usage": 0.4945,
+      "fours": 3,
+      "sixes": 3,
+      "boundary_runs": 30,
+      "boundary_percentage": 51.72,
+      "dot_balls": 13,
+      "dot_ball_percentage": 28.89
+    },
+    "expected_performance": {
+      "expected_runs": 27.3,
+      "run_deviation": 30.7,
+      "run_performance_ratio": 2.125,
+      "expected_sr": 110.4,
+      "sr_deviation": 18.49,
+      "sr_performance_ratio": 1.167
+    },
+    "match_state_entry": {
+      "score": 30,
+      "over": 4.5,
+      "wickets_remaining": 9,
+      "balls_remaining": 91,
+      "team_rr": 6.21
+    },
+    "match_state_exit": {
+      "score": 118,
+      "over": 16.3,
+      "wickets_remaining": 6,
+      "balls_remaining": 21,
+      "team_rr": 7.15
+    },
+    "state_transformation": {
+      "team_runs_added": 88,
+      "overs_spent": 11.67,
+      "window_team_rr": 7.54,
+      "team_rr_change": 0.94,
+      "expected_final_entry": 168.1,
+      "expected_final_exit": 160.5,
+      "expected_final_change": -7.6,
+      "trajectory_deviation_change": -7.4,
+      "target": null,
+      "runs_required_entry": null,
+      "runs_required_exit": null,
+      "required_rr_entry": null,
+      "required_rr_exit": null,
+      "required_rr_change": null,
+      "rr_gap_change": null,
+      "runs_required_reduction": null,
+      "target_progress_change": null
+    },
+    "resource_transformation": {
+      "wickets_lost_during_stay": 3,
+      "wicket_resource_change": -3,
+      "overs_remaining_entry": 15.17,
+      "overs_remaining_exit": 3.5
+    },
+    "partnership_context": {
+      "partnership_runs": 88,
+      "batter_partnership_runs": 58,
+      "partner_runs": 30,
+      "batter_partnership_share": 0.659,
+      "partnership_duration": 70
+    },
+    "post_exit_retrospective": {
+      "post_exit_runs": 43,
+      "post_exit_overs": 3.5,
+      "post_exit_rr": 12.29,
+      "post_exit_wickets_lost": 2,
+      "post_exit_rr_change": 5.14,
+      "final_team_score": 161,
+      "won_match": true,
+      "winning_margin": 10.0,
+      "margin_type": "runs",
+      "target_reached": null
+    },
+    "counterfactual_analysis": {
+      "CF_Par": {
+        "hypothetical_runs": 27.3,
+        "simulated_expected_final_exit": 150.4,
+        "simulated_expected_final_change": -17.7,
+        "trajectory_gap_vs_actual": -10.1
+      },
+      "CF_Accelerated": {
+        "hypothetical_runs": 67,
+        "additional_runs": 9,
+        "simulated_expected_final_exit": 165.6,
+        "simulated_expected_final_change": -2.5,
+        "trajectory_gain_vs_actual": 5.1
+      },
+      "CF_Wicket_Preserved": {
+        "hypothetical_wickets_remaining": 10,
+        "simulated_expected_final_exit": 165.8,
+        "simulated_expected_final_change": -2.3,
+        "wicket_preservation_value": 5.3
+      },
+      "CF_Strike_Rotation": {
+        "hypothetical_runs": 61,
+        "simulated_expected_final_exit": 167.1,
+        "simulated_expected_final_change": -1.0,
+        "rotation_gain_vs_actual": 6.6
+      }
+    }
+  },
+  {
+    "profile": "18. Low partnership share (supporting role)",
+    "player": "STR Binny",
+    "match_id": "1082598",
+    "season": "2017",
+    "innings_type": "First Innings",
+    "batting_position": 6,
+    "dismissal_status": "not out",
+    "actual_performance": {
+      "runs": 18,
+      "balls_faced": 20,
+      "strike_rate": 90.0,
+      "runs_per_ball": 0.9,
+      "opportunity_usage": 0.5128,
+      "fours": 1,
+      "sixes": 1,
+      "boundary_runs": 10,
+      "boundary_percentage": 55.56,
+      "dot_balls": 9,
+      "dot_ball_percentage": 45.0
+    },
+    "expected_performance": {
+      "expected_runs": 15.8,
+      "run_deviation": 2.2,
+      "run_performance_ratio": 1.139,
+      "expected_sr": 102.5,
+      "sr_deviation": -12.5,
+      "sr_performance_ratio": 0.878
+    },
+    "match_state_entry": {
+      "score": 69,
+      "over": 13.3,
+      "wickets_remaining": 6,
+      "balls_remaining": 39,
+      "team_rr": 5.11
+    },
+    "match_state_exit": {
+      "score": 148,
+      "over": 20.0,
+      "wickets_remaining": 6,
+      "balls_remaining": 0,
+      "team_rr": 7.4
+    },
+    "state_transformation": {
+      "team_runs_added": 79,
+      "overs_spent": 6.5,
+      "window_team_rr": 12.15,
+      "team_rr_change": 2.29,
+      "expected_final_entry": 131.8,
+      "expected_final_exit": 148.0,
+      "expected_final_change": 16.2,
+      "trajectory_deviation_change": 12.2,
+      "target": null,
+      "runs_required_entry": null,
+      "runs_required_exit": null,
+      "required_rr_entry": null,
+      "required_rr_exit": null,
+      "required_rr_change": null,
+      "rr_gap_change": null,
+      "runs_required_reduction": null,
+      "target_progress_change": null
+    },
+    "resource_transformation": {
+      "wickets_lost_during_stay": 0,
+      "wicket_resource_change": 0,
+      "overs_remaining_entry": 6.5,
+      "overs_remaining_exit": 0.0
+    },
+    "partnership_context": {
+      "partnership_runs": 80,
+      "batter_partnership_runs": 18,
+      "partner_runs": 62,
+      "batter_partnership_share": 0.225,
+      "partnership_duration": 41
+    },
+    "post_exit_retrospective": {
+      "post_exit_runs": 0,
+      "post_exit_overs": 0.0,
+      "post_exit_rr": 0.0,
+      "post_exit_wickets_lost": 0,
+      "post_exit_rr_change": 0.0,
+      "final_team_score": 148,
+      "won_match": false,
+      "winning_margin": 8.0,
+      "margin_type": "wickets",
+      "target_reached": null
+    },
+    "counterfactual_analysis": {
+      "CF_Par": {
+        "hypothetical_runs": 15.8,
+        "simulated_expected_final_exit": 147.0,
+        "simulated_expected_final_change": 15.2,
+        "trajectory_gap_vs_actual": -1.0
+      },
+      "CF_Accelerated": {
+        "hypothetical_runs": 22,
+        "additional_runs": 4,
+        "simulated_expected_final_exit": 153.0,
+        "simulated_expected_final_change": 21.2,
+        "trajectory_gain_vs_actual": 5.0
+      },
+      "CF_Wicket_Preserved": {
+        "hypothetical_wickets_remaining": 10,
+        "simulated_expected_final_exit": 148.0,
+        "simulated_expected_final_change": 16.2,
+        "wicket_preservation_value": 0.0
+      },
+      "CF_Strike_Rotation": {
+        "hypothetical_runs": 21,
+        "simulated_expected_final_exit": 152.0,
+        "simulated_expected_final_change": 20.2,
+        "rotation_gain_vs_actual": 4.0
+      }
+    }
+  },
+  {
+    "profile": "19. Not-out innings",
+    "player": "AB de Villiers",
+    "match_id": "1082598",
+    "season": "2017",
+    "innings_type": "First Innings",
+    "batting_position": 3,
+    "dismissal_status": "not out",
+    "actual_performance": {
+      "runs": 89,
+      "balls_faced": 46,
+      "strike_rate": 193.48,
+      "runs_per_ball": 1.935,
+      "opportunity_usage": 0.4182,
+      "fours": 3,
+      "sixes": 9,
+      "boundary_runs": 66,
+      "boundary_percentage": 74.16,
+      "dot_balls": 13,
+      "dot_ball_percentage": 28.26
+    },
+    "expected_performance": {
+      "expected_runs": 28.6,
+      "run_deviation": 60.4,
+      "run_performance_ratio": 3.112,
+      "expected_sr": 109.5,
+      "sr_deviation": 83.98,
+      "sr_performance_ratio": 1.767
+    },
+    "match_state_entry": {
+      "score": 3,
+      "over": 1.4,
+      "wickets_remaining": 9,
+      "balls_remaining": 110,
+      "team_rr": 1.8
+    },
+    "match_state_exit": {
+      "score": 148,
+      "over": 20.0,
+      "wickets_remaining": 6,
+      "balls_remaining": 0,
+      "team_rr": 7.4
+    },
+    "state_transformation": {
+      "team_runs_added": 145,
+      "overs_spent": 18.33,
+      "window_team_rr": 7.91,
+      "team_rr_change": 5.6,
+      "expected_final_entry": 144.1,
+      "expected_final_exit": 148.0,
+      "expected_final_change": 3.9,
+      "trajectory_deviation_change": -16.6,
+      "target": null,
+      "runs_required_entry": null,
+      "runs_required_exit": null,
+      "required_rr_entry": null,
+      "required_rr_exit": null,
+      "required_rr_change": null,
+      "rr_gap_change": null,
+      "runs_required_reduction": null,
+      "target_progress_change": null
+    },
+    "resource_transformation": {
+      "wickets_lost_during_stay": 3,
+      "wicket_resource_change": -3,
+      "overs_remaining_entry": 18.33,
+      "overs_remaining_exit": 0.0
+    },
+    "partnership_context": {
+      "partnership_runs": 146,
+      "batter_partnership_runs": 89,
+      "partner_runs": 57,
+      "batter_partnership_share": 0.61,
+      "partnership_duration": 114
+    },
+    "post_exit_retrospective": {
+      "post_exit_runs": 0,
+      "post_exit_overs": 0.0,
+      "post_exit_rr": 0.0,
+      "post_exit_wickets_lost": 0,
+      "post_exit_rr_change": 0.0,
+      "final_team_score": 148,
+      "won_match": false,
+      "winning_margin": 8.0,
+      "margin_type": "wickets",
+      "target_reached": null
+    },
+    "counterfactual_analysis": {
+      "CF_Par": {
+        "hypothetical_runs": 28.6,
+        "simulated_expected_final_exit": 89.0,
+        "simulated_expected_final_change": -55.1,
+        "trajectory_gap_vs_actual": -59.0
+      },
+      "CF_Accelerated": {
+        "hypothetical_runs": 98,
+        "additional_runs": 9,
+        "simulated_expected_final_exit": 158.0,
+        "simulated_expected_final_change": 13.9,
+        "trajectory_gain_vs_actual": 10.0
+      },
+      "CF_Wicket_Preserved": {
+        "hypothetical_wickets_remaining": 10,
+        "simulated_expected_final_exit": 148.0,
+        "simulated_expected_final_change": 3.9,
+        "wicket_preservation_value": 0.0
+      },
+      "CF_Strike_Rotation": {
+        "hypothetical_runs": 92,
+        "simulated_expected_final_exit": 152.0,
+        "simulated_expected_final_change": 7.9,
+        "rotation_gain_vs_actual": 4.0
+      }
+    }
+  },
+  {
+    "profile": "20. Late-entry innings (over 18+)",
+    "player": "CH Morris",
+    "match_id": "1082599",
+    "season": "2017",
+    "innings_type": "First Innings",
+    "batting_position": 6,
+    "dismissal_status": "not out",
+    "actual_performance": {
+      "runs": 38,
+      "balls_faced": 9,
+      "strike_rate": 422.22,
+      "runs_per_ball": 4.222,
+      "opportunity_usage": 0.9,
+      "fours": 4,
+      "sixes": 3,
+      "boundary_runs": 34,
+      "boundary_percentage": 89.47,
+      "dot_balls": 0,
+      "dot_ball_percentage": 0.0
+    },
+    "expected_performance": {
+      "expected_runs": 7.6,
+      "run_deviation": 30.4,
+      "run_performance_ratio": 5.0,
+      "expected_sr": 150.6,
+      "sr_deviation": 271.62,
+      "sr_performance_ratio": 2.804
+    },
+    "match_state_entry": {
+      "score": 166,
+      "over": 18.2,
+      "wickets_remaining": 6,
+      "balls_remaining": 10,
+      "team_rr": 9.05
+    },
+    "match_state_exit": {
+      "score": 205,
+      "over": 20.0,
+      "wickets_remaining": 6,
+      "balls_remaining": 0,
+      "team_rr": 10.25
+    },
+    "state_transformation": {
+      "team_runs_added": 39,
+      "overs_spent": 1.67,
+      "window_team_rr": 23.35,
+      "team_rr_change": 1.2,
+      "expected_final_entry": 184.5,
+      "expected_final_exit": 205.0,
+      "expected_final_change": 20.5,
+      "trajectory_deviation_change": 18.5,
+      "target": null,
+      "runs_required_entry": null,
+      "runs_required_exit": null,
+      "required_rr_entry": null,
+      "required_rr_exit": null,
+      "required_rr_change": null,
+      "rr_gap_change": null,
+      "runs_required_reduction": null,
+      "target_progress_change": null
+    },
+    "resource_transformation": {
+      "wickets_lost_during_stay": 0,
+      "wicket_resource_change": 0,
+      "overs_remaining_entry": 1.67,
+      "overs_remaining_exit": 0.0
+    },
+    "partnership_context": {
+      "partnership_runs": 39,
+      "batter_partnership_runs": 38,
+      "partner_runs": 1,
+      "batter_partnership_share": 0.974,
+      "partnership_duration": 10
+    },
+    "post_exit_retrospective": {
+      "post_exit_runs": 0,
+      "post_exit_overs": 0.0,
+      "post_exit_rr": 0.0,
+      "post_exit_wickets_lost": 0,
+      "post_exit_rr_change": 0.0,
+      "final_team_score": 205,
+      "won_match": true,
+      "winning_margin": 97.0,
+      "margin_type": "runs",
+      "target_reached": null
+    },
+    "counterfactual_analysis": {
+      "CF_Par": {
+        "hypothetical_runs": 7.6,
+        "simulated_expected_final_exit": 175.0,
+        "simulated_expected_final_change": -9.5,
+        "trajectory_gap_vs_actual": -30.0
+      },
+      "CF_Accelerated": {
+        "hypothetical_runs": 40,
+        "additional_runs": 2,
+        "simulated_expected_final_exit": 207.0,
+        "simulated_expected_final_change": 22.5,
+        "trajectory_gain_vs_actual": 2.0
+      },
+      "CF_Wicket_Preserved": {
+        "hypothetical_wickets_remaining": 10,
+        "simulated_expected_final_exit": 205.0,
+        "simulated_expected_final_change": 20.5,
+        "wicket_preservation_value": 0.0
+      },
+      "CF_Strike_Rotation": {
+        "hypothetical_runs": 38,
+        "simulated_expected_final_exit": 205.0,
+        "simulated_expected_final_change": 20.5,
+        "rotation_gain_vs_actual": 0.0
+      }
+    }
+  }
+]

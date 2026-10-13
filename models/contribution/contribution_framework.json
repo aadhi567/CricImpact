@@ -1,0 +1,17 @@
+{
+  "status": "Validated",
+  "output_A": "Contribution Score (0 to 100, Logistic Normalization)",
+  "output_B": "Team Contribution Share (% of Positive Team Value Added)",
+  "components": {
+    "S_ind": "Individual Performance (Z_run + 0.5 * Z_sr * sqrt(OppUsage))",
+    "S_state": "Team-State Transformation (1st inn: Trajectory EFS change; 2nd inn: RRR relief)",
+    "S_res": "Resource Trade-Off (Dynamic wicket cost weighted by remaining balls & wickets)",
+    "L_out": "Retrospective Outcome Leverage (Margin-sensitive scaling)"
+  },
+  "weights": {
+    "w_ind": 0.45,
+    "w_state": 0.4,
+    "w_res": 0.15
+  },
+  "total_innings_processed": 19196
+}

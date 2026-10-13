@@ -1,0 +1,16 @@
+{
+  "phase": "Phase 7F",
+  "title": "P1 Leverage Calibration Specification",
+  "concept": "P1 as Context/Difficulty/Leverage Signal; 50/50 Adjusted P2 & P3",
+  "models": {
+    "Model A (Linear Bounded)": "L(P1) = clip(1.0 + 0.35 * (P1 - 50)/50, 0.65, 1.35)",
+    "Model B (Soft Sigmoid)": "L(P1) = 0.65 + 0.70 / (1 + exp(-0.06 * (P1 - 50)))",
+    "Model C (Piecewise Deadband)": "L(P1) = 1.0 for P1 in [42, 58]; scales to [0.65, 1.35] beyond",
+    "Model D (Empirical Asymmetric)": "L(P1) anchored at 45.0; scales to 1.35 (power 0.85) and 0.70 (linear)"
+  },
+  "score_adjustment_formula": {
+    "adj_p2": "clip(50 + (P2 - 50) * Leverage, 0.1, 99.9)",
+    "adj_p3": "clip(50 + (P3 - 50) * Leverage, 0.1, 99.9)",
+    "overall_candidate_score": "clip(0.50 * adj_p2 + 0.50 * adj_p3, 0.1, 99.9)"
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "title": "Phase 6A Exclusion Threshold Evaluation & Recommendation",
+  "candidate_thresholds": {
+    "Candidate_0_All_Innings": {
+      "description": "Retain 100% of genuine batting opportunities. No exclusion.",
+      "rule": "None",
+      "total_innings_retained": 19111,
+      "total_innings_excluded": 0,
+      "percent_excluded": 0.0,
+      "positive_impact_excluded_count": 0,
+      "flaw_summary": "None. Transparent, complete, and unmanipulated."
+    },
+    "Candidate_1_Contextual_Zero_Impact": {
+      "description": "Exclude only ultra-short non-dismissal innings (<= 2 balls) with near-zero trajectory and score delta (|C_raw| <= 0.10).",
+      "rule": "balls_faced <= 2 AND |C_raw| <= 0.10 AND not_out AND |delta_EFS| <= 2",
+      "total_innings_retained": 19016,
+      "total_innings_excluded": 95,
+      "percent_excluded": 0.5,
+      "positive_impact_excluded_count": 0,
+      "flaw_summary": "Minimal collateral damage, but still risks dropping valid minor support contributions."
+    },
+    "Candidate_2_Crude_Balls_LE_2": {
+      "description": "Exclude all innings where batter faced 2 or fewer balls.",
+      "rule": "balls_faced <= 2",
+      "total_innings_retained": 16332,
+      "total_innings_excluded": 2779,
+      "percent_excluded": 14.54,
+      "positive_impact_excluded_count": 592,
+      "flaw_summary": "Errs by dropping 592 match-winning last-ball finishes and rapid cameo boundaries!"
+    },
+    "Candidate_3_Crude_Balls_LE_5": {
+      "description": "Exclude all innings where batter faced 5 or fewer balls.",
+      "rule": "balls_faced <= 5",
+      "total_innings_retained": 13456,
+      "total_innings_excluded": 5655,
+      "percent_excluded": 29.59,
+      "positive_impact_excluded_count": 1178,
+      "flaw_summary": "Catastrophic failure: drops 1,178 high-impact death cameos (including 30 off 5, 20 off 5)!"
+    },
+    "Candidate_4_Crude_Runs_LT_10": {
+      "description": "Exclude all innings where batter scored fewer than 10 runs.",
+      "rule": "actual_runs < 10",
+      "total_innings_retained": 10867,
+      "total_innings_excluded": 8244,
+      "percent_excluded": 43.14,
+      "positive_impact_excluded_count": 1210,
+      "flaw_summary": "Severe bias: drops 1,210 crucial late-order cameos (e.g. 8 off 3, 9 off 4 in tight chases) and rewards low-SR passenger knocks!"
+    }
+  },
+  "statistical_justification_analysis": {
+    "verdict": "Insufficient evidence for a hard exclusion threshold.",
+    "rationale": [
+      "1. Short innings (<= 5 balls) contain a high density of game-deciding moments (last-over cameos, match-winning boundaries, Super Over equivalents).",
+      "2. Crude balls thresholds (<=2 or <=5) drop between 480 and 1,100 high-impact knocks, introducing severe bias against lower-order finishers.",
+      "3. Crude runs thresholds (<10) unfairly penalize explosive bursts (e.g. 9 off 3 at 300 SR) while preserving slow knocks (e.g. 11 off 18 at 61 SR).",
+      "4. Phase 5B contextual contribution already appropriately rates low-leverage knocks near Par (48-52) and gives genuine match-winners high recognition (75-90).",
+      "5. Therefore, ALL genuine batting innings must be retained in the primary season metric.",
+      "6. A secondary qualified metric is provided solely for comparative sensitivity analysis, excluding only near-zero impact non-dismissal innings."
+    ]
+  },
+  "final_recommendation": {
+    "primary_metric": "All-Innings Season Metrics (includes 100% of actual batting opportunities, strictly excludes DNB).",
+    "secondary_metric": "Qualified Season Metrics (transparency layer for sensitivity analysis)."
+  }
+}

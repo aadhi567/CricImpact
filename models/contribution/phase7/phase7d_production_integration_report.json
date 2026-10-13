@@ -1,0 +1,46 @@
+{
+  "framework": "Phase 7D Production Integration Report",
+  "timestamp": "2026-10-02T22:45:00Z",
+  "production_formula": {
+    "contribution_score": "0.25 * P1_context + 0.35 * P2_performance + 0.40 * P3_team_state",
+    "raw_composite": "0.25 * z1 + 0.35 * z2 + 0.40 * z3",
+    "p4_diagnostic": "Separate diagnostic and improvement layer (0% weight in Contribution Score)",
+    "team_contribution_share": "sum(max(0, player_c_raw)) / sum(max(0, team_c_raw)) * 100"
+  },
+  "production_files_changed": [
+    "src/contribution_framework.py (exposed compute_production_contribution)",
+    "src/season_aggregation.py (integrated Phase 7D 25/35/40 model in compute_all_innings_phase5b and spec)",
+    "data/processed/batter_match_contributions.csv (19,111 match records regenerated with Phase 7D model)",
+    "models/contribution/phase6/phase6_season_metrics.csv (3,357 player-seasons regenerated with Phase 7D model)",
+    "models/contribution/phase6/phase6_season_spec.json (updated specification)",
+    "app/services/data_service.py (updated pillar weights: P1 25%, P2 35%, P3 40%, P4 0% diagnostic)",
+    "app/main.py (updated docstring description)",
+    "frontend/src/pages/PlayerComparison.jsx (updated 25/35/40 headers and P4 diagnostic label)",
+    "frontend/src/components/ContributionExplanation.jsx (updated to Phase 7D architecture and '\u2014' null display)",
+    "frontend/src/components/Charts/FourPillarComparisonChart.jsx (updated pillar weights and tooltip null display)",
+    "frontend/src/pages/AuditInsights.jsx (updated PILLARS array to 25/35/40 and P4 diagnostic)",
+    "frontend/src/pages/Dashboard.jsx (updated intro text to Phase 7D Core Contribution)"
+  ],
+  "backups_created": [
+    "models/contribution/phase6/phase6_season_metrics_v6_backup.csv (414,287 bytes)",
+    "data/processed/batter_match_contributions_v6_backup.csv (7,579,675 bytes)"
+  ],
+  "p3_implementation_status": {
+    "macro_trajectory": "45% (EFS delta in 1st inn, RRR relief in chase)",
+    "partnership_dynamics": "30% (batter partnership share, tempo differential, carrying bonus)",
+    "collapse_recovery": "15% (crisis entry stabilization vs collapse worsened)",
+    "wicket_equity": "10% (dynamic wicket cost with run volume offset)",
+    "standardization": "P3_raw standardized with empirical mu=0.112, sigma=0.726, k=1.40"
+  },
+  "middle_over_rule_status": "Preserved Phase 7B fix: entry_over < 16.0 AND exit_over >= 6.0",
+  "dnb_rule_status": "Strict NULL preservation confirmed across all datasets, API, and frontend",
+  "api_verification": "Endpoints /api/players, /api/player/{id}/season/{s}, /api/player/{id}/matches, /api/match/{id}/player/{id}, and /api/contribution/compare verified",
+  "test_results": {
+    "total_tests_passing": 163,
+    "tests_failing": 0,
+    "new_phase7c_tests": "7 passed in tests/test_phase7c_rebalance.py",
+    "api_tests": "9 passed in tests/test_api.py",
+    "comparison_tests": "13 passed in tests/test_comparison.py"
+  },
+  "status": "PRODUCTION INTEGRATION COMPLETE & VALIDATED"
+}

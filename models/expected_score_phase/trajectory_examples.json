@@ -1,0 +1,1938 @@
+[
+  {
+    "match_id": "980941",
+    "season": "2016",
+    "batting_team": "Mumbai Indians",
+    "actual_score_at_6": 39,
+    "actual_score_at_15": 140,
+    "actual_final_score": 189,
+    "trajectory": [
+      {
+        "over": 1.0,
+        "score_wickets": "2/1",
+        "rr": 2.0,
+        "expected_score_at_6": 41.4,
+        "expected_score_at_15": 82.9,
+        "expected_final_score": 155.6
+      },
+      {
+        "over": 2.0,
+        "score_wickets": "11/1",
+        "rr": 5.5,
+        "expected_score_at_6": 41.1,
+        "expected_score_at_15": 109.6,
+        "expected_final_score": 161.2
+      },
+      {
+        "over": 3.0,
+        "score_wickets": "13/1",
+        "rr": 4.33,
+        "expected_score_at_6": 34.6,
+        "expected_score_at_15": 89.7,
+        "expected_final_score": 146.3
+      },
+      {
+        "over": 4.0,
+        "score_wickets": "18/1",
+        "rr": 4.5,
+        "expected_score_at_6": 31.4,
+        "expected_score_at_15": 99.4,
+        "expected_final_score": 141.9
+      },
+      {
+        "over": 5.0,
+        "score_wickets": "25/1",
+        "rr": 5.0,
+        "expected_score_at_6": 32.9,
+        "expected_score_at_15": 113.0,
+        "expected_final_score": 160.9
+      },
+      {
+        "over": 6.0,
+        "score_wickets": "39/1",
+        "rr": 6.5,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 113.2,
+        "expected_final_score": 161.8
+      },
+      {
+        "over": 7.0,
+        "score_wickets": "49/1",
+        "rr": 7.0,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 110.2,
+        "expected_final_score": 157.6
+      },
+      {
+        "over": 8.0,
+        "score_wickets": "60/1",
+        "rr": 7.5,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 118.0,
+        "expected_final_score": 170.8
+      },
+      {
+        "over": 9.0,
+        "score_wickets": "69/1",
+        "rr": 7.67,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 122.1,
+        "expected_final_score": 173.0
+      },
+      {
+        "over": 10.0,
+        "score_wickets": "77/1",
+        "rr": 7.7,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 121.6,
+        "expected_final_score": 171.4
+      },
+      {
+        "over": 11.0,
+        "score_wickets": "87/1",
+        "rr": 7.91,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 123.6,
+        "expected_final_score": 176.3
+      },
+      {
+        "over": 12.0,
+        "score_wickets": "101/1",
+        "rr": 8.42,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 128.9,
+        "expected_final_score": 186.4
+      },
+      {
+        "over": 13.0,
+        "score_wickets": "114/1",
+        "rr": 8.77,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 131.9,
+        "expected_final_score": 184.6
+      },
+      {
+        "over": 14.0,
+        "score_wickets": "125/1",
+        "rr": 8.93,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 134.9,
+        "expected_final_score": 190.5
+      },
+      {
+        "over": 15.0,
+        "score_wickets": "140/2",
+        "rr": 9.33,
+        "expected_score_at_6": null,
+        "expected_score_at_15": null,
+        "expected_final_score": 193.5
+      },
+      {
+        "over": 16.0,
+        "score_wickets": "156/2",
+        "rr": 9.75,
+        "expected_score_at_6": null,
+        "expected_score_at_15": null,
+        "expected_final_score": 204.1
+      },
+      {
+        "over": 17.0,
+        "score_wickets": "165/2",
+        "rr": 9.71,
+        "expected_score_at_6": null,
+        "expected_score_at_15": null,
+        "expected_final_score": 201.3
+      },
+      {
+        "over": 18.0,
+        "score_wickets": "176/3",
+        "rr": 9.78,
+        "expected_score_at_6": null,
+        "expected_score_at_15": null,
+        "expected_final_score": 203.5
+      },
+      {
+        "over": 19.0,
+        "score_wickets": "185/4",
+        "rr": 9.74,
+        "expected_score_at_6": null,
+        "expected_score_at_15": null,
+        "expected_final_score": 198.6
+      }
+    ]
+  },
+  {
+    "match_id": "1527689",
+    "season": "2026",
+    "batting_team": "Royal Challengers Bengaluru",
+    "actual_score_at_6": 61,
+    "actual_score_at_15": 139,
+    "actual_final_score": 201,
+    "trajectory": [
+      {
+        "over": 1.0,
+        "score_wickets": "13/1",
+        "rr": 13.0,
+        "expected_score_at_6": 54.8,
+        "expected_score_at_15": 162.7,
+        "expected_final_score": 171.4
+      },
+      {
+        "over": 2.0,
+        "score_wickets": "32/1",
+        "rr": 16.0,
+        "expected_score_at_6": 62.4,
+        "expected_score_at_15": 173.3,
+        "expected_final_score": 182.8
+      },
+      {
+        "over": 3.0,
+        "score_wickets": "45/2",
+        "rr": 15.0,
+        "expected_score_at_6": 71.7,
+        "expected_score_at_15": 173.3,
+        "expected_final_score": 187.5
+      },
+      {
+        "over": 4.0,
+        "score_wickets": "55/2",
+        "rr": 13.75,
+        "expected_score_at_6": 79.2,
+        "expected_score_at_15": 171.5,
+        "expected_final_score": 212.8
+      },
+      {
+        "over": 5.0,
+        "score_wickets": "58/3",
+        "rr": 11.6,
+        "expected_score_at_6": 69.2,
+        "expected_score_at_15": 146.6,
+        "expected_final_score": 186.0
+      },
+      {
+        "over": 6.0,
+        "score_wickets": "61/3",
+        "rr": 10.17,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 126.7,
+        "expected_final_score": 168.0
+      },
+      {
+        "over": 7.0,
+        "score_wickets": "65/4",
+        "rr": 9.29,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 118.4,
+        "expected_final_score": 163.8
+      },
+      {
+        "over": 8.0,
+        "score_wickets": "73/4",
+        "rr": 9.12,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 117.7,
+        "expected_final_score": 158.2
+      },
+      {
+        "over": 9.0,
+        "score_wickets": "82/5",
+        "rr": 9.11,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 123.3,
+        "expected_final_score": 164.6
+      },
+      {
+        "over": 10.0,
+        "score_wickets": "89/5",
+        "rr": 8.9,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 129.6,
+        "expected_final_score": 165.0
+      },
+      {
+        "over": 11.0,
+        "score_wickets": "94/6",
+        "rr": 8.55,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 119.5,
+        "expected_final_score": 158.8
+      },
+      {
+        "over": 12.0,
+        "score_wickets": "104/6",
+        "rr": 8.67,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 128.7,
+        "expected_final_score": 167.0
+      },
+      {
+        "over": 13.0,
+        "score_wickets": "119/6",
+        "rr": 9.15,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 134.5,
+        "expected_final_score": 188.6
+      },
+      {
+        "over": 14.0,
+        "score_wickets": "125/7",
+        "rr": 8.93,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 131.8,
+        "expected_final_score": 172.6
+      },
+      {
+        "over": 15.0,
+        "score_wickets": "139/7",
+        "rr": 9.27,
+        "expected_score_at_6": null,
+        "expected_score_at_15": null,
+        "expected_final_score": 184.0
+      },
+      {
+        "over": 16.0,
+        "score_wickets": "150/7",
+        "rr": 9.38,
+        "expected_score_at_6": null,
+        "expected_score_at_15": null,
+        "expected_final_score": 191.2
+      },
+      {
+        "over": 17.0,
+        "score_wickets": "166/7",
+        "rr": 9.76,
+        "expected_score_at_6": null,
+        "expected_score_at_15": null,
+        "expected_final_score": 201.3
+      },
+      {
+        "over": 18.0,
+        "score_wickets": "171/8",
+        "rr": 9.5,
+        "expected_score_at_6": null,
+        "expected_score_at_15": null,
+        "expected_final_score": 190.2
+      },
+      {
+        "over": 19.0,
+        "score_wickets": "180/8",
+        "rr": 9.47,
+        "expected_score_at_6": null,
+        "expected_score_at_15": null,
+        "expected_final_score": 190.1
+      }
+    ]
+  },
+  {
+    "match_id": "1254111",
+    "season": "2021",
+    "batting_team": "Rajasthan Royals",
+    "actual_score_at_6": 57,
+    "actual_score_at_15": 140,
+    "actual_final_score": 185,
+    "trajectory": [
+      {
+        "over": 1.0,
+        "score_wickets": "9/0",
+        "rr": 9.0,
+        "expected_score_at_6": 51.3,
+        "expected_score_at_15": 130.3,
+        "expected_final_score": 176.4
+      },
+      {
+        "over": 2.0,
+        "score_wickets": "18/0",
+        "rr": 9.0,
+        "expected_score_at_6": 54.7,
+        "expected_score_at_15": 130.3,
+        "expected_final_score": 183.9
+      },
+      {
+        "over": 3.0,
+        "score_wickets": "23/0",
+        "rr": 7.67,
+        "expected_score_at_6": 47.6,
+        "expected_score_at_15": 117.0,
+        "expected_final_score": 169.2
+      },
+      {
+        "over": 4.0,
+        "score_wickets": "40/0",
+        "rr": 10.0,
+        "expected_score_at_6": 59.4,
+        "expected_score_at_15": 145.3,
+        "expected_final_score": 190.7
+      },
+      {
+        "over": 5.0,
+        "score_wickets": "53/0",
+        "rr": 10.6,
+        "expected_score_at_6": 61.2,
+        "expected_score_at_15": 143.5,
+        "expected_final_score": 190.8
+      },
+      {
+        "over": 6.0,
+        "score_wickets": "57/1",
+        "rr": 9.5,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 129.3,
+        "expected_final_score": 186.8
+      },
+      {
+        "over": 7.0,
+        "score_wickets": "68/1",
+        "rr": 9.71,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 137.9,
+        "expected_final_score": 193.7
+      },
+      {
+        "over": 8.0,
+        "score_wickets": "76/2",
+        "rr": 9.5,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 131.6,
+        "expected_final_score": 189.9
+      },
+      {
+        "over": 9.0,
+        "score_wickets": "86/2",
+        "rr": 9.56,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 136.9,
+        "expected_final_score": 187.8
+      },
+      {
+        "over": 10.0,
+        "score_wickets": "94/2",
+        "rr": 9.4,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 142.2,
+        "expected_final_score": 201.2
+      },
+      {
+        "over": 11.0,
+        "score_wickets": "101/2",
+        "rr": 9.18,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 135.4,
+        "expected_final_score": 187.2
+      },
+      {
+        "over": 12.0,
+        "score_wickets": "116/3",
+        "rr": 9.67,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 142.8,
+        "expected_final_score": 203.5
+      },
+      {
+        "over": 13.0,
+        "score_wickets": "122/3",
+        "rr": 9.38,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 141.1,
+        "expected_final_score": 197.3
+      },
+      {
+        "over": 14.0,
+        "score_wickets": "136/3",
+        "rr": 9.71,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 144.0,
+        "expected_final_score": 199.7
+      },
+      {
+        "over": 15.0,
+        "score_wickets": "140/4",
+        "rr": 9.33,
+        "expected_score_at_6": null,
+        "expected_score_at_15": null,
+        "expected_final_score": 197.0
+      },
+      {
+        "over": 16.0,
+        "score_wickets": "164/4",
+        "rr": 10.25,
+        "expected_score_at_6": null,
+        "expected_score_at_15": null,
+        "expected_final_score": 208.9
+      },
+      {
+        "over": 17.0,
+        "score_wickets": "168/5",
+        "rr": 9.88,
+        "expected_score_at_6": null,
+        "expected_score_at_15": null,
+        "expected_final_score": 205.5
+      },
+      {
+        "over": 18.0,
+        "score_wickets": "175/6",
+        "rr": 9.72,
+        "expected_score_at_6": null,
+        "expected_score_at_15": null,
+        "expected_final_score": 197.4
+      },
+      {
+        "over": 19.0,
+        "score_wickets": "178/8",
+        "rr": 9.37,
+        "expected_score_at_6": null,
+        "expected_score_at_15": null,
+        "expected_final_score": 190.0
+      }
+    ]
+  },
+  {
+    "match_id": "1136581",
+    "season": "2018",
+    "batting_team": "Mumbai Indians",
+    "actual_score_at_6": 43,
+    "actual_score_at_15": 135,
+    "actual_final_score": 167,
+    "trajectory": [
+      {
+        "over": 1.0,
+        "score_wickets": "1/1",
+        "rr": 1.0,
+        "expected_score_at_6": 40.6,
+        "expected_score_at_15": 82.9,
+        "expected_final_score": 151.5
+      },
+      {
+        "over": 2.0,
+        "score_wickets": "4/1",
+        "rr": 2.0,
+        "expected_score_at_6": 35.7,
+        "expected_score_at_15": 82.9,
+        "expected_final_score": 154.4
+      },
+      {
+        "over": 3.0,
+        "score_wickets": "11/1",
+        "rr": 3.67,
+        "expected_score_at_6": 37.6,
+        "expected_score_at_15": 87.2,
+        "expected_final_score": 152.4
+      },
+      {
+        "over": 4.0,
+        "score_wickets": "17/1",
+        "rr": 4.25,
+        "expected_score_at_6": 34.0,
+        "expected_score_at_15": 88.2,
+        "expected_final_score": 144.9
+      },
+      {
+        "over": 5.0,
+        "score_wickets": "35/1",
+        "rr": 7.0,
+        "expected_score_at_6": 43.2,
+        "expected_score_at_15": 116.3,
+        "expected_final_score": 158.9
+      },
+      {
+        "over": 6.0,
+        "score_wickets": "43/1",
+        "rr": 7.17,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 114.3,
+        "expected_final_score": 165.8
+      },
+      {
+        "over": 7.0,
+        "score_wickets": "52/1",
+        "rr": 7.43,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 123.3,
+        "expected_final_score": 176.4
+      },
+      {
+        "over": 8.0,
+        "score_wickets": "64/1",
+        "rr": 8.0,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 124.5,
+        "expected_final_score": 178.4
+      },
+      {
+        "over": 9.0,
+        "score_wickets": "75/1",
+        "rr": 8.33,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 128.8,
+        "expected_final_score": 180.4
+      },
+      {
+        "over": 10.0,
+        "score_wickets": "93/1",
+        "rr": 9.3,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 139.6,
+        "expected_final_score": 194.9
+      },
+      {
+        "over": 11.0,
+        "score_wickets": "104/1",
+        "rr": 9.45,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 142.3,
+        "expected_final_score": 197.6
+      },
+      {
+        "over": 12.0,
+        "score_wickets": "112/1",
+        "rr": 9.33,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 141.2,
+        "expected_final_score": 199.8
+      },
+      {
+        "over": 13.0,
+        "score_wickets": "121/1",
+        "rr": 9.31,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 141.1,
+        "expected_final_score": 201.0
+      },
+      {
+        "over": 14.0,
+        "score_wickets": "129/1",
+        "rr": 9.21,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 138.3,
+        "expected_final_score": 195.3
+      },
+      {
+        "over": 15.0,
+        "score_wickets": "135/2",
+        "rr": 9.0,
+        "expected_score_at_6": null,
+        "expected_score_at_15": null,
+        "expected_final_score": 189.6
+      },
+      {
+        "over": 16.0,
+        "score_wickets": "137/4",
+        "rr": 8.56,
+        "expected_score_at_6": null,
+        "expected_score_at_15": null,
+        "expected_final_score": 179.6
+      },
+      {
+        "over": 17.0,
+        "score_wickets": "140/4",
+        "rr": 8.24,
+        "expected_score_at_6": null,
+        "expected_score_at_15": null,
+        "expected_final_score": 171.5
+      },
+      {
+        "over": 18.0,
+        "score_wickets": "153/4",
+        "rr": 8.5,
+        "expected_score_at_6": null,
+        "expected_score_at_15": null,
+        "expected_final_score": 178.4
+      },
+      {
+        "over": 19.0,
+        "score_wickets": "158/7",
+        "rr": 8.32,
+        "expected_score_at_6": null,
+        "expected_score_at_15": null,
+        "expected_final_score": 169.2
+      }
+    ]
+  },
+  {
+    "match_id": "1216507",
+    "season": "2020/21",
+    "batting_team": "Sunrisers Hyderabad",
+    "actual_score_at_6": 26,
+    "actual_score_at_15": 96,
+    "actual_final_score": 158,
+    "trajectory": [
+      {
+        "over": 1.0,
+        "score_wickets": "2/0",
+        "rr": 2.0,
+        "expected_score_at_6": 44.2,
+        "expected_score_at_15": 82.9,
+        "expected_final_score": 166.6
+      },
+      {
+        "over": 2.0,
+        "score_wickets": "5/0",
+        "rr": 2.5,
+        "expected_score_at_6": 37.1,
+        "expected_score_at_15": 82.9,
+        "expected_final_score": 154.7
+      },
+      {
+        "over": 3.0,
+        "score_wickets": "6/0",
+        "rr": 2.0,
+        "expected_score_at_6": 29.5,
+        "expected_score_at_15": 82.9,
+        "expected_final_score": 152.6
+      },
+      {
+        "over": 4.0,
+        "score_wickets": "13/0",
+        "rr": 3.25,
+        "expected_score_at_6": 29.3,
+        "expected_score_at_15": 82.9,
+        "expected_final_score": 143.7
+      },
+      {
+        "over": 5.0,
+        "score_wickets": "23/1",
+        "rr": 4.6,
+        "expected_score_at_6": 28.8,
+        "expected_score_at_15": 101.6,
+        "expected_final_score": 138.1
+      },
+      {
+        "over": 6.0,
+        "score_wickets": "26/1",
+        "rr": 4.33,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 90.0,
+        "expected_final_score": 132.3
+      },
+      {
+        "over": 7.0,
+        "score_wickets": "38/1",
+        "rr": 5.43,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 111.8,
+        "expected_final_score": 161.5
+      },
+      {
+        "over": 8.0,
+        "score_wickets": "49/1",
+        "rr": 6.12,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 107.4,
+        "expected_final_score": 161.2
+      },
+      {
+        "over": 9.0,
+        "score_wickets": "56/1",
+        "rr": 6.22,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 109.2,
+        "expected_final_score": 161.9
+      },
+      {
+        "over": 10.0,
+        "score_wickets": "63/1",
+        "rr": 6.3,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 107.3,
+        "expected_final_score": 159.4
+      },
+      {
+        "over": 11.0,
+        "score_wickets": "74/1",
+        "rr": 6.73,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 109.2,
+        "expected_final_score": 158.7
+      },
+      {
+        "over": 12.0,
+        "score_wickets": "77/1",
+        "rr": 6.42,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 103.7,
+        "expected_final_score": 160.9
+      },
+      {
+        "over": 13.0,
+        "score_wickets": "83/1",
+        "rr": 6.38,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 104.6,
+        "expected_final_score": 161.4
+      },
+      {
+        "over": 14.0,
+        "score_wickets": "93/1",
+        "rr": 6.64,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 109.7,
+        "expected_final_score": 161.4
+      },
+      {
+        "over": 15.0,
+        "score_wickets": "96/2",
+        "rr": 6.4,
+        "expected_score_at_6": null,
+        "expected_score_at_15": null,
+        "expected_final_score": 148.7
+      },
+      {
+        "over": 16.0,
+        "score_wickets": "109/2",
+        "rr": 6.81,
+        "expected_score_at_6": null,
+        "expected_score_at_15": null,
+        "expected_final_score": 150.1
+      },
+      {
+        "over": 17.0,
+        "score_wickets": "117/2",
+        "rr": 6.88,
+        "expected_score_at_6": null,
+        "expected_score_at_15": null,
+        "expected_final_score": 149.1
+      },
+      {
+        "over": 18.0,
+        "score_wickets": "123/3",
+        "rr": 6.83,
+        "expected_score_at_6": null,
+        "expected_score_at_15": null,
+        "expected_final_score": 147.4
+      },
+      {
+        "over": 19.0,
+        "score_wickets": "142/3",
+        "rr": 7.47,
+        "expected_score_at_6": null,
+        "expected_score_at_15": null,
+        "expected_final_score": 152.1
+      }
+    ]
+  },
+  {
+    "match_id": "1359486",
+    "season": "2023",
+    "batting_team": "Mumbai Indians",
+    "actual_score_at_6": 61,
+    "actual_score_at_15": 109,
+    "actual_final_score": 157,
+    "trajectory": [
+      {
+        "over": 1.0,
+        "score_wickets": "10/0",
+        "rr": 10.0,
+        "expected_score_at_6": 52.8,
+        "expected_score_at_15": 145.3,
+        "expected_final_score": 181.0
+      },
+      {
+        "over": 2.0,
+        "score_wickets": "16/0",
+        "rr": 8.0,
+        "expected_score_at_6": 53.6,
+        "expected_score_at_15": 116.5,
+        "expected_final_score": 176.5
+      },
+      {
+        "over": 3.0,
+        "score_wickets": "30/0",
+        "rr": 10.0,
+        "expected_score_at_6": 54.6,
+        "expected_score_at_15": 145.3,
+        "expected_final_score": 182.6
+      },
+      {
+        "over": 4.0,
+        "score_wickets": "38/1",
+        "rr": 9.5,
+        "expected_score_at_6": 56.0,
+        "expected_score_at_15": 127.3,
+        "expected_final_score": 164.6
+      },
+      {
+        "over": 5.0,
+        "score_wickets": "47/1",
+        "rr": 9.4,
+        "expected_score_at_6": 55.4,
+        "expected_score_at_15": 128.2,
+        "expected_final_score": 180.2
+      },
+      {
+        "over": 6.0,
+        "score_wickets": "61/1",
+        "rr": 10.17,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 136.9,
+        "expected_final_score": 194.9
+      },
+      {
+        "over": 7.0,
+        "score_wickets": "66/2",
+        "rr": 9.43,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 131.9,
+        "expected_final_score": 185.3
+      },
+      {
+        "over": 8.0,
+        "score_wickets": "73/3",
+        "rr": 9.12,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 118.8,
+        "expected_final_score": 163.5
+      },
+      {
+        "over": 9.0,
+        "score_wickets": "76/4",
+        "rr": 8.44,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 110.2,
+        "expected_final_score": 146.1
+      },
+      {
+        "over": 10.0,
+        "score_wickets": "84/5",
+        "rr": 8.4,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 119.0,
+        "expected_final_score": 166.4
+      },
+      {
+        "over": 11.0,
+        "score_wickets": "87/5",
+        "rr": 7.91,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 121.2,
+        "expected_final_score": 148.3
+      },
+      {
+        "over": 12.0,
+        "score_wickets": "93/5",
+        "rr": 7.75,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 114.3,
+        "expected_final_score": 157.5
+      },
+      {
+        "over": 13.0,
+        "score_wickets": "102/6",
+        "rr": 7.85,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 115.6,
+        "expected_final_score": 153.2
+      },
+      {
+        "over": 14.0,
+        "score_wickets": "105/6",
+        "rr": 7.5,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 110.1,
+        "expected_final_score": 147.3
+      },
+      {
+        "over": 15.0,
+        "score_wickets": "109/6",
+        "rr": 7.27,
+        "expected_score_at_6": null,
+        "expected_score_at_15": null,
+        "expected_final_score": 150.8
+      },
+      {
+        "over": 16.0,
+        "score_wickets": "113/7",
+        "rr": 7.06,
+        "expected_score_at_6": null,
+        "expected_score_at_15": null,
+        "expected_final_score": 143.2
+      },
+      {
+        "over": 17.0,
+        "score_wickets": "131/8",
+        "rr": 7.71,
+        "expected_score_at_6": null,
+        "expected_score_at_15": null,
+        "expected_final_score": 152.3
+      },
+      {
+        "over": 18.0,
+        "score_wickets": "135/8",
+        "rr": 7.5,
+        "expected_score_at_6": null,
+        "expected_score_at_15": null,
+        "expected_final_score": 152.2
+      },
+      {
+        "over": 19.0,
+        "score_wickets": "141/8",
+        "rr": 7.42,
+        "expected_score_at_6": null,
+        "expected_score_at_15": null,
+        "expected_final_score": 150.5
+      }
+    ]
+  },
+  {
+    "match_id": "419117",
+    "season": "2009/10",
+    "batting_team": "Deccan Chargers",
+    "actual_score_at_6": 56,
+    "actual_score_at_15": 125,
+    "actual_final_score": 170,
+    "trajectory": [
+      {
+        "over": 1.0,
+        "score_wickets": "4/0",
+        "rr": 4.0,
+        "expected_score_at_6": 45.9,
+        "expected_score_at_15": 85.7,
+        "expected_final_score": 163.4
+      },
+      {
+        "over": 2.0,
+        "score_wickets": "28/0",
+        "rr": 14.0,
+        "expected_score_at_6": 62.5,
+        "expected_score_at_15": 171.4,
+        "expected_final_score": 189.9
+      },
+      {
+        "over": 3.0,
+        "score_wickets": "43/1",
+        "rr": 14.33,
+        "expected_score_at_6": 68.7,
+        "expected_score_at_15": 171.9,
+        "expected_final_score": 191.4
+      },
+      {
+        "over": 4.0,
+        "score_wickets": "46/1",
+        "rr": 11.5,
+        "expected_score_at_6": 66.6,
+        "expected_score_at_15": 153.8,
+        "expected_final_score": 206.1
+      },
+      {
+        "over": 5.0,
+        "score_wickets": "53/1",
+        "rr": 10.6,
+        "expected_score_at_6": 62.6,
+        "expected_score_at_15": 139.7,
+        "expected_final_score": 197.1
+      },
+      {
+        "over": 6.0,
+        "score_wickets": "56/1",
+        "rr": 9.33,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 129.8,
+        "expected_final_score": 184.9
+      },
+      {
+        "over": 7.0,
+        "score_wickets": "65/1",
+        "rr": 9.29,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 129.7,
+        "expected_final_score": 183.3
+      },
+      {
+        "over": 8.0,
+        "score_wickets": "77/1",
+        "rr": 9.62,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 144.2,
+        "expected_final_score": 196.6
+      },
+      {
+        "over": 9.0,
+        "score_wickets": "84/1",
+        "rr": 9.33,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 140.6,
+        "expected_final_score": 192.2
+      },
+      {
+        "over": 10.0,
+        "score_wickets": "100/1",
+        "rr": 10.0,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 151.1,
+        "expected_final_score": 205.0
+      },
+      {
+        "over": 11.0,
+        "score_wickets": "103/3",
+        "rr": 9.36,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 139.6,
+        "expected_final_score": 191.8
+      },
+      {
+        "over": 12.0,
+        "score_wickets": "113/4",
+        "rr": 9.42,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 139.0,
+        "expected_final_score": 199.0
+      },
+      {
+        "over": 13.0,
+        "score_wickets": "115/4",
+        "rr": 8.85,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 131.7,
+        "expected_final_score": 179.2
+      },
+      {
+        "over": 14.0,
+        "score_wickets": "119/4",
+        "rr": 8.5,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 125.5,
+        "expected_final_score": 172.9
+      },
+      {
+        "over": 15.0,
+        "score_wickets": "125/4",
+        "rr": 8.33,
+        "expected_score_at_6": null,
+        "expected_score_at_15": null,
+        "expected_final_score": 176.1
+      },
+      {
+        "over": 16.0,
+        "score_wickets": "134/4",
+        "rr": 8.38,
+        "expected_score_at_6": null,
+        "expected_score_at_15": null,
+        "expected_final_score": 176.5
+      },
+      {
+        "over": 17.0,
+        "score_wickets": "144/5",
+        "rr": 8.47,
+        "expected_score_at_6": null,
+        "expected_score_at_15": null,
+        "expected_final_score": 176.9
+      },
+      {
+        "over": 18.0,
+        "score_wickets": "157/5",
+        "rr": 8.72,
+        "expected_score_at_6": null,
+        "expected_score_at_15": null,
+        "expected_final_score": 179.4
+      },
+      {
+        "over": 19.0,
+        "score_wickets": "162/6",
+        "rr": 8.53,
+        "expected_score_at_6": null,
+        "expected_score_at_15": null,
+        "expected_final_score": 172.3
+      }
+    ]
+  },
+  {
+    "match_id": "980931",
+    "season": "2016",
+    "batting_team": "Royal Challengers Bangalore",
+    "actual_score_at_6": 48,
+    "actual_score_at_15": 128,
+    "actual_final_score": 185,
+    "trajectory": [
+      {
+        "over": 1.0,
+        "score_wickets": "9/0",
+        "rr": 9.0,
+        "expected_score_at_6": 51.3,
+        "expected_score_at_15": 130.3,
+        "expected_final_score": 176.4
+      },
+      {
+        "over": 2.0,
+        "score_wickets": "11/0",
+        "rr": 5.5,
+        "expected_score_at_6": 44.2,
+        "expected_score_at_15": 111.7,
+        "expected_final_score": 166.4
+      },
+      {
+        "over": 3.0,
+        "score_wickets": "22/0",
+        "rr": 7.33,
+        "expected_score_at_6": 46.3,
+        "expected_score_at_15": 119.9,
+        "expected_final_score": 170.9
+      },
+      {
+        "over": 4.0,
+        "score_wickets": "29/1",
+        "rr": 7.25,
+        "expected_score_at_6": 45.8,
+        "expected_score_at_15": 114.0,
+        "expected_final_score": 160.9
+      },
+      {
+        "over": 5.0,
+        "score_wickets": "37/1",
+        "rr": 7.4,
+        "expected_score_at_6": 46.3,
+        "expected_score_at_15": 112.8,
+        "expected_final_score": 151.1
+      },
+      {
+        "over": 6.0,
+        "score_wickets": "48/1",
+        "rr": 8.0,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 123.2,
+        "expected_final_score": 173.9
+      },
+      {
+        "over": 7.0,
+        "score_wickets": "53/1",
+        "rr": 7.57,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 119.2,
+        "expected_final_score": 173.8
+      },
+      {
+        "over": 8.0,
+        "score_wickets": "57/1",
+        "rr": 7.12,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 115.1,
+        "expected_final_score": 167.4
+      },
+      {
+        "over": 9.0,
+        "score_wickets": "69/1",
+        "rr": 7.67,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 122.1,
+        "expected_final_score": 173.0
+      },
+      {
+        "over": 10.0,
+        "score_wickets": "79/1",
+        "rr": 7.9,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 121.5,
+        "expected_final_score": 177.6
+      },
+      {
+        "over": 11.0,
+        "score_wickets": "97/1",
+        "rr": 8.82,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 134.4,
+        "expected_final_score": 193.9
+      },
+      {
+        "over": 12.0,
+        "score_wickets": "106/1",
+        "rr": 8.83,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 135.7,
+        "expected_final_score": 194.3
+      },
+      {
+        "over": 13.0,
+        "score_wickets": "111/1",
+        "rr": 8.54,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 130.7,
+        "expected_final_score": 186.2
+      },
+      {
+        "over": 14.0,
+        "score_wickets": "122/1",
+        "rr": 8.71,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 133.4,
+        "expected_final_score": 195.5
+      },
+      {
+        "over": 15.0,
+        "score_wickets": "128/1",
+        "rr": 8.53,
+        "expected_score_at_6": null,
+        "expected_score_at_15": null,
+        "expected_final_score": 175.8
+      },
+      {
+        "over": 16.0,
+        "score_wickets": "137/1",
+        "rr": 8.56,
+        "expected_score_at_6": null,
+        "expected_score_at_15": null,
+        "expected_final_score": 184.7
+      },
+      {
+        "over": 17.0,
+        "score_wickets": "144/1",
+        "rr": 8.47,
+        "expected_score_at_6": null,
+        "expected_score_at_15": null,
+        "expected_final_score": 180.7
+      },
+      {
+        "over": 18.0,
+        "score_wickets": "157/1",
+        "rr": 8.72,
+        "expected_score_at_6": null,
+        "expected_score_at_15": null,
+        "expected_final_score": 182.6
+      },
+      {
+        "over": 19.0,
+        "score_wickets": "173/1",
+        "rr": 9.11,
+        "expected_score_at_6": null,
+        "expected_score_at_15": null,
+        "expected_final_score": 187.2
+      }
+    ]
+  },
+  {
+    "match_id": "419123",
+    "season": "2009/10",
+    "batting_team": "Royal Challengers Bangalore",
+    "actual_score_at_6": 38,
+    "actual_score_at_15": 104,
+    "actual_final_score": 171,
+    "trajectory": [
+      {
+        "over": 1.0,
+        "score_wickets": "2/0",
+        "rr": 2.0,
+        "expected_score_at_6": 44.2,
+        "expected_score_at_15": 82.9,
+        "expected_final_score": 166.6
+      },
+      {
+        "over": 2.0,
+        "score_wickets": "8/0",
+        "rr": 4.0,
+        "expected_score_at_6": 43.7,
+        "expected_score_at_15": 85.7,
+        "expected_final_score": 165.1
+      },
+      {
+        "over": 3.0,
+        "score_wickets": "17/0",
+        "rr": 5.67,
+        "expected_score_at_6": 43.1,
+        "expected_score_at_15": 111.7,
+        "expected_final_score": 166.8
+      },
+      {
+        "over": 4.0,
+        "score_wickets": "19/0",
+        "rr": 4.75,
+        "expected_score_at_6": 37.6,
+        "expected_score_at_15": 103.4,
+        "expected_final_score": 157.7
+      },
+      {
+        "over": 5.0,
+        "score_wickets": "29/1",
+        "rr": 5.8,
+        "expected_score_at_6": 35.6,
+        "expected_score_at_15": 106.9,
+        "expected_final_score": 163.8
+      },
+      {
+        "over": 6.0,
+        "score_wickets": "38/1",
+        "rr": 6.33,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 102.5,
+        "expected_final_score": 156.5
+      },
+      {
+        "over": 7.0,
+        "score_wickets": "52/1",
+        "rr": 7.43,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 123.3,
+        "expected_final_score": 176.4
+      },
+      {
+        "over": 8.0,
+        "score_wickets": "59/2",
+        "rr": 7.38,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 114.5,
+        "expected_final_score": 168.1
+      },
+      {
+        "over": 9.0,
+        "score_wickets": "61/2",
+        "rr": 6.78,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 108.6,
+        "expected_final_score": 165.9
+      },
+      {
+        "over": 10.0,
+        "score_wickets": "67/3",
+        "rr": 6.7,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 106.0,
+        "expected_final_score": 161.4
+      },
+      {
+        "over": 11.0,
+        "score_wickets": "75/3",
+        "rr": 6.82,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 104.4,
+        "expected_final_score": 155.8
+      },
+      {
+        "over": 12.0,
+        "score_wickets": "86/3",
+        "rr": 7.17,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 110.6,
+        "expected_final_score": 161.5
+      },
+      {
+        "over": 13.0,
+        "score_wickets": "94/3",
+        "rr": 7.23,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 110.6,
+        "expected_final_score": 164.5
+      },
+      {
+        "over": 14.0,
+        "score_wickets": "99/3",
+        "rr": 7.07,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 107.1,
+        "expected_final_score": 162.9
+      },
+      {
+        "over": 15.0,
+        "score_wickets": "104/3",
+        "rr": 6.93,
+        "expected_score_at_6": null,
+        "expected_score_at_15": null,
+        "expected_final_score": 160.3
+      },
+      {
+        "over": 16.0,
+        "score_wickets": "110/4",
+        "rr": 6.88,
+        "expected_score_at_6": null,
+        "expected_score_at_15": null,
+        "expected_final_score": 150.5
+      },
+      {
+        "over": 17.0,
+        "score_wickets": "119/5",
+        "rr": 7.0,
+        "expected_score_at_6": null,
+        "expected_score_at_15": null,
+        "expected_final_score": 149.0
+      },
+      {
+        "over": 18.0,
+        "score_wickets": "130/5",
+        "rr": 7.22,
+        "expected_score_at_6": null,
+        "expected_score_at_15": null,
+        "expected_final_score": 151.3
+      },
+      {
+        "over": 19.0,
+        "score_wickets": "154/5",
+        "rr": 8.11,
+        "expected_score_at_6": null,
+        "expected_score_at_15": null,
+        "expected_final_score": 166.5
+      }
+    ]
+  },
+  {
+    "match_id": "1254064",
+    "season": "2021",
+    "batting_team": "Delhi Capitals",
+    "actual_score_at_6": 36,
+    "actual_score_at_15": 102,
+    "actual_final_score": 147,
+    "trajectory": [
+      {
+        "over": 1.0,
+        "score_wickets": "2/0",
+        "rr": 2.0,
+        "expected_score_at_6": 44.2,
+        "expected_score_at_15": 82.9,
+        "expected_final_score": 166.6
+      },
+      {
+        "over": 2.0,
+        "score_wickets": "5/1",
+        "rr": 2.5,
+        "expected_score_at_6": 36.5,
+        "expected_score_at_15": 82.9,
+        "expected_final_score": 148.4
+      },
+      {
+        "over": 3.0,
+        "score_wickets": "16/1",
+        "rr": 5.33,
+        "expected_score_at_6": 39.5,
+        "expected_score_at_15": 105.5,
+        "expected_final_score": 153.8
+      },
+      {
+        "over": 4.0,
+        "score_wickets": "20/2",
+        "rr": 5.0,
+        "expected_score_at_6": 34.7,
+        "expected_score_at_15": 97.1,
+        "expected_final_score": 148.4
+      },
+      {
+        "over": 5.0,
+        "score_wickets": "31/2",
+        "rr": 6.2,
+        "expected_score_at_6": 37.8,
+        "expected_score_at_15": 105.9,
+        "expected_final_score": 149.5
+      },
+      {
+        "over": 6.0,
+        "score_wickets": "36/3",
+        "rr": 6.0,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 102.4,
+        "expected_final_score": 145.1
+      },
+      {
+        "over": 7.0,
+        "score_wickets": "37/4",
+        "rr": 5.29,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 88.3,
+        "expected_final_score": 108.5
+      },
+      {
+        "over": 8.0,
+        "score_wickets": "46/4",
+        "rr": 5.75,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 86.7,
+        "expected_final_score": 127.2
+      },
+      {
+        "over": 9.0,
+        "score_wickets": "54/4",
+        "rr": 6.0,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 92.2,
+        "expected_final_score": 127.2
+      },
+      {
+        "over": 10.0,
+        "score_wickets": "57/4",
+        "rr": 5.7,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 92.0,
+        "expected_final_score": 138.2
+      },
+      {
+        "over": 11.0,
+        "score_wickets": "77/4",
+        "rr": 7.0,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 105.7,
+        "expected_final_score": 149.5
+      },
+      {
+        "over": 12.0,
+        "score_wickets": "85/4",
+        "rr": 7.08,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 107.0,
+        "expected_final_score": 152.2
+      },
+      {
+        "over": 13.0,
+        "score_wickets": "93/5",
+        "rr": 7.15,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 104.5,
+        "expected_final_score": 154.0
+      },
+      {
+        "over": 14.0,
+        "score_wickets": "95/5",
+        "rr": 6.79,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 102.4,
+        "expected_final_score": 141.4
+      },
+      {
+        "over": 15.0,
+        "score_wickets": "102/6",
+        "rr": 6.8,
+        "expected_score_at_6": null,
+        "expected_score_at_15": null,
+        "expected_final_score": 144.4
+      },
+      {
+        "over": 16.0,
+        "score_wickets": "107/6",
+        "rr": 6.69,
+        "expected_score_at_6": null,
+        "expected_score_at_15": null,
+        "expected_final_score": 137.7
+      },
+      {
+        "over": 17.0,
+        "score_wickets": "115/6",
+        "rr": 6.76,
+        "expected_score_at_6": null,
+        "expected_score_at_15": null,
+        "expected_final_score": 145.9
+      },
+      {
+        "over": 18.0,
+        "score_wickets": "124/6",
+        "rr": 6.89,
+        "expected_score_at_6": null,
+        "expected_score_at_15": null,
+        "expected_final_score": 147.8
+      },
+      {
+        "over": 19.0,
+        "score_wickets": "136/8",
+        "rr": 7.16,
+        "expected_score_at_6": null,
+        "expected_score_at_15": null,
+        "expected_final_score": 145.2
+      }
+    ]
+  },
+  {
+    "match_id": "1529295",
+    "season": "2026",
+    "batting_team": "Gujarat Titans",
+    "actual_score_at_6": 82,
+    "actual_score_at_15": 166,
+    "actual_final_score": 229,
+    "trajectory": [
+      {
+        "over": 1.0,
+        "score_wickets": "18/0",
+        "rr": 18.0,
+        "expected_score_at_6": 63.0,
+        "expected_score_at_15": 174.1,
+        "expected_final_score": 172.0
+      },
+      {
+        "over": 2.0,
+        "score_wickets": "26/0",
+        "rr": 13.0,
+        "expected_score_at_6": 69.2,
+        "expected_score_at_15": 165.3,
+        "expected_final_score": 200.9
+      },
+      {
+        "over": 3.0,
+        "score_wickets": "37/0",
+        "rr": 12.33,
+        "expected_score_at_6": 69.8,
+        "expected_score_at_15": 158.3,
+        "expected_final_score": 205.3
+      },
+      {
+        "over": 4.0,
+        "score_wickets": "52/0",
+        "rr": 13.0,
+        "expected_score_at_6": 74.9,
+        "expected_score_at_15": 165.3,
+        "expected_final_score": 201.6
+      },
+      {
+        "over": 5.0,
+        "score_wickets": "67/0",
+        "rr": 13.4,
+        "expected_score_at_6": 78.8,
+        "expected_score_at_15": 176.6,
+        "expected_final_score": 225.8
+      },
+      {
+        "over": 6.0,
+        "score_wickets": "82/0",
+        "rr": 13.67,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 174.7,
+        "expected_final_score": 227.5
+      },
+      {
+        "over": 7.0,
+        "score_wickets": "92/0",
+        "rr": 13.14,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 171.9,
+        "expected_final_score": 221.5
+      },
+      {
+        "over": 8.0,
+        "score_wickets": "98/0",
+        "rr": 12.25,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 166.3,
+        "expected_final_score": 220.1
+      },
+      {
+        "over": 9.0,
+        "score_wickets": "108/0",
+        "rr": 12.0,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 163.8,
+        "expected_final_score": 219.0
+      },
+      {
+        "over": 10.0,
+        "score_wickets": "114/0",
+        "rr": 11.4,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 168.1,
+        "expected_final_score": 221.8
+      },
+      {
+        "over": 11.0,
+        "score_wickets": "119/1",
+        "rr": 10.82,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 158.7,
+        "expected_final_score": 211.1
+      },
+      {
+        "over": 12.0,
+        "score_wickets": "136/1",
+        "rr": 11.33,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 166.9,
+        "expected_final_score": 219.5
+      },
+      {
+        "over": 13.0,
+        "score_wickets": "150/1",
+        "rr": 11.54,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 173.0,
+        "expected_final_score": 228.2
+      },
+      {
+        "over": 14.0,
+        "score_wickets": "155/2",
+        "rr": 11.07,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 163.0,
+        "expected_final_score": 222.2
+      },
+      {
+        "over": 15.0,
+        "score_wickets": "166/2",
+        "rr": 11.07,
+        "expected_score_at_6": null,
+        "expected_score_at_15": null,
+        "expected_final_score": 222.1
+      },
+      {
+        "over": 16.0,
+        "score_wickets": "179/2",
+        "rr": 11.19,
+        "expected_score_at_6": null,
+        "expected_score_at_15": null,
+        "expected_final_score": 227.8
+      },
+      {
+        "over": 17.0,
+        "score_wickets": "196/3",
+        "rr": 11.53,
+        "expected_score_at_6": null,
+        "expected_score_at_15": null,
+        "expected_final_score": 229.3
+      },
+      {
+        "over": 18.0,
+        "score_wickets": "204/3",
+        "rr": 11.33,
+        "expected_score_at_6": null,
+        "expected_score_at_15": null,
+        "expected_final_score": 229.1
+      },
+      {
+        "over": 19.0,
+        "score_wickets": "208/4",
+        "rr": 10.95,
+        "expected_score_at_6": null,
+        "expected_score_at_15": null,
+        "expected_final_score": 224.8
+      }
+    ]
+  },
+  {
+    "match_id": "548346",
+    "season": "2012",
+    "batting_team": "Deccan Chargers",
+    "actual_score_at_6": 38,
+    "actual_score_at_15": 82,
+    "actual_final_score": 100,
+    "trajectory": [
+      {
+        "over": 1.0,
+        "score_wickets": "3/0",
+        "rr": 3.0,
+        "expected_score_at_6": 43.6,
+        "expected_score_at_15": 82.9,
+        "expected_final_score": 166.0
+      },
+      {
+        "over": 2.0,
+        "score_wickets": "12/0",
+        "rr": 6.0,
+        "expected_score_at_6": 46.5,
+        "expected_score_at_15": 112.0,
+        "expected_final_score": 163.2
+      },
+      {
+        "over": 3.0,
+        "score_wickets": "20/0",
+        "rr": 6.67,
+        "expected_score_at_6": 46.5,
+        "expected_score_at_15": 112.5,
+        "expected_final_score": 161.1
+      },
+      {
+        "over": 4.0,
+        "score_wickets": "29/0",
+        "rr": 7.25,
+        "expected_score_at_6": 48.8,
+        "expected_score_at_15": 117.7,
+        "expected_final_score": 163.5
+      },
+      {
+        "over": 5.0,
+        "score_wickets": "36/0",
+        "rr": 7.2,
+        "expected_score_at_6": 45.2,
+        "expected_score_at_15": 118.1,
+        "expected_final_score": 167.7
+      },
+      {
+        "over": 6.0,
+        "score_wickets": "38/1",
+        "rr": 6.33,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 102.5,
+        "expected_final_score": 156.5
+      },
+      {
+        "over": 7.0,
+        "score_wickets": "40/1",
+        "rr": 5.71,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 110.6,
+        "expected_final_score": 162.8
+      },
+      {
+        "over": 8.0,
+        "score_wickets": "43/2",
+        "rr": 5.38,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 99.1,
+        "expected_final_score": 148.6
+      },
+      {
+        "over": 9.0,
+        "score_wickets": "48/3",
+        "rr": 5.33,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 92.5,
+        "expected_final_score": 140.1
+      },
+      {
+        "over": 10.0,
+        "score_wickets": "51/3",
+        "rr": 5.1,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 91.0,
+        "expected_final_score": 137.2
+      },
+      {
+        "over": 11.0,
+        "score_wickets": "59/3",
+        "rr": 5.36,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 86.7,
+        "expected_final_score": 137.1
+      },
+      {
+        "over": 12.0,
+        "score_wickets": "64/4",
+        "rr": 5.33,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 88.5,
+        "expected_final_score": 135.2
+      },
+      {
+        "over": 13.0,
+        "score_wickets": "66/6",
+        "rr": 5.08,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 75.5,
+        "expected_final_score": 109.7
+      },
+      {
+        "over": 14.0,
+        "score_wickets": "74/6",
+        "rr": 5.29,
+        "expected_score_at_6": null,
+        "expected_score_at_15": 78.4,
+        "expected_final_score": 106.4
+      },
+      {
+        "over": 15.0,
+        "score_wickets": "82/6",
+        "rr": 5.47,
+        "expected_score_at_6": null,
+        "expected_score_at_15": null,
+        "expected_final_score": 130.5
+      },
+      {
+        "over": 16.0,
+        "score_wickets": "87/7",
+        "rr": 5.44,
+        "expected_score_at_6": null,
+        "expected_score_at_15": null,
+        "expected_final_score": 108.6
+      },
+      {
+        "over": 17.0,
+        "score_wickets": "90/8",
+        "rr": 5.29,
+        "expected_score_at_6": null,
+        "expected_score_at_15": null,
+        "expected_final_score": 101.7
+      },
+      {
+        "over": 18.0,
+        "score_wickets": "99/8",
+        "rr": 5.5,
+        "expected_score_at_6": null,
+        "expected_score_at_15": null,
+        "expected_final_score": 113.5
+      }
+    ]
+  }
+]

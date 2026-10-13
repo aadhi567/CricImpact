@@ -1,0 +1,578 @@
+bowler,balls,seasons,teams
+R Ashwin,4868,"['2009', '2009/10', '2011', '2012', '2013', '2014', '2015', '2016', '2018', '2019', '2020/21', '2021', '2022', '2023', '2024', '2025']","['Chennai Super Kings', 'Delhi Capitals', 'Kings XI Punjab', 'Rajasthan Royals', 'Rising Pune Supergiants']"
+B Kumar,4769,"['2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020/21', '2021', '2022', '2023', '2024', '2025', '2026']","['Pune Warriors', 'Royal Challengers Bengaluru', 'Sunrisers Hyderabad']"
+SP Narine,4730,"['2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020/21', '2021', '2022', '2023', '2024', '2025', '2026']",['Kolkata Knight Riders']
+RA Jadeja,4329,"['2007/08', '2009', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020/21', '2021', '2022', '2023', '2024', '2025', '2026']","['Chennai Super Kings', 'Gujarat Lions', 'Kochi Tuskers Kerala', 'Rajasthan Royals']"
+YS Chahal,4167,"['2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020/21', '2021', '2022', '2023', '2024', '2025', '2026']","['Mumbai Indians', 'Punjab Kings', 'Rajasthan Royals', 'Royal Challengers Bangalore']"
+PP Chawla,3895,"['2007/08', '2009', '2009/10', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020/21', '2021', '2023', '2024']","['Chennai Super Kings', 'Kings XI Punjab', 'Kolkata Knight Riders', 'Mumbai Indians']"
+JJ Bumrah,3792,"['2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020/21', '2021', '2022', '2024', '2025', '2026']",['Mumbai Indians']
+AR Patel,3639,"['2014', '2015', '2016', '2017', '2018', '2019', '2020/21', '2021', '2022', '2023', '2024', '2025', '2026']","['Delhi Capitals', 'Kings XI Punjab']"
+Rashid Khan,3585,"['2017', '2018', '2019', '2020/21', '2021', '2022', '2023', '2024', '2025', '2026']","['Gujarat Titans', 'Sunrisers Hyderabad']"
+Harbhajan Singh,3496,"['2007/08', '2009', '2009/10', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2021']","['Chennai Super Kings', 'Kolkata Knight Riders', 'Mumbai Indians']"
+A Mishra,3444,"['2007/08', '2009', '2009/10', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020/21', '2021', '2023', '2024']","['Deccan Chargers', 'Delhi Capitals', 'Delhi Daredevils', 'Lucknow Super Giants', 'Sunrisers Hyderabad']"
+DJ Bravo,3296,"['2007/08', '2009', '2009/10', '2011', '2012', '2013', '2015', '2016', '2018', '2019', '2020/21', '2021', '2022']","['Chennai Super Kings', 'Gujarat Lions', 'Mumbai Indians']"
+Sandeep Sharma,3295,"['2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020/21', '2021', '2022', '2023', '2024', '2025', '2026']","['Kings XI Punjab', 'Punjab Kings', 'Rajasthan Royals', 'Sunrisers Hyderabad']"
+UT Yadav,3190,"['2009/10', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020/21', '2022', '2023', '2024']","['Delhi Daredevils', 'Gujarat Titans', 'Kolkata Knight Riders', 'Royal Challengers Bangalore']"
+Mohammed Shami,3035,"['2013', '2014', '2016', '2017', '2018', '2019', '2020/21', '2021', '2022', '2023', '2025', '2026']","['Delhi Daredevils', 'Gujarat Titans', 'Kings XI Punjab', 'Kolkata Knight Riders', 'Lucknow Super Giants', 'Punjab Kings', 'Sunrisers Hyderabad']"
+SL Malinga,2974,"['2009', '2009/10', '2011', '2012', '2013', '2014', '2015', '2017', '2019']",['Mumbai Indians']
+TA Boult,2892,"['2015', '2016', '2017', '2018', '2019', '2020/21', '2021', '2022', '2023', '2024', '2025', '2026']","['Delhi Capitals', 'Delhi Daredevils', 'Kolkata Knight Riders', 'Mumbai Indians', 'Rajasthan Royals', 'Sunrisers Hyderabad']"
+Mohammed Siraj,2834,"['2017', '2018', '2019', '2020/21', '2021', '2022', '2023', '2024', '2025', '2026']","['Gujarat Titans', 'Royal Challengers Bangalore', 'Royal Challengers Bengaluru', 'Sunrisers Hyderabad']"
+KH Pandya,2779,"['2016', '2017', '2018', '2019', '2020/21', '2021', '2022', '2023', '2024', '2025', '2026']","['Lucknow Super Giants', 'Mumbai Indians', 'Royal Challengers Bengaluru']"
+HV Patel,2654,"['2012', '2014', '2015', '2016', '2017', '2018', '2019', '2020/21', '2021', '2022', '2023', '2024', '2025', '2026']","['Delhi Capitals', 'Delhi Daredevils', 'Punjab Kings', 'Royal Challengers Bangalore', 'Sunrisers Hyderabad']"
+P Kumar,2637,"['2007/08', '2009', '2009/10', '2011', '2012', '2013', '2014', '2015', '2016', '2017']","['Gujarat Lions', 'Kings XI Punjab', 'Mumbai Indians', 'Royal Challengers Bangalore', 'Sunrisers Hyderabad']"
+I Sharma,2546,"['2007/08', '2009', '2009/10', '2011', '2013', '2014', '2015', '2016', '2017', '2019', '2020/21', '2021', '2023', '2024', '2025']","['Deccan Chargers', 'Delhi Capitals', 'Gujarat Titans', 'Kings XI Punjab', 'Kolkata Knight Riders', 'Rising Pune Supergiants', 'Sunrisers Hyderabad']"
+MM Sharma,2471,"['2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020/21', '2023', '2024', '2025']","['Chennai Super Kings', 'Delhi Capitals', 'Gujarat Titans', 'Kings XI Punjab']"
+JD Unadkat,2418,"['2009/10', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020/21', '2021', '2022', '2023', '2024', '2025', '2026']","['Delhi Daredevils', 'Kolkata Knight Riders', 'Lucknow Super Giants', 'Mumbai Indians', 'Rajasthan Royals', 'Rising Pune Supergiant', 'Royal Challengers Bangalore', 'Sunrisers Hyderabad']"
+K Rabada,2395,"['2017', '2019', '2020/21', '2021', '2022', '2023', '2024', '2025', '2026']","['Delhi Capitals', 'Delhi Daredevils', 'Gujarat Titans', 'Punjab Kings']"
+SN Thakur,2355,"['2015', '2017', '2018', '2019', '2020/21', '2021', '2022', '2023', '2024', '2025', '2026']","['Chennai Super Kings', 'Delhi Capitals', 'Kings XI Punjab', 'Kolkata Knight Riders', 'Lucknow Super Giants', 'Mumbai Indians', 'Rising Pune Supergiant']"
+Kuldeep Yadav,2336,"['2016', '2017', '2018', '2019', '2020/21', '2022', '2023', '2024', '2025', '2026']","['Delhi Capitals', 'Kolkata Knight Riders']"
+DW Steyn,2282,"['2007/08', '2009', '2009/10', '2011', '2012', '2013', '2014', '2015', '2016', '2019', '2020/21']","['Deccan Chargers', 'Gujarat Lions', 'Royal Challengers Bangalore', 'Sunrisers Hyderabad']"
+Z Khan,2276,"['2007/08', '2009', '2009/10', '2011', '2012', '2013', '2014', '2015', '2016', '2017']","['Delhi Daredevils', 'Mumbai Indians', 'Royal Challengers Bangalore']"
+CV Varun,2187,"['2019', '2020/21', '2021', '2022', '2023', '2024', '2025', '2026']","['Kings XI Punjab', 'Kolkata Knight Riders']"
+R Vinay Kumar,2186,"['2007/08', '2009', '2009/10', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018']","['Kochi Tuskers Kerala', 'Kolkata Knight Riders', 'Mumbai Indians', 'Royal Challengers Bangalore']"
+DL Chahar,2171,"['2016', '2017', '2018', '2019', '2020/21', '2021', '2023', '2024', '2025', '2026']","['Chennai Super Kings', 'Mumbai Indians', 'Rising Pune Supergiant', 'Rising Pune Supergiants']"
+Arshdeep Singh,2167,"['2019', '2020/21', '2021', '2022', '2023', '2024', '2025', '2026']","['Kings XI Punjab', 'Punjab Kings']"
+SR Watson,2137,"['2007/08', '2009/10', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018']","['Chennai Super Kings', 'Rajasthan Royals', 'Royal Challengers Bangalore']"
+IK Pathan,2113,"['2007/08', '2009', '2009/10', '2011', '2012', '2013', '2014', '2016', '2017']","['Delhi Daredevils', 'Gujarat Lions', 'Kings XI Punjab', 'Rising Pune Supergiants', 'Sunrisers Hyderabad']"
+A Nehra,1974,"['2007/08', '2009', '2009/10', '2012', '2013', '2014', '2015', '2016', '2017']","['Chennai Super Kings', 'Delhi Daredevils', 'Mumbai Indians', 'Pune Warriors', 'Sunrisers Hyderabad']"
+PP Ojha,1945,"['2007/08', '2009', '2009/10', '2011', '2012', '2013', '2014', '2015']","['Deccan Chargers', 'Mumbai Indians']"
+AD Russell,1885,"['2012', '2013', '2014', '2015', '2016', '2018', '2019', '2020/21', '2021', '2022', '2023', '2024', '2025']","['Delhi Daredevils', 'Kolkata Knight Riders']"
+PJ Cummins,1883,"['2014', '2015', '2017', '2020/21', '2021', '2022', '2024', '2025', '2026']","['Delhi Daredevils', 'Kolkata Knight Riders', 'Sunrisers Hyderabad']"
+DS Kulkarni,1876,"['2007/08', '2009', '2009/10', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020/21', '2021']","['Gujarat Lions', 'Mumbai Indians', 'Rajasthan Royals']"
+RP Singh,1874,"['2007/08', '2009', '2009/10', '2011', '2012', '2013', '2016']","['Deccan Chargers', 'Kochi Tuskers Kerala', 'Mumbai Indians', 'Rising Pune Supergiants', 'Royal Challengers Bangalore']"
+HH Pandya,1865,"['2015', '2016', '2017', '2018', '2019', '2022', '2023', '2024', '2025', '2026']","['Gujarat Titans', 'Mumbai Indians']"
+Ravi Bishnoi,1857,"['2020/21', '2021', '2022', '2023', '2024', '2025', '2026']","['Kings XI Punjab', 'Lucknow Super Giants', 'Punjab Kings', 'Rajasthan Royals']"
+Avesh Khan,1840,"['2017', '2018', '2019', '2020/21', '2021', '2022', '2023', '2024', '2025', '2026']","['Delhi Capitals', 'Delhi Daredevils', 'Lucknow Super Giants', 'Rajasthan Royals', 'Royal Challengers Bangalore']"
+M Prasidh Krishna,1837,"['2018', '2019', '2020/21', '2021', '2022', '2025', '2026']","['Gujarat Titans', 'Kolkata Knight Riders', 'Rajasthan Royals']"
+JA Morkel,1807,"['2007/08', '2009', '2009/10', '2011', '2012', '2013', '2014', '2015', '2016']","['Chennai Super Kings', 'Delhi Daredevils', 'Rising Pune Supergiants', 'Royal Challengers Bangalore']"
+CH Morris,1801,"['2013', '2015', '2016', '2017', '2018', '2019', '2020/21', '2021']","['Chennai Super Kings', 'Delhi Capitals', 'Delhi Daredevils', 'Rajasthan Royals', 'Royal Challengers Bangalore']"
+JH Kallis,1799,"['2007/08', '2009', '2009/10', '2011', '2012', '2013', '2014']","['Kolkata Knight Riders', 'Royal Challengers Bangalore']"
+KK Ahmed,1741,"['2018', '2019', '2020/21', '2021', '2022', '2023', '2024', '2025', '2026']","['Chennai Super Kings', 'Delhi Capitals', 'Sunrisers Hyderabad']"
+RD Chahar,1728,"['2017', '2019', '2020/21', '2021', '2022', '2023', '2024', '2025', '2026']","['Chennai Super Kings', 'Mumbai Indians', 'Punjab Kings', 'Rising Pune Supergiant', 'Sunrisers Hyderabad']"
+M Morkel,1699,"['2009', '2009/10', '2011', '2012', '2013', '2014', '2015', '2016']","['Delhi Daredevils', 'Kolkata Knight Riders', 'Rajasthan Royals']"
+R Bhatia,1661,"['2007/08', '2009', '2009/10', '2011', '2012', '2013', '2014', '2015', '2016', '2017']","['Delhi Daredevils', 'Kolkata Knight Riders', 'Rajasthan Royals', 'Rising Pune Supergiant', 'Rising Pune Supergiants']"
+JC Archer,1658,"['2018', '2019', '2020/21', '2023', '2025', '2026']","['Mumbai Indians', 'Rajasthan Royals']"
+T Natarajan,1631,"['2017', '2020/21', '2021', '2022', '2023', '2024', '2025', '2026']","['Delhi Capitals', 'Kings XI Punjab', 'Sunrisers Hyderabad']"
+KV Sharma,1611,"['2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020/21', '2023', '2024', '2025']","['Chennai Super Kings', 'Mumbai Indians', 'Royal Challengers Bangalore', 'Royal Challengers Bengaluru', 'Sunrisers Hyderabad']"
+AB Dinda,1589,"['2007/08', '2009', '2009/10', '2011', '2012', '2013', '2014', '2015', '2016', '2017']","['Delhi Daredevils', 'Kolkata Knight Riders', 'Pune Warriors', 'Rising Pune Supergiant', 'Rising Pune Supergiants', 'Royal Challengers Bangalore']"
+KA Pollard,1586,"['2009/10', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2020/21', '2021', '2022']",['Mumbai Indians']
+M Muralitharan,1581,"['2007/08', '2009', '2009/10', '2011', '2012', '2013', '2014']","['Chennai Super Kings', 'Kochi Tuskers Kerala', 'Royal Challengers Bangalore']"
+L Balaji,1574,"['2007/08', '2009', '2009/10', '2011', '2012', '2013', '2014']","['Chennai Super Kings', 'Kings XI Punjab', 'Kolkata Knight Riders']"
+SK Trivedi,1557,"['2007/08', '2009', '2009/10', '2011', '2012', '2013']",['Rajasthan Royals']
+Shakib Al Hasan,1515,"['2011', '2012', '2014', '2015', '2016', '2017', '2018', '2019', '2021']","['Kolkata Knight Riders', 'Sunrisers Hyderabad']"
+S Nadeem,1444,"['2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020/21', '2021']","['Delhi Daredevils', 'Sunrisers Hyderabad']"
+Mustafizur Rahman,1419,"['2016', '2017', '2018', '2021', '2022', '2023', '2024', '2025']","['Chennai Super Kings', 'Delhi Capitals', 'Mumbai Indians', 'Rajasthan Royals', 'Sunrisers Hyderabad']"
+MM Patel,1382,"['2007/08', '2009', '2009/10', '2011', '2012', '2013', '2017']","['Gujarat Lions', 'Mumbai Indians', 'Rajasthan Royals']"
+MJ McClenaghan,1346,"['2015', '2016', '2017', '2018', '2019']",['Mumbai Indians']
+Imran Tahir,1340,"['2014', '2015', '2016', '2017', '2018', '2019', '2020/21', '2021']","['Chennai Super Kings', 'Delhi Daredevils', 'Rising Pune Supergiant']"
+SM Curran,1308,"['2019', '2020/21', '2021', '2023', '2024', '2025']","['Chennai Super Kings', 'Kings XI Punjab', 'Punjab Kings']"
+MG Johnson,1301,"['2013', '2014', '2015', '2016', '2017', '2018']","['Kings XI Punjab', 'Kolkata Knight Riders', 'Mumbai Indians']"
+JP Faulkner,1287,"['2011', '2012', '2013', '2014', '2015', '2016', '2017']","['Gujarat Lions', 'Kings XI Punjab', 'Pune Warriors', 'Rajasthan Royals']"
+JO Holder,1285,"['2013', '2014', '2016', '2020/21', '2021', '2022', '2023', '2026']","['Chennai Super Kings', 'Gujarat Titans', 'Kolkata Knight Riders', 'Lucknow Super Giants', 'Rajasthan Royals', 'Sunrisers Hyderabad']"
+MA Starc,1264,"['2014', '2015', '2024', '2025', '2026']","['Delhi Capitals', 'Kolkata Knight Riders', 'Royal Challengers Bangalore']"
+TG Southee,1262,"['2011', '2014', '2015', '2016', '2017', '2018', '2019', '2021', '2022', '2023']","['Chennai Super Kings', 'Kolkata Knight Riders', 'Mumbai Indians', 'Rajasthan Royals', 'Royal Challengers Bangalore']"
+S Kaul,1238,"['2013', '2014', '2017', '2018', '2019', '2020/21', '2021', '2022']","['Delhi Daredevils', 'Royal Challengers Bangalore', 'Sunrisers Hyderabad']"
+SK Warne,1223,"['2007/08', '2009', '2009/10', '2011']",['Rajasthan Royals']
+JR Hazlewood,1214,"['2020/21', '2021', '2022', '2023', '2025', '2026']","['Chennai Super Kings', 'Royal Challengers Bangalore', 'Royal Challengers Bengaluru']"
+TU Deshpande,1194,"['2020/21', '2022', '2023', '2024', '2025', '2026']","['Chennai Super Kings', 'Delhi Capitals', 'Rajasthan Royals']"
+Washington Sundar,1186,"['2017', '2018', '2019', '2020/21', '2021', '2022', '2023', '2024', '2025', '2026']","['Gujarat Titans', 'Rising Pune Supergiant', 'Royal Challengers Bangalore', 'Sunrisers Hyderabad']"
+YK Pathan,1184,"['2007/08', '2009', '2009/10', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019']","['Kolkata Knight Riders', 'Rajasthan Royals', 'Sunrisers Hyderabad']"
+M Kartik,1182,"['2007/08', '2009', '2009/10', '2011', '2012', '2013', '2014']","['Kings XI Punjab', 'Kolkata Knight Riders', 'Pune Warriors', 'Royal Challengers Bangalore']"
+A Nortje,1169,"['2020/21', '2021', '2022', '2023', '2024', '2025', '2026']","['Delhi Capitals', 'Kolkata Knight Riders', 'Lucknow Super Giants']"
+LH Ferguson,1148,"['2017', '2019', '2020/21', '2021', '2022', '2023', '2024', '2025', '2026']","['Gujarat Titans', 'Kolkata Knight Riders', 'Punjab Kings', 'Rising Pune Supergiant', 'Royal Challengers Bengaluru']"
+Noor Ahmad,1141,"['2023', '2024', '2025', '2026']","['Chennai Super Kings', 'Gujarat Titans']"
+SB Jakati,1101,"['2009', '2009/10', '2011', '2012', '2014', '2016', '2017']","['Chennai Super Kings', 'Gujarat Lions', 'Royal Challengers Bangalore']"
+M Jansen,1081,"['2021', '2022', '2023', '2024', '2025', '2026']","['Mumbai Indians', 'Punjab Kings', 'Sunrisers Hyderabad']"
+VR Aaron,1065,"['2011', '2012', '2014', '2015', '2016', '2017', '2019', '2020/21', '2022']","['Delhi Daredevils', 'Gujarat Titans', 'Kings XI Punjab', 'Rajasthan Royals', 'Royal Challengers Bangalore']"
+GJ Maxwell,1047,"['2012', '2013', '2014', '2015', '2016', '2017', '2018', '2020/21', '2021', '2022', '2023', '2024', '2025']","['Delhi Daredevils', 'Kings XI Punjab', 'Mumbai Indians', 'Punjab Kings', 'Royal Challengers Bangalore', 'Royal Challengers Bengaluru']"
+S Gopal,1000,"['2014', '2015', '2016', '2018', '2019', '2020/21', '2021', '2022', '2024']","['Mumbai Indians', 'Rajasthan Royals', 'Sunrisers Hyderabad']"
+A Kumble,983,"['2007/08', '2009', '2009/10']",['Royal Challengers Bangalore']
+MC Henriques,979,"['2009', '2009/10', '2013', '2014', '2015', '2016', '2017', '2021']","['Delhi Daredevils', 'Kolkata Knight Riders', 'Punjab Kings', 'Royal Challengers Bangalore', 'Sunrisers Hyderabad']"
+MP Stoinis,975,"['2016', '2017', '2018', '2019', '2020/21', '2021', '2022', '2023', '2024', '2025', '2026']","['Delhi Capitals', 'Kings XI Punjab', 'Lucknow Super Giants', 'Punjab Kings', 'Royal Challengers Bangalore']"
+S Sreesanth,947,"['2007/08', '2009', '2009/10', '2011', '2013']","['Kings XI Punjab', 'Kochi Tuskers Kerala', 'Rajasthan Royals']"
+Iqbal Abdulla,943,"['2007/08', '2009/10', '2011', '2012', '2013', '2014', '2015', '2016', '2017']","['Kolkata Knight Riders', 'Rajasthan Royals', 'Royal Challengers Bangalore']"
+R Sharma,935,"['2009/10', '2011', '2012', '2013', '2014']","['Deccan Chargers', 'Delhi Daredevils', 'Pune Warriors']"
+VG Arora,931,"['2022', '2023', '2024', '2025', '2026']","['Kolkata Knight Riders', 'Punjab Kings']"
+SK Raina,930,"['2007/08', '2009', '2009/10', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2019']","['Chennai Super Kings', 'Gujarat Lions']"
+MS Gony,925,"['2007/08', '2009', '2009/10', '2011', '2012', '2013', '2017']","['Chennai Super Kings', 'Deccan Chargers', 'Gujarat Lions', 'Kings XI Punjab']"
+DT Christian,922,"['2011', '2012', '2013', '2017', '2018', '2021']","['Deccan Chargers', 'Delhi Daredevils', 'Rising Pune Supergiant', 'Royal Challengers Bangalore']"
+Yash Dayal,920,"['2022', '2023', '2024', '2025']","['Gujarat Titans', 'Royal Challengers Bengaluru']"
+B Lee,916,"['2007/08', '2009', '2009/10', '2011', '2012', '2013']","['Kings XI Punjab', 'Kolkata Knight Riders']"
+PJ Sangwan,905,"['2007/08', '2009', '2009/10', '2012', '2013', '2016', '2017', '2018', '2022']","['Delhi Daredevils', 'Gujarat Lions', 'Gujarat Titans', 'Kolkata Knight Riders', 'Mumbai Indians']"
+M Theekshana,902,"['2022', '2023', '2024', '2025']","['Chennai Super Kings', 'Rajasthan Royals']"
+M Ashwin,898,"['2016', '2018', '2019', '2020/21', '2021', '2022', '2023']","['Kings XI Punjab', 'Mumbai Indians', 'Punjab Kings', 'Rajasthan Royals', 'Rising Pune Supergiants', 'Royal Challengers Bangalore']"
+NM Coulter-Nile,892,"['2013', '2014', '2015', '2016', '2017', '2020/21', '2021', '2022']","['Delhi Daredevils', 'Kolkata Knight Riders', 'Mumbai Indians', 'Rajasthan Royals']"
+Yuvraj Singh,882,"['2007/08', '2009', '2009/10', '2011', '2013', '2014', '2015', '2016', '2017', '2018']","['Delhi Daredevils', 'Kings XI Punjab', 'Pune Warriors', 'Royal Challengers Bangalore', 'Sunrisers Hyderabad']"
+Mukesh Kumar,879,"['2023', '2024', '2025', '2026']",['Delhi Capitals']
+Harpreet Brar,875,"['2019', '2020/21', '2021', '2022', '2023', '2024', '2025', '2026']","['Kings XI Punjab', 'Punjab Kings']"
+MM Ali,869,"['2018', '2019', '2020/21', '2021', '2022', '2023', '2024', '2025']","['Chennai Super Kings', 'Kolkata Knight Riders', 'Royal Challengers Bangalore']"
+R Tewatia,866,"['2014', '2015', '2017', '2018', '2019', '2020/21', '2021', '2022', '2023']","['Delhi Capitals', 'Delhi Daredevils', 'Gujarat Titans', 'Kings XI Punjab', 'Rajasthan Royals']"
+RJ Harris,865,"['2009', '2009/10', '2011', '2012', '2013']","['Deccan Chargers', 'Kings XI Punjab']"
+Suyash Sharma,822,"['2023', '2024', '2025', '2026']","['Kolkata Knight Riders', 'Royal Challengers Bengaluru']"
+AB Agarkar,820,"['2007/08', '2009', '2009/10', '2011', '2012', '2013']","['Delhi Daredevils', 'Kolkata Knight Riders']"
+PWH de Silva,808,"['2021', '2022', '2023', '2025']","['Rajasthan Royals', 'Royal Challengers Bangalore']"
+AD Mathews,807,"['2009', '2009/10', '2012', '2013', '2015', '2017']","['Delhi Daredevils', 'Kolkata Knight Riders', 'Pune Warriors']"
+M Pathirana,797,"['2022', '2023', '2024', '2025', '2026']","['Chennai Super Kings', 'Kolkata Knight Riders']"
+S Aravind,788,"['2011', '2012', '2015', '2016', '2017']",['Royal Challengers Bangalore']
+DL Vettori,785,"['2007/08', '2009', '2009/10', '2011', '2012']","['Delhi Daredevils', 'Royal Challengers Bangalore']"
+Kartik Tyagi,775,"['2020/21', '2021', '2022', '2023', '2024', '2026']","['Gujarat Titans', 'Kolkata Knight Riders', 'Rajasthan Royals', 'Sunrisers Hyderabad']"
+P Awana,774,"['2012', '2013', '2014']",['Kings XI Punjab']
+M Markande,768,"['2018', '2019', '2021', '2022', '2023', '2024', '2026']","['Mumbai Indians', 'Rajasthan Royals', 'Sunrisers Hyderabad']"
+WD Parnell,758,"['2011', '2012', '2013', '2014', '2023']","['Delhi Daredevils', 'Pune Warriors', 'Royal Challengers Bangalore']"
+P Negi,733,"['2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019']","['Chennai Super Kings', 'Delhi Daredevils', 'Royal Challengers Bangalore']"
+BA Stokes,723,"['2017', '2018', '2019', '2020/21', '2021', '2023']","['Chennai Super Kings', 'Rajasthan Royals', 'Rising Pune Supergiant']"
+CJ Jordan,717,"['2016', '2017', '2018', '2020/21', '2021', '2022', '2023']","['Chennai Super Kings', 'Kings XI Punjab', 'Mumbai Indians', 'Punjab Kings', 'Royal Challengers Bangalore', 'Sunrisers Hyderabad']"
+NLTC Perera,715,"['2009/10', '2011', '2012', '2013', '2015', '2016']","['Chennai Super Kings', 'Kings XI Punjab', 'Kochi Tuskers Kerala', 'Mumbai Indians', 'Rising Pune Supergiants', 'Sunrisers Hyderabad']"
+AJ Tye,714,"['2017', '2018', '2019', '2020/21', '2022']","['Gujarat Lions', 'Kings XI Punjab', 'Lucknow Super Giants', 'Rajasthan Royals']"
+J Botha,709,"['2009', '2011', '2012', '2013', '2015']","['Delhi Daredevils', 'Kolkata Knight Riders', 'Rajasthan Royals']"
+MJ Santner,704,"['2019', '2020/21', '2022', '2023', '2024', '2025', '2026']","['Chennai Super Kings', 'Mumbai Indians']"
+Navdeep Saini,701,"['2019', '2020/21', '2021', '2022', '2023', '2026']","['Kolkata Knight Riders', 'Rajasthan Royals', 'Royal Challengers Bangalore']"
+JP Duminy,701,"['2009', '2009/10', '2011', '2012', '2014', '2015', '2016', '2018']","['Deccan Chargers', 'Delhi Daredevils', 'Mumbai Indians']"
+R Dhawan,693,"['2013', '2014', '2015', '2016', '2022', '2023', '2024']","['Kings XI Punjab', 'Mumbai Indians', 'Punjab Kings']"
+DP Nannes,689,"['2009', '2009/10', '2011', '2013']","['Chennai Super Kings', 'Delhi Daredevils', 'Royal Challengers Bangalore']"
+Shivam Mavi,687,"['2018', '2020/21', '2021', '2022']",['Kolkata Knight Riders']
+Harshit Rana,679,"['2022', '2023', '2024', '2025']",['Kolkata Knight Riders']
+Mohsin Khan,678,"['2022', '2023', '2024', '2026']",['Lucknow Super Giants']
+Shahbaz Ahmed,675,"['2020/21', '2021', '2022', '2023', '2024', '2025', '2026']","['Lucknow Super Giants', 'Royal Challengers Bangalore', 'Sunrisers Hyderabad']"
+PV Tambe,674,"['2013', '2014', '2015', '2016']","['Gujarat Lions', 'Rajasthan Royals']"
+L Ngidi,645,"['2018', '2020/21', '2021', '2025', '2026']","['Chennai Super Kings', 'Delhi Capitals', 'Royal Challengers Bengaluru']"
+STR Binny,611,"['2009/10', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019']","['Mumbai Indians', 'Rajasthan Royals', 'Royal Challengers Bangalore']"
+C Green,603,"['2023', '2024', '2026']","['Kolkata Knight Riders', 'Mumbai Indians', 'Royal Challengers Bengaluru']"
+KK Cooper,600,"['2012', '2013', '2014']",['Rajasthan Royals']
+DE Bollinger,600,"['2009/10', '2011', '2012']",['Chennai Super Kings']
+K Gowtham,599,"['2018', '2019', '2020/21', '2022', '2023', '2024']","['Kings XI Punjab', 'Lucknow Super Giants', 'Rajasthan Royals']"
+MR Marsh,593,"['2009/10', '2011', '2013', '2016', '2020/21', '2022', '2023', '2024']","['Deccan Chargers', 'Delhi Capitals', 'Pune Warriors', 'Rising Pune Supergiants', 'Sunrisers Hyderabad']"
+CH Gayle,584,"['2009', '2009/10', '2011', '2012', '2013', '2015', '2016', '2020/21']","['Kings XI Punjab', 'Kolkata Knight Riders', 'Royal Challengers Bangalore']"
+Harmeet Singh,574,"['2009', '2009/10', '2011', '2012', '2013']","['Deccan Chargers', 'Kings XI Punjab', 'Rajasthan Royals']"
+AS Rajpoot,567,"['2013', '2016', '2017', '2018', '2019', '2020/21']","['Chennai Super Kings', 'Kings XI Punjab', 'Kolkata Knight Riders', 'Rajasthan Royals']"
+DS Rathi,561,"['2025', '2026']",['Lucknow Super Giants']
+DR Smith,557,"['2007/08', '2009', '2009/10', '2012', '2013', '2014', '2015', '2016', '2017']","['Chennai Super Kings', 'Deccan Chargers', 'Gujarat Lions', 'Mumbai Indians']"
+Azhar Mahmood,552,"['2012', '2013', '2015']","['Kings XI Punjab', 'Kolkata Knight Riders']"
+Vijaykumar Vyshak,550,"['2023', '2024', '2025', '2026']","['Punjab Kings', 'Royal Challengers Bangalore', 'Royal Challengers Bengaluru']"
+A Symonds,540,"['2007/08', '2009', '2009/10', '2011']","['Deccan Chargers', 'Mumbai Indians']"
+Basil Thampi,539,"['2017', '2018', '2019', '2020/21', '2022']","['Gujarat Lions', 'Mumbai Indians', 'Sunrisers Hyderabad']"
+SW Tait,534,"['2009/10', '2011', '2012', '2013']",['Rajasthan Royals']
+Umran Malik,519,"['2021', '2022', '2023', '2024']",['Sunrisers Hyderabad']
+Rasikh Salam,517,"['2019', '2022', '2024', '2025', '2026']","['Delhi Capitals', 'Kolkata Knight Riders', 'Mumbai Indians', 'Royal Challengers Bengaluru']"
+BB Sran,516,"['2015', '2016', '2017', '2018', '2019']","['Kings XI Punjab', 'Mumbai Indians', 'Rajasthan Royals', 'Sunrisers Hyderabad']"
+E Malinga,516,"['2025', '2026']",['Sunrisers Hyderabad']
+A Kamboj,513,"['2024', '2025', '2026']","['Chennai Super Kings', 'Mumbai Indians']"
+Mukesh Choudhary,512,"['2022', '2024', '2025', '2026']",['Chennai Super Kings']
+Yash Thakur,501,"['2023', '2024', '2025', '2026']","['Lucknow Super Giants', 'Punjab Kings']"
+A Singh,486,"['2009', '2011', '2012']",['Rajasthan Royals']
+C Sakariya,479,"['2021', '2022', '2023', '2025']","['Delhi Capitals', 'Kolkata Knight Riders', 'Rajasthan Royals']"
+R Sai Kishore,477,"['2022', '2024', '2025', '2026']",['Gujarat Titans']
+Prince Yadav,475,"['2025', '2026']",['Lucknow Super Giants']
+A Zampa,475,"['2016', '2017', '2020/21', '2023', '2025']","['Rajasthan Royals', 'Rising Pune Supergiant', 'Rising Pune Supergiants', 'Royal Challengers Bangalore', 'Sunrisers Hyderabad']"
+IC Pandey,469,"['2013', '2014', '2015']","['Chennai Super Kings', 'Pune Warriors']"
+GB Hogg,466,"['2012', '2013', '2015', '2016']","['Kolkata Knight Riders', 'Rajasthan Royals']"
+Mujeeb Ur Rahman,465,"['2018', '2019', '2020/21', '2021', '2025']","['Kings XI Punjab', 'Mumbai Indians', 'Sunrisers Hyderabad']"
+CR Woakes,463,"['2017', '2018', '2021']","['Delhi Capitals', 'Kolkata Knight Riders', 'Royal Challengers Bangalore']"
+RE van der Merwe,455,"['2009', '2009/10', '2011', '2012', '2013']","['Delhi Daredevils', 'Royal Challengers Bangalore']"
+AS Joseph,454,"['2019', '2022', '2023', '2024']","['Gujarat Titans', 'Mumbai Indians', 'Royal Challengers Bengaluru']"
+RR Powar,443,"['2007/08', '2009', '2009/10', '2011', '2012']","['Kings XI Punjab', 'Kochi Tuskers Kerala']"
+MF Maharoof,441,"['2007/08', '2009', '2009/10']",['Delhi Daredevils']
+Bipul Sharma,436,"['2009/10', '2011', '2012', '2013', '2015', '2016', '2017']","['Kings XI Punjab', 'Sunrisers Hyderabad']"
+J Suchith,434,"['2015', '2016', '2019', '2021', '2022']","['Delhi Capitals', 'Mumbai Indians', 'Sunrisers Hyderabad']"
+Anureet Singh,430,"['2009', '2015', '2016', '2017', '2018']","['Kings XI Punjab', 'Kolkata Knight Riders', 'Rajasthan Royals']"
+PVD Chameera,420,"['2022', '2024', '2025', '2026']","['Delhi Capitals', 'Kolkata Knight Riders', 'Lucknow Super Giants']"
+Mohammad Nabi,419,"['2017', '2018', '2019', '2020/21', '2021', '2024']","['Mumbai Indians', 'Sunrisers Hyderabad']"
+RP Meredith,415,"['2021', '2022', '2023']","['Mumbai Indians', 'Punjab Kings']"
+Naveen-ul-Haq,407,"['2023', '2024']",['Lucknow Super Giants']
+Arshad Khan,400,"['2023', '2024', '2025', '2026']","['Gujarat Titans', 'Lucknow Super Giants', 'Mumbai Indians']"
+J Yadav,398,"['2015', '2016', '2017', '2019', '2020/21', '2021', '2023']","['Delhi Daredevils', 'Gujarat Titans', 'Mumbai Indians']"
+DJ Hooda,391,"['2015', '2016', '2017', '2018', '2019', '2020/21', '2021', '2022', '2023', '2024', '2025']","['Chennai Super Kings', 'Kings XI Punjab', 'Lucknow Super Giants', 'Punjab Kings', 'Rajasthan Royals', 'Sunrisers Hyderabad']"
+BW Hilfenhaus,390,"['2012', '2014']",['Chennai Super Kings']
+NT Ellis,390,"['2021', '2022', '2023', '2024', '2025']","['Chennai Super Kings', 'Punjab Kings']"
+DR Sams,389,"['2020/21', '2021', '2022']","['Delhi Capitals', 'Mumbai Indians', 'Royal Challengers Bangalore']"
+N Burger,383,"['2024', '2026']",['Rajasthan Royals']
+R Shepherd,381,"['2022', '2024', '2025', '2026']","['Mumbai Indians', 'Royal Challengers Bengaluru', 'Sunrisers Hyderabad']"
+JP Behrendorff,379,"['2019', '2023']",['Mumbai Indians']
+Akash Madhwal,376,"['2023', '2024', '2025']","['Mumbai Indians', 'Rajasthan Royals']"
+Ankit Sharma,375,"['2012', '2013', '2014', '2015', '2016', '2017', '2018']","['Deccan Chargers', 'Rajasthan Royals', 'Rising Pune Supergiant', 'Rising Pune Supergiants', 'Sunrisers Hyderabad']"
+Abhishek Sharma,374,"['2019', '2020/21', '2021', '2022', '2023', '2024', '2025', '2026']",['Sunrisers Hyderabad']
+R McLaren,372,"['2009/10', '2011', '2013']","['Kings XI Punjab', 'Kolkata Knight Riders', 'Mumbai Indians']"
+VRV Singh,371,"['2007/08', '2009', '2009/10']",['Kings XI Punjab']
+JR Hopes,369,"['2007/08', '2011']","['Delhi Daredevils', 'Kings XI Punjab']"
+Azmatullah Omarzai,369,"['2024', '2025', '2026']","['Gujarat Titans', 'Punjab Kings']"
+AN Ahmed,362,"['2009/10', '2011', '2012', '2013', '2014', '2015']","['Mumbai Indians', 'Royal Challengers Bangalore']"
+VY Mahesh,359,"['2007/08', '2009', '2009/10', '2012']","['Chennai Super Kings', 'Delhi Daredevils']"
+AS Roy,351,"['2019', '2022', '2023', '2024', '2025', '2026']","['Kolkata Knight Riders', 'Mumbai Indians']"
+Nithish Kumar Reddy,349,"['2023', '2024', '2025', '2026']",['Sunrisers Hyderabad']
+RG Sharma,349,"['2007/08', '2009', '2009/10', '2011', '2012', '2013', '2014', '2021']","['Deccan Chargers', 'Mumbai Indians']"
+KW Richardson,345,"['2013', '2014', '2016', '2021']","['Pune Warriors', 'Rajasthan Royals', 'Royal Challengers Bangalore']"
+R Parag,334,"['2019', '2020/21', '2021', '2022', '2024', '2025', '2026']",['Rajasthan Royals']
+GD McGrath,329,['2007/08'],['Delhi Daredevils']
+AC Thomas,327,"['2011', '2012']",['Pune Warriors']
+LR Shukla,326,"['2007/08', '2009', '2009/10', '2012', '2013', '2014']","['Delhi Daredevils', 'Kolkata Knight Riders']"
+DJ Hussey,323,"['2007/08', '2009', '2009/10', '2011', '2012', '2013', '2014']","['Chennai Super Kings', 'Kings XI Punjab', 'Kolkata Knight Riders']"
+LS Livingstone,321,"['2019', '2022', '2023', '2024', '2025']","['Punjab Kings', 'Rajasthan Royals', 'Royal Challengers Bengaluru']"
+KA Jamieson,315,"['2021', '2025', '2026']","['Delhi Capitals', 'Punjab Kings', 'Royal Challengers Bangalore']"
+CJ Anderson,315,"['2014', '2015', '2017', '2018']","['Delhi Daredevils', 'Mumbai Indians', 'Royal Challengers Bangalore']"
+A Mithun,312,"['2009', '2009/10', '2011', '2012', '2013']",['Royal Challengers Bangalore']
+Pankaj Singh,311,"['2007/08', '2009', '2009/10', '2011', '2012']","['Rajasthan Royals', 'Royal Challengers Bangalore']"
+AD Mascarenhas,310,"['2007/08', '2009', '2009/10', '2012', '2013']","['Kings XI Punjab', 'Rajasthan Royals']"
+D Wiese,307,"['2015', '2016', '2023']","['Kolkata Knight Riders', 'Royal Challengers Bangalore']"
+SJ Srivastava,306,"['2009/10', '2011']",['Kings XI Punjab']
+BA Bhatt,303,"['2011', '2012', '2013']",['Kings XI Punjab']
+Akash Deep,302,"['2022', '2023', '2024', '2025']","['Lucknow Super Giants', 'Royal Challengers Bangalore', 'Royal Challengers Bengaluru']"
+ST Jayasuriya,301,"['2007/08', '2009', '2009/10']",['Mumbai Indians']
+V Nigam,301,"['2025', '2026']",['Delhi Capitals']
+Brijesh Sharma,297,['2026'],['Rajasthan Royals']
+Lalit Yadav,294,"['2021', '2022', '2023', '2024']",['Delhi Capitals']
+G Coetzee,292,"['2024', '2025']","['Gujarat Titans', 'Mumbai Indians']"
+K Kartikeya,290,"['2022', '2023', '2025']","['Mumbai Indians', 'Rajasthan Royals']"
+WPUJC Vaas,288,"['2007/08', '2009', '2009/10']",['Deccan Chargers']
+BCJ Cutting,288,"['2014', '2016', '2017', '2018', '2019']","['Mumbai Indians', 'Rajasthan Royals', 'Sunrisers Hyderabad']"
+SC Ganguly,280,"['2007/08', '2009', '2009/10', '2012']","['Kolkata Knight Riders', 'Pune Warriors']"
+SM Pollock,280,['2007/08'],['Mumbai Indians']
+R Rampaul,278,"['2013', '2014']",['Royal Challengers Bangalore']
+TM Dilshan,275,"['2007/08', '2009', '2009/10', '2011', '2012', '2013']","['Delhi Daredevils', 'Royal Challengers Bangalore']"
+Sakib Hussain,274,['2026'],['Sunrisers Hyderabad']
+Joginder Sharma,272,"['2007/08', '2009', '2009/10', '2011']",['Chennai Super Kings']
+A Ashish Reddy,270,"['2012', '2013', '2015', '2016']","['Deccan Chargers', 'Sunrisers Hyderabad']"
+AG Murtaza,269,"['2009/10', '2011', '2012', '2013']","['Mumbai Indians', 'Pune Warriors']"
+XC Bartlett,269,"['2025', '2026']",['Punjab Kings']
+CR Brathwaite,266,"['2016', '2017', '2018', '2019']","['Delhi Daredevils', 'Kolkata Knight Riders', 'Sunrisers Hyderabad']"
+Fazalhaq Farooqi,266,"['2022', '2023', '2025']","['Rajasthan Royals', 'Sunrisers Hyderabad']"
+Sohail Tanvir,265,['2007/08'],['Rajasthan Royals']
+V Kohli,264,"['2007/08', '2009', '2009/10', '2011', '2012', '2015', '2016']",['Royal Challengers Bangalore']
+S Badree,263,"['2013', '2014', '2017']","['Chennai Super Kings', 'Rajasthan Royals', 'Royal Challengers Bangalore']"
+V Shankar,258,"['2014', '2018', '2019', '2020/21', '2021', '2022']","['Chennai Super Kings', 'Delhi Daredevils', 'Gujarat Titans', 'Sunrisers Hyderabad']"
+Akash Singh,256,"['2021', '2023', '2025', '2026']","['Chennai Super Kings', 'Lucknow Super Giants', 'Rajasthan Royals']"
+Simarjeet Singh,256,"['2022', '2024', '2025']","['Chennai Super Kings', 'Sunrisers Hyderabad']"
+AA Chavan,255,"['2011', '2012', '2013']",['Rajasthan Royals']
+KR Sen,255,"['2022', '2023', '2024']",['Rajasthan Royals']
+TK Curran,252,"['2018', '2020/21', '2021']","['Delhi Capitals', 'Kolkata Knight Riders', 'Rajasthan Royals']"
+CRD Fernando,249,"['2007/08', '2009/10']",['Mumbai Indians']
+BAW Mendis,248,"['2007/08', '2009', '2009/10', '2013']","['Kolkata Knight Riders', 'Pune Warriors']"
+DJG Sammy,244,"['2013', '2014', '2015']","['Royal Challengers Bangalore', 'Sunrisers Hyderabad']"
+JDP Oram,244,"['2007/08', '2009', '2011', '2013']","['Chennai Super Kings', 'Mumbai Indians', 'Rajasthan Royals']"
+SH Johnson,243,"['2024', '2025', '2026']","['Chennai Super Kings', 'Gujarat Titans', 'Kolkata Knight Riders']"
+JD Ryder,241,"['2009', '2011', '2012']","['Pune Warriors', 'Royal Challengers Bangalore']"
+Shivang Kumar,240,['2026'],['Sunrisers Hyderabad']
+AM Nayar,239,"['2007/08', '2009', '2011', '2012', '2013']","['Kings XI Punjab', 'Mumbai Indians', 'Pune Warriors']"
+BJ Hodge,238,"['2009', '2009/10', '2011', '2012', '2013']","['Kochi Tuskers Kerala', 'Kolkata Knight Riders', 'Rajasthan Royals']"
+AF Milne,238,"['2016', '2017', '2021', '2022', '2026']","['Chennai Super Kings', 'Mumbai Indians', 'Rajasthan Royals', 'Royal Challengers Bangalore']"
+AM Ghazanfar,237,['2026'],['Mumbai Indians']
+J Little,236,"['2023', '2024']",['Gujarat Titans']
+J Theron,235,"['2009/10', '2012', '2015']","['Deccan Chargers', 'Kings XI Punjab', 'Rajasthan Royals']"
+A Chandila,234,"['2012', '2013']",['Rajasthan Royals']
+MP Yadav,230,"['2024', '2025', '2026']",['Lucknow Super Giants']
+C de Grandhomme,230,"['2017', '2018', '2019']","['Kolkata Knight Riders', 'Royal Challengers Bangalore']"
+AK Markram,230,"['2021', '2022', '2023', '2024', '2025', '2026']","['Lucknow Super Giants', 'Punjab Kings', 'Sunrisers Hyderabad']"
+KC Cariappa,224,"['2015', '2016', '2017', '2019']","['Kings XI Punjab', 'Kolkata Knight Riders']"
+N Rana,223,"['2016', '2018', '2019', '2020/21', '2021', '2022', '2023', '2025', '2026']","['Delhi Capitals', 'Kolkata Knight Riders', 'Mumbai Indians', 'Rajasthan Royals']"
+Y Venugopal Rao,222,"['2007/08', '2009', '2009/10', '2011', '2012', '2014']","['Deccan Chargers', 'Delhi Daredevils', 'Sunrisers Hyderabad']"
+KP Appanna,222,"['2009', '2009/10', '2012']",['Royal Challengers Bangalore']
+JDS Neesham,222,"['2014', '2020/21', '2021', '2022']","['Delhi Daredevils', 'Kings XI Punjab', 'Mumbai Indians', 'Rajasthan Royals']"
+SB Styris,222,"['2007/08', '2009', '2011']","['Chennai Super Kings', 'Deccan Chargers']"
+YA Abdulla,222,"['2009', '2009/10']",['Kings XI Punjab']
+JL Pattinson,222,['2020/21'],['Mumbai Indians']
+DJ Willey,221,"['2018', '2022', '2023']","['Chennai Super Kings', 'Royal Challengers Bangalore']"
+S Tyagi,220,"['2009', '2009/10']",['Chennai Super Kings']
+MN Samuels,219,"['2012', '2013', '2017']","['Delhi Daredevils', 'Pune Warriors']"
+TS Mills,218,"['2017', '2022']","['Mumbai Indians', 'Royal Challengers Bangalore']"
+J Overton,217,"['2025', '2026']",['Chennai Super Kings']
+M Ntini,213,['2007/08'],['Chennai Super Kings']
+HR Shokeen,213,"['2022', '2023']",['Mumbai Indians']
+Karanveer Singh,213,"['2014', '2015']",['Kings XI Punjab']
+RS Bopara,213,"['2009', '2009/10', '2015']","['Kings XI Punjab', 'Sunrisers Hyderabad']"
+VS Malik,212,"['2009', '2009/10', '2011', '2013', '2014']","['Kings XI Punjab', 'Rajasthan Royals']"
+S Lamichhane,211,"['2018', '2019']","['Delhi Capitals', 'Delhi Daredevils']"
+V Pratap Singh,211,['2012'],['Deccan Chargers']
+S Kaushik,210,"['2016', '2017']",['Gujarat Lions']
+Zeeshan Ansari,209,['2025'],['Sunrisers Hyderabad']
+WG Jacks,203,"['2024', '2025', '2026']","['Mumbai Indians', 'Royal Challengers Bengaluru']"
+Parvez Rasool,200,"['2013', '2014', '2015', '2016']","['Pune Warriors', 'Royal Challengers Bangalore', 'Sunrisers Hyderabad']"
+Harsh Dubey,200,"['2025', '2026']",['Sunrisers Hyderabad']
+Mohammad Asif,199,['2007/08'],['Delhi Daredevils']
+N Thushara,198,"['2024', '2025']","['Mumbai Indians', 'Royal Challengers Bengaluru']"
+Ashwani Kumar,196,"['2025', '2026']",['Mumbai Indians']
+J Syed Mohammad,196,"['2011', '2012', '2013']",['Royal Challengers Bangalore']
+SMSM Senanayake,195,['2013'],['Kolkata Knight Riders']
+M Siddharth,193,"['2024', '2025', '2026']",['Lucknow Super Giants']
+B Akhil,193,"['2007/08', '2009', '2009/10', '2011']","['Kochi Tuskers Kerala', 'Royal Challengers Bangalore']"
+SE Bond,191,['2009/10'],['Kolkata Knight Riders']
+AB McDonald,188,"['2009', '2009/10', '2011', '2012', '2013']","['Delhi Daredevils', 'Royal Challengers Bangalore']"
+Yash Raj Punja,186,['2026'],['Rajasthan Royals']
+Shahid Afridi,185,['2007/08'],['Deccan Chargers']
+KL Nagarkoti,185,"['2020/21', '2021', '2022']","['Delhi Capitals', 'Kolkata Knight Riders']"
+IS Sodhi,182,"['2018', '2019']",['Rajasthan Royals']
+I Udana,182,['2020/21'],['Royal Challengers Bangalore']
+S Randiv,180,['2011'],['Chennai Super Kings']
+KP Pietersen,180,"['2009', '2009/10', '2012']","['Delhi Daredevils', 'Royal Challengers Bangalore']"
+KMA Paul,180,['2019'],['Delhi Capitals']
+OC McCoy,180,"['2022', '2023']",['Rajasthan Royals']
+B Laughlin,179,"['2013', '2018']","['Chennai Super Kings', 'Rajasthan Royals']"
+Kamran Khan,177,"['2009', '2009/10', '2011']","['Pune Warriors', 'Rajasthan Royals']"
+S Sandeep Warrier,176,"['2019', '2020/21', '2021', '2024']","['Gujarat Titans', 'Kolkata Knight Riders']"
+AJ Hosein,175,"['2023', '2026']","['Chennai Super Kings', 'Sunrisers Hyderabad']"
+C Bosch,171,"['2025', '2026']",['Mumbai Indians']
+HF Gurney,169,['2019'],['Kolkata Knight Riders']
+PP Hinge,168,['2026'],['Sunrisers Hyderabad']
+MJ Henry,166,"['2017', '2024', '2026']","['Chennai Super Kings', 'Kings XI Punjab', 'Lucknow Super Giants']"
+D Pretorius,166,"['2022', '2023']",['Chennai Super Kings']
+CK Langeveldt,165,"['2009', '2009/10', '2011']","['Kolkata Knight Riders', 'Royal Challengers Bangalore']"
+Swapnil Singh,165,"['2016', '2017', '2023', '2024']","['Kings XI Punjab', 'Lucknow Super Giants', 'Royal Challengers Bengaluru']"
+K Khejroliya,163,"['2018', '2019', '2023', '2025', '2026']","['Gujarat Titans', 'Kolkata Knight Riders', 'Royal Challengers Bangalore']"
+S Dube,162,"['2019', '2020/21', '2021', '2022', '2024', '2025', '2026']","['Chennai Super Kings', 'Rajasthan Royals', 'Royal Challengers Bangalore']"
+Anand Rajan,162,"['2011', '2012', '2013']","['Deccan Chargers', 'Sunrisers Hyderabad']"
+Gurjapneet Singh,159,['2026'],['Chennai Super Kings']
+DP Vijaykumar,159,['2007/08'],['Deccan Chargers']
+P Parameswaran,159,"['2011', '2012']","['Kochi Tuskers Kerala', 'Royal Challengers Bangalore']"
+BE Hendricks,157,"['2014', '2015']",['Kings XI Punjab']
+JA Duffy,156,['2026'],['Royal Challengers Bengaluru']
+AM Salvi,156,"['2009', '2011']",['Delhi Daredevils']
+JEC Franklin,155,"['2011', '2012']",['Mumbai Indians']
+LE Plunkett,154,['2018'],['Delhi Daredevils']
+PC Valthaty,153,"['2011', '2012']",['Kings XI Punjab']
+Umar Gul,153,['2007/08'],['Kolkata Knight Riders']
+SB Bangar,153,['2007/08'],['Deccan Chargers']
+TL Suman,152,"['2009', '2009/10', '2011', '2013']","['Deccan Chargers', 'Mumbai Indians', 'Pune Warriors']"
+B Stanlake,150,"['2017', '2018']","['Royal Challengers Bangalore', 'Sunrisers Hyderabad']"
+FH Edwards,150,['2009'],['Deccan Chargers']
+GC Viljoen,146,['2019'],['Kings XI Punjab']
+Yudhvir Singh,145,"['2023', '2024', '2025']","['Lucknow Super Giants', 'Rajasthan Royals']"
+T Thushara,144,"['2009', '2009/10']",['Chennai Super Kings']
+R Sathish,144,"['2009/10', '2011', '2013', '2016']","['Kings XI Punjab', 'Kolkata Knight Riders', 'Mumbai Indians']"
+RR Raje,144,"['2007/08', '2009']",['Mumbai Indians']
+KM Asif,143,"['2018', '2021', '2023']","['Chennai Super Kings', 'Rajasthan Royals']"
+S Ladda,141,"['2009/10', '2011', '2013', '2016']","['Delhi Daredevils', 'Gujarat Lions', 'Kolkata Knight Riders']"
+V Sehwag,138,"['2007/08', '2009', '2009/10', '2012', '2013']",['Delhi Daredevils']
+Mayank Dagar,138,"['2023', '2024']","['Royal Challengers Bengaluru', 'Sunrisers Hyderabad']"
+Ashok Sharma,136,['2026'],['Gujarat Titans']
+P Amarnath,132,['2007/08'],['Chennai Super Kings']
+SS Cottrell,131,['2020/21'],['Kings XI Punjab']
+R Shukla,130,"['2012', '2013', '2014']","['Delhi Daredevils', 'Mumbai Indians', 'Rajasthan Royals']"
+MA Wood,127,"['2018', '2023']","['Chennai Super Kings', 'Lucknow Super Giants']"
+RJW Topley,125,"['2023', '2024', '2025']","['Mumbai Indians', 'Royal Challengers Bangalore', 'Royal Challengers Bengaluru']"
+JE Taylor,122,['2011'],['Pune Warriors']
+T Shamsi,120,"['2016', '2021']","['Rajasthan Royals', 'Royal Challengers Bangalore']"
+M de Lange,116,"['2012', '2014', '2015']","['Kolkata Knight Riders', 'Mumbai Indians']"
+Shivam Sharma,114,"['2014', '2015']",['Kings XI Punjab']
+S Narwal,113,"['2009/10', '2013']","['Kolkata Knight Riders', 'Rajasthan Royals']"
+AL Menaria,113,"['2011', '2012']",['Rajasthan Royals']
+Ankit Soni,112,['2017'],['Gujarat Lions']
+Jaskaran Singh,111,"['2009', '2009/10']",['Deccan Chargers']
+SB Wagh,108,"['2009/10', '2011']","['Pune Warriors', 'Rajasthan Royals']"
+A Choudhary,108,['2017'],['Royal Challengers Bangalore']
+Arjun Tendulkar,107,"['2023', '2024', '2026']","['Lucknow Super Giants', 'Mumbai Indians']"
+P Suyal,107,"['2013', '2014', '2015']",['Mumbai Indians']
+KMDN Kulasekara,107,"['2011', '2012']",['Chennai Super Kings']
+P Sahu,107,['2016'],['Kings XI Punjab']
+Shoaib Ahmed,103,['2009'],['Deccan Chargers']
+KJ Abbott,102,['2016'],['Kings XI Punjab']
+RV Gomez,97,"['2011', '2013']","['Kochi Tuskers Kerala', 'Pune Warriors']"
+GHS Garton,97,['2021'],['Royal Challengers Bangalore']
+OF Smith,95,['2022'],['Punjab Kings']
+MK Lomror,94,"['2018', '2021', '2022', '2023', '2024']","['Rajasthan Royals', 'Royal Challengers Bangalore', 'Royal Challengers Bengaluru']"
+JA Richardson,94,"['2021', '2024']","['Delhi Capitals', 'Punjab Kings']"
+Shashank Singh,93,"['2022', '2024', '2025', '2026']","['Punjab Kings', 'Sunrisers Hyderabad']"
+FA Allen,91,"['2021', '2022']","['Mumbai Indians', 'Punjab Kings']"
+PD Collingwood,90,['2009/10'],['Delhi Daredevils']
+Raghu Sharma,90,['2026'],['Mumbai Indians']
+DG Nalkande,89,"['2022', '2023', '2024']",['Gujarat Titans']
+Sikandar Raza,88,"['2023', '2024']",['Punjab Kings']
+AA Jhunjhunwala,88,"['2009/10', '2011', '2012']","['Deccan Chargers', 'Pune Warriors', 'Rajasthan Royals']"
+SR Dubey,87,['2026'],['Kolkata Knight Riders']
+DJ Muthuswami,84,['2015'],['Delhi Daredevils']
+VR Iyer,84,"['2021', '2022', '2024']",['Kolkata Knight Riders']
+Auqib Nabi,84,['2026'],['Delhi Capitals']
+Gagandeep Singh,84,['2007/08'],['Kings XI Punjab']
+RN ten Doeschate,83,"['2011', '2012', '2013', '2014', '2015']",['Kolkata Knight Riders']
+Gurkeerat Singh,82,"['2015', '2016']",['Kings XI Punjab']
+P Dubey,79,"['2020/21', '2023', '2025']","['Delhi Capitals', 'Punjab Kings']"
+JJ van der Wath,76,['2011'],['Royal Challengers Bangalore']
+LJ Wright,75,"['2012', '2013']",['Pune Warriors']
+M Tiwari,75,"['2025', '2026']",['Delhi Capitals']
+WA Mota,75,"['2007/08', '2009']",['Kings XI Punjab']
+TP Sudhindra,74,['2012'],['Deccan Chargers']
+AP Dole,73,['2009/10'],['Rajasthan Royals']
+RJ Gleeson,73,"['2024', '2025']","['Chennai Super Kings', 'Mumbai Indians']"
+V Puthur,73,['2025'],['Mumbai Indians']
+Y Nagar,72,"['2009', '2009/10', '2011', '2012']",['Delhi Daredevils']
+KT Maphaka,71,"['2024', '2025']","['Mumbai Indians', 'Rajasthan Royals']"
+DNT Zoysa,69,['2007/08'],['Deccan Chargers']
+K Goel,67,"['2007/08', '2009', '2009/10']",['Kings XI Punjab']
+SM Harwood,67,['2009'],['Rajasthan Royals']
+Ramandeep Singh,66,"['2022', '2024', '2026']","['Kolkata Knight Riders', 'Mumbai Indians']"
+MJ Clarke,66,['2012'],['Pune Warriors']
+MG Bracewell,66,['2023'],['Royal Challengers Bangalore']
+A Flintoff,66,['2009'],['Chennai Super Kings']
+TM Head,64,"['2017', '2024', '2026']","['Royal Challengers Bangalore', 'Sunrisers Hyderabad']"
+W O'Rourke,64,['2025'],['Lucknow Super Giants']
+O Thomas,63,['2019'],['Rajasthan Royals']
+Mohammad Hafeez,63,['2007/08'],['Kolkata Knight Riders']
+JW Hastings,61,"['2014', '2016']","['Chennai Super Kings', 'Kolkata Knight Riders']"
+AU Rashid,60,"['2021', '2023']","['Punjab Kings', 'Sunrisers Hyderabad']"
+V Viyaskanth,60,['2024'],['Sunrisers Hyderabad']
+Abhinandan Singh,60,['2026'],['Royal Challengers Bengaluru']
+SA Abbott,59,"['2015', '2022']","['Royal Challengers Bangalore', 'Sunrisers Hyderabad']"
+Shoaib Malik,58,['2007/08'],['Delhi Daredevils']
+Abdul Samad,58,"['2020/21', '2021', '2022', '2025', '2026']","['Lucknow Super Giants', 'Sunrisers Hyderabad']"
+ND Doshi,57,"['2009/10', '2011']","['Rajasthan Royals', 'Royal Challengers Bangalore']"
+K Upadhyay,56,"['2012', '2013']",['Pune Warriors']
+AC Voges,56,['2009/10'],['Rajasthan Royals']
+SB Joshi,55,['2007/08'],['Royal Challengers Bangalore']
+K Yadav,54,"['2021', '2023']",['Rajasthan Royals']
+Naman Dhir,53,"['2024', '2025']",['Mumbai Indians']
+KAJ Roach,52,['2009/10'],['Deccan Chargers']
+K Santokie,51,['2014'],['Mumbai Indians']
+D Salunkhe,51,['2007/08'],['Rajasthan Royals']
+DJ Mitchell,51,"['2022', '2024']","['Chennai Super Kings', 'Rajasthan Royals']"
+SC Kuggeleijn,50,['2019'],['Chennai Super Kings']
+D Kalyankrishna,50,['2007/08'],['Deccan Chargers']
+C Nanda,50,['2009'],['Mumbai Indians']
+MJ Suthar,50,"['2024', '2026']",['Gujarat Titans']
+B Geeves,49,['2007/08'],['Delhi Daredevils']
+S Dhawan,49,"['2011', '2012']",['Deccan Chargers']
+RJ Peterson,48,['2012'],['Mumbai Indians']
+GS Sandhu,48,['2015'],['Delhi Daredevils']
+SS Mishra,47,['2026'],['Rajasthan Royals']
+JM Kemp,47,['2009/10'],['Chennai Super Kings']
+KR Mayers,46,['2023'],['Lucknow Super Giants']
+CL White,46,"['2007/08', '2009/10', '2012', '2013']","['Deccan Chargers', 'Royal Challengers Bangalore', 'Sunrisers Hyderabad']"
+SE Rutherford,46,['2019'],['Delhi Capitals']
+Shoaib Akhtar,46,['2007/08'],['Kolkata Knight Riders']
+MW Short,45,"['2023', '2026']","['Chennai Super Kings', 'Punjab Kings']"
+JPR Scantlebury-Searles,45,['2018'],['Kolkata Knight Riders']
+L Ablish,45,"['2009/10', '2011']",['Kings XI Punjab']
+MK Tiwary,45,"['2009', '2009/10', '2011', '2014', '2018']","['Delhi Daredevils', 'Kings XI Punjab', 'Kolkata Knight Riders']"
+DJ Thornely,44,['2007/08'],['Mumbai Indians']
+B Muzarabani,44,['2026'],['Kolkata Knight Riders']
+AJ Finch,44,"['2009/10', '2011', '2013']","['Delhi Daredevils', 'Pune Warriors', 'Rajasthan Royals']"
+GH Vihari,43,"['2013', '2019']","['Delhi Capitals', 'Sunrisers Hyderabad']"
+D du Preez,43,['2009'],['Royal Challengers Bangalore']
+RS Hangargekar,43,['2023'],['Chennai Super Kings']
+SM Boland,43,['2016'],['Rising Pune Supergiants']
+PHKD Mendis,42,['2025'],['Sunrisers Hyderabad']
+CJ McKay,42,['2012'],['Mumbai Indians']
+LB Williams,42,['2024'],['Delhi Capitals']
+M Manhas,42,['2011'],['Pune Warriors']
+AUK Pathan,41,"['2011', '2012']",['Royal Challengers Bangalore']
+A Badoni,41,"['2022', '2023', '2024', '2025', '2026']",['Lucknow Super Giants']
+MD Shanaka,38,['2026'],['Rajasthan Royals']
+A Uniyal,38,['2009/10'],['Rajasthan Royals']
+L Wood,38,['2024'],['Mumbai Indians']
+SD Chitnis,38,['2007/08'],['Mumbai Indians']
+SR Tendulkar,37,['2009'],['Mumbai Indians']
+GF Linde,37,['2026'],['Lucknow Super Giants']
+M Vijay,37,"['2014', '2015', '2016']","['Delhi Daredevils', 'Kings XI Punjab']"
+RG More,37,['2015'],['Chennai Super Kings']
+T Stubbs,37,"['2023', '2024', '2025']","['Delhi Capitals', 'Mumbai Indians']"
+SSB Magala,37,['2023'],['Chennai Super Kings']
+R Ninan,36,['2011'],['Royal Challengers Bangalore']
+Krish Bhagat,36,['2026'],['Mumbai Indians']
+KA Maharaj,36,['2024'],['Rajasthan Royals']
+T Henderson,36,['2009'],['Rajasthan Royals']
+PH Solanki,36,['2022'],['Chennai Super Kings']
+SZ Mulani,33,['2024'],['Mumbai Indians']
+Y Prithvi Raj,33,['2019'],['Kolkata Knight Riders']
+VS Yeligati,32,['2007/08'],['Mumbai Indians']
+RA Bawa,32,['2026'],['Mumbai Indians']
+PM Sarvesh Kumar,31,['2007/08'],['Deccan Chargers']
+DA Payne,31,['2026'],['Sunrisers Hyderabad']
+GD Phillips,31,"['2021', '2023']","['Rajasthan Royals', 'Sunrisers Hyderabad']"
+NL McCullum,30,['2011'],['Pune Warriors']
+AS Raut,30,"['2009', '2011']",['Rajasthan Royals']
+BMAJ Mendis,30,['2013'],['Delhi Daredevils']
+S Joseph,30,['2024'],['Lucknow Super Giants']
+MA Khote,30,['2007/08'],['Mumbai Indians']
+H Sharma,30,"['2023', '2024']","['Royal Challengers Bangalore', 'Royal Challengers Bengaluru']"
+PVSN Raju,29,['2025'],['Mumbai Indians']
+D Madushanka,28,['2026'],['Sunrisers Hyderabad']
+D Jansen,28,['2023'],['Mumbai Indians']
+Mashrafe Mortaza,28,['2009'],['Kolkata Knight Riders']
+BJ Dwarshuis,26,['2026'],['Punjab Kings']
+IC Porel,26,['2021'],['Punjab Kings']
+SS Sarkar,25,['2009'],['Kolkata Knight Riders']
+NB Singh,25,['2017'],['Gujarat Lions']
+DAJ Bracewell,25,['2012'],['Delhi Daredevils']
+MG Neser,25,['2013'],['Kings XI Punjab']
+A Dananjaya,25,['2018'],['Mumbai Indians']
+AA Noffke,25,['2007/08'],['Royal Challengers Bangalore']
+R Goyal,24,['2023'],['Mumbai Indians']
+V Kaverappa,24,['2024'],['Punjab Kings']
+SS Agarwal,24,['2017'],['Gujarat Lions']
+GR Napier,24,['2009'],['Mumbai Indians']
+P Ray Barman,24,['2019'],['Royal Challengers Bangalore']
+Tilak Varma,23,"['2022', '2023', '2024']",['Mumbai Indians']
+Sumit Kumar,22,['2024'],['Delhi Capitals']
+Tejas Baroka,21,['2017'],['Gujarat Lions']
+Vivrant Sharma,21,['2023'],['Sunrisers Hyderabad']
+Gurnoor Brar,21,['2023'],['Punjab Kings']
+R Powell,21,"['2022', '2023']",['Delhi Capitals']
+RV Patel,20,['2021'],['Delhi Capitals']
+Suryansh Shedge,19,['2025'],['Punjab Kings']
+CJ Dala,19,['2018'],['Delhi Daredevils']
+LI Meriwala,19,['2021'],['Delhi Capitals']
+Sunny Gupta,19,['2012'],['Delhi Daredevils']
+MB Parmar,19,['2009/10'],['Kolkata Knight Riders']
+Jalaj S Saxena,18,['2021'],['Punjab Kings']
+KS Williamson,18,"['2016', '2020/21']",['Sunrisers Hyderabad']
+A Nel,18,['2007/08'],['Mumbai Indians']
+DJM Short,18,['2018'],['Rajasthan Royals']
+S Sriram,18,"['2009/10', '2011']","['Delhi Daredevils', 'Royal Challengers Bangalore']"
+DB Ravi Teja,18,"['2007/08', '2011']",['Deccan Chargers']
+LMP Simmons,18,['2014'],['Mumbai Indians']
+M Shahrukh Khan,18,"['2024', '2025']",['Gujarat Titans']
+DJ Harris,18,['2012'],['Deccan Chargers']
+RW Price,18,['2011'],['Mumbai Indians']
+NJ Rimmington,18,['2011'],['Kings XI Punjab']
+RS Ghosh,18,['2026'],['Chennai Super Kings']
+D Ferreira,18,['2026'],['Rajasthan Royals']
+CJ Green,17,['2020/21'],['Kolkata Knight Riders']
+N Wadhera,17,"['2024', '2025']","['Mumbai Indians', 'Punjab Kings']"
+CK Kapugedera,17,['2007/08'],['Chennai Super Kings']
+S Rana,16,"['2011', '2014']","['Pune Warriors', 'Royal Challengers Bangalore']"
+Monu Kumar,16,['2020/21'],['Chennai Super Kings']
+NA Saini,15,['2023'],['Rajasthan Royals']
+Abdur Razzak,14,['2007/08'],['Royal Challengers Bangalore']
+R Sanjay Yadav,14,['2022'],['Mumbai Indians']
+Arshad Khan (2),13,['2024'],['Lucknow Super Giants']
+LRPL Taylor,13,"['2009', '2011']","['Rajasthan Royals', 'Royal Challengers Bangalore']"
+AA Kazi,13,['2011'],['Royal Challengers Bangalore']
+S Midhun,13,['2019'],['Rajasthan Royals']
+S Vidyut,13,['2007/08'],['Chennai Super Kings']
+C Munro,12,['2016'],['Kolkata Knight Riders']
+Mandeep Singh,12,['2019'],['Kings XI Punjab']
+FY Fazal,12,['2009/10'],['Rajasthan Royals']
+Musheer Khan,12,['2025'],['Punjab Kings']
+RR Bose,12,['2009'],['Kings XI Punjab']
+RR Bhatkal,12,['2012'],['Royal Challengers Bangalore']
+PR Veer,12,['2026'],['Chennai Super Kings']
+JE Root,12,['2023'],['Rajasthan Royals']
+R Ravindra,12,['2024'],['Chennai Super Kings']
+Mohit Rathee,12,['2023'],['Punjab Kings']
+T Vijay,12,['2026'],['Delhi Capitals']
+Sachin Baby,10,['2016'],['Royal Challengers Bangalore']
+SS Mundhe,7,['2011'],['Pune Warriors']
+BJ Rohrer,7,['2013'],['Delhi Daredevils']
+LA Carseldine,7,['2009'],['Rajasthan Royals']
+SA Yadav,6,['2014'],['Kolkata Knight Riders']
+RA Shaikh,6,['2009'],['Mumbai Indians']
+Karim Janat,6,['2025'],['Gujarat Titans']
+Y Gnaneswara Rao,6,['2011'],['Kochi Tuskers Kerala']
+P Prasanth,6,['2011'],['Kochi Tuskers Kerala']
+AM Rahane,6,['2009'],['Mumbai Indians']
+I Malhotra,6,['2011'],['Deccan Chargers']
+PWA Mulder,6,['2025'],['Sunrisers Hyderabad']
+RA Tripathi,6,['2017'],['Rising Pune Supergiant']
+Aman Hakim Khan,6,['2022'],['Kolkata Knight Riders']
+B Chipli,6,['2011'],['Deccan Chargers']
+C Ganapathy,6,['2009/10'],['Chennai Super Kings']
+TH David,6,['2026'],['Royal Challengers Bengaluru']
+SS Iyer,6,['2022'],['Kolkata Knight Riders']
+Gulbadin Naib,6,['2024'],['Delhi Capitals']
+F du Plessis,6,['2012'],['Chennai Super Kings']
+RS Gavaskar,6,['2009/10'],['Kolkata Knight Riders']
+LPC Silva,6,['2007/08'],['Deccan Chargers']
+D Brevis,3,['2022'],['Mumbai Indians']
+SPD Smith,2,['2012'],['Pune Warriors']
+DA Warner,2,['2020/21'],['Sunrisers Hyderabad']
+SN Khan,2,['2019'],['Kings XI Punjab']
+Ishan Kishan,1,['2025'],['Sunrisers Hyderabad']
+Atharva Taide,1,['2024'],['Punjab Kings']
+YBK Jaiswal,1,['2022'],['Rajasthan Royals']
+AC Gilchrist,1,['2013'],['Kings XI Punjab']

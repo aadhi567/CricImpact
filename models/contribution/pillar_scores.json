@@ -1,0 +1,113 @@
+{
+  "architecture": {
+    "pillar1": "Match Context (Situation difficulty, phase leverage, collapse/chase pressure)",
+    "pillar2": "Batter Performance (Runs, balls, SR, boundary contribution, pace, baseline)",
+    "pillar3": "Team-State Impact (Exact entry->exit trajectory change, delta EFS/RRR, dynamic wicket cost)",
+    "pillar4": "Counterfactual Value (Value added above realistic situational alternative)"
+  },
+  "weights": {
+    "w_context": 0.25,
+    "w_perf": 0.25,
+    "w_state": 0.25,
+    "w_cf": 0.25
+  },
+  "correlation_matrix": {
+    "Pillar 1 (Match Context)": {
+      "Pillar 1 (Match Context)": 1.0,
+      "Pillar 2 (Batter Performance)": -0.163,
+      "Pillar 3 (Team-State Impact)": -0.003,
+      "Pillar 4 (Counterfactual Value)": 0.062
+    },
+    "Pillar 2 (Batter Performance)": {
+      "Pillar 1 (Match Context)": -0.163,
+      "Pillar 2 (Batter Performance)": 1.0,
+      "Pillar 3 (Team-State Impact)": 0.577,
+      "Pillar 4 (Counterfactual Value)": 0.374
+    },
+    "Pillar 3 (Team-State Impact)": {
+      "Pillar 1 (Match Context)": -0.003,
+      "Pillar 2 (Batter Performance)": 0.577,
+      "Pillar 3 (Team-State Impact)": 1.0,
+      "Pillar 4 (Counterfactual Value)": 0.865
+    },
+    "Pillar 4 (Counterfactual Value)": {
+      "Pillar 1 (Match Context)": 0.062,
+      "Pillar 2 (Batter Performance)": 0.374,
+      "Pillar 3 (Team-State Impact)": 0.865,
+      "Pillar 4 (Counterfactual Value)": 1.0
+    }
+  },
+  "empirical_variance_shares_percent": {
+    "Pillar 1 (Match Context)": 12.1,
+    "Pillar 2 (Batter Performance)": 24.1,
+    "Pillar 3 (Team-State Impact)": 32.9,
+    "Pillar 4 (Counterfactual Value)": 31.0
+  },
+  "pillar_score_distributions": {
+    "pillar1_context": {
+      "mean": 47.01,
+      "std": 20.77,
+      "median": 44.31,
+      "iqr": 29.82,
+      "p1": 10.41,
+      "p10": 22.98,
+      "p25": 31.39,
+      "p50": 44.31,
+      "p75": 61.2,
+      "p90": 71.75,
+      "p99": 99.72
+    },
+    "pillar2_perf": {
+      "mean": 49.43,
+      "std": 26.52,
+      "median": 48.48,
+      "iqr": 46.48,
+      "p1": 8.18,
+      "p10": 13.08,
+      "p25": 25.49,
+      "p50": 48.48,
+      "p75": 71.97,
+      "p90": 86.6,
+      "p99": 96.87
+    },
+    "pillar3_state": {
+      "mean": 48.63,
+      "std": 25.22,
+      "median": 43.47,
+      "iqr": 37.74,
+      "p1": 4.15,
+      "p10": 19.22,
+      "p25": 29.7,
+      "p50": 43.47,
+      "p75": 67.44,
+      "p90": 90.63,
+      "p99": 96.96
+    },
+    "pillar4_cf": {
+      "mean": 48.76,
+      "std": 23.11,
+      "median": 45.32,
+      "iqr": 26.54,
+      "p1": 2.9,
+      "p10": 19.86,
+      "p25": 34.69,
+      "p50": 45.32,
+      "p75": 61.23,
+      "p90": 85.8,
+      "p99": 98.02
+    },
+    "composite_contribution_score": {
+      "mean": 53.08,
+      "std": 19.0,
+      "median": 50.0,
+      "iqr": 27.61,
+      "p1": 20.07,
+      "p10": 30.68,
+      "p25": 38.24,
+      "p50": 50.0,
+      "p75": 65.85,
+      "p90": 82.17,
+      "p99": 95.2
+    }
+  }
+}

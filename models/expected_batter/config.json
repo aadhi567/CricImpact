@@ -1,0 +1,33 @@
+{
+  "model_type": "RandomForestRegressor",
+  "runs_model_config": {
+    "n_estimators": 100,
+    "max_depth": 8,
+    "min_samples_split": 20,
+    "min_samples_leaf": 10,
+    "random_state": 42,
+    "n_jobs": -1
+  },
+  "sr_model_config": {
+    "n_estimators": 100,
+    "max_depth": 8,
+    "min_samples_split": 20,
+    "min_samples_leaf": 10,
+    "random_state": 42,
+    "n_jobs": -1
+  },
+  "features": [
+    "batting_position",
+    "entry_over_num",
+    "entry_balls_remaining",
+    "entry_wickets_remaining",
+    "entry_team_runs",
+    "entry_rr",
+    "entry_phase_code",
+    "is_chase_code",
+    "required_rr_at_entry_clean",
+    "runs_required_at_entry_clean",
+    "expected_final_score_at_entry"
+  ],
+  "dataset_output_path": "data/processed/batter_performance_dataset.csv"
+}

@@ -1,0 +1,20 @@
+{
+  "total_innings": 19196,
+  "total_matches": 1243,
+  "score_distribution": {
+    "mean": 53.08,
+    "std": 19.0,
+    "median": 50.0,
+    "iqr": 27.61,
+    "p1": 20.07,
+    "p10": 30.68,
+    "p25": 38.24,
+    "p50": 50.0,
+    "p75": 65.85,
+    "p90": 82.17,
+    "p99": 95.2
+  },
+  "zero_leakage": true,
+  "sensitivity_all_passed": true,
+  "edge_cases_tested": 16
+}

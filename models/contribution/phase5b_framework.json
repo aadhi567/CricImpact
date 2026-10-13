@@ -1,0 +1,40 @@
+{
+  "framework_name": "Phase 5B Contextual Batter Contribution Model",
+  "status": "Validated",
+  "pillars": {
+    "pillar1_match_context": {
+      "weight": 0.25,
+      "standardization": {
+        "mean": 0.413,
+        "std": 1.115
+      }
+    },
+    "pillar2_batter_performance": {
+      "weight": 0.25,
+      "standardization": {
+        "mean": -0.068,
+        "std": 1.029
+      }
+    },
+    "pillar3_team_state_impact": {
+      "weight": 0.25,
+      "standardization": {
+        "mean": 0.159,
+        "std": 1.513
+      }
+    },
+    "pillar4_counterfactual_value": {
+      "weight": 0.25,
+      "standardization": {
+        "mean": 0.127,
+        "std": 0.948
+      }
+    }
+  },
+  "outputs": {
+    "output_A": "Contribution Score (0 to 100, Logistic Normalization, Par = 50.0)",
+    "output_B": "Team Contribution Share (Rectified Positive Attribution, % of Positive Value Added)"
+  },
+  "total_innings_processed": 19196,
+  "total_matches": 1243
+}

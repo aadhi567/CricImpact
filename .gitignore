@@ -1,0 +1,76 @@
+# Python Virtual Environments
+.venv/
+venv/
+env/
+ENV/
+
+# Python Bytecode and Caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Node & Frontend Build Outputs
+node_modules/
+frontend/node_modules/
+frontend/dist/
+frontend/dist-ssr/
+frontend/.cache/
+
+# Environment Variables & Secrets
+.env
+.env.local
+.env.*.local
+
+# IDE, OS & Editor Clutter
+.idea/
+.vscode/
+.run/
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Temporary Scratch & Run Artifacts
+scratch/
+*.log
+npm-debug.log*
+yarn-debug.log*
+
+# Staging Databases & Candidate Evaluations
+data/staging/
+*.db
+*.sqlite
+*.sqlite3
+
+# Historical Migration Backups
+data/backups/
+backups/
+
+# Raw Match Archives & Cricsheet Dumps
+data/t20s_json/
+data/smat_json/
+data/raw/
+*.zip
+
+# Historical Migration & Transition Audits (CSV)
+*comparison*.csv
+*reconciliation*.csv
+*shift*.csv
+*matrix*.csv
+*inclusion_exclusion*.csv
+
+# Intermediate and Backup CSVs
+*backup*.csv
+*pre_pp_fix*.csv
+data/processed/phase7q_batter_match_contributions.csv
+
+# Sprint Audits, Diagnostic Logs & Generated Reports
+phase8_*
+phase9_*
+strategy4_*
+global_data_*
+intl_t20i_*
+github_release_audit.md

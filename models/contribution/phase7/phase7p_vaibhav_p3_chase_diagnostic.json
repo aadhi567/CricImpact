@@ -1,0 +1,709 @@
+{
+  "phase": "7P",
+  "description": "Vaibhav Suryavanshi P3 Chase-vs-First-Innings Diagnostic Audit",
+  "status": "DIAGNOSTIC_ONLY_STRICT_READ_ONLY",
+  "case_a_state": {
+    "match_id": 1527676,
+    "player": "V Suryavanshi",
+    "innings": 2,
+    "entry_state": {
+      "over": 0.2,
+      "team_score": 3.0,
+      "wickets_lost": 0.0,
+      "team_rr": 9.0,
+      "required_rr": 6.36,
+      "runs_required": 125.0,
+      "efs": null,
+      "wickets_remaining": 10.0,
+      "balls_remaining": 118
+    },
+    "exit_state": {
+      "over": 6.2,
+      "team_score": 75.0,
+      "wickets_lost": 1.0,
+      "team_rr": 11.84,
+      "required_rr": 3.88,
+      "runs_required": 53.0,
+      "efs": null,
+      "wickets_remaining": 9.0,
+      "balls_remaining": 82
+    },
+    "batter_window": {
+      "runs": 52.0,
+      "balls": 17,
+      "sr": 305.88,
+      "fours": 4,
+      "sixes": 5,
+      "team_runs_added": 72.0,
+      "overs_spent": 6.0,
+      "window_team_rr": 12.0,
+      "partnership_runs": 75.0,
+      "partner_runs": 23.0,
+      "partnership_share": 0.693,
+      "wickets_lost_during_stay": 1
+    }
+  },
+  "case_b_state": {
+    "match_id": 1527682,
+    "player": "V Suryavanshi",
+    "innings": 1,
+    "entry_state": {
+      "over": 0.1,
+      "team_score": 1.0,
+      "wickets_lost": 0.0,
+      "team_rr": 6.0,
+      "required_rr": null,
+      "runs_required": null,
+      "efs": 169.7,
+      "wickets_remaining": 10.0,
+      "balls_remaining": 119
+    },
+    "exit_state": {
+      "over": 6.2,
+      "team_score": 70.0,
+      "wickets_lost": 1.0,
+      "team_rr": 11.05,
+      "required_rr": null,
+      "runs_required": null,
+      "efs": 213.1,
+      "wickets_remaining": 9.0,
+      "balls_remaining": 82
+    },
+    "batter_window": {
+      "runs": 31.0,
+      "balls": 18,
+      "sr": 172.22,
+      "fours": 5,
+      "sixes": 1,
+      "team_runs_added": 69.0,
+      "overs_spent": 6.17,
+      "window_team_rr": 11.18,
+      "partnership_runs": 70.0,
+      "partner_runs": 39.0,
+      "partnership_share": 0.443,
+      "wickets_lost_during_stay": 1
+    }
+  },
+  "case_a_p3_decomposition": {
+    "innings": 2,
+    "model_branch": "2nd_innings_chase_saturation_model_e",
+    "components": {
+      "rrr_entry": 6.36,
+      "rrr_exit": 3.88,
+      "rrr_change": 2.48,
+      "r_eff_clamped": 2.48,
+      "z_rrr": 0.826667,
+      "term_rrr_weighted (50%)": 0.413333,
+      "rr_gap_entry": 2.64,
+      "rr_gap_exit": 7.96,
+      "rr_gap_change": 5.32,
+      "g_eff_clamped": 5.32,
+      "z_gap": 1.773333,
+      "term_gap_weighted (25%)": 0.443333,
+      "target_progress_entry": 0.0234,
+      "target_progress_exit": 0.5859,
+      "target_progress_change": 0.5625,
+      "z_prog": 2.75,
+      "term_prog_weighted (25%)": 0.6875,
+      "s_res_resource_tradeoff": -0.093182,
+      "v_max": 15.3781,
+      "f_chase": 0.966,
+      "pen_cap": 9.7958
+    },
+    "raw_p3": 1.450985,
+    "normalization": {
+      "mean": 0.159,
+      "std": 1.513,
+      "scale_k": 1.4,
+      "z3": 0.853923,
+      "score_state": 76.8
+    },
+    "res_tradeoff": {
+      "balls_remaining_exit": 82.0,
+      "wickets_remaining_exit": 9.0,
+      "wicket_resource_change": -1.0,
+      "base_cost": 0.310606,
+      "explosive_offset": 0.217424,
+      "s_res": -0.093182
+    }
+  },
+  "case_b_p3_decomposition": {
+    "innings": 1,
+    "model_branch": "1st_innings_efs_trajectory",
+    "components": {
+      "efs_change_runs": 43.4,
+      "z_efs": 3.616667,
+      "term_efs_weighted (50%)": 1.808333,
+      "trajectory_deviation_change": 20.2,
+      "z_traj": 2.02,
+      "term_traj_weighted (25%)": 0.505,
+      "window_team_rr": 11.18,
+      "team_rr_entry": 6.0,
+      "scoring_acceleration": 1.726667,
+      "term_accel_weighted (25%)": 0.431667,
+      "s_res_resource_tradeoff": -0.093182
+    },
+    "raw_p3": 2.651818,
+    "normalization": {
+      "mean": 0.159,
+      "std": 1.513,
+      "scale_k": 1.4,
+      "z3": 1.6476,
+      "score_state": 90.9
+    },
+    "res_tradeoff": {
+      "balls_remaining_exit": 82.0,
+      "wickets_remaining_exit": 9.0,
+      "wicket_resource_change": -1.0,
+      "base_cost": 0.310606,
+      "explosive_offset": 0.217424,
+      "s_res": -0.093182
+    }
+  },
+  "chase_mechanics_analysis": {
+    "target": 128.0,
+    "rrr_entry": 6.36,
+    "rrr_exit": 3.88,
+    "rrr_change": 2.48,
+    "team_rr_change": 2.84,
+    "target_progress_change": 0.5625,
+    "target_completed_percentage": 56.25,
+    "runs_required_reduction": 72.0,
+    "theoretical_max_rrr_reduction": 6.36,
+    "theoretical_max_term_rrr": 1.06,
+    "efs_available": false,
+    "chase_pressure_representation": "Chase pressure is NOT directly credited in P3; instead, P3 rewards RRR change (rrr_en - rrr_ex). Because target was only 128, rrr_entry was only 6.36 RPO, bounding rrr_change to at most 6.36. Even winning the match on the spot would yield term_rrr = 1.06, far below 1st innings EFS scale (1.81)."
+  },
+  "first_innings_mechanics_analysis": {
+    "expected_final_entry": 169.7,
+    "expected_final_exit": 213.1,
+    "expected_final_change": 43.4,
+    "trajectory_deviation_change": 20.2,
+    "team_rr_change": 5.05,
+    "batter_partnership_share": 0.443,
+    "first_innings_advantage": "First innings P3 scales linearly with projected 20-over EFS change (+43.4 runs), divided by 12.0 runs. This gives z_efs = 3.617 and term_efs = 1.808. Crucially, P3 awards 100% of the team's EFS improvement to the batter, despite the batter scoring only 31 of 69 team runs (44.3% share), with partner scoring 39."
+  },
+  "double_counting_audit": {
+    "is_double_counted": true,
+    "case_a_leverage": 0.885,
+    "case_b_leverage": 0.926,
+    "case_a_p3_norm": 76.8,
+    "case_a_p3_adj": 73.7,
+    "case_a_p3_lost_to_leverage": 3.1,
+    "case_b_p3_norm": 90.9,
+    "case_b_p3_adj": 87.9,
+    "case_b_p3_lost_to_leverage": 3.0,
+    "proof_summary": "MATHEMATICAL PROOF OF COMPOUND CONTEXTUAL PENALIZATION:\n1. Inside P3: Target 128 produced entry RRR = 6.36. Because RRR cannot fall below 0, maximum possible RRR drop was 6.36, and actual drop was 2.48. This constrained raw P3 to 1.45 (norm 76.8).\n2. Inside P1: Target 128 produced C_chase = 34.8 and C_eff = 34.9, resulting in leverage L = 0.885.\n3. Compound Effect: Leverage L = 0.885 was then applied to Adjusted P3 = 50 + (76.8 - 50) * 0.885 = 73.7, erasing another 3.1 points.\nTherefore, the low target penalized Case A TWICE: once through the RRR reduction ceiling, and a second time through the low-leverage dampener."
+  },
+  "side_by_side_comparison_table": [
+    {
+      "metric": "Match ID",
+      "case_a_chase": "1527676",
+      "case_b_inn1": "1527682"
+    },
+    {
+      "metric": "Opponent",
+      "case_a_chase": "Chennai Super Kings",
+      "case_b_inn1": "Gujarat Titans"
+    },
+    {
+      "metric": "Innings",
+      "case_a_chase": "2nd (Chase 128)",
+      "case_b_inn1": "1st Innings"
+    },
+    {
+      "metric": "Batter Runs",
+      "case_a_chase": "52",
+      "case_b_inn1": "31"
+    },
+    {
+      "metric": "Balls Faced",
+      "case_a_chase": "17",
+      "case_b_inn1": "18"
+    },
+    {
+      "metric": "Actual Strike Rate",
+      "case_a_chase": "305.88",
+      "case_b_inn1": "172.22"
+    },
+    {
+      "metric": "Boundaries (4s / 6s)",
+      "case_a_chase": "4 / 5",
+      "case_b_inn1": "5 / 1"
+    },
+    {
+      "metric": "Boundary Run %",
+      "case_a_chase": "88.46%",
+      "case_b_inn1": "83.87%"
+    },
+    {
+      "metric": "Team Runs Added in Window",
+      "case_a_chase": "72 (from 3/0 to 75/1)",
+      "case_b_inn1": "69 (from 1/0 to 70/1)"
+    },
+    {
+      "metric": "Overs Spent in Window",
+      "case_a_chase": "6.0 (0.2 to 6.2)",
+      "case_b_inn1": "6.17 (0.1 to 6.2)"
+    },
+    {
+      "metric": "Window Team Run Rate",
+      "case_a_chase": "12.00 RPO",
+      "case_b_inn1": "11.18 RPO"
+    },
+    {
+      "metric": "Team Run Rate Change",
+      "case_a_chase": "+2.84 RPO",
+      "case_b_inn1": "+5.05 RPO"
+    },
+    {
+      "metric": "Required Run Rate Change",
+      "case_a_chase": "+2.48 RPO (6.36 -> 3.88)",
+      "case_b_inn1": "N/A (1st innings)"
+    },
+    {
+      "metric": "Expected Final Score (EFS) Change",
+      "case_a_chase": "N/A (chase)",
+      "case_b_inn1": "+43.4 runs (169.7 -> 213.1)"
+    },
+    {
+      "metric": "Trajectory Deviation Change",
+      "case_a_chase": "N/A (chase)",
+      "case_b_inn1": "+20.2 runs"
+    },
+    {
+      "metric": "Target Progress Change",
+      "case_a_chase": "+0.5625 (56.25% liquidated)",
+      "case_b_inn1": "N/A (1st innings)"
+    },
+    {
+      "metric": "Wickets Lost in Window",
+      "case_a_chase": "1 (batter out)",
+      "case_b_inn1": "1 (batter out)"
+    },
+    {
+      "metric": "Partnership Share",
+      "case_a_chase": "69.3% (52 of 75)",
+      "case_b_inn1": "44.3% (31 of 70)"
+    },
+    {
+      "metric": "Dynamic Wicket Resource (s_res)",
+      "case_a_chase": "-0.0932",
+      "case_b_inn1": "-0.0932"
+    },
+    {
+      "metric": "Core P3 Component 1 (50% weight)",
+      "case_a_chase": "0.4133 (0.50 * z_rrr)",
+      "case_b_inn1": "1.8083 (0.50 * z_efs)"
+    },
+    {
+      "metric": "Core P3 Component 2 (25% weight)",
+      "case_a_chase": "0.4433 (0.25 * z_gap)",
+      "case_b_inn1": "0.5050 (0.25 * z_traj)"
+    },
+    {
+      "metric": "Core P3 Component 3 (25% weight)",
+      "case_a_chase": "0.6875 (0.25 * z_prog)",
+      "case_b_inn1": "0.4317 (0.25 * accel)"
+    },
+    {
+      "metric": "Raw P3 Composite",
+      "case_a_chase": "1.4510",
+      "case_b_inn1": "2.6518"
+    },
+    {
+      "metric": "Standardized P3 Z-Score (z3)",
+      "case_a_chase": "0.8539",
+      "case_b_inn1": "1.6476"
+    },
+    {
+      "metric": "Normalized Pillar 3 (P3)",
+      "case_a_chase": "76.8",
+      "case_b_inn1": "90.9"
+    },
+    {
+      "metric": "Normalized Pillar 2 (P2)",
+      "case_a_chase": "96.8",
+      "case_b_inn1": "77.4"
+    },
+    {
+      "metric": "P1 Context Difficulty (C_eff)",
+      "case_a_chase": "34.9",
+      "case_b_inn1": "40.2"
+    },
+    {
+      "metric": "P1 Leverage (L)",
+      "case_a_chase": "0.885",
+      "case_b_inn1": "0.926"
+    },
+    {
+      "metric": "Adjusted P2",
+      "case_a_chase": "91.4",
+      "case_b_inn1": "75.4"
+    },
+    {
+      "metric": "Adjusted P3",
+      "case_a_chase": "73.7",
+      "case_b_inn1": "87.9"
+    },
+    {
+      "metric": "Final Contribution Score",
+      "case_a_chase": "82.6",
+      "case_b_inn1": "81.6"
+    }
+  ],
+  "counterfactual_tests": {
+    "counterfactual_a_case_a_as_inn1": {
+      "p2": 96.1,
+      "raw_p3": 2.5568,
+      "p3": 90.2,
+      "leverage": 0.926,
+      "adj_p2": 92.6,
+      "adj_p3": 87.2,
+      "final_score": 89.9
+    },
+    "counterfactual_b_hold_rrr_constant": {
+      "p2": 96.8,
+      "raw_p3": 0.831,
+      "p3": 65.1,
+      "leverage": 0.885,
+      "adj_p2": 91.4,
+      "adj_p3": 63.3,
+      "final_score": 77.4
+    },
+    "counterfactual_c_hold_team_rr_constant": {
+      "p2": 96.8,
+      "raw_p3": 1.2143,
+      "p3": 72.6,
+      "leverage": 0.885,
+      "adj_p2": 91.4,
+      "adj_p3": 70.0,
+      "final_score": 80.7
+    },
+    "counterfactual_d_vary_rrr_relief": {
+      "rrr_relief_0.5": {
+        "p2": 96.8,
+        "raw_p3": 0.956,
+        "p3": 67.6,
+        "leverage": 0.885,
+        "adj_p2": 91.4,
+        "adj_p3": 65.6,
+        "final_score": 78.5
+      },
+      "rrr_relief_2.48": {
+        "p2": 96.8,
+        "raw_p3": 1.451,
+        "p3": 76.8,
+        "leverage": 0.885,
+        "adj_p2": 91.4,
+        "adj_p3": 73.7,
+        "final_score": 82.5
+      },
+      "rrr_relief_5.0": {
+        "p2": 96.8,
+        "raw_p3": 2.081,
+        "p3": 85.6,
+        "leverage": 0.885,
+        "adj_p2": 91.4,
+        "adj_p3": 81.5,
+        "final_score": 86.4
+      },
+      "rrr_relief_8.0": {
+        "p2": 96.8,
+        "raw_p3": 2.831,
+        "p3": 92.2,
+        "leverage": 0.885,
+        "adj_p2": 91.4,
+        "adj_p3": 87.4,
+        "final_score": 89.4
+      }
+    },
+    "counterfactual_e_case_b_as_chase": {
+      "p2": 73.0,
+      "raw_p3": 0.959,
+      "p3": 67.7,
+      "leverage": 0.962,
+      "adj_p2": 72.2,
+      "adj_p3": 67.0,
+      "final_score": 69.6
+    },
+    "counterfactual_f_vary_partner_support": {
+      "partner_runs_0": {
+        "p2": 96.8,
+        "raw_p3": 0.5622,
+        "p3": 59.2,
+        "leverage": 0.885,
+        "adj_p2": 91.4,
+        "adj_p3": 58.2,
+        "final_score": 74.8
+      },
+      "partner_runs_20": {
+        "p2": 96.8,
+        "raw_p3": 1.4516,
+        "p3": 76.8,
+        "leverage": 0.885,
+        "adj_p2": 91.4,
+        "adj_p3": 73.7,
+        "final_score": 82.5
+      },
+      "partner_runs_40": {
+        "p2": 96.8,
+        "raw_p3": 2.3411,
+        "p3": 88.3,
+        "leverage": 0.885,
+        "adj_p2": 91.4,
+        "adj_p3": 83.9,
+        "final_score": 87.6
+      }
+    }
+  },
+  "population_audit": {
+    "overall_distribution": {
+      "inn1_count": 9786,
+      "inn1_p3_mean": 46.72,
+      "inn1_p3_std": 22.84,
+      "inn2_count": 9325,
+      "inn2_p3_mean": 49.66,
+      "inn2_p3_std": 26.61,
+      "corr_p2_p3_inn1": 0.6838,
+      "corr_p2_p3_inn2": 0.5303
+    },
+    "explosive_innings_comparison": {
+      "inn1_count": 246,
+      "inn1_mean_p2": 94.09,
+      "inn1_mean_p3": 85.31,
+      "inn2_count": 252,
+      "inn2_mean_p2": 92.4,
+      "inn2_mean_p3": 76.16,
+      "p3_gap": 9.15
+    },
+    "powerplay_openers_comparison": {
+      "inn1_count": 91,
+      "inn1_mean_p2": 94.28,
+      "inn1_mean_p3": 92.31,
+      "inn2_count": 120,
+      "inn2_mean_p2": 91.42,
+      "inn2_mean_p3": 76.37,
+      "p3_gap": 15.93
+    },
+    "target_stratification_chase_openers": [
+      {
+        "target_band": "0-140",
+        "count": 16,
+        "mean_target": 107.5,
+        "mean_entry_rrr": 5.25,
+        "mean_rrr_change": 3.83,
+        "mean_p2": 93.6,
+        "mean_p3": 86.6
+      },
+      {
+        "target_band": "140-170",
+        "count": 30,
+        "mean_target": 156.9,
+        "mean_entry_rrr": 7.86,
+        "mean_rrr_change": 3.38,
+        "mean_p2": 92.2,
+        "mean_p3": 82.0
+      },
+      {
+        "target_band": "170-200",
+        "count": 37,
+        "mean_target": 186.7,
+        "mean_entry_rrr": 9.38,
+        "mean_rrr_change": 2.52,
+        "mean_p2": 90.2,
+        "mean_p3": 76.4
+      },
+      {
+        "target_band": "200-300",
+        "count": 37,
+        "mean_target": 230.8,
+        "mean_entry_rrr": 11.53,
+        "mean_rrr_change": 1.57,
+        "mean_p2": 91.1,
+        "mean_p3": 67.3
+      }
+    ],
+    "notable_historical_cases": [
+      {
+        "player": "SK Raina",
+        "match_id": 734047,
+        "inn": 2,
+        "target": 227.0,
+        "runs": 87,
+        "balls": 25,
+        "sr": 348.0,
+        "p2": 98.6,
+        "p3": 81.3,
+        "rrr_chg": 2.36,
+        "note": "Powerplay blitz in steep chase capped by RRR ratio"
+      },
+      {
+        "player": "TM Head",
+        "match_id": 1426295,
+        "inn": 2,
+        "target": 166.0,
+        "runs": 89,
+        "balls": 30,
+        "sr": 296.7,
+        "p2": 99.0,
+        "p3": 97.1,
+        "rrr_chg": 8.39,
+        "note": "Target reached during powerplay -> large RRR reduction"
+      },
+      {
+        "player": "HH Pandya",
+        "match_id": 1178422,
+        "inn": 2,
+        "target": 233.0,
+        "runs": 91,
+        "balls": 34,
+        "sr": 267.7,
+        "p2": 96.8,
+        "p3": 27.7,
+        "rrr_chg": -8.87,
+        "note": "Heroic solo effort penalized by team collapse around him"
+      },
+      {
+        "player": "V Suryavanshi",
+        "match_id": 1527676,
+        "inn": 2,
+        "target": 128.0,
+        "runs": 52,
+        "balls": 17,
+        "sr": 305.9,
+        "p2": 96.8,
+        "p3": 76.8,
+        "rrr_chg": 2.48,
+        "note": "Case A: Low target bounds RRR relief, depressing P3"
+      },
+      {
+        "player": "V Suryavanshi",
+        "match_id": 1527682,
+        "inn": 1,
+        "target": null,
+        "runs": 31,
+        "balls": 18,
+        "sr": 172.2,
+        "p2": 77.4,
+        "p3": 90.9,
+        "rrr_chg": null,
+        "note": "Case B: Full team EFS jump (+43.4) credited to batter"
+      }
+    ]
+  },
+  "window_integrity_and_leakage_audit": {
+    "leakage_audit_passed": true,
+    "tests": [
+      {
+        "case": "Case A",
+        "orig_raw_p3": 1.450985,
+        "mutated_raw_p3": 1.450985,
+        "difference": 0.0,
+        "passed_zero_leakage": true
+      },
+      {
+        "case": "Case B",
+        "orig_raw_p3": 2.651818,
+        "mutated_raw_p3": 2.651818,
+        "difference": 0.0,
+        "passed_zero_leakage": true
+      }
+    ],
+    "verdict": "P3 is completely invariant to post-exit runs, final outcome, and player identity. Window integrity is strictly maintained."
+  },
+  "p2_p3_metric_separation_audit": {
+    "p2_metrics": [
+      "actual_runs",
+      "expected_runs",
+      "run_deviation",
+      "actual_sr",
+      "expected_sr",
+      "sr_deviation",
+      "boundary_percentage",
+      "balls_faced"
+    ],
+    "p3_metrics_inn1": [
+      "expected_final_change",
+      "trajectory_deviation_change",
+      "window_team_rr",
+      "team_rr_entry",
+      "wicket_resource_change"
+    ],
+    "p3_metrics_inn2": [
+      "required_rr_change",
+      "rr_gap_change",
+      "target_progress_change",
+      "wicket_resource_change"
+    ],
+    "direct_batter_run_usage_in_p3": "Used strictly in s_res dynamic wicket offset (offset = min(base_cost * 0.7, (actual_runs - 15) * 0.02)).",
+    "partnership_blindspot_identified": "Neither 1st innings P3 nor 2nd innings P3 scales team trajectory by batter partnership share. In Case B, Vaibhav received 100% credit for the team's +43.4 EFS shift despite contributing only 44.3% of the partnership. In Case A, Vaibhav contributed 69.3% of the partnership, but team RRR shift was bounded by the 128 target."
+  },
+  "root_cause_classification": {
+    "classification": "C. P3 contains a contextual imbalance specifically affecting chases.",
+    "primary_justification": "The root cause is a fundamental structural unit asymmetry between 1st and 2nd innings P3. 1st innings P3 uses delta EFS (projected 20-over runs improvement, divisor = 12.0 runs), which scales outward and awards massive scores (+43.4 runs -> 1.81 raw points in Case B). 2nd innings P3 uses delta RRR (runs per over relief, divisor = 3.0 RPO), which is mathematically bounded by the entry RRR (6.36 RPO in Case A). Even liquidating 56% of the target yielded only 2.48 RPO relief (0.41 raw points in Case A). This structural disparity creates a ~16-point deficit in P3 across the entire historical population of explosive powerplay openers.",
+    "secondary_ui_bug_identified": "In app/services/data_service.py lines 498-503, the UI signal label inverts the sign of required_rr_change. Because required_rr_change is defined as RRR_entry - RRR_exit (positive = relief), the UI erroneously displayed 'Chase pressure intensified: RRR increased by 2.48 RPO' when RRR had in fact DECREASED by 2.48 RPO. This inverted UI label severely distorted user perception.",
+    "compounding_p1_interaction": "The low chase target (128) penalized Case A twice: first inside P3 by capping RRR relief, and second inside P1 by assigning low context difficulty (C_eff = 34.9, Leverage = 0.885), which dampened Adjusted P3 even further (from 76.8 down to 73.7)."
+  },
+  "candidate_corrections_evaluation": {
+    "current_production": {
+      "case_a": {
+        "raw_p3": 1.451,
+        "p3": 76.8,
+        "adj_p3": 73.7,
+        "final": 82.5
+      },
+      "case_b": {
+        "raw_p3": 2.6518,
+        "p3": 90.9,
+        "adj_p3": 87.9,
+        "final": 81.6
+      }
+    },
+    "candidate_1_run_equivalent_relief": {
+      "formula": "raw = 0.35 * (rrr_chg * overs_rem / 25.0) + 0.25 * z_gap + 0.40 * z_prog + s_res",
+      "case_a": {
+        "raw_p3": 1.9247,
+        "p3": 83.7,
+        "adj_p3": 79.8,
+        "final": 85.6
+      },
+      "case_b": {
+        "raw_p3": 2.6518,
+        "p3": 90.9,
+        "adj_p3": 87.9,
+        "final": 81.6
+      }
+    },
+    "candidate_2_relative_rrr_relief": {
+      "formula": "raw = 0.45 * ((rrr_chg / rrr_entry) / 0.25) + 0.25 * z_gap + 0.30 * z_prog + s_res",
+      "case_a": {
+        "raw_p3": 1.877,
+        "p3": 83.1,
+        "adj_p3": 79.3,
+        "final": 85.3
+      },
+      "case_b": {
+        "raw_p3": 2.6518,
+        "p3": 90.9,
+        "adj_p3": 87.9,
+        "final": 81.6
+      }
+    },
+    "candidate_3_target_progress_rebalance": {
+      "formula": "raw = 0.30 * z_rrr + 0.25 * z_gap + 0.45 * z_prog + s_res",
+      "case_a": {
+        "raw_p3": 1.8357,
+        "p3": 82.5,
+        "adj_p3": 78.8,
+        "final": 85.1
+      },
+      "case_b": {
+        "raw_p3": 2.6518,
+        "p3": 90.9,
+        "adj_p3": 87.9,
+        "final": 81.6
+      }
+    }
+  }
+}

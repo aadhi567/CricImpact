@@ -1,0 +1,62 @@
+[
+  {
+    "player": "SPD Smith",
+    "match_id": "1082592",
+    "season": "2017",
+    "innings": 2,
+    "runs": 84,
+    "balls": 54,
+    "sr": 155.6,
+    "expected_runs": 33.9,
+    "run_deviation": 50.1,
+    "raw_contribution": 3.609,
+    "contribution_score_0_to_100": 96.2,
+    "team_contribution_share_pct": 56.8,
+    "match_outcome": "Won"
+  },
+  {
+    "player": "SK Raina",
+    "match_id": "1082593",
+    "season": "2017",
+    "innings": 1,
+    "runs": 68,
+    "balls": 51,
+    "sr": 133.3,
+    "expected_runs": 27.3,
+    "run_deviation": 40.7,
+    "raw_contribution": 1.65,
+    "contribution_score_0_to_100": 82.6,
+    "team_contribution_share_pct": 57.1,
+    "match_outcome": "Lost"
+  },
+  {
+    "player": "SK Raina",
+    "match_id": "1082610",
+    "season": "2017",
+    "innings": 2,
+    "runs": 23,
+    "balls": 8,
+    "sr": 287.5,
+    "expected_runs": 24.5,
+    "run_deviation": -1.5,
+    "raw_contribution": 0.163,
+    "contribution_score_0_to_100": 57.3,
+    "team_contribution_share_pct": 0.9,
+    "match_outcome": "Lost"
+  },
+  {
+    "player": "K Rabada",
+    "match_id": "1082626",
+    "season": "2017",
+    "innings": 1,
+    "runs": 11,
+    "balls": 20,
+    "sr": 55.0,
+    "expected_runs": 15.8,
+    "run_deviation": -4.8,
+    "raw_contribution": -0.752,
+    "contribution_score_0_to_100": 38.2,
+    "team_contribution_share_pct": 0.0,
+    "match_outcome": "Lost"
+  }
+]

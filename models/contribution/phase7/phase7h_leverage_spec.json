@@ -1,0 +1,20 @@
+{
+  "phase": "PHASE_7H",
+  "title": "P1 Context Leverage Calibration & Dual-Role Batter Audit",
+  "governance_mode": "PURE_RESEARCH_SIMULATION",
+  "production_status": "UNTOUCHED (Phase 7D active)",
+  "core_principle": "P1 represents Situational Difficulty, not player quality. P1 determines leverage applied to P2 (execution) and P3 (state transformation). No player-type bonuses exist. Dual-role batters are rewarded through high P1 leverage.",
+  "architecture": {
+    "formula": "0.50 * Adjusted_P2 + 0.50 * Adjusted_P3",
+    "adjusted_p2": "clip(50.0 + (P2 - 50.0) * L(P1), 0.1, 99.9)",
+    "adjusted_p3": "clip(50.0 + (P3 - 50.0) * L(P1), 0.1, 99.9)",
+    "par_invariance": "P1=50 -> L=1.000; P2=50, P3=50 -> Score=50.0 regardless of P1",
+    "bounds": "[0.65, 1.35]"
+  },
+  "candidate_models": {
+    "Model A": "Symmetric Linear Bounded: clip(1.0 + 0.35 * (P1 - 50) / 50, 0.65, 1.35)",
+    "Model B": "Asymmetric Linear: Low=0.38, High=0.48 (RECOMMENDED RESEARCH CANDIDATE)",
+    "Model C": "Piecewise Context Leverage (5 zones: 40, 50, 60, 75, 90)",
+    "Model D": "Collapse/Chase Sensitive Smooth Power-Law (gamma=0.75)"
+  }
+}

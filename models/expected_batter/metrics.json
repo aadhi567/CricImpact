@@ -1,0 +1,177 @@
+{
+  "dataset_summary": {
+    "total_batter_innings": 19196,
+    "train_batter_innings": 15401,
+    "test_batter_innings": 3795,
+    "total_matches": 1243,
+    "train_matches": 994,
+    "test_matches": 249,
+    "total_seasons": 19,
+    "first_innings_with_trajectory": 9614,
+    "chase_innings_with_context": 9325
+  },
+  "expected_runs": {
+    "random_forest": {
+      "MAE": 14.55,
+      "RMSE": 19.78,
+      "R2": 0.1789
+    },
+    "baselines": {
+      "global_mean": {
+        "MAE": 16.96,
+        "RMSE": 21.84,
+        "R2": -0.0002
+      },
+      "batting_position": {
+        "MAE": 15.12,
+        "RMSE": 20.24,
+        "R2": 0.141
+      },
+      "innings_phase": {
+        "MAE": 15.13,
+        "RMSE": 20.14,
+        "R2": 0.1492
+      },
+      "entry_over": {
+        "MAE": 14.76,
+        "RMSE": 19.94,
+        "R2": 0.166
+      }
+    },
+    "feature_importances": {
+      "batting_position": 0.022997,
+      "entry_over_num": 0.0389,
+      "entry_balls_remaining": 0.728285,
+      "entry_wickets_remaining": 0.018893,
+      "entry_team_runs": 0.025419,
+      "entry_rr": 0.04365,
+      "entry_phase_code": 7.5e-05,
+      "is_chase_code": 0.001822,
+      "required_rr_at_entry_clean": 0.026819,
+      "runs_required_at_entry_clean": 0.025887,
+      "expected_final_score_at_entry": 0.067252
+    }
+  },
+  "expected_strike_rate": {
+    "random_forest": {
+      "MAE": 51.51,
+      "RMSE": 67.31,
+      "R2": 0.0505
+    },
+    "baselines": {
+      "global_mean": {
+        "MAE": 52.84,
+        "RMSE": 69.08,
+        "R2": -0.0001
+      },
+      "batting_position": {
+        "MAE": 51.76,
+        "RMSE": 67.94,
+        "R2": 0.0326
+      },
+      "innings_phase": {
+        "MAE": 52.95,
+        "RMSE": 69.08,
+        "R2": -0.0001
+      },
+      "entry_over": {
+        "MAE": 52.9,
+        "RMSE": 69.07,
+        "R2": 0.0004
+      }
+    },
+    "feature_importances": {
+      "batting_position": 0.189531,
+      "entry_over_num": 0.056776,
+      "entry_balls_remaining": 0.074015,
+      "entry_wickets_remaining": 0.041825,
+      "entry_team_runs": 0.191477,
+      "entry_rr": 0.125107,
+      "entry_phase_code": 0.000256,
+      "is_chase_code": 0.001292,
+      "required_rr_at_entry_clean": 0.065019,
+      "runs_required_at_entry_clean": 0.035813,
+      "expected_final_score_at_entry": 0.218889
+    }
+  },
+  "contextual_evaluations": {
+    "by_phase": {
+      "POWERPLAY": {
+        "count": 1728,
+        "runs_mae": 20.82,
+        "runs_rmse": 25.33,
+        "runs_r2": 0.0026,
+        "sr_mae": 45.55,
+        "sr_rmse": 59.69,
+        "sr_r2": -0.0013
+      },
+      "MIDDLE": {
+        "count": 1071,
+        "runs_mae": 13.64,
+        "runs_rmse": 17.66,
+        "runs_r2": 0.0809,
+        "sr_mae": 47.49,
+        "sr_rmse": 60.21,
+        "sr_r2": 0.0741
+      },
+      "DEATH": {
+        "count": 996,
+        "runs_mae": 4.64,
+        "runs_rmse": 6.56,
+        "runs_r2": 0.3004,
+        "sr_mae": 67.09,
+        "sr_rmse": 85.75,
+        "sr_r2": 0.0768
+      }
+    },
+    "by_batting_position": {
+      "Top Order (1-3)": {
+        "count": 1495,
+        "runs_mae": 20.71,
+        "runs_rmse": 25.39,
+        "runs_r2": 0.0046,
+        "sr_mae": 45.59,
+        "sr_rmse": 59.58,
+        "sr_r2": -0.0026
+      },
+      "Middle Order (4-6)": {
+        "count": 1323,
+        "runs_mae": 14.01,
+        "runs_rmse": 18.26,
+        "runs_r2": 0.1107,
+        "sr_mae": 51.84,
+        "sr_rmse": 66.5,
+        "sr_r2": 0.0407
+      },
+      "Lower Order (7+)": {
+        "count": 977,
+        "runs_mae": 5.84,
+        "runs_rmse": 9.09,
+        "runs_r2": 0.3495,
+        "sr_mae": 60.61,
+        "sr_rmse": 79.21,
+        "sr_r2": 0.0797
+      }
+    },
+    "by_chase_rrr": {
+      "Low RRR (<7)": {
+        "count": 313,
+        "runs_mae": 10.92,
+        "runs_rmse": 14.69,
+        "sr_mae": 52.11
+      },
+      "Moderate RRR (7-10)": {
+        "count": 734,
+        "runs_mae": 18.27,
+        "runs_rmse": 22.7,
+        "sr_mae": 44.04
+      },
+      "High RRR (>10)": {
+        "count": 801,
+        "runs_mae": 12.33,
+        "runs_rmse": 17.77,
+        "sr_mae": 58.36
+      }
+    }
+  }
+}

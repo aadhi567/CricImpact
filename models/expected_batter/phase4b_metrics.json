@@ -1,0 +1,74 @@
+{
+  "total_batter_innings": 19196,
+  "total_matches": 1243,
+  "total_seasons": 19,
+  "signal_classifications": {
+    "Strong": [
+      "run_deviation",
+      "sr_deviation",
+      "expected_final_change",
+      "required_rr_change",
+      "rr_gap_change",
+      "runs_required_reduction"
+    ],
+    "Useful": [
+      "wicket_resource_change",
+      "window_team_rr",
+      "target_progress_change",
+      "opportunity_usage",
+      "runs_per_ball",
+      "batter_partnership_share"
+    ],
+    "Weak": [
+      "team_rr_change",
+      "relative_rr_relief"
+    ],
+    "Noisy": [
+      "boundary_percentage",
+      "dot_ball_percentage",
+      "boundary_runs_per_ball"
+    ],
+    "Redundant": [
+      "chase_pressure_relief_rr (identical to required_rr_change, r=1.000)",
+      "runs_required_reduction (near-identical to actual team runs added in chase, r=0.985)"
+    ]
+  },
+  "redundant_pairs": [
+    {
+      "signal_1": "run_deviation",
+      "signal_2": "runs_required_reduction",
+      "correlation": 0.817,
+      "relationship": "Highly Correlated"
+    },
+    {
+      "signal_1": "sr_deviation",
+      "signal_2": "runs_per_ball",
+      "correlation": 0.962,
+      "relationship": "Redundant/Directly Linked"
+    },
+    {
+      "signal_1": "required_rr_change",
+      "signal_2": "rr_gap_change",
+      "correlation": 0.992,
+      "relationship": "Redundant/Directly Linked"
+    },
+    {
+      "signal_1": "required_rr_change",
+      "signal_2": "chase_pressure_relief_rr",
+      "correlation": 1.0,
+      "relationship": "Redundant/Directly Linked"
+    },
+    {
+      "signal_1": "rr_gap_change",
+      "signal_2": "chase_pressure_relief_rr",
+      "correlation": 0.992,
+      "relationship": "Redundant/Directly Linked"
+    },
+    {
+      "signal_1": "runs_required_reduction",
+      "signal_2": "target_progress_change",
+      "correlation": 0.952,
+      "relationship": "Redundant/Directly Linked"
+    }
+  ]
+}

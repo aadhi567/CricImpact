@@ -1,0 +1,13 @@
+{
+  "title": "Phase 6A Match Outcome Leakage Audit",
+  "sample_size_audited": 2000,
+  "test_description": "Inverts won_match, winning_margin, and target_reached flags across 2,000 innings while keeping all pre-existing ball-by-ball situational context, trajectories, and counterfactuals identical.",
+  "invariance_results": {
+    "max_absolute_score_difference": 0.0,
+    "mean_absolute_score_difference": 0.0,
+    "max_absolute_raw_difference": 0.0,
+    "pearson_correlation_between_original_and_inverted": 0.9999999999999998,
+    "outcome_leakage_detected": false
+  },
+  "conclusion": "Verified 0.000000 outcome leakage. The four pillars evaluate situational state evolution independent of whether the team eventually won or lost the match."
+}

@@ -1,0 +1,50 @@
+{
+  "reference_parameters": {
+    "center": -0.18528239910728087,
+    "scale": 0.85,
+    "min_val": -19.746422610800725,
+    "max_val": 18.875604222667558
+  },
+  "methods_evaluated": {
+    "logistic": {
+      "description": "Sigmoid logistic curve centered at median (par=50.0). Smooth non-linear saturation.",
+      "mean": 54.34,
+      "std": 20.91,
+      "median": 50.0,
+      "min": 0.1,
+      "max": 99.9,
+      "recommended": true,
+      "rationale": "Prevents arbitrary hard clipping; preserves distinction between elite (85+) and legendary (95+) knocks."
+    },
+    "robust": {
+      "description": "Median and IQR linear expansion clipped at [0, 100].",
+      "mean": 55.45,
+      "std": 27.72,
+      "median": 50.0,
+      "min": 0.0,
+      "max": 100.0,
+      "recommended": false,
+      "rationale": "Clips 4.2% of extreme knocks hard at 0 or 100."
+    },
+    "min_max": {
+      "description": "Linear min-max normalization.",
+      "mean": 51.52,
+      "std": 4.89,
+      "median": 50.65,
+      "min": 0.0,
+      "max": 100.0,
+      "recommended": false,
+      "rationale": "Highly distorted by historic multi-sigma outliers (e.g. 175* off 66 balls)."
+    },
+    "percentile": {
+      "description": "Empirical rank percentile [0, 100].",
+      "mean": 50.0,
+      "std": 28.87,
+      "median": 50.0,
+      "min": 0.0,
+      "max": 99.99,
+      "recommended": false,
+      "rationale": "Forces uniform distribution, flattening clustering around par."
+    }
+  }
+}

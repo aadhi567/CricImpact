@@ -1,0 +1,29 @@
+{
+  "core_objective": "Answers: 'Given exact situation faced, what could batter reasonably have done differently?'",
+  "methodological_rules": [
+    "Expected Runs is strictly a supporting statistical baseline, NEVER ground truth.",
+    "Counterfactual must NOT be created by assuming batter should score Expected Runs.",
+    "Realistic alternative constructed using: match phase, wickets remaining, current team RR, required RR, balls faced.",
+    "Demands realistic execution; does not ask for mathematically impossible bursts."
+  ],
+  "scenarios_modeled": {
+    "CF_Realistic_Par": {
+      "description": "Realistic scoring tempo for the specific phase and pressure level.",
+      "powerplay_baseline_sr": 120.0,
+      "middle_overs_baseline_sr": 125.0,
+      "death_overs_baseline_sr": "150.0 to 175.0 depending on exact entry over",
+      "collapse_adjustment": "-15 SR if wickets remaining <= 4 before over 14",
+      "chase_adjustment": "Scaled to required RR (capped at 165 SR for high RRR, floored at 115 SR for low RRR)"
+    },
+    "CF_Tactical_Acceleration": {
+      "description": "Realistic aggressive alternative (+15 to +20 SR or 1 extra boundary) where team needed urgent acceleration."
+    },
+    "CF_Wicket_Preservation": {
+      "description": "Preserving wicket across the opportunity window (staying not out) when batting depth is scarce."
+    },
+    "CF_Strike_Rotation": {
+      "description": "Converting 2-3 dot balls into singles to keep higher-tempo partner on strike."
+    }
+  },
+  "retrospective_analysis_principle": "Post-match data evaluates what occurred after exit, but strictly separates observed match outcome from counterfactual estimation."
+}

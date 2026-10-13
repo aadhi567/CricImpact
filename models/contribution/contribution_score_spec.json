@@ -1,0 +1,31 @@
+{
+  "output_name": "Output A: Contribution Score",
+  "scale": "0 to 100 continuous",
+  "par_benchmark": 50.0,
+  "median_empirical": 50.0,
+  "mean_empirical": 53.08,
+  "std_empirical": 19.0,
+  "interpretability_tiers": {
+    "90.0 - 100.0": "Legendary Masterclass / Historic High-Leverage Burst",
+    "75.0 - 89.9": "Outstanding High-Impact Performance (Match Winner / Decisive Accelerant)",
+    "60.0 - 74.9": "Solid Above-Par Contribution (Meaningfully shifted team win probability)",
+    "45.0 - 59.9": "Par / Situational Average (Met expected contextual baseline)",
+    "30.0 - 44.9": "Subpar Contribution (Slow pacing, consumed resources without acceleration)",
+    "0.0 - 29.9": "Highly Detrimental Knock (Heavy dot consumption, collapse-inducing dismissal)"
+  },
+  "formula": {
+    "standardized_composite": "C_raw = 0.25 * Z_context + 0.25 * Z_perf + 0.25 * Z_state + 0.25 * Z_cf",
+    "logistic_transformation": "Contribution_Score = clip(100.0 / (1.0 + exp(-1.4 * (C_raw - (-0.138)))), 0.1, 99.9)"
+  },
+  "percentile_distribution": {
+    "p1": 20.07,
+    "p5": 27.06,
+    "p10": 30.68,
+    "p25": 38.24,
+    "p50": 50.0,
+    "p75": 65.85,
+    "p90": 82.17,
+    "p95": 89.56,
+    "p99": 95.2
+  }
+}

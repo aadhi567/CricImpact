@@ -1,0 +1,243 @@
+{
+  "phase": "Phase 7L",
+  "status": "PRODUCTION INTEGRATION SUCCESSFUL",
+  "architecture": {
+    "model": "Context-as-Leverage (Phase 7H Composite Dual-Slope Model B + Phase 7I Model E Feasibility-Gated Soft Saturation)",
+    "leverage_bounds": [
+      0.65,
+      1.35
+    ],
+    "pillar_weights": {
+      "P1_context": "Leverage multiplier only (0% direct)",
+      "P2_performance": "50%",
+      "P3_state": "50%"
+    },
+    "score_clipping": [
+      0.1,
+      99.9
+    ],
+    "par_score": 50.0
+  },
+  "controlled_scenarios": {
+    "success": {
+      "A_0_0": 84.7,
+      "B_20_3": 92.9,
+      "C_30_5": 95.6,
+      "monotonicity_holds": true
+    },
+    "failure": {
+      "F_0_0": 19.9,
+      "F_20_3": 12.8,
+      "F_30_5": 10.5,
+      "penalty_hierarchy_holds": true
+    },
+    "chase": {
+      "115": 82.8,
+      "150": 84.2,
+      "184": 86.3,
+      "208": 87.3
+    },
+    "impossible_chase_siraj": 16.5,
+    "death_burst_hero": 77.4
+  },
+  "phase7k_shadow_regression": {
+    "max_difference": 0.0,
+    "tolerance": 1e-06,
+    "verified_identical": true
+  },
+  "population_distribution": {
+    "total_appearances": 19111,
+    "batting_innings": 19111,
+    "dnb_count": 0,
+    "mean": 48.47,
+    "median": 46.8,
+    "std": 22.85,
+    "q10": 19.6,
+    "q25": 29.1,
+    "q50": 46.8,
+    "q75": 65.9,
+    "q90": 81.5,
+    "scores_under_5": 17,
+    "scores_under_10": 198,
+    "scores_over_90": 752,
+    "scores_over_95": 245,
+    "scores_over_99": 48,
+    "min_score": 2.0,
+    "max_score": 99.9
+  },
+  "top_5_innings": [
+    {
+      "match_id": 1216509,
+      "player": "S Dhawan",
+      "actual_runs": 101,
+      "balls_faced": 58,
+      "contribution_score": 99.9,
+      "leverage": 1.139,
+      "adjusted_p2": 99.9,
+      "adjusted_p3": 99.9
+    },
+    {
+      "match_id": 1312198,
+      "player": "RM Patidar",
+      "actual_runs": 112,
+      "balls_faced": 54,
+      "contribution_score": 99.9,
+      "leverage": 1.122,
+      "adjusted_p2": 99.9,
+      "adjusted_p3": 99.9
+    },
+    {
+      "match_id": 1178414,
+      "player": "MS Dhoni",
+      "actual_runs": 84,
+      "balls_faced": 48,
+      "contribution_score": 99.9,
+      "leverage": 1.164,
+      "adjusted_p2": 99.9,
+      "adjusted_p3": 99.9
+    },
+    {
+      "match_id": 1178410,
+      "player": "N Rana",
+      "actual_runs": 85,
+      "balls_faced": 46,
+      "contribution_score": 99.9,
+      "leverage": 1.184,
+      "adjusted_p2": 99.9,
+      "adjusted_p3": 99.9
+    },
+    {
+      "match_id": 1254084,
+      "player": "KA Pollard",
+      "actual_runs": 87,
+      "balls_faced": 34,
+      "contribution_score": 99.9,
+      "leverage": 1.075,
+      "adjusted_p2": 99.9,
+      "adjusted_p3": 99.9
+    }
+  ],
+  "bottom_5_innings": [
+    {
+      "match_id": 729313,
+      "player": "YV Takawale",
+      "actual_runs": 0,
+      "balls_faced": 7,
+      "contribution_score": 2.0,
+      "leverage": 1.124,
+      "adjusted_p2": 2.9,
+      "adjusted_p3": 1.0
+    },
+    {
+      "match_id": 1529289,
+      "player": "N Wadhera",
+      "actual_runs": 0,
+      "balls_faced": 6,
+      "contribution_score": 2.9,
+      "leverage": 1.127,
+      "adjusted_p2": 5.3,
+      "adjusted_p3": 0.5
+    },
+    {
+      "match_id": 1254064,
+      "player": "MP Stoinis",
+      "actual_runs": 0,
+      "balls_faced": 5,
+      "contribution_score": 2.9,
+      "leverage": 1.123,
+      "adjusted_p2": 5.8,
+      "adjusted_p3": 0.1
+    },
+    {
+      "match_id": 1082635,
+      "player": "Z Khan",
+      "actual_runs": 2,
+      "balls_faced": 11,
+      "contribution_score": 3.3,
+      "leverage": 1.199,
+      "adjusted_p2": 2.9,
+      "adjusted_p3": 3.7
+    },
+    {
+      "match_id": 1216520,
+      "player": "KD Karthik",
+      "actual_runs": 0,
+      "balls_faced": 2,
+      "contribution_score": 3.4,
+      "leverage": 1.124,
+      "adjusted_p2": 5.7,
+      "adjusted_p3": 1.1
+    }
+  ],
+  "leakage_audits": {
+    "outcome_leakage_delta": 0.0,
+    "player_identity_leakage_delta": 0.0,
+    "outcome_invariance_passed": true,
+    "player_identity_invariance_passed": true
+  },
+  "dnb_validation": {
+    "null_preservation": true,
+    "season_average_unaffected": true
+  },
+  "first_innings_invariance": {
+    "model_e_bypassed": true,
+    "raw_p3_preserved": true
+  },
+  "full_regression_tests": {
+    "total": 335,
+    "passed": 335,
+    "failed": 0,
+    "pass_rate": "100%"
+  },
+  "file_hashes": {
+    "src/contribution_framework.py": {
+      "before": {
+        "sha256": "e293eaf5cb49041ab715f1c63c86493b014e18edaf67ab17976b9fe59d53a1fd",
+        "md5": "82a049dd242afac690264bad7032bacf",
+        "size": 40093
+      },
+      "after": {
+        "sha256": "c3cc2868aede71226b6e7d96914353e5f668f4a71636524c72223d12a087d0a8",
+        "md5": "bbc00b0c9ba0270112e5a77a3273a3b9",
+        "size": 56999
+      }
+    },
+    "src/season_aggregation.py": {
+      "before": {
+        "sha256": "a6aaef1a175167752814b1082c8df52c4863511494726c6f6d4c0b623beb67e3",
+        "md5": "6efc324e060b4dcc225a851114b2b5cb",
+        "size": 20964
+      },
+      "after": {
+        "sha256": "6e0be10161fb905b80770c4c950454e88203f524a459154b8c977f05475f8dfc",
+        "md5": "ccbc7ea13880d8d34785effad22cb1ab",
+        "size": 21718
+      }
+    },
+    "data/processed/batter_match_contributions.csv": {
+      "before": {
+        "sha256": "ae87da2915bbd2e66a51bbc69a446d43411d43dd138b7e6e9a0d469cb0d1fb4b",
+        "md5": "3bdcf553d4b9152746baaa9c5f7910c2",
+        "size": 7579317
+      },
+      "after": {
+        "sha256": "652c597a09ab0a17542ad0cba56bc16fdc30440aec085f1ff24429f55d1fccbf",
+        "md5": "779adf7041fac9eedab4efe035cdc39a",
+        "size": 8584293
+      }
+    },
+    "models/contribution/phase6/phase6_season_metrics.csv": {
+      "before": {
+        "sha256": "c39f278babde0a72b91a6025a6c7b58e41ca743bf7c90afcc51240f2a1d0f82f",
+        "md5": "a1ca155321015cc0b26b926d6fee0147",
+        "size": 412782
+      },
+      "after": {
+        "sha256": "c0c9157523c1ee72ea12b604dd3147bffdbe511147e5d72a2c3044f46588874a",
+        "md5": "223e9990c4aaf52270c3fb9d290b68af",
+        "size": 411189
+      }
+    }
+  },
+  "backup_directory": "backups/phase7l_pre_integration/"
+}

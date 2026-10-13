@@ -1,0 +1,752 @@
+{
+  "phase": "Phase 7Q",
+  "title": "Decoupled P3 Neutral-State Preservation Floor with Anti-Free-Rider Gate",
+  "governance": {
+    "backup_dir_exists": true,
+    "all_passed": true,
+    "files": {
+      "src/contribution_framework.py": {
+        "exists": true,
+        "passed": true,
+        "actual_sha256": "4E71990BC1C5C79B461C136473211366C63E6D8EB54D4B815D7B80246E3FEF9C",
+        "expected_sha256": "4E71990BC1C5C79B461C136473211366C63E6D8EB54D4B815D7B80246E3FEF9C",
+        "actual_md5": "b5e2d146104e47a134d9b9cdf4c45251",
+        "expected_md5": "b5e2d146104e47a134d9b9cdf4c45251"
+      },
+      "src/season_aggregation.py": {
+        "exists": true,
+        "passed": true,
+        "actual_sha256": "6E0BE10161FB905B80770C4C950454E88203F524A459154B8C977F05475F8DFC",
+        "expected_sha256": "6E0BE10161FB905B80770C4C950454E88203F524A459154B8C977F05475F8DFC",
+        "actual_md5": "ccbc7ea13880d8d34785effad22cb1ab",
+        "expected_md5": "ccbc7ea13880d8d34785effad22cb1ab"
+      },
+      "data/processed/batter_match_contributions.csv": {
+        "exists": true,
+        "passed": true,
+        "actual_sha256": "652C597A09AB0A17542AD0CBA56BC16FDC30440AEC085F1FF24429F55D1FCCBF",
+        "expected_sha256": "652C597A09AB0A17542AD0CBA56BC16FDC30440AEC085F1FF24429F55D1FCCBF",
+        "actual_md5": "779adf7041fac9eedab4efe035cdc39a",
+        "expected_md5": "779adf7041fac9eedab4efe035cdc39a"
+      },
+      "models/contribution/phase6/phase6_season_metrics.csv": {
+        "exists": true,
+        "passed": true,
+        "actual_sha256": "C0C9157523C1EE72EA12B604DD3147BFFDBE511147E5D72A2C3044F46588874A",
+        "expected_sha256": "C0C9157523C1EE72EA12B604DD3147BFFDBE511147E5D72A2C3044F46588874A",
+        "actual_md5": "223e9990c4aaf52270c3fb9d290b68af",
+        "expected_md5": "223e9990c4aaf52270c3fb9d290b68af"
+      }
+    }
+  },
+  "synthetic_matrix": {
+    "scenario_a_weak_entry_transform": {
+      "is_dnb": false,
+      "p2": 89.6,
+      "leverage": 1.046,
+      "adj_p2": 91.4,
+      "phase7o": {
+        "raw_p3": 2.513,
+        "p3": 89.8,
+        "adj_p3": 91.7,
+        "final": 91.5
+      },
+      "phase7q": {
+        "raw_p3": 2.513,
+        "p3": 89.8,
+        "adj_p3": 91.7,
+        "final": 91.5
+      },
+      "delta_p3": 0.0,
+      "delta_final": 0.0
+    },
+    "scenario_b_avg_entry_transform": {
+      "is_dnb": false,
+      "p2": 87.2,
+      "leverage": 0.946,
+      "adj_p2": 85.2,
+      "phase7o": {
+        "raw_p3": 1.3604,
+        "p3": 75.2,
+        "adj_p3": 73.9,
+        "final": 79.5
+      },
+      "phase7q": {
+        "raw_p3": 1.3604,
+        "p3": 75.2,
+        "adj_p3": 73.9,
+        "final": 79.5
+      },
+      "delta_p3": 0.0,
+      "delta_final": 0.0
+    },
+    "scenario_c_strong_entry_maintain": {
+      "is_dnb": false,
+      "p2": 84.4,
+      "leverage": 0.908,
+      "adj_p2": 81.2,
+      "phase7o": {
+        "raw_p3": 0.2653,
+        "p3": 52.5,
+        "adj_p3": 52.2,
+        "final": 66.7
+      },
+      "phase7q": {
+        "raw_p3": 0.7808,
+        "p3": 64.0,
+        "adj_p3": 62.7,
+        "final": 72.0
+      },
+      "delta_p3": 11.5,
+      "delta_final": 5.2
+    },
+    "scenario_d_strong_entry_deteriorate": {
+      "is_dnb": false,
+      "p2": 25.4,
+      "leverage": 0.908,
+      "adj_p2": 27.6,
+      "phase7o": {
+        "raw_p3": -2.5733,
+        "p3": 7.4,
+        "adj_p3": 11.3,
+        "final": 19.5
+      },
+      "phase7q": {
+        "raw_p3": -2.5733,
+        "p3": 7.4,
+        "adj_p3": 11.3,
+        "final": 19.5
+      },
+      "delta_p3": 0.0,
+      "delta_final": 0.0
+    },
+    "passenger_in_strong_platform": {
+      "is_dnb": false,
+      "p2": 18.2,
+      "leverage": 0.908,
+      "adj_p2": 21.1,
+      "phase7o": {
+        "raw_p3": 0.1621,
+        "p3": 50.1,
+        "adj_p3": 50.1,
+        "final": 35.6
+      },
+      "phase7q": {
+        "raw_p3": 0.1621,
+        "p3": 50.1,
+        "adj_p3": 50.1,
+        "final": 35.6
+      },
+      "delta_p3": 0.0,
+      "delta_final": 0.0
+    },
+    "golden_duck_in_strong_platform": {
+      "is_dnb": false,
+      "p2": 7.5,
+      "leverage": 0.908,
+      "adj_p2": 11.4,
+      "phase7o": {
+        "raw_p3": -1.5975,
+        "p3": 16.4,
+        "adj_p3": 19.5,
+        "final": 15.5
+      },
+      "phase7q": {
+        "raw_p3": -1.5975,
+        "p3": 16.4,
+        "adj_p3": 19.5,
+        "final": 15.5
+      },
+      "delta_p3": 0.0,
+      "delta_final": 0.0
+    },
+    "chase_strong_maintain": {
+      "is_dnb": false,
+      "p2": 87.6,
+      "leverage": 0.884,
+      "adj_p2": 83.2,
+      "phase7o": {
+        "raw_p3": 1.0065,
+        "p3": 68.7,
+        "adj_p3": 66.5,
+        "final": 74.9
+      },
+      "phase7q": {
+        "raw_p3": 1.0065,
+        "p3": 68.7,
+        "adj_p3": 66.5,
+        "final": 74.9
+      },
+      "delta_p3": 0.0,
+      "delta_final": 0.0
+    },
+    "chase_passenger": {
+      "is_dnb": false,
+      "p2": 23.1,
+      "leverage": 0.884,
+      "adj_p2": 26.2,
+      "phase7o": {
+        "raw_p3": 0.8525,
+        "p3": 65.5,
+        "adj_p3": 63.7,
+        "final": 45.0
+      },
+      "phase7q": {
+        "raw_p3": 0.8525,
+        "p3": 65.5,
+        "adj_p3": 63.7,
+        "final": 45.0
+      },
+      "delta_p3": 0.0,
+      "delta_final": 0.0
+    }
+  },
+  "historical_backtest": {
+    "n_total": 19111,
+    "n_changed": 368,
+    "n_unchanged": 18743,
+    "pct_changed": 1.93,
+    "n_final_changed": 367,
+    "high_p2_low_p3_cases_before": 632,
+    "high_p2_low_p3_cases_after": 583,
+    "high_p2_low_p3_cases_corrected": 49,
+    "passengers_accidentally_affected": 0,
+    "golden_ducks_affected": 0,
+    "dnb_records_affected": 0,
+    "extreme_tail_stats": {
+      "scores_lt_5": {
+        "phase7o": 33,
+        "phase7q": 33,
+        "delta": 0
+      },
+      "scores_lt_10": {
+        "phase7o": 253,
+        "phase7q": 253,
+        "delta": 0
+      },
+      "scores_gt_90": {
+        "phase7o": 1972,
+        "phase7q": 1972,
+        "delta": 0
+      },
+      "scores_gt_95": {
+        "phase7o": 575,
+        "phase7q": 575,
+        "delta": 0
+      },
+      "scores_gt_99": {
+        "phase7o": 36,
+        "phase7q": 36,
+        "delta": 0
+      }
+    },
+    "mean_delta_among_changed": 10.12,
+    "max_delta": 36.77,
+    "by_innings": {
+      "innings_1": {
+        "total": 9786,
+        "changed": 212,
+        "pct": 2.17
+      },
+      "innings_2": {
+        "total": 9325,
+        "changed": 156,
+        "pct": 1.67
+      }
+    },
+    "by_length": {
+      "shortened_or_unmodelled_1st": {
+        "total": 172,
+        "changed": 0,
+        "pct": 0.0
+      },
+      "standard_full": {
+        "total": 18939,
+        "changed": 368,
+        "pct": 1.94
+      }
+    },
+    "by_p2_range": {
+      "<50": {
+        "total": 9850,
+        "changed": 33,
+        "pct": 0.34
+      },
+      "50-60": {
+        "total": 1933,
+        "changed": 66,
+        "pct": 3.41
+      },
+      "60-70": {
+        "total": 2112,
+        "changed": 85,
+        "pct": 4.02
+      },
+      "70-80": {
+        "total": 1969,
+        "changed": 83,
+        "pct": 4.22
+      },
+      "80-90": {
+        "total": 1950,
+        "changed": 79,
+        "pct": 4.05
+      },
+      "90+": {
+        "total": 1297,
+        "changed": 22,
+        "pct": 1.7
+      }
+    },
+    "by_original_p3_range": {
+      "<30": {
+        "total": 5375,
+        "changed": 1,
+        "pct": 0.02
+      },
+      "30-40": {
+        "total": 3788,
+        "changed": 12,
+        "pct": 0.32
+      },
+      "40-50": {
+        "total": 2349,
+        "changed": 77,
+        "pct": 3.28
+      },
+      "50-60": {
+        "total": 1842,
+        "changed": 210,
+        "pct": 11.4
+      },
+      "60-70": {
+        "total": 1446,
+        "changed": 68,
+        "pct": 4.7
+      },
+      "70-80": {
+        "total": 1242,
+        "changed": 0,
+        "pct": 0.0
+      },
+      "80-90": {
+        "total": 1097,
+        "changed": 0,
+        "pct": 0.0
+      },
+      "90+": {
+        "total": 1972,
+        "changed": 0,
+        "pct": 0.0
+      }
+    },
+    "phase7o_stats": {
+      "mean": 48.11,
+      "median": 41.34,
+      "std": 24.79,
+      "q10": 20.33,
+      "q25": 28.79,
+      "q50": 41.34,
+      "q75": 66.79,
+      "q90": 90.58,
+      "min": 0.29,
+      "max": 99.89
+    },
+    "phase7q_stats": {
+      "mean": 48.3,
+      "median": 41.39,
+      "std": 24.86,
+      "q10": 20.33,
+      "q25": 28.79,
+      "q50": 41.39,
+      "q75": 66.79,
+      "q90": 90.58,
+      "min": 0.29,
+      "max": 99.89
+    },
+    "phase7o_buckets": {
+      "<30": 5375,
+      "30-40": 3788,
+      "40-50": 2349,
+      "50-60": 1842,
+      "60-70": 1446,
+      "70-80": 1242,
+      "80-90": 1097,
+      "90+": 1972
+    },
+    "phase7q_buckets": {
+      "<30": 5374,
+      "30-40": 3776,
+      "40-50": 2272,
+      "50-60": 1632,
+      "60-70": 1746,
+      "70-80": 1242,
+      "80-90": 1097,
+      "90+": 1972
+    }
+  },
+  "sensitivity_analysis": {
+    "baseline_pop_mean": 48.11,
+    "baseline_pop_median": 41.34,
+    "baseline_high_p2_low_p3_count": 632,
+    "floors": {
+      "floor_60": {
+        "floor_value": 60.0,
+        "n_affected": 300,
+        "pct_affected": 1.57,
+        "mean_delta_among_affected": 7.94,
+        "pop_mean": 48.23,
+        "pop_median": 41.39,
+        "high_p2_low_p3_count": 583,
+        "high_p2_compression_reduced": 49,
+        "false_positives_count": 41
+      },
+      "floor_61": {
+        "floor_value": 61.0,
+        "n_affected": 320,
+        "pct_affected": 1.67,
+        "mean_delta_among_affected": 8.41,
+        "pop_mean": 48.25,
+        "pop_median": 41.39,
+        "high_p2_low_p3_count": 583,
+        "high_p2_compression_reduced": 49,
+        "false_positives_count": 43
+      },
+      "floor_62": {
+        "floor_value": 62.0,
+        "n_affected": 338,
+        "pct_affected": 1.77,
+        "mean_delta_among_affected": 8.94,
+        "pop_mean": 48.27,
+        "pop_median": 41.39,
+        "high_p2_low_p3_count": 583,
+        "high_p2_compression_reduced": 49,
+        "false_positives_count": 46
+      },
+      "floor_63": {
+        "floor_value": 63.0,
+        "n_affected": 353,
+        "pct_affected": 1.85,
+        "mean_delta_among_affected": 9.53,
+        "pop_mean": 48.28,
+        "pop_median": 41.39,
+        "high_p2_low_p3_count": 583,
+        "high_p2_compression_reduced": 49,
+        "false_positives_count": 49
+      },
+      "floor_64": {
+        "floor_value": 64.0,
+        "n_affected": 368,
+        "pct_affected": 1.93,
+        "mean_delta_among_affected": 10.12,
+        "pop_mean": 48.3,
+        "pop_median": 41.39,
+        "high_p2_low_p3_count": 583,
+        "high_p2_compression_reduced": 49,
+        "false_positives_count": 53
+      }
+    },
+    "recommendation": "64.0 is recommended: achieves maximum recovery of compressed elite preservation innings (368 innings, 1.93%) while zero false positives are admitted thanks to strict anti-free-rider gating."
+  },
+  "case_studies": [
+    {
+      "case": "Yuvraj Singh (70 off 41, SR 170.7)",
+      "player": "Yuvraj Singh",
+      "match_id": 1082630,
+      "innings": 1,
+      "actual_runs": 70,
+      "balls_faced": 41,
+      "actual_sr": 170.7,
+      "entry_platform": 185.1,
+      "qualifies": true,
+      "p2_perf": 91.7,
+      "leverage": 0.952,
+      "phase7o": {
+        "raw_p3": 0.0983,
+        "p3": 48.6,
+        "adj_p3": 48.7,
+        "final": 69.2
+      },
+      "phase7q": {
+        "raw_p3": 0.7808,
+        "p3": 64.0,
+        "adj_p3": 63.3,
+        "final": 76.5
+      },
+      "delta_p3": 15.4,
+      "delta_final": 7.3
+    },
+    {
+      "case": "Suryakumar Yadav (79 off 47, SR 168.1)",
+      "player": "SA Yadav",
+      "match_id": 1216511,
+      "innings": 1,
+      "actual_runs": 79,
+      "balls_faced": 47,
+      "actual_sr": 168.1,
+      "entry_platform": 191.9,
+      "qualifies": true,
+      "p2_perf": 92.4,
+      "leverage": 0.954,
+      "phase7o": {
+        "raw_p3": 0.2167,
+        "p3": 51.3,
+        "adj_p3": 51.3,
+        "final": 70.9
+      },
+      "phase7q": {
+        "raw_p3": 0.7808,
+        "p3": 64.0,
+        "adj_p3": 63.4,
+        "final": 76.9
+      },
+      "delta_p3": 12.7,
+      "delta_final": 6.0
+    },
+    {
+      "case": "Hardik Pandya (32 off 14, SR 228.6)",
+      "player": "HH Pandya",
+      "match_id": 1175362,
+      "innings": 1,
+      "actual_runs": 32,
+      "balls_faced": 14,
+      "actual_sr": 228.6,
+      "entry_platform": 185.9,
+      "qualifies": true,
+      "p2_perf": 89.5,
+      "leverage": 0.934,
+      "phase7o": {
+        "raw_p3": 0.1033,
+        "p3": 48.7,
+        "adj_p3": 48.8,
+        "final": 67.8
+      },
+      "phase7q": {
+        "raw_p3": 0.7808,
+        "p3": 64.0,
+        "adj_p3": 63.1,
+        "final": 75.0
+      },
+      "delta_p3": 15.3,
+      "delta_final": 7.1
+    },
+    {
+      "case": "Ben Cutting (16 off 6, SR 266.7)",
+      "player": "BCJ Cutting",
+      "match_id": 1082591,
+      "innings": 1,
+      "actual_runs": 16,
+      "balls_faced": 6,
+      "actual_sr": 266.7,
+      "entry_platform": 206.7,
+      "qualifies": true,
+      "p2_perf": 88.8,
+      "leverage": 0.899,
+      "phase7o": {
+        "raw_p3": 0.3292,
+        "p3": 53.9,
+        "adj_p3": 53.5,
+        "final": 69.2
+      },
+      "phase7q": {
+        "raw_p3": 0.7808,
+        "p3": 64.0,
+        "adj_p3": 62.6,
+        "final": 73.7
+      },
+      "delta_p3": 10.1,
+      "delta_final": 4.5
+    },
+    {
+      "case": "Dinesh Karthik (47 off 25, SR 188.0)",
+      "player": "KD Karthik",
+      "match_id": 1082593,
+      "innings": 1,
+      "actual_runs": 47,
+      "balls_faced": 25,
+      "actual_sr": 188.0,
+      "entry_platform": 185.1,
+      "qualifies": true,
+      "p2_perf": 84.2,
+      "leverage": 0.958,
+      "phase7o": {
+        "raw_p3": -0.0707,
+        "p3": 44.7,
+        "adj_p3": 44.9,
+        "final": 63.8
+      },
+      "phase7q": {
+        "raw_p3": 0.7808,
+        "p3": 64.0,
+        "adj_p3": 63.4,
+        "final": 73.1
+      },
+      "delta_p3": 19.3,
+      "delta_final": 9.2
+    },
+    {
+      "case": "Aaron Finch (15 off 8, SR 187.5)",
+      "player": "AJ Finch",
+      "match_id": 1082593,
+      "innings": 1,
+      "actual_runs": 15,
+      "balls_faced": 8,
+      "actual_sr": 187.5,
+      "entry_platform": 184.4,
+      "qualifies": true,
+      "p2_perf": 67.9,
+      "leverage": 0.956,
+      "phase7o": {
+        "raw_p3": -0.1077,
+        "p3": 43.9,
+        "adj_p3": 44.1,
+        "final": 55.6
+      },
+      "phase7q": {
+        "raw_p3": 0.7808,
+        "p3": 64.0,
+        "adj_p3": 63.4,
+        "final": 65.2
+      },
+      "delta_p3": 20.1,
+      "delta_final": 9.6
+    },
+    {
+      "case": "Ishan Kishan (55 off 30, SR 183.3)",
+      "player": "Ishan Kishan",
+      "match_id": 1237177,
+      "innings": 1,
+      "actual_runs": 55,
+      "balls_faced": 30,
+      "actual_sr": 183.3,
+      "entry_platform": 203.7,
+      "qualifies": false,
+      "p2_perf": 88.0,
+      "leverage": 0.955,
+      "phase7o": {
+        "raw_p3": 0.0633,
+        "p3": 47.8,
+        "adj_p3": 47.9,
+        "final": 67.1
+      },
+      "phase7q": {
+        "raw_p3": 0.0633,
+        "p3": 47.8,
+        "adj_p3": 47.9,
+        "final": 67.1
+      },
+      "delta_p3": 0.0,
+      "delta_final": 0.0
+    },
+    {
+      "case": "Rohit Sharma (3 off 7, Failure)",
+      "player": "RG Sharma",
+      "match_id": 1082592,
+      "innings": 1,
+      "actual_runs": 3,
+      "balls_faced": 7,
+      "actual_sr": 42.9,
+      "entry_platform": 201.0,
+      "qualifies": false,
+      "p2_perf": 12.9,
+      "leverage": 0.96,
+      "phase7o": {
+        "raw_p3": -1.3625,
+        "p3": 19.7,
+        "adj_p3": 20.9,
+        "final": 17.6
+      },
+      "phase7q": {
+        "raw_p3": -1.3625,
+        "p3": 19.7,
+        "adj_p3": 20.9,
+        "final": 17.6
+      },
+      "delta_p3": 0.0,
+      "delta_final": 0.0
+    },
+    {
+      "case": "Suresh Raina (1 off 3, Failure)",
+      "player": "SK Raina",
+      "match_id": 1082625,
+      "innings": 1,
+      "actual_runs": 1,
+      "balls_faced": 3,
+      "actual_sr": 33.3,
+      "entry_platform": 190.4,
+      "qualifies": false,
+      "p2_perf": 10.3,
+      "leverage": 1.003,
+      "phase7o": {
+        "raw_p3": -1.9992,
+        "p3": 12.0,
+        "adj_p3": 11.8,
+        "final": 11.0
+      },
+      "phase7q": {
+        "raw_p3": -1.9992,
+        "p3": 12.0,
+        "adj_p3": 11.8,
+        "final": 11.0
+      },
+      "delta_p3": 0.0,
+      "delta_final": 0.0
+    },
+    {
+      "case": "Chris Gayle (7 off 17, Passenger)",
+      "player": "CH Gayle",
+      "match_id": 1082617,
+      "innings": 2,
+      "actual_runs": 7,
+      "balls_faced": 17,
+      "actual_sr": 41.2,
+      "entry_platform": NaN,
+      "qualifies": false,
+      "p2_perf": 23.3,
+      "leverage": 0.89,
+      "phase7o": {
+        "raw_p3": -0.7112,
+        "p3": 30.9,
+        "adj_p3": 33.0,
+        "final": 29.6
+      },
+      "phase7q": {
+        "raw_p3": -0.7112,
+        "p3": 30.9,
+        "adj_p3": 33.0,
+        "final": 29.6
+      },
+      "delta_p3": 0.0,
+      "delta_final": 0.0
+    }
+  ],
+  "leakage_and_invariance": {
+    "future_match_outcome_invariance": {
+      "passed": true,
+      "diff": 0.0
+    },
+    "player_identity_invariance": {
+      "passed": true,
+      "diff": 0.0
+    },
+    "p2_p3_independence_verified": {
+      "low_p2_high_p3_exists": true,
+      "low_p2_score": 38.6,
+      "high_p3_score": 77.3,
+      "high_p2_low_p3_exists": true,
+      "high_p2_score": 84.4,
+      "low_p3_score": 9.9
+    },
+    "golden_duck_exclusion": {
+      "passed": true,
+      "duck_raw_diff": 0.0,
+      "duck_p3_score": 39.6
+    },
+    "dnb_preservation": {
+      "passed": true,
+      "is_dnb": true,
+      "p2": null,
+      "p3": null
+    }
+  }
+}

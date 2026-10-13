@@ -1,0 +1,26 @@
+{
+  "core_principle": "Strict segregation between Retrospective Contribution and Counterfactual Advice.",
+  "counterfactual_inputs": [
+    "entry_ball",
+    "entry_over",
+    "wickets_remaining_entry",
+    "team_score_entry",
+    "balls_remaining_entry",
+    "team_rr_entry",
+    "expected_runs",
+    "expected_sr",
+    "balls_faced",
+    "actual_runs"
+  ],
+  "forbidden_counterfactual_inputs": [
+    "final_team_score",
+    "won_match",
+    "winning_margin",
+    "margin_type",
+    "target_reached",
+    "post_exit_runs",
+    "post_exit_rr",
+    "post_exit_wickets_lost"
+  ],
+  "invariance_statement": "A counterfactual simulation MUST produce identical recommendations regardless of whether the team eventually won by 100 runs or lost by 1 run."
+}

@@ -1,0 +1,46 @@
+{
+  "framework": "Phase 7G Production Contribution Specification",
+  "version": "Phase 7G (2026-10-03)",
+  "formula": "Contribution Score = 0.50 * Adjusted_P2 + 0.50 * Adjusted_P3, where Adjusted = clip(50 + (Raw - 50) * L(P1), 0.1, 99.9) and L(P1) = clip(1.0 + 0.35 * ((P1 - 50) / 50), 0.65, 1.35)",
+  "pillars": {
+    "pillar1_match_context": "Leverage Signal (0 direct points; multiplier L(P1) in [0.65, 1.35])",
+    "pillar2_batter_performance": "50% weight (Adjusted Execution)",
+    "pillar3_team_state_impact": "50% weight (Adjusted Team Transformation)",
+    "pillar4_counterfactual_value": "0% weight (Diagnostic Layer Only)"
+  },
+  "dnb_rule": {
+    "score": "NULL",
+    "raw_contribution": "NULL",
+    "team_contribution_share": "NULL",
+    "denominator_rule": "DNB matches are strictly excluded from batting innings count and contribution averages.",
+    "metadata_visibility": "matches_played, batting_innings, did_not_bat_matches recorded explicitly"
+  },
+  "view_a_all_innings": {
+    "description": "Complete transparent record of every genuine batting opportunity.",
+    "metrics": [
+      "average_contribution_score",
+      "total_raw_contribution",
+      "total_positive_raw_contribution",
+      "season_team_contribution_share",
+      "contribution_per_batting_opportunity"
+    ]
+  },
+  "view_b_qualified": {
+    "description": "Excludes only negligible-opportunity non-dismissal innings for sensitive player comparison.",
+    "eligibility_rule": "Candidate 1: balls <= 2, not out, |C_raw| <= 0.10, minimal state change.",
+    "metrics": [
+      "qualified_batting_innings",
+      "excluded_small_opportunity_innings",
+      "qualified_average_contribution_score",
+      "qualified_total_positive_contribution",
+      "qualified_team_contribution_share"
+    ]
+  },
+  "middle_over_rule": "entry_over < 16.0 AND exit_over >= 6.0",
+  "dataset_summary": {
+    "total_player_seasons": 3357,
+    "total_batting_innings": 19111,
+    "total_dnb_matches": 8798,
+    "regenerated_at": "2026-10-03T09:43:26.904444+00:00"
+  }
+}

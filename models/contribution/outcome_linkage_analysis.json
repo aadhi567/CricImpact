@@ -1,0 +1,90 @@
+{
+  "methods_summary": {
+    "invariant": {
+      "winning_mean_score": 60.1,
+      "losing_mean_score": 49.89,
+      "win_loss_score_gap": 10.21
+    },
+    "binary_step": {
+      "winning_mean_score": 60.38,
+      "losing_mean_score": 50.62,
+      "win_loss_score_gap": 9.76
+    },
+    "margin_sensitive": {
+      "winning_mean_score": 60.39,
+      "losing_mean_score": 50.44,
+      "win_loss_score_gap": 9.95
+    },
+    "state_outcome_convergence": {
+      "winning_mean_score": 60.3,
+      "losing_mean_score": 50.38,
+      "win_loss_score_gap": 9.92
+    }
+  },
+  "recommended_method": "margin_sensitive",
+  "rationale": "Gives modest win bonus in decisive victories, but never erases heroic knocks in tight losses, avoiding the binary win bias of binary_step.",
+  "losing_team_high_contribution_cases": [
+    {
+      "player": "SK Raina",
+      "match_id": "1082593",
+      "runs": 68,
+      "balls": 51,
+      "result": "Lost (margin 10.0 wickets)",
+      "score_invariant": 85.7,
+      "score_binary_step": 82.4,
+      "score_margin_sensitive": 82.6
+    },
+    {
+      "player": "BA Stokes",
+      "match_id": "1082594",
+      "runs": 50,
+      "balls": 32,
+      "result": "Lost (margin 6.0 wickets)",
+      "score_invariant": 74.4,
+      "score_binary_step": 71.7,
+      "score_margin_sensitive": 72.2
+    },
+    {
+      "player": "RR Pant",
+      "match_id": "1082595",
+      "runs": 57,
+      "balls": 36,
+      "result": "Lost (margin 15.0 runs)",
+      "score_invariant": 47.4,
+      "score_binary_step": 48.4,
+      "score_margin_sensitive": 47.8
+    }
+  ],
+  "winning_team_low_contribution_cases": [
+    {
+      "player": "DA Warner",
+      "match_id": "1082591",
+      "runs": 14,
+      "balls": 8,
+      "result": "Won (margin 35.0 runs)",
+      "score_invariant": 58.8,
+      "score_binary_step": 59.5,
+      "score_margin_sensitive": 59.4
+    },
+    {
+      "player": "MA Agarwal",
+      "match_id": "1082592",
+      "runs": 6,
+      "balls": 5,
+      "result": "Won (margin 7.0 wickets)",
+      "score_invariant": 37.8,
+      "score_binary_step": 35.6,
+      "score_margin_sensitive": 35.7
+    },
+    {
+      "player": "MS Dhoni",
+      "match_id": "1082592",
+      "runs": 12,
+      "balls": 12,
+      "result": "Won (margin 7.0 wickets)",
+      "score_invariant": 73.8,
+      "score_binary_step": 76.2,
+      "score_margin_sensitive": 76.1
+    }
+  ]
+}

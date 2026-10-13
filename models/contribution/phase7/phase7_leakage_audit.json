@@ -1,0 +1,6 @@
+{
+  "sample_size": 500,
+  "max_score_difference": 0.0,
+  "outcome_invariance_confirmed": true,
+  "leakage_status": "PASSED (Zero outcome leakage detected in core contribution calculations)"
+}

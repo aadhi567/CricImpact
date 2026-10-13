@@ -1,0 +1,18 @@
+{
+  "framework": "Phase 7C Rebalanced Core Contribution Architecture",
+  "philosophy": "How much did this batter contribute to his team's position, given the situation he faced? P1 represents inherited situation (25%). P2 measures actual batter execution (35%). P3 measures team-state transformation while batting (40%). P4 is diagnostic only (0%).",
+  "weights": {
+    "P1_match_context": 0.25,
+    "P2_batter_performance": 0.35,
+    "P3_team_state_impact": 0.4,
+    "P4_counterfactual_value": 0.0
+  },
+  "formula": {
+    "contribution_score": "0.25 * P1_score + 0.35 * P2_score + 0.40 * P3_score",
+    "raw_composite": "0.25 * z1 + 0.35 * z2 + 0.40 * z3",
+    "scale": "0.1 to 99.9, Par = 50.0"
+  },
+  "dnb_rule": "Strict NULL preservation across pipeline. DNB never counted as 0 or 50.",
+  "team_contribution_share": "sum(max(0, player_c_raw)) / sum(max(0, team_c_raw)) * 100. Attributed strictly from positive raw contribution.",
+  "p4_diagnostic_role": "Separate explanatory layer for strategic recommendations and improvement areas."
+}

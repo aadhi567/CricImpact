@@ -1,0 +1,159 @@
+{
+  "powerplay_model": {
+    "target": "score_at_6",
+    "test_states": 1215,
+    "baseline": {
+      "MAE": 10.6265,
+      "RMSE": 14.9375,
+      "R2": -0.161
+    },
+    "random_forest": {
+      "MAE": 6.9092,
+      "RMSE": 9.3951,
+      "R2": 0.5407
+    },
+    "window_breakdown": {
+      "overs 1\u20132": {
+        "baseline_mae": 16.1,
+        "rf_mae": 8.69,
+        "rf_rmse": 11.45,
+        "rf_r2": 0.3183,
+        "count": 486
+      },
+      "overs 3\u20134": {
+        "baseline_mae": 8.45,
+        "rf_mae": 6.59,
+        "rf_rmse": 8.67,
+        "rf_r2": 0.609,
+        "count": 486
+      },
+      "over 5": {
+        "baseline_mae": 4.03,
+        "rf_mae": 3.99,
+        "rf_rmse": 5.39,
+        "rf_r2": 0.849,
+        "count": 243
+      }
+    },
+    "feature_importances": {
+      "current_team_runs": 0.071132,
+      "wickets_lost_so_far": 0.031299,
+      "wickets_remaining": 0.03397,
+      "overs_completed": 0.023194,
+      "balls_remaining_until_6": 0.022478,
+      "current_team_rr": 0.817927,
+      "innings_phase": 0.0
+    }
+  },
+  "middle_model": {
+    "target": "score_at_15",
+    "test_states": 2187,
+    "baseline": {
+      "MAE": 10.6828,
+      "RMSE": 14.7742,
+      "R2": 0.6523
+    },
+    "random_forest": {
+      "MAE": 9.1923,
+      "RMSE": 12.1217,
+      "R2": 0.766
+    },
+    "window_breakdown": {
+      "overs 6\u20139": {
+        "baseline_mae": 14.98,
+        "rf_mae": 12.2,
+        "rf_rmse": 15.23,
+        "rf_r2": 0.6307,
+        "count": 972
+      },
+      "overs 10\u201312": {
+        "baseline_mae": 8.87,
+        "rf_mae": 8.17,
+        "rf_rmse": 10.38,
+        "rf_r2": 0.8282,
+        "count": 729
+      },
+      "overs 13\u201314": {
+        "baseline_mae": 4.81,
+        "rf_mae": 4.72,
+        "rf_rmse": 5.98,
+        "rf_r2": 0.9431,
+        "count": 486
+      }
+    },
+    "feature_importances": {
+      "current_team_runs": 0.034856,
+      "wickets_lost_so_far": 0.020087,
+      "wickets_remaining": 0.019985,
+      "overs_completed": 0.002802,
+      "balls_remaining_until_15": 0.002926,
+      "current_team_rr": 0.919344,
+      "innings_phase": 0.0
+    }
+  },
+  "death_model": {
+    "target": "final_team_score",
+    "test_states": 1204,
+    "baseline": {
+      "MAE": 11.0638,
+      "RMSE": 14.729,
+      "R2": 0.7887
+    },
+    "random_forest": {
+      "MAE": 8.776,
+      "RMSE": 11.269,
+      "R2": 0.8763
+    },
+    "comparison_part1_model": {
+      "MAE": 8.7441,
+      "RMSE": 11.1794,
+      "R2": 0.8783
+    },
+    "window_breakdown": {
+      "over 15": {
+        "baseline_mae": 16.33,
+        "rf_mae": 11.93,
+        "rf_rmse": 14.93,
+        "rf_r2": 0.7868,
+        "count": 242
+      },
+      "over 16": {
+        "baseline_mae": 13.98,
+        "rf_mae": 10.59,
+        "rf_rmse": 13.2,
+        "rf_r2": 0.8334,
+        "count": 242
+      },
+      "over 17": {
+        "baseline_mae": 11.14,
+        "rf_mae": 8.87,
+        "rf_rmse": 10.76,
+        "rf_r2": 0.8892,
+        "count": 242
+      },
+      "over 18": {
+        "baseline_mae": 8.6,
+        "rf_mae": 7.48,
+        "rf_rmse": 9.13,
+        "rf_r2": 0.9172,
+        "count": 241
+      },
+      "over 19": {
+        "baseline_mae": 5.13,
+        "rf_mae": 4.93,
+        "rf_rmse": 6.04,
+        "rf_r2": 0.963,
+        "count": 237
+      }
+    },
+    "feature_importances": {
+      "current_team_runs": 0.012244,
+      "wickets_lost_so_far": 0.009685,
+      "wickets_remaining": 0.00893,
+      "overs_completed": 0.001879,
+      "balls_remaining_in_innings": 0.002053,
+      "current_team_rr": 0.965209,
+      "innings_phase": 0.0
+    }
+  }
+}

@@ -1,0 +1,119 @@
+{
+  "base_case_score": 64.4,
+  "all_tests_passed": true,
+  "tests": [
+    {
+      "perturbation": "Runs increase (+10 runs)",
+      "expected_direction": "Increase",
+      "actual_delta_score": 8.7,
+      "modified_score": 73.1,
+      "passed_monotonicity": true
+    },
+    {
+      "perturbation": "Runs decrease (-10 runs)",
+      "expected_direction": "Decrease",
+      "actual_delta_score": -9.7,
+      "modified_score": 54.7,
+      "passed_monotonicity": true
+    },
+    {
+      "perturbation": "Strike Rate increase (+40 SR)",
+      "expected_direction": "Increase",
+      "actual_delta_score": 3.8,
+      "modified_score": 68.2,
+      "passed_monotonicity": true
+    },
+    {
+      "perturbation": "Strike Rate decrease (-40 SR)",
+      "expected_direction": "Decrease",
+      "actual_delta_score": -3.9,
+      "modified_score": 60.5,
+      "passed_monotonicity": true
+    },
+    {
+      "perturbation": "Expected runs higher (+10 runs par hurdle)",
+      "expected_direction": "Decrease",
+      "actual_delta_score": -0.3,
+      "modified_score": 64.1,
+      "passed_monotonicity": true
+    },
+    {
+      "perturbation": "Wicket lost instead of preserved",
+      "expected_direction": "Decrease",
+      "actual_delta_score": -2.8,
+      "modified_score": 61.6,
+      "passed_monotonicity": true
+    },
+    {
+      "perturbation": "Trajectory deviation improvement (+10 runs trajectory change)",
+      "expected_direction": "Increase",
+      "actual_delta_score": 5.2,
+      "modified_score": 69.6,
+      "passed_monotonicity": true
+    },
+    {
+      "perturbation": "Chase: RRR relief increased (+2.0 RPO relief)",
+      "expected_direction": "Increase",
+      "actual_delta_score": 5.3,
+      "modified_score": 74.8,
+      "passed_monotonicity": true
+    }
+  ],
+  "pillar1_coefficient_rationale": {
+    "death_urgency (1.2)": "Death overs (16.0-20.0) represent maximum scoring urgency where balls cannot be deferred. High benchmark boundary expectation (~165+ SR).",
+    "collapse_pressure (0.45)": "Measures overs remaining per wicket in hand. Captures resource scarcity when wickets fall early, balancing the risk of bowling-out against scoring progression.",
+    "platform_pressure (0.35)": "Scales the urgency to break run rate stagnation when the current run rate is depressed below par in the 1st innings.",
+    "chase_pressure (1.0)": "Directly reflects required run rate and RR gap in the second innings."
+  },
+  "pillar1_sensitivity_tests": [
+    {
+      "parameter": "death_urgency_weight (Pillar 1)",
+      "baseline_value": 1.2,
+      "tested_values": [
+        0.9,
+        1.5
+      ],
+      "baseline_score": 89.6,
+      "tested_scores": [
+        88.6,
+        90.4
+      ],
+      "max_delta_points": 1.0,
+      "robustness_verdict": "Robust. Score changes by <= 1.0 points across a 50% parameter swing."
+    },
+    {
+      "parameter": "collapse_pressure_weight (Pillar 1)",
+      "baseline_value": 0.45,
+      "tested_values": [
+        0.3,
+        0.6
+      ],
+      "baseline_score": 67.1,
+      "tested_scores": [
+        65.8,
+        68.3
+      ],
+      "max_delta_points": 1.3,
+      "robustness_verdict": "Robust. Score changes by <= 1.2 points across a 66% parameter swing."
+    },
+    {
+      "parameter": "platform_pressure_weight (Pillar 1)",
+      "baseline_value": 0.35,
+      "tested_values": [
+        0.2,
+        0.5
+      ],
+      "baseline_score": 66.4,
+      "tested_scores": [
+        65.6,
+        67.3
+      ],
+      "max_delta_points": 0.9,
+      "robustness_verdict": "Robust. Score changes by <= 0.8 points across an 86% parameter swing."
+    }
+  ],
+  "component_dominance_audit": {
+    "status": "Balanced",
+    "findings": "No single component or expected baseline dominates. Expected baseline deviation accounts for <15% of Pillar 2."
+  }
+}

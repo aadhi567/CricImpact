@@ -1,0 +1,93 @@
+{
+  "phase": "7G",
+  "name": "P3 Correction + P1 Leverage Stress Test Specification",
+  "status": "RESEARCH_COMPLETE_PENDING_APPROVAL",
+  "production_untouched": true,
+  "architecture": {
+    "pillar_roles": {
+      "P1": "Match Context / Situational Difficulty (LEVERAGE SIGNAL ONLY - 0 direct points)",
+      "P2": "Individual Batter Execution (SCORING PILLAR - 50% Final Weight)",
+      "P3": "Team-State Transformation (SCORING PILLAR - 50% Final Weight)",
+      "P4": "Diagnostic Only (0% Weight)"
+    },
+    "leverage_formula": "L(P1) = clip(1.0 + 0.35 * ((P1 - 50.0) / 50.0), 0.65, 1.35)",
+    "leverage_bounds": [0.65, 1.35],
+    "adjusted_p2": "clip(50.0 + (P2 - 50.0) * L(P1), 0.1, 99.9)",
+    "adjusted_p3": "clip(50.0 + (P3 - 50.0) * L(P1), 0.1, 99.9)",
+    "final_contribution": "0.50 * Adjusted_P2 + 0.50 * Adjusted_P3"
+  },
+  "p3_corrections": {
+    "issue_1_death_rrr_blowout": {
+      "problem": "As balls remaining -> 0 in death overs of a losing chase, exit required RR explodes asymptotically, creating massive unearned negative RRR changes (e.g. -85.38) that drag elite batting (Russell 65 off 25, SR 260) down to P3=18.6.",
+      "recommended_correction": "mode_1a_sr_capped",
+      "formula": "if balls_rem_exit <= 12 and balls_faced >= 5 and raw_rrr_chg < 0: if actual_sr >= 160.0: rrr_chg = max(raw_rrr_chg, -3.0) elif actual_sr >= 130.0: rrr_chg = max(raw_rrr_chg, -6.0) else: rrr_chg = np.clip(raw_rrr_chg, -12.0, 12.0)",
+      "effect_on_russell": {
+        "p7d_p3": 18.6,
+        "p7f_p3": 18.6,
+        "p7g_p3": 55.3,
+        "p7g_contribution": 78.3
+      },
+      "distinction_preserved": "Slow death batters (SR < 130) receive full unmitigated RRR penalty (-12.0), receiving P3 <= 15.0."
+    },
+    "issue_2_partner_coattail": {
+      "problem": "When partner dominates scoring (>2.5x runs or batter share < 30%), the macro trajectory surge (+1.69) overwhelms partner differential (-0.44), awarding passive anchors (Dhawan 29 off 30) inflated P3=92.0.",
+      "recommended_correction": "mode_2c_hybrid",
+      "formula": "is_coattail = (macro_score > 0 and part_runs >= 35 and (b_share < 0.30 or (p_runs >= 2.5 * max(1.0, actual_runs) and partner_sr >= actual_sr + 30.0))); if is_coattail: macro_score *= max(0.25, min(1.0, 2.0 * b_share)); part_score -= min(0.60, 0.25 * ((partner_sr - actual_sr) / 40.0))",
+      "effect_on_dhawan": {
+        "p7d_p3": 92.0,
+        "p7f_p3": 92.0,
+        "p7g_p3": 55.0,
+        "p7g_contribution": 53.3
+      },
+      "distinction_preserved": "Carrying partners (share >= 65%, SR >= 130) retain full credit and receive synergy bonus (+0.30)."
+    },
+    "issue_3_low_target_chase": {
+      "problem": "In trivial chases (target <= 125), cruising at low SR still liquidates high % of target, artificially awarding slow batters (Smith 15 off 18) P3=68.2.",
+      "recommended_correction": "mode_3c_pace_cap",
+      "formula": "if target <= 125.0 and macro_score > 0 and actual_sr < 100.0 and req_rr_entry <= 7.0 and balls_faced >= 10: macro_score = min(0.30, macro_score)",
+      "effect_on_smith": {
+        "p7d_p3": 68.2,
+        "p7f_p3": 68.2,
+        "p7g_p3": 47.2,
+        "p7g_contribution": 49.0
+      },
+      "distinction_preserved": "Aggressive finishers (e.g. 32 off 14, SR 228.6) retain full high P3 (80.7) and high contribution (75.6)."
+    }
+  },
+  "dataset_metrics_19111_innings": {
+    "phase_7d_production": {
+      "mean": 48.13,
+      "median": 45.9,
+      "std": 17.90,
+      "q10": 25.9,
+      "q90": 73.9,
+      "p2_p3_corr": 0.7284
+    },
+    "phase_7f_uncorrected": {
+      "mean": 48.52,
+      "median": 47.0,
+      "std": 23.44,
+      "q10": 18.9,
+      "q90": 81.9,
+      "p2_p3_corr": 0.7284,
+      "corr_with_p7d": 0.9470
+    },
+    "phase_7g_recommended_1a_2c_3c": {
+      "mean": 48.29,
+      "median": 46.4,
+      "std": 23.45,
+      "q10": 18.9,
+      "q90": 81.9,
+      "p2_p3_corr": 0.7436,
+      "corr_with_p7d": 0.9436,
+      "corr_with_p7f": 0.9958
+    }
+  },
+  "validation_invariants": {
+    "outcome_leakage": 0.0000,
+    "dnb_null_preserved": true,
+    "score_range": [0.1, 99.9],
+    "leverage_range": [0.65, 1.35],
+    "test_suite_status": "209/209 passed (100%)"
+  }
+}

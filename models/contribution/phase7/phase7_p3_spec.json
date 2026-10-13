@@ -1,0 +1,40 @@
+{
+  "pillar": "P3 Team-State Impact (40%)",
+  "sub_components": {
+    "macro_trajectory_pressure": {
+      "weight": "45%",
+      "innings_1": "0.50 * z_efs + 0.25 * traj_dev_chg + 0.25 * accel",
+      "innings_2": "0.65 * z_rrr + 0.35 * z_prog",
+      "collinearity_mitigation": "Excluded redundant rr_gap_change (corr=0.992 with rrr_chg)"
+    },
+    "partnership_non_striker_dynamics": {
+      "weight": "30%",
+      "signals": [
+        "batter_partnership_share (centered at 50% par)",
+        "sr_diff_vs_partner (batter SR vs partner SR tempo differential)",
+        "carrying_partnership bonus (+0.30 if share >= 65%, SR >= 130, partner SR <= 115)",
+        "mutual_acceleration bonus (+0.20 if both SR >= 140 adding 40+ runs)"
+      ]
+    },
+    "collapse_recovery_stabilization": {
+      "weight": "15%",
+      "signals": [
+        "crisis entry condition: overs_per_wkt_entry >= 1.8",
+        "stabilization reward: adding 20+ runs while stemming wickets",
+        "collapse penalty: wickets tumbling rapidly without consolidation"
+      ]
+    },
+    "resource_preservation_wicket_equity": {
+      "weight": "10%",
+      "signals": [
+        "dynamic wicket cost based on balls and wickets remaining at exit",
+        "high-run volume offset to prevent disincentivizing late-innings aggression"
+      ]
+    }
+  },
+  "standardization": {
+    "p3_mean": 0.112,
+    "p3_std": 0.726,
+    "p3_scale": 1.4
+  }
+}
