@@ -13,7 +13,7 @@ export default function Breadcrumbs({ items = [], backTo = null, backLabel = 'Ba
   return (
     <nav
       aria-label="Breadcrumb"
-      className={`flex flex-wrap items-center justify-between gap-3 text-xs font-mono py-2 ${className}`}
+      className={`flex flex-wrap items-center justify-between gap-3 text-xs font-sans py-2 ${className}`}
     >
       <ol className="flex flex-wrap items-center gap-1.5 text-[#858585]">
         {items.map((item, index) => {
