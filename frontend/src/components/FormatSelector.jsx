@@ -61,7 +61,7 @@ export default function FormatSelector({ variant = 'dropdown', className = '' })
           aria-label="Format Selector"
           value={selectedFormat}
           onChange={(e) => handleSelectFormat(e.target.value)}
-          className="h-11 sm:h-12 appearance-none bg-[#121212] border border-[#2D2D2D] hover:border-[#D4AF57]/60 focus:border-[#D4AF57] text-[#F2F2F2] text-[14px] sm:text-[15px] font-mono font-semibold rounded-lg pl-4 pr-10 py-2 sm:py-2.5 transition-colors cursor-pointer shadow-xs focus:outline-none"
+          className="h-11 sm:h-12 appearance-none bg-[#121212] border border-[#2D2D2D] hover:border-[#D4AF57]/60 focus:border-[#D4AF57] text-[#F2F2F2] text-[14px] sm:text-[15px] font-sans font-semibold rounded-lg pl-4 pr-10 py-2 sm:py-2.5 transition-colors cursor-pointer shadow-xs focus:outline-none"
         >
           {CRICKET_FORMATS.map((f) => (
             <option
@@ -89,14 +89,14 @@ export default function FormatSelector({ variant = 'dropdown', className = '' })
         aria-label="Cricket Format Selector"
         aria-expanded={isOpen}
         aria-haspopup="listbox"
-        className="h-11 sm:h-12 flex items-center gap-2.5 px-3.5 sm:px-4.5 rounded-lg bg-[#121212] hover:bg-[#161616] border border-[#2D2D2D] hover:border-[#D4AF57]/60 text-[#F2F2F2] transition-all duration-150 shadow-xs cursor-pointer focus:outline-none focus:border-[#D4AF57]"
+        className="h-9 sm:h-10 xl:h-9 2xl:h-10 flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3.5 rounded-lg bg-[#121212] hover:bg-[#161616] border border-[#2D2D2D] hover:border-[#D4AF57]/60 text-[#F2F2F2] transition-all duration-150 shadow-xs cursor-pointer focus:outline-none focus:border-[#D4AF57]"
       >
-        <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse shrink-0" />
-        <span className="text-[14px] sm:text-[15px] font-mono font-bold tracking-wider text-[#F2F2F2]">
+        <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse shrink-0" />
+        <span className="text-[12.5px] sm:text-[13px] 2xl:text-[14px] font-sans font-bold tracking-wider text-[#F2F2F2]">
           {selectedFormat || activeMeta?.format || 'T20'}
         </span>
         <ChevronDown
-          className={`w-4 h-4 text-[#858585] transition-transform duration-150 ${
+          className={`w-3.5 h-3.5 text-[#858585] transition-transform duration-150 ${
             isOpen ? 'rotate-180 text-[#D4AF57]' : ''
           }`}
         />
@@ -107,7 +107,7 @@ export default function FormatSelector({ variant = 'dropdown', className = '' })
         <div
           role="listbox"
           aria-label="Available Cricket Formats"
-          className="absolute right-0 mt-2 w-72 sm:w-80 rounded-xl bg-[#121212] border border-[#2D2D2D] p-2 shadow-2xl z-50 font-mono animate-in fade-in zoom-in-95 duration-100"
+          className="absolute right-0 mt-2 w-72 sm:w-80 rounded-xl bg-[#121212] border border-[#2D2D2D] p-2 shadow-2xl z-50 font-sans animate-in fade-in zoom-in-95 duration-100"
         >
           <div className="px-3 py-2 border-b border-[#222222] mb-1.5 flex items-center justify-between">
             <span className="text-[12px] font-semibold uppercase tracking-wider text-[#858585]">

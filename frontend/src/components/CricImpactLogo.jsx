@@ -18,7 +18,7 @@ export default function CricImpactLogo({
   const sizeClasses = {
     xs: 'w-[100px] sm:w-[115px]',
     sm: 'w-[120px] sm:w-[135px]',
-    navbar: 'w-[140px] sm:w-[160px] md:w-[175px] lg:w-[185px]',
+    navbar: 'w-[125px] sm:w-[135px] md:w-[145px] lg:w-[155px] xl:w-[140px] 2xl:w-[175px]',
     md: 'w-[170px] sm:w-[195px]',
     lg: 'w-[210px] sm:w-[240px]',
     xl: 'w-[260px] sm:w-[300px]',

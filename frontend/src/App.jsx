@@ -1,7 +1,8 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate, Outlet } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import { CompetitionProvider, useCompetition } from './context/CompetitionContext';
+import Footer from './components/Footer';
+import { CompetitionProvider } from './context/CompetitionContext';
 import LandingPage from './pages/LandingPage';
 import Dashboard from './pages/Dashboard';
 import PlayerAnalysis from './pages/PlayerAnalysis';
@@ -15,10 +16,10 @@ import Matches from './pages/Matches';
 import MatchOverview from './pages/MatchOverview';
 import Seasons from './pages/Seasons';
 import Players from './pages/Players';
+import CareerGraph from './pages/CareerGraph';
+import GroundAnalysis from './pages/GroundAnalysis';
 
 function AppLayout() {
-  const { activeMeta } = useCompetition();
-
   return (
     <div className="min-h-screen bg-[#080808] text-[#F2F2F2] flex flex-col font-ui selection:bg-[#D4AF57]/30 selection:text-[#F2F2F2]">
       {/* Official Top Horizontal Navbar with Logo, Centered Navigation, and Competition Selector */}
@@ -29,20 +30,8 @@ function AppLayout() {
         <Outlet />
       </main>
 
-      {/* Clean Application Footer */}
-      <footer className="border-t border-[#2D2D2D] bg-[#080808] py-4 text-xs text-[#858585] mt-auto">
-        <div className="w-[94%] max-w-[1850px] mx-auto px-2 sm:px-4 lg:px-6 flex flex-col sm:flex-row items-center justify-between gap-3 font-mono">
-          <div className="flex items-center gap-2">
-            <span className="font-semibold text-[#F2F2F2]">CricImpact</span>
-            <span className="text-[#D4AF57]">•</span>
-            <span>Cricket Contribution Analytics</span>
-            <span className="text-[#858585] hidden sm:inline">({activeMeta?.name || 'IPL'})</span>
-          </div>
-          <div className="text-[12px] text-[#858585]">
-            Phase 7 Validated Model • Single Source of Truth
-          </div>
-        </div>
-      </footer>
+      {/* Reusable Application Footer */}
+      <Footer />
     </div>
   );
 }
@@ -60,6 +49,11 @@ export default function App() {
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/analytics" element={<Navigate to="/dashboard" replace />} />
             <Route path="/players" element={<Players />} />
+            <Route path="/career" element={<CareerGraph />} />
+            <Route path="/career/:playerId" element={<CareerGraph />} />
+            <Route path="/career-graph" element={<Navigate to="/career" replace />} />
+            <Route path="/ground-analysis" element={<GroundAnalysis />} />
+            <Route path="/venues" element={<Navigate to="/ground-analysis" replace />} />
             <Route path="/matches" element={<Matches />} />
             <Route path="/matches/:matchId" element={<MatchOverview />} />
             <Route path="/match/:matchId" element={<MatchOverview />} />
