@@ -52,18 +52,47 @@ export function buildApiUrl(path = '', rawEnv = RAW_API_BASE) {
 
 export const API_BASE = getApiBaseUrl();
 
-async function fetchJson(url) {
+export async function fetchJson(url) {
   const res = await fetch(url);
+  const contentType = res.headers.get('content-type') || '';
+  const isJson = contentType.includes('application/json');
+
   if (!res.ok) {
     let msg = `API Error ${res.status}: ${res.statusText}`;
-    try {
-      const err = await res.json();
-      if (err.detail) msg = err.detail;
-    } catch {
-      // ignore
+    if (isJson) {
+      try {
+        const err = await res.json();
+        if (err.detail) msg = err.detail;
+      } catch {
+        // ignore
+      }
+    } else {
+      try {
+        const text = await res.text();
+        if (text && text.trim().startsWith('<')) {
+          msg = `API Error ${res.status}: Server returned an HTML response instead of JSON (${res.statusText || 'Error'}).`;
+        }
+      } catch {
+        // ignore
+      }
     }
     throw new Error(msg);
   }
+
+  if (res.status === 204) {
+    return null;
+  }
+
+  if (!isJson) {
+    const text = await res.text();
+    if (text && text.trim().startsWith('<')) {
+      throw new Error(
+        `API returned HTML instead of JSON from ${url}. Check API routing, base URL, and ensure the backend is reachable.`
+      );
+    }
+    throw new Error(`Expected JSON from API but received '${contentType || 'non-JSON'}' from ${url}.`);
+  }
+
   return res.json();
 }
 
@@ -267,6 +296,9 @@ export async function getGroundVenues({ competition = 'combined', country = null
 }
 
 export async function getGroundAnalysis(venueId, { competition = 'combined', period = 'rolling_5yr', startDate = null, endDate = null } = {}) {
+  if (!venueId) {
+    throw new Error('venueId is required for getGroundAnalysis');
+  }
   const params = new URLSearchParams();
   if (competition) params.append('competition', competition);
   if (period) params.append('period', period);

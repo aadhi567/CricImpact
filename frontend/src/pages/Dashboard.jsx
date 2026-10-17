@@ -134,7 +134,8 @@ export default function Dashboard({ initialFocus }) {
         setSelectedTeam('');
         setSelectedForCompare([]);
       } catch (err) {
-        setError(err.message);
+        setError(err.message || 'Failed to load season data.');
+        setLoading(false);
       }
     }
     init();

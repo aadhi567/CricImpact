@@ -122,6 +122,16 @@ export default function GroundAnalysis() {
         if (cancelled) return;
         setVenuesData(res);
 
+        // If the current selected country is not in the returned countries list, reset to 'All'
+        if (selectedCountry && selectedCountry !== 'All' && Array.isArray(res?.countries)) {
+          const countryExists = res.countries.some(
+            (c) => c.name.toLowerCase() === selectedCountry.toLowerCase()
+          );
+          if (!countryExists) {
+            setSelectedCountry('All');
+          }
+        }
+
         // If currently selected venue is not in the new filtered venues, update it
         setSelectedVenueId((curr) => {
           const venueIds = (res.venues || []).map((v) => v.id);
@@ -317,14 +327,23 @@ export default function GroundAnalysis() {
             <select
               value={selectedCountry}
               onChange={(e) => setSelectedCountry(e.target.value)}
-              className="w-full bg-[#080808] text-[#F2F2F2] border border-[#2D2D2D] hover:border-[#404040] focus:border-[#D4AF57] focus:outline-hidden rounded-lg px-3 py-2 text-xs sm:text-sm font-sans transition-colors cursor-pointer"
+              disabled={venuesLoading || !venuesData?.countries?.length}
+              className="w-full bg-[#080808] text-[#F2F2F2] border border-[#2D2D2D] hover:border-[#404040] focus:border-[#D4AF57] focus:outline-hidden rounded-lg px-3 py-2 text-xs sm:text-sm font-sans transition-colors cursor-pointer disabled:opacity-50"
             >
-              <option value="All">All Countries ({venuesData?.countries?.reduce((acc, c) => acc + c.match_count, 0) || 0} matches)</option>
-              {venuesData?.countries?.map((c) => (
-                <option key={c.name} value={c.name}>
-                  {c.name} ({c.match_count} matches)
-                </option>
-              ))}
+              {venuesLoading && !venuesData?.countries?.length ? (
+                <option value="All">Loading countries...</option>
+              ) : (
+                <>
+                  <option value="All">
+                    All Countries ({venuesData?.countries?.reduce((acc, c) => acc + (c.match_count || 0), 0) || 0} matches)
+                  </option>
+                  {venuesData?.countries?.map((c) => (
+                    <option key={c.name} value={c.name} label={`${c.name} (${c.match_count} matches)`}>
+                      {c.name} ({c.match_count} matches)
+                    </option>
+                  ))}
+                </>
+              )}
             </select>
           </div>
 
@@ -340,11 +359,17 @@ export default function GroundAnalysis() {
               disabled={venuesLoading || !venuesData?.venues?.length}
               className="w-full bg-[#080808] text-[#F2F2F2] border border-[#2D2D2D] hover:border-[#404040] focus:border-[#D4AF57] focus:outline-hidden rounded-lg px-3 py-2 text-xs sm:text-sm font-sans transition-colors cursor-pointer disabled:opacity-50"
             >
-              {venuesData?.venues?.map((v) => (
-                <option key={v.id} value={v.id}>
-                  {v.name} ({v.total_matches} {v.total_matches === 1 ? 'match' : 'matches'})
-                </option>
-              ))}
+              {venuesLoading && !venuesData?.venues?.length ? (
+                <option value="">Loading venues...</option>
+              ) : !venuesData?.venues?.length ? (
+                <option value="">No venues available</option>
+              ) : (
+                venuesData.venues.map((v) => (
+                  <option key={v.id} value={v.id} label={v.name}>
+                    {v.name}
+                  </option>
+                ))
+              )}
             </select>
           </div>
 

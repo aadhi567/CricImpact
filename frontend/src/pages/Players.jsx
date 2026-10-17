@@ -102,7 +102,8 @@ export default function Players() {
         setSelectedTeam('');
         setSelectedForCompare([]);
       } catch (err) {
-        setError(err.message);
+        setError(err.message || 'Failed to load player seasons.');
+        setLoading(false);
       }
     }
     init();

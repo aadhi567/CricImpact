@@ -25,6 +25,7 @@ export default function Seasons() {
   const [players, setPlayers] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [retryKey, setRetryKey] = useState(0);
 
   const minRunsThreshold = useMemo(() => {
     if (competition === 'ipl') return 350;
@@ -34,9 +35,11 @@ export default function Seasons() {
 
   // 1. Load seasons on mount or when competition/tournamentType changes
   useEffect(() => {
+    let cancelled = false;
     async function init() {
       try {
         const data = await getSeasons(competition, tournamentType);
+        if (cancelled) return;
         const availSeasons = data.seasons || [];
         setSeasons(availSeasons);
         setSeasonOptions(data.season_options || []);
@@ -48,11 +51,17 @@ export default function Seasons() {
           return resolveDefaultSeason(availSeasons, data.default_season);
         });
       } catch (err) {
-        setError(err.message);
+        if (!cancelled) {
+          setError(err.message || 'Failed to load available seasons.');
+          setLoading(false);
+        }
       }
     }
     init();
-  }, [competition, tournamentType, setSelectedSeason]);
+    return () => {
+      cancelled = true;
+    };
+  }, [competition, tournamentType, setSelectedSeason, retryKey]);
 
   // 2. Load players for the selected season and competition
   useEffect(() => {
@@ -77,7 +86,7 @@ export default function Seasons() {
         }
       } catch (err) {
         if (isMounted) {
-          setError(err.message);
+          setError(err.message || 'Failed to load player leaderboard.');
           setLoading(false);
         }
       }
@@ -87,7 +96,7 @@ export default function Seasons() {
     return () => {
       isMounted = false;
     };
-  }, [selectedSeason, competition, tournamentType, minRunsThreshold]);
+  }, [selectedSeason, competition, tournamentType, minRunsThreshold, retryKey]);
 
   // 3. Rank eligible players by Average Contribution Score descending, secondary tie-breaker: actual_runs descending
   const top10Leaderboard = useMemo(() => {
@@ -217,8 +226,22 @@ export default function Seasons() {
       </div>
 
       {error && (
-        <div className="p-4 rounded-xl bg-[#271414] border border-[#4D2626] text-[#C25454] text-[13px] font-medium">
-          Error loading season leaderboard: {error}
+        <div className="p-4 rounded-xl bg-[#271414] border border-[#4D2626] text-[#C25454] text-[13px] font-medium flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div>
+            <span className="font-semibold block sm:inline">Error loading season leaderboard: </span>
+            <span>{error}</span>
+          </div>
+          <button
+            type="button"
+            onClick={() => {
+              setError(null);
+              setLoading(true);
+              setRetryKey((k) => k + 1);
+            }}
+            className="self-start sm:self-auto px-3 py-1.5 rounded-lg bg-[#3D1A1A] hover:bg-[#4D2222] border border-[#6B2E2E] text-[#F2F2F2] text-xs font-semibold transition-colors cursor-pointer shrink-0"
+          >
+            Retry
+          </button>
         </div>
       )}
 

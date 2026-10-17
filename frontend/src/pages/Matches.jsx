@@ -60,7 +60,8 @@ export default function Matches() {
         setSelectedTeam('All Teams');
         setSelectedOpponent('All Opponents');
       } catch (err) {
-        setError(err.message);
+        setError(err.message || 'Failed to load matches data.');
+        setLoading(false);
       }
     }
     init();

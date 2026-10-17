@@ -52,4 +52,31 @@ test('Mobile Responsive Layout & Viewport Boundaries', async (t) => {
     assert.ok(content.includes('w-full'), 'Footer container must use w-full');
     assert.ok(content.includes('break-words'), 'Subfooter text must allow break-words on mobile');
   });
+
+  await t.test('GroundAnalysis.jsx renders country match_count and venue id as value and name as label', () => {
+    const groundPath = path.join(srcDir, 'pages', 'GroundAnalysis.jsx');
+    const content = fs.readFileSync(groundPath, 'utf8');
+
+    // Country dropdown checks
+    assert.ok(content.includes('c.match_count'), 'GroundAnalysis country dropdown must display match_count');
+    assert.ok(content.includes('c.name'), 'GroundAnalysis country dropdown must display country name');
+
+    // Venue dropdown checks
+    assert.ok(content.includes('value={v.id}'), 'GroundAnalysis venue dropdown must use v.id as value');
+    assert.ok(content.includes('label={v.name}'), 'GroundAnalysis venue dropdown must use v.name as label');
+    assert.ok(content.includes('{v.name}'), 'GroundAnalysis venue dropdown text must display v.name');
+
+    // Responsive filter controls check
+    assert.ok(content.includes('grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4'), 'GroundAnalysis filters must use responsive grid');
+    assert.ok(content.includes('w-full bg-[#080808]'), 'GroundAnalysis selectors must use w-full for mobile');
+  });
+
+  await t.test('Seasons.jsx provides robust error handling, retry state, and responsive layout', () => {
+    const seasonsPath = path.join(srcDir, 'pages', 'Seasons.jsx');
+    const content = fs.readFileSync(seasonsPath, 'utf8');
+
+    assert.ok(content.includes('setLoading(false)'), 'Seasons.jsx must reset loading on error');
+    assert.ok(content.includes('Retry'), 'Seasons.jsx must provide a Retry button on error');
+    assert.ok(content.includes('min-w-0'), 'Seasons.jsx table container must enforce min-w-0');
+  });
 });
