@@ -25,8 +25,8 @@ function AppLayout() {
       {/* Official Top Horizontal Navbar with Logo, Centered Navigation, and Competition Selector */}
       <Navbar />
 
-      {/* Main Content Area - Expanded to 94% Viewport Width */}
-      <main className="flex-1 w-[94%] max-w-[1850px] mx-auto px-2 sm:px-4 lg:px-6 py-6 sm:py-8">
+      {/* Main Content Area - Responsive width with min-w-0 to prevent flex blowout */}
+      <main className="flex-1 w-full max-w-[1850px] mx-auto px-3 sm:px-4 lg:px-6 py-4 sm:py-8 min-w-0">
         <Outlet />
       </main>
 

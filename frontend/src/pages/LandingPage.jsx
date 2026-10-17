@@ -87,7 +87,7 @@ export default function LandingPage() {
   return (
     <div className="min-h-screen bg-[#080808] text-[#F2F2F2] font-ui selection:bg-[#D4AF57]/30 selection:text-[#F2F2F2] flex flex-col">
       {/* 1. Dedicated Landing Header */}
-      <header className="sticky top-0 z-30 bg-[#080808]/90 backdrop-blur-md border-b border-[#2D2D2D] px-5 sm:px-8 lg:px-12 py-3.5 flex items-center justify-between">
+      <header className="sticky top-0 z-30 bg-[#080808]/90 backdrop-blur-md border-b border-[#2D2D2D] px-3 sm:px-8 lg:px-12 py-2.5 sm:py-3.5 flex items-center justify-between w-full">
         <CricImpactLogo linkTo="/" size="navbar" priority />
 
         {/* Desktop Navigation */}
@@ -223,18 +223,18 @@ export default function LandingPage() {
       )}
 
       {/* 2. Hero Section */}
-      <section className="relative pt-12 pb-16 sm:pt-20 sm:pb-24 px-5 sm:px-8 lg:px-12 max-w-6xl mx-auto w-full text-center flex flex-col items-center">
+      <section className="relative pt-8 pb-14 sm:pt-20 sm:pb-24 px-3 sm:px-8 lg:px-12 max-w-6xl mx-auto w-full text-center flex flex-col items-center min-w-0">
         {/* Subtle decorative glow */}
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[340px] sm:w-[500px] h-[260px] bg-[#D4AF57]/5 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] sm:w-[500px] h-[260px] bg-[#D4AF57]/5 rounded-full blur-3xl pointer-events-none" />
 
         {/* Eyebrow Badge */}
-        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#161616] border border-[#2D2D2D] text-[#D4AF57] text-[11px] font-semibold uppercase tracking-wider mb-6 shadow-xs">
-          <Sparkles className="w-3.5 h-3.5 text-[#D4AF57]" />
+        <div className="inline-flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 px-3 sm:px-3.5 py-1 rounded-full bg-[#161616] border border-[#2D2D2D] text-[#D4AF57] text-[10.5px] sm:text-[11px] font-semibold uppercase tracking-wider mb-6 shadow-xs max-w-full text-center">
+          <Sparkles className="w-3.5 h-3.5 text-[#D4AF57] shrink-0" />
           <span>Contextual Batter Evaluation Framework</span>
         </div>
 
         {/* Main Headline */}
-        <h1 className="font-heading text-[32px] sm:text-[46px] md:text-[54px] font-bold text-[#F2F2F2] tracking-tight leading-[1.15] max-w-4xl">
+        <h1 className="font-heading text-[26px] xs:text-[30px] sm:text-[46px] md:text-[54px] font-bold text-[#F2F2F2] tracking-tight leading-[1.18] max-w-4xl break-words">
           Measure the Impact.{' '}
           <span className="text-[#D4AF57] block sm:inline">Understand the Game.</span>
         </h1>

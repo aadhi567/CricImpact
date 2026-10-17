@@ -156,12 +156,12 @@ export default function Matches() {
   };
 
   return (
-    <div className="w-full space-y-8 font-mono text-[#F2F2F2]">
+    <div className="w-full space-y-8 font-sans text-[#F2F2F2]">
       {/* 1. Page Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-5 border-b border-[#2D2D2D]">
         <div>
-          <div className="flex items-center gap-2 text-[12px] sm:text-[12.5px] font-mono uppercase tracking-wider text-[#D4AF57] font-semibold mb-1.5">
-            <Calendar className="w-4 h-4" />
+          <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 text-[11px] sm:text-[12.5px] font-sans uppercase tracking-wider text-[#D4AF57] font-semibold mb-1.5">
+            <Calendar className="w-4 h-4 shrink-0" />
             <span>MATCH-BY-MATCH ANALYSIS</span>
             <span className="text-[#858585]">•</span>
             {competition === 't20i' && (
@@ -172,23 +172,23 @@ export default function Matches() {
             )}
             <span className="text-[#F2F2F2]">{currentSeasonLabel}</span>
           </div>
-          <h1 className="font-heading text-[30px] sm:text-[34px] lg:text-[36px] font-bold text-[#F2F2F2] tracking-wider leading-tight">
+          <h1 className="font-heading text-[22px] sm:text-[30px] lg:text-[36px] font-bold text-[#F2F2F2] tracking-wide leading-tight break-words">
             MATCH-BY-MATCH ANALYSIS
           </h1>
-          <p className="text-[15px] sm:text-[16px] font-normal text-[#B8B8B8] mt-1.5 leading-relaxed max-w-5xl">
+          <p className="text-[14px] sm:text-[16px] font-normal text-[#B8B8B8] mt-1.5 leading-relaxed max-w-5xl">
             Analyze every match in {activeMeta?.name || 'the tournament'} and inspect how individual batters performed relative to situational expectations.
           </p>
         </div>
 
         <div className="flex items-center gap-2 self-start sm:self-auto shrink-0">
-          <span className="px-3.5 py-2 rounded-lg text-[13px] sm:text-[13.5px] font-medium bg-[#161616] text-[#858585] border border-[#2D2D2D]">
+          <span className="px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-lg text-[12px] sm:text-[13.5px] font-medium bg-[#161616] text-[#858585] border border-[#2D2D2D]">
             Matches: <strong className="text-[#D4AF57] ml-1 font-semibold">{filteredMatches.length}</strong>
           </span>
         </div>
       </div>
 
       {/* 2. Filter Bar */}
-      <div className="bg-[#161616] p-4 sm:p-5 rounded-xl border border-[#2D2D2D] shadow-xs space-y-4 font-mono">
+      <div className="bg-[#161616] p-4 sm:p-5 rounded-xl border border-[#2D2D2D] shadow-xs space-y-4 font-sans">
         <div className="flex items-center justify-between border-b border-[#2D2D2D] pb-3 text-[12px] sm:text-[12.5px] uppercase tracking-wider text-[#858585]">
           <div className="flex items-center gap-2">
             <Filter className="w-4 h-4 text-[#D4AF57]" />
@@ -289,7 +289,7 @@ export default function Matches() {
               Search Match
             </label>
             <div className="relative">
-              <Search className="w-4 h-4 absolute left-3.5 top-3 text-[#858585]" />
+              <Search className="w-4 h-4 absolute left-3.5 top-3 text-[#858585] pointer-events-none" />
               <input
                 type="text"
                 value={searchQuery}
@@ -380,26 +380,48 @@ export default function Matches() {
             <h2 className="font-heading text-[21px] sm:text-[23px] font-bold text-[#F2F2F2] tracking-wide">
               MATCH LIST ({filteredMatches.length} MATCHES)
             </h2>
-            <p className="text-[13px] sm:text-[13.5px] font-mono text-[#858585] mt-1">
+            <p className="text-[13px] sm:text-[13.5px] font-sans text-[#858585] mt-1">
               Select any match to view the complete batter contribution ratings and performance breakdown.
             </p>
           </div>
-          <span className="text-[12px] font-mono text-[#D4AF57] bg-[#161616] px-3 py-1.5 rounded-lg border border-[#3D351E] self-start sm:self-auto">
+          <span className="text-[12px] font-sans text-[#D4AF57] bg-[#161616] px-3 py-1.5 rounded-lg border border-[#3D351E] self-start sm:self-auto">
             {currentSeasonLabel}
           </span>
         </div>
 
         {loading ? (
-          <div className="py-16 text-center text-[14px] text-[#858585]">
-            Loading match records...
+          <div className="p-6 space-y-3">
+            {Array.from({ length: 5 }).map((_, idx) => (
+              <div key={`skel-m-${idx}`} className="skeleton h-16 w-full rounded-lg" />
+            ))}
           </div>
         ) : filteredMatches.length === 0 ? (
-          <div className="py-16 text-center text-[14px] text-[#858585]">
-            No matches found matching the selected filters.
+          <div className="py-16 text-center">
+            <div className="max-w-md mx-auto space-y-3">
+              <div className="w-12 h-12 rounded-full bg-[#1A1A1A] border border-[#2D2D2D] flex items-center justify-center mx-auto text-[#D4AF57]">
+                <Calendar className="w-6 h-6" />
+              </div>
+              <div className="text-[16px] font-semibold text-[#F2F2F2]">No Matches Found</div>
+              <p className="text-[13px] text-[#858585]">
+                No matches matched your selected filters. Try clearing team filters or search keywords.
+              </p>
+              <button
+                type="button"
+                onClick={() => {
+                  setSelectedTeam('All Teams');
+                  setSelectedOpponent('All Opponents');
+                  setSelectedResult('all');
+                  setSearchQuery('');
+                }}
+                className="btn-secondary text-[12.5px] py-1.5 px-4 cursor-pointer inline-flex items-center gap-1.5"
+              >
+                Reset Filters
+              </button>
+            </div>
           </div>
         ) : (
-          <div className="overflow-x-auto w-full">
-            <table className="w-full text-left border-collapse">
+          <div className="overflow-x-auto w-full max-w-full min-w-0">
+            <table className="w-full text-left border-collapse font-sans">
               <thead>
                 <tr className="border-b border-[#2D2D2D] bg-[#101010] text-[#858585] font-semibold text-[12.5px] sm:text-[13px] tracking-wider uppercase">
                   <th className="py-3.5 px-4 whitespace-nowrap">DATE</th>
@@ -422,7 +444,7 @@ export default function Matches() {
                       className="cursor-pointer hover:bg-[#1A1A1A] transition-colors group"
                     >
                       {/* Date */}
-                      <td className="py-3.5 px-4 whitespace-nowrap text-[#858585] text-[13px] font-mono">
+                      <td className="py-3.5 px-4 whitespace-nowrap text-[#858585] text-[13px] font-sans">
                         {formatDate(m.date)}
                       </td>
 
@@ -438,7 +460,7 @@ export default function Matches() {
                               {m.team1}
                             </span>
                             {m.team1_score !== null && (
-                              <span className="font-mono text-[13.5px] sm:text-[14px] font-semibold tabular-nums text-[#D4AF57]">
+                              <span className="font-sans text-[13.5px] sm:text-[14px] font-semibold tabular-nums text-[#D4AF57]">
                                 {m.team1_score}
                               </span>
                             )}
@@ -452,7 +474,7 @@ export default function Matches() {
                               {m.team2}
                             </span>
                             {m.team2_score !== null && (
-                              <span className="font-mono text-[13.5px] sm:text-[14px] font-semibold tabular-nums text-[#D4AF57]">
+                              <span className="font-sans text-[13.5px] sm:text-[14px] font-semibold tabular-nums text-[#D4AF57]">
                                 {m.team2_score}
                               </span>
                             )}

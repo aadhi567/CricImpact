@@ -11,14 +11,14 @@ import {
 
 export default function About() {
   return (
-    <div className="w-full space-y-8 font-mono text-[#F2F2F2]">
+    <div className="w-full space-y-8 font-sans text-[#F2F2F2]">
       {/* Header */}
-      <div className="bg-[#161616] rounded-xl p-6 sm:p-8 border border-[#2D2D2D] flex flex-col md:flex-row md:items-center justify-between gap-6">
+      <div className="bg-[#161616] rounded-xl p-4 sm:p-6 md:p-8 border border-[#2D2D2D] flex flex-col md:flex-row md:items-center justify-between gap-6 min-w-0">
         <div>
           <span className="px-2.5 py-0.5 rounded text-[11px] font-semibold bg-[#101010] text-[#D4AF57] border border-[#D4AF57]/40 tracking-wider">
             Cricket analytics guide
           </span>
-          <h1 className="font-heading text-[30px] sm:text-[34px] lg:text-[36px] font-bold text-[#F2F2F2] mt-2.5 tracking-wider leading-tight">
+          <h1 className="font-heading text-[22px] sm:text-[30px] lg:text-[36px] font-bold text-[#F2F2F2] mt-2.5 tracking-wide leading-tight break-words">
             About the contribution model
           </h1>
           <p className="text-[15px] sm:text-[16px] text-[#B8B8B8] mt-2 max-w-3xl leading-relaxed font-normal">
@@ -303,21 +303,21 @@ export default function About() {
         </div>
 
         <p className="text-[14px] sm:text-[15px] text-[#B8B8B8] leading-relaxed font-normal">
-          Consider Virat Kohli's 62 off 47 balls (SR 131.9) against Mumbai Indians. A traditional scorecard sees a fine half-century. But why did the Contribution Model rate it <strong className="text-[#D4AF57] font-semibold font-mono">55.5</strong> (solid above-par, but not an elite 80+)?
+          Consider Virat Kohli's 62 off 47 balls (SR 131.9) against Mumbai Indians. A traditional scorecard sees a fine half-century. But why did the Contribution Model rate it <strong className="text-[#D4AF57] font-semibold tabular-nums font-sans">55.5</strong> (solid above-par, but not an elite 80+)?
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 text-[14px]">
           <div className="bg-[#101010] p-5 rounded-lg border border-[#2D2D2D] space-y-2.5">
             <strong className="text-[#5A9E60] block font-semibold text-[15px]">The positive side: personal excellence</strong>
             <p className="text-[#858585] font-normal leading-relaxed text-[13.5px] sm:text-[14px]">
-              Kohli entered in the first over and scored 32.3 runs more than situational baseline expectation. His individual batting execution scored an elite <strong className="text-[#F2F2F2] font-mono">P2 = 81.4</strong>. He anchored the top order and struck 5 boundaries and 2 sixes.
+              Kohli entered in the first over and scored 32.3 runs more than situational baseline expectation. His individual batting execution scored an elite <strong className="text-[#F2F2F2] tabular-nums font-sans">P2 = 81.4</strong>. He anchored the top order and struck 5 boundaries and 2 sixes.
             </p>
           </div>
 
           <div className="bg-[#101010] p-5 rounded-lg border border-[#2D2D2D] space-y-2.5">
             <strong className="text-[#C25454] block font-semibold text-[15px]">The contextual reality: team stagnation</strong>
             <p className="text-[#858585] font-normal leading-relaxed text-[13.5px] sm:text-[14px]">
-              Across the 15.3 overs he occupied the crease, Mumbai's bowlers successfully tied down the run rate (7.1 RPO). The team's projected final total fell from 169.7 to 158.6 (a loss of -11.0 runs in projection), resulting in a <strong className="text-[#F2F2F2] font-mono">P3 = 30.4</strong>.
+              Across the 15.3 overs he occupied the crease, Mumbai's bowlers successfully tied down the run rate (7.1 RPO). The team's projected final total fell from 169.7 to 158.6 (a loss of -11.0 runs in projection), resulting in a <strong className="text-[#F2F2F2] tabular-nums font-sans">P3 = 30.4</strong>.
             </p>
           </div>
         </div>
@@ -325,7 +325,7 @@ export default function About() {
         <div className="p-5 bg-[#101010] rounded-lg border border-[#2D2D2D] text-[14px] text-[#F2F2F2] space-y-1.5">
           <strong className="text-[#D4AF57] block text-[15px] sm:text-[16px] font-semibold">The 50/50 synthesis:</strong>
           <p className="text-[#B8B8B8] text-[14px] sm:text-[14.5px] font-normal leading-relaxed">
-            By balancing personal execution (79.1 adjusted) with team-state trajectory (31.8 adjusted), the model produced a final score of <strong className="text-[#D4AF57] font-semibold font-mono">55.5</strong>. It rewards his personal brilliance while recognizing that the match equity did not shift decisively into RCB's favor.
+            By balancing personal execution (79.1 adjusted) with team-state trajectory (31.8 adjusted), the model produced a final score of <strong className="text-[#D4AF57] font-semibold tabular-nums font-sans">55.5</strong>. It rewards his personal brilliance while recognizing that the match equity did not shift decisively into RCB's favor.
           </p>
         </div>
       </div>
@@ -333,7 +333,7 @@ export default function About() {
       {/* Benchmark Reference */}
       <div className="bg-[#101010] rounded-xl p-5 sm:p-6 border border-[#2D2D2D] flex flex-col sm:flex-row sm:items-center justify-between gap-4 text-xs sm:text-[13px]">
         <div className="flex items-center gap-3.5">
-          <div className="w-10 h-10 rounded-lg bg-[#161616] border border-[#2D2D2D] flex items-center justify-center text-[#D4AF57] font-bold font-mono text-[15px]">
+          <div className="w-10 h-10 rounded-lg bg-[#161616] border border-[#2D2D2D] flex items-center justify-center text-[#D4AF57] font-bold tabular-nums font-sans text-[15px]">
             50.0
           </div>
           <div>
@@ -341,7 +341,7 @@ export default function About() {
             <div className="text-[#858585] text-[13px]">A score of 50.0 represents exactly meeting situational T20 expectations.</div>
           </div>
         </div>
-        <div className="flex items-center gap-4 text-[12px] sm:text-[12.5px] text-[#858585] font-medium font-mono">
+        <div className="flex items-center gap-4 text-[12px] sm:text-[12.5px] text-[#858585] font-medium font-sans">
           <span className="text-[#5A9E60]">&gt; 65.0: Match-winning</span>
           <span className="text-[#D4AF57]">&gt; 52.0: Above-par</span>
           <span className="text-[#858585]">&lt; 48.0: Below-par</span>

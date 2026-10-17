@@ -13,8 +13,8 @@ export default function Footer() {
   const { activeMeta } = useCompetition();
 
   return (
-    <footer className="border-t border-[#202020] bg-[#080808] text-[#858585] text-xs mt-auto font-ui">
-      <div className="w-[94%] max-w-[1850px] mx-auto px-2 sm:px-4 lg:px-6 py-10 sm:py-12">
+    <footer className="border-t border-[#202020] bg-[#080808] text-[#858585] text-xs mt-auto font-ui w-full">
+      <div className="w-full max-w-[1850px] mx-auto px-3 sm:px-4 lg:px-6 py-8 sm:py-12">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12 pb-8 border-b border-[#1C1C1C]">
           {/* Brand & Description Column */}
           <div className="md:col-span-4 lg:col-span-4 space-y-3">
@@ -141,12 +141,12 @@ export default function Footer() {
         </div>
 
         {/* Sub-footer Bar with Copyright and Engine Status */}
-        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-[12px] text-[#707070]">
+        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-[12px] text-[#707070] text-center sm:text-left">
           <div>
             © 2026 CricImpact. All rights reserved.
           </div>
-          <div className="flex items-center gap-2 text-[11.5px] font-mono text-[#858585]">
-            <span>Active Scoring Engine: Strategy 4 Hybrid (Single Source of Truth)</span>
+          <div className="flex flex-wrap items-center justify-center sm:justify-end gap-1.5 sm:gap-2 text-[11px] sm:text-[11.5px] font-mono text-[#858585]">
+            <span className="break-words">Active Scoring Engine: Strategy 4 Hybrid (Single Source of Truth)</span>
             {activeMeta?.name && (
               <span className="hidden sm:inline-block px-1.5 py-0.5 rounded bg-[#161616] border border-[#262626] text-[#A8893D] text-[10.5px]">
                 {activeMeta.name}

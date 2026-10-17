@@ -70,7 +70,7 @@ const EDGE_CASES = [
 
 export default function AuditInsights() {
   return (
-    <div className="w-full space-y-8 font-mono text-[#F2F2F2]">
+    <div className="w-full space-y-8 font-sans text-[#F2F2F2]">
       {/* Breadcrumb Navigation */}
       <Breadcrumbs
         items={[
@@ -83,14 +83,14 @@ export default function AuditInsights() {
 
       {/* Header */}
       <div>
-        <div className="flex items-center gap-2 text-[12px] font-semibold text-[#D4AF57] tracking-wider mb-1 font-mono uppercase">
-          <ShieldCheck className="w-4 h-4" />
+        <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 text-[11px] sm:text-[12px] font-semibold text-[#D4AF57] tracking-wider mb-1 uppercase">
+          <ShieldCheck className="w-4 h-4 shrink-0" />
           <span>Model architecture and audit specifications</span>
         </div>
-        <h1 className="font-heading text-[30px] sm:text-[34px] lg:text-[36px] font-bold text-[#F2F2F2] mt-2.5 tracking-wider leading-tight">
+        <h1 className="font-heading text-[22px] sm:text-[30px] lg:text-[36px] font-bold text-[#F2F2F2] mt-2.5 tracking-wide leading-tight break-words">
           Phase 7 Methodological Foundation
         </h1>
-        <p className="text-[15px] sm:text-[16px] text-[#B8B8B8] mt-2 max-w-3xl leading-relaxed font-mono">
+        <p className="text-[15px] sm:text-[16px] text-[#B8B8B8] mt-2 max-w-3xl leading-relaxed">
           The mathematical models remain the single source of truth in Python. The frontend visualizes the validated outputs without recalculation or alteration.
         </p>
       </div>
@@ -102,11 +102,11 @@ export default function AuditInsights() {
             <h2 className="font-heading text-[21px] sm:text-[23px] font-bold text-[#F2F2F2] tracking-wide">
               Context-as-leverage architecture (50% Adj P2 + 50% Adj P3)
             </h2>
-            <p className="text-[13.5px] sm:text-[14px] text-[#858585] mt-1 font-mono">
-              Contribution Score = 50% × Adjusted P2 + 50% × Adjusted P3, with P1 as context leverage multiplier L(P1) in [0.65, 1.35]. P4 is diagnostic only (0% weight).
+            <p className="text-[13.5px] sm:text-[14px] text-[#858585] mt-1">
+              Contribution Score = 50% &times; Adjusted P2 + 50% &times; Adjusted P3, with P1 as context leverage multiplier L(P1) in [0.65, 1.35]. P4 is diagnostic only (0% weight).
             </p>
           </div>
-          <div className="px-3.5 py-1.5 rounded-lg bg-[#152718] border border-[#2A4D30] text-[12px] text-[#5A9E60] font-semibold font-mono self-start sm:self-auto">
+          <div className="px-3.5 py-1.5 rounded-lg bg-[#152718] border border-[#2A4D30] text-[12px] text-[#5A9E60] font-semibold self-start sm:self-auto">
             50% P2 + 50% P3
           </div>
         </div>
@@ -125,7 +125,7 @@ export default function AuditInsights() {
             >
               <div>
                 <span
-                  className={`text-[11px] font-semibold px-2 py-0.5 rounded border font-mono ${
+                  className={`text-[11px] font-semibold px-2 py-0.5 rounded border ${
                     p.isHighest
                       ? 'bg-[#1C1A14] text-[#D4AF57] border-[#3D351E]'
                       : p.isDiagnostic
@@ -136,8 +136,8 @@ export default function AuditInsights() {
                   {p.id} • {p.weight}
                 </span>
                 <h3 className="font-heading text-[16px] sm:text-[17px] font-bold text-[#F2F2F2] mt-3">{p.title}</h3>
-                <div className="text-[13px] italic text-[#858585] mt-1 font-mono">"{p.question}"</div>
-                <p className="text-[13px] sm:text-[13.5px] text-[#B8B8B8] mt-2.5 leading-relaxed font-mono">{p.desc}</p>
+                <div className="text-[13px] italic text-[#858585] mt-1">"{p.question}"</div>
+                <p className="text-[13px] sm:text-[13.5px] text-[#B8B8B8] mt-2.5 leading-relaxed">{p.desc}</p>
               </div>
             </div>
           ))}
@@ -148,34 +148,35 @@ export default function AuditInsights() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Strict DNB Rule */}
         <div className="bg-[#161616] rounded-xl p-6 sm:p-8 border border-[#2D2D2D] space-y-4">
-          <div className="flex items-center gap-2 text-[12px] font-semibold text-[#5A9E60] tracking-wider mb-1 font-mono uppercase">
+          <div className="flex items-center gap-2 text-[12px] font-semibold text-[#5A9E60] tracking-wider mb-1 uppercase">
             <CheckCircle2 className="w-4 h-4" />
             <span>Strict did-not-bat (DNB) rule</span>
           </div>
           <h2 className="font-heading text-[21px] sm:text-[23px] font-bold text-[#F2F2F2] tracking-wide">
             DNB = NULL (never counted as zero)
           </h2>
-          <p className="text-[13.5px] sm:text-[14px] text-[#B8B8B8] leading-relaxed font-mono">
+          <p className="text-[13.5px] sm:text-[14px] text-[#B8B8B8] leading-relaxed">
             In cricket, lower-order batters and specialist bowlers frequently do not bat when their team wins comfortably. Across all match appearances in the validated dataset:
           </p>
+
           <div className="grid grid-cols-2 gap-4 my-4 text-center">
             <div className="bg-[#101010] p-4 rounded-lg border border-[#2D2D2D]">
-              <div className="text-[12px] text-[#858585] font-semibold font-mono">Batting innings</div>
-              <div className="text-[22px] sm:text-[24px] font-bold text-[#5A9E60] mt-1 tabular-nums font-mono">19,111 (68.5%)</div>
+              <div className="text-[12px] text-[#858585] font-semibold">Batting innings</div>
+              <div className="text-[22px] sm:text-[24px] font-bold text-[#5A9E60] mt-1 tabular-nums font-sans">19,111 (68.5%)</div>
             </div>
             <div className="bg-[#101010] p-4 rounded-lg border border-[#2D2D2D]">
-              <div className="text-[12px] text-[#858585] font-semibold font-mono">DNB appearances</div>
-              <div className="text-[22px] sm:text-[24px] font-bold text-[#C25454] mt-1 tabular-nums font-mono">8,798 (31.5%)</div>
+              <div className="text-[12px] text-[#858585] font-semibold">DNB appearances</div>
+              <div className="text-[22px] sm:text-[24px] font-bold text-[#C25454] mt-1 tabular-nums font-sans">8,798 (31.5%)</div>
             </div>
           </div>
-          <p className="text-[13px] sm:text-[13.5px] text-[#858585] leading-relaxed font-mono">
+          <p className="text-[13px] sm:text-[13.5px] text-[#858585] leading-relaxed">
             Treating DNB as 0 would artificially punish 31.5% of all appearances. The denominator for contribution score averages is strictly the count of actual batting innings.
           </p>
         </div>
 
         {/* View A vs View B */}
         <div className="bg-[#161616] rounded-xl p-6 sm:p-8 border border-[#2D2D2D] space-y-4">
-          <div className="flex items-center gap-2 text-[12px] font-semibold text-[#D4AF57] tracking-wider mb-1 font-mono uppercase">
+          <div className="flex items-center gap-2 text-[12px] font-semibold text-[#D4AF57] tracking-wider mb-1 uppercase">
             <FileText className="w-4 h-4" />
             <span>Two-view architecture</span>
           </div>
@@ -184,12 +185,12 @@ export default function AuditInsights() {
           </h2>
           <div className="space-y-3.5 text-[14px] text-[#F2F2F2] mt-3">
             <div className="p-4 rounded-lg bg-[#101010] border border-[#2D2D2D]">
-              <div className="font-semibold text-[#F2F2F2] mb-1 font-mono text-[14px] sm:text-[15px]">View A — All-innings primary record:</div>
-              <span className="text-[#858585] text-[13px] sm:text-[13.5px] font-mono leading-relaxed block">Complete, transparent account of every genuine batting opportunity. No arbitrary exclusions.</span>
+              <div className="font-semibold text-[#F2F2F2] mb-1 text-[14px] sm:text-[15px]">View A — All-innings primary record:</div>
+              <span className="text-[#858585] text-[13px] sm:text-[13.5px] leading-relaxed block">Complete, transparent account of every genuine batting opportunity. No arbitrary exclusions.</span>
             </div>
             <div className="p-4 rounded-lg bg-[#101010] border border-[#3D351E]">
-              <div className="font-semibold text-[#D4AF57] mb-1 font-mono text-[14px] sm:text-[15px]">View B — Qualified sensitivity:</div>
-              <span className="text-[#858585] text-[13px] sm:text-[13.5px] font-mono leading-relaxed block">Excludes only empirically verified negligible non-dismissal innings (&le;2 balls, not out, |C_raw| &le; 0.10, minimal state change). High-impact cameos are NEVER removed.</span>
+              <div className="font-semibold text-[#D4AF57] mb-1 text-[14px] sm:text-[15px]">View B — Qualified sensitivity:</div>
+              <span className="text-[#858585] text-[13px] sm:text-[13.5px] leading-relaxed block">Excludes only empirically verified negligible non-dismissal innings (&le;2 balls, not out, |C_raw| &le; 0.10, minimal state change). High-impact cameos are NEVER removed.</span>
             </div>
           </div>
         </div>
@@ -205,13 +206,13 @@ export default function AuditInsights() {
           {EDGE_CASES.map((ec, idx) => (
             <div key={idx} className="py-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4 text-xs">
               <div className="max-w-2xl">
-                <div className="font-semibold text-[#F2F2F2] text-[15px] sm:text-[16px] font-mono">{ec.case}</div>
-                <div className="text-[#858585] mt-1 text-[13px] sm:text-[13.5px] font-mono">{ec.scenario}</div>
-                <div className="text-[#B8B8B8] mt-1.5 text-[13px] sm:text-[13.5px] font-mono leading-relaxed">{ec.verdict}</div>
+                <div className="font-semibold text-[#F2F2F2] text-[15px] sm:text-[16px]">{ec.case}</div>
+                <div className="text-[#858585] mt-1 text-[13px] sm:text-[13.5px]">{ec.scenario}</div>
+                <div className="text-[#B8B8B8] mt-1.5 text-[13px] sm:text-[13.5px] leading-relaxed">{ec.verdict}</div>
               </div>
               <div className="sm:text-right shrink-0">
-                <span className="text-[12px] text-[#858585] block font-semibold font-mono">Par score:</span>
-                <span className="text-[20px] sm:text-[22px] font-mono font-bold text-[#D4AF57] tabular-nums">{ec.score}</span>
+                <span className="text-[12px] text-[#858585] block font-semibold">Par score:</span>
+                <span className="text-[20px] sm:text-[22px] font-sans font-bold text-[#D4AF57] tabular-nums">{ec.score}</span>
               </div>
             </div>
           ))}

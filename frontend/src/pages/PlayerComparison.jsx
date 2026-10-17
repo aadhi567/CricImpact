@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo, useRef } from 'react';
 import { useSearchParams, Link } from 'react-router-dom';
 import {
   Users,
@@ -49,6 +49,19 @@ export default function PlayerComparison() {
   const [availablePlayers, setAvailablePlayers] = useState([]);
   const [playerSearch, setPlayerSearch] = useState('');
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [highlightedIndex, setHighlightedIndex] = useState(-1);
+  const dropdownRef = useRef(null);
+
+  // Close dropdown on click outside
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsDropdownOpen(false);
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
 
   // Comparison Results
   const [comparisonData, setComparisonData] = useState(null);
@@ -197,7 +210,7 @@ export default function PlayerComparison() {
   const obs = comparisonData?.analytical_observations;
 
   return (
-    <div className="w-full space-y-8 font-mono text-[#F2F2F2]">
+    <div className="w-full space-y-8 font-sans text-[#F2F2F2]">
       {/* Top Breadcrumb & Title */}
       <Breadcrumbs
         items={[
@@ -211,15 +224,15 @@ export default function PlayerComparison() {
       <div className="border-b border-[#2D2D2D] pb-5">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
-            <h1 className="font-heading text-[30px] sm:text-[34px] lg:text-[36px] font-bold text-[#F2F2F2] tracking-wider leading-tight">
+            <h1 className="font-heading text-[22px] sm:text-[30px] lg:text-[36px] font-bold text-[#F2F2F2] tracking-wide leading-tight break-words">
               Player Contribution Comparison
             </h1>
-            <p className="text-[15px] sm:text-[16px] font-normal text-[#B8B8B8] mt-1.5 max-w-5xl leading-relaxed">
+            <p className="text-[14px] sm:text-[16px] font-normal text-[#B8B8B8] mt-1.5 max-w-5xl leading-relaxed">
               Side-by-side contextual evaluation of 2 to 5 batters within {activeMeta?.name || 'the same season'}. Contribution is not simply runs or strike rate.
             </p>
           </div>
 
-          <div className="flex items-center gap-2 self-start sm:self-auto font-mono">
+          <div className="flex items-center gap-2 self-start sm:self-auto font-sans">
             <span className="px-3.5 py-1.5 rounded-lg text-[13px] font-medium bg-[#161616] text-[#D4AF57] border border-[#2D2D2D]">
               {selectedPlayers.length} Selected
             </span>
@@ -285,7 +298,7 @@ export default function PlayerComparison() {
           </div>
 
           {/* Add Player Search Input */}
-          <div className="md:col-span-2 relative">
+          <div ref={dropdownRef} className="md:col-span-2 relative">
             <div className="flex items-center justify-between mb-1.5">
               <label className="block text-[12.5px] sm:text-[13px] font-semibold text-[#858585] uppercase tracking-wider">
                 Select Batters to Compare
@@ -296,7 +309,7 @@ export default function PlayerComparison() {
             </div>
 
             <div className="relative">
-              <Search className="w-4 h-4 text-[#858585] absolute left-3.5 top-1/2 -translate-y-1/2" />
+              <Search className="w-4 h-4 text-[#858585] absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
               <input
                 type="text"
                 placeholder={
@@ -309,9 +322,39 @@ export default function PlayerComparison() {
                 onChange={(e) => {
                   setPlayerSearch(e.target.value);
                   setIsDropdownOpen(true);
+                  setHighlightedIndex(-1);
                 }}
-                onFocus={() => setIsDropdownOpen(true)}
-                onBlur={() => setTimeout(() => setIsDropdownOpen(false), 200)}
+                onFocus={() => {
+                  setIsDropdownOpen(true);
+                  setHighlightedIndex(-1);
+                }}
+                onKeyDown={(e) => {
+                  if (!isDropdownOpen || filteredDropdownPlayers.length === 0) return;
+                  if (e.key === 'ArrowDown') {
+                    e.preventDefault();
+                    setHighlightedIndex((prev) =>
+                      prev < filteredDropdownPlayers.length - 1 ? prev + 1 : 0
+                    );
+                  } else if (e.key === 'ArrowUp') {
+                    e.preventDefault();
+                    setHighlightedIndex((prev) =>
+                      prev > 0 ? prev - 1 : filteredDropdownPlayers.length - 1
+                    );
+                  } else if (e.key === 'Enter') {
+                    e.preventDefault();
+                    const target =
+                      highlightedIndex >= 0
+                        ? filteredDropdownPlayers[highlightedIndex]
+                        : filteredDropdownPlayers[0];
+                    if (target) {
+                      addPlayer(target.player);
+                      setIsDropdownOpen(false);
+                    }
+                  } else if (e.key === 'Escape') {
+                    e.preventDefault();
+                    setIsDropdownOpen(false);
+                  }
+                }}
                 className="w-full bg-[#101010] border border-[#2D2D2D] rounded-lg pl-10 pr-3.5 py-2 text-[13.5px] sm:text-[14px] text-[#F2F2F2] placeholder-[#858585] focus:outline-hidden focus:border-[#D4AF57] disabled:opacity-50"
               />
             </div>
@@ -319,25 +362,32 @@ export default function PlayerComparison() {
             {/* Dropdown Suggestions */}
             {isDropdownOpen && selectedPlayers.length < 5 && filteredDropdownPlayers.length > 0 && (
               <div className="absolute left-0 right-0 top-full mt-1.5 bg-[#161616] border border-[#2D2D2D] rounded-xl shadow-2xl z-30 max-h-60 overflow-y-auto divide-y divide-[#2D2D2D]">
-                {filteredDropdownPlayers.map((p) => (
-                  <button
-                    key={`${p.player}-${p.team}`}
-                    type="button"
-                    onClick={() => addPlayer(p.player)}
-                    className="w-full px-4 py-3 text-left hover:bg-[#202020] flex items-center justify-between transition-colors cursor-pointer text-[13.5px]"
-                  >
-                    <div>
-                      <span className="font-bold text-[#F2F2F2]">{p.player}</span>
-                      <span className="text-[#858585] ml-2 font-medium">({p.team})</span>
-                    </div>
-                    <div className="text-right text-[#858585]">
-                      <span>{p.actual_runs} runs</span>
-                      <span className="text-[#D4AF57] ml-2 font-bold tabular-nums">
-                        Score: {p.average_contribution_score !== null ? Number(p.average_contribution_score).toFixed(1) : '—'}
-                      </span>
-                    </div>
-                  </button>
-                ))}
+                {filteredDropdownPlayers.map((p, idx) => {
+                  const isHighlighted = idx === highlightedIndex;
+                  return (
+                    <button
+                      key={`${p.player}-${p.team}`}
+                      type="button"
+                      onMouseDown={(e) => e.preventDefault()}
+                      onClick={() => addPlayer(p.player)}
+                      onMouseEnter={() => setHighlightedIndex(idx)}
+                      className={`w-full px-4 py-3 text-left flex items-center justify-between transition-colors cursor-pointer text-[13.5px] ${
+                        isHighlighted ? 'bg-[#252525] ring-1 ring-[#D4AF57]/40' : 'hover:bg-[#202020]'
+                      }`}
+                    >
+                      <div>
+                        <span className="font-bold text-[#F2F2F2]">{p.player}</span>
+                        <span className="text-[#858585] ml-2 font-medium">({p.team})</span>
+                      </div>
+                      <div className="text-right text-[#858585]">
+                        <span>{p.actual_runs} runs</span>
+                        <span className="text-[#D4AF57] ml-2 font-bold tabular-nums">
+                          Score: {p.average_contribution_score !== null ? Number(p.average_contribution_score).toFixed(1) : '—'}
+                        </span>
+                      </div>
+                    </button>
+                  );
+                })}
               </div>
             )}
           </div>
@@ -461,26 +511,28 @@ export default function PlayerComparison() {
           </div>
 
           {/* View A vs View B Toggle */}
-          <div className="inline-flex rounded-lg bg-[#101010] p-1 border border-[#2D2D2D]">
+          <div className="inline-flex rounded-lg bg-[#101010] p-1 border border-[#2D2D2D] max-w-full">
             <button
               onClick={() => setViewMode('view_a')}
-              className={`px-3 py-1 rounded text-xs font-semibold transition-colors cursor-pointer ${
+              className={`px-2.5 sm:px-3 py-1 rounded text-xs font-semibold transition-colors cursor-pointer ${
                 viewMode === 'view_a'
                   ? 'bg-[#D4AF57] text-[#080808] font-bold'
                   : 'text-[#B8B8B8] hover:text-[#F2F2F2]'
               }`}
             >
-              View A: All Innings
+              <span>View A</span>
+              <span className="hidden sm:inline">: All Innings</span>
             </button>
             <button
               onClick={() => setViewMode('view_b')}
-              className={`px-3 py-1 rounded text-xs font-semibold transition-colors cursor-pointer ${
+              className={`px-2.5 sm:px-3 py-1 rounded text-xs font-semibold transition-colors cursor-pointer ${
                 viewMode === 'view_b'
                   ? 'bg-[#D4AF57] text-[#080808] font-bold'
                   : 'text-[#B8B8B8] hover:text-[#F2F2F2]'
               }`}
             >
-              View B: Qualified
+              <span>View B</span>
+              <span className="hidden sm:inline">: Qualified</span>
             </button>
           </div>
         </div>
@@ -573,7 +625,7 @@ export default function PlayerComparison() {
                         </div>
                       </div>
                       <div className="mt-4 pt-3 border-t border-[#2D2D2D] text-right">
-                        <span className="text-[22px] sm:text-[26px] font-bold text-[#F2F2F2] tabular-nums font-mono">
+                        <span className="text-[22px] sm:text-[26px] font-bold text-[#F2F2F2] tabular-nums font-sans">
                           {dim.value !== null ? Number(dim.value).toFixed(dim.unit.includes('%') ? 1 : 2) : '—'}
                         </span>
                         <span className="text-[13px] text-[#858585] ml-1.5">{dim.unit}</span>
@@ -605,7 +657,7 @@ export default function PlayerComparison() {
             </div>
 
             <div className="overflow-x-auto max-w-full">
-              <table className="w-full text-left border-collapse text-[14px] sm:text-[14.5px]">
+              <table className="w-full text-left border-collapse text-[14px] sm:text-[14.5px] font-sans">
                 <thead>
                   <tr className="border-b border-[#2D2D2D] bg-[#161616] text-[#858585]">
                     <th className="py-3.5 px-4 font-semibold text-[#858585] text-[12.5px] sm:text-[13px] uppercase tracking-wider sticky left-0 bg-[#161616] z-10 min-w-[220px]">
@@ -641,7 +693,7 @@ export default function PlayerComparison() {
                       Actual Runs
                     </td>
                     {playersList.map((p) => (
-                      <td key={p.player} className="py-2.5 px-4 text-center font-mono font-bold text-[#F2F2F2] tabular-nums">
+                      <td key={p.player} className="py-2.5 px-4 text-center font-sans font-bold text-[#F2F2F2] tabular-nums">
                         {p.actual_runs}
                       </td>
                     ))}
@@ -651,7 +703,7 @@ export default function PlayerComparison() {
                       Balls Faced
                     </td>
                     {playersList.map((p) => (
-                      <td key={p.player} className="py-2.5 px-4 text-center font-mono text-[#858585] tabular-nums">
+                      <td key={p.player} className="py-2.5 px-4 text-center font-sans text-[#858585] tabular-nums">
                         {p.balls_faced}
                       </td>
                     ))}
@@ -661,7 +713,7 @@ export default function PlayerComparison() {
                       Strike Rate
                     </td>
                     {playersList.map((p) => (
-                      <td key={p.player} className="py-2.5 px-4 text-center font-mono text-[#F2F2F2] tabular-nums">
+                      <td key={p.player} className="py-2.5 px-4 text-center font-sans text-[#F2F2F2] tabular-nums">
                         {p.strike_rate !== null ? p.strike_rate.toFixed(1) : '—'}
                       </td>
                     ))}
@@ -671,7 +723,7 @@ export default function PlayerComparison() {
                       Batting Innings
                     </td>
                     {playersList.map((p) => (
-                      <td key={p.player} className="py-2.5 px-4 text-center font-mono text-[#5A9E60] font-bold tabular-nums">
+                      <td key={p.player} className="py-2.5 px-4 text-center font-sans text-[#5A9E60] font-bold tabular-nums">
                         {p.batting_innings}
                       </td>
                     ))}
@@ -681,7 +733,7 @@ export default function PlayerComparison() {
                       Matches Played
                     </td>
                     {playersList.map((p) => (
-                      <td key={p.player} className="py-2.5 px-4 text-center font-mono text-[#858585] tabular-nums">
+                      <td key={p.player} className="py-2.5 px-4 text-center font-sans text-[#858585] tabular-nums">
                         {p.matches_played}
                       </td>
                     ))}
@@ -691,9 +743,9 @@ export default function PlayerComparison() {
                       Did Not Bat (DNB)
                     </td>
                     {playersList.map((p) => (
-                      <td key={p.player} className="py-2.5 px-4 text-center font-mono text-[#858585] tabular-nums">
+                      <td key={p.player} className="py-2.5 px-4 text-center font-sans text-[#858585] tabular-nums">
                         {p.did_not_bat_matches > 0 ? (
-                          <span className="text-[#C25454] font-medium">{p.did_not_bat_matches}</span>
+                          <span className="badge-dnb">{p.did_not_bat_matches} DNB</span>
                         ) : (
                           '0'
                         )}
@@ -715,7 +767,7 @@ export default function PlayerComparison() {
                       <td key={p.player} className="py-3 px-4 text-center">
                         {p.contribution_score !== null ? (
                           <span
-                            className={`inline-block px-3 py-1 rounded-full text-[13.5px] font-bold border tabular-nums font-mono ${
+                            className={`inline-block px-3 py-1 rounded-full text-[13.5px] font-bold border tabular-nums font-sans ${
                               p.contribution_score >= 65
                                 ? 'bg-[#152718] text-[#5A9E60] border-[#2A4D30]'
                                 : p.contribution_score >= 52
@@ -738,7 +790,7 @@ export default function PlayerComparison() {
                       Positive Contribution (Raw)
                     </td>
                     {playersList.map((p) => (
-                      <td key={p.player} className="py-2.5 px-4 text-center font-mono font-bold text-[#5A9E60] tabular-nums text-[14px]">
+                      <td key={p.player} className="py-2.5 px-4 text-center font-sans font-bold text-[#5A9E60] tabular-nums text-[14px]">
                         {p.total_positive_raw_contribution !== null
                           ? `+${Number(p.total_positive_raw_contribution).toFixed(2)}`
                           : '—'}
@@ -750,7 +802,7 @@ export default function PlayerComparison() {
                       Team Contribution Share (%)
                     </td>
                     {playersList.map((p) => (
-                      <td key={p.player} className="py-2.5 px-4 text-center font-mono font-bold text-[#F2F2F2] tabular-nums text-[14px]">
+                      <td key={p.player} className="py-2.5 px-4 text-center font-sans font-bold text-[#F2F2F2] tabular-nums text-[14px]">
                         {p.season_team_contribution_share !== null
                           ? `${Number(p.season_team_contribution_share).toFixed(1)}%`
                           : '—'}
@@ -762,7 +814,7 @@ export default function PlayerComparison() {
                       Contrib / Batting Opp
                     </td>
                     {playersList.map((p) => (
-                      <td key={p.player} className="py-2.5 px-4 text-center font-mono text-[#858585] tabular-nums text-[13.5px]">
+                      <td key={p.player} className="py-2.5 px-4 text-center font-sans text-[#858585] tabular-nums text-[13.5px]">
                         {p.contribution_per_batting_opportunity !== null
                           ? Number(p.contribution_per_batting_opportunity).toFixed(4)
                           : '—'}
@@ -781,7 +833,7 @@ export default function PlayerComparison() {
                       P1: Match Context (Leverage Signal)
                     </td>
                     {playersList.map((p) => (
-                      <td key={p.player} className="py-2.5 px-4 text-center font-mono font-bold text-[#F2F2F2] tabular-nums text-[14px]">
+                      <td key={p.player} className="py-2.5 px-4 text-center font-sans font-bold text-[#F2F2F2] tabular-nums text-[14px]">
                         {p.pillars?.pillar1_match_context !== null ? Number(p.pillars.pillar1_match_context).toFixed(1) : '—'}
                       </td>
                     ))}
@@ -791,9 +843,9 @@ export default function PlayerComparison() {
                       P2: Batter Execution (50% Weight)
                     </td>
                     {playersList.map((p) => (
-                      <td key={p.player} className="py-2.5 px-4 text-center font-mono font-bold text-[#F2F2F2] tabular-nums text-[14px]">
+                      <td key={p.player} className="py-2.5 px-4 text-center font-sans font-bold text-[#F2F2F2] tabular-nums text-[14px]">
                         {p.pillars?.adjusted_p2 !== null && p.pillars?.adjusted_p2 !== undefined
-                          ? Number(p.pillars.adjusted_p2).toFixed(1)
+                           ? Number(p.pillars.adjusted_p2).toFixed(1)
                           : p.pillars?.pillar2_batter_performance !== null
                           ? Number(p.pillars.pillar2_batter_performance).toFixed(1)
                           : '—'}
@@ -805,7 +857,7 @@ export default function PlayerComparison() {
                       P3: Team-State Impact (50% Weight)
                     </td>
                     {playersList.map((p) => (
-                      <td key={p.player} className="py-2.5 px-4 text-center font-mono font-bold text-[#F2F2F2] tabular-nums text-[14px]">
+                      <td key={p.player} className="py-2.5 px-4 text-center font-sans font-bold text-[#F2F2F2] tabular-nums text-[14px]">
                         {p.pillars?.adjusted_p3 !== null && p.pillars?.adjusted_p3 !== undefined
                           ? Number(p.pillars.adjusted_p3).toFixed(1)
                           : p.pillars?.pillar3_team_state_impact !== null
@@ -826,7 +878,7 @@ export default function PlayerComparison() {
                       1st Innings Contribution
                     </td>
                     {playersList.map((p) => (
-                      <td key={p.player} className="py-2.5 px-4 text-center font-mono text-[#F2F2F2] tabular-nums">
+                      <td key={p.player} className="py-2.5 px-4 text-center font-sans text-[#F2F2F2] tabular-nums">
                         {p.first_innings_contribution !== null ? Number(p.first_innings_contribution).toFixed(1) : '—'}
                       </td>
                     ))}
@@ -836,7 +888,7 @@ export default function PlayerComparison() {
                       Chase (2nd Innings) Contribution
                     </td>
                     {playersList.map((p) => (
-                      <td key={p.player} className="py-2.5 px-4 text-center font-mono text-[#F2F2F2] tabular-nums">
+                      <td key={p.player} className="py-2.5 px-4 text-center font-sans text-[#F2F2F2] tabular-nums">
                         {p.chase_contribution !== null ? Number(p.chase_contribution).toFixed(1) : '—'}
                       </td>
                     ))}
@@ -846,7 +898,7 @@ export default function PlayerComparison() {
                       Powerplay (0–6)
                     </td>
                     {playersList.map((p) => (
-                      <td key={p.player} className="py-2.5 px-4 text-center font-mono text-[#F2F2F2] tabular-nums">
+                      <td key={p.player} className="py-2.5 px-4 text-center font-sans text-[#F2F2F2] tabular-nums">
                         {p.powerplay_contribution !== null ? Number(p.powerplay_contribution).toFixed(1) : '—'}
                       </td>
                     ))}
@@ -856,7 +908,7 @@ export default function PlayerComparison() {
                       Middle Overs (6–16)
                     </td>
                     {playersList.map((p) => (
-                      <td key={p.player} className="py-2.5 px-4 text-center font-mono text-[#F2F2F2] tabular-nums">
+                      <td key={p.player} className="py-2.5 px-4 text-center font-sans text-[#F2F2F2] tabular-nums">
                         {p.middle_over_contribution !== null ? Number(p.middle_over_contribution).toFixed(1) : '—'}
                       </td>
                     ))}
@@ -866,7 +918,7 @@ export default function PlayerComparison() {
                       Death Overs (16–20)
                     </td>
                     {playersList.map((p) => (
-                      <td key={p.player} className="py-2.5 px-4 text-center font-mono text-[#F2F2F2] tabular-nums">
+                      <td key={p.player} className="py-2.5 px-4 text-center font-sans text-[#F2F2F2] tabular-nums">
                         {p.death_over_contribution !== null ? Number(p.death_over_contribution).toFixed(1) : '—'}
                       </td>
                     ))}
@@ -876,7 +928,7 @@ export default function PlayerComparison() {
                       High Pressure
                     </td>
                     {playersList.map((p) => (
-                      <td key={p.player} className="py-2.5 px-4 text-center font-mono text-[#F2F2F2] tabular-nums">
+                      <td key={p.player} className="py-2.5 px-4 text-center font-sans text-[#F2F2F2] tabular-nums">
                         {p.high_pressure_contribution !== null ? Number(p.high_pressure_contribution).toFixed(1) : '—'}
                       </td>
                     ))}

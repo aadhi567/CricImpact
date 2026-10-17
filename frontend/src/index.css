@@ -1,11 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
 
 @theme {
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-mono: 'DM Mono', monospace;
-  --font-heading: 'Cinzel', serif;
-  --font-cinzel: 'Cinzel', serif;
+  --font-heading: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-ui: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
@@ -32,22 +31,40 @@
     --bg-hover: #1D1D1D;
   }
 
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
   body {
     margin: 0;
+    padding: 0;
+    width: 100%;
+    max-width: 100%;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     background-color: var(--bg-primary);
     color: var(--text-primary);
     min-height: 100vh;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-size: 15.5px;
+    font-size: 15px;
     font-weight: 400;
-    line-height: 1.6;
+    line-height: 1.55;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Cinzel', serif;
-    letter-spacing: 0.01em;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    letter-spacing: -0.015em;
+    color: var(--text-primary);
+    overflow-wrap: break-word;
   }
 }
 
@@ -67,115 +84,127 @@
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #A8893D;
+  background: #D4AF57;
 }
 
-/* Typography Hierarchy Utilities */
-.font-heading,
-.font-cinzel {
-  font-family: 'Cinzel', serif;
-}
-
-.font-sans {
+/* Typography Hierarchy Utilities (Strictly Inter for UI, DM Mono for Code) */
+.font-sans,
+.font-ui,
+.font-heading {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-.font-mono {
+.font-mono,
+.font-tech {
   font-family: 'DM Mono', monospace;
 }
 
-/* Page title: 30–36px / 700 */
+/* Page title: 28–34px / 700 with Inter tracking */
 .page-title {
-  font-family: 'Cinzel', serif;
-  font-size: 30px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 26px;
   font-weight: 700;
   line-height: 1.25;
   color: #F2F2F2;
-  letter-spacing: 0.02em;
+  letter-spacing: -0.02em;
 }
 
 @media (min-width: 640px) {
   .page-title {
-    font-size: 34px;
-  }
-}
-
-/* Section heading: 21–25px / 700 sentence case */
-.section-heading {
-  font-family: 'Cinzel', serif;
-  font-size: 21px;
-  font-weight: 700;
-  line-height: 1.3;
-  color: #F2F2F2;
-  letter-spacing: 0.01em;
-}
-
-@media (min-width: 640px) {
-  .section-heading {
-    font-size: 24px;
-  }
-}
-
-/* KPI value: 25–32px */
-.kpi-value {
-  font-family: 'DM Mono', monospace;
-  font-size: 26px;
-  font-weight: 600;
-  line-height: 1.15;
-  font-variant-numeric: tabular-nums;
-  color: #F2F2F2;
-}
-
-@media (min-width: 640px) {
-  .kpi-value {
     font-size: 32px;
   }
 }
 
-/* Player name: 15–16px / 600 */
-.player-name {
-  font-size: 15px;
+/* Section heading: 20–24px / 600–700 */
+.section-heading {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 19px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: #F2F2F2;
+  letter-spacing: -0.015em;
+}
+
+@media (min-width: 640px) {
+  .section-heading {
+    font-size: 22px;
+  }
+}
+
+/* Subsection heading */
+.sub-heading {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 16px;
   font-weight: 600;
   line-height: 1.35;
+  color: #F2F2F2;
+  letter-spacing: -0.01em;
 }
 
-/* Table header: 12–14px */
+/* KPI value: 24–30px tabular-nums in Inter */
+.kpi-value {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.15;
+  font-variant-numeric: tabular-nums;
+  color: #F2F2F2;
+  letter-spacing: -0.02em;
+}
+
+@media (min-width: 640px) {
+  .kpi-value {
+    font-size: 30px;
+  }
+}
+
+/* Player name: 14.5–15.5px / 600 */
+.player-name {
+  font-size: 14.5px;
+  font-weight: 600;
+  line-height: 1.35;
+  color: #F2F2F2;
+}
+
+/* Table header: 11.5–12.5px */
 .table-header {
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 600;
   color: #858585;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
-/* Table content: 14–15px */
+/* Table content: 14px */
 .table-content {
-  font-size: 14.5px;
+  font-size: 14px;
   line-height: 1.5;
   font-weight: 400;
 }
 
-/* Body text: 15–17px */
+/* Body text: 14.5–15.5px */
 .body-text {
-  font-size: 15.5px;
+  font-size: 15px;
   font-weight: 400;
   line-height: 1.6;
+  color: #B8B8B8;
 }
 
 /* Secondary text: 12.5–13px */
 .secondary-text {
-  font-size: 12.5px;
+  font-size: 13px;
   font-weight: 400;
   color: #B8B8B8;
-  line-height: 1.4;
+  line-height: 1.45;
 }
 
-/* Navigation text: 14–15px */
+/* Navigation text: 14px */
 .nav-text {
-  font-size: 14.5px;
+  font-size: 14px;
   font-weight: 500;
 }
 
-/* Buttons: 13–14px */
+/* Buttons: 13px */
 .btn-text {
   font-size: 13px;
   font-weight: 600;
@@ -188,17 +217,16 @@
   color: #858585;
 }
 
-/* Tabular numbers for cricket statistics */
+/* Tabular numbers for cricket statistics in Inter (NOT monospace) */
 .tabular-nums {
   font-variant-numeric: tabular-nums;
-  font-family: 'DM Mono', monospace;
 }
 
-/* Standard Gold & Onyx card */
+/* Standard Gold & Onyx Card Containers */
 .panel-card {
   background-color: #161616;
   border: 1px solid #2D2D2D;
-  border-radius: 8px;
+  border-radius: 10px;
 }
 
 .panel-card-subtle {
@@ -218,16 +246,19 @@
   background-color: #161616;
   color: #858585;
   font-weight: 600;
-  font-size: 13px;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
   border-bottom: 1px solid #2D2D2D;
-  padding: 10px 14px;
+  padding: 11px 14px;
 }
 
 .table-onyx td {
   border-bottom: 1px solid #222222;
-  font-size: 14.5px;
+  font-size: 14px;
   font-weight: 400;
   padding: 12px 14px;
+  color: #F2F2F2;
 }
 
 .table-onyx tr:last-child td {
@@ -238,63 +269,30 @@
   background-color: #1D1D1D;
 }
 
-/* UI Tokens & Helpers */
-.font-ui {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-}
-
-.font-data {
-  font-family: 'DM Mono', monospace;
-  font-variant-numeric: tabular-nums;
-}
-
-.badge-gold {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.375rem;
-  padding: 0.125rem 0.5rem;
-  border-radius: 0.375rem;
-  font-size: 0.6875rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  background-color: #1E190E;
-  color: #D4AF57;
-  border: 1px solid #3D351E;
-}
-
-.badge-muted {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.375rem;
-  padding: 0.125rem 0.5rem;
-  border-radius: 0.375rem;
-  font-size: 0.6875rem;
-  font-weight: 500;
-  background-color: #161616;
-  color: #858585;
-  border: 1px solid #2D2D2D;
-}
-
+/* Gold Button System */
 .btn-gold {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  padding: 0.625rem 1.25rem;
-  border-radius: 0.5rem;
-  font-size: 0.8125rem;
-  font-weight: 600;
   background-color: #D4AF57;
   color: #080808;
-  transition: all 0.15s ease-in-out;
+  font-weight: 600;
+  font-size: 13px;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: all 150ms ease-in-out;
   cursor: pointer;
-  text-decoration: none;
 }
 
 .btn-gold:hover {
   background-color: #E1C878;
-  transform: translateY(-1px);
+  box-shadow: 0 1px 3px rgba(212, 175, 87, 0.25);
+}
+
+.btn-gold:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px #080808, 0 0 0 4px #D4AF57;
 }
 
 .btn-secondary {
@@ -302,20 +300,120 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  padding: 0.625rem 1.25rem;
-  border-radius: 0.5rem;
-  font-size: 0.8125rem;
-  font-weight: 500;
   background-color: #161616;
   color: #F2F2F2;
   border: 1px solid #2D2D2D;
-  transition: all 0.15s ease-in-out;
+  font-weight: 500;
+  font-size: 13px;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: all 150ms ease-in-out;
   cursor: pointer;
-  text-decoration: none;
 }
 
 .btn-secondary:hover {
-  background-color: #222222;
-  border-color: #404040;
+  background-color: #1D1D1D;
+  border-color: #3D3D3D;
   color: #FFFFFF;
+}
+
+.btn-secondary:focus-visible {
+  outline: none;
+  border-color: #D4AF57;
+  box-shadow: 0 0 0 2px #080808, 0 0 0 4px #D4AF57;
+}
+
+/* Input & Select Common Styling */
+.input-onyx {
+  background-color: #101010;
+  border: 1px solid #2D2D2D;
+  color: #F2F2F2;
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
+  font-size: 13.5px;
+  transition: border-color 150ms ease-in-out;
+}
+
+.input-onyx:focus {
+  outline: none;
+  border-color: #D4AF57;
+  box-shadow: 0 0 0 1px #D4AF57;
+}
+
+/* Skeleton Loading Shimmer */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.skeleton {
+  background: linear-gradient(90deg, #161616 25%, #222222 50%, #161616 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.8s infinite ease-in-out;
+  border-radius: 6px;
+}
+
+/* Badge Styles */
+.badge-gold {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  background-color: rgba(212, 175, 87, 0.12);
+  color: #D4AF57;
+  border: 1px solid rgba(212, 175, 87, 0.3);
+}
+
+.badge-positive {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  background-color: #152718;
+  color: #5A9E60;
+  border: 1px solid #2A4D30;
+}
+
+.badge-negative {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  background-color: #271414;
+  color: #C25454;
+  border: 1px solid #4D2626;
+}
+
+.badge-dnb {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 500;
+  background-color: #121212;
+  color: #858585;
+  border: 1px solid #2A2A2A;
+}
+
+/* Accessible focus ring utility */
+.focus-ring {
+  outline: none;
+}
+.focus-ring:focus-visible {
+  outline: 2px solid #D4AF57;
+  outline-offset: 2px;
 }

@@ -168,7 +168,7 @@ export default function BatterBowlingMatchup() {
   }, [rankingsData.spin, searchTerm]);
 
   return (
-    <div className="w-full space-y-8 font-mono text-[#F2F2F2]">
+    <div className="w-full space-y-8 font-sans text-[#F2F2F2]">
       {/* Page Header */}
       <div className="border-b border-[#2D2D2D] pb-6">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
@@ -177,19 +177,19 @@ export default function BatterBowlingMatchup() {
               <span className="p-2.5 rounded-lg bg-[#1F1C14] border border-[#A8893D]/40 text-[#D4AF57]">
                 <Layers className="w-5 h-5" />
               </span>
-              <h1 className="font-heading text-[30px] sm:text-[34px] lg:text-[36px] font-bold tracking-wider text-[#F2F2F2] leading-tight">
+              <h1 className="font-heading text-[22px] sm:text-[30px] lg:text-[36px] font-bold tracking-wide text-[#F2F2F2] leading-tight break-words">
                 Batters vs Bowling Type
               </h1>
             </div>
-            <p className="mt-1.5 text-[15px] sm:text-[16px] font-normal text-[#B8B8B8] leading-relaxed max-w-5xl">
+            <p className="mt-1.5 text-[14px] sm:text-[16px] font-normal text-[#B8B8B8] leading-relaxed max-w-5xl">
               Matchup performance rankings measuring scoring rate against Pace and Spin bowling.
             </p>
           </div>
 
           {/* Model separation tag */}
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#101010] border border-[#2D2D2D] text-[12.5px] sm:text-[13px] font-medium text-[#858585] self-start md:self-auto">
-            <span className="w-2 h-2 rounded-full bg-[#D4AF57]" />
-            Matchup Analytics • Separate from Contribution Score
+          <div className="inline-flex flex-wrap items-center gap-2 px-3 sm:px-3.5 py-1.5 rounded-full bg-[#101010] border border-[#2D2D2D] text-[11.5px] sm:text-[13px] font-medium text-[#858585] self-start md:self-auto max-w-full">
+            <span className="w-2 h-2 rounded-full bg-[#D4AF57] shrink-0" />
+            <span>Matchup Analytics • Separate from Contribution Score</span>
           </div>
         </div>
 
@@ -234,43 +234,43 @@ export default function BatterBowlingMatchup() {
       <div className="bg-[#161616] rounded-xl border border-[#2D2D2D] p-4 sm:p-5 space-y-4">
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
           {/* Left: Tab Selectors */}
-          <div className="flex items-center gap-1.5 p-1 bg-[#101010] rounded-lg border border-[#2D2D2D] self-start">
+          <div className="flex flex-wrap sm:flex-nowrap items-center gap-1.5 p-1 bg-[#101010] rounded-lg border border-[#2D2D2D] max-w-full">
             <button
               type="button"
               onClick={() => setActiveTab('pace')}
-              className={`px-3.5 py-2 rounded-md text-[13px] font-semibold flex items-center gap-2 transition-all cursor-pointer ${
+              className={`px-2.5 sm:px-3.5 py-1.5 sm:py-2 rounded-md text-[12px] sm:text-[13px] font-semibold flex items-center gap-1.5 sm:gap-2 transition-all cursor-pointer flex-1 sm:flex-initial text-center justify-center ${
                 activeTab === 'pace'
                   ? 'bg-[#D4AF57] text-[#080808] shadow-xs'
                   : 'text-[#858585] hover:text-[#F2F2F2]'
               }`}
             >
-              <Wind className="w-4 h-4" />
+              <Wind className="w-4 h-4 shrink-0" />
               <span>Top vs Pace ({filteredPace.length})</span>
             </button>
 
             <button
               type="button"
               onClick={() => setActiveTab('spin')}
-              className={`px-3.5 py-2 rounded-md text-[13px] font-semibold flex items-center gap-2 transition-all cursor-pointer ${
+              className={`px-2.5 sm:px-3.5 py-1.5 sm:py-2 rounded-md text-[12px] sm:text-[13px] font-semibold flex items-center gap-1.5 sm:gap-2 transition-all cursor-pointer flex-1 sm:flex-initial text-center justify-center ${
                 activeTab === 'spin'
                   ? 'bg-[#D4AF57] text-[#080808] shadow-xs'
                   : 'text-[#858585] hover:text-[#F2F2F2]'
               }`}
             >
-              <RotateCw className="w-4 h-4" />
+              <RotateCw className="w-4 h-4 shrink-0" />
               <span>Top vs Spin ({filteredSpin.length})</span>
             </button>
 
             <button
               type="button"
               onClick={() => setActiveTab('split')}
-              className={`px-3.5 py-2 rounded-md text-[13px] font-semibold flex items-center gap-2 transition-all cursor-pointer ${
+              className={`px-2.5 sm:px-3.5 py-1.5 sm:py-2 rounded-md text-[12px] sm:text-[13px] font-semibold flex items-center gap-1.5 sm:gap-2 transition-all cursor-pointer flex-1 sm:flex-initial text-center justify-center ${
                 activeTab === 'split'
                   ? 'bg-[#D4AF57] text-[#080808] shadow-xs'
                   : 'text-[#858585] hover:text-[#F2F2F2]'
               }`}
             >
-              <ArrowUpDown className="w-4 h-4" />
+              <ArrowUpDown className="w-4 h-4 shrink-0" />
               <span>Side-by-Side</span>
             </button>
           </div>
@@ -278,8 +278,8 @@ export default function BatterBowlingMatchup() {
           {/* Right: Search & Selectors */}
           <div className="flex flex-wrap items-center gap-3">
             {/* Search */}
-            <div className="relative min-w-[220px] flex-1 sm:flex-initial">
-              <Search className="w-4 h-4 text-[#858585] absolute left-3 top-1/2 -translate-y-1/2" />
+            <div className="relative w-full sm:w-auto min-w-0 sm:min-w-[200px] flex-1 sm:flex-initial">
+              <Search className="w-4 h-4 text-[#858585] absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" />
               <input
                 type="text"
                 placeholder="Search batter..."
@@ -658,8 +658,8 @@ function RankingTable({ data, bowlingType, onSelectBatter, selectedBatter }) {
   }
 
   return (
-    <div className="bg-[#161616] rounded-xl overflow-hidden border border-[#2D2D2D]">
-      <div className="overflow-x-auto">
+    <div className="bg-[#161616] rounded-xl overflow-hidden border border-[#2D2D2D] max-w-full min-w-0">
+      <div className="overflow-x-auto w-full max-w-full min-w-0">
         <table className="w-full text-left border-collapse">
           <thead>
             <tr className="border-b border-[#2D2D2D] bg-[#161616] text-[#858585] text-[12.5px] sm:text-[13px] font-semibold uppercase tracking-wider">

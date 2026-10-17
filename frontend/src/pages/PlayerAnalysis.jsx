@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import {
   Award,
   TrendingUp,
@@ -108,7 +108,7 @@ export default function PlayerAnalysis() {
   const p3Score = score !== null ? score : null;
 
   return (
-    <div className="w-full space-y-8 font-mono text-[#F2F2F2]">
+    <div className="w-full space-y-8 font-sans text-[#F2F2F2]">
       {/* 0. Breadcrumb Navigation */}
       <Breadcrumbs
         items={[
@@ -121,10 +121,10 @@ export default function PlayerAnalysis() {
       />
 
       {/* Header Banner */}
-      <div className="bg-[#161616] rounded-xl p-6 sm:p-8 border border-[#2D2D2D] shadow-xs flex flex-col md:flex-row md:items-center justify-between gap-6">
+      <div className="bg-[#161616] rounded-xl p-4 sm:p-6 md:p-8 border border-[#2D2D2D] shadow-xs flex flex-col md:flex-row md:items-center justify-between gap-6 min-w-0">
         <div>
-          <div className="flex flex-wrap items-center gap-2.5">
-            <h1 className="font-heading text-[30px] sm:text-[34px] lg:text-[36px] font-bold text-[#F2F2F2] tracking-wider leading-tight">
+          <div className="flex flex-wrap items-center gap-2 sm:gap-2.5">
+            <h1 className="font-heading text-[24px] sm:text-[32px] lg:text-[36px] font-bold text-[#F2F2F2] tracking-wide leading-tight break-words">
               {playerData.player}
             </h1>
             <span className="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-[#1F1C14] text-[#D4AF57] border border-[#A8893D]/40">
@@ -135,7 +135,7 @@ export default function PlayerAnalysis() {
             </span>
           </div>
 
-          <div className="mt-2.5 flex flex-wrap items-center gap-3 text-xs sm:text-[13px] text-[#858585] font-mono">
+          <div className="mt-2.5 flex flex-wrap items-center gap-3 text-xs sm:text-[13px] text-[#858585] font-sans">
             <span className="text-[#F2F2F2] font-semibold">{playerData.team}</span>
             <span>•</span>
             <span className="text-[#F2F2F2] font-semibold">{playerData.actual_runs} Runs</span>
@@ -152,21 +152,32 @@ export default function PlayerAnalysis() {
           </div>
         </div>
 
-        {/* Participation Badges */}
-        <div className="flex items-center gap-4 bg-[#101010] p-3.5 sm:p-4 rounded-xl border border-[#2D2D2D] self-start md:self-auto font-mono">
-          <div className="text-center px-2">
-            <div className="text-[11px] text-[#858585] font-semibold tracking-wide">Matches</div>
-            <div className="text-xl font-bold text-[#F2F2F2] mt-0.5 tabular-nums">{playerData.matches_played}</div>
-          </div>
-          <div className="w-px h-8 bg-[#2D2D2D]" />
-          <div className="text-center px-2">
-            <div className="text-[11px] text-[#858585] font-semibold tracking-wide">Innings</div>
-            <div className="text-xl font-bold text-[#5A9E60] mt-0.5 tabular-nums">{playerData.batting_innings}</div>
-          </div>
-          <div className="w-px h-8 bg-[#2D2D2D]" />
-          <div className="text-center px-2">
-            <div className="text-[11px] text-[#858585] font-semibold tracking-wide">DNB</div>
-            <div className="text-xl font-bold text-[#858585] mt-0.5 tabular-nums">{playerData.did_not_bat_matches}</div>
+        {/* Participation Badges & Career Action */}
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 self-start md:self-auto">
+          <Link
+            to={`/career?player=${encodeURIComponent(playerData.player)}`}
+            className="inline-flex items-center justify-center gap-2 px-3.5 py-2.5 rounded-xl bg-[#1F1C14] hover:bg-[#2A2415] text-[#D4AF57] border border-[#A8893D]/40 hover:border-[#D4AF57] text-xs font-semibold transition-colors duration-150"
+            title="Explore multi-season batting performance and CricImpact career metrics"
+          >
+            <TrendingUp className="w-4 h-4" />
+            <span>Career Graph</span>
+          </Link>
+
+          <div className="flex items-center gap-4 bg-[#101010] p-3.5 sm:p-4 rounded-xl border border-[#2D2D2D] font-sans">
+            <div className="text-center px-2">
+              <div className="text-[11px] text-[#858585] font-semibold tracking-wide">Matches</div>
+              <div className="text-xl font-bold text-[#F2F2F2] mt-0.5 tabular-nums">{playerData.matches_played}</div>
+            </div>
+            <div className="w-px h-8 bg-[#2D2D2D]" />
+            <div className="text-center px-2">
+              <div className="text-[11px] text-[#858585] font-semibold tracking-wide">Innings</div>
+              <div className="text-xl font-bold text-[#5A9E60] mt-0.5 tabular-nums">{playerData.batting_innings}</div>
+            </div>
+            <div className="w-px h-8 bg-[#2D2D2D]" />
+            <div className="text-center px-2">
+              <div className="text-[11px] text-[#858585] font-semibold tracking-wide">DNB</div>
+              <div className="text-xl font-bold text-[#858585] mt-0.5 tabular-nums">{playerData.did_not_bat_matches}</div>
+            </div>
           </div>
         </div>
       </div>
@@ -197,20 +208,20 @@ export default function PlayerAnalysis() {
             </div>
           </div>
 
-          <span className="px-2.5 py-1 rounded-md text-xs font-semibold bg-[#1F1C14] text-[#D4AF57] border border-[#A8893D]/30 font-mono">
+          <span className="px-2.5 py-1 rounded-md text-xs font-semibold bg-[#1F1C14] text-[#D4AF57] border border-[#A8893D]/30 font-sans">
             {p2Score !== null ? (p2Score >= 65 ? 'High Execution' : p2Score >= 50 ? 'Above Par' : 'Moderate Execution') : 'N/A'}
           </span>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 items-stretch">
           {/* Prominent P2 Execution Score */}
-          <div className="lg:col-span-4 bg-[#101010] p-5 rounded-xl border border-[#2D2D2D] flex flex-col justify-between font-mono">
+          <div className="lg:col-span-4 bg-[#101010] p-5 rounded-xl border border-[#2D2D2D] flex flex-col justify-between font-sans">
             <div>
               <span className="text-[11px] font-semibold text-[#858585] tracking-wider uppercase block">
                 Batting Execution Score (P2)
               </span>
               <div className="mt-2 flex items-baseline gap-1.5">
-                <span className="text-4xl sm:text-5xl font-bold text-[#F2F2F2] tabular-nums">
+                <span className="text-4xl sm:text-5xl font-bold text-[#F2F2F2] tabular-nums font-sans">
                   {p2Score !== null ? Number(p2Score).toFixed(1) : '—'}
                 </span>
                 <span className="text-lg font-normal text-[#858585]">/ 100</span>
@@ -222,7 +233,7 @@ export default function PlayerAnalysis() {
           </div>
 
           {/* Core Batting Execution Metrics */}
-          <div className="lg:col-span-8 grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs font-mono">
+          <div className="lg:col-span-8 grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs font-sans">
             <div className="bg-[#101010] p-3.5 rounded-lg border border-[#2D2D2D]">
               <span className="text-[11px] font-semibold text-[#858585] block font-sans">Total Runs</span>
               <span className="text-xl font-bold text-[#F2F2F2] mt-1 block tabular-nums">
@@ -268,16 +279,16 @@ export default function PlayerAnalysis() {
         </div>
 
         {/* Concise Plain-Language Batting Performance Explanation */}
-        <div className="bg-[#101010] p-4 sm:p-5 rounded-lg border border-[#2D2D2D] space-y-2 text-xs sm:text-[13px] text-[#B8B8B8] leading-relaxed">
+        <div className="bg-[#101010] p-4 sm:p-5 rounded-lg border border-[#2D2D2D] space-y-2 text-xs sm:text-[13px] text-[#B8B8B8] leading-relaxed font-sans">
           <h3 className="font-semibold text-[#D4AF57] tracking-wider uppercase text-xs">
             Batting Execution Analysis
           </h3>
           <ul className="space-y-1.5 list-disc list-inside">
             <li>
-              Scored <strong className="text-[#F2F2F2] font-mono">{playerData.actual_runs} runs</strong> from <strong className="text-[#F2F2F2] font-mono">{playerData.balls_faced} deliveries</strong> across {playerData.batting_innings} actual batting opportunities.
+              Scored <strong className="text-[#F2F2F2] font-sans">{playerData.actual_runs} runs</strong> from <strong className="text-[#F2F2F2] font-sans">{playerData.balls_faced} deliveries</strong> across {playerData.batting_innings} actual batting opportunities.
             </li>
             <li>
-              Maintained a seasonal scoring tempo of <strong className="text-[#F2F2F2] font-mono">{playerData.strike_rate || '—'} strike rate</strong>, calibrated against par baseline expectations.
+              Maintained a seasonal scoring tempo of <strong className="text-[#F2F2F2] font-sans">{playerData.strike_rate || '—'} strike rate</strong>, calibrated against par baseline expectations.
             </li>
             <li>
               P2 reflects direct individual execution and run production relative to entry phase conditions.
@@ -303,20 +314,20 @@ export default function PlayerAnalysis() {
             </div>
           </div>
 
-          <span className="px-2.5 py-1 rounded-md text-xs font-semibold bg-[#1F1C14] text-[#D4AF57] border border-[#A8893D]/30 font-mono">
+          <span className="px-2.5 py-1 rounded-md text-xs font-semibold bg-[#1F1C14] text-[#D4AF57] border border-[#A8893D]/30 font-sans">
             {p3Score !== null ? (p3Score >= 65 ? 'High Impact' : p3Score >= 50 ? 'Above Par' : 'Moderate Impact') : 'N/A'}
           </span>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 items-stretch">
           {/* Prominent P3 Impact Score */}
-          <div className="lg:col-span-4 bg-[#101010] p-5 rounded-xl border border-[#2D2D2D] flex flex-col justify-between font-mono">
+          <div className="lg:col-span-4 bg-[#101010] p-5 rounded-xl border border-[#2D2D2D] flex flex-col justify-between font-sans">
             <div>
               <span className="text-[11px] font-semibold text-[#858585] tracking-wider uppercase block">
                 Team Contribution Score (P3)
               </span>
               <div className="mt-2 flex items-baseline gap-1.5">
-                <span className="text-4xl sm:text-5xl font-bold text-[#F2F2F2] tabular-nums">
+                <span className="text-4xl sm:text-5xl font-bold text-[#F2F2F2] tabular-nums font-sans">
                   {p3Score !== null ? Number(p3Score).toFixed(1) : '—'}
                 </span>
                 <span className="text-lg font-normal text-[#858585]">/ 100</span>
@@ -328,7 +339,7 @@ export default function PlayerAnalysis() {
           </div>
 
           {/* Team Contribution Metrics */}
-          <div className="lg:col-span-8 grid grid-cols-2 sm:grid-cols-3 gap-3 text-xs font-mono">
+          <div className="lg:col-span-8 grid grid-cols-2 sm:grid-cols-3 gap-3 text-xs font-sans">
             <div className="bg-[#101010] p-3.5 rounded-lg border border-[#2D2D2D]">
               <span className="text-[11px] font-semibold text-[#858585] block font-sans">Team Contribution Share</span>
               <span className="text-xl font-bold text-[#D4AF57] mt-1 block tabular-nums">
@@ -388,7 +399,7 @@ export default function PlayerAnalysis() {
             </div>
           </div>
 
-          <span className="px-2.5 py-1 rounded-md text-xs font-semibold bg-[#101010] text-[#858585] border border-[#2D2D2D] font-mono">
+          <span className="px-2.5 py-1 rounded-md text-xs font-semibold bg-[#101010] text-[#858585] border border-[#2D2D2D] font-sans">
             Par Benchmark = 50.0 / 100
           </span>
         </div>
@@ -400,12 +411,12 @@ export default function PlayerAnalysis() {
               Official CricImpact Average Score
             </span>
             <div className="mt-2 flex items-baseline gap-2">
-              <span className="font-mono text-5xl sm:text-6xl font-bold text-[#D4AF57] tabular-nums leading-none">
+              <span className="font-sans text-5xl sm:text-6xl font-bold text-[#D4AF57] tabular-nums leading-none">
                 {score !== null && score !== undefined ? Number(score).toFixed(1) : '—'}
               </span>
               <span className="text-xl font-normal text-[#858585]">/ 100</span>
             </div>
-            <div className="mt-2.5 text-xs text-[#858585] flex items-center gap-2 font-mono">
+            <div className="mt-2.5 text-xs text-[#858585] flex items-center gap-2 font-sans">
               <span>Par = 50.0</span>
               <span className="text-[#2D2D2D]">•</span>
               <span className={`font-semibold ${score >= 50.0 ? 'text-[#5A9E60]' : 'text-[#C25454]'}`}>
@@ -414,7 +425,7 @@ export default function PlayerAnalysis() {
             </div>
           </div>
 
-          <div className="sm:max-w-md p-4 rounded-lg bg-[#152718] border border-[#2A4D30] text-xs sm:text-[13px] text-[#F2F2F2]">
+          <div className="sm:max-w-md p-4 rounded-lg bg-[#152718] border border-[#2A4D30] text-xs sm:text-[13px] text-[#F2F2F2] font-sans">
             <strong className="text-[#5A9E60] block mb-1">Seasonal Performance Summary:</strong>
             {score >= 70
               ? 'Elite contributor across demanding match conditions. Consistently elevated team scoring and absorbed situational pressure.'
@@ -438,7 +449,7 @@ export default function PlayerAnalysis() {
             <h3 className="font-heading text-[18px] sm:text-[20px] font-bold text-[#F2F2F2] tracking-wide">
               Season Match Appearances & Inning Logs
             </h3>
-            <span className="text-[12.5px] text-[#858585] font-mono">
+            <span className="text-[12.5px] text-[#858585] font-sans">
               Click any match row to view the full individual match report
             </span>
           </div>
@@ -451,7 +462,7 @@ export default function PlayerAnalysis() {
             <h4 className="font-heading text-sm font-bold text-[#F2F2F2] mb-3">
               Sensitivity Analysis (View B: Qualified Batting Innings)
             </h4>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs font-mono">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs font-sans">
               <div>
                 <span className="text-[11px] font-semibold text-[#858585] block font-sans mb-1">Qualified Innings</span>
                 <span className="text-lg font-bold text-[#F2F2F2] tabular-nums">

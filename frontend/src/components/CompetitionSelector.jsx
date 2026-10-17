@@ -18,13 +18,13 @@ export default function CompetitionSelector({ variant = 'pills', className = '' 
 
   if (variant === 'select') {
     return (
-      <div className={`relative inline-block ${className}`}>
+      <div className={`relative inline-block max-w-[105px] xs:max-w-[125px] sm:max-w-[150px] xl:max-w-[155px] 2xl:max-w-[210px] ${className}`}>
         <select
           id="competition-selector"
           aria-label="Tournament Selector"
           value={competition}
           onChange={(e) => setCompetition(e.target.value)}
-          className="h-9 sm:h-10 xl:h-9 2xl:h-10 max-w-[125px] sm:max-w-[150px] xl:max-w-[155px] 2xl:max-w-[210px] appearance-none bg-[#121212] border border-[#2D2D2D] hover:border-[#D4AF57]/60 focus:border-[#D4AF57] text-[#F2F2F2] text-[12.5px] sm:text-[13px] 2xl:text-[14px] font-semibold rounded-lg pl-3 pr-7 sm:pr-8 py-1 sm:py-1.5 transition-colors cursor-pointer shadow-xs focus:outline-none truncate"
+          className="h-8.5 sm:h-10 xl:h-9 2xl:h-10 w-full appearance-none bg-[#121212] border border-[#2D2D2D] hover:border-[#D4AF57]/60 focus:border-[#D4AF57] text-[#F2F2F2] text-[12px] sm:text-[13px] 2xl:text-[14px] font-semibold rounded-lg pl-2 sm:pl-3 pr-6 sm:pr-8 py-1 sm:py-1.5 transition-colors cursor-pointer shadow-xs focus:outline-none truncate"
         >
           {competitions.map((c) => (
             <option key={c.id} value={c.id} className="bg-[#161616] text-[#F2F2F2]">
@@ -32,7 +32,7 @@ export default function CompetitionSelector({ variant = 'pills', className = '' 
             </option>
           ))}
         </select>
-        <ChevronDown className="w-3.5 h-3.5 text-[#858585] absolute right-2.5 top-1/2 -translate-y-1/2 pointer-events-none" />
+        <ChevronDown className="w-3.5 h-3.5 text-[#858585] absolute right-2 sm:right-2.5 top-1/2 -translate-y-1/2 pointer-events-none" />
       </div>
     );
   }

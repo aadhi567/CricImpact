@@ -40,13 +40,13 @@ export default function SeasonFilter({
   }, [seasonOptions, seasons]);
 
   return (
-    <div className="bg-[#161616] rounded-xl p-4 sm:p-5 border border-[#2D2D2D] font-mono shadow-xs">
+    <div className="bg-[#161616] rounded-xl p-4 sm:p-5 border border-[#2D2D2D] font-sans shadow-xs">
       <div className="flex flex-col lg:flex-row items-stretch lg:items-end justify-between gap-4">
         {/* Dropdowns and Search Input */}
-        <div className="flex flex-wrap sm:flex-nowrap items-end gap-3 flex-1">
+        <div className="flex flex-wrap xl:flex-nowrap items-end gap-3 flex-1 min-w-0">
           {/* Tournament Type Selector (Shown on T20I pages) */}
           {showTournamentType && onTournamentTypeChange && (
-            <div className="w-full sm:w-auto min-w-[200px]">
+            <div className="w-full sm:w-auto sm:flex-1 min-w-0 sm:min-w-[140px]">
               <div className="flex items-center gap-1.5 text-[12.5px] font-semibold text-[#D4AF57] uppercase tracking-wider mb-1.5">
                 <Trophy className="w-3.5 h-3.5 text-[#D4AF57]" />
                 <span>Tournament Type</span>
@@ -67,7 +67,7 @@ export default function SeasonFilter({
           )}
 
           {/* Season Selector */}
-          <div className="w-full sm:w-auto min-w-[170px]">
+          <div className="w-full sm:w-auto sm:flex-1 min-w-0 sm:min-w-[130px]">
             <div className="flex items-center gap-1.5 text-[12.5px] font-semibold text-[#858585] uppercase tracking-wider mb-1.5">
               <Calendar className="w-3.5 h-3.5 text-[#858585]" />
               <span>Season / Year</span>
@@ -87,7 +87,7 @@ export default function SeasonFilter({
           </div>
 
           {/* Team Selector */}
-          <div className="w-full sm:w-auto min-w-[160px]">
+          <div className="w-full sm:w-auto sm:flex-1 min-w-0 sm:min-w-[130px]">
             <div className="flex items-center gap-1.5 text-[12.5px] font-semibold text-[#858585] uppercase tracking-wider mb-1.5">
               <Users className="w-3.5 h-3.5 text-[#858585]" />
               <span>Team</span>
@@ -109,7 +109,7 @@ export default function SeasonFilter({
 
           {/* Search Player */}
           {onSearchChange && (
-            <div className="w-full relative flex-1 min-w-[220px]">
+            <div className="w-full relative flex-1 min-w-0 sm:min-w-[180px]">
               <div className="flex items-center gap-1.5 text-[12.5px] font-semibold text-[#858585] uppercase tracking-wider mb-1.5">
                 <Search className="w-3.5 h-3.5 text-[#858585]" />
                 <span>Batter Search</span>
@@ -131,12 +131,12 @@ export default function SeasonFilter({
 
         {/* Minimum Runs Filter Pills */}
         {onMinRunsChange && (
-          <div className="flex flex-col gap-1.5 pt-3 lg:pt-0 border-t lg:border-t-0 border-[#222222] shrink-0">
+          <div className="flex flex-col gap-1.5 pt-3 lg:pt-0 border-t lg:border-t-0 border-[#222222] shrink-0 max-w-full">
             <span className="text-[12px] sm:text-[12.5px] font-semibold text-[#858585] flex items-center gap-1.5 uppercase tracking-wider">
               <Filter className="w-3.5 h-3.5 text-[#D4AF57]" />
               Min Runs:
             </span>
-            <div className="inline-flex rounded-lg bg-[#101010] p-1 border border-[#2D2D2D]">
+            <div className="flex flex-wrap sm:inline-flex rounded-lg bg-[#101010] p-1 border border-[#2D2D2D] gap-1 max-w-full">
               {RUN_THRESHOLDS.map((thresh) => {
                 const active = minRuns === thresh.value;
                 return (
@@ -144,7 +144,7 @@ export default function SeasonFilter({
                     key={thresh.value}
                     type="button"
                     onClick={() => onMinRunsChange(thresh.value)}
-                    className={`px-3 py-1.5 rounded-md text-[12px] sm:text-[12.5px] font-medium transition-colors cursor-pointer whitespace-nowrap ${
+                    className={`px-2.5 sm:px-3 py-1.5 rounded-md text-[12px] sm:text-[12.5px] font-medium transition-colors cursor-pointer flex-1 sm:flex-initial text-center ${
                       active
                         ? 'bg-[#D4AF57] text-[#080808] font-semibold'
                         : 'text-[#858585] hover:text-[#F2F2F2]'

@@ -260,8 +260,8 @@ export default function Dashboard({ initialFocus }) {
       {/* 1. Page Header (Cinzel 30–36px, Inter/Mono 15–16px) */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-5 border-b border-[#2D2D2D]">
         <div>
-          <div className="flex items-center gap-2 text-[12px] font-mono uppercase tracking-wider text-[#D4AF57] font-semibold mb-1.5">
-            <ShieldCheck className="w-4 h-4" />
+          <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 text-[11px] sm:text-[12px] font-mono uppercase tracking-wider text-[#D4AF57] font-semibold mb-1.5">
+            <ShieldCheck className="w-4 h-4 shrink-0" />
             <span>{activeMeta?.short_name || 'T20'} CONTRIBUTION ANALYSIS</span>
             {competition === 't20i' && tournamentType && tournamentType !== 'all' && (
               <>
@@ -276,10 +276,10 @@ export default function Dashboard({ initialFocus }) {
               {selectedSeason ? currentSeasonLabel : 'SEASON OVERVIEW'}
             </span>
           </div>
-          <h1 className="font-heading text-[30px] sm:text-[34px] lg:text-[36px] font-bold text-[#F2F2F2] tracking-wider leading-tight">
+          <h1 className="font-heading text-[22px] sm:text-[30px] lg:text-[36px] font-bold text-[#F2F2F2] tracking-wide leading-tight break-words">
             {activeMeta?.name ? `${activeMeta.name.toUpperCase()} ANALYSIS` : 'SEASON CONTRIBUTION ANALYSIS'}
           </h1>
-          <p className="text-[15px] sm:text-[16px] font-normal text-[#B8B8B8] mt-1.5 leading-relaxed max-w-5xl">
+          <p className="text-[14px] sm:text-[16px] font-normal text-[#B8B8B8] mt-1.5 leading-relaxed max-w-5xl">
             Analyze contextual batter contribution across actual batting opportunities in {activeMeta?.name || 'T20 cricket'}.
           </p>
         </div>
@@ -329,15 +329,15 @@ export default function Dashboard({ initialFocus }) {
               <h2 className="font-heading text-[21px] sm:text-[23px] font-bold text-[#F2F2F2] tracking-wide">
                 TOP SEASON CONTRIBUTORS
               </h2>
-              <span className="text-[11.5px] font-mono text-[#D4AF57] bg-[#161616] px-2.5 py-0.5 rounded border border-[#3D351E]">
+              <span className="text-[11.5px] font-sans text-[#D4AF57] bg-[#161616] px-2.5 py-0.5 rounded border border-[#3D351E]">
                 Par = 50.0
               </span>
             </div>
-            <p className="text-[13px] font-mono text-[#858585] mt-1">
+            <p className="text-[13px] font-sans text-[#858585] mt-1">
               Players with the highest average Contribution Score among qualified batting opportunities (minimum 2 batting innings).
             </p>
           </div>
-          <span className="text-[12px] font-mono text-[#858585] self-start sm:self-auto shrink-0 bg-[#161616] px-3 py-1 rounded-md border border-[#2D2D2D]">
+          <span className="text-[12px] font-sans text-[#858585] self-start sm:self-auto shrink-0 bg-[#161616] px-3 py-1 rounded-md border border-[#2D2D2D]">
             {selectedSeason || 'Season'} Qualification: ≥2 Innings
           </span>
         </div>
@@ -352,7 +352,7 @@ export default function Dashboard({ initialFocus }) {
           </div>
         ) : (
           <div className="overflow-x-auto">
-            <table className="w-full text-left border-collapse">
+            <table className="w-full text-left border-collapse font-sans">
               <thead>
                 <tr className="border-b border-[#2D2D2D] bg-[#101010] text-[#858585] font-semibold text-[12.5px] sm:text-[13px] tracking-wider uppercase">
                   <th className="py-3.5 px-3 text-center w-14 sm:w-16">Rank</th>
@@ -389,7 +389,7 @@ export default function Dashboard({ initialFocus }) {
                       <td className="py-3 px-4 sm:px-5 font-semibold text-[14.5px] text-[#F2F2F2] hover:text-[#D4AF57] whitespace-nowrap">
                         {p.player}
                         {p.not_outs > 0 && (
-                          <span className="text-[12px] font-normal text-[#858585] ml-1.5 font-mono">
+                          <span className="text-[12px] font-normal text-[#858585] ml-1.5 font-sans">
                             ({p.not_outs} NO)
                           </span>
                         )}
@@ -408,7 +408,7 @@ export default function Dashboard({ initialFocus }) {
                             : '—'}
                         </span>
                       </td>
-                      <td className="py-3 px-3.5 text-right font-mono text-[#5A9E60] font-medium tabular-nums whitespace-nowrap">
+                      <td className="py-3 px-3.5 text-right font-sans text-[#5A9E60] font-medium tabular-nums whitespace-nowrap">
                         {p.total_positive_raw_contribution !== null
                           ? Number(p.total_positive_raw_contribution).toFixed(2)
                           : '—'}
@@ -433,8 +433,8 @@ export default function Dashboard({ initialFocus }) {
           <h2 className="font-heading text-[21px] sm:text-[23px] font-bold text-[#F2F2F2]">
             Season Contribution Overview
           </h2>
-          <span className="text-[12px] font-mono text-[#858585] bg-[#161616] px-3 py-1 rounded-md border border-[#2D2D2D] self-start sm:self-auto">
-            Phase 7 Validated Model Outputs • Par Benchmark = 50.0
+          <span className="text-[12px] font-sans text-[#858585] bg-[#161616] px-3 py-1 rounded-md border border-[#2D2D2D] self-start sm:self-auto">
+            Strategy 4 Hybrid Scoring • Par Benchmark = 50.0
           </span>
         </div>
 
@@ -513,30 +513,33 @@ export default function Dashboard({ initialFocus }) {
           </div>
 
           {/* View A vs View B Toggle (Buttons: 13px) */}
-          <div className="inline-flex rounded-lg bg-[#101010] p-1 border border-[#2D2D2D] self-start sm:self-auto shrink-0">
+          <div className="inline-flex rounded-lg bg-[#101010] p-1 border border-[#2D2D2D] self-start sm:self-auto shrink-0 max-w-full">
             <button
               type="button"
               onClick={() => setViewMode('view_a')}
-              className={`px-3.5 py-1.5 rounded-md text-[13px] font-semibold transition-colors cursor-pointer ${
+              className={`px-2.5 sm:px-3.5 py-1.5 rounded-md text-[12px] sm:text-[13px] font-semibold transition-colors cursor-pointer ${
                 viewMode === 'view_a'
                   ? 'bg-[#D4AF57] text-[#080808] shadow-xs'
                   : 'text-[#858585] hover:text-[#F2F2F2]'
               }`}
               title="View A: Primary complete record of all genuine batting innings"
             >
-              View A: All Innings
+              <span>View A</span>
+              <span className="hidden sm:inline">: All Innings</span>
             </button>
             <button
               type="button"
               onClick={() => setViewMode('view_b')}
-              className={`px-3 py-1 rounded text-[12px] font-semibold transition-colors cursor-pointer ${
+              className={`px-2.5 sm:px-3.5 py-1.5 rounded-md text-[12px] sm:text-[13px] font-semibold transition-colors cursor-pointer ${
                 viewMode === 'view_b'
                   ? 'bg-[#D4AF57] text-[#080808] shadow-xs'
                   : 'text-[#858585] hover:text-[#F2F2F2]'
               }`}
               title="View B: Qualified sensitivity view (excludes negligible cameos)"
             >
-              View B: Qualified Sensitivity
+              <span>View B</span>
+              <span className="hidden sm:inline">: Qualified</span>
+              <span className="hidden md:inline"> Sensitivity</span>
             </button>
           </div>
         </div>
@@ -550,7 +553,7 @@ export default function Dashboard({ initialFocus }) {
         </div>
 
         {/* Full-width Responsive Table (Table header: 10-11px, Table content: 12-13px) */}
-        <div className="overflow-x-auto w-full">
+        <div className="overflow-x-auto w-full max-w-full min-w-0">
           <table className="w-full text-left border-collapse">
             <thead>
               <tr className="border-b border-[#2D2D2D] bg-[#161616] text-[#858585] font-semibold text-[12.5px] sm:text-[13px] tracking-wider sticky top-0 z-10">
@@ -672,17 +675,71 @@ export default function Dashboard({ initialFocus }) {
                 <th className="py-3.5 px-4 text-center text-[#858585]">ACTION</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-[#222222] text-[#F2F2F2] text-[14px] sm:text-[14.5px] font-normal">
+            <tbody className="divide-y divide-[#222222] text-[#F2F2F2] text-[14px] sm:text-[14.5px] font-normal font-sans">
               {loading ? (
-                <tr>
-                  <td colSpan="12" className="py-14 text-center text-[#858585]">
-                    <div className="text-[14px]">Loading season contribution records...</div>
-                  </td>
-                </tr>
+                Array.from({ length: 6 }).map((_, idx) => (
+                  <tr key={`skel-${idx}`} className="animate-pulse">
+                    <td className="py-4 px-4 sm:px-5">
+                      <div className="skeleton h-4 w-32 rounded" />
+                    </td>
+                    <td className="py-4 px-3.5">
+                      <div className="skeleton h-4 w-12 rounded" />
+                    </td>
+                    <td className="py-4 px-3 text-center">
+                      <div className="skeleton h-4 w-8 mx-auto rounded" />
+                    </td>
+                    <td className="py-4 px-3 text-center">
+                      <div className="skeleton h-4 w-8 mx-auto rounded" />
+                    </td>
+                    <td className="py-4 px-3 text-center">
+                      <div className="skeleton h-4 w-12 mx-auto rounded-full" />
+                    </td>
+                    <td className="py-4 px-3.5 text-right">
+                      <div className="skeleton h-4 w-10 ml-auto rounded" />
+                    </td>
+                    <td className="py-4 px-3 text-right">
+                      <div className="skeleton h-4 w-10 ml-auto rounded" />
+                    </td>
+                    <td className="py-4 px-3 text-right">
+                      <div className="skeleton h-4 w-12 ml-auto rounded" />
+                    </td>
+                    <td className="py-4 px-4 sm:px-5 text-center">
+                      <div className="skeleton h-6 w-14 mx-auto rounded-full" />
+                    </td>
+                    <td className="py-4 px-3.5 text-right">
+                      <div className="skeleton h-4 w-12 ml-auto rounded" />
+                    </td>
+                    <td className="py-4 px-3.5 text-right">
+                      <div className="skeleton h-4 w-12 ml-auto rounded" />
+                    </td>
+                    <td className="py-4 px-4 text-center">
+                      <div className="skeleton h-6 w-20 mx-auto rounded" />
+                    </td>
+                  </tr>
+                ))
               ) : sortedPlayers.length === 0 ? (
                 <tr>
-                  <td colSpan="12" className="py-14 text-center text-[#858585] text-[14px]">
-                    No players found matching the selected filters.
+                  <td colSpan="12" className="py-16 text-center">
+                    <div className="max-w-md mx-auto space-y-3">
+                      <div className="w-12 h-12 rounded-full bg-[#1A1A1A] border border-[#2D2D2D] flex items-center justify-center mx-auto text-[#D4AF57]">
+                        <Users className="w-6 h-6" />
+                      </div>
+                      <div className="text-[16px] font-semibold text-[#F2F2F2]">No Batters Found</div>
+                      <p className="text-[13px] text-[#858585]">
+                        No players matched your filter criteria ({selectedTeam || 'All Teams'}, {minRuns > 0 ? `Min ${minRuns} runs` : 'Any runs'}{searchQuery ? `, "${searchQuery}"` : ''}).
+                      </p>
+                      <button
+                        type="button"
+                        onClick={() => {
+                          setSelectedTeam('');
+                          setMinRuns(0);
+                          setSearchQuery('');
+                        }}
+                        className="btn-secondary text-[12.5px] py-1.5 px-4 cursor-pointer inline-flex items-center gap-1.5"
+                      >
+                        Reset Filters
+                      </button>
+                    </div>
                   </td>
                 </tr>
               ) : (
@@ -735,7 +792,7 @@ export default function Dashboard({ initialFocus }) {
                           {p.player}
                         </span>
                         {p.not_outs > 0 && (
-                          <span className="text-[12px] font-normal text-[#858585] ml-1.5 font-mono">
+                          <span className="text-[12px] font-normal text-[#858585] ml-1.5 font-sans">
                             ({p.not_outs} NO)
                           </span>
                         )}
@@ -755,13 +812,13 @@ export default function Dashboard({ initialFocus }) {
                       </td>
 
                       {/* DNB Matches */}
-                      <td className="py-3.5 px-3 text-center whitespace-nowrap text-[#858585] tabular-nums">
+                      <td className="py-3.5 px-3 text-center whitespace-nowrap tabular-nums">
                         {p.did_not_bat_matches > 0 ? (
-                          <span className="text-[#D4AF57] font-semibold">
-                            {p.did_not_bat_matches}
+                          <span className="badge-dnb">
+                            {p.did_not_bat_matches} DNB
                           </span>
                         ) : (
-                          '0'
+                          <span className="text-[#555555]">0</span>
                         )}
                       </td>
 

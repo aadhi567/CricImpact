@@ -19,17 +19,17 @@ import {
 export default function Methodology() {
 
   return (
-    <div className="w-full space-y-8 font-mono text-[#F2F2F2]">
+    <div className="w-full space-y-8 font-sans text-[#F2F2F2]">
       {/* Page Header */}
-      <div className="bg-[#161616] rounded-xl p-6 sm:p-8 border border-[#2D2D2D] flex flex-col md:flex-row md:items-center justify-between gap-6">
+      <div className="bg-[#161616] rounded-xl p-4 sm:p-6 md:p-8 border border-[#2D2D2D] flex flex-col md:flex-row md:items-center justify-between gap-6 min-w-0">
         <div>
-          <div className="flex items-center gap-2">
+          <div className="flex flex-wrap items-center gap-2">
             <span className="px-2.5 py-0.5 rounded text-[11px] font-semibold bg-[#101010] text-[#D4AF57] border border-[#D4AF57]/40 tracking-wider">
               Mathematical model specification
             </span>
             <span className="text-[12px] font-mono text-[#858585]">Production Phase 7U</span>
           </div>
-          <h1 className="font-heading text-[30px] sm:text-[34px] lg:text-[36px] font-bold text-[#F2F2F2] mt-2.5 tracking-wider leading-tight">
+          <h1 className="font-heading text-[22px] sm:text-[30px] lg:text-[36px] font-bold text-[#F2F2F2] mt-2.5 tracking-wide leading-tight break-words">
             How the Contribution Score is calculated
           </h1>
           <p className="text-[15px] sm:text-[16px] text-[#B8B8B8] mt-2 max-w-3xl leading-relaxed font-normal">

@@ -117,20 +117,20 @@ export default function Seasons() {
   }, [seasonOptions, selectedSeason, competition]);
 
   return (
-    <div className="w-full space-y-8 font-mono text-[#F2F2F2]">
+    <div className="w-full space-y-8 font-sans text-[#F2F2F2]">
       {/* 1. Page Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-5 border-b border-[#2D2D2D]">
         <div>
-          <div className="flex items-center gap-2 text-[12px] font-mono uppercase tracking-wider text-[#D4AF57] font-semibold mb-1.5">
-            <Trophy className="w-4 h-4" />
+          <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 text-[11px] sm:text-[12px] font-sans uppercase tracking-wider text-[#D4AF57] font-semibold mb-1.5">
+            <Trophy className="w-4 h-4 shrink-0" />
             <span>SEASON LEADERBOARD</span>
             <span className="text-[#858585]">•</span>
             <span className="text-[#F2F2F2]">{currentSeasonLabel}</span>
           </div>
-          <h1 className="font-heading text-[30px] sm:text-[34px] lg:text-[36px] font-bold text-[#F2F2F2] tracking-wider leading-tight">
+          <h1 className="font-heading text-[22px] sm:text-[30px] lg:text-[36px] font-bold text-[#F2F2F2] tracking-wide leading-tight break-words">
             TOP 10 BATTERS — {currentSeasonLabel}
           </h1>
-          <p className="text-[15px] sm:text-[16px] font-normal text-[#B8B8B8] mt-1.5 leading-relaxed max-w-5xl">
+          <p className="text-[14px] sm:text-[16px] font-normal text-[#B8B8B8] mt-1.5 leading-relaxed max-w-5xl">
             Top contributors are ranked by average Contribution Score among batters who scored at least {minRunsThreshold} runs in the selected tournament/season.
           </p>
         </div>
@@ -184,7 +184,7 @@ export default function Seasons() {
       </div>
 
       {/* 2. Methodology & Rules Badges */}
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 font-mono text-[13px]">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 font-sans text-[13px]">
         <div className="bg-[#161616] p-4 sm:p-5 rounded-xl border border-[#2D2D2D] flex items-center gap-3.5 shadow-xs">
           <div className="w-8 h-8 rounded-lg bg-[#1C1A14] border border-[#3D351E] flex items-center justify-center text-[#D4AF57] shrink-0">
             <ShieldCheck className="w-4.5 h-4.5" />
@@ -297,26 +297,28 @@ export default function Seasons() {
             <h2 className="font-heading text-[21px] sm:text-[23px] font-bold text-[#F2F2F2] tracking-wide">
               SEASON TOP 10 LEADERBOARD TABLE
             </h2>
-            <p className="text-[13px] font-mono text-[#858585] mt-1">
+            <p className="text-[13px] font-sans text-[#858585] mt-1">
               Ranked descending by Average Contribution Score. Only batters scoring {minRunsThreshold}+ runs in {currentSeasonLabel} are eligible.
             </p>
           </div>
-          <span className="text-[12px] font-mono text-[#D4AF57] bg-[#161616] px-3 py-1.5 rounded-lg border border-[#3D351E] self-start sm:self-auto">
+          <span className="text-[12px] font-sans text-[#D4AF57] bg-[#161616] px-3 py-1.5 rounded-lg border border-[#3D351E] self-start sm:self-auto">
             {top10Leaderboard.length} / 10 Ranked
           </span>
         </div>
 
         {loading ? (
-          <div className="py-14 text-center text-[14px] text-[#858585]">
-            Loading Top 10 season leaderboard...
+          <div className="p-6 space-y-3">
+            {Array.from({ length: 5 }).map((_, idx) => (
+              <div key={`skel-s-${idx}`} className="skeleton h-14 w-full rounded-lg" />
+            ))}
           </div>
         ) : top10Leaderboard.length === 0 ? (
           <div className="py-14 text-center text-[14px] text-[#858585]">
             No players reached the {minRunsThreshold}+ runs eligibility threshold in {currentSeasonLabel}.
           </div>
         ) : (
-          <div className="overflow-x-auto w-full">
-            <table className="w-full text-left border-collapse">
+          <div className="overflow-x-auto w-full max-w-full min-w-0">
+            <table className="w-full text-left border-collapse font-sans">
               <thead>
                 <tr className="border-b border-[#2D2D2D] bg-[#101010] text-[#858585] font-semibold text-[12.5px] sm:text-[13px] tracking-wider uppercase">
                   <th className="py-3.5 px-3.5 text-center w-14 sm:w-16">RANK</th>
@@ -371,7 +373,7 @@ export default function Seasons() {
                           {p.player}
                         </span>
                         {p.not_outs > 0 && (
-                          <span className="text-[12px] font-normal text-[#858585] ml-1.5 font-mono">
+                          <span className="text-[12px] font-normal text-[#858585] ml-1.5 font-sans">
                             ({p.not_outs} NO)
                           </span>
                         )}
@@ -412,14 +414,14 @@ export default function Seasons() {
                       </td>
 
                       {/* Positive Contribution */}
-                      <td className="py-3.5 px-3.5 text-right font-mono text-[#5A9E60] font-medium tabular-nums whitespace-nowrap">
+                      <td className="py-3.5 px-3.5 text-right font-sans text-[#5A9E60] font-medium tabular-nums whitespace-nowrap">
                         {p.total_positive_raw_contribution !== null
                           ? Number(p.total_positive_raw_contribution).toFixed(2)
                           : '—'}
                       </td>
 
                       {/* Team Share */}
-                      <td className="py-3.5 px-3.5 text-right font-mono text-[#F2F2F2] tabular-nums whitespace-nowrap">
+                      <td className="py-3.5 px-3.5 text-right font-sans text-[#F2F2F2] tabular-nums whitespace-nowrap">
                         {p.season_team_contribution_share !== null
                           ? `${Number(p.season_team_contribution_share).toFixed(1)}%`
                           : '—'}

@@ -82,8 +82,8 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-40 bg-[#080808]/95 backdrop-blur-md border-b border-[#2D2D2D] w-full">
-      <div className="w-[96%] 2xl:w-[94%] max-w-[1850px] mx-auto px-2 sm:px-3 xl:px-4 2xl:px-6">
-        <div className="flex items-center min-h-[58px] sm:min-h-[64px] 2xl:min-h-[70px] py-1.5 gap-2 xl:gap-2.5 2xl:gap-4">
+      <div className="w-full max-w-[1850px] mx-auto px-2.5 sm:px-3 xl:px-4 2xl:px-6">
+        <div className="flex items-center min-h-[54px] sm:min-h-[64px] 2xl:min-h-[70px] py-1.5 gap-1.5 sm:gap-2 xl:gap-2.5 2xl:gap-4">
           {/* 1. Left: Official CricImpact Logo on extreme left */}
           <div className="flex items-center shrink-0">
             <CricImpactLogo linkTo="/" size="navbar" priority />
@@ -121,7 +121,7 @@ export default function Navbar() {
           </div>
 
           {/* 4. Responsive Controls (< xl) */}
-          <div className="flex xl:hidden items-center gap-1.5 sm:gap-2 ml-auto shrink-0">
+          <div className="flex xl:hidden items-center gap-1 sm:gap-2 ml-auto shrink-0 min-w-0">
             <CompetitionSelector variant="select" className="shrink-0" />
             <div className="hidden sm:flex items-center shrink-0">
               <FormatSelector className="shrink-0" />
@@ -129,12 +129,12 @@ export default function Navbar() {
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="h-9 w-9 sm:h-10 sm:w-10 flex items-center justify-center rounded-lg text-[#B8B8B8] hover:text-[#F2F2F2] hover:bg-[#161616] border border-[#2D2D2D] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#D4AF57] cursor-pointer shrink-0"
+              className="h-8.5 w-8.5 sm:h-10 sm:w-10 flex items-center justify-center rounded-lg text-[#B8B8B8] hover:text-[#F2F2F2] hover:bg-[#161616] border border-[#2D2D2D] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#D4AF57] cursor-pointer shrink-0"
               aria-label="Toggle navigation menu"
               aria-expanded={mobileMenuOpen}
               aria-controls="mobile-nav-drawer"
             >
-              {mobileMenuOpen ? <X className="w-5 h-5 text-[#D4AF57]" /> : <Menu className="w-5 h-5" />}
+              {mobileMenuOpen ? <X className="w-4.5 h-4.5 text-[#D4AF57]" /> : <Menu className="w-4.5 h-4.5" />}
             </button>
           </div>
         </div>

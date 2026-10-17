@@ -215,12 +215,12 @@ export default function Players() {
   }, [seasonOptions, selectedSeason]);
 
   return (
-    <div className="w-full space-y-8 font-mono text-[#F2F2F2]">
+    <div className="w-full space-y-8 font-sans text-[#F2F2F2]">
       {/* 1. Page Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-5 border-b border-[#2D2D2D]">
         <div>
-          <div className="flex items-center gap-2 text-[12px] font-mono uppercase tracking-wider text-[#D4AF57] font-semibold mb-1.5">
-            <Users className="w-4 h-4" />
+          <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 text-[11px] sm:text-[12px] font-sans uppercase tracking-wider text-[#D4AF57] font-semibold mb-1.5">
+            <Users className="w-4 h-4 shrink-0" />
             <span>INDIVIDUAL PLAYER ANALYSIS</span>
             {competition === 't20i' && tournamentType && tournamentType !== 'all' && (
               <>
@@ -233,21 +233,21 @@ export default function Players() {
             <span className="text-[#858585]">•</span>
             <span className="text-[#F2F2F2]">{selectedSeason ? currentSeasonLabel : 'Season Overview'}</span>
           </div>
-          <h1 className="font-heading text-[30px] sm:text-[34px] lg:text-[36px] font-bold text-[#F2F2F2] tracking-wider leading-tight">
+          <h1 className="font-heading text-[22px] sm:text-[30px] lg:text-[36px] font-bold text-[#F2F2F2] tracking-wide leading-tight break-words">
             INDIVIDUAL PLAYER ANALYSIS
           </h1>
-          <p className="text-[15px] sm:text-[16px] font-normal text-[#B8B8B8] mt-1.5 leading-relaxed max-w-5xl">
+          <p className="text-[14px] sm:text-[16px] font-normal text-[#B8B8B8] mt-1.5 leading-relaxed max-w-5xl">
             Evaluate individual batter contribution, situation handling, and multi-player comparisons across {activeMeta?.name || 'the season'}.
           </p>
         </div>
 
         <div className="flex items-center gap-2.5 self-start sm:self-auto shrink-0 flex-wrap">
           {competition === 't20i' && (
-            <span className="px-3.5 py-2 rounded-lg text-[13px] font-medium bg-[#161616] text-[#858585] border border-[#2D2D2D]">
+            <span className="px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-lg text-[12px] sm:text-[13px] font-medium bg-[#161616] text-[#858585] border border-[#2D2D2D]">
               Tournament: <strong className="text-[#D4AF57] ml-1 font-semibold">{TOURNAMENT_TYPES.find((t) => t.id === tournamentType)?.label || 'All International T20Is'}</strong>
             </span>
           )}
-          <span className="px-3.5 py-2 rounded-lg text-[13px] font-medium bg-[#161616] text-[#858585] border border-[#2D2D2D]">
+          <span className="px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-lg text-[12px] sm:text-[13px] font-medium bg-[#161616] text-[#858585] border border-[#2D2D2D]">
             Players: <strong className="text-[#D4AF57] ml-1 font-semibold">{sortedPlayers.length}</strong>
           </span>
         </div>
@@ -289,12 +289,12 @@ export default function Players() {
       {/* 3. Player Analytical Table */}
       <div
         id="players-table"
-        className="bg-[#161616] rounded-xl border border-[#2D2D2D] shadow-xs overflow-hidden"
+        className="bg-[#161616] rounded-xl border border-[#2D2D2D] shadow-xs overflow-hidden max-w-full min-w-0"
       >
         <div className="p-4 sm:p-5 border-b border-[#2D2D2D] flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <div>
             <div className="flex items-center gap-2.5">
-              <h2 className="font-heading text-[21px] sm:text-[23px] font-bold text-[#F2F2F2]">
+              <h2 className="font-heading text-[19px] sm:text-[23px] font-bold text-[#F2F2F2]">
                 Season Player Analytical Table
               </h2>
               <span className="text-[13px] font-normal text-[#858585]">({sortedPlayers.length} players)</span>
@@ -322,37 +322,40 @@ export default function Players() {
             )}
 
             {/* View A vs View B Toggle */}
-            <div className="inline-flex rounded-lg bg-[#101010] p-1 border border-[#2D2D2D] self-start sm:self-auto shrink-0">
+            <div className="inline-flex rounded-lg bg-[#101010] p-1 border border-[#2D2D2D] self-start sm:self-auto shrink-0 max-w-full">
               <button
                 type="button"
                 onClick={() => setViewMode('view_a')}
-                className={`px-3.5 py-1.5 rounded-md text-[13px] font-semibold transition-colors cursor-pointer ${
+                className={`px-2.5 sm:px-3.5 py-1.5 rounded-md text-[12px] sm:text-[13px] font-semibold transition-colors cursor-pointer ${
                   viewMode === 'view_a'
                     ? 'bg-[#D4AF57] text-[#080808] shadow-xs'
                     : 'text-[#858585] hover:text-[#F2F2F2]'
                 }`}
                 title="View A: Primary complete record of all genuine batting innings"
               >
-                View A: All Innings
+                <span>View A</span>
+                <span className="hidden sm:inline">: All Innings</span>
               </button>
               <button
                 type="button"
                 onClick={() => setViewMode('view_b')}
-                className={`px-3.5 py-1.5 rounded-md text-[13px] font-semibold transition-colors cursor-pointer ${
+                className={`px-2.5 sm:px-3.5 py-1.5 rounded-md text-[12px] sm:text-[13px] font-semibold transition-colors cursor-pointer ${
                   viewMode === 'view_b'
                     ? 'bg-[#D4AF57] text-[#080808] shadow-xs'
                     : 'text-[#858585] hover:text-[#F2F2F2]'
                 }`}
                 title="View B: Qualified sensitivity view (excludes negligible cameos)"
               >
-                View B: Qualified Sensitivity
+                <span>View B</span>
+                <span className="hidden sm:inline">: Qualified</span>
+                <span className="hidden md:inline"> Sensitivity</span>
               </button>
             </div>
           </div>
         </div>
 
         {/* Informational Context Bar */}
-        <div className="px-5 py-2.5 bg-[#121212] border-b border-[#2D2D2D] text-[12.5px] font-normal text-[#858585] flex items-center gap-2">
+        <div className="px-4 sm:px-5 py-2.5 bg-[#121212] border-b border-[#2D2D2D] text-[12px] sm:text-[12.5px] font-normal text-[#858585] flex items-center gap-2">
           <Info className="w-4 h-4 text-[#D4AF57] shrink-0" />
           <span>
             <strong className="text-[#F2F2F2] font-semibold">Contextual Analytics:</strong> This analytical table evaluates performance against situational expectations. Par = 50.0.
@@ -360,7 +363,7 @@ export default function Players() {
         </div>
 
         {/* Responsive Table */}
-        <div className="overflow-x-auto w-full">
+        <div className="overflow-x-auto w-full max-w-full min-w-0">
           <table className="w-full text-left border-collapse">
             <thead>
               <tr className="border-b border-[#2D2D2D] bg-[#161616] text-[#858585] font-semibold text-[12.5px] sm:text-[13px] tracking-wider sticky top-0 z-10">
@@ -482,17 +485,72 @@ export default function Players() {
                 <th className="py-3.5 px-4 text-center text-[#858585]">ACTION</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-[#222222] text-[#F2F2F2] text-[13px] font-normal">
+            <tbody className="divide-y divide-[#222222] text-[#F2F2F2] text-[13.5px] sm:text-[14px] font-normal font-sans">
               {loading ? (
-                <tr>
-                  <td colSpan="12" className="py-12 text-center text-[#858585]">
-                    <div className="text-[13px]">Loading player contribution records...</div>
-                  </td>
-                </tr>
+                Array.from({ length: 6 }).map((_, idx) => (
+                  <tr key={`skel-p-${idx}`} className="animate-pulse">
+                    <td className="py-4 px-4 sm:px-5">
+                      <div className="skeleton h-4 w-32 rounded" />
+                    </td>
+                    <td className="py-4 px-3.5">
+                      <div className="skeleton h-4 w-12 rounded" />
+                    </td>
+                    <td className="py-4 px-3 text-center">
+                      <div className="skeleton h-4 w-8 mx-auto rounded" />
+                    </td>
+                    <td className="py-4 px-3 text-center">
+                      <div className="skeleton h-4 w-8 mx-auto rounded" />
+                    </td>
+                    <td className="py-4 px-3 text-center">
+                      <div className="skeleton h-4 w-12 mx-auto rounded-full" />
+                    </td>
+                    <td className="py-4 px-3.5 text-right">
+                      <div className="skeleton h-4 w-10 ml-auto rounded" />
+                    </td>
+                    <td className="py-4 px-3 text-right">
+                      <div className="skeleton h-4 w-10 ml-auto rounded" />
+                    </td>
+                    <td className="py-4 px-3 text-right">
+                      <div className="skeleton h-4 w-12 ml-auto rounded" />
+                    </td>
+                    <td className="py-4 px-4 sm:px-5 text-center">
+                      <div className="skeleton h-6 w-14 mx-auto rounded-full" />
+                    </td>
+                    <td className="py-4 px-3.5 text-right">
+                      <div className="skeleton h-4 w-12 ml-auto rounded" />
+                    </td>
+                    <td className="py-4 px-3.5 text-right">
+                      <div className="skeleton h-4 w-12 ml-auto rounded" />
+                    </td>
+                    <td className="py-4 px-4 text-center">
+                      <div className="skeleton h-6 w-20 mx-auto rounded" />
+                    </td>
+                  </tr>
+                ))
               ) : sortedPlayers.length === 0 ? (
                 <tr>
-                  <td colSpan="12" className="py-12 text-center text-[#858585] text-[13px]">
-                    No players found matching the selected filters.
+                  <td colSpan="12" className="py-16 text-center">
+                    <div className="max-w-md mx-auto space-y-3">
+                      <div className="w-12 h-12 rounded-full bg-[#1A1A1A] border border-[#2D2D2D] flex items-center justify-center mx-auto text-[#D4AF57]">
+                        <Users className="w-6 h-6" />
+                      </div>
+                      <div className="text-[16px] font-semibold text-[#F2F2F2]">No Batters Found</div>
+                      <p className="text-[13px] text-[#858585]">
+                        No players matched your filter criteria ({selectedTeam || 'All Teams'}, {minRuns > 0 ? `Min ${minRuns} runs` : 'Any runs'}{searchQuery ? `, "${searchQuery}"` : ''}).
+                      </p>
+                      <button
+                        type="button"
+                        onClick={() => {
+                          setSelectedTeam('');
+                          setMinRuns(0);
+                          setSearchQuery('');
+                          setCurrentPage(1);
+                        }}
+                        className="btn-secondary text-[12.5px] py-1.5 px-4 cursor-pointer inline-flex items-center gap-1.5"
+                      >
+                        Reset Filters
+                      </button>
+                    </div>
                   </td>
                 </tr>
               ) : (
@@ -544,7 +602,7 @@ export default function Players() {
                           {p.player}
                         </span>
                         {p.not_outs > 0 && (
-                          <span className="text-[12px] font-normal text-[#858585] ml-1.5 font-mono">
+                          <span className="text-[12px] font-normal text-[#858585] ml-1.5 font-sans">
                             ({p.not_outs} NO)
                           </span>
                         )}
@@ -564,13 +622,13 @@ export default function Players() {
                       </td>
 
                       {/* DNB Matches */}
-                      <td className="py-3.5 px-3 text-center whitespace-nowrap text-[#858585] tabular-nums">
+                      <td className="py-3.5 px-3 text-center whitespace-nowrap tabular-nums">
                         {p.did_not_bat_matches > 0 ? (
-                          <span className="text-[#D4AF57] font-semibold">
-                            {p.did_not_bat_matches}
+                          <span className="badge-dnb">
+                            {p.did_not_bat_matches} DNB
                           </span>
                         ) : (
-                          '0'
+                          <span className="text-[#555555]">0</span>
                         )}
                       </td>
 
