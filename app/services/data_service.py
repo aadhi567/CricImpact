@@ -9,6 +9,7 @@ Strictly adheres to:
 """
 
 import os
+import re
 import json
 import math
 import datetime
@@ -100,6 +101,11 @@ class DataService:
         self._thresholds: Optional[Dict[str, Any]] = None
         self._edge_cases: Optional[List[Dict[str, Any]]] = None
         self._examples: Optional[Dict[str, Any]] = None
+        self._career_players_cache: Optional[List[Dict[str, Any]]] = None
+        self._dataset_coverage_cache: Optional[Dict[str, Any]] = None
+        self._bowler_classification_cache: Optional[Dict[str, str]] = None
+        self._ipl_deliveries_df_cache: Optional[pd.DataFrame] = None
+        self._t20i_deliveries_cache: Dict[str, List[Dict[str, Any]]] = {}
 
     @property
     def _season_metrics_df(self) -> Optional[pd.DataFrame]:
@@ -234,12 +240,28 @@ class DataService:
         if not event_name or pd.isna(event_name):
             return "bilateral"
         ev = str(event_name).strip()
-        ev_lower = ev.lower()
-        if ev == "ICC Men's T20 World Cup":
-            return "world_cup"
-        if ev in ["Asia Cup", "Men's T20 Asia Cup", "Men's T20 Asia Cup Qualifier"]:
+        # Normalize unicode apostrophes and multiple whitespace
+        norm = re.sub(r"[\u2018\u2019\u201a\u201b\ufffd]", "'", ev)
+        norm = re.sub(r"\s+", " ", norm).strip()
+        norm_lower = norm.lower()
+
+        # Disqualify qualifiers, warm-ups, regional stages, youth/women events
+        exclusions = ["qualifier", "warm-up", "warm up", "women", "u19", "under-19", "region"]
+        if not any(ex in norm_lower for ex in exclusions):
+            wc_variants = [
+                "icc men's t20 world cup",
+                "icc mens t20 world cup",
+                "icc world twenty20",
+                "icc world t20",
+                "world t20",
+                "world twenty20",
+            ]
+            if norm_lower in wc_variants:
+                return "world_cup"
+
+        if norm_lower in ["asia cup", "men's t20 asia cup", "mens t20 asia cup", "men's t20 asia cup qualifier"]:
             return "asia_cup"
-        if any(k in ev_lower for k in [
+        if any(k in norm_lower for k in [
             "series", "tour of", "tour in", "in australia", "in india", "in england",
             "in new zealand", "in south africa", "in west indies", "in pakistan",
             "in sri lanka", "in bangladesh", "in zimbabwe", "in ireland",
@@ -322,6 +344,13 @@ class DataService:
                 {"value": "2026", "label": "T20 World Cup 2026"},
                 {"value": "2024", "label": "T20 World Cup 2024"},
                 {"value": "2022", "label": "T20 World Cup 2022"},
+                {"value": "2021", "label": "T20 World Cup 2021"},
+                {"value": "2016", "label": "T20 World Cup 2016"},
+                {"value": "2014", "label": "T20 World Cup 2014"},
+                {"value": "2012", "label": "T20 World Cup 2012"},
+                {"value": "2010", "label": "T20 World Cup 2010"},
+                {"value": "2009", "label": "T20 World Cup 2009"},
+                {"value": "2007", "label": "T20 World Cup 2007"},
             ]
             seasons = [opt["value"] for opt in options]
             return {
@@ -382,14 +411,23 @@ class DataService:
         if season and season != "All Seasons":
             s_str = str(season).strip()
             if t_clean == "world_cup":
-                if s_str == "2024":
-                    df = df[df["season"] == "2024"]
-                elif s_str in ("2022", "2022/23"):
-                    df = df[df["season"] == "2022/23"]
-                elif s_str in ("2026", "2025/26"):
-                    df = df[df["season"] == "2025/26"]
+                wc_season_map = {
+                    "2026": ["2025/26", "2026"],
+                    "2024": ["2024"],
+                    "2022": ["2022/23", "2022"],
+                    "2021": ["2021/22", "2021"],
+                    "2016": ["2015/16", "2016"],
+                    "2014": ["2013/14", "2014"],
+                    "2012": ["2012/13", "2012"],
+                    "2010": ["2010"],
+                    "2009": ["2009"],
+                    "2007": ["2007/08", "2007"],
+                }
+                if s_str in wc_season_map:
+                    target_seasons = wc_season_map[s_str]
+                    df = df[(df["season"].isin(target_seasons)) | (df["date"].astype(str).str.startswith(s_str))]
                 else:
-                    df = df[df["season"] == s_str]
+                    df = df[(df["season"] == s_str) | (df["date"].astype(str).str.startswith(s_str))]
             elif t_clean == "asia_cup":
                 df = df[df["season"] == s_str]
             else:
@@ -1680,6 +1718,8 @@ class DataService:
 
         priority = [
             "ICC Men's T20 World Cup",
+            "ICC World Twenty20",
+            "World T20",
             "Men's T20 Asia Cup",
             "Asia Cup",
             "Men's T20 Asia Cup Qualifier",
@@ -2000,6 +2040,1099 @@ class DataService:
             "stage": stage_val,
             "match_number": match_num_val,
         }
+
+    def _build_career_players_index(self):
+        """Builds and caches the list of all available batters across competitions."""
+        self._ensure_loaded("ipl")
+        self._ensure_loaded("t20i")
+
+        r_ipl = self.get_rosters_df("ipl")
+        r_t20i = self.get_rosters_df("t20i")
+        df_ipl = self.get_contributions_df("ipl")
+        df_t20i = self.get_contributions_df("t20i")
+        m_ipl = self.get_matches_df("ipl")
+        m_t20i = self.get_matches_df("t20i")
+
+        runs_ipl = df_ipl.groupby("player")["actual_runs"].sum().to_dict() if df_ipl is not None and not df_ipl.empty else {}
+        runs_t20i = df_t20i.groupby("player")["actual_runs"].sum().to_dict() if df_t20i is not None and not df_t20i.empty else {}
+
+        ipl_roster_players = set(r_ipl["player"].dropna().unique()) if r_ipl is not None and not r_ipl.empty else set()
+        t20i_roster_players = set(r_t20i["player"].dropna().unique()) if r_t20i is not None and not r_t20i.empty else set()
+
+        ipl_teams_by_player: Dict[str, set] = {}
+        if r_ipl is not None and not r_ipl.empty:
+            for _, r in r_ipl[["player", "team"]].dropna().drop_duplicates().iterrows():
+                ipl_teams_by_player.setdefault(str(r["player"]), set()).add(str(r["team"]))
+
+        t20i_teams_by_player: Dict[str, set] = {}
+        if r_t20i is not None and not r_t20i.empty:
+            for _, r in r_t20i[["player", "team"]].dropna().drop_duplicates().iterrows():
+                t20i_teams_by_player.setdefault(str(r["player"]), set()).add(str(r["team"]))
+
+        # Years
+        years_by_player: Dict[str, set] = {}
+        if r_ipl is not None and not r_ipl.empty and m_ipl is not None and not m_ipl.empty:
+            merged_ipl = r_ipl[["match_id", "player"]].merge(m_ipl[["match_id", "date"]], on="match_id")
+            merged_ipl["year"] = pd.to_datetime(merged_ipl["date"], errors="coerce").dt.year
+            for _, r in merged_ipl[["player", "year"]].dropna().drop_duplicates().iterrows():
+                years_by_player.setdefault(str(r["player"]), set()).add(int(r["year"]))
+
+        if r_t20i is not None and not r_t20i.empty and m_t20i is not None and not m_t20i.empty:
+            merged_t20i = r_t20i[["match_id", "player"]].merge(m_t20i[["match_id", "date"]], on="match_id")
+            merged_t20i["year"] = pd.to_datetime(merged_t20i["date"], errors="coerce").dt.year
+            for _, r in merged_t20i[["player", "year"]].dropna().drop_duplicates().iterrows():
+                years_by_player.setdefault(str(r["player"]), set()).add(int(r["year"]))
+
+        all_players = sorted(list(ipl_roster_players.union(t20i_roster_players)))
+        index_records = []
+
+        for p in all_players:
+            has_ipl = p in ipl_roster_players
+            has_t20i = p in t20i_roster_players
+            r_tot = int(runs_ipl.get(p, 0) + runs_t20i.get(p, 0))
+
+            teams = sorted(list(ipl_teams_by_player.get(p, set()).union(t20i_teams_by_player.get(p, set()))))
+            years = sorted(list(years_by_player.get(p, set())))
+
+            if years:
+                span_str = f"{years[0]} – {years[-1]}" if years[0] != years[-1] else str(years[0])
+            else:
+                span_str = "Available"
+
+            comps = []
+            if has_ipl:
+                comps.append("ipl")
+            if has_t20i:
+                comps.append("t20i")
+
+            index_records.append({
+                "player": p,
+                "has_ipl": has_ipl,
+                "has_t20i": has_t20i,
+                "competitions": comps,
+                "total_runs": r_tot,
+                "teams": teams,
+                "career_span": span_str,
+            })
+
+        # Sort descending by total runs so marquee batters are featured first
+        index_records.sort(key=lambda x: x["total_runs"], reverse=True)
+        self._career_players_cache = index_records
+
+    def search_career_players(
+        self,
+        query: Optional[str] = None,
+        competition: Optional[str] = None,
+        limit: int = 20,
+    ) -> List[Dict[str, Any]]:
+        """Searches batters across IPL and International coverage."""
+        if self._career_players_cache is None:
+            self._build_career_players_index()
+
+        records = self._career_players_cache or []
+        comp = competition.strip().lower() if competition else None
+
+        if comp == "ipl":
+            records = [r for r in records if r["has_ipl"]]
+        elif comp == "t20i":
+            records = [r for r in records if r["has_t20i"]]
+
+        if query:
+            q = query.strip().lower()
+            records = [r for r in records if q in r["player"].lower()]
+
+        return records[:limit]
+
+    def get_player_career(
+        self,
+        player_id: str,
+        competition: str = "combined",
+    ) -> Optional[Dict[str, Any]]:
+        """
+        Computes accurate player career aggregation and year/season timeline
+        across IPL, International (T20I), or Combined Career.
+        """
+        self._ensure_loaded("ipl")
+        self._ensure_loaded("t20i")
+
+        df_ipl = self.get_contributions_df("ipl")
+        df_t20i = self.get_contributions_df("t20i")
+        m_ipl = self.get_matches_df("ipl")
+        m_t20i = self.get_matches_df("t20i")
+        r_ipl = self.get_rosters_df("ipl")
+        r_t20i = self.get_rosters_df("t20i")
+
+        pid_lower = player_id.strip().lower()
+
+        # Locate canonical player name
+        p_ipl = [p for p in r_ipl["player"].dropna().unique() if p.lower() == pid_lower] if r_ipl is not None and not r_ipl.empty else []
+        p_t20i = [p for p in r_t20i["player"].dropna().unique() if p.lower() == pid_lower] if r_t20i is not None and not r_t20i.empty else []
+
+        if not p_ipl and not p_t20i:
+            return None
+
+        actual_name = p_ipl[0] if p_ipl else p_t20i[0]
+        has_ipl = len(p_ipl) > 0
+        has_t20i = len(p_t20i) > 0
+
+        norm_comp = competition.strip().lower()
+        if norm_comp not in ("ipl", "t20i", "combined"):
+            norm_comp = "combined"
+
+        # Match metadata maps
+        m_ipl_dict = {}
+        if m_ipl is not None and not m_ipl.empty:
+            for _, r in m_ipl.iterrows():
+                d_str = str(r.get("date", ""))
+                m_ipl_dict[str(r["match_id"])] = {
+                    "date": d_str,
+                    "season": str(r.get("season", "")),
+                    "year": int(pd.to_datetime(d_str).year) if pd.notnull(r.get("date")) and d_str else None,
+                    "competition": "IPL",
+                }
+
+        m_t20i_dict = {}
+        if m_t20i is not None and not m_t20i.empty:
+            for _, r in m_t20i.iterrows():
+                d_str = str(r.get("date", ""))
+                m_t20i_dict[str(r["match_id"])] = {
+                    "date": d_str,
+                    "season": str(r.get("season", "")),
+                    "year": int(pd.to_datetime(d_str).year) if pd.notnull(r.get("date")) and d_str else None,
+                    "competition": "International",
+                }
+
+        appearances: List[Dict[str, Any]] = []
+
+        # IPL appearances
+        if norm_comp in ("ipl", "combined") and has_ipl and r_ipl is not None and not r_ipl.empty:
+            sub_r = r_ipl[r_ipl["player"] == actual_name]
+            sub_c = df_ipl[df_ipl["player"] == actual_name] if df_ipl is not None and not df_ipl.empty else pd.DataFrame()
+            c_by_mid = {str(r["match_id"]): r for _, r in sub_c.iterrows()} if not sub_c.empty else {}
+
+            for _, r in sub_r.iterrows():
+                mid = str(r["match_id"])
+                minfo = m_ipl_dict.get(mid, {})
+                c_row = c_by_mid.get(mid)
+                is_dnb = c_row is None
+
+                team = str(r.get("team", ""))
+                app = {
+                    "match_id": mid,
+                    "competition": "IPL",
+                    "team": team,
+                    "season_label": minfo.get("season", str(r.get("season", ""))),
+                    "year": minfo.get("year"),
+                    "date": minfo.get("date"),
+                    "is_dnb": is_dnb,
+                    "runs": int(c_row.get("actual_runs", 0)) if not is_dnb else 0,
+                    "balls_faced": int(c_row.get("balls_faced", 0)) if not is_dnb else 0,
+                    "dot_balls": int(c_row.get("dot_balls", 0)) if not is_dnb and pd.notnull(c_row.get("dot_balls")) else 0,
+                    "contribution_score": clean_num(c_row.get("contribution_score"), 2) if not is_dnb else None,
+                    "raw_contribution": clean_num(c_row.get("raw_contribution"), 4) if not is_dnb else None,
+                }
+                appearances.append(app)
+
+        # T20I appearances
+        if norm_comp in ("t20i", "combined") and has_t20i and r_t20i is not None and not r_t20i.empty:
+            sub_r = r_t20i[r_t20i["player"] == actual_name]
+            sub_c = df_t20i[df_t20i["player"] == actual_name] if df_t20i is not None and not df_t20i.empty else pd.DataFrame()
+            c_by_mid = {str(r["match_id"]): r for _, r in sub_c.iterrows()} if not sub_c.empty else {}
+
+            for _, r in sub_r.iterrows():
+                mid = str(r["match_id"])
+                minfo = m_t20i_dict.get(mid, {})
+                c_row = c_by_mid.get(mid)
+                is_dnb = c_row is None
+
+                team = str(r.get("team", ""))
+                year_val = minfo.get("year")
+                season_str = str(year_val) if year_val else minfo.get("season", str(r.get("season", "")))
+
+                app = {
+                    "match_id": mid,
+                    "competition": "International",
+                    "team": team,
+                    "season_label": season_str,
+                    "year": year_val,
+                    "date": minfo.get("date"),
+                    "is_dnb": is_dnb,
+                    "runs": int(c_row.get("actual_runs", 0)) if not is_dnb else 0,
+                    "balls_faced": int(c_row.get("balls_faced", 0)) if not is_dnb else 0,
+                    "dot_balls": int(c_row.get("dot_balls", 0)) if not is_dnb and pd.notnull(c_row.get("dot_balls")) else 0,
+                    "contribution_score": clean_num(c_row.get("contribution_score"), 2) if not is_dnb else None,
+                    "raw_contribution": clean_num(c_row.get("raw_contribution"), 4) if not is_dnb else None,
+                }
+                appearances.append(app)
+
+        if not appearances:
+            return {
+                "player": actual_name,
+                "competition": norm_comp,
+                "available_competitions": {"ipl": has_ipl, "t20i": has_t20i},
+                "career_summary": {
+                    "player": actual_name,
+                    "teams": [],
+                    "career_span": "N/A",
+                    "seasons_count": 0,
+                    "matches": 0,
+                    "batting_innings": 0,
+                    "dnb_matches": 0,
+                    "runs": 0,
+                    "balls_faced": 0,
+                    "strike_rate": None,
+                    "average_contribution": None,
+                    "positive_appearances": 0,
+                    "eligible_appearances": 0,
+                    "positive_contribution_rate": None,
+                    "dot_balls": 0,
+                    "eligible_balls": 0,
+                    "dot_ball_percentage": None,
+                },
+                "career_highs_lows": self._compute_career_highs_lows([]),
+                "bowling_type_trends": {
+                    "summary": {
+                        "total_balls_faced": 0,
+                        "classified_balls_faced": 0,
+                        "unclassified_balls_faced": 0,
+                        "coverage_percentage": 100.0,
+                        "is_coverage_complete": True,
+                        "pace": self._empty_bowling_stats(),
+                        "spin": self._empty_bowling_stats(),
+                    },
+                    "seasons": [],
+                    "coverage_info": {
+                        "total_balls_faced": 0,
+                        "classified_balls": 0,
+                        "unclassified_balls": 0,
+                        "coverage_percentage": 100.0,
+                        "classification_source": "Auditable Bowler Style Registry (577 bowlers)",
+                        "unclassified_bowlers_count": 0,
+                        "unclassified_bowlers": [],
+                    },
+                },
+                "timeline": [],
+                "dataset_coverage": self.get_dataset_coverage(),
+            }
+
+        def get_group_key(app):
+            if norm_comp == "ipl":
+                return app["season_label"]
+            elif norm_comp == "t20i":
+                return str(app["year"]) if app["year"] else app["season_label"]
+            else:
+                return str(app["year"]) if app["year"] else app["season_label"]
+
+        def get_sort_key(group_key, apps):
+            dates = [a["date"] for a in apps if a.get("date")]
+            if dates:
+                return min(dates)
+            nums = [int(s) for s in str(group_key).split("/") if s.isdigit()]
+            return str(nums[0]) if nums else str(group_key)
+
+        grouped: Dict[str, List[Dict[str, Any]]] = {}
+        for app in appearances:
+            gk = get_group_key(app)
+            grouped.setdefault(gk, []).append(app)
+
+        sorted_keys = sorted(grouped.keys(), key=lambda k: get_sort_key(k, grouped[k]))
+
+        timeline: List[Dict[str, Any]] = []
+
+        for k in sorted_keys:
+            group_apps = grouped[k]
+            matches = len(group_apps)
+            batted_apps = [a for a in group_apps if not a["is_dnb"]]
+            batting_inns = len(batted_apps)
+            dnb_matches = matches - batting_inns
+
+            tot_runs = sum(a["runs"] for a in batted_apps)
+            tot_balls = sum(a["balls_faced"] for a in batted_apps)
+            tot_dots = sum(a["dot_balls"] for a in batted_apps)
+
+            sr = clean_num(tot_runs / tot_balls * 100.0, 1) if tot_balls > 0 else None
+            dot_pct = clean_num(tot_dots / tot_balls * 100.0, 1) if tot_balls > 0 else None
+
+            valid_scores = [a["contribution_score"] for a in batted_apps if a["contribution_score"] is not None]
+            eligible_appearances = len(valid_scores)
+            pos_appearances = sum(1 for s in valid_scores if s > 50.0)
+
+            avg_contrib = clean_num(float(np.mean(valid_scores)), 2) if valid_scores else None
+            pos_rate = clean_num(pos_appearances / eligible_appearances * 100.0, 1) if eligible_appearances > 0 else None
+
+            ipl_apps = [a for a in batted_apps if a["competition"] == "IPL"]
+            t20i_apps = [a for a in batted_apps if a["competition"] == "International"]
+
+            ipl_runs = sum(a["runs"] for a in ipl_apps)
+            t20i_runs = sum(a["runs"] for a in t20i_apps)
+
+            ipl_scores = [a["contribution_score"] for a in ipl_apps if a["contribution_score"] is not None]
+            t20i_scores = [a["contribution_score"] for a in t20i_apps if a["contribution_score"] is not None]
+
+            comp_label = (
+                "IPL" if norm_comp == "ipl"
+                else "International" if norm_comp == "t20i"
+                else ("IPL + INL" if (len(ipl_apps) > 0 and len(t20i_apps) > 0) else ("IPL" if len(ipl_apps) > 0 else "International"))
+            )
+
+            timeline.append({
+                "season": k,
+                "competition": comp_label,
+                "matches": matches,
+                "batting_innings": batting_inns,
+                "dnb_matches": dnb_matches,
+                "runs": tot_runs,
+                "balls_faced": tot_balls,
+                "strike_rate": sr,
+                "average_contribution": avg_contrib,
+                "positive_contribution_rate": pos_rate,
+                "positive_appearances": pos_appearances,
+                "eligible_appearances": eligible_appearances,
+                "dot_balls": tot_dots,
+                "eligible_balls": tot_balls,
+                "dot_ball_percentage": dot_pct,
+                "ipl_runs": ipl_runs if norm_comp == "combined" else None,
+                "t20i_runs": t20i_runs if norm_comp == "combined" else None,
+                "ipl_innings": len(ipl_apps) if norm_comp == "combined" else None,
+                "t20i_innings": len(t20i_apps) if norm_comp == "combined" else None,
+                "ipl_avg_contribution": clean_num(float(np.mean(ipl_scores)), 2) if ipl_scores else None,
+                "t20i_avg_contribution": clean_num(float(np.mean(t20i_scores)), 2) if t20i_scores else None,
+            })
+
+        tot_matches = len(appearances)
+        all_batted = [a for a in appearances if not a["is_dnb"]]
+        tot_batting_inns = len(all_batted)
+        tot_dnb = tot_matches - tot_batting_inns
+
+        career_runs = sum(a["runs"] for a in all_batted)
+        career_balls = sum(a["balls_faced"] for a in all_batted)
+        career_dots = sum(a["dot_balls"] for a in all_batted)
+
+        career_sr = clean_num(career_runs / career_balls * 100.0, 1) if career_balls > 0 else None
+        career_dot_pct = clean_num(career_dots / career_balls * 100.0, 1) if career_balls > 0 else None
+
+        all_valid_scores = [a["contribution_score"] for a in all_batted if a["contribution_score"] is not None]
+        career_eligible = len(all_valid_scores)
+        career_pos_app = sum(1 for s in all_valid_scores if s > 50.0)
+
+        career_avg_contrib = clean_num(float(np.mean(all_valid_scores)), 2) if all_valid_scores else None
+        career_pos_rate = clean_num(career_pos_app / career_eligible * 100.0, 1) if career_eligible > 0 else None
+
+        teams = sorted(list(set(a["team"] for a in appearances if a.get("team"))))
+        span_start = sorted_keys[0] if sorted_keys else "N/A"
+        span_end = sorted_keys[-1] if sorted_keys else "N/A"
+        career_span = f"{span_start} – {span_end}" if span_start != span_end else str(span_start)
+
+        summary = {
+            "player": actual_name,
+            "teams": teams,
+            "career_span": career_span,
+            "seasons_count": len(sorted_keys),
+            "matches": tot_matches,
+            "total_matches": tot_matches,
+            "batting_innings": tot_batting_inns,
+            "dnb_matches": tot_dnb,
+            "runs": career_runs,
+            "total_runs": career_runs,
+            "balls_faced": career_balls,
+            "strike_rate": career_sr,
+            "average_contribution": career_avg_contrib,
+            "positive_appearances": career_pos_app,
+            "eligible_appearances": career_eligible,
+            "positive_contribution_rate": career_pos_rate,
+            "dot_balls": career_dots,
+            "eligible_balls": career_balls,
+            "dot_ball_percentage": career_dot_pct,
+        }
+
+        highs_lows = self._compute_career_highs_lows(timeline)
+        bowling_trends = self._compute_bowling_type_trends(
+            player_name=actual_name,
+            norm_comp=norm_comp,
+            appearances=appearances,
+            sorted_keys=sorted_keys,
+            grouped=grouped,
+        )
+
+        return {
+            "player": actual_name,
+            "competition": norm_comp,
+            "available_competitions": {"ipl": has_ipl, "t20i": has_t20i},
+            "career_summary": summary,
+            "career_highs_lows": highs_lows,
+            "bowling_type_trends": bowling_trends,
+            "timeline": timeline,
+            "dataset_coverage": self.get_dataset_coverage(),
+        }
+
+    @staticmethod
+    def _compute_career_highs_lows(timeline: List[Dict[str, Any]]) -> Dict[str, Any]:
+        """
+        Identifies deterministic highest and lowest seasonal benchmarks across:
+        1. Total runs (excluding pure DNB seasons with 0 batting innings)
+        2. Strike rate (strictly seasonal total runs / balls faced * 100)
+        3. Dot-ball percentage (strictly eligible dot balls / eligible legal balls * 100)
+        4. Average contribution score (Strategy 4 scores, Par benchmark 50.0)
+        """
+        def _build_entry(s_dict: Dict[str, Any], val: Any, tied: List[str]):
+            b_inns = int(s_dict.get("batting_innings", 0))
+            balls = int(s_dict.get("balls_faced", 0))
+            is_limited = b_inns < 5 or balls < 30
+            matches = int(s_dict.get("matches", 0))
+            dnb = int(s_dict.get("dnb_matches", matches - b_inns))
+
+            note_parts = [f"{b_inns} innings", f"{balls} balls"]
+            if dnb > 0:
+                note_parts.append(f"{dnb} DNB")
+
+            return {
+                "season": str(s_dict.get("season", "")),
+                "value": val,
+                "matches": matches,
+                "batting_innings": b_inns,
+                "dnb_matches": dnb,
+                "balls_faced": balls,
+                "runs": int(s_dict.get("runs", 0)),
+                "competition": str(s_dict.get("competition", "Unknown")),
+                "is_limited_sample": is_limited,
+                "sample_note": " • ".join(note_parts),
+                "tied_seasons": tied,
+            }
+
+        # 1. Total Runs (only seasons with at least 1 batting appearance)
+        runs_seasons = [s for s in timeline if int(s.get("batting_innings", 0)) > 0 and s.get("runs") is not None]
+        if not runs_seasons:
+            runs_block = {
+                "metric_id": "runs",
+                "label": "Total Runs",
+                "unit": "runs",
+                "highest": None,
+                "lowest": None,
+                "insufficient_data": True,
+                "interpretation": "Volume of runs scored across the season/year. Requires at least one batting appearance.",
+            }
+        else:
+            max_r = max(s["runs"] for s in runs_seasons)
+            min_r = min(s["runs"] for s in runs_seasons)
+            max_s = [s for s in runs_seasons if s["runs"] == max_r]
+            min_s = [s for s in runs_seasons if s["runs"] == min_r]
+            runs_block = {
+                "metric_id": "runs",
+                "label": "Total Runs",
+                "unit": "runs",
+                "highest": _build_entry(max_s[0], max_r, [str(s["season"]) for s in max_s[1:]]),
+                "lowest": _build_entry(min_s[0], min_r, [str(s["season"]) for s in min_s[1:]]),
+                "insufficient_data": False,
+                "interpretation": "Total volume of runs scored in a campaign. Low values often reflect small opportunity rather than poor form.",
+            }
+
+        # 2. Strike Rate (only seasons with balls_faced > 0)
+        sr_seasons = [s for s in timeline if int(s.get("balls_faced", 0)) > 0 and s.get("strike_rate") is not None]
+        if not sr_seasons:
+            sr_block = {
+                "metric_id": "strike_rate",
+                "label": "Strike Rate",
+                "unit": "runs / 100 balls",
+                "highest": None,
+                "lowest": None,
+                "insufficient_data": True,
+                "interpretation": "Scoring rate calculated strictly as (Total Runs / Total Balls) × 100.",
+            }
+        else:
+            max_sr = max(s["strike_rate"] for s in sr_seasons)
+            min_sr = min(s["strike_rate"] for s in sr_seasons)
+            max_s = [s for s in sr_seasons if s["strike_rate"] == max_sr]
+            min_s = [s for s in sr_seasons if s["strike_rate"] == min_sr]
+            sr_block = {
+                "metric_id": "strike_rate",
+                "label": "Strike Rate",
+                "unit": "runs / 100 balls",
+                "highest": _build_entry(max_s[0], max_sr, [str(s["season"]) for s in max_s[1:]]),
+                "lowest": _build_entry(min_s[0], min_sr, [str(s["season"]) for s in min_s[1:]]),
+                "insufficient_data": False,
+                "interpretation": "Scoring velocity calibrated against balls faced. Short campaigns (<30 balls) can produce volatile extremes.",
+            }
+
+        # 3. Dot-Ball Percentage (only seasons with eligible_balls > 0)
+        dot_seasons = [s for s in timeline if int(s.get("eligible_balls", 0)) > 0 and s.get("dot_ball_percentage") is not None]
+        if not dot_seasons:
+            dot_block = {
+                "metric_id": "dot_ball_percentage",
+                "label": "Dot-Ball Percentage",
+                "unit": "%",
+                "highest": None,
+                "lowest": None,
+                "insufficient_data": True,
+                "interpretation": "Proportion of legal balls faced producing 0 runs. Lower values reflect superior strike rotation.",
+            }
+        else:
+            max_d = max(s["dot_ball_percentage"] for s in dot_seasons)
+            min_d = min(s["dot_ball_percentage"] for s in dot_seasons)
+            max_s = [s for s in dot_seasons if s["dot_ball_percentage"] == max_d]
+            min_s = [s for s in dot_seasons if s["dot_ball_percentage"] == min_d]
+            dot_block = {
+                "metric_id": "dot_ball_percentage",
+                "label": "Dot-Ball Percentage",
+                "unit": "%",
+                "highest": _build_entry(max_s[0], max_d, [str(s["season"]) for s in max_s[1:]]),
+                "lowest": _build_entry(min_s[0], min_d, [str(s["season"]) for s in min_s[1:]]),
+                "insufficient_data": False,
+                "interpretation": "Percentage of legal balls faced yielding no runs. Lower dot-ball percentage indicates efficient strike rotation and lower pressure buildup.",
+            }
+
+        # 4. Average Contribution Score (only seasons with eligible_appearances > 0 and average_contribution is not None)
+        c_seasons = [s for s in timeline if int(s.get("eligible_appearances", 0)) > 0 and s.get("average_contribution") is not None]
+        if not c_seasons:
+            c_block = {
+                "metric_id": "average_contribution",
+                "label": "Average Contribution Score",
+                "unit": "/ 100",
+                "highest": None,
+                "lowest": None,
+                "insufficient_data": True,
+                "interpretation": "Official Strategy 4 contribution score relative to Par (50.0). DNB matches are strictly excluded.",
+            }
+        else:
+            max_c = max(s["average_contribution"] for s in c_seasons)
+            min_c = min(s["average_contribution"] for s in c_seasons)
+            max_s = [s for s in c_seasons if s["average_contribution"] == max_c]
+            min_s = [s for s in c_seasons if s["average_contribution"] == min_c]
+            c_block = {
+                "metric_id": "average_contribution",
+                "label": "Average Contribution Score",
+                "unit": "/ 100",
+                "highest": _build_entry(max_s[0], max_c, [str(s["season"]) for s in max_s[1:]]),
+                "lowest": _build_entry(min_s[0], min_c, [str(s["season"]) for s in min_s[1:]]),
+                "insufficient_data": False,
+                "interpretation": "Synthesized batting execution and team match state impact. Scores above 50.0 add positive situational value.",
+            }
+
+        return {
+            "runs": runs_block,
+            "strike_rate": sr_block,
+            "dot_ball_percentage": dot_block,
+            "average_contribution": c_block,
+        }
+
+    def _get_bowler_classification(self) -> Dict[str, str]:
+        """Loads and caches auditable verified bowler style mapping."""
+        if self._bowler_classification_cache is None:
+            fpath = DATA_DIR / "bowler_classification.json"
+            if fpath.exists():
+                with open(fpath, "r", encoding="utf-8") as f:
+                    self._bowler_classification_cache = json.load(f)
+            else:
+                self._bowler_classification_cache = {}
+        return self._bowler_classification_cache
+
+    BOWLER_CREDITED_DISMISSALS = {
+        "bowled",
+        "caught",
+        "caught and bowled",
+        "lbw",
+        "stumped",
+        "hit wicket",
+    }
+
+    @classmethod
+    def _is_bowler_credited_dismissal(cls, kind: Optional[str]) -> bool:
+        """Determines if a dismissal kind is officially credited to the bowler."""
+        if not kind:
+            return False
+        norm = str(kind).strip().lower().replace("-", " ").replace("&", "and")
+        return norm in cls.BOWLER_CREDITED_DISMISSALS
+
+    @classmethod
+    def _extract_bowler_dismissal_event(
+        cls, delivery: Dict[str, Any], player_name: str
+    ) -> Optional[Dict[str, Any]]:
+        """
+        Extracts bowler-credited dismissal event for a batter from a delivery record.
+        Strictly excludes run-outs, retired out/hurt, and other non-bowler-credited dismissals.
+        Returns dismissal dict with bowler, kind, and unique delivery identifier.
+        """
+        # 1. Check multi-wicket structures (e.g. from T20I JSON match deliveries)
+        wickets = delivery.get("wickets")
+        if wickets and isinstance(wickets, list):
+            for w in wickets:
+                if w.get("player_out") == player_name:
+                    kind = w.get("kind")
+                    if cls._is_bowler_credited_dismissal(kind):
+                        return {
+                            "bowler": delivery.get("bowler"),
+                            "dismissal_kind": kind,
+                            "match_id": str(delivery.get("match_id", "")),
+                            "innings": str(delivery.get("innings") or delivery.get("innings_number", "1")),
+                            "over": str(delivery.get("over", "")),
+                            "ball": str(delivery.get("ball", "")),
+                        }
+                    return None
+
+        # 2. Check standard fields (e.g. from IPL CSV deliveries)
+        p_out = delivery.get("player_dismissed")
+        if p_out == player_name:
+            kind = delivery.get("dismissal_kind")
+            if cls._is_bowler_credited_dismissal(kind):
+                return {
+                    "bowler": delivery.get("bowler"),
+                    "dismissal_kind": kind,
+                    "match_id": str(delivery.get("match_id", "")),
+                    "innings": str(delivery.get("innings_number") or delivery.get("innings", "1")),
+                    "over": str(delivery.get("over", "")),
+                    "ball": str(delivery.get("ball", "")),
+                }
+
+        return None
+
+    def _get_ipl_deliveries_df(self) -> Optional[pd.DataFrame]:
+        """Loads and caches IPL ball-by-ball delivery dataset."""
+        if self._ipl_deliveries_df_cache is None:
+            fpath = DATA_DIR / "deliveries.csv"
+            if fpath.exists():
+                cols = [
+                    "match_id",
+                    "innings_number",
+                    "over",
+                    "ball",
+                    "season",
+                    "batter",
+                    "bowler",
+                    "batter_runs",
+                    "total_runs",
+                    "wides",
+                    "player_dismissed",
+                    "dismissal_kind",
+                ]
+                df = pd.read_csv(fpath, usecols=cols, low_memory=False)
+                df["match_id"] = df["match_id"].astype(str)
+                self._ipl_deliveries_df_cache = df
+            else:
+                self._ipl_deliveries_df_cache = pd.DataFrame()
+        return self._ipl_deliveries_df_cache
+
+    def _get_t20i_match_deliveries(self, match_id: Any) -> List[Dict[str, Any]]:
+        """Parses and caches T20I match ball-by-ball deliveries from raw match JSON."""
+        mid_str = str(match_id)
+        if mid_str in self._t20i_deliveries_cache:
+            return self._t20i_deliveries_cache[mid_str]
+
+        raw_dirs = [
+            ROOT_DIR / "data" / "t20s_json",
+            ROOT_DIR / "data" / "raw",
+        ]
+        fpath = None
+        for d in raw_dirs:
+            cand = d / f"{mid_str}.json"
+            if cand.exists():
+                fpath = cand
+                break
+
+        deliveries = []
+        if fpath and fpath.exists():
+            try:
+                with open(fpath, "r", encoding="utf-8") as f:
+                    data = json.load(f)
+                inns_list = data.get("innings", [])
+                for inns_idx, inns in enumerate(inns_list, start=1):
+                    for over_idx, over in enumerate(inns.get("overs", [])):
+                        over_num = over.get("over", over_idx)
+                        for ball_idx, d in enumerate(over.get("deliveries", [])):
+                            batter = d.get("batter")
+                            bowler = d.get("bowler")
+                            extras = d.get("extras", {})
+                            wides = 1 if "wides" in extras else 0
+                            runs_dict = d.get("runs", {})
+                            b_runs = int(runs_dict.get("batter", 0))
+                            tot_runs = int(runs_dict.get("total", 0))
+                            wickets = d.get("wickets", [])
+
+                            p_out = None
+                            kind = None
+                            if wickets:
+                                p_out = wickets[0].get("player_out")
+                                kind = wickets[0].get("kind")
+
+                            deliveries.append({
+                                "match_id": mid_str,
+                                "innings": inns_idx,
+                                "over": over_num,
+                                "ball": ball_idx + 1,
+                                "batter": batter,
+                                "bowler": bowler,
+                                "batter_runs": b_runs,
+                                "total_runs": tot_runs,
+                                "wides": wides,
+                                "player_dismissed": p_out,
+                                "dismissal_kind": kind,
+                                "wickets": wickets,
+                            })
+            except Exception:
+                pass
+
+        self._t20i_deliveries_cache[mid_str] = deliveries
+        return deliveries
+
+    @staticmethod
+    def _empty_bowling_stats() -> Dict[str, Any]:
+        """Returns baseline empty stats structure when 0 balls are faced."""
+        return {
+            "runs": 0,
+            "balls_faced": 0,
+            "strike_rate": None,
+            "dismissals": 0,
+            "average": None,
+            "dot_balls": 0,
+            "dot_ball_percentage": None,
+            "fours": 0,
+            "sixes": 0,
+            "boundary_runs": 0,
+            "boundary_percentage": None,
+            "boundary_ball_percentage": None,
+            "is_not_out": False,
+            "insufficient_sample": False,
+        }
+
+    @staticmethod
+    def _compute_bowling_stats(balls: List[Dict[str, Any]], outs: List[Dict[str, Any]]) -> Dict[str, Any]:
+        """
+        Calculates aggregate batting metrics against a specific bowling category.
+        Strictly enforces:
+        - Strike rate = (runs / balls_faced) * 100
+        - Average = runs / dismissals (None with is_not_out=True when dismissals == 0 and balls > 0)
+        - Dot-ball % = dot_balls / balls_faced * 100
+        - Boundary % = (boundary_runs / runs) * 100
+        - Boundary ball % = ((fours + sixes) / balls_faced) * 100
+        - Flag seasons with insufficient sample (<20 balls)
+        """
+        b_count = len(balls)
+        if b_count == 0:
+            return DataService._empty_bowling_stats()
+
+        runs = sum(int(b.get("batter_runs", 0)) for b in balls)
+        sr = clean_num(runs / b_count * 100.0, 1)
+        dismissals = len(outs)
+        is_not_out = (dismissals == 0)
+        avg = clean_num(runs / dismissals, 1) if dismissals > 0 else None
+        dots = sum(1 for b in balls if int(b.get("total_runs", 0)) == 0)
+        dot_pct = clean_num(dots / b_count * 100.0, 1)
+        fours = sum(1 for b in balls if int(b.get("batter_runs", 0)) == 4)
+        sixes = sum(1 for b in balls if int(b.get("batter_runs", 0)) == 6)
+        b_runs = (fours * 4) + (sixes * 6)
+        b_pct = clean_num(b_runs / runs * 100.0, 1) if runs > 0 else 0.0
+        b_ball_pct = clean_num((fours + sixes) / b_count * 100.0, 1)
+
+        return {
+            "runs": runs,
+            "balls_faced": b_count,
+            "strike_rate": sr,
+            "dismissals": dismissals,
+            "average": avg,
+            "dot_balls": dots,
+            "dot_ball_percentage": dot_pct,
+            "fours": fours,
+            "sixes": sixes,
+            "boundary_runs": b_runs,
+            "boundary_percentage": b_pct,
+            "boundary_ball_percentage": b_ball_pct,
+            "is_not_out": is_not_out,
+            "insufficient_sample": b_count < 20,
+        }
+
+    def _compute_bowling_type_trends(
+        self,
+        player_name: str,
+        norm_comp: str,
+        appearances: List[Dict[str, Any]],
+        sorted_keys: List[str],
+        grouped: Dict[str, List[Dict[str, Any]]],
+    ) -> Dict[str, Any]:
+        """
+        Calculates auditable season-by-season and overall career Pace vs Spin
+        batting performance trends from ball-by-ball delivery records.
+        """
+        bclass = self._get_bowler_classification()
+
+        # Collect deliveries mapped by match_id
+        deliv_by_mid: Dict[str, List[Dict[str, Any]]] = {}
+
+        # 1. IPL deliveries
+        ipl_mids = set(str(a["match_id"]) for a in appearances if a.get("competition") == "IPL")
+        if ipl_mids:
+            df_ipl = self._get_ipl_deliveries_df()
+            if df_ipl is not None and not df_ipl.empty:
+                sub_ipl = df_ipl[
+                    (df_ipl["match_id"].isin(ipl_mids))
+                    & ((df_ipl["batter"] == player_name) | (df_ipl["player_dismissed"] == player_name))
+                ]
+                for row in sub_ipl.to_dict("records"):
+                    mid = str(row["match_id"])
+                    deliv_by_mid.setdefault(mid, []).append(row)
+
+        # 2. T20I deliveries
+        t20i_mids = set(str(a["match_id"]) for a in appearances if a.get("competition") == "International")
+        for mid in t20i_mids:
+            t20i_delivs = self._get_t20i_match_deliveries(mid)
+            if t20i_delivs:
+                relevant = [
+                    d for d in t20i_delivs
+                    if d.get("batter") == player_name
+                    or d.get("player_dismissed") == player_name
+                    or any(w.get("player_out") == player_name for w in d.get("wickets", []))
+                ]
+                if relevant:
+                    deliv_by_mid[str(mid)] = relevant
+
+        # Build seasons breakdown
+        seasons_list: List[Dict[str, Any]] = []
+        all_career_balls_faced: List[Dict[str, Any]] = []
+        all_career_outs: List[Dict[str, Any]] = []
+        unclassified_bowler_names = set()
+
+        for k in sorted_keys:
+            group_apps = grouped[k]
+            matches = len(group_apps)
+            batted_apps = [a for a in group_apps if not a.get("is_dnb")]
+            batting_inns = len(batted_apps)
+            dnb_matches = matches - batting_inns
+
+            season_mids = set(str(a["match_id"]) for a in group_apps)
+            season_deliv: List[Dict[str, Any]] = []
+            for mid in season_mids:
+                season_deliv.extend(deliv_by_mid.get(mid, []))
+
+            # Deliveries faced (wides strictly excluded)
+            balls_faced = [
+                d for d in season_deliv
+                if d.get("batter") == player_name and int(d.get("wides", 0)) == 0
+            ]
+            all_career_balls_faced.extend(balls_faced)
+
+            # Dismissals credited to bowlers (prevent duplicate counting on same delivery)
+            season_outs: List[Dict[str, Any]] = []
+            seen_out_delivery_keys = set()
+            for d in season_deliv:
+                out_event = self._extract_bowler_dismissal_event(d, player_name)
+                if out_event:
+                    deliv_key = (
+                        out_event["match_id"],
+                        out_event["innings"],
+                        out_event["over"],
+                        out_event["ball"],
+                        player_name,
+                    )
+                    if deliv_key not in seen_out_delivery_keys:
+                        seen_out_delivery_keys.add(deliv_key)
+                        season_outs.append(out_event)
+
+            all_career_outs.extend(season_outs)
+
+            # Classify using auditable mapping
+            pace_balls = [d for d in balls_faced if bclass.get(d.get("bowler")) == "Pace"]
+            spin_balls = [d for d in balls_faced if bclass.get(d.get("bowler")) == "Spin"]
+            unclass_balls = [d for d in balls_faced if d.get("bowler") not in bclass]
+
+            for d in unclass_balls:
+                bname = d.get("bowler")
+                if bname:
+                    unclassified_bowler_names.add(bname)
+
+            pace_outs = [o for o in season_outs if bclass.get(o.get("bowler")) == "Pace"]
+            spin_outs = [o for o in season_outs if bclass.get(o.get("bowler")) == "Spin"]
+            unclass_outs = [o for o in season_outs if bclass.get(o.get("bowler")) not in ("Pace", "Spin")]
+
+            for o in unclass_outs:
+                bname = o.get("bowler")
+                if bname:
+                    unclassified_bowler_names.add(bname)
+
+            pace_stats = self._compute_bowling_stats(pace_balls, pace_outs)
+            spin_stats = self._compute_bowling_stats(spin_balls, spin_outs)
+
+            tot_balls = len(balls_faced)
+            class_balls = len(pace_balls) + len(spin_balls)
+            unclass_balls_cnt = len(unclass_balls)
+            cov_pct = clean_num(class_balls / tot_balls * 100.0, 1) if tot_balls > 0 else 100.0
+
+            ipl_apps = [a for a in group_apps if a.get("competition") == "IPL"]
+            t20i_apps = [a for a in group_apps if a.get("competition") == "International"]
+            comp_label = (
+                "IPL" if norm_comp == "ipl"
+                else "International" if norm_comp == "t20i"
+                else ("IPL + INL" if (len(ipl_apps) > 0 and len(t20i_apps) > 0) else ("IPL" if len(ipl_apps) > 0 else "International"))
+            )
+
+            seasons_list.append({
+                "season": k,
+                "competition": comp_label,
+                "matches": matches,
+                "batting_innings": batting_inns,
+                "dnb_matches": dnb_matches,
+                "total_balls_faced": tot_balls,
+                "classified_balls_faced": class_balls,
+                "unclassified_balls_faced": unclass_balls_cnt,
+                "coverage_percentage": cov_pct,
+                "insufficient_sample": (tot_balls > 0 and tot_balls < 20),
+                "pace": pace_stats,
+                "spin": spin_stats,
+                "pace_dismissals": pace_stats["dismissals"],
+                "spin_dismissals": spin_stats["dismissals"],
+                "unclassified_dismissals": len(unclass_outs),
+                "bowler_credited_dismissals": len(season_outs),
+            })
+
+        # Overall Career Totals
+        career_pace_balls = [d for d in all_career_balls_faced if bclass.get(d.get("bowler")) == "Pace"]
+        career_spin_balls = [d for d in all_career_balls_faced if bclass.get(d.get("bowler")) == "Spin"]
+        career_unclass_balls = [d for d in all_career_balls_faced if d.get("bowler") not in bclass]
+
+        career_pace_outs = [o for o in all_career_outs if bclass.get(o.get("bowler")) == "Pace"]
+        career_spin_outs = [o for o in all_career_outs if bclass.get(o.get("bowler")) == "Spin"]
+        career_unclass_outs = [o for o in all_career_outs if bclass.get(o.get("bowler")) not in ("Pace", "Spin")]
+
+        career_pace_stats = self._compute_bowling_stats(career_pace_balls, career_pace_outs)
+        career_spin_stats = self._compute_bowling_stats(career_spin_balls, career_spin_outs)
+
+        tot_career_balls = len(all_career_balls_faced)
+        class_career_balls = len(career_pace_balls) + len(career_spin_balls)
+        unclass_career_balls = len(career_unclass_balls)
+        career_cov_pct = clean_num(class_career_balls / tot_career_balls * 100.0, 1) if tot_career_balls > 0 else 100.0
+
+        tot_career_outs = len(all_career_outs)
+        class_career_outs = len(career_pace_outs) + len(career_spin_outs)
+        unclass_career_outs = len(career_unclass_outs)
+        dismissals_cov_pct = clean_num(class_career_outs / tot_career_outs * 100.0, 1) if tot_career_outs > 0 else 100.0
+
+        summary = {
+            "total_balls_faced": tot_career_balls,
+            "classified_balls_faced": class_career_balls,
+            "unclassified_balls_faced": unclass_career_balls,
+            "coverage_percentage": career_cov_pct,
+            "is_coverage_complete": (unclass_career_balls == 0 and unclass_career_outs == 0),
+            "pace": career_pace_stats,
+            "spin": career_spin_stats,
+            "pace_dismissals": career_pace_stats["dismissals"],
+            "spin_dismissals": career_spin_stats["dismissals"],
+            "unclassified_dismissals": unclass_career_outs,
+            "bowler_credited_dismissals": tot_career_outs,
+            "dismissals_coverage_percentage": dismissals_cov_pct,
+        }
+
+        coverage_info = {
+            "total_balls_faced": tot_career_balls,
+            "classified_balls": class_career_balls,
+            "unclassified_balls": unclass_career_balls,
+            "coverage_percentage": career_cov_pct,
+            "total_bowler_dismissals": tot_career_outs,
+            "classified_bowler_dismissals": class_career_outs,
+            "unclassified_bowler_dismissals": unclass_career_outs,
+            "dismissals_coverage_percentage": dismissals_cov_pct,
+            "classification_source": "Auditable Bowler Style Registry (577 bowlers)",
+            "unclassified_bowlers_count": len(unclassified_bowler_names),
+            "unclassified_bowlers": sorted(list(unclassified_bowler_names)),
+        }
+
+        return {
+            "summary": summary,
+            "seasons": seasons_list,
+            "coverage_info": coverage_info,
+        }
+
+    def get_dataset_coverage(self, competition: Optional[str] = None) -> Dict[str, Any]:
+        """
+        Derives non-hardcoded dataset coverage period from actual match records
+        for IPL, International T20I, and Combined.
+        Excludes invalid/missing dates and discloses reliability.
+        """
+        if self._dataset_coverage_cache is None:
+            coverage = {}
+            for comp in ("ipl", "t20i"):
+                self._ensure_loaded(comp)
+                matches_df = self.get_matches_df(comp)
+                label = "IPL Records" if comp == "ipl" else "International T20I Records"
+
+                if matches_df is None or matches_df.empty:
+                    coverage[comp] = {
+                        "competition": comp,
+                        "label": label,
+                        "start_year": None,
+                        "end_year": None,
+                        "start_date": None,
+                        "end_date": None,
+                        "display_range": "N/A",
+                        "total_matches": 0,
+                        "valid_date_matches": 0,
+                        "reliable": False,
+                        "note": "No match records loaded in dataset",
+                    }
+                    continue
+
+                total_m = len(matches_df)
+                dates = pd.to_datetime(matches_df.get("date"), errors="coerce").dropna()
+                valid_m = len(dates)
+
+                if dates.empty:
+                    seasons = sorted(str(s) for s in matches_df.get("season", []).dropna().unique() if str(s).strip())
+                    if seasons:
+                        s_start = seasons[0]
+                        s_end = seasons[-1]
+                        display_range = f"{s_start} – {s_end}" if s_start != s_end else s_start
+                        coverage[comp] = {
+                            "competition": comp,
+                            "label": label,
+                            "start_year": None,
+                            "end_year": None,
+                            "start_date": None,
+                            "end_date": None,
+                            "display_range": display_range,
+                            "total_matches": total_m,
+                            "valid_date_matches": 0,
+                            "reliable": True,
+                            "note": "Derived from season identifiers",
+                        }
+                    else:
+                        coverage[comp] = {
+                            "competition": comp,
+                            "label": label,
+                            "start_year": None,
+                            "end_year": None,
+                            "start_date": None,
+                            "end_date": None,
+                            "display_range": "N/A",
+                            "total_matches": total_m,
+                            "valid_date_matches": 0,
+                            "reliable": False,
+                            "note": "Match dates could not be determined reliably",
+                        }
+                else:
+                    min_d = dates.min()
+                    max_d = dates.max()
+                    min_yr = int(min_d.year)
+                    max_yr = int(max_d.year)
+                    display_range = f"{min_yr} – {max_yr}" if min_yr != max_yr else str(min_yr)
+                    reliable = (valid_m / total_m >= 0.8) if total_m > 0 else False
+
+                    coverage[comp] = {
+                        "competition": comp,
+                        "label": label,
+                        "start_year": min_yr,
+                        "end_year": max_yr,
+                        "start_date": min_d.strftime("%Y-%m-%d"),
+                        "end_date": max_d.strftime("%Y-%m-%d"),
+                        "display_range": display_range,
+                        "total_matches": total_m,
+                        "valid_date_matches": valid_m,
+                        "reliable": reliable,
+                        "note": "Derived from valid match records in dataset" if reliable else "Partial match dates in dataset",
+                    }
+
+            self._dataset_coverage_cache = coverage
+
+        cached = self._dataset_coverage_cache or {}
+        if competition:
+            norm = competition.strip().lower()
+            if norm in cached:
+                return cached[norm]
+        return cached
 
 
 # Singleton instance

@@ -4,11 +4,58 @@ Visualizes validated Phase 5B and Phase 6A model outputs.
 Backend is the SINGLE SOURCE OF TRUTH.
 """
 
+import os
+import logging
 from typing import Optional
 from fastapi import FastAPI, HTTPException, Query, Request
 from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
 from app.services.data_service import data_service
+
+logger = logging.getLogger("cricimpact.cors")
+
+
+def get_cors_configuration():
+    """
+    Resolves CORS allowed origins and credentials setting securely:
+    - In development (default): includes standard local Vite/React origins.
+    - In production (ENVIRONMENT=production): requires explicit CORS_ORIGINS; fails safely if missing.
+    - Never combines allow_origins=["*"] with allow_credentials=True (RFC 6454 violation).
+    """
+    env = os.getenv("ENVIRONMENT", "development").strip().lower()
+    raw_origins = os.getenv("CORS_ORIGINS", "").strip()
+
+    if raw_origins:
+        # Parse comma-separated list safely
+        origins = [origin.strip() for origin in raw_origins.split(",") if origin.strip()]
+    elif env in ("development", "dev", "local", "test"):
+        # Local development defaults
+        origins = [
+            "http://localhost:5173",
+            "http://127.0.0.1:5173",
+            "http://localhost:3000",
+            "http://127.0.0.1:3000",
+        ]
+    else:
+        # Production with no explicit CORS_ORIGINS configured: fail safely (deny cross-origin requests)
+        origins = []
+        logger.warning(
+            "CORS configuration notice: ENVIRONMENT=%s but CORS_ORIGINS is empty. "
+            "Cross-origin browser requests will receive no allow-origin header.",
+            env,
+        )
+
+    # Security rule: Never combine wildcard origins with allow_credentials=True
+    has_wildcard = "*" in origins
+    if has_wildcard:
+        allow_credentials = False
+        origins = ["*"]
+        logger.warning("CORS: Wildcard origin detected. allow_credentials disabled per security specification.")
+    else:
+        allow_credentials = True if len(origins) > 0 else False
+
+    return origins, allow_credentials
+
 
 app = FastAPI(
     title="Cricket Batter Contribution Analytics API",
@@ -16,11 +63,13 @@ app = FastAPI(
     version="1.0.0",
 )
 
-# Enable CORS for Vite frontend development server
+cors_origins, cors_allow_credentials = get_cors_configuration()
+
+# Enable CORS with explicit, environment-driven origins
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
-    allow_credentials=True,
+    allow_origins=cors_origins,
+    allow_credentials=cors_allow_credentials,
     allow_methods=["*"],
     allow_headers=["*"],
 )
@@ -61,6 +110,16 @@ def list_competitions():
         "competitions": data_service.get_competitions(),
         "default_competition": "ipl",
     }
+
+
+@app.get("/api/competitions/coverage")
+def get_competition_coverage(
+    competition: Optional[str] = Query(None, description="Optional competition: 'ipl', 't20i', or 'combined'"),
+):
+    """
+    Returns actual dataset coverage periods derived directly from loaded match records.
+    """
+    return data_service.get_dataset_coverage(competition=competition)
 
 
 @app.get("/api/seasons")
@@ -158,6 +217,37 @@ def list_players(
         "competition": competition,
         "tournament_type": tournament_type,
     }
+
+
+@app.get("/api/players/search")
+def search_career_players(
+    q: Optional[str] = Query(None, description="Search query string"),
+    competition: Optional[str] = Query(None, description="Optional competition: 'ipl', 't20i', or None"),
+    limit: int = Query(20, ge=1, le=100, description="Max players to return"),
+):
+    """
+    Returns search results of batters across IPL and International records.
+    Features marquee batters descending by career runs.
+    """
+    return data_service.search_career_players(query=q, competition=competition, limit=limit)
+
+
+@app.get("/api/player/{player_id}/career")
+def get_player_career(
+    player_id: str,
+    competition: str = Query("combined", description="Competition view: 'ipl', 't20i', or 'combined'"),
+):
+    """
+    Returns player career batting statistics and CricImpact contribution metrics
+    evolution across seasons/years for IPL, International, or Combined Career.
+    """
+    career = data_service.get_player_career(player_id=player_id, competition=competition)
+    if not career:
+        raise HTTPException(
+            status_code=404,
+            detail=f"Player '{player_id}' not found in active cricket datasets.",
+        )
+    return career
 
 
 @app.get("/api/player/{player_id}/season/{season:path}")
@@ -483,4 +573,80 @@ def get_pipeline_status():
         "processed_matches_count": len(processor._registry),
         "registry_path": str(processor.registry_path),
     }
+
+
+# -------------------------------------------------------------
+# Ground Analysis Endpoints
+# -------------------------------------------------------------
+from app.services.ground_service import ground_service
+
+
+@app.get("/api/ground-analysis/venues")
+def get_ground_analysis_venues(
+    competition: Optional[str] = Query("combined", description="Competition: 'combined', 'ipl', or 't20i'"),
+    country: Optional[str] = Query(None, description="Optional country filter"),
+):
+    """
+    Returns available countries and canonical venues for Ground Analysis,
+    filtered by competition and country.
+    """
+    comp = (competition or "combined").strip().lower()
+    if comp not in ("combined", "ipl", "t20i"):
+        raise HTTPException(
+            status_code=400,
+            detail=f"Invalid competition '{competition}'. Must be 'combined', 'ipl', or 't20i'."
+        )
+    return ground_service.get_countries_and_venues(competition=comp, country=country)
+
+
+@app.get("/api/ground-analysis/venue/{venue_id}")
+def get_ground_analysis_detail(
+    venue_id: str,
+    competition: Optional[str] = Query("combined", description="Competition: 'combined', 'ipl', or 't20i'"),
+    period: Optional[str] = Query("rolling_5yr", description="Period: 'rolling_5yr', 'all_time', 'rolling_3yr', or 'custom'"),
+    start_date: Optional[str] = Query(None, description="Optional custom start date (YYYY-MM-DD)"),
+    end_date: Optional[str] = Query(None, description="Optional custom end date (YYYY-MM-DD)"),
+):
+    """
+    Returns venue scoring profile, chase vs defend rates, historical winning benchmarks,
+    season-wise trends, and recent match history for the specified venue.
+    """
+    comp = (competition or "combined").strip().lower()
+    if comp not in ("combined", "ipl", "t20i"):
+        raise HTTPException(
+            status_code=400,
+            detail=f"Invalid competition '{competition}'. Must be 'combined', 'ipl', or 't20i'."
+        )
+    if period and period not in ("rolling_5yr", "all_time", "rolling_3yr", "custom"):
+        raise HTTPException(
+            status_code=400,
+            detail=f"Invalid period '{period}'. Must be 'rolling_5yr', 'all_time', 'rolling_3yr', or 'custom'."
+        )
+    if start_date and end_date and start_date > end_date:
+        raise HTTPException(
+            status_code=400,
+            detail=f"start_date '{start_date}' cannot be after end_date '{end_date}'."
+        )
+
+    result = ground_service.get_ground_analysis(
+        venue_id=venue_id,
+        competition=comp,
+        period=period or "rolling_5yr",
+        start_date=start_date,
+        end_date=end_date,
+    )
+    if not result:
+        raise HTTPException(
+            status_code=404,
+            detail=f"Venue '{venue_id}' not found in active match records."
+        )
+    return result
+
+
+if __name__ == "__main__":
+    import uvicorn
+
+    host = os.getenv("HOST", "0.0.0.0")
+    port = int(os.getenv("PORT", 8080))
+    uvicorn.run("app.main:app", host=host, port=port)
 
