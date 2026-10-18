@@ -17,6 +17,7 @@ import {
   CheckCircle2,
   ArrowUpDown,
 } from 'lucide-react';
+import { useWindowWidth } from '../../hooks/useWindowWidth';
 
 function CustomBowlingTooltip({ active, payload, label, selectedBowlingType = 'both', chartMetricView = 'strike_rate' }) {
   if (active && payload && payload.length) {
@@ -29,24 +30,24 @@ function CustomBowlingTooltip({ active, payload, label, selectedBowlingType = 'b
     const isDismissalsView = chartMetricView === 'dismissals';
 
     return (
-      <div className="bg-[#121212] border border-[#2D2D2D] rounded-xl p-4 text-xs shadow-2xl text-[#F2F2F2] min-w-[280px] max-w-sm font-sans">
-        <div className="flex items-center justify-between border-b border-[#222222] pb-2 mb-2.5">
-          <span className="font-bold text-[14px] text-[#F2F2F2]">{label}</span>
-          <span className="text-[11px] px-2 py-0.5 rounded bg-[#1A1A1A] border border-[#2D2D2D] text-[#D4AF57] font-semibold">
+      <div className="bg-[#121212]/95 border border-[#2D2D2D] rounded-lg p-2.5 sm:p-4 text-[11px] sm:text-xs shadow-2xl text-[#F2F2F2] max-w-[calc(100vw-32px)] sm:max-w-sm min-w-[190px] sm:min-w-[280px] font-sans pointer-events-none select-none backdrop-blur-xs">
+        <div className="flex items-center justify-between border-b border-[#222222] pb-1.5 mb-1.5 gap-2">
+          <span className="font-bold text-xs sm:text-[14px] text-[#F2F2F2] truncate">{label}</span>
+          <span className="text-[10px] sm:text-[11px] px-1.5 py-0.5 rounded bg-[#1A1A1A] border border-[#2D2D2D] text-[#D4AF57] font-semibold shrink-0">
             {data.competition || 'Season'}
           </span>
         </div>
 
-        <div className="space-y-3 font-sans">
+        <div className="space-y-2 sm:space-y-3 font-sans">
           {/* Pace Stats */}
           {showPace && (
-            <div className="bg-[#181611] p-2.5 rounded-lg border border-[#D4AF57]/30 space-y-1">
+            <div className="bg-[#181611] p-2 sm:p-2.5 rounded-lg border border-[#D4AF57]/30 space-y-0.5 sm:space-y-1">
               <div className="flex items-center justify-between">
-                <span className="font-semibold text-[#D4AF57] flex items-center gap-1.5">
-                  <span className="w-2 h-2 rounded-full bg-[#D4AF57] inline-block" />
-                  {isDismissalsView ? 'Pace Dismissals' : 'Pace Bowling'}
+                <span className="font-semibold text-[#D4AF57] flex items-center gap-1.5 text-[11px] sm:text-xs">
+                  <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-[#D4AF57] inline-block" />
+                  {isDismissalsView ? 'Pace Outs' : 'Pace Bowling'}
                 </span>
-                <span className="font-bold text-[14px] tabular-nums text-[#D4AF57]">
+                <span className="font-bold text-xs sm:text-[14px] tabular-nums text-[#D4AF57]">
                   {isDismissalsView ? (
                     <>
                       {data.pace_dismissals ?? pace.dismissals ?? 0}
@@ -99,13 +100,13 @@ function CustomBowlingTooltip({ active, payload, label, selectedBowlingType = 'b
 
           {/* Spin Stats */}
           {showSpin && (
-            <div className="bg-[#10171F] p-2.5 rounded-lg border border-[#6BA8E5]/30 space-y-1">
+            <div className="bg-[#10171F] p-2 sm:p-2.5 rounded-lg border border-[#6BA8E5]/30 space-y-0.5 sm:space-y-1">
               <div className="flex items-center justify-between">
-                <span className="font-semibold text-[#6BA8E5] flex items-center gap-1.5">
-                  <span className="w-2 h-2 rounded-full bg-[#6BA8E5] inline-block" />
-                  {isDismissalsView ? 'Spin Dismissals' : 'Spin Bowling'}
+                <span className="font-semibold text-[#6BA8E5] flex items-center gap-1.5 text-[11px] sm:text-xs">
+                  <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-[#6BA8E5] inline-block" />
+                  {isDismissalsView ? 'Spin Outs' : 'Spin Bowling'}
                 </span>
-                <span className="font-bold text-[14px] tabular-nums text-[#6BA8E5]">
+                <span className="font-bold text-xs sm:text-[14px] tabular-nums text-[#6BA8E5]">
                   {isDismissalsView ? (
                     <>
                       {data.spin_dismissals ?? spin.dismissals ?? 0}
@@ -171,6 +172,10 @@ function CustomBowlingTooltip({ active, payload, label, selectedBowlingType = 'b
 }
 
 export default function BowlingTypeTrendsChart({ bowlingTrends }) {
+  const width = useWindowWidth();
+  const isMobile = width < 640;
+  const isNarrowMobile = width < 400;
+
   // Selector state: 'both' | 'pace' | 'spin' (default to 'both')
   const [selectedBowlingType, setSelectedBowlingType] = useState('both');
   // Chart view: 'strike_rate' | 'dismissals'
@@ -272,7 +277,7 @@ export default function BowlingTypeTrendsChart({ bowlingTrends }) {
   };
 
   return (
-    <div className="bg-[#161616] rounded-xl p-5 sm:p-6 border border-[#2D2D2D] shadow-xs space-y-6 font-sans">
+    <div className="bg-[#161616] rounded-xl p-3.5 sm:p-6 border border-[#2D2D2D] shadow-xs space-y-4 sm:space-y-6 font-sans">
       {/* Section Header */}
       <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 border-b border-[#222222] pb-4">
         <div>
@@ -541,26 +546,42 @@ export default function BowlingTypeTrendsChart({ bowlingTrends }) {
         </div>
 
         {/* Graph Canvas */}
-        <div className="w-full h-[320px] sm:h-[360px] bg-[#101010] p-3 rounded-xl border border-[#2D2D2D]">
+        <div className="w-full h-[230px] sm:h-[360px] bg-[#101010] p-2 sm:p-3 rounded-xl border border-[#2D2D2D]">
           <ResponsiveContainer width="100%" height="100%">
             <LineChart
               data={chartData}
-              margin={{ top: 20, right: 20, left: -10, bottom: 25 }}
+              margin={
+                isMobile
+                  ? { top: 12, right: 8, left: -16, bottom: 20 }
+                  : { top: 20, right: 20, left: -10, bottom: 25 }
+              }
             >
               <CartesianGrid strokeDasharray="3 3" stroke="#222222" vertical={false} />
               <XAxis
                 dataKey="season"
                 stroke="#858585"
-                tick={{ fill: '#858585', fontSize: 12, fontFamily: 'Inter, sans-serif' }}
+                tick={{
+                  fill: '#858585',
+                  fontSize: isNarrowMobile ? 9.5 : (isMobile ? 10.5 : 12),
+                  fontFamily: 'Inter, sans-serif',
+                }}
                 tickLine={{ stroke: '#2D2D2D' }}
-                interval={0}
-                angle={chartData.length > 10 ? -45 : 0}
-                textAnchor={chartData.length > 10 ? 'end' : 'middle'}
-                height={45}
+                interval={
+                  isMobile
+                    ? (chartData.length > 12 ? 2 : (chartData.length > 6 ? 1 : 0))
+                    : 0
+                }
+                angle={chartData.length > (isMobile ? 6 : 10) ? -35 : 0}
+                textAnchor={chartData.length > (isMobile ? 6 : 10) ? 'end' : 'middle'}
+                height={isMobile ? 36 : 45}
               />
               <YAxis
                 stroke="#858585"
-                tick={{ fill: '#858585', fontSize: 12, fontFamily: 'Inter, sans-serif' }}
+                tick={{
+                  fill: '#858585',
+                  fontSize: isMobile ? 10 : 12,
+                  fontFamily: 'Inter, sans-serif',
+                }}
                 tickLine={{ stroke: '#2D2D2D' }}
                 allowDecimals={chartMetricView !== 'dismissals'}
                 domain={
@@ -568,6 +589,7 @@ export default function BowlingTypeTrendsChart({ bowlingTrends }) {
                     ? [0, 'dataMax + 1']
                     : ['dataMin - 15', 'dataMax + 15']
                 }
+                width={isMobile ? 32 : 40}
               />
               <Tooltip
                 content={
@@ -576,6 +598,7 @@ export default function BowlingTypeTrendsChart({ bowlingTrends }) {
                     chartMetricView={chartMetricView}
                   />
                 }
+                wrapperStyle={{ outline: 'none', zIndex: 50, pointerEvents: 'none' }}
               />
 
               {/* Career Reference Lines (for Strike Rate view) */}

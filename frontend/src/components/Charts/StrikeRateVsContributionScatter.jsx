@@ -9,13 +9,14 @@ import {
   ResponsiveContainer,
   ReferenceLine,
 } from 'recharts';
+import { useWindowWidth } from '../../hooks/useWindowWidth';
 
 function CustomTooltip({ active, payload }) {
   if (active && payload && payload.length) {
     const data = payload[0].payload;
     return (
-      <div className="bg-[#161616] border border-[#2D2D2D] rounded-lg p-3 text-xs shadow-xl text-[#F2F2F2]">
-        <div className="font-bold text-[#F2F2F2]">{data.player}</div>
+      <div className="bg-[#161616] border border-[#2D2D2D] rounded-lg p-2.5 sm:p-3 text-xs shadow-xl text-[#F2F2F2] max-w-[calc(100vw-32px)] sm:max-w-xs pointer-events-none select-none backdrop-blur-xs">
+        <div className="font-bold text-[#F2F2F2] truncate">{data.player}</div>
         <div className="text-[11px] text-[#858585]">vs {data.opponent} ({data.season})</div>
         <div className="mt-1.5 pt-1.5 border-t border-[#2D2D2D] space-y-0.5">
           <div className="text-[#858585]">
@@ -35,25 +36,33 @@ function CustomTooltip({ active, payload }) {
 }
 
 export default function StrikeRateVsContributionScatter({ data = [] }) {
+  const { isMobile, isNarrowMobile } = useWindowWidth();
+
   return (
-    <div className="bg-[#161616] rounded-xl p-5 border border-[#2D2D2D]">
-      <div className="flex items-center justify-between mb-4">
+    <div className="bg-[#161616] rounded-xl p-3 sm:p-5 border border-[#2D2D2D]">
+      <div className="flex items-center justify-between mb-3 sm:mb-4">
         <div>
-          <h3 className="font-heading text-[17px] font-bold text-[#F2F2F2] tracking-tight">
+          <h3 className="font-heading text-[15px] sm:text-[17px] font-bold text-[#F2F2F2] tracking-tight">
             Strike rate vs. contribution score
           </h3>
-          <p className="text-[12px] font-normal text-[#858585] mt-0.5">
+          <p className="text-[11px] sm:text-[12px] font-normal text-[#858585] mt-0.5">
             Demonstrates that strike rate alone does not dictate contextual match contribution.
           </p>
         </div>
-        <div className="text-[11px] text-[#D4AF57] bg-[#101010] px-2.5 py-1 rounded border border-[#D4AF57]/40 font-mono font-semibold">
+        <div className="text-[10px] sm:text-[11px] text-[#D4AF57] bg-[#101010] px-2 sm:px-2.5 py-0.5 sm:py-1 rounded border border-[#D4AF57]/40 font-mono font-semibold shrink-0">
           Par = 50.0
         </div>
       </div>
 
-      <div className="w-full h-72">
+      <div className="w-full h-56 sm:h-72">
         <ResponsiveContainer width="100%" height="100%">
-          <ScatterChart margin={{ top: 10, right: 20, bottom: 20, left: 0 }}>
+          <ScatterChart
+            margin={
+              isMobile
+                ? { top: 10, right: 15, bottom: 15, left: -15 }
+                : { top: 10, right: 20, bottom: 20, left: 0 }
+            }
+          >
             <CartesianGrid strokeDasharray="3 3" stroke="#222222" />
             <XAxis
               type="number"
@@ -61,8 +70,14 @@ export default function StrikeRateVsContributionScatter({ data = [] }) {
               name="Strike Rate"
               domain={[0, 'auto']}
               stroke="#858585"
-              tick={{ fontSize: 11, fill: '#858585' }}
-              label={{ value: 'Actual Strike Rate', position: 'insideBottom', offset: -10, fill: '#858585', fontSize: 11 }}
+              tick={{ fontSize: isMobile ? 10 : 11, fill: '#858585' }}
+              label={{
+                value: isNarrowMobile ? 'SR' : 'Actual Strike Rate',
+                position: 'insideBottom',
+                offset: -10,
+                fill: '#858585',
+                fontSize: isMobile ? 10 : 11,
+              }}
             />
             <YAxis
               type="number"
@@ -70,10 +85,27 @@ export default function StrikeRateVsContributionScatter({ data = [] }) {
               name="Contribution Score"
               domain={[0, 100]}
               stroke="#858585"
-              tick={{ fontSize: 11, fill: '#858585' }}
-              label={{ value: 'Contribution Score (0–100)', angle: -90, position: 'insideLeft', fill: '#858585', fontSize: 11 }}
+              tick={{ fontSize: isMobile ? 10 : 11, fill: '#858585' }}
+              label={{
+                value: isMobile ? 'Score' : 'Contribution Score (0–100)',
+                angle: -90,
+                position: 'insideLeft',
+                fill: '#858585',
+                fontSize: isMobile ? 10 : 11,
+                offset: isMobile ? 15 : 10,
+              }}
             />
-            <ReferenceLine y={50} stroke="#D4AF57" strokeDasharray="4 4" label={{ value: 'Par (50.0)', fill: '#D4AF57', fontSize: 10, position: 'right' }} />
+            <ReferenceLine
+              y={50}
+              stroke="#D4AF57"
+              strokeDasharray="4 4"
+              label={{
+                value: isNarrowMobile ? '50' : 'Par (50.0)',
+                fill: '#D4AF57',
+                fontSize: 10,
+                position: 'right',
+              }}
+            />
             <Tooltip content={<CustomTooltip />} />
             <Scatter name="Innings" data={data} fill="#5A9E60" opacity={0.75} />
           </ScatterChart>

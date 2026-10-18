@@ -79,4 +79,81 @@ test('Mobile Responsive Layout & Viewport Boundaries', async (t) => {
     assert.ok(content.includes('Retry'), 'Seasons.jsx must provide a Retry button on error');
     assert.ok(content.includes('min-w-0'), 'Seasons.jsx table container must enforce min-w-0');
   });
+
+  await t.test('useWindowWidth hook exists and exports useWindowWidth and useIsMobile', () => {
+    const hookPath = path.join(srcDir, 'hooks', 'useWindowWidth.js');
+    assert.ok(fs.existsSync(hookPath), 'useWindowWidth.js hook file must exist');
+    const content = fs.readFileSync(hookPath, 'utf8');
+    assert.ok(content.includes('export function useWindowWidth'), 'Must export useWindowWidth');
+    assert.ok(content.includes('export function useIsMobile'), 'Must export useIsMobile');
+    assert.ok(content.includes('isNarrowMobile'), 'Must provide isNarrowMobile breakpoint check');
+  });
+
+  await t.test('Career Graph charts enforce responsive heights and mobile tick intervals', () => {
+    const careerCharts = [
+      'CareerRunsChart.jsx',
+      'CareerStrikeRateChart.jsx',
+      'CareerContributionChart.jsx',
+      'CareerPositiveRateChart.jsx',
+      'CareerDotBallChart.jsx',
+      'BowlingTypeTrendsChart.jsx',
+    ];
+
+    careerCharts.forEach((file) => {
+      const filePath = path.join(srcDir, 'components', 'CareerGraphs', file);
+      assert.ok(fs.existsSync(filePath), `${file} must exist`);
+      const content = fs.readFileSync(filePath, 'utf8');
+
+      // Check responsive height
+      assert.ok(
+        content.includes('h-[220px] sm:h-[350px]') || content.includes('h-[230px] sm:h-[360px]'),
+        `${file} must specify responsive mobile/desktop height`
+      );
+
+      // Check responsive hook usage
+      assert.ok(
+        content.includes('useWindowWidth'),
+        `${file} must import and use useWindowWidth`
+      );
+
+      // Check viewport-bounded compact tooltip
+      assert.ok(
+        content.includes('max-w-[calc(100vw-32px)]'),
+        `${file} tooltip must bound max width within viewport on mobile`
+      );
+      assert.ok(
+        content.includes('pointer-events-none'),
+        `${file} tooltip must use pointer-events-none for safe touch scrubbing`
+      );
+    });
+  });
+
+  await t.test('CareerStrikeRateChart provides mobile benchmark pill indicator to prevent label collisions', () => {
+    const filePath = path.join(srcDir, 'components', 'CareerGraphs', 'CareerStrikeRateChart.jsx');
+    const content = fs.readFileSync(filePath, 'utf8');
+
+    assert.ok(
+      content.includes('Par (130)'),
+      'Must render mobile benchmark reference for Par SR'
+    );
+    assert.ok(
+      content.includes('Career SR:'),
+      'Must render mobile benchmark reference for player Career SR'
+    );
+  });
+
+  await t.test('Dashboard and GroundAnalysis charts enforce responsive heights and compact tooltips', () => {
+    const runsScatter = fs.readFileSync(path.join(srcDir, 'components', 'Charts', 'RunsVsContributionScatter.jsx'), 'utf8');
+    const srScatter = fs.readFileSync(path.join(srcDir, 'components', 'Charts', 'StrikeRateVsContributionScatter.jsx'), 'utf8');
+    const groundAnalysis = fs.readFileSync(path.join(srcDir, 'pages', 'GroundAnalysis.jsx'), 'utf8');
+
+    assert.ok(runsScatter.includes('h-56 sm:h-72'), 'RunsVsContributionScatter must use responsive height');
+    assert.ok(runsScatter.includes('max-w-[calc(100vw-32px)]'), 'RunsVsContributionScatter tooltip must be bounded');
+
+    assert.ok(srScatter.includes('h-56 sm:h-72'), 'StrikeRateVsContributionScatter must use responsive height');
+    assert.ok(srScatter.includes('max-w-[calc(100vw-32px)]'), 'StrikeRateVsContributionScatter tooltip must be bounded');
+
+    assert.ok(groundAnalysis.includes('h-56 sm:h-72 md:h-80'), 'GroundAnalysis trend chart must use responsive height');
+    assert.ok(groundAnalysis.includes('h-[260px] sm:h-[340px]'), 'GroundAnalysis phase chart must use responsive height');
+  });
 });

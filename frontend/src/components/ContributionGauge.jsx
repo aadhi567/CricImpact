@@ -57,10 +57,10 @@ export default function ContributionGauge({ score }) {
       </div>
 
       {/* Zone Indicators */}
-      <div className="flex justify-between items-center text-[11px] text-[#858585]">
-        <span>0 (Below Par)</span>
-        <span className="text-[#D4AF57] font-semibold">▲ 50.0 Par Benchmark</span>
-        <span>100 (Elite)</span>
+      <div className="flex justify-between items-center text-[10px] sm:text-[11px] text-[#858585]">
+        <span>0 <span className="hidden xs:inline">(Below Par)</span></span>
+        <span className="text-[#D4AF57] font-semibold">▲ 50.0 Par<span className="hidden sm:inline"> Benchmark</span></span>
+        <span>100 <span className="hidden xs:inline">(Elite)</span></span>
       </div>
 
       <div className="mt-3 pt-3 border-t border-[#2D2D2D] flex items-center justify-between text-[13px]">

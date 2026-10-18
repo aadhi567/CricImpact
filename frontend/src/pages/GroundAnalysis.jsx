@@ -28,6 +28,7 @@ import {
   Tooltip,
   Legend,
 } from 'recharts';
+import { useWindowWidth } from '../hooks/useWindowWidth';
 import Breadcrumbs from '../components/Breadcrumbs';
 import { getGroundVenues, getGroundAnalysis } from '../services/api';
 
@@ -71,6 +72,7 @@ function getMatchConditionBadge(m) {
 }
 
 export default function GroundAnalysis() {
+  const { isMobile } = useWindowWidth();
   const [searchParams, setSearchParams] = useSearchParams();
 
   // URL state synchronization
@@ -1190,22 +1192,26 @@ export default function GroundAnalysis() {
 
               {/* Chart Canvas */}
               {phaseChartMode === 'compare' ? (
-                <div className="bg-[#0A0A0A] border border-[#262626] rounded-xl p-4 sm:p-5 h-[340px]">
+                <div className="bg-[#0A0A0A] border border-[#262626] rounded-xl p-3 sm:p-5 h-[260px] sm:h-[340px]">
                   <ResponsiveContainer width="100%" height="100%">
                     <BarChart
                       data={groundData.phase_analysis?.comparison_chart || []}
-                      margin={{ top: 15, right: 20, left: 0, bottom: 5 }}
+                      margin={
+                        isMobile
+                          ? { top: 15, right: 10, left: -20, bottom: 5 }
+                          : { top: 15, right: 20, left: 0, bottom: 5 }
+                      }
                     >
                       <CartesianGrid strokeDasharray="3 3" stroke="#222222" vertical={false} />
                       <XAxis
                         dataKey="phase_name"
                         stroke="#707070"
-                        fontSize={11}
+                        fontSize={isMobile ? 10 : 11}
                         tickLine={false}
                       />
                       <YAxis
                         stroke="#707070"
-                        fontSize={11}
+                        fontSize={isMobile ? 10 : 11}
                         tickLine={false}
                         axisLine={false}
                         domain={[0, 'auto']}
@@ -1217,7 +1223,7 @@ export default function GroundAnalysis() {
                             const d = payload[0].payload;
                             const isRr = phaseMetricView === 'run_rate';
                             return (
-                              <div className="bg-[#121212] border border-[#2D2D2D] rounded-lg p-3 text-xs shadow-xl space-y-1.5 min-w-[220px]">
+                              <div className="bg-[#121212] border border-[#2D2D2D] rounded-lg p-2.5 sm:p-3 text-xs shadow-xl space-y-1.5 max-w-[calc(100vw-32px)] sm:max-w-xs pointer-events-none select-none backdrop-blur-xs">
                                 <div className="font-bold text-[#F2F2F2] border-b border-[#222222] pb-1">
                                   {d.phase_name || label}
                                 </div>
@@ -1260,9 +1266,9 @@ export default function GroundAnalysis() {
                       />
                       <Legend
                         verticalAlign="top"
-                        align="right"
+                        align={isMobile ? 'center' : 'right'}
                         iconType="circle"
-                        wrapperStyle={{ fontSize: '11px', paddingBottom: '12px' }}
+                        wrapperStyle={{ fontSize: isMobile ? '10px' : '11px', paddingBottom: '12px' }}
                       />
                       <Bar
                         dataKey={phaseMetricView === 'run_rate' ? 'first_innings_run_rate' : 'first_innings_avg_runs'}
@@ -1289,23 +1295,28 @@ export default function GroundAnalysis() {
                   </ResponsiveContainer>
                 </div>
               ) : (
-                <div className="bg-[#0A0A0A] border border-[#262626] rounded-xl p-4 sm:p-5 h-[340px]">
+                <div className="bg-[#0A0A0A] border border-[#262626] rounded-xl p-3 sm:p-5 h-[260px] sm:h-[340px]">
                   {groundData.phase_analysis?.year_trends?.length > 0 ? (
                     <ResponsiveContainer width="100%" height="100%">
                       <BarChart
                         data={groundData.phase_analysis.year_trends}
-                        margin={{ top: 15, right: 20, left: 0, bottom: 5 }}
+                        margin={
+                          isMobile
+                            ? { top: 15, right: 10, left: -20, bottom: 5 }
+                            : { top: 15, right: 20, left: 0, bottom: 5 }
+                        }
                       >
                         <CartesianGrid strokeDasharray="3 3" stroke="#222222" vertical={false} />
                         <XAxis
                           dataKey="year"
                           stroke="#707070"
-                          fontSize={11}
+                          fontSize={isMobile ? 10 : 11}
                           tickLine={false}
+                          interval={isMobile ? 'preserveStartEnd' : 0}
                         />
                         <YAxis
                           stroke="#707070"
-                          fontSize={11}
+                          fontSize={isMobile ? 10 : 11}
                           tickLine={false}
                           axisLine={false}
                           domain={[0, 'auto']}
@@ -1317,7 +1328,7 @@ export default function GroundAnalysis() {
                               const d = payload[0].payload;
                               const isRr = phaseMetricView === 'run_rate';
                               return (
-                                <div className="bg-[#121212] border border-[#2D2D2D] rounded-lg p-3 text-xs shadow-xl space-y-1.5 min-w-[220px]">
+                                <div className="bg-[#121212] border border-[#2D2D2D] rounded-lg p-2.5 sm:p-3 text-xs shadow-xl space-y-1.5 max-w-[calc(100vw-32px)] sm:max-w-xs pointer-events-none select-none backdrop-blur-xs">
                                   <div className="font-bold text-[#F2F2F2] border-b border-[#222222] pb-1">
                                     Year {d.year} ({d.matches} matches)
                                   </div>
@@ -1349,9 +1360,9 @@ export default function GroundAnalysis() {
                         />
                         <Legend
                           verticalAlign="top"
-                          align="right"
+                          align={isMobile ? 'center' : 'right'}
                           iconType="circle"
-                          wrapperStyle={{ fontSize: '11px', paddingBottom: '12px' }}
+                          wrapperStyle={{ fontSize: isMobile ? '10px' : '11px', paddingBottom: '12px' }}
                         />
                         <Bar
                           dataKey={phaseMetricView === 'run_rate' ? 'powerplay_run_rate' : 'powerplay_avg_runs'}
@@ -1726,24 +1737,29 @@ export default function GroundAnalysis() {
 
             {/* Trends Chart */}
             {trendChartData.length > 0 ? (
-              <div className="h-72 sm:h-80 w-full pt-2">
+              <div className="h-56 sm:h-72 md:h-80 w-full pt-2">
                 <ResponsiveContainer width="100%" height="100%">
                   {trendView === 'scores' ? (
                     <BarChart
                       data={trendChartData}
-                      margin={{ top: 15, right: 20, left: -10, bottom: 10 }}
+                      margin={
+                        isMobile
+                          ? { top: 15, right: 10, left: -20, bottom: 5 }
+                          : { top: 15, right: 20, left: -10, bottom: 10 }
+                      }
                     >
                       <CartesianGrid strokeDasharray="3 3" stroke="#222222" vertical={false} />
                       <XAxis
                         dataKey="year"
                         stroke="#606060"
-                        fontSize={12}
+                        fontSize={isMobile ? 10 : 12}
                         tickLine={false}
                         axisLine={{ stroke: '#2D2D2D' }}
+                        interval={isMobile ? 'preserveStartEnd' : 0}
                       />
                       <YAxis
                         stroke="#606060"
-                        fontSize={12}
+                        fontSize={isMobile ? 10 : 12}
                         domain={[100, 'auto']}
                         tickLine={false}
                         axisLine={{ stroke: '#2D2D2D' }}
@@ -1754,7 +1770,7 @@ export default function GroundAnalysis() {
                           if (!active || !payload?.length) return null;
                           const d = payload[0].payload;
                           return (
-                            <div className="bg-[#101010] border border-[#2D2D2D] rounded-lg p-3 text-xs shadow-2xl text-[#F2F2F2] min-w-[190px]">
+                            <div className="bg-[#101010] border border-[#2D2D2D] rounded-lg p-2.5 sm:p-3 text-xs shadow-2xl text-[#F2F2F2] max-w-[calc(100vw-32px)] sm:max-w-xs pointer-events-none select-none backdrop-blur-xs">
                               <div className="font-bold border-b border-[#222222] pb-1.5 mb-1.5 flex items-center justify-between">
                                 <span className="text-[#D4AF57]">Season {label}</span>
                                 <span className="text-[#858585] text-[11px]">{d.matches} matches</span>
@@ -1779,13 +1795,14 @@ export default function GroundAnalysis() {
                       />
                       <Legend
                         verticalAlign="top"
+                        align={isMobile ? 'center' : 'right'}
                         height={36}
                         payload={[
                           { value: 'Avg 1st Innings', type: 'rect', id: 'avg_first_innings', color: '#D4AF57' },
                           { value: 'Avg 2nd Innings', type: 'rect', id: 'avg_second_innings', color: '#5A9E60' },
                         ]}
                         formatter={(val) => (
-                          <span className="text-xs text-[#B8B8B8] font-medium mr-4">
+                          <span className="text-[10px] sm:text-xs text-[#B8B8B8] font-medium mr-2 sm:mr-4">
                             {val}
                           </span>
                         )}
@@ -1795,32 +1812,37 @@ export default function GroundAnalysis() {
                         name="Avg 1st Innings"
                         fill="#D4AF57"
                         radius={[4, 4, 0, 0]}
-                        maxBarSize={45}
+                        maxBarSize={isMobile ? 28 : 45}
                       />
                       <Bar
                         dataKey="avg_second_innings"
                         name="Avg 2nd Innings"
                         fill="#5A9E60"
                         radius={[4, 4, 0, 0]}
-                        maxBarSize={45}
+                        maxBarSize={isMobile ? 28 : 45}
                       />
                     </BarChart>
                   ) : (
                     <BarChart
                       data={trendChartData}
-                      margin={{ top: 15, right: 20, left: -10, bottom: 10 }}
+                      margin={
+                        isMobile
+                          ? { top: 15, right: 10, left: -20, bottom: 5 }
+                          : { top: 15, right: 20, left: -10, bottom: 10 }
+                      }
                     >
                       <CartesianGrid strokeDasharray="3 3" stroke="#222222" vertical={false} />
                       <XAxis
                         dataKey="year"
                         stroke="#606060"
-                        fontSize={12}
+                        fontSize={isMobile ? 10 : 12}
                         tickLine={false}
                         axisLine={{ stroke: '#2D2D2D' }}
+                        interval={isMobile ? 'preserveStartEnd' : 0}
                       />
                       <YAxis
                         stroke="#606060"
-                        fontSize={12}
+                        fontSize={isMobile ? 10 : 12}
                         domain={[0, 100]}
                         tickLine={false}
                         axisLine={{ stroke: '#2D2D2D' }}
@@ -1831,7 +1853,7 @@ export default function GroundAnalysis() {
                           if (!active || !payload?.length) return null;
                           const d = payload[0].payload;
                           return (
-                            <div className="bg-[#101010] border border-[#2D2D2D] rounded-lg p-3 text-xs shadow-2xl text-[#F2F2F2] min-w-[200px]">
+                            <div className="bg-[#101010] border border-[#2D2D2D] rounded-lg p-2.5 sm:p-3 text-xs shadow-2xl text-[#F2F2F2] max-w-[calc(100vw-32px)] sm:max-w-xs pointer-events-none select-none backdrop-blur-xs">
                               <div className="font-bold border-b border-[#222222] pb-1.5 mb-1.5 flex items-center justify-between">
                                 <span className="text-[#D4AF57]">Season {label}</span>
                                 <span className="text-[#858585] text-[11px]">
@@ -1858,13 +1880,14 @@ export default function GroundAnalysis() {
                       />
                       <Legend
                         verticalAlign="top"
+                        align={isMobile ? 'center' : 'right'}
                         height={36}
                         payload={[
                           { value: 'Defend Win %', type: 'rect', id: 'defend_pct', color: '#D4AF57' },
                           { value: 'Chase Win %', type: 'rect', id: 'chase_pct', color: '#5A9E60' },
                         ]}
                         formatter={(val) => (
-                          <span className="text-xs text-[#B8B8B8] font-medium mr-4">
+                          <span className="text-[10px] sm:text-xs text-[#B8B8B8] font-medium mr-2 sm:mr-4">
                             {val}
                           </span>
                         )}
@@ -1874,14 +1897,14 @@ export default function GroundAnalysis() {
                         name="Defend Win %"
                         fill="#D4AF57"
                         radius={[4, 4, 0, 0]}
-                        maxBarSize={45}
+                        maxBarSize={isMobile ? 28 : 45}
                       />
                       <Bar
                         dataKey="chase_pct"
                         name="Chase Win %"
                         fill="#5A9E60"
                         radius={[4, 4, 0, 0]}
-                        maxBarSize={45}
+                        maxBarSize={isMobile ? 28 : 45}
                       />
                     </BarChart>
                   )}

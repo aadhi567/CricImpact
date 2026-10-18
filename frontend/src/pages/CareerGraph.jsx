@@ -437,7 +437,7 @@ export default function CareerGraph() {
           </div>
 
           {/* Compact Data Coverage Indicator */}
-          <div className="flex items-center gap-2 px-2.5 py-1 bg-[#101010] rounded-md border border-[#D4AF57]/40 text-xs shadow-xs shrink-0">
+          <div className="flex items-center gap-2 px-2.5 py-1 bg-[#101010] rounded-md border border-[#D4AF57]/40 text-xs shadow-xs max-w-full flex-wrap">
             <Calendar className="w-3.5 h-3.5 text-[#D4AF57] shrink-0" />
             <span className="text-[#858585] text-[10.5px] font-semibold uppercase tracking-wider shrink-0">
               Data Coverage:
@@ -549,7 +549,7 @@ export default function CareerGraph() {
       ) : (
         <>
           {/* 1. CAREER SUMMARY BANNER & KPI CARDS */}
-          <div className="bg-[#161616] rounded-lg p-4 sm:p-5 border border-[#2D2D2D] space-y-4">
+          <div className="bg-[#161616] rounded-lg p-3 sm:p-5 border border-[#2D2D2D] space-y-3 sm:space-y-4">
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 border-b border-[#222222] pb-3">
               <div>
                 <div className="flex items-center gap-2.5">
@@ -577,9 +577,9 @@ export default function CareerGraph() {
             </div>
 
             {/* 6 Restrained KPI Cards */}
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2.5 font-sans">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2 sm:gap-2.5 font-sans">
               {/* Card 1: Matches & Innings */}
-              <div className="bg-[#101010] p-2.5 sm:p-3 rounded-lg border border-[#2D2D2D] flex flex-col justify-between">
+              <div className="bg-[#101010] p-2 sm:p-3 rounded-lg border border-[#2D2D2D] flex flex-col justify-between">
                 <div>
                   <span className="text-[10.5px] font-semibold text-[#858585] block">Matches &amp; Innings</span>
                   <div className="text-[18px] sm:text-[20px] font-bold text-[#F2F2F2] tabular-nums font-sans mt-0.5">
@@ -592,7 +592,7 @@ export default function CareerGraph() {
               </div>
 
               {/* Card 2: Total Runs */}
-              <div className="bg-[#101010] p-2.5 sm:p-3 rounded-lg border border-[#2D2D2D] flex flex-col justify-between">
+              <div className="bg-[#101010] p-2 sm:p-3 rounded-lg border border-[#2D2D2D] flex flex-col justify-between">
                 <div>
                   <span className="text-[10.5px] font-semibold text-[#858585] block">Career Runs</span>
                   <div className="text-[18px] sm:text-[20px] font-bold text-[#D4AF57] tabular-nums font-sans mt-0.5">
@@ -605,7 +605,7 @@ export default function CareerGraph() {
               </div>
 
               {/* Card 3: Strike Rate */}
-              <div className="bg-[#101010] p-2.5 sm:p-3 rounded-lg border border-[#2D2D2D] flex flex-col justify-between">
+              <div className="bg-[#101010] p-2 sm:p-3 rounded-lg border border-[#2D2D2D] flex flex-col justify-between">
                 <div>
                   <span className="text-[10.5px] font-semibold text-[#858585] block">Career Strike Rate</span>
                   <div className="text-[18px] sm:text-[20px] font-bold text-[#F2F2F2] tabular-nums font-sans mt-0.5">
@@ -618,7 +618,7 @@ export default function CareerGraph() {
               </div>
 
               {/* Card 4: Avg Contribution */}
-              <div className="bg-[#101010] p-2.5 sm:p-3 rounded-lg border border-[#2D2D2D] flex flex-col justify-between">
+              <div className="bg-[#101010] p-2 sm:p-3 rounded-lg border border-[#2D2D2D] flex flex-col justify-between">
                 <div>
                   <div className="flex items-center justify-between">
                     <span className="text-[10.5px] font-semibold text-[#858585]">Avg Contribution</span>
@@ -640,7 +640,7 @@ export default function CareerGraph() {
               </div>
 
               {/* Card 5: Positive Contribution Rate */}
-              <div className="bg-[#101010] p-2.5 sm:p-3 rounded-lg border border-[#2D2D2D] flex flex-col justify-between">
+              <div className="bg-[#101010] p-2 sm:p-3 rounded-lg border border-[#2D2D2D] flex flex-col justify-between">
                 <div>
                   <span className="text-[10.5px] font-semibold text-[#858585] block">Positive Contrib Rate</span>
                   <div className="text-[18px] sm:text-[20px] font-bold text-[#5A9E60] tabular-nums font-sans mt-0.5">
@@ -653,7 +653,7 @@ export default function CareerGraph() {
               </div>
 
               {/* Card 6: Dot-Ball Percentage */}
-              <div className="bg-[#101010] p-2.5 sm:p-3 rounded-lg border border-[#2D2D2D] flex flex-col justify-between">
+              <div className="bg-[#101010] p-2 sm:p-3 rounded-lg border border-[#2D2D2D] flex flex-col justify-between">
                 <div>
                   <span className="text-[10.5px] font-semibold text-[#858585] block">Dot-Ball %</span>
                   <div className="text-[18px] sm:text-[20px] font-bold text-[#E1C878] tabular-nums font-sans mt-0.5">
@@ -710,7 +710,7 @@ export default function CareerGraph() {
             <div className="space-y-4 sm:space-y-5">
               {/* GRAPH A: Runs by Season/Year */}
               {(activeGraphTab === 'all' || activeGraphTab === 'runs') && (
-                <div className="bg-[#161616] rounded-lg p-3.5 sm:p-4 border border-[#2D2D2D] shadow-xs space-y-2.5">
+                <div className="bg-[#161616] rounded-lg p-2.5 sm:p-4 border border-[#2D2D2D] shadow-xs space-y-2 sm:space-y-2.5">
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 border-b border-[#222222] pb-2">
                     <div>
                       <div className="flex items-center gap-2">
@@ -730,7 +730,7 @@ export default function CareerGraph() {
 
               {/* GRAPH B: Strike Rate Trend */}
               {(activeGraphTab === 'all' || activeGraphTab === 'sr') && (
-                <div className="bg-[#161616] rounded-lg p-3.5 sm:p-4 border border-[#2D2D2D] shadow-xs space-y-2.5">
+                <div className="bg-[#161616] rounded-lg p-2.5 sm:p-4 border border-[#2D2D2D] shadow-xs space-y-2 sm:space-y-2.5">
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 border-b border-[#222222] pb-2">
                     <div>
                       <div className="flex items-center gap-2">
@@ -750,7 +750,7 @@ export default function CareerGraph() {
 
               {/* GRAPH C: Average Contribution Trend */}
               {(activeGraphTab === 'all' || activeGraphTab === 'contrib') && (
-                <div className="bg-[#161616] rounded-lg p-3.5 sm:p-4 border border-[#2D2D2D] shadow-xs space-y-2.5">
+                <div className="bg-[#161616] rounded-lg p-2.5 sm:p-4 border border-[#2D2D2D] shadow-xs space-y-2 sm:space-y-2.5">
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 border-b border-[#222222] pb-2">
                     <div>
                       <div className="flex items-center gap-2">
@@ -769,10 +769,10 @@ export default function CareerGraph() {
               )}
 
               {/* 2-Column Grid for Graph D and Graph E when in 'all' view */}
-              <div className={activeGraphTab === 'all' ? 'grid grid-cols-1 lg:grid-cols-2 gap-4' : 'space-y-4'}>
+              <div className={activeGraphTab === 'all' ? 'grid grid-cols-1 lg:grid-cols-2 gap-3 sm:gap-4' : 'space-y-3 sm:space-y-4'}>
                 {/* GRAPH D: Positive Contribution Rate */}
                 {(activeGraphTab === 'all' || activeGraphTab === 'pos') && (
-                  <div className="bg-[#161616] rounded-lg p-3.5 sm:p-4 border border-[#2D2D2D] shadow-xs space-y-2.5">
+                  <div className="bg-[#161616] rounded-lg p-2.5 sm:p-4 border border-[#2D2D2D] shadow-xs space-y-2 sm:space-y-2.5">
                     <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 border-b border-[#222222] pb-2">
                       <div>
                         <div className="flex items-center gap-2">
@@ -792,7 +792,7 @@ export default function CareerGraph() {
 
                 {/* GRAPH E: Dot-Ball Percentage */}
                 {(activeGraphTab === 'all' || activeGraphTab === 'dots') && (
-                  <div className="bg-[#161616] rounded-lg p-3.5 sm:p-4 border border-[#2D2D2D] shadow-xs space-y-2.5">
+                  <div className="bg-[#161616] rounded-lg p-2.5 sm:p-4 border border-[#2D2D2D] shadow-xs space-y-2 sm:space-y-2.5">
                     <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 border-b border-[#222222] pb-2">
                       <div>
                         <div className="flex items-center gap-2">
