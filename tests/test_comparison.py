@@ -377,5 +377,114 @@ def test_comparison_t20i_multi_batter_metrics():
     assert surya["death_over_strike_rate"] == 236.1
 
 
+def test_comparison_ishan_kishan_and_harry_brook_2023():
+    """
+    Verifies the specific production example:
+    Ishan Kishan and Harry Brook (HC Brook) in IPL 2023.
+    Asserts:
+    1. Ishan Kishan: dot-ball percentage 40.9%, PP SR 144.8, Middle SR 139.1, Death SR 0.0 (genuine 0.0).
+    2. HC Brook: dot-ball percentage 42.2%, PP SR 114.3, Middle SR 130.0, Death SR 145.0.
+    3. Both singular and plural phase strike rate keys are present in root player and context_breakdown.
+    """
+    res = client.get("/api/contribution/compare?season=2023&players=Ishan%20Kishan,HC%20Brook")
+    assert res.status_code == 200
+    data = res.json()
+    assert len(data["players"]) == 2
+
+    ishan = [p for p in data["players"] if p["player"] == "Ishan Kishan"][0]
+    brook = [p for p in data["players"] if p["player"] == "HC Brook"][0]
+
+    # Ishan Kishan 2023
+    assert ishan["actual_runs"] == 454
+    assert ishan["balls_faced"] == 318
+    assert ishan["dot_balls"] == 130
+    assert ishan["dot_ball_percentage"] == 40.9
+    assert ishan["powerplay_strike_rate"] == 144.8
+    assert ishan["middle_over_strike_rate"] == 139.1
+    assert ishan["middle_overs_strike_rate"] == 139.1
+    assert ishan["death_over_strike_rate"] == 0.0
+    assert ishan["death_overs_strike_rate"] == 0.0
+
+    # In context_breakdown as well
+    assert ishan["context_breakdown"]["dot_ball_percentage"] == 40.9
+    assert ishan["context_breakdown"]["powerplay_strike_rate"] == 144.8
+    assert ishan["context_breakdown"]["middle_overs_strike_rate"] == 139.1
+    assert ishan["context_breakdown"]["death_overs_strike_rate"] == 0.0
+
+    # HC Brook 2023
+    assert brook["actual_runs"] == 190
+    assert brook["balls_faced"] == 154
+    assert brook["dot_balls"] == 65
+    assert brook["dot_ball_percentage"] == 42.2
+    assert brook["powerplay_strike_rate"] == 114.3
+    assert brook["middle_over_strike_rate"] == 130.0
+    assert brook["middle_overs_strike_rate"] == 130.0
+    assert brook["death_over_strike_rate"] == 145.0
+    assert brook["death_overs_strike_rate"] == 145.0
+
+    assert brook["context_breakdown"]["dot_ball_percentage"] == 42.2
+    assert brook["context_breakdown"]["powerplay_strike_rate"] == 114.3
+    assert brook["context_breakdown"]["middle_overs_strike_rate"] == 130.0
+    assert brook["context_breakdown"]["death_overs_strike_rate"] == 145.0
+
+
+def test_comparison_player_name_alias_resolution():
+    """
+    Verifies that querying with player name aliases (e.g. 'Harry Brook' -> 'HC Brook',
+    'Virat Kohli' -> 'V Kohli') resolves seamlessly to the canonical player.
+    """
+    res = client.get("/api/contribution/compare?season=2023&players=Ishan%20Kishan,Harry%20Brook")
+    assert res.status_code == 200
+    data = res.json()
+    assert len(data["players"]) == 2
+    players = [p["player"] for p in data["players"]]
+    assert "HC Brook" in players
+    assert "Ishan Kishan" in players
+
+    brook = [p for p in data["players"] if p["player"] == "HC Brook"][0]
+    assert brook["dot_ball_percentage"] == 42.2
+    assert brook["powerplay_strike_rate"] == 114.3
+
+
+def test_comparison_extras_handling_and_zero_division():
+    """
+    Verifies delivery-level extras handling:
+    1. Wides are excluded from legal balls faced and do not contribute to dot balls.
+    2. Zero legal balls returns None, never causing ZeroDivisionError, NaN, or Infinity.
+    """
+    from app.services.data_service import data_service
+    import pandas as pd
+
+    # Mock delivery dataframe with wide, no-ball, and bye
+    mock_delivs = pd.DataFrame([
+        {"batter": "Test Batter", "wides": 1, "batter_runs": 0, "over": 1, "ball": 1},  # Wide: ignored
+        {"batter": "Test Batter", "wides": 0, "batter_runs": 0, "over": 1, "ball": 2},  # Dot: counted
+        {"batter": "Test Batter", "wides": 0, "batter_runs": 4, "over": 1, "ball": 3},  # Four: runs=4
+        {"batter": "Test Batter", "wides": 0, "batter_runs": 0, "over": 7, "ball": 1},  # Middle dot
+    ])
+
+    metrics = data_service._compute_batter_phase_and_dot_metrics(
+        player_name="Test Batter",
+        season_str="2024",
+        norm_comp="ipl",
+        c_sub=pd.DataFrame(),
+        delivs_sub_ipl=mock_delivs,
+    )
+
+    # 3 legal balls (1 wide ignored)
+    assert metrics["legal_balls"] == 3
+    # 2 dot balls (balls 2 and 4)
+    assert metrics["dot_balls"] == 2
+    assert metrics["dot_ball_percentage"] == round(2 / 3 * 100, 1)
+
+    # Powerplay: 2 legal balls, 4 runs -> SR 200.0
+    assert metrics["powerplay_strike_rate"] == 200.0
+    # Middle: 1 legal ball, 0 runs -> SR 0.0 (genuine 0.0)
+    assert metrics["middle_overs_strike_rate"] == 0.0
+    # Death: 0 legal balls -> None
+    assert metrics["death_overs_strike_rate"] is None
+
+
+
 
 

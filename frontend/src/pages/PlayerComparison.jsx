@@ -10,7 +10,7 @@ import {
 import FourPillarComparisonChart from '../components/Charts/FourPillarComparisonChart';
 import PrimaryMetricsComparisonChart from '../components/Charts/PrimaryMetricsComparisonChart';
 import Breadcrumbs from '../components/Breadcrumbs';
-import { getSeasons, getTeams, getPlayers, comparePlayers } from '../services/api';
+import { getSeasons, getTeams, getPlayers, comparePlayers, getPlayerCareer } from '../services/api';
 import { useCompetition, TOURNAMENT_TYPES, resolveDefaultSeason } from '../context/CompetitionContext';
 
 /**
@@ -173,6 +173,39 @@ export default function PlayerComparison() {
           competition,
           tournamentType,
         });
+
+        if (res && Array.isArray(res.players)) {
+          const enriched = await Promise.all(
+            res.players.map(async (p) => {
+              if (p.is_dnb || (p.dot_ball_percentage != null && p.dot_balls != null)) {
+                return p;
+              }
+              try {
+                const career = await getPlayerCareer(p.player, competition);
+                const seasonRow = career?.timeline?.find(
+                  (t) => String(t.season) === String(selectedSeason) || String(t.year) === String(selectedSeason)
+                );
+                if (seasonRow && seasonRow.dot_ball_percentage != null) {
+                  return {
+                    ...p,
+                    dot_ball_percentage: p.dot_ball_percentage ?? seasonRow.dot_ball_percentage,
+                    dot_balls: p.dot_balls ?? seasonRow.dot_balls,
+                    context_breakdown: {
+                      ...p.context_breakdown,
+                      dot_ball_percentage: p.context_breakdown?.dot_ball_percentage ?? seasonRow.dot_ball_percentage,
+                      dot_balls: p.context_breakdown?.dot_balls ?? seasonRow.dot_balls,
+                    },
+                  };
+                }
+              } catch {
+                // non-blocking graceful fallback
+              }
+              return p;
+            })
+          );
+          res.players = enriched;
+        }
+
         if (isMounted) {
           setComparisonData(res);
           setLoading(false);
@@ -738,7 +771,7 @@ export default function PlayerComparison() {
                       Dot-Ball Percentage
                     </td>
                     {playersList.map((p) => {
-                      const dotPct = p.dot_ball_percentage ?? p.context_breakdown?.dot_ball_percentage;
+                      const dotPct = p.dot_ball_percentage ?? p.context_breakdown?.dot_ball_percentage ?? (p.dot_balls != null && p.balls_faced > 0 ? (p.dot_balls / p.balls_faced) * 100 : null);
                       return (
                         <td
                           key={p.player}
@@ -995,7 +1028,7 @@ export default function PlayerComparison() {
                       ↳ Middle Overs Strike Rate
                     </td>
                     {playersList.map((p) => {
-                      const val = p.middle_over_strike_rate ?? p.context_breakdown?.middle_over_strike_rate;
+                      const val = p.middle_overs_strike_rate ?? p.middle_over_strike_rate ?? p.context_breakdown?.middle_overs_strike_rate ?? p.context_breakdown?.middle_over_strike_rate;
                       return (
                         <td
                           key={p.player}
@@ -1029,7 +1062,7 @@ export default function PlayerComparison() {
                       ↳ Death Overs Strike Rate
                     </td>
                     {playersList.map((p) => {
-                      const val = p.death_over_strike_rate ?? p.context_breakdown?.death_over_strike_rate;
+                      const val = p.death_overs_strike_rate ?? p.death_over_strike_rate ?? p.context_breakdown?.death_overs_strike_rate ?? p.context_breakdown?.death_over_strike_rate;
                       return (
                         <td
                           key={p.player}

@@ -100,6 +100,7 @@ def health_check():
         "status": "healthy",
         "phase": "Phase 6A-Frontend",
         "service": "Cricket Batter Contribution Analytics",
+        "version": "1.0.1",
     }
 
 

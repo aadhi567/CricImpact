@@ -58,6 +58,59 @@ DEACTIVATED_COMPETITIONS = {
     }
 }
 
+# Common player name aliases and abbreviations mapping to canonical dataset names
+PLAYER_NAME_ALIASES: Dict[str, str] = {
+    "harry brook": "hc brook",
+    "hc brook": "hc brook",
+    "virat kohli": "v kohli",
+    "v kohli": "v kohli",
+    "rohit sharma": "rg sharma",
+    "rg sharma": "rg sharma",
+    "faf du plessis": "f du plessis",
+    "f du plessis": "f du plessis",
+    "glenn maxwell": "gj maxwell",
+    "gj maxwell": "gj maxwell",
+    "david warner": "da warner",
+    "da warner": "da warner",
+    "suryakumar yadav": "sa yadav",
+    "surya kumar yadav": "sa yadav",
+    "sa yadav": "sa yadav",
+    "hardik pandya": "hh pandya",
+    "hh pandya": "hh pandya",
+    "ravindra jadeja": "ra jadeja",
+    "ra jadeja": "ra jadeja",
+    "rishabh pant": "rr pant",
+    "rr pant": "rr pant",
+    "shikhar dhawan": "s dhawan",
+    "s dhawan": "s dhawan",
+    "sanju samson": "sv samson",
+    "sv samson": "sv samson",
+    "devdutt padikkal": "d padikkal",
+    "d padikkal": "d padikkal",
+    "jos buttler": "jc buttler",
+    "jc buttler": "jc buttler",
+    "andre russell": "ad russell",
+    "ad russell": "ad russell",
+    "sunil narine": "sp narine",
+    "sp narine": "sp narine",
+    "marcus stoinis": "mp stoinis",
+    "mp stoinis": "mp stoinis",
+    "shimron hetmyer": "so hetmyer",
+    "so hetmyer": "so hetmyer",
+    "nicholas pooran": "n pooran",
+    "n pooran": "n pooran",
+    "quinton de kock": "q de kock",
+    "q de kock": "q de kock",
+    "heinrich klaasen": "h klaasen",
+    "h klaasen": "h klaasen",
+    "tim david": "th david",
+    "th david": "th david",
+    "rahul tewatia": "r tewatia",
+    "r tewatia": "r tewatia",
+    "rinku singh": "rk singh",
+    "rk singh": "rk singh",
+}
+
 COMPETITION_METADATA = [
     {
         "id": "ipl",
@@ -1429,11 +1482,28 @@ class DataService:
         """
         legal_balls: List[Dict[str, Any]] = []
 
+        # Candidate names including aliases
+        cand_names = [player_name.lower().strip()]
+        alias = PLAYER_NAME_ALIASES.get(player_name.lower().strip())
+        if alias and alias.lower() not in cand_names:
+            cand_names.append(alias.lower())
+        for k, v in PLAYER_NAME_ALIASES.items():
+            if v.lower() == player_name.lower().strip() and k.lower() not in cand_names:
+                cand_names.append(k.lower())
+
         if norm_comp == "ipl":
             if delivs_sub_ipl is not None and not delivs_sub_ipl.empty:
-                p_delivs = delivs_sub_ipl[delivs_sub_ipl["batter"].str.lower() == player_name.lower()]
+                p_delivs = delivs_sub_ipl[delivs_sub_ipl["batter"].str.lower().isin(cand_names)]
+                if p_delivs.empty:
+                    # Surname fallback if unique
+                    parts = player_name.lower().strip().split()
+                    if len(parts) > 1:
+                        surname = parts[-1]
+                        matched_batters = delivs_sub_ipl[delivs_sub_ipl["batter"].str.lower().str.endswith(" " + surname)]["batter"].unique()
+                        if len(matched_batters) == 1:
+                            p_delivs = delivs_sub_ipl[delivs_sub_ipl["batter"] == matched_batters[0]]
                 if not p_delivs.empty:
-                    p_legal = p_delivs[p_delivs["wides"] == 0]
+                    p_legal = p_delivs[p_delivs["wides"].fillna(0) == 0]
                     if not p_legal.empty:
                         legal_balls = p_legal[["over", "ball", "batter_runs"]].to_dict("records")
         elif norm_comp == "t20i":
@@ -1442,7 +1512,8 @@ class DataService:
                 for mid in player_mids:
                     match_delivs = self._get_t20i_match_deliveries(mid)
                     for d in match_delivs:
-                        if d.get("batter", "").lower() == player_name.lower() and int(d.get("wides", 0)) == 0:
+                        d_batter = d.get("batter", "").lower().strip()
+                        if (d_batter in cand_names) and int(d.get("wides", 0)) == 0:
                             legal_balls.append({
                                 "over": int(d.get("over", 0)),
                                 "ball": int(d.get("ball", 1)),
@@ -1454,15 +1525,17 @@ class DataService:
             dot_balls = sum(1 for d in legal_balls if int(d.get("batter_runs", 0)) == 0)
             dot_pct = round(float(dot_balls) / total_legal * 100.0, 1) if total_legal > 0 else None
 
-            # Phase split
+            # Phase split: Powerplay Overs 1-6 (delivery over 0-5)
             pp_balls = [d for d in legal_balls if int(d.get("over", 0)) < 6]
             pp_runs = sum(int(d.get("batter_runs", 0)) for d in pp_balls)
             pp_sr = round(float(pp_runs) / len(pp_balls) * 100.0, 1) if pp_balls else None
 
+            # Middle Overs 7-16 (delivery over 6-15)
             mid_balls = [d for d in legal_balls if 6 <= int(d.get("over", 0)) < 16]
             mid_runs = sum(int(d.get("batter_runs", 0)) for d in mid_balls)
             mid_sr = round(float(mid_runs) / len(mid_balls) * 100.0, 1) if mid_balls else None
 
+            # Death Overs 17-20 (delivery over 16-19)
             death_balls = [d for d in legal_balls if int(d.get("over", 0)) >= 16]
             death_runs = sum(int(d.get("batter_runs", 0)) for d in death_balls)
             death_sr = round(float(death_runs) / len(death_balls) * 100.0, 1) if death_balls else None
@@ -1473,7 +1546,9 @@ class DataService:
                 "dot_ball_percentage": dot_pct,
                 "powerplay_strike_rate": pp_sr,
                 "middle_over_strike_rate": mid_sr,
+                "middle_overs_strike_rate": mid_sr,
                 "death_over_strike_rate": death_sr,
+                "death_overs_strike_rate": death_sr,
             }
 
         # Fallback to match contributions if delivery records are not available
@@ -1488,7 +1563,9 @@ class DataService:
                     "dot_ball_percentage": dot_pct,
                     "powerplay_strike_rate": None,
                     "middle_over_strike_rate": None,
+                    "middle_overs_strike_rate": None,
                     "death_over_strike_rate": None,
+                    "death_overs_strike_rate": None,
                 }
 
         return {
@@ -1497,7 +1574,9 @@ class DataService:
             "dot_ball_percentage": None,
             "powerplay_strike_rate": None,
             "middle_over_strike_rate": None,
+            "middle_overs_strike_rate": None,
             "death_over_strike_rate": None,
+            "death_overs_strike_rate": None,
         }
 
     def compare_players(
@@ -1568,9 +1647,22 @@ class DataService:
         for p_name in unique_players:
             p_sub = df_season[df_season["player"].str.lower() == p_name.lower()]
             if p_sub.empty:
+                alias = PLAYER_NAME_ALIASES.get(p_name.lower())
+                if alias:
+                    p_sub = df_season[df_season["player"].str.lower() == alias.lower()]
+            if p_sub.empty:
+                # Try surname match if unique
+                parts = p_name.lower().split()
+                if len(parts) > 1:
+                    surname = parts[-1]
+                    matches = df_season[df_season["player"].str.lower().str.endswith(" " + surname)]
+                    if len(matches) == 1:
+                        p_sub = matches
+            if p_sub.empty:
                 raise KeyError(f"Player '{p_name}' not found in season '{season}'.")
 
             row = p_sub.iloc[0]
+            canonical_name = str(row["player"])
             actual_runs = clean_int(row.get("actual_runs")) or 0
             balls_faced = clean_int(row.get("balls_faced")) or 0
             strike_rate = round(float(actual_runs) / balls_faced * 100.0, 1) if balls_faced > 0 else None
@@ -1579,21 +1671,26 @@ class DataService:
 
             # Four pillars from match contributions
             if contrib_df is not None and not contrib_df.empty:
+                cand_names = [canonical_name.lower(), p_name.lower()]
+                alias = PLAYER_NAME_ALIASES.get(canonical_name.lower())
+                if alias and alias.lower() not in cand_names:
+                    cand_names.append(alias.lower())
+
                 if is_dynamic and m_ids is not None:
                     c_sub = contrib_df[
-                        (contrib_df["player"].str.lower() == p_name.lower()) &
+                        (contrib_df["player"].str.lower().isin(cand_names)) &
                         (contrib_df["match_id"].astype(str).isin(m_ids))
                     ]
                 else:
                     c_sub = contrib_df[
-                        (contrib_df["player"].str.lower() == p_name.lower()) &
+                        (contrib_df["player"].str.lower().isin(cand_names)) &
                         (contrib_df["season"] == season_str)
                     ]
                     if c_sub.empty and norm_comp == "t20i":
                         alias_season = "2022/23" if season_str == "2022" else ("2022" if season_str == "2022/23" else None)
                         if alias_season:
                             c_sub = contrib_df[
-                                (contrib_df["player"].str.lower() == p_name.lower()) &
+                                (contrib_df["player"].str.lower().isin(cand_names)) &
                                 (contrib_df["season"] == alias_season)
                             ]
             else:
@@ -1621,7 +1718,7 @@ class DataService:
             # Calculate dot ball metrics and phase-wise strike rates from delivery data
             if not is_dnb:
                 dot_metrics = self._compute_batter_phase_and_dot_metrics(
-                    player_name=p_name,
+                    player_name=canonical_name,
                     season_str=season_str,
                     norm_comp=norm_comp,
                     c_sub=c_sub,
@@ -1634,7 +1731,9 @@ class DataService:
                     "dot_ball_percentage": None,
                     "powerplay_strike_rate": None,
                     "middle_over_strike_rate": None,
+                    "middle_overs_strike_rate": None,
                     "death_over_strike_rate": None,
+                    "death_overs_strike_rate": None,
                 }
 
             # Metrics according to View A vs View B with strict DNB null preservation
@@ -1668,7 +1767,7 @@ class DataService:
                 press_contrib = clean_num(row.get("high_pressure_contribution"), 2)
 
             compared_list.append({
-                "player": str(row["player"]),
+                "player": canonical_name,
                 "season": season_str,
                 "team": str(row["team"]),
                 "actual_runs": actual_runs,
@@ -1690,8 +1789,10 @@ class DataService:
                 "powerplay_strike_rate": dot_metrics["powerplay_strike_rate"],
                 "middle_over_contribution": mid_contrib,
                 "middle_over_strike_rate": dot_metrics["middle_over_strike_rate"],
+                "middle_overs_strike_rate": dot_metrics["middle_overs_strike_rate"],
                 "death_over_contribution": death_contrib,
                 "death_over_strike_rate": dot_metrics["death_over_strike_rate"],
+                "death_overs_strike_rate": dot_metrics["death_overs_strike_rate"],
                 "high_pressure_contribution": press_contrib,
                 "pillars": {
                     "pillar1_match_context": p1,
@@ -1709,8 +1810,10 @@ class DataService:
                     "powerplay_strike_rate": dot_metrics["powerplay_strike_rate"],
                     "middle_over_contribution": mid_contrib,
                     "middle_over_strike_rate": dot_metrics["middle_over_strike_rate"],
+                    "middle_overs_strike_rate": dot_metrics["middle_overs_strike_rate"],
                     "death_over_contribution": death_contrib,
                     "death_over_strike_rate": dot_metrics["death_over_strike_rate"],
+                    "death_overs_strike_rate": dot_metrics["death_overs_strike_rate"],
                     "high_pressure_contribution": press_contrib,
                     "dot_balls": dot_metrics["dot_balls"],
                     "dot_ball_percentage": dot_metrics["dot_ball_percentage"],
