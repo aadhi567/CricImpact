@@ -61,7 +61,7 @@ export default function FormatSelector({ variant = 'dropdown', className = '' })
           aria-label="Format Selector"
           value={selectedFormat}
           onChange={(e) => handleSelectFormat(e.target.value)}
-          className="h-11 sm:h-12 appearance-none bg-[#121212] border border-[#2D2D2D] hover:border-[#D4AF57]/60 focus:border-[#D4AF57] text-[#F2F2F2] text-[14px] sm:text-[15px] font-sans font-semibold rounded-lg pl-4 pr-10 py-2 sm:py-2.5 transition-colors cursor-pointer shadow-xs focus:outline-none"
+          className="h-8.5 sm:h-9 appearance-none bg-[#121212] border border-[#2D2D2D] hover:border-[#D4AF57]/60 focus:border-[#D4AF57] text-[#F2F2F2] text-[12px] sm:text-[12.5px] font-sans font-semibold rounded-md pl-3 pr-8 py-1 transition-colors cursor-pointer shadow-xs focus:outline-none"
         >
           {CRICKET_FORMATS.map((f) => (
             <option
@@ -74,14 +74,14 @@ export default function FormatSelector({ variant = 'dropdown', className = '' })
             </option>
           ))}
         </select>
-        <ChevronDown className="w-4 h-4 text-[#858585] absolute right-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
+        <ChevronDown className="w-3.5 h-3.5 text-[#858585] absolute right-2.5 top-1/2 -translate-y-1/2 pointer-events-none" />
       </div>
     );
   }
 
   return (
     <div ref={dropdownRef} className={`relative inline-block ${className}`}>
-      {/* Primary Format Selector Button: 44-48px height, 14-15px font size */}
+      {/* Primary Format Selector Button */}
       <button
         id="format-selector"
         type="button"
@@ -89,14 +89,14 @@ export default function FormatSelector({ variant = 'dropdown', className = '' })
         aria-label="Cricket Format Selector"
         aria-expanded={isOpen}
         aria-haspopup="listbox"
-        className="h-9 sm:h-10 xl:h-9 2xl:h-10 flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3.5 rounded-lg bg-[#121212] hover:bg-[#161616] border border-[#2D2D2D] hover:border-[#D4AF57]/60 text-[#F2F2F2] transition-all duration-150 shadow-xs cursor-pointer focus:outline-none focus:border-[#D4AF57]"
+        className="h-8 sm:h-8.5 xl:h-8.5 2xl:h-9 flex items-center gap-1.5 px-2 sm:px-2.5 rounded-md bg-[#121212] hover:bg-[#161616] border border-[#2D2D2D] hover:border-[#D4AF57]/60 text-[#F2F2F2] transition-all duration-150 shadow-xs cursor-pointer focus:outline-none focus:border-[#D4AF57]"
       >
-        <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse shrink-0" />
-        <span className="text-[12.5px] sm:text-[13px] 2xl:text-[14px] font-sans font-bold tracking-wider text-[#F2F2F2]">
+        <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse shrink-0" />
+        <span className="text-[11.5px] sm:text-[12px] 2xl:text-[12.5px] font-sans font-bold tracking-wider text-[#F2F2F2]">
           {selectedFormat || activeMeta?.format || 'T20'}
         </span>
         <ChevronDown
-          className={`w-3.5 h-3.5 text-[#858585] transition-transform duration-150 ${
+          className={`w-3 h-3 text-[#858585] transition-transform duration-150 ${
             isOpen ? 'rotate-180 text-[#D4AF57]' : ''
           }`}
         />

@@ -216,17 +216,17 @@ export default function Players() {
   }, [seasonOptions, selectedSeason]);
 
   return (
-    <div className="w-full space-y-8 font-sans text-[#F2F2F2]">
+    <div className="w-full space-y-6 sm:space-y-7 font-sans text-[#F2F2F2]">
       {/* 1. Page Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-5 border-b border-[#2D2D2D]">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-[#2D2D2D]">
         <div>
-          <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 text-[11px] sm:text-[12px] font-sans uppercase tracking-wider text-[#D4AF57] font-semibold mb-1.5">
-            <Users className="w-4 h-4 shrink-0" />
+          <div className="flex flex-wrap items-center gap-1.5 text-[11px] sm:text-[11.5px] font-sans uppercase tracking-wider text-[#D4AF57] font-semibold mb-1">
+            <Users className="w-3.5 h-3.5 shrink-0" />
             <span>INDIVIDUAL PLAYER ANALYSIS</span>
             {competition === 't20i' && tournamentType && tournamentType !== 'all' && (
               <>
                 <span className="text-[#858585]">•</span>
-                <span className="text-[#D4AF57] bg-[#1E190E] px-2 py-0.5 rounded border border-[#3D351E]">
+                <span className="text-[#D4AF57] bg-[#1E190E] px-1.5 py-0.5 rounded border border-[#3D351E]">
                   {TOURNAMENT_TYPES.find((t) => t.id === tournamentType)?.label || tournamentType}
                 </span>
               </>
@@ -234,21 +234,21 @@ export default function Players() {
             <span className="text-[#858585]">•</span>
             <span className="text-[#F2F2F2]">{selectedSeason ? currentSeasonLabel : 'Season Overview'}</span>
           </div>
-          <h1 className="font-heading text-[22px] sm:text-[30px] lg:text-[36px] font-bold text-[#F2F2F2] tracking-wide leading-tight break-words">
+          <h1 className="font-heading text-[22px] sm:text-[26px] lg:text-[28px] font-bold text-[#F2F2F2] tracking-wide leading-tight break-words">
             INDIVIDUAL PLAYER ANALYSIS
           </h1>
-          <p className="text-[14px] sm:text-[16px] font-normal text-[#B8B8B8] mt-1.5 leading-relaxed max-w-5xl">
+          <p className="text-[13px] sm:text-[14px] font-normal text-[#B8B8B8] mt-1 leading-relaxed max-w-4xl">
             Evaluate individual batter contribution, situation handling, and multi-player comparisons across {activeMeta?.name || 'the season'}.
           </p>
         </div>
 
-        <div className="flex items-center gap-2.5 self-start sm:self-auto shrink-0 flex-wrap">
+        <div className="flex items-center gap-2 self-start sm:self-auto shrink-0 flex-wrap">
           {competition === 't20i' && (
-            <span className="px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-lg text-[12px] sm:text-[13px] font-medium bg-[#161616] text-[#858585] border border-[#2D2D2D]">
+            <span className="px-2.5 py-1 rounded-md text-[11.5px] sm:text-[12px] font-medium bg-[#161616] text-[#858585] border border-[#2D2D2D]">
               Tournament: <strong className="text-[#D4AF57] ml-1 font-semibold">{TOURNAMENT_TYPES.find((t) => t.id === tournamentType)?.label || 'All International T20Is'}</strong>
             </span>
           )}
-          <span className="px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-lg text-[12px] sm:text-[13px] font-medium bg-[#161616] text-[#858585] border border-[#2D2D2D]">
+          <span className="px-2.5 py-1 rounded-md text-[11.5px] sm:text-[12px] font-medium bg-[#161616] text-[#858585] border border-[#2D2D2D]">
             Players: <strong className="text-[#D4AF57] ml-1 font-semibold">{sortedPlayers.length}</strong>
           </span>
         </div>
@@ -292,15 +292,15 @@ export default function Players() {
         id="players-table"
         className="bg-[#161616] rounded-xl border border-[#2D2D2D] shadow-xs overflow-hidden max-w-full min-w-0"
       >
-        <div className="p-4 sm:p-5 border-b border-[#2D2D2D] flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+        <div className="p-3 sm:p-4 border-b border-[#2D2D2D] flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
           <div>
-            <div className="flex items-center gap-2.5">
-              <h2 className="font-heading text-[19px] sm:text-[23px] font-bold text-[#F2F2F2]">
+            <div className="flex items-center gap-2">
+              <h2 className="font-heading text-[16px] sm:text-[18px] font-bold text-[#F2F2F2]">
                 Season Player Analytical Table
               </h2>
-              <span className="text-[13px] font-normal text-[#858585]">({sortedPlayers.length} players)</span>
+              <span className="text-[12px] font-normal text-[#858585]">({sortedPlayers.length} players)</span>
             </div>
-            <p className="text-[13px] font-normal text-[#858585] mt-1">
+            <p className="text-[12px] font-normal text-[#858585] mt-0.5">
               Click any player row to open match analysis. Click "[+ Compare]" to select up to 5 batters.
             </p>
           </div>
@@ -314,7 +314,7 @@ export default function Players() {
                   setMinRuns(0);
                   setSearchQuery('');
                 }}
-                className="flex items-center gap-1 px-2.5 py-1 rounded text-[11px] font-medium bg-[#161616] border border-[#2D2D2D] text-[#D4AF57] hover:text-[#E1C878] hover:border-[#D4AF57]/40 transition-colors cursor-pointer"
+                className="flex items-center gap-1 px-2 py-0.5 rounded text-[11px] font-medium bg-[#161616] border border-[#2D2D2D] text-[#D4AF57] hover:text-[#E1C878] hover:border-[#D4AF57]/40 transition-colors cursor-pointer"
                 title="Reset search and filters"
               >
                 <RotateCcw className="w-3 h-3" />
@@ -323,11 +323,11 @@ export default function Players() {
             )}
 
             {/* View A vs View B Toggle */}
-            <div className="inline-flex rounded-lg bg-[#101010] p-1 border border-[#2D2D2D] self-start sm:self-auto shrink-0 max-w-full">
+            <div className="inline-flex rounded-lg bg-[#101010] p-0.5 border border-[#2D2D2D] self-start sm:self-auto shrink-0 max-w-full">
               <button
                 type="button"
                 onClick={() => setViewMode('view_a')}
-                className={`px-2.5 sm:px-3.5 py-1.5 rounded-md text-[12px] sm:text-[13px] font-semibold transition-colors cursor-pointer ${
+                className={`px-2.5 py-1 rounded-md text-[11.5px] sm:text-[12px] font-semibold transition-colors cursor-pointer ${
                   viewMode === 'view_a'
                     ? 'bg-[#D4AF57] text-[#080808] shadow-xs'
                     : 'text-[#858585] hover:text-[#F2F2F2]'
@@ -340,7 +340,7 @@ export default function Players() {
               <button
                 type="button"
                 onClick={() => setViewMode('view_b')}
-                className={`px-2.5 sm:px-3.5 py-1.5 rounded-md text-[12px] sm:text-[13px] font-semibold transition-colors cursor-pointer ${
+                className={`px-2.5 py-1 rounded-md text-[11.5px] sm:text-[12px] font-semibold transition-colors cursor-pointer ${
                   viewMode === 'view_b'
                     ? 'bg-[#D4AF57] text-[#080808] shadow-xs'
                     : 'text-[#858585] hover:text-[#F2F2F2]'
@@ -356,8 +356,8 @@ export default function Players() {
         </div>
 
         {/* Informational Context Bar */}
-        <div className="px-4 sm:px-5 py-2.5 bg-[#121212] border-b border-[#2D2D2D] text-[12px] sm:text-[12.5px] font-normal text-[#858585] flex items-center gap-2">
-          <Info className="w-4 h-4 text-[#D4AF57] shrink-0" />
+        <div className="px-3.5 sm:px-4 py-2 bg-[#121212] border-b border-[#2D2D2D] text-[11.5px] sm:text-[12px] font-normal text-[#858585] flex items-center gap-2">
+          <Info className="w-3.5 h-3.5 text-[#D4AF57] shrink-0" />
           <span>
             <strong className="text-[#F2F2F2] font-semibold">Contextual Analytics:</strong> This analytical table evaluates performance against situational expectations. Par = 50.0.
           </span>
@@ -367,27 +367,27 @@ export default function Players() {
         <div className="overflow-x-auto w-full max-w-full min-w-0">
           <table className="w-full text-left border-collapse">
             <thead>
-              <tr className="border-b border-[#2D2D2D] bg-[#161616] text-[#858585] font-semibold text-[12.5px] sm:text-[13px] tracking-wider sticky top-0 z-10">
+              <tr className="border-b border-[#2D2D2D] bg-[#161616] text-[#858585] font-semibold text-[11px] sm:text-[11.5px] uppercase tracking-wider sticky top-0 z-10">
                 <th
                   onClick={() => handleSort('player')}
-                  className="py-3.5 px-4 sm:px-5 cursor-pointer hover:text-[#F2F2F2] transition-colors"
+                  className="py-2.5 px-3 sm:px-3.5 cursor-pointer hover:text-[#F2F2F2] transition-colors"
                 >
                   <div className="flex items-center gap-1.5">
                     <span>PLAYER</span>
-                    <ArrowUpDown className="w-3.5 h-3.5 text-[#858585]" />
+                    <ArrowUpDown className="w-3 h-3 text-[#858585]" />
                   </div>
                 </th>
                 <th
                   onClick={() => handleSort('team')}
-                  className="py-3.5 px-3.5 cursor-pointer hover:text-[#F2F2F2] transition-colors"
+                  className="py-2.5 px-2 sm:px-2.5 cursor-pointer hover:text-[#F2F2F2] transition-colors"
                 >
                   <div className="flex items-center gap-1.5">
                     <span>TEAM</span>
-                    <ArrowUpDown className="w-3.5 h-3.5 text-[#858585]" />
+                    <ArrowUpDown className="w-3 h-3 text-[#858585]" />
                   </div>
                 </th>
                 <th
-                  className="py-3.5 px-3 text-center text-[#858585]"
+                  className="py-2.5 px-2 text-center text-[#858585]"
                   title="Total match appearances in the selected season (Batting Innings + DNB)"
                 >
                   <span>MATCHES</span>
@@ -398,41 +398,41 @@ export default function Players() {
                       viewMode === 'view_a' ? 'batting_innings' : 'qualified_batting_innings'
                     )
                   }
-                  className="py-3.5 px-3 text-center cursor-pointer hover:text-[#F2F2F2] transition-colors"
+                  className="py-2.5 px-2 text-center cursor-pointer hover:text-[#F2F2F2] transition-colors"
                   title="Number of actual batting opportunities evaluated in this season. Did Not Bat (DNB) is not treated as a zero contribution."
                 >
-                  <div className="flex items-center justify-center gap-1.5">
-                    <span>BATTING INNINGS</span>
-                    <ArrowUpDown className="w-3.5 h-3.5 text-[#858585]" />
+                  <div className="flex items-center justify-center gap-1">
+                    <span>BATTING INN</span>
+                    <ArrowUpDown className="w-3 h-3 text-[#858585]" />
                   </div>
                 </th>
                 <th
-                  className="py-3.5 px-3 text-center text-[#858585]"
+                  className="py-2.5 px-2 text-center text-[#858585]"
                   title="Did Not Bat appearances. Strictly excluded from the denominator to prevent artificial dilution."
                 >
                   <span>DNB</span>
                 </th>
                 <th
                   onClick={() => handleSort('actual_runs')}
-                  className="py-3.5 px-3.5 text-right cursor-pointer hover:text-[#F2F2F2] transition-colors"
+                  className="py-2.5 px-2 sm:px-2.5 text-right cursor-pointer hover:text-[#F2F2F2] transition-colors"
                   title="Total runs scored across actual batting opportunities."
                 >
-                  <div className="flex items-center justify-end gap-1.5">
+                  <div className="flex items-center justify-end gap-1">
                     <span>RUNS</span>
-                    <ArrowUpDown className="w-3.5 h-3.5 text-[#858585]" />
+                    <ArrowUpDown className="w-3 h-3 text-[#858585]" />
                   </div>
                 </th>
-                <th className="py-3.5 px-3 text-right text-[#858585]" title="Total balls faced by the batter.">
+                <th className="py-2.5 px-2 text-right text-[#858585]" title="Total balls faced by the batter.">
                   BALLS
                 </th>
                 <th
                   onClick={() => handleSort('strike_rate')}
-                  className="py-3.5 px-3 text-right cursor-pointer hover:text-[#F2F2F2] transition-colors"
+                  className="py-2.5 px-2 text-right cursor-pointer hover:text-[#F2F2F2] transition-colors"
                   title="Batting strike rate (runs per 100 balls faced)."
                 >
-                  <div className="flex items-center justify-end gap-1.5">
+                  <div className="flex items-center justify-end gap-1">
                     <span>SR</span>
-                    <ArrowUpDown className="w-3.5 h-3.5 text-[#858585]" />
+                    <ArrowUpDown className="w-3 h-3 text-[#858585]" />
                   </div>
                 </th>
                 <th
@@ -443,12 +443,12 @@ export default function Players() {
                         : 'qualified_average_contribution_score'
                     )
                   }
-                  className="py-3.5 px-4 sm:px-5 text-center cursor-pointer hover:text-[#F2F2F2] transition-colors"
+                  className="py-2.5 px-2.5 sm:px-3 text-center cursor-pointer hover:text-[#F2F2F2] transition-colors"
                   title="Overall contribution for a batting opportunity. 50 represents the model's par benchmark. Average Contribution Score across actual batting opportunities."
                 >
-                  <div className="flex items-center justify-center gap-1.5">
-                    <span>AVG CONTRIBUTION</span>
-                    <ArrowUpDown className="w-3.5 h-3.5 text-[#858585]" />
+                  <div className="flex items-center justify-center gap-1">
+                    <span>AVG CONTRIB</span>
+                    <ArrowUpDown className="w-3 h-3 text-[#858585]" />
                   </div>
                 </th>
                 <th
@@ -459,12 +459,12 @@ export default function Players() {
                         : 'qualified_total_positive_contribution'
                     )
                   }
-                  className="py-3.5 px-3.5 text-right cursor-pointer hover:text-[#F2F2F2] transition-colors"
+                  className="py-2.5 px-2 sm:px-2.5 text-right cursor-pointer hover:text-[#F2F2F2] transition-colors"
                   title="Positive portion of the player's underlying raw contribution. It is not runs scored."
                 >
-                  <div className="flex items-center justify-end gap-1.5">
-                    <span>POSITIVE CONTRIBUTION</span>
-                    <ArrowUpDown className="w-3.5 h-3.5 text-[#858585]" />
+                  <div className="flex items-center justify-end gap-1">
+                    <span>POS CONTRIB</span>
+                    <ArrowUpDown className="w-3 h-3 text-[#858585]" />
                   </div>
                 </th>
                 <th
@@ -475,56 +475,56 @@ export default function Players() {
                         : 'qualified_team_contribution_share'
                     )
                   }
-                  className="py-3.5 px-3.5 text-right cursor-pointer hover:text-[#F2F2F2] transition-colors"
+                  className="py-2.5 px-2 sm:px-2.5 text-right cursor-pointer hover:text-[#F2F2F2] transition-colors"
                   title="Player's share of the team's total positive model contribution. It is not a share of team runs."
                 >
-                  <div className="flex items-center justify-end gap-1.5">
+                  <div className="flex items-center justify-end gap-1">
                     <span>TEAM SHARE</span>
-                    <ArrowUpDown className="w-3.5 h-3.5 text-[#858585]" />
+                    <ArrowUpDown className="w-3 h-3 text-[#858585]" />
                   </div>
                 </th>
-                <th className="py-3.5 px-4 text-center text-[#858585]">ACTION</th>
+                <th className="py-2.5 px-2.5 text-center text-[#858585]">ACTION</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-[#222222] text-[#F2F2F2] text-[13.5px] sm:text-[14px] font-normal font-sans">
+            <tbody className="divide-y divide-[#222222] text-[#F2F2F2] text-[12.5px] font-normal font-sans">
               {loading ? (
                 Array.from({ length: 6 }).map((_, idx) => (
                   <tr key={`skel-p-${idx}`} className="animate-pulse">
-                    <td className="py-4 px-4 sm:px-5">
-                      <div className="skeleton h-4 w-32 rounded" />
+                    <td className="py-2 px-3 sm:px-3.5">
+                      <div className="skeleton h-3.5 w-28 rounded" />
                     </td>
-                    <td className="py-4 px-3.5">
-                      <div className="skeleton h-4 w-12 rounded" />
+                    <td className="py-2 px-2 sm:px-2.5">
+                      <div className="skeleton h-3.5 w-10 rounded" />
                     </td>
-                    <td className="py-4 px-3 text-center">
-                      <div className="skeleton h-4 w-8 mx-auto rounded" />
+                    <td className="py-2 px-2 text-center">
+                      <div className="skeleton h-3.5 w-6 mx-auto rounded" />
                     </td>
-                    <td className="py-4 px-3 text-center">
-                      <div className="skeleton h-4 w-8 mx-auto rounded" />
+                    <td className="py-2 px-2 text-center">
+                      <div className="skeleton h-3.5 w-6 mx-auto rounded" />
                     </td>
-                    <td className="py-4 px-3 text-center">
-                      <div className="skeleton h-4 w-12 mx-auto rounded-full" />
+                    <td className="py-2 px-2 text-center">
+                      <div className="skeleton h-3.5 w-10 mx-auto rounded-full" />
                     </td>
-                    <td className="py-4 px-3.5 text-right">
-                      <div className="skeleton h-4 w-10 ml-auto rounded" />
+                    <td className="py-2 px-2 sm:px-2.5 text-right">
+                      <div className="skeleton h-3.5 w-8 ml-auto rounded" />
                     </td>
-                    <td className="py-4 px-3 text-right">
-                      <div className="skeleton h-4 w-10 ml-auto rounded" />
+                    <td className="py-2 px-2 text-right">
+                      <div className="skeleton h-3.5 w-8 ml-auto rounded" />
                     </td>
-                    <td className="py-4 px-3 text-right">
-                      <div className="skeleton h-4 w-12 ml-auto rounded" />
+                    <td className="py-2 px-2 text-right">
+                      <div className="skeleton h-3.5 w-10 ml-auto rounded" />
                     </td>
-                    <td className="py-4 px-4 sm:px-5 text-center">
-                      <div className="skeleton h-6 w-14 mx-auto rounded-full" />
+                    <td className="py-2 px-2.5 sm:px-3 text-center">
+                      <div className="skeleton h-5 w-12 mx-auto rounded-full" />
                     </td>
-                    <td className="py-4 px-3.5 text-right">
-                      <div className="skeleton h-4 w-12 ml-auto rounded" />
+                    <td className="py-2 px-2 sm:px-2.5 text-right">
+                      <div className="skeleton h-3.5 w-10 ml-auto rounded" />
                     </td>
-                    <td className="py-4 px-3.5 text-right">
-                      <div className="skeleton h-4 w-12 ml-auto rounded" />
+                    <td className="py-2 px-2 sm:px-2.5 text-right">
+                      <div className="skeleton h-3.5 w-10 ml-auto rounded" />
                     </td>
-                    <td className="py-4 px-4 text-center">
-                      <div className="skeleton h-6 w-20 mx-auto rounded" />
+                    <td className="py-2 px-2.5 text-center">
+                      <div className="skeleton h-5 w-16 mx-auto rounded" />
                     </td>
                   </tr>
                 ))
@@ -598,32 +598,32 @@ export default function Players() {
                       className="cursor-pointer transition-colors hover:bg-[#1A1A1A]"
                     >
                       {/* Player */}
-                      <td className="py-3.5 px-4 sm:px-5 whitespace-nowrap">
-                        <span className="font-semibold text-[14.5px] text-[#F2F2F2] hover:text-[#D4AF57] transition-colors">
+                      <td className="py-2 px-3 sm:px-3.5 whitespace-nowrap">
+                        <span className="font-semibold text-[13px] sm:text-[13.5px] text-[#F2F2F2] hover:text-[#D4AF57] transition-colors">
                           {p.player}
                         </span>
                         {p.not_outs > 0 && (
-                          <span className="text-[12px] font-normal text-[#858585] ml-1.5 font-sans">
+                          <span className="text-[11px] font-normal text-[#858585] ml-1 font-sans">
                             ({p.not_outs} NO)
                           </span>
                         )}
                       </td>
 
                       {/* Team */}
-                      <td className="py-3.5 px-3.5 whitespace-nowrap text-[#B8B8B8] text-[13.5px]">{p.team}</td>
+                      <td className="py-2 px-2 sm:px-2.5 whitespace-nowrap text-[#B8B8B8] text-[12px] sm:text-[12.5px]">{p.team}</td>
 
                       {/* Matches */}
-                      <td className="py-3.5 px-3 text-center whitespace-nowrap text-[#B8B8B8] tabular-nums">
+                      <td className="py-2 px-2 text-center whitespace-nowrap text-[#B8B8B8] tabular-nums">
                         {matches}
                       </td>
 
                       {/* Batting Innings */}
-                      <td className="py-3.5 px-3 text-center whitespace-nowrap font-medium text-[#F2F2F2] tabular-nums">
+                      <td className="py-2 px-2 text-center whitespace-nowrap font-medium text-[#F2F2F2] tabular-nums">
                         {innings}
                       </td>
 
                       {/* DNB Matches */}
-                      <td className="py-3.5 px-3 text-center whitespace-nowrap tabular-nums">
+                      <td className="py-2 px-2 text-center whitespace-nowrap tabular-nums">
                         {p.did_not_bat_matches > 0 ? (
                           <span className="badge-dnb">
                             {p.did_not_bat_matches} DNB
@@ -634,56 +634,56 @@ export default function Players() {
                       </td>
 
                       {/* Actual Runs */}
-                      <td className="py-3.5 px-3.5 text-right font-medium tabular-nums whitespace-nowrap text-[#F2F2F2]">
+                      <td className="py-2 px-2 sm:px-2.5 text-right font-medium tabular-nums whitespace-nowrap text-[#F2F2F2]">
                         {p.actual_runs}
                       </td>
 
                       {/* Balls Faced */}
-                      <td className="py-3.5 px-3 text-right whitespace-nowrap text-[#858585] tabular-nums">
+                      <td className="py-2 px-2 text-right whitespace-nowrap text-[#858585] tabular-nums">
                         {p.balls_faced}
                       </td>
 
                       {/* Strike Rate */}
-                      <td className="py-3.5 px-3 text-right whitespace-nowrap text-[#B8B8B8] tabular-nums">
+                      <td className="py-2 px-2 text-right whitespace-nowrap text-[#B8B8B8] tabular-nums">
                         {sr}
                       </td>
 
                       {/* Contribution Score */}
-                      <td className="py-3.5 px-4 sm:px-5 text-center whitespace-nowrap">
+                      <td className="py-2 px-2.5 sm:px-3 text-center whitespace-nowrap">
                         {score !== null && score !== undefined ? (
                           <span
-                            className={`inline-block px-3 py-1 rounded-full text-[13px] border tabular-nums ${scoreBadge}`}
+                            className={`inline-block px-2.5 py-0.5 rounded-full text-[12px] border tabular-nums ${scoreBadge}`}
                           >
                             {Number(score).toFixed(1)}
                           </span>
                         ) : (
-                          <span className="text-[12px] text-[#858585] font-medium px-2.5 py-0.5 rounded bg-[#101010] border border-[#2D2D2D]">
+                          <span className="text-[11px] text-[#858585] font-medium px-2 py-0.5 rounded bg-[#101010] border border-[#2D2D2D]">
                             —
                           </span>
                         )}
                       </td>
 
                       {/* Positive Raw Contribution */}
-                      <td className="py-3.5 px-3.5 text-right whitespace-nowrap tabular-nums text-[#5A9E60] font-medium">
+                      <td className="py-2 px-2 sm:px-2.5 text-right whitespace-nowrap tabular-nums text-[#5A9E60] font-medium">
                         {posContrib !== null ? Number(posContrib).toFixed(2) : '—'}
                       </td>
 
                       {/* Team Contribution Share */}
-                      <td className="py-3.5 px-3.5 text-right whitespace-nowrap tabular-nums text-[#F2F2F2]">
+                      <td className="py-2 px-2 sm:px-2.5 text-right whitespace-nowrap tabular-nums text-[#F2F2F2]">
                         {teamShare !== null ? `${Number(teamShare).toFixed(1)}%` : '—'}
                       </td>
 
                       {/* Action */}
-                      <td className="py-3.5 px-4 text-center whitespace-nowrap">
-                        <div className="flex items-center justify-center gap-2">
+                      <td className="py-2 px-2.5 text-center whitespace-nowrap">
+                        <div className="flex items-center justify-center gap-1.5">
                           <Link
                             to={`/player/${encodeURIComponent(p.player)}/${selectedSeason}`}
                             onClick={(e) => e.stopPropagation()}
-                            className="inline-flex items-center gap-1 text-[13px] text-[#D4AF57] hover:text-[#E1C878] font-semibold hover:underline px-1.5 py-0.5"
+                            className="inline-flex items-center gap-1 text-[12px] text-[#D4AF57] hover:text-[#E1C878] font-semibold hover:underline px-1 py-0.5"
                             title="Open Player Profile"
                           >
                             <span>Analyze</span>
-                            <ExternalLink className="w-3.5 h-3.5" />
+                            <ExternalLink className="w-3 h-3" />
                           </Link>
 
                           <button
@@ -692,7 +692,7 @@ export default function Players() {
                               e.stopPropagation();
                               handleToggleCompare(p.player);
                             }}
-                            className={`inline-flex items-center gap-1 text-[12.5px] px-2.5 py-1 rounded-md font-semibold transition-all cursor-pointer ${
+                            className={`inline-flex items-center gap-1 text-[11.5px] px-2 py-0.5 rounded font-semibold transition-all cursor-pointer ${
                               selectedForCompare.includes(p.player)
                                 ? 'bg-[#D4AF57] text-[#080808] shadow-xs'
                                 : 'bg-[#101010] text-[#B8B8B8] border border-[#2D2D2D] hover:text-[#F2F2F2] hover:border-[#D4AF57]/40'
@@ -717,8 +717,8 @@ export default function Players() {
 
         {/* Pagination Bar */}
         {sortedPlayers.length > 0 && (
-          <div className="p-4 sm:p-5 border-t border-[#2D2D2D] bg-[#101010] flex flex-col sm:flex-row items-center justify-between gap-3 text-[13px]">
-            <div className="flex items-center gap-3 text-[#858585]">
+          <div className="p-3 sm:p-3.5 border-t border-[#2D2D2D] bg-[#101010] flex flex-col sm:flex-row items-center justify-between gap-2.5 text-[12px]">
+            <div className="flex items-center gap-2.5 text-[#858585]">
               <span>
                 Showing{' '}
                 <strong className="text-[#F2F2F2] font-semibold">
@@ -735,7 +735,7 @@ export default function Players() {
                 of <strong className="text-[#D4AF57] font-semibold">{sortedPlayers.length}</strong> players
               </span>
 
-              <div className="flex items-center gap-2 ml-3">
+              <div className="flex items-center gap-1.5 ml-2">
                 <span className="text-[#858585]">Rows:</span>
                 <select
                   value={pageSize}
@@ -743,7 +743,7 @@ export default function Players() {
                     setPageSize(e.target.value === 'all' ? 'all' : Number(e.target.value));
                     setCurrentPage(1);
                   }}
-                  className="bg-[#161616] text-[#F2F2F2] border border-[#2D2D2D] rounded-md px-2.5 py-1 text-[12px] focus:outline-none focus:border-[#D4AF57]"
+                  className="bg-[#161616] text-[#F2F2F2] border border-[#2D2D2D] rounded px-2 py-0.5 text-[11.5px] focus:outline-none focus:border-[#D4AF57]"
                 >
                   <option value={25}>25</option>
                   <option value={50}>50</option>
@@ -754,18 +754,18 @@ export default function Players() {
             </div>
 
             {pageSize !== 'all' && totalPages > 1 && (
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-1.5">
                 <button
                   type="button"
                   onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
                   disabled={currentPage === 1}
-                  className="p-2 rounded-lg bg-[#161616] border border-[#2D2D2D] text-[#858585] hover:text-[#F2F2F2] hover:border-[#D4AF57]/40 disabled:opacity-40 disabled:pointer-events-none transition-colors cursor-pointer"
+                  className="p-1.5 rounded-md bg-[#161616] border border-[#2D2D2D] text-[#858585] hover:text-[#F2F2F2] hover:border-[#D4AF57]/40 disabled:opacity-40 disabled:pointer-events-none transition-colors cursor-pointer"
                   title="Previous page"
                 >
-                  <ChevronLeft className="w-4 h-4" />
+                  <ChevronLeft className="w-3.5 h-3.5" />
                 </button>
 
-                <div className="px-3 py-1 rounded-lg bg-[#161616] border border-[#2D2D2D] text-[12px] text-[#858585]">
+                <div className="px-2.5 py-0.5 rounded-md bg-[#161616] border border-[#2D2D2D] text-[11.5px] text-[#858585]">
                   Page <strong className="text-[#F2F2F2]">{currentPage}</strong> of{' '}
                   <strong className="text-[#F2F2F2]">{totalPages}</strong>
                 </div>
@@ -774,10 +774,10 @@ export default function Players() {
                   type="button"
                   onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
                   disabled={currentPage === totalPages}
-                  className="p-2 rounded-lg bg-[#161616] border border-[#2D2D2D] text-[#858585] hover:text-[#F2F2F2] hover:border-[#D4AF57]/40 disabled:opacity-40 disabled:pointer-events-none transition-colors cursor-pointer"
+                  className="p-1.5 rounded-md bg-[#161616] border border-[#2D2D2D] text-[#858585] hover:text-[#F2F2F2] hover:border-[#D4AF57]/40 disabled:opacity-40 disabled:pointer-events-none transition-colors cursor-pointer"
                   title="Next page"
                 >
-                  <ChevronRight className="w-4 h-4" />
+                  <ChevronRight className="w-3.5 h-3.5" />
                 </button>
               </div>
             )}
@@ -787,16 +787,16 @@ export default function Players() {
 
       {/* Floating Player Comparison Tray */}
       {selectedForCompare.length > 0 && (
-        <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-40 w-11/12 max-w-4xl bg-[#161616] border border-[#2D2D2D] rounded-xl shadow-2xl p-4 transition-all">
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
+        <div className="fixed bottom-5 left-1/2 -translate-x-1/2 z-40 w-11/12 max-w-3xl bg-[#161616] border border-[#2D2D2D] rounded-lg shadow-2xl p-3 transition-all">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-2.5">
             <div className="flex flex-wrap items-center gap-1.5">
-              <span className="text-[12px] font-semibold text-[#D4AF57] mr-1">
+              <span className="text-[11.5px] font-semibold text-[#D4AF57] mr-1">
                 {selectedForCompare.length} / 5 Selected:
               </span>
               {selectedForCompare.map((name) => (
                 <span
                   key={name}
-                  className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[12px] font-medium bg-[#101010] text-[#F2F2F2] border border-[#2D2D2D]"
+                  className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[11.5px] font-medium bg-[#101010] text-[#F2F2F2] border border-[#2D2D2D]"
                 >
                   <span>{name}</span>
                   <button
@@ -805,17 +805,17 @@ export default function Players() {
                     className="p-0.5 rounded-full hover:bg-[#2D2D2D] text-[#858585] hover:text-[#F2F2F2] transition-colors"
                     title={`Remove ${name}`}
                   >
-                    <X className="w-3 h-3" />
+                    <X className="w-2.5 h-2.5" />
                   </button>
                 </span>
               ))}
             </div>
 
-            <div className="flex items-center gap-2.5 w-full sm:w-auto justify-end">
+            <div className="flex items-center gap-2 w-full sm:w-auto justify-end">
               <button
                 type="button"
                 onClick={() => setSelectedForCompare([])}
-                className="text-[12px] font-normal text-[#858585] hover:text-[#F2F2F2] underline px-2 py-1 cursor-pointer"
+                className="text-[11.5px] font-normal text-[#858585] hover:text-[#F2F2F2] underline px-1.5 py-0.5 cursor-pointer"
               >
                 Clear
               </button>
@@ -830,13 +830,13 @@ export default function Players() {
                       )}&view=${viewMode}`
                     )
                   }
-                  className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-md text-[12px] font-semibold bg-[#D4AF57] hover:bg-[#E1C878] text-[#080808] shadow-xs transition-all cursor-pointer whitespace-nowrap"
+                  className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md text-[11.5px] font-semibold bg-[#D4AF57] hover:bg-[#E1C878] text-[#080808] shadow-xs transition-all cursor-pointer whitespace-nowrap"
                 >
                   <Users className="w-3.5 h-3.5" />
                   <span>Compare {selectedForCompare.length} Players</span>
                 </button>
               ) : (
-                <span className="text-[12px] font-medium text-[#858585] bg-[#101010] px-2.5 py-1 rounded border border-[#2D2D2D]">
+                <span className="text-[11px] font-medium text-[#858585] bg-[#101010] px-2 py-0.5 rounded border border-[#2D2D2D]">
                   Select at least 2 players
                 </span>
               )}
@@ -844,7 +844,7 @@ export default function Players() {
           </div>
 
           {compareWarning && (
-            <div className="mt-1.5 text-center text-[12px] font-semibold text-[#C25454]">
+            <div className="mt-1 text-center text-[11.5px] font-semibold text-[#C25454]">
               {compareWarning}
             </div>
           )}

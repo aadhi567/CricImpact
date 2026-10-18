@@ -18,19 +18,19 @@ export default function ContributionGauge({ score }) {
   const isPar = Math.abs(num - 50.0) <= 0.5;
 
   return (
-    <div className="bg-[#161616] rounded-xl p-5 border border-[#2D2D2D] shadow-xs">
-      <div className="flex items-center justify-between mb-3">
+    <div className="bg-[#161616] rounded-xl p-3.5 sm:p-4 border border-[#2D2D2D] shadow-xs">
+      <div className="flex items-center justify-between mb-2.5">
         <div>
-          <span className="text-[11px] font-semibold text-[#858585] block">
+          <span className="text-[10.5px] sm:text-[11px] font-semibold text-[#858585] block">
             Overall contribution score
           </span>
-          <p className="text-[12px] font-normal text-[#858585]">Par benchmark = 50.0</p>
+          <p className="text-[11px] sm:text-xs font-normal text-[#858585]">Par benchmark = 50.0</p>
         </div>
         <div className="text-right">
-          <span className="text-[28px] sm:text-[32px] font-bold text-[#D4AF57] tabular-nums font-mono leading-none">
+          <span className="text-[22px] sm:text-[24px] font-bold text-[#D4AF57] tabular-nums font-mono leading-none">
             {num.toFixed(1)}
           </span>
-          <span className="text-[#858585] text-[13px] font-medium font-mono"> / 100</span>
+          <span className="text-[#858585] text-xs font-medium font-mono"> / 100</span>
         </div>
       </div>
 

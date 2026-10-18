@@ -55,22 +55,22 @@ export default function PrimaryMetricsComparisonChart({ players = [] }) {
   });
 
   return (
-    <div className="bg-[#161616] rounded-xl p-5 border border-[#2D2D2D]">
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+    <div className="bg-[#161616] rounded-xl p-3.5 sm:p-4 border border-[#2D2D2D]">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
         <div>
-          <h3 className="font-heading text-[17px] font-bold text-[#F2F2F2] tracking-tight">
+          <h3 className="font-heading text-[15px] sm:text-[16px] font-bold text-[#F2F2F2] tracking-tight">
             Contribution score vs. team share
           </h3>
-          <p className="text-[12px] font-normal text-[#858585] mt-0.5">
+          <p className="text-[11px] sm:text-xs font-normal text-[#858585] mt-0.5">
             Compares average situational efficiency against relative team attribution.
           </p>
         </div>
-        <div className="text-[11px] text-[#B8B8B8] bg-[#101010] px-2.5 py-1 rounded border border-[#2D2D2D] font-mono font-semibold self-start sm:self-auto">
+        <div className="text-[10.5px] sm:text-[11px] text-[#B8B8B8] bg-[#101010] px-2 py-0.5 rounded border border-[#2D2D2D] font-mono font-semibold self-start sm:self-auto">
           Dual perspectives
         </div>
       </div>
 
-      <div className="w-full h-80">
+      <div className="w-full h-72">
         <ResponsiveContainer width="100%" height="100%">
           <BarChart data={chartData} margin={{ top: 15, right: 15, bottom: 20, left: -10 }}>
             <CartesianGrid strokeDasharray="3 3" stroke="#222222" vertical={false} />

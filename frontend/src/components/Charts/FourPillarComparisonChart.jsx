@@ -63,17 +63,17 @@ export default function FourPillarComparisonChart({ players = [] }) {
   });
 
   return (
-    <div className="bg-[#161616] rounded-xl p-5 border border-[#2D2D2D] space-y-4">
+    <div className="bg-[#161616] rounded-xl p-3.5 sm:p-4 border border-[#2D2D2D] space-y-3">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
         <div>
-          <h3 className="font-heading text-[17px] font-bold text-[#F2F2F2] tracking-tight">
+          <h3 className="font-heading text-[15px] sm:text-[16px] font-bold text-[#F2F2F2] tracking-tight">
             Core contribution profile (context leverage and 50/50 execution pillars)
           </h3>
-          <p className="text-[12px] font-normal text-[#858585] mt-0.5">
+          <p className="text-[11px] sm:text-xs font-normal text-[#858585] mt-0.5">
             Pillar averages across standard batting innings (Par = 50.0). P4 excluded from final score.
           </p>
         </div>
-        <div className="text-[11px] text-[#D4AF57] bg-[#101010] px-2.5 py-1 rounded border border-[#D4AF57]/40 font-mono font-semibold self-start sm:self-auto">
+        <div className="text-[10.5px] sm:text-[11px] text-[#D4AF57] bg-[#101010] px-2 py-0.5 rounded border border-[#D4AF57]/40 font-mono font-semibold self-start sm:self-auto">
           Par = 50.0
         </div>
       </div>

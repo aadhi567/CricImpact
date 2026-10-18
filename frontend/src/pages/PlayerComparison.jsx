@@ -210,7 +210,7 @@ export default function PlayerComparison() {
   const obs = comparisonData?.analytical_observations;
 
   return (
-    <div className="w-full space-y-8 font-sans text-[#F2F2F2]">
+    <div className="w-full space-y-4 sm:space-y-5 font-sans text-[#F2F2F2]">
       {/* Top Breadcrumb & Title */}
       <Breadcrumbs
         items={[
@@ -221,19 +221,19 @@ export default function PlayerComparison() {
         backLabel="Back to Dashboard"
       />
 
-      <div className="border-b border-[#2D2D2D] pb-5">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+      <div className="border-b border-[#2D2D2D] pb-3 sm:pb-4">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <div>
-            <h1 className="font-heading text-[22px] sm:text-[30px] lg:text-[36px] font-bold text-[#F2F2F2] tracking-wide leading-tight break-words">
+            <h1 className="font-heading text-[20px] sm:text-[24px] lg:text-[26px] font-bold text-[#F2F2F2] tracking-wide leading-tight break-words">
               Player Contribution Comparison
             </h1>
-            <p className="text-[14px] sm:text-[16px] font-normal text-[#B8B8B8] mt-1.5 max-w-5xl leading-relaxed">
+            <p className="text-xs sm:text-[13.5px] font-normal text-[#B8B8B8] mt-1 max-w-5xl leading-relaxed">
               Side-by-side contextual evaluation of 2 to 5 batters within {activeMeta?.name || 'the same season'}. Contribution is not simply runs or strike rate.
             </p>
           </div>
 
           <div className="flex items-center gap-2 self-start sm:self-auto font-sans">
-            <span className="px-3.5 py-1.5 rounded-lg text-[13px] font-medium bg-[#161616] text-[#D4AF57] border border-[#2D2D2D]">
+            <span className="px-2.5 py-1 rounded-md text-xs font-medium bg-[#161616] text-[#D4AF57] border border-[#2D2D2D]">
               {selectedPlayers.length} Selected
             </span>
           </div>
@@ -241,18 +241,18 @@ export default function PlayerComparison() {
       </div>
 
       {/* Selector & Season Filter Bar */}
-      <div className="bg-[#161616] rounded-xl p-4 sm:p-5 border border-[#2D2D2D] space-y-4">
-        <div className={`grid grid-cols-1 ${competition === 't20i' ? 'md:grid-cols-4' : 'md:grid-cols-3'} gap-4 items-center`}>
+      <div className="bg-[#161616] rounded-xl p-3 sm:p-3.5 border border-[#2D2D2D] space-y-3">
+        <div className={`grid grid-cols-1 ${competition === 't20i' ? 'md:grid-cols-4' : 'md:grid-cols-3'} gap-3 items-center`}>
           {/* Tournament Type Selector (if t20i) */}
           {competition === 't20i' && (
             <div>
-              <label className="block text-[12.5px] sm:text-[13px] font-semibold text-[#D4AF57] uppercase tracking-wider mb-1.5">
+              <label className="block text-[11px] sm:text-xs font-semibold text-[#D4AF57] uppercase tracking-wider mb-1">
                 Tournament Type
               </label>
               <select
                 value={tournamentType}
                 onChange={(e) => setTournamentType(e.target.value)}
-                className="w-full bg-[#101010] border border-[#A8893D]/60 rounded-lg px-3.5 py-2 text-[13.5px] sm:text-[14px] font-semibold text-[#F2F2F2] focus:outline-hidden focus:border-[#D4AF57] cursor-pointer"
+                className="w-full h-8.5 sm:h-9 bg-[#101010] border border-[#A8893D]/60 rounded-lg px-2.5 sm:px-3 text-xs sm:text-[13px] font-semibold text-[#F2F2F2] focus:outline-hidden focus:border-[#D4AF57] cursor-pointer"
               >
                 {TOURNAMENT_TYPES.map((t) => (
                   <option key={t.id} value={t.id}>
@@ -265,7 +265,7 @@ export default function PlayerComparison() {
 
           {/* Season Selector */}
           <div>
-            <label className="block text-[12.5px] sm:text-[13px] font-semibold text-[#858585] uppercase tracking-wider mb-1.5">
+            <label className="block text-[11px] sm:text-xs font-semibold text-[#858585] uppercase tracking-wider mb-1">
               {competition === 't20i' && (tournamentType === 'world_cup' || tournamentType === 'asia_cup')
                 ? 'Edition / Year'
                 : 'Comparison Season'}
@@ -279,7 +279,7 @@ export default function PlayerComparison() {
                 setSelectedPlayers([]);
                 setComparisonData(null);
               }}
-              className="w-full bg-[#101010] border border-[#2D2D2D] rounded-lg px-3.5 py-2 text-[13.5px] sm:text-[14px] font-semibold text-[#F2F2F2] focus:outline-hidden focus:border-[#D4AF57] cursor-pointer"
+              className="w-full h-8.5 sm:h-9 bg-[#101010] border border-[#2D2D2D] rounded-lg px-2.5 sm:px-3 text-xs sm:text-[13px] font-semibold text-[#F2F2F2] focus:outline-hidden focus:border-[#D4AF57] cursor-pointer"
             >
               {seasonOptions.length > 0 ? (
                 seasonOptions.map((opt) => (
@@ -299,23 +299,23 @@ export default function PlayerComparison() {
 
           {/* Add Player Search Input */}
           <div ref={dropdownRef} className="md:col-span-2 relative">
-            <div className="flex items-center justify-between mb-1.5">
-              <label className="block text-[12.5px] sm:text-[13px] font-semibold text-[#858585] uppercase tracking-wider">
+            <div className="flex items-center justify-between mb-1">
+              <label className="block text-[11px] sm:text-xs font-semibold text-[#858585] uppercase tracking-wider">
                 Select Batters to Compare
               </label>
-              <span className={`text-[12.5px] font-bold tabular-nums ${selectedPlayers.length === 5 ? 'text-[#D4AF57]' : 'text-[#858585]'}`}>
+              <span className={`text-[11px] sm:text-xs font-bold tabular-nums ${selectedPlayers.length === 5 ? 'text-[#D4AF57]' : 'text-[#858585]'}`}>
                 {selectedPlayers.length} / 5 selected
               </span>
             </div>
 
             <div className="relative">
-              <Search className="w-4 h-4 text-[#858585] absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
+              <Search className="w-3.5 h-3.5 text-[#858585] absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" />
               <input
                 type="text"
                 placeholder={
                   selectedPlayers.length >= 5
                     ? 'Maximum 5 players selected'
-                    : 'Search batter by name to add (e.g. Kohli, Head, Klaasen)...'
+                    : 'Search batter by name (e.g. Kohli, Head, Klaasen)...'
                 }
                 disabled={selectedPlayers.length >= 5}
                 value={playerSearch}
@@ -355,13 +355,13 @@ export default function PlayerComparison() {
                     setIsDropdownOpen(false);
                   }
                 }}
-                className="w-full bg-[#101010] border border-[#2D2D2D] rounded-lg pl-10 pr-3.5 py-2 text-[13.5px] sm:text-[14px] text-[#F2F2F2] placeholder-[#858585] focus:outline-hidden focus:border-[#D4AF57] disabled:opacity-50"
+                className="w-full h-8.5 sm:h-9 bg-[#101010] border border-[#2D2D2D] rounded-lg pl-8.5 pr-3 text-xs sm:text-[13px] text-[#F2F2F2] placeholder-[#858585] focus:outline-hidden focus:border-[#D4AF57] disabled:opacity-50"
               />
             </div>
 
             {/* Dropdown Suggestions */}
             {isDropdownOpen && selectedPlayers.length < 5 && filteredDropdownPlayers.length > 0 && (
-              <div className="absolute left-0 right-0 top-full mt-1.5 bg-[#161616] border border-[#2D2D2D] rounded-xl shadow-2xl z-30 max-h-60 overflow-y-auto divide-y divide-[#2D2D2D]">
+              <div className="absolute left-0 right-0 top-full mt-1 bg-[#161616] border border-[#2D2D2D] rounded-lg shadow-2xl z-30 max-h-56 overflow-y-auto divide-y divide-[#2D2D2D]">
                 {filteredDropdownPlayers.map((p, idx) => {
                   const isHighlighted = idx === highlightedIndex;
                   return (
@@ -371,13 +371,13 @@ export default function PlayerComparison() {
                       onMouseDown={(e) => e.preventDefault()}
                       onClick={() => addPlayer(p.player)}
                       onMouseEnter={() => setHighlightedIndex(idx)}
-                      className={`w-full px-4 py-3 text-left flex items-center justify-between transition-colors cursor-pointer text-[13.5px] ${
+                      className={`w-full px-3 py-2 text-left flex items-center justify-between transition-colors cursor-pointer text-xs ${
                         isHighlighted ? 'bg-[#252525] ring-1 ring-[#D4AF57]/40' : 'hover:bg-[#202020]'
                       }`}
                     >
                       <div>
                         <span className="font-bold text-[#F2F2F2]">{p.player}</span>
-                        <span className="text-[#858585] ml-2 font-medium">({p.team})</span>
+                        <span className="text-[#858585] ml-1.5 font-medium">({p.team})</span>
                       </div>
                       <div className="text-right text-[#858585]">
                         <span>{p.actual_runs} runs</span>
@@ -394,15 +394,15 @@ export default function PlayerComparison() {
         </div>
 
         {/* Player Pool Filters */}
-        <div className="pt-3 border-t border-[#2D2D2D] grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
+        <div className="pt-2.5 border-t border-[#2D2D2D] grid grid-cols-2 sm:grid-cols-4 gap-2.5 text-xs">
           <div>
-            <label className="block text-[11.5px] sm:text-[12px] font-semibold text-[#858585] uppercase tracking-wider mb-1">
+            <label className="block text-[10.5px] sm:text-[11px] font-semibold text-[#858585] uppercase tracking-wider mb-1">
               Filter by Team
             </label>
             <select
               value={selectedTeam}
               onChange={(e) => setSelectedTeam(e.target.value)}
-              className="w-full bg-[#101010] border border-[#2D2D2D] rounded-lg px-3 py-1.5 text-[12.5px] sm:text-[13px] text-[#F2F2F2] focus:outline-hidden focus:border-[#D4AF57] cursor-pointer"
+              className="w-full h-8 bg-[#101010] border border-[#2D2D2D] rounded-md px-2.5 text-xs text-[#F2F2F2] focus:outline-hidden focus:border-[#D4AF57] cursor-pointer"
             >
               <option value="">All Teams ({availablePlayers.length})</option>
               {teams.map((t) => (
@@ -414,13 +414,13 @@ export default function PlayerComparison() {
           </div>
 
           <div>
-            <label className="block text-[11.5px] sm:text-[12px] font-semibold text-[#858585] uppercase tracking-wider mb-1">
+            <label className="block text-[10.5px] sm:text-[11px] font-semibold text-[#858585] uppercase tracking-wider mb-1">
               Min Runs
             </label>
             <select
               value={minRuns}
               onChange={(e) => setMinRuns(Number(e.target.value))}
-              className="w-full bg-[#101010] border border-[#2D2D2D] rounded-lg px-3 py-1.5 text-[12.5px] sm:text-[13px] text-[#F2F2F2] focus:outline-hidden focus:border-[#D4AF57] cursor-pointer"
+              className="w-full h-8 bg-[#101010] border border-[#2D2D2D] rounded-md px-2.5 text-xs text-[#F2F2F2] focus:outline-hidden focus:border-[#D4AF57] cursor-pointer"
             >
               <option value={0}>Any Runs (0+)</option>
               <option value={100}>100+ Runs</option>
@@ -432,13 +432,13 @@ export default function PlayerComparison() {
           </div>
 
           <div>
-            <label className="block text-[11.5px] sm:text-[12px] font-semibold text-[#858585] uppercase tracking-wider mb-1">
+            <label className="block text-[10.5px] sm:text-[11px] font-semibold text-[#858585] uppercase tracking-wider mb-1">
               Min Innings
             </label>
             <select
               value={minInnings}
               onChange={(e) => setMinInnings(Number(e.target.value))}
-              className="w-full bg-[#101010] border border-[#2D2D2D] rounded-lg px-3 py-1.5 text-[12.5px] sm:text-[13px] text-[#F2F2F2] focus:outline-hidden focus:border-[#D4AF57] cursor-pointer"
+              className="w-full h-8 bg-[#101010] border border-[#2D2D2D] rounded-md px-2.5 text-xs text-[#F2F2F2] focus:outline-hidden focus:border-[#D4AF57] cursor-pointer"
             >
               <option value={0}>Any Innings</option>
               <option value={3}>3+ Innings</option>
@@ -448,14 +448,14 @@ export default function PlayerComparison() {
           </div>
 
           <div>
-            <label className="block text-[11.5px] sm:text-[12px] font-semibold text-[#858585] uppercase tracking-wider mb-1">
+            <label className="block text-[10.5px] sm:text-[11px] font-semibold text-[#858585] uppercase tracking-wider mb-1">
               Min Balls
             </label>
             <div className="flex items-center gap-1.5">
               <select
                 value={minBalls}
                 onChange={(e) => setMinBalls(Number(e.target.value))}
-                className="w-full bg-[#101010] border border-[#2D2D2D] rounded-lg px-3 py-1.5 text-[12.5px] sm:text-[13px] text-[#F2F2F2] focus:outline-hidden focus:border-[#D4AF57] cursor-pointer"
+                className="w-full h-8 bg-[#101010] border border-[#2D2D2D] rounded-md px-2.5 text-xs text-[#F2F2F2] focus:outline-hidden focus:border-[#D4AF57] cursor-pointer"
               >
                 <option value={0}>Any Balls</option>
                 <option value={50}>50+ Balls</option>
@@ -472,7 +472,7 @@ export default function PlayerComparison() {
                     setMinInnings(0);
                     setMinBalls(0);
                   }}
-                  className="px-2 py-1 text-[11px] rounded bg-[#101010] text-[#858585] hover:text-[#F2F2F2] border border-[#2D2D2D] whitespace-nowrap cursor-pointer transition-colors"
+                  className="px-2 py-1 text-[10.5px] rounded bg-[#101010] text-[#858585] hover:text-[#F2F2F2] border border-[#2D2D2D] whitespace-nowrap cursor-pointer transition-colors"
                   title="Clear pool filters"
                 >
                   Reset
@@ -483,9 +483,9 @@ export default function PlayerComparison() {
         </div>
 
         {/* Selected Player Chips */}
-        <div className="pt-3 border-t border-[#2D2D2D] flex flex-wrap items-center justify-between gap-3">
-          <div className="flex flex-wrap items-center gap-2">
-            <span className="text-[11px] font-semibold text-[#858585] uppercase tracking-wider mr-1">
+        <div className="pt-2.5 border-t border-[#2D2D2D] flex flex-wrap items-center justify-between gap-2.5">
+          <div className="flex flex-wrap items-center gap-1.5">
+            <span className="text-[10.5px] font-semibold text-[#858585] uppercase tracking-wider mr-1">
               Active:
             </span>
             {selectedPlayers.length === 0 ? (
@@ -494,7 +494,7 @@ export default function PlayerComparison() {
               selectedPlayers.map((p) => (
                 <span
                   key={p}
-                  className="inline-flex items-center gap-1.5 px-3 py-1 rounded text-xs font-bold bg-[#101010] text-[#F2F2F2] border border-[#2D2D2D]"
+                  className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded text-xs font-bold bg-[#101010] text-[#F2F2F2] border border-[#2D2D2D]"
                 >
                   <span>{p}</span>
                   <button
@@ -503,7 +503,7 @@ export default function PlayerComparison() {
                     className="p-0.5 rounded hover:bg-[#202020] text-[#858585] hover:text-[#D4AF57] transition-colors cursor-pointer"
                     title={`Remove ${p}`}
                   >
-                    <X className="w-3.5 h-3.5" />
+                    <X className="w-3 h-3" />
                   </button>
                 </span>
               ))
@@ -511,10 +511,10 @@ export default function PlayerComparison() {
           </div>
 
           {/* View A vs View B Toggle */}
-          <div className="inline-flex rounded-lg bg-[#101010] p-1 border border-[#2D2D2D] max-w-full">
+          <div className="inline-flex rounded-lg bg-[#101010] p-0.5 border border-[#2D2D2D] max-w-full">
             <button
               onClick={() => setViewMode('view_a')}
-              className={`px-2.5 sm:px-3 py-1 rounded text-xs font-semibold transition-colors cursor-pointer ${
+              className={`px-2.5 py-1 rounded text-xs font-semibold transition-colors cursor-pointer ${
                 viewMode === 'view_a'
                   ? 'bg-[#D4AF57] text-[#080808] font-bold'
                   : 'text-[#B8B8B8] hover:text-[#F2F2F2]'
@@ -525,7 +525,7 @@ export default function PlayerComparison() {
             </button>
             <button
               onClick={() => setViewMode('view_b')}
-              className={`px-2.5 sm:px-3 py-1 rounded text-xs font-semibold transition-colors cursor-pointer ${
+              className={`px-2.5 py-1 rounded text-xs font-semibold transition-colors cursor-pointer ${
                 viewMode === 'view_b'
                   ? 'bg-[#D4AF57] text-[#080808] font-bold'
                   : 'text-[#B8B8B8] hover:text-[#F2F2F2]'
@@ -538,34 +538,34 @@ export default function PlayerComparison() {
         </div>
 
         {limitWarning && (
-          <div className="p-3 rounded-lg bg-[#271414] border border-[#4D2626] text-[#C25454] text-xs">
+          <div className="p-2.5 rounded-lg bg-[#271414] border border-[#4D2626] text-[#C25454] text-xs">
             {limitWarning}
           </div>
         )}
       </div>
 
       {error && (
-        <div className="p-4 rounded-xl bg-[#271414] border border-[#4D2626] text-[#C25454] text-xs">
+        <div className="p-3 rounded-lg bg-[#271414] border border-[#4D2626] text-[#C25454] text-xs">
           {error}
         </div>
       )}
 
       {/* When fewer than 2 players are selected */}
       {selectedPlayers.length < 2 && (
-        <div className="bg-[#161616] rounded-xl p-12 border border-[#2D2D2D] text-center space-y-3">
-          <div className="w-10 h-10 rounded-xl bg-[#101010] border border-[#2D2D2D] mx-auto flex items-center justify-center text-[#D4AF57]">
-            <Users className="w-5 h-5" />
+        <div className="bg-[#161616] rounded-xl p-8 sm:p-10 border border-[#2D2D2D] text-center space-y-2.5">
+          <div className="w-9 h-9 rounded-lg bg-[#101010] border border-[#2D2D2D] mx-auto flex items-center justify-center text-[#D4AF57]">
+            <Users className="w-4.5 h-4.5" />
           </div>
           <div>
-            <h2 className="text-base font-bold text-[#F2F2F2]">Select at Least 2 Players to Compare</h2>
+            <h2 className="text-sm sm:text-base font-bold text-[#F2F2F2]">Select at Least 2 Players to Compare</h2>
             <p className="text-xs text-[#858585] max-w-md mx-auto mt-1 leading-relaxed">
               Use the player search above or click "[+ Compare]" on any player row in the Season Dashboard table.
             </p>
           </div>
-          <div className="pt-2">
+          <div className="pt-1.5">
             <Link
               to="/dashboard"
-              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-[#101010] hover:bg-[#202020] text-xs font-semibold text-[#F2F2F2] border border-[#2D2D2D] transition-colors"
+              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-md bg-[#101010] hover:bg-[#202020] text-xs font-semibold text-[#F2F2F2] border border-[#2D2D2D] transition-colors"
             >
               Browse Season Players
             </Link>
@@ -575,66 +575,66 @@ export default function PlayerComparison() {
 
       {/* Loading State */}
       {loading && selectedPlayers.length >= 2 && (
-        <div className="py-16 text-center text-[#858585]">
+        <div className="py-12 text-center text-[#858585]">
           <div className="text-xs font-medium">Loading multi-player comparison...</div>
         </div>
       )}
 
       {/* Comparison Results */}
       {!loading && comparisonData && playersList.length >= 2 && (
-        <div className="space-y-6">
+        <div className="space-y-4 sm:space-y-5">
           {/* Section 11 Core Message: "Contribution is not simply runs or strike rate" */}
-          <div className="bg-[#161616] rounded-xl p-5 sm:p-6 border border-[#D4AF57]/30 space-y-3">
-            <div className="flex items-center gap-2.5">
-              <Info className="w-5 h-5 text-[#D4AF57]" />
-              <h3 className="font-heading text-[21px] sm:text-[23px] font-bold text-[#F2F2F2]">
+          <div className="bg-[#161616] rounded-xl p-3.5 sm:p-4 border border-[#D4AF57]/30 space-y-2">
+            <div className="flex items-center gap-2">
+              <Info className="w-4 h-4 text-[#D4AF57] shrink-0" />
+              <h3 className="font-heading text-[15px] sm:text-[17px] font-bold text-[#F2F2F2]">
                 Key analytical principle: Contribution ≠ runs or strike rate
               </h3>
             </div>
-            <p className="text-[15px] sm:text-[16px] font-normal text-[#B8B8B8] leading-relaxed">
+            <p className="text-xs sm:text-[13px] font-normal text-[#B8B8B8] leading-relaxed">
               Batters accumulate volume differently depending on batting position, match situation, and chase demands. The Contribution Model evaluates what each run was worth in context, how team win trajectory changed, and whether performance met situational expectations.
             </p>
           </div>
 
           {/* Analytical Observations Summary */}
           {obs && (
-            <div className="bg-[#161616] rounded-xl p-6 sm:p-7 border border-[#2D2D2D] space-y-4">
-              <div className="flex items-center gap-2.5 mb-1">
-                <Info className="w-5 h-5 text-[#D4AF57]" />
-                <h2 className="font-heading text-[21px] sm:text-[23px] font-bold text-[#F2F2F2]">
+            <div className="bg-[#161616] rounded-xl p-3.5 sm:p-4 border border-[#2D2D2D] space-y-3">
+              <div className="flex items-center gap-2 mb-0.5">
+                <Info className="w-4 h-4 text-[#D4AF57] shrink-0" />
+                <h2 className="font-heading text-[15px] sm:text-[17px] font-bold text-[#F2F2F2]">
                   Comparative dimension leaders
                 </h2>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mb-3">
                 {obs.dimensions &&
                   obs.dimensions.map((dim, idx) => (
                     <div
                       key={idx}
-                      className="bg-[#101010] rounded-xl p-5 border border-[#2D2D2D] flex flex-col justify-between"
+                      className="bg-[#101010] rounded-lg p-3 sm:p-3.5 border border-[#2D2D2D] flex flex-col justify-between"
                     >
                       <div>
-                        <div className="text-[12px] sm:text-[12.5px] font-semibold text-[#858585] uppercase tracking-wider mb-1.5">
+                        <div className="text-[10.5px] sm:text-[11px] font-semibold text-[#858585] uppercase tracking-wider mb-1">
                           {dim.dimension}
                         </div>
-                        <div className="text-[15px] sm:text-[16px] font-bold text-[#F2F2F2]">
+                        <div className="text-xs sm:text-[13.5px] font-bold text-[#F2F2F2]">
                           Leader: <span className="text-[#D4AF57] font-semibold">{dim.leader}</span>
                         </div>
-                        <div className="text-[13px] sm:text-[13.5px] font-normal text-[#B8B8B8] mt-2.5 leading-relaxed">
+                        <div className="text-[11.5px] sm:text-xs font-normal text-[#B8B8B8] mt-1.5 leading-relaxed">
                           {dim.observation}
                         </div>
                       </div>
-                      <div className="mt-4 pt-3 border-t border-[#2D2D2D] text-right">
-                        <span className="text-[22px] sm:text-[26px] font-bold text-[#F2F2F2] tabular-nums font-sans">
+                      <div className="mt-3 pt-2 border-t border-[#2D2D2D] text-right">
+                        <span className="text-[18px] sm:text-[20px] font-bold text-[#F2F2F2] tabular-nums font-sans">
                           {dim.value !== null ? Number(dim.value).toFixed(dim.unit.includes('%') ? 1 : 2) : '—'}
                         </span>
-                        <span className="text-[13px] text-[#858585] ml-1.5">{dim.unit}</span>
+                        <span className="text-xs text-[#858585] ml-1">{dim.unit}</span>
                       </div>
                     </div>
                   ))}
               </div>
 
-              <div className="p-4 bg-[#101010] rounded-xl border border-[#2D2D2D] text-[13px] sm:text-[13.5px] font-normal text-[#B8B8B8] leading-relaxed">
+              <div className="p-2.5 sm:p-3 bg-[#101010] rounded-lg border border-[#2D2D2D] text-xs font-normal text-[#B8B8B8] leading-relaxed">
                 <strong className="text-[#F2F2F2] font-semibold">Methodological note:</strong> {obs.summary_note}
               </div>
             </div>
@@ -642,39 +642,39 @@ export default function PlayerComparison() {
 
           {/* Primary Side-by-Side Comparison Table */}
           <div className="bg-[#161616] rounded-xl border border-[#2D2D2D] overflow-hidden">
-            <div className="p-5 sm:p-6 border-b border-[#2D2D2D] flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div className="p-3.5 sm:p-4 border-b border-[#2D2D2D] flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
               <div>
-                <h2 className="font-heading text-[21px] sm:text-[23px] font-bold text-[#F2F2F2]">
+                <h2 className="font-heading text-[16px] sm:text-[18px] font-bold text-[#F2F2F2]">
                   Side-by-side dimension table
                 </h2>
-                <p className="text-[13px] sm:text-[13.5px] font-normal text-[#858585] mt-1">
+                <p className="text-xs sm:text-[13px] font-normal text-[#858585] mt-0.5">
                   Direct comparison across volume, contextual contribution, and scoring pillars.
                 </p>
               </div>
-              <span className="text-[12.5px] sm:text-[13px] font-medium text-[#B8B8B8] bg-[#101010] px-3.5 py-1.5 rounded-lg border border-[#2D2D2D]">
+              <span className="text-xs font-medium text-[#B8B8B8] bg-[#101010] px-2.5 py-1 rounded-md border border-[#2D2D2D]">
                 {playersList.length} Batters Compared
               </span>
             </div>
 
             <div className="overflow-x-auto max-w-full">
-              <table className="w-full text-left border-collapse text-[14px] sm:text-[14.5px] font-sans">
+              <table className="w-full text-left border-collapse text-xs sm:text-[13px] font-sans">
                 <thead>
                   <tr className="border-b border-[#2D2D2D] bg-[#161616] text-[#858585]">
-                    <th className="py-3.5 px-4 font-semibold text-[#858585] text-[12.5px] sm:text-[13px] uppercase tracking-wider sticky left-0 bg-[#161616] z-10 min-w-[220px]">
+                    <th className="py-2.5 px-3 font-semibold text-[#858585] text-[11px] sm:text-xs uppercase tracking-wider sticky left-0 bg-[#161616] z-10 min-w-[200px]">
                       Metric / Dimension
                     </th>
                     {playersList.map((p) => (
                       <th
                         key={p.player}
-                        className="py-3.5 px-4 text-center text-[#F2F2F2] min-w-[170px]"
+                        className="py-2.5 px-3 text-center text-[#F2F2F2] min-w-[150px]"
                       >
-                        <div className="font-semibold text-[15px] text-[#F2F2F2]">{p.player}</div>
-                        <div className="text-[13px] text-[#858585] font-normal">{p.team}</div>
+                        <div className="font-semibold text-xs sm:text-[13px] text-[#F2F2F2]">{p.player}</div>
+                        <div className="text-[11px] text-[#858585] font-normal">{p.team}</div>
                         <Link
                           to={`/player/${encodeURIComponent(p.player)}/${p.season}`}
-                          className="inline-flex items-center gap-1 text-[12px] text-[#D4AF57] hover:text-[#E1C878] mt-1 hover:underline font-semibold"
+                          className="inline-flex items-center gap-1 text-[11px] text-[#D4AF57] hover:text-[#E1C878] mt-0.5 hover:underline font-semibold"
                         >
-                          Profile <ExternalLink className="w-3 h-3" />
+                          Profile <ExternalLink className="w-2.5 h-2.5" />
                         </Link>
                       </th>
                     ))}
@@ -683,67 +683,67 @@ export default function PlayerComparison() {
 
                 <tbody className="divide-y divide-[#222222] text-[#F2F2F2]">
                   {/* Category Header: Batting Volume */}
-                  <tr className="bg-[#101010] font-semibold text-[#858585] text-[12px] uppercase tracking-wider">
-                    <td colSpan={playersList.length + 1} className="py-2.5 px-4 sticky left-0 bg-[#101010]">
+                  <tr className="bg-[#101010] font-semibold text-[#858585] text-[11px] uppercase tracking-wider">
+                    <td colSpan={playersList.length + 1} className="py-1.5 px-3 sticky left-0 bg-[#101010]">
                       1. Batting volume & participation
                     </td>
                   </tr>
                   <tr className="hover:bg-[#1A1A1A] transition-colors">
-                    <td className="py-3 px-4 font-semibold text-[#B8B8B8] sticky left-0 bg-[#161616] text-[13.5px] sm:text-[14px]">
+                    <td className="py-2 px-3 font-semibold text-[#B8B8B8] sticky left-0 bg-[#161616] text-xs sm:text-[13px]">
                       Actual Runs
                     </td>
                     {playersList.map((p) => (
-                      <td key={p.player} className="py-2.5 px-4 text-center font-sans font-bold text-[#F2F2F2] tabular-nums">
+                      <td key={p.player} className="py-2 px-3 text-center font-sans font-bold text-[#F2F2F2] tabular-nums">
                         {p.actual_runs}
                       </td>
                     ))}
                   </tr>
                   <tr className="hover:bg-[#1A1A1A] transition-colors">
-                    <td className="py-2.5 px-4 font-semibold text-[#B8B8B8] sticky left-0 bg-[#161616]">
+                    <td className="py-1.5 sm:py-2 px-3 font-semibold text-[#B8B8B8] sticky left-0 bg-[#161616]">
                       Balls Faced
                     </td>
                     {playersList.map((p) => (
-                      <td key={p.player} className="py-2.5 px-4 text-center font-sans text-[#858585] tabular-nums">
+                      <td key={p.player} className="py-1.5 sm:py-2 px-3 text-center font-sans text-[#858585] tabular-nums">
                         {p.balls_faced}
                       </td>
                     ))}
                   </tr>
                   <tr className="hover:bg-[#1A1A1A] transition-colors">
-                    <td className="py-2.5 px-4 font-semibold text-[#B8B8B8] sticky left-0 bg-[#161616]">
+                    <td className="py-1.5 sm:py-2 px-3 font-semibold text-[#B8B8B8] sticky left-0 bg-[#161616]">
                       Strike Rate
                     </td>
                     {playersList.map((p) => (
-                      <td key={p.player} className="py-2.5 px-4 text-center font-sans text-[#F2F2F2] tabular-nums">
+                      <td key={p.player} className="py-1.5 sm:py-2 px-3 text-center font-sans text-[#F2F2F2] tabular-nums">
                         {p.strike_rate !== null ? p.strike_rate.toFixed(1) : '—'}
                       </td>
                     ))}
                   </tr>
                   <tr className="hover:bg-[#1A1A1A] transition-colors">
-                    <td className="py-2.5 px-4 font-semibold text-[#B8B8B8] sticky left-0 bg-[#161616]">
+                    <td className="py-1.5 sm:py-2 px-3 font-semibold text-[#B8B8B8] sticky left-0 bg-[#161616]">
                       Batting Innings
                     </td>
                     {playersList.map((p) => (
-                      <td key={p.player} className="py-2.5 px-4 text-center font-sans text-[#5A9E60] font-bold tabular-nums">
+                      <td key={p.player} className="py-1.5 sm:py-2 px-3 text-center font-sans text-[#5A9E60] font-bold tabular-nums">
                         {p.batting_innings}
                       </td>
                     ))}
                   </tr>
                   <tr className="hover:bg-[#1A1A1A] transition-colors">
-                    <td className="py-2.5 px-4 font-semibold text-[#B8B8B8] sticky left-0 bg-[#161616]">
+                    <td className="py-1.5 sm:py-2 px-3 font-semibold text-[#B8B8B8] sticky left-0 bg-[#161616]">
                       Matches Played
                     </td>
                     {playersList.map((p) => (
-                      <td key={p.player} className="py-2.5 px-4 text-center font-sans text-[#858585] tabular-nums">
+                      <td key={p.player} className="py-1.5 sm:py-2 px-3 text-center font-sans text-[#858585] tabular-nums">
                         {p.matches_played}
                       </td>
                     ))}
                   </tr>
                   <tr className="hover:bg-[#1A1A1A] transition-colors">
-                    <td className="py-2.5 px-4 font-semibold text-[#B8B8B8] sticky left-0 bg-[#161616]">
+                    <td className="py-1.5 sm:py-2 px-3 font-semibold text-[#B8B8B8] sticky left-0 bg-[#161616]">
                       Did Not Bat (DNB)
                     </td>
                     {playersList.map((p) => (
-                      <td key={p.player} className="py-2.5 px-4 text-center font-sans text-[#858585] tabular-nums">
+                      <td key={p.player} className="py-1.5 sm:py-2 px-3 text-center font-sans text-[#858585] tabular-nums">
                         {p.did_not_bat_matches > 0 ? (
                           <span className="badge-dnb">{p.did_not_bat_matches} DNB</span>
                         ) : (
@@ -754,20 +754,20 @@ export default function PlayerComparison() {
                   </tr>
 
                   {/* Category Header: Core Contribution */}
-                  <tr className="bg-[#101010] font-semibold text-[#858585] text-[12px] uppercase tracking-wider">
-                    <td colSpan={playersList.length + 1} className="py-2.5 px-4 sticky left-0 bg-[#101010]">
+                  <tr className="bg-[#101010] font-semibold text-[#858585] text-[11px] uppercase tracking-wider">
+                    <td colSpan={playersList.length + 1} className="py-1.5 px-3 sticky left-0 bg-[#101010]">
                       2. Contextual contribution metrics
                     </td>
                   </tr>
                   <tr className="bg-[#101010] hover:bg-[#1A1A1A] transition-colors">
-                    <td className="py-3 px-4 font-bold text-[#F2F2F2] sticky left-0 bg-[#101010] text-[14px]">
+                    <td className="py-2 px-3 font-bold text-[#F2F2F2] sticky left-0 bg-[#101010] text-xs sm:text-[13px]">
                       Contribution Score (0–100)
                     </td>
                     {playersList.map((p) => (
-                      <td key={p.player} className="py-3 px-4 text-center">
+                      <td key={p.player} className="py-2 px-3 text-center">
                         {p.contribution_score !== null ? (
                           <span
-                            className={`inline-block px-3 py-1 rounded-full text-[13.5px] font-bold border tabular-nums font-sans ${
+                            className={`inline-block px-2.5 py-0.5 rounded-full text-xs font-bold border tabular-nums font-sans ${
                               p.contribution_score >= 65
                                 ? 'bg-[#152718] text-[#5A9E60] border-[#2A4D30]'
                                 : p.contribution_score >= 52
@@ -786,11 +786,11 @@ export default function PlayerComparison() {
                     ))}
                   </tr>
                   <tr className="hover:bg-[#1A1A1A] transition-colors">
-                    <td className="py-2.5 px-4 font-semibold text-[#B8B8B8] sticky left-0 bg-[#161616] text-[13.5px] sm:text-[14px]">
+                    <td className="py-1.5 sm:py-2 px-3 font-semibold text-[#B8B8B8] sticky left-0 bg-[#161616] text-xs sm:text-[13px]">
                       Positive Contribution (Raw)
                     </td>
                     {playersList.map((p) => (
-                      <td key={p.player} className="py-2.5 px-4 text-center font-sans font-bold text-[#5A9E60] tabular-nums text-[14px]">
+                      <td key={p.player} className="py-1.5 sm:py-2 px-3 text-center font-sans font-bold text-[#5A9E60] tabular-nums text-xs sm:text-[13px]">
                         {p.total_positive_raw_contribution !== null
                           ? `+${Number(p.total_positive_raw_contribution).toFixed(2)}`
                           : '—'}
@@ -798,11 +798,11 @@ export default function PlayerComparison() {
                     ))}
                   </tr>
                   <tr className="hover:bg-[#1A1A1A] transition-colors">
-                    <td className="py-2.5 px-4 font-semibold text-[#B8B8B8] sticky left-0 bg-[#161616] text-[13.5px] sm:text-[14px]">
+                    <td className="py-1.5 sm:py-2 px-3 font-semibold text-[#B8B8B8] sticky left-0 bg-[#161616] text-xs sm:text-[13px]">
                       Team Contribution Share (%)
                     </td>
                     {playersList.map((p) => (
-                      <td key={p.player} className="py-2.5 px-4 text-center font-sans font-bold text-[#F2F2F2] tabular-nums text-[14px]">
+                      <td key={p.player} className="py-1.5 sm:py-2 px-3 text-center font-sans font-bold text-[#F2F2F2] tabular-nums text-xs sm:text-[13px]">
                         {p.season_team_contribution_share !== null
                           ? `${Number(p.season_team_contribution_share).toFixed(1)}%`
                           : '—'}
@@ -810,11 +810,11 @@ export default function PlayerComparison() {
                     ))}
                   </tr>
                   <tr className="hover:bg-[#1A1A1A] transition-colors">
-                    <td className="py-2.5 px-4 font-semibold text-[#B8B8B8] sticky left-0 bg-[#161616] text-[13.5px] sm:text-[14px]">
+                    <td className="py-1.5 sm:py-2 px-3 font-semibold text-[#B8B8B8] sticky left-0 bg-[#161616] text-xs sm:text-[13px]">
                       Contrib / Batting Opp
                     </td>
                     {playersList.map((p) => (
-                      <td key={p.player} className="py-2.5 px-4 text-center font-sans text-[#858585] tabular-nums text-[13.5px]">
+                      <td key={p.player} className="py-1.5 sm:py-2 px-3 text-center font-sans text-[#858585] tabular-nums text-xs sm:text-[13px]">
                         {p.contribution_per_batting_opportunity !== null
                           ? Number(p.contribution_per_batting_opportunity).toFixed(4)
                           : '—'}
@@ -823,27 +823,27 @@ export default function PlayerComparison() {
                   </tr>
 
                   {/* Category Header: Core Scoring Pillars */}
-                  <tr className="bg-[#101010] font-semibold text-[#858585] text-[12px] uppercase tracking-wider">
-                    <td colSpan={playersList.length + 1} className="py-2.5 px-4 sticky left-0 bg-[#101010] border-l-2 border-[#D4AF57]">
+                  <tr className="bg-[#101010] font-semibold text-[#858585] text-[11px] uppercase tracking-wider">
+                    <td colSpan={playersList.length + 1} className="py-1.5 px-3 sticky left-0 bg-[#101010] border-l-2 border-[#D4AF57]">
                       3. Context & core scoring pillars (50% Adj P2 + 50% Adj P3)
                     </td>
                   </tr>
                   <tr className="hover:bg-[#1A1A1A] transition-colors">
-                    <td className="py-2.5 px-4 font-semibold text-[#B8B8B8] sticky left-0 bg-[#161616] text-[13.5px] sm:text-[14px]">
+                    <td className="py-1.5 sm:py-2 px-3 font-semibold text-[#B8B8B8] sticky left-0 bg-[#161616] text-xs sm:text-[13px]">
                       P1: Match Context (Leverage Signal)
                     </td>
                     {playersList.map((p) => (
-                      <td key={p.player} className="py-2.5 px-4 text-center font-sans font-bold text-[#F2F2F2] tabular-nums text-[14px]">
+                      <td key={p.player} className="py-1.5 sm:py-2 px-3 text-center font-sans font-bold text-[#F2F2F2] tabular-nums text-xs sm:text-[13px]">
                         {p.pillars?.pillar1_match_context !== null ? Number(p.pillars.pillar1_match_context).toFixed(1) : '—'}
                       </td>
                     ))}
                   </tr>
                   <tr className="hover:bg-[#1A1A1A] transition-colors">
-                    <td className="py-2.5 px-4 font-semibold text-[#D4AF57] sticky left-0 bg-[#161616] text-[13.5px] sm:text-[14px]">
+                    <td className="py-1.5 sm:py-2 px-3 font-semibold text-[#D4AF57] sticky left-0 bg-[#161616] text-xs sm:text-[13px]">
                       P2: Batter Execution (50% Weight)
                     </td>
                     {playersList.map((p) => (
-                      <td key={p.player} className="py-2.5 px-4 text-center font-sans font-bold text-[#F2F2F2] tabular-nums text-[14px]">
+                      <td key={p.player} className="py-1.5 sm:py-2 px-3 text-center font-sans font-bold text-[#F2F2F2] tabular-nums text-xs sm:text-[13px]">
                         {p.pillars?.adjusted_p2 !== null && p.pillars?.adjusted_p2 !== undefined
                            ? Number(p.pillars.adjusted_p2).toFixed(1)
                           : p.pillars?.pillar2_batter_performance !== null
@@ -853,11 +853,11 @@ export default function PlayerComparison() {
                     ))}
                   </tr>
                   <tr className="hover:bg-[#1A1A1A] transition-colors">
-                    <td className="py-2.5 px-4 font-semibold text-[#5A9E60] sticky left-0 bg-[#161616] text-[13.5px] sm:text-[14px]">
+                    <td className="py-1.5 sm:py-2 px-3 font-semibold text-[#5A9E60] sticky left-0 bg-[#161616] text-xs sm:text-[13px]">
                       P3: Team-State Impact (50% Weight)
                     </td>
                     {playersList.map((p) => (
-                      <td key={p.player} className="py-2.5 px-4 text-center font-sans font-bold text-[#F2F2F2] tabular-nums text-[14px]">
+                      <td key={p.player} className="py-1.5 sm:py-2 px-3 text-center font-sans font-bold text-[#F2F2F2] tabular-nums text-xs sm:text-[13px]">
                         {p.pillars?.adjusted_p3 !== null && p.pillars?.adjusted_p3 !== undefined
                           ? Number(p.pillars.adjusted_p3).toFixed(1)
                           : p.pillars?.pillar3_team_state_impact !== null
@@ -868,67 +868,67 @@ export default function PlayerComparison() {
                   </tr>
 
                   {/* Category Header: Contextual Breakdown */}
-                  <tr className="bg-[#101010] font-semibold text-[#858585] text-[12px] uppercase tracking-wider">
-                    <td colSpan={playersList.length + 1} className="py-2.5 px-4 sticky left-0 bg-[#101010]">
+                  <tr className="bg-[#101010] font-semibold text-[#858585] text-[11px] uppercase tracking-wider">
+                    <td colSpan={playersList.length + 1} className="py-1.5 px-3 sticky left-0 bg-[#101010]">
                       4. Contextual phase breakdown
                     </td>
                   </tr>
                   <tr className="hover:bg-[#1A1A1A] transition-colors">
-                    <td className="py-2.5 px-4 font-semibold text-[#B8B8B8] sticky left-0 bg-[#161616]">
+                    <td className="py-1.5 sm:py-2 px-3 font-semibold text-[#B8B8B8] sticky left-0 bg-[#161616]">
                       1st Innings Contribution
                     </td>
                     {playersList.map((p) => (
-                      <td key={p.player} className="py-2.5 px-4 text-center font-sans text-[#F2F2F2] tabular-nums">
+                      <td key={p.player} className="py-1.5 sm:py-2 px-3 text-center font-sans text-[#F2F2F2] tabular-nums">
                         {p.first_innings_contribution !== null ? Number(p.first_innings_contribution).toFixed(1) : '—'}
                       </td>
                     ))}
                   </tr>
                   <tr className="hover:bg-[#1A1A1A] transition-colors">
-                    <td className="py-2.5 px-4 font-semibold text-[#B8B8B8] sticky left-0 bg-[#161616]">
+                    <td className="py-1.5 sm:py-2 px-3 font-semibold text-[#B8B8B8] sticky left-0 bg-[#161616]">
                       Chase (2nd Innings) Contribution
                     </td>
                     {playersList.map((p) => (
-                      <td key={p.player} className="py-2.5 px-4 text-center font-sans text-[#F2F2F2] tabular-nums">
+                      <td key={p.player} className="py-1.5 sm:py-2 px-3 text-center font-sans text-[#F2F2F2] tabular-nums">
                         {p.chase_contribution !== null ? Number(p.chase_contribution).toFixed(1) : '—'}
                       </td>
                     ))}
                   </tr>
                   <tr className="hover:bg-[#1A1A1A] transition-colors">
-                    <td className="py-2.5 px-4 font-semibold text-[#B8B8B8] sticky left-0 bg-[#161616]">
+                    <td className="py-1.5 sm:py-2 px-3 font-semibold text-[#B8B8B8] sticky left-0 bg-[#161616]">
                       Powerplay (0–6)
                     </td>
                     {playersList.map((p) => (
-                      <td key={p.player} className="py-2.5 px-4 text-center font-sans text-[#F2F2F2] tabular-nums">
+                      <td key={p.player} className="py-1.5 sm:py-2 px-3 text-center font-sans text-[#F2F2F2] tabular-nums">
                         {p.powerplay_contribution !== null ? Number(p.powerplay_contribution).toFixed(1) : '—'}
                       </td>
                     ))}
                   </tr>
                   <tr className="hover:bg-[#1A1A1A] transition-colors">
-                    <td className="py-2.5 px-4 font-semibold text-[#B8B8B8] sticky left-0 bg-[#161616]">
+                    <td className="py-1.5 sm:py-2 px-3 font-semibold text-[#B8B8B8] sticky left-0 bg-[#161616]">
                       Middle Overs (6–16)
                     </td>
                     {playersList.map((p) => (
-                      <td key={p.player} className="py-2.5 px-4 text-center font-sans text-[#F2F2F2] tabular-nums">
+                      <td key={p.player} className="py-1.5 sm:py-2 px-3 text-center font-sans text-[#F2F2F2] tabular-nums">
                         {p.middle_over_contribution !== null ? Number(p.middle_over_contribution).toFixed(1) : '—'}
                       </td>
                     ))}
                   </tr>
                   <tr className="hover:bg-[#1A1A1A] transition-colors">
-                    <td className="py-2.5 px-4 font-semibold text-[#B8B8B8] sticky left-0 bg-[#161616]">
+                    <td className="py-1.5 sm:py-2 px-3 font-semibold text-[#B8B8B8] sticky left-0 bg-[#161616]">
                       Death Overs (16–20)
                     </td>
                     {playersList.map((p) => (
-                      <td key={p.player} className="py-2.5 px-4 text-center font-sans text-[#F2F2F2] tabular-nums">
+                      <td key={p.player} className="py-1.5 sm:py-2 px-3 text-center font-sans text-[#F2F2F2] tabular-nums">
                         {p.death_over_contribution !== null ? Number(p.death_over_contribution).toFixed(1) : '—'}
                       </td>
                     ))}
                   </tr>
                   <tr className="hover:bg-[#1A1A1A] transition-colors">
-                    <td className="py-2.5 px-4 font-semibold text-[#B8B8B8] sticky left-0 bg-[#161616]">
+                    <td className="py-1.5 sm:py-2 px-3 font-semibold text-[#B8B8B8] sticky left-0 bg-[#161616]">
                       High Pressure
                     </td>
                     {playersList.map((p) => (
-                      <td key={p.player} className="py-2.5 px-4 text-center font-sans text-[#F2F2F2] tabular-nums">
+                      <td key={p.player} className="py-1.5 sm:py-2 px-3 text-center font-sans text-[#F2F2F2] tabular-nums">
                         {p.high_pressure_contribution !== null ? Number(p.high_pressure_contribution).toFixed(1) : '—'}
                       </td>
                     ))}
@@ -939,7 +939,7 @@ export default function PlayerComparison() {
           </div>
 
           {/* Comparison Charts */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-5">
             <FourPillarComparisonChart players={playersList} />
             <PrimaryMetricsComparisonChart players={playersList} />
           </div>

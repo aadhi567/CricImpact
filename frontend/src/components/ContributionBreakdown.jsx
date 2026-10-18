@@ -48,22 +48,22 @@ const CONTEXT_CONFIG = [
 
 export default function ContributionBreakdown({ breakdown = {} }) {
   return (
-    <div className="bg-[#161616] rounded-xl p-5 border border-[#2D2D2D] shadow-xs">
-      <div className="flex items-center justify-between mb-4">
+    <div className="bg-[#161616] rounded-xl p-3.5 sm:p-4 border border-[#2D2D2D] shadow-xs">
+      <div className="flex items-center justify-between mb-3">
         <div>
-          <h3 className="font-heading text-[17px] font-bold text-[#F2F2F2] tracking-tight">
+          <h3 className="font-heading text-[15px] sm:text-[16px] font-bold text-[#F2F2F2] tracking-tight">
             Contextual breakdown by phase
           </h3>
-          <p className="text-[12px] font-normal text-[#858585] mt-0.5">
+          <p className="text-[11px] sm:text-xs font-normal text-[#858585] mt-0.5">
             Contribution evaluated across innings type, match phases, and situational pressure.
           </p>
         </div>
-        <div className="text-[11px] text-[#858585] bg-[#101010] px-2.5 py-1 rounded-md border border-[#2D2D2D] font-medium">
+        <div className="text-[10.5px] sm:text-[11px] text-[#858585] bg-[#101010] px-2 py-0.5 rounded-md border border-[#2D2D2D] font-medium">
           Par = 50.0
         </div>
       </div>
 
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2.5">
         {CONTEXT_CONFIG.map(({ key, label, desc, icon: Icon, accentColor }) => {
           const val = breakdown[key];
           const isNull = val === null || val === undefined;
@@ -83,26 +83,26 @@ export default function ContributionBreakdown({ breakdown = {} }) {
           return (
             <div
               key={key}
-              className="bg-[#101010] rounded-lg p-3.5 border border-[#2D2D2D] flex flex-col justify-between transition-colors hover:bg-[#181818]"
+              className="bg-[#101010] rounded-lg p-2.5 sm:p-3 border border-[#2D2D2D] flex flex-col justify-between transition-colors hover:bg-[#181818]"
             >
               <div>
-                <div className="flex items-center gap-1.5 mb-1.5">
+                <div className="flex items-center gap-1.5 mb-1">
                   <Icon className={`w-3.5 h-3.5 ${accentColor}`} />
-                  <span className="text-[13px] font-semibold text-[#F2F2F2] truncate" title={label}>
+                  <span className="text-xs font-semibold text-[#F2F2F2] truncate" title={label}>
                     {label}
                   </span>
                 </div>
-                <div className="text-[11px] text-[#858585] leading-tight line-clamp-2">
+                <div className="text-[10.5px] text-[#858585] leading-tight line-clamp-2">
                   {desc}
                 </div>
               </div>
 
-              <div className="mt-3 flex items-baseline justify-between border-t border-[#2D2D2D] pt-2">
-                <span className={`text-[20px] font-bold font-mono tabular-nums ${scoreColor}`}>
+              <div className="mt-2.5 flex items-baseline justify-between border-t border-[#2D2D2D] pt-1.5">
+                <span className={`text-[17px] sm:text-[18px] font-bold font-sans tabular-nums ${scoreColor}`}>
                   {isNull ? '—' : num.toFixed(1)}
                 </span>
                 {!isNull && (
-                  <span className="text-[11px] text-[#858585] font-medium tabular-nums font-mono">
+                  <span className="text-[10.5px] text-[#858585] font-medium tabular-nums font-sans">
                     {num > 50 ? `+${(num - 50).toFixed(1)}` : `${(num - 50).toFixed(1)}`}
                   </span>
                 )}
@@ -112,7 +112,7 @@ export default function ContributionBreakdown({ breakdown = {} }) {
         })}
       </div>
 
-      <div className="mt-3.5 pt-2.5 border-t border-[#2D2D2D] text-[11px] text-[#858585] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-1">
+      <div className="mt-2.5 pt-2 border-t border-[#2D2D2D] text-[10.5px] text-[#858585] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-1">
         <span>* "—" indicates no observed batting opportunities in this segment.</span>
         <span className="text-[#858585]">Unobserved situations do not penalize player score.</span>
       </div>

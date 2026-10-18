@@ -86,20 +86,20 @@ export default function AnchorInningsAnalysis({ data, playerName, p3Score }) {
       {/* SECTION HEADER */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-[#2D2D2D] pb-4">
         <div>
-          <div className="flex items-center gap-2 text-[11px] font-semibold text-[#D4AF57] tracking-wider mb-1 font-mono uppercase">
+          <div className="flex items-center gap-2 text-[11px] font-semibold text-[#D4AF57] tracking-wider mb-1 uppercase">
             <Anchor className="w-4 h-4 text-[#D4AF57]" />
             <span>Forensic Match Analysis</span>
           </div>
           <h2 className="font-heading text-[20px] font-bold text-[#F2F2F2] tracking-tight">
             Anchor Innings & Partnership Attribution
           </h2>
-          <p className="text-[12px] text-[#858585] mt-0.5 font-mono">
+          <p className="text-[12px] text-[#858585] mt-0.5">
             Concise, evidence-backed evaluation of {playerName}'s team-state impact (P3 = {p3Score ?? '96.7'}).
           </p>
         </div>
         <div className="px-3 py-1.5 rounded-lg bg-[#101010] border border-[#3D351E] flex items-center gap-2 self-start sm:self-auto">
-          <span className="text-[11px] text-[#858585] font-mono">P3 Score:</span>
-          <span className="text-[15px] font-bold text-[#D4AF57] font-mono tabular-nums">{p3Score ?? '96.7'}</span>
+          <span className="text-[11px] text-[#858585]">P3 Score:</span>
+          <span className="text-[15px] font-bold text-[#D4AF57] font-sans tabular-nums">{p3Score ?? '96.7'}</span>
         </div>
       </div>
 

@@ -82,8 +82,8 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-40 bg-[#080808]/95 backdrop-blur-md border-b border-[#2D2D2D] w-full">
-      <div className="w-full max-w-[1850px] mx-auto px-2.5 sm:px-3 xl:px-4 2xl:px-6">
-        <div className="flex items-center min-h-[54px] sm:min-h-[64px] 2xl:min-h-[70px] py-1.5 gap-1.5 sm:gap-2 xl:gap-2.5 2xl:gap-4">
+      <div className="w-full max-w-[1680px] mx-auto px-2.5 sm:px-3 xl:px-4 2xl:px-6">
+        <div className="flex items-center min-h-[50px] sm:min-h-[56px] xl:min-h-[58px] 2xl:min-h-[60px] py-1 gap-1.5 sm:gap-2 xl:gap-2.5 2xl:gap-3">
           {/* 1. Left: Official CricImpact Logo on extreme left */}
           <div className="flex items-center shrink-0">
             <CricImpactLogo linkTo="/" size="navbar" priority />
@@ -92,7 +92,7 @@ export default function Navbar() {
           {/* 2. Desktop Navigation: Left-aligned with intelligent compact spacing on intermediate desktop */}
           <nav
             aria-label="Primary Navigation"
-            className="hidden xl:flex items-center gap-0.5 xl:gap-1 2xl:gap-1.5 ml-1.5 xl:ml-2.5 2xl:ml-5 font-sans min-w-0"
+            className="hidden xl:flex items-center gap-0.5 xl:gap-1 2xl:gap-1.5 ml-1.5 xl:ml-2.5 2xl:ml-4 font-sans min-w-0"
           >
             {navLinks.map(({ to, label, icon: Icon }) => {
               const active = isCurrent(to);
@@ -100,7 +100,7 @@ export default function Navbar() {
                 <Link
                   key={to}
                   to={to}
-                  className={`px-1.5 xl:px-2 2xl:px-3 py-1 2xl:py-1.5 rounded-lg text-[12px] xl:text-[12.5px] 2xl:text-[13.5px] font-medium transition-all duration-150 flex items-center gap-1 xl:gap-1.5 whitespace-nowrap shrink-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#D4AF57] ${
+                  className={`px-1.5 xl:px-2 2xl:px-2.5 py-1 rounded-md text-[12px] xl:text-[12px] 2xl:text-[13px] font-medium transition-all duration-150 flex items-center gap-1 xl:gap-1.5 whitespace-nowrap shrink-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#D4AF57] ${
                     active
                       ? 'bg-[#141414] text-[#D4AF57] border border-[#D4AF57]/40 font-semibold shadow-xs'
                       : 'text-[#A3A3A3] hover:text-[#F2F2F2] hover:bg-[#141414]/70 border border-transparent'
@@ -115,7 +115,7 @@ export default function Navbar() {
           </nav>
 
           {/* 3. Far Right: Competition & Format Selectors (Desktop) */}
-          <div className="hidden xl:flex items-center gap-1.5 xl:gap-2 2xl:gap-3 shrink-0 ml-auto">
+          <div className="hidden xl:flex items-center gap-1.5 xl:gap-2 2xl:gap-2.5 shrink-0 ml-auto">
             <CompetitionSelector variant="select" className="shrink-0" />
             <FormatSelector className="shrink-0" />
           </div>
@@ -129,12 +129,12 @@ export default function Navbar() {
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="h-8.5 w-8.5 sm:h-10 sm:w-10 flex items-center justify-center rounded-lg text-[#B8B8B8] hover:text-[#F2F2F2] hover:bg-[#161616] border border-[#2D2D2D] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#D4AF57] cursor-pointer shrink-0"
+              className="h-8 w-8 sm:h-9 sm:w-9 flex items-center justify-center rounded-lg text-[#B8B8B8] hover:text-[#F2F2F2] hover:bg-[#161616] border border-[#2D2D2D] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#D4AF57] cursor-pointer shrink-0"
               aria-label="Toggle navigation menu"
               aria-expanded={mobileMenuOpen}
               aria-controls="mobile-nav-drawer"
             >
-              {mobileMenuOpen ? <X className="w-4.5 h-4.5 text-[#D4AF57]" /> : <Menu className="w-4.5 h-4.5" />}
+              {mobileMenuOpen ? <X className="w-4 h-4 text-[#D4AF57]" /> : <Menu className="w-4 h-4" />}
             </button>
           </div>
         </div>

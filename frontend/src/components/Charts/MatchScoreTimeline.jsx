@@ -68,22 +68,22 @@ export default function MatchScoreTimeline({ matches = [] }) {
   }
 
   return (
-    <div className="bg-[#161616] rounded-xl p-5 border border-[#2D2D2D]">
-      <div className="flex items-center justify-between mb-4">
+    <div className="bg-[#161616] rounded-xl p-3.5 sm:p-4 border border-[#2D2D2D]">
+      <div className="flex items-center justify-between mb-3">
         <div>
-          <h3 className="font-heading text-[17px] font-bold text-[#F2F2F2] tracking-tight">
+          <h3 className="font-heading text-[15px] sm:text-[16px] font-bold text-[#F2F2F2] tracking-tight">
             Match-by-match contribution score
           </h3>
-          <p className="text-[12px] font-normal text-[#858585] mt-0.5">
+          <p className="text-[11px] sm:text-xs font-normal text-[#858585] mt-0.5">
             Chronological progression of innings performance relative to Par (50.0).
           </p>
         </div>
-        <div className="text-[11px] text-[#D4AF57] bg-[#101010] px-2.5 py-1 rounded border border-[#D4AF57]/40 font-mono font-semibold">
+        <div className="text-[10.5px] sm:text-[11px] text-[#D4AF57] bg-[#101010] px-2 py-0.5 rounded border border-[#D4AF57]/40 font-mono font-semibold">
           Par = 50.0
         </div>
       </div>
 
-      <div className="w-full h-64">
+      <div className="w-full h-56">
         <ResponsiveContainer width="100%" height="100%">
           <ComposedChart data={chartData} margin={{ top: 10, right: 15, bottom: 20, left: -10 }}>
             <CartesianGrid strokeDasharray="3 3" stroke="#222222" vertical={false} />

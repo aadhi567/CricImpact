@@ -24,7 +24,7 @@ export default function CompetitionSelector({ variant = 'pills', className = '' 
           aria-label="Tournament Selector"
           value={competition}
           onChange={(e) => setCompetition(e.target.value)}
-          className="h-8.5 sm:h-10 xl:h-9 2xl:h-10 w-full appearance-none bg-[#121212] border border-[#2D2D2D] hover:border-[#D4AF57]/60 focus:border-[#D4AF57] text-[#F2F2F2] text-[12px] sm:text-[13px] 2xl:text-[14px] font-semibold rounded-lg pl-2 sm:pl-3 pr-6 sm:pr-8 py-1 sm:py-1.5 transition-colors cursor-pointer shadow-xs focus:outline-none truncate"
+          className="h-8 sm:h-8.5 xl:h-8.5 2xl:h-9 w-full appearance-none bg-[#121212] border border-[#2D2D2D] hover:border-[#D4AF57]/60 focus:border-[#D4AF57] text-[#F2F2F2] text-[11.5px] sm:text-[12px] 2xl:text-[12.5px] font-semibold rounded-md pl-2 sm:pl-2.5 pr-6 sm:pr-7 py-1 transition-colors cursor-pointer shadow-xs focus:outline-none truncate"
         >
           {competitions.map((c) => (
             <option key={c.id} value={c.id} className="bg-[#161616] text-[#F2F2F2]">

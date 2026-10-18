@@ -247,7 +247,7 @@ export default function GroundAnalysis() {
   }, [groundData]);
 
   return (
-    <div className="space-y-6 sm:space-y-8 pb-12">
+    <div className="space-y-4 sm:space-y-6 pb-8">
       {/* 1. Breadcrumbs */}
       <Breadcrumbs
         items={[
@@ -257,21 +257,21 @@ export default function GroundAnalysis() {
       />
 
       {/* 2. Page Header */}
-      <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 border-b border-[#2D2D2D] pb-6">
+      <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-3 border-b border-[#2D2D2D] pb-4">
         <div>
-          <div className="flex items-center gap-2.5 mb-2">
-            <span className="px-2.5 py-0.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-[#D4AF57]/15 text-[#D4AF57] border border-[#D4AF57]/30 flex items-center gap-1.5">
-              <MapPin className="w-3.5 h-3.5" />
+          <div className="flex items-center gap-2 mb-1.5">
+            <span className="px-2 py-0.5 rounded-full text-[11px] font-semibold uppercase tracking-wider bg-[#D4AF57]/15 text-[#D4AF57] border border-[#D4AF57]/30 flex items-center gap-1.5">
+              <MapPin className="w-3 h-3" />
               Venue Intelligence
             </span>
-            <span className="px-2.5 py-0.5 rounded-full text-xs font-medium bg-[#161616] text-[#A3A3A3] border border-[#2D2D2D]">
+            <span className="px-2 py-0.5 rounded-full text-[11px] font-medium bg-[#161616] text-[#A3A3A3] border border-[#2D2D2D]">
               T20 Cricket
             </span>
           </div>
-          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-[#F2F2F2]">
+          <h1 className="text-xl sm:text-2xl lg:text-[26px] font-extrabold tracking-tight text-[#F2F2F2]">
             Ground Analysis
           </h1>
-          <p className="text-sm sm:text-base text-[#858585] mt-1.5 max-w-3xl leading-relaxed">
+          <p className="text-xs sm:text-[13.5px] text-[#858585] mt-1 max-w-3xl leading-relaxed">
             Historical scoring profiles, chase versus defend rates, and winning score benchmarks across verified IPL and International T20 match records.
           </p>
         </div>
@@ -279,24 +279,24 @@ export default function GroundAnalysis() {
         <button
           type="button"
           onClick={handleResetFilters}
-          className="self-start lg:self-center inline-flex items-center gap-2 px-3.5 py-2 text-xs sm:text-sm font-medium text-[#B8B8B8] hover:text-[#F2F2F2] bg-[#161616] hover:bg-[#202020] border border-[#2D2D2D] rounded-lg transition-colors cursor-pointer shadow-xs"
+          className="self-start lg:self-center inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-[#B8B8B8] hover:text-[#F2F2F2] bg-[#161616] hover:bg-[#202020] border border-[#2D2D2D] rounded-md transition-colors cursor-pointer shadow-xs"
           title="Reset to default filters"
         >
-          <RotateCcw className="w-4 h-4 text-[#D4AF57]" />
+          <RotateCcw className="w-3.5 h-3.5 text-[#D4AF57]" />
           <span>Reset Filters</span>
         </button>
       </div>
 
       {/* 3. Filter Controls: Competition, Country, Venue, Period */}
-      <div className="bg-[#121212] border border-[#2D2D2D] rounded-xl p-4 sm:p-5 shadow-lg space-y-4">
+      <div className="bg-[#121212] border border-[#2D2D2D] rounded-lg p-3.5 sm:p-4 shadow-lg space-y-3">
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
           {/* A. Competition Scope */}
           <div>
-            <label className="block text-xs font-semibold uppercase tracking-wider text-[#A3A3A3] mb-1.5 flex items-center gap-1.5">
+            <label className="block text-[11px] font-semibold uppercase tracking-wider text-[#A3A3A3] mb-1 flex items-center gap-1.5">
               <Layers className="w-3.5 h-3.5 text-[#D4AF57]" />
               Competition Scope
             </label>
-            <div className="grid grid-cols-3 gap-1.5 bg-[#080808] p-1 rounded-lg border border-[#2D2D2D]">
+            <div className="grid grid-cols-3 gap-1 bg-[#080808] p-1 rounded-md border border-[#2D2D2D] h-9 items-center">
               {[
                 { id: 'combined', label: 'Combined' },
                 { id: 'ipl', label: 'IPL' },
@@ -306,7 +306,7 @@ export default function GroundAnalysis() {
                   key={comp.id}
                   type="button"
                   onClick={() => setSelectedCompetition(comp.id)}
-                  className={`py-1.5 px-2 text-xs font-medium rounded-md transition-all text-center cursor-pointer ${
+                  className={`h-7 px-1.5 text-[11px] sm:text-xs font-medium rounded transition-all text-center cursor-pointer flex items-center justify-center ${
                     selectedCompetition === comp.id
                       ? 'bg-[#1C1C1C] text-[#D4AF57] border border-[#D4AF57]/40 shadow-xs font-semibold'
                       : 'text-[#858585] hover:text-[#F2F2F2] hover:bg-[#141414]'
@@ -320,7 +320,7 @@ export default function GroundAnalysis() {
 
           {/* B. Country Selector */}
           <div>
-            <label className="block text-xs font-semibold uppercase tracking-wider text-[#A3A3A3] mb-1.5 flex items-center gap-1.5">
+            <label className="block text-[11px] font-semibold uppercase tracking-wider text-[#A3A3A3] mb-1 flex items-center gap-1.5">
               <Globe className="w-3.5 h-3.5 text-[#D4AF57]" />
               Country
             </label>
@@ -328,7 +328,7 @@ export default function GroundAnalysis() {
               value={selectedCountry}
               onChange={(e) => setSelectedCountry(e.target.value)}
               disabled={venuesLoading || !venuesData?.countries?.length}
-              className="w-full bg-[#080808] text-[#F2F2F2] border border-[#2D2D2D] hover:border-[#404040] focus:border-[#D4AF57] focus:outline-hidden rounded-lg px-3 py-2 text-xs sm:text-sm font-sans transition-colors cursor-pointer disabled:opacity-50"
+              className="w-full bg-[#080808] h-9 text-[#F2F2F2] border border-[#2D2D2D] hover:border-[#404040] focus:border-[#D4AF57] focus:outline-hidden rounded-md px-2.5 py-1 text-xs sm:text-[13px] font-sans transition-colors cursor-pointer disabled:opacity-50"
             >
               {venuesLoading && !venuesData?.countries?.length ? (
                 <option value="All">Loading countries...</option>
@@ -349,7 +349,7 @@ export default function GroundAnalysis() {
 
           {/* C. Venue Selector */}
           <div>
-            <label className="block text-xs font-semibold uppercase tracking-wider text-[#A3A3A3] mb-1.5 flex items-center gap-1.5">
+            <label className="block text-[11px] font-semibold uppercase tracking-wider text-[#A3A3A3] mb-1 flex items-center gap-1.5">
               <MapPin className="w-3.5 h-3.5 text-[#D4AF57]" />
               Selected Venue
             </label>
@@ -357,7 +357,7 @@ export default function GroundAnalysis() {
               value={selectedVenueId}
               onChange={(e) => setSelectedVenueId(e.target.value)}
               disabled={venuesLoading || !venuesData?.venues?.length}
-              className="w-full bg-[#080808] text-[#F2F2F2] border border-[#2D2D2D] hover:border-[#404040] focus:border-[#D4AF57] focus:outline-hidden rounded-lg px-3 py-2 text-xs sm:text-sm font-sans transition-colors cursor-pointer disabled:opacity-50"
+              className="w-full bg-[#080808] h-9 text-[#F2F2F2] border border-[#2D2D2D] hover:border-[#404040] focus:border-[#D4AF57] focus:outline-hidden rounded-md px-2.5 py-1 text-xs sm:text-[13px] font-sans transition-colors cursor-pointer disabled:opacity-50"
             >
               {venuesLoading && !venuesData?.venues?.length ? (
                 <option value="">Loading venues...</option>
@@ -375,14 +375,14 @@ export default function GroundAnalysis() {
 
           {/* D. Period Selector */}
           <div>
-            <label className="block text-xs font-semibold uppercase tracking-wider text-[#A3A3A3] mb-1.5 flex items-center gap-1.5">
+            <label className="block text-[11px] font-semibold uppercase tracking-wider text-[#A3A3A3] mb-1 flex items-center gap-1.5">
               <Calendar className="w-3.5 h-3.5 text-[#D4AF57]" />
               Analysis Period
             </label>
             <select
               value={selectedPeriod}
               onChange={(e) => setSelectedPeriod(e.target.value)}
-              className="w-full bg-[#080808] text-[#F2F2F2] border border-[#2D2D2D] hover:border-[#404040] focus:border-[#D4AF57] focus:outline-hidden rounded-lg px-3 py-2 text-xs sm:text-sm font-sans transition-colors cursor-pointer"
+              className="w-full bg-[#080808] h-9 text-[#F2F2F2] border border-[#2D2D2D] hover:border-[#404040] focus:border-[#D4AF57] focus:outline-hidden rounded-md px-2.5 py-1 text-xs sm:text-[13px] font-sans transition-colors cursor-pointer"
             >
               <option value="rolling_5yr">Rolling 5-Year Window (Default)</option>
               <option value="rolling_3yr">Rolling 3-Year Window</option>
@@ -467,18 +467,18 @@ export default function GroundAnalysis() {
 
       {/* Main Ground Analysis Content */}
       {groundData && (
-        <div className="space-y-8">
+        <div className="space-y-5 sm:space-y-6">
           {/* 4. Venue Metadata Banner & Data Coverage Disclosure */}
-          <div className="bg-gradient-to-r from-[#141414] via-[#101010] to-[#141414] border border-[#2D2D2D] rounded-xl p-5 sm:p-6 shadow-xl relative overflow-hidden">
+          <div className="bg-gradient-to-r from-[#141414] via-[#101010] to-[#141414] border border-[#2D2D2D] rounded-lg p-4 sm:p-5 shadow-lg relative overflow-hidden">
             <div className="absolute top-0 right-0 w-96 h-96 bg-[#D4AF57]/5 rounded-full blur-3xl pointer-events-none" />
 
-            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 relative z-10">
-              <div className="space-y-1.5">
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 relative z-10">
+              <div className="space-y-1">
                 <div className="flex flex-wrap items-center gap-2">
-                  <h2 className="text-xl sm:text-2xl font-bold text-[#F2F2F2]">
+                  <h2 className="text-lg sm:text-xl font-bold text-[#F2F2F2]">
                     {groundData.venue_info.name}
                   </h2>
-                  <span className="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-[#1C1C1C] border border-[#383838] text-[#D4AF57]">
+                  <span className="px-2 py-0.5 rounded-full text-[11px] font-semibold bg-[#1C1C1C] border border-[#383838] text-[#D4AF57]">
                     {groundData.venue_info.city}, {groundData.venue_info.country}
                   </span>
                 </div>
@@ -490,31 +490,31 @@ export default function GroundAnalysis() {
               </div>
 
               {/* Match Totals Quick Pill */}
-              <div className="flex items-center gap-3 bg-[#080808]/90 border border-[#2D2D2D] rounded-lg px-4 py-2.5 self-start md:self-auto shrink-0 font-sans">
-                <div className="text-center pr-3 border-r border-[#262626]">
-                  <div className="text-lg font-bold text-[#D4AF57] tabular-nums">
+              <div className="flex items-center gap-2.5 bg-[#080808]/90 border border-[#2D2D2D] rounded-md px-3 py-1.5 self-start md:self-auto shrink-0 font-sans">
+                <div className="text-center pr-2.5 border-r border-[#262626]">
+                  <div className="text-base font-bold text-[#D4AF57] tabular-nums">
                     {groundData.summary.total_matches_in_period}
                   </div>
-                  <div className="text-[11px] text-[#858585]">Matches in Period</div>
+                  <div className="text-[10.5px] text-[#858585]">Matches in Period</div>
                 </div>
                 <div className="text-center pl-1">
-                  <div className="text-lg font-bold text-[#F2F2F2] tabular-nums">
+                  <div className="text-base font-bold text-[#F2F2F2] tabular-nums">
                     {groundData.summary.total_matches_all_time}
                   </div>
-                  <div className="text-[11px] text-[#858585]">All-Time Recorded</div>
+                  <div className="text-[10.5px] text-[#858585]">All-Time Recorded</div>
                 </div>
               </div>
             </div>
 
             {/* Coverage Disclosure Box */}
-            <div className="mt-4 pt-4 border-t border-[#262626] flex flex-col sm:flex-row sm:items-start gap-2.5 text-xs text-[#858585] relative z-10">
-              <Info className="w-4 h-4 text-[#D4AF57] shrink-0 mt-0.5" />
-              <div className="space-y-1">
-                <p className="text-[#A3A3A3] leading-relaxed">
+            <div className="mt-3 pt-3 border-t border-[#262626] flex flex-col sm:flex-row sm:items-start gap-2 text-xs text-[#858585] relative z-10">
+              <Info className="w-3.5 h-3.5 text-[#D4AF57] shrink-0 mt-0.5" />
+              <div className="space-y-0.5">
+                <p className="text-[#A3A3A3] leading-relaxed text-[11.5px]">
                   <strong className="text-[#F2F2F2]">Dataset Coverage Notice: </strong>
                   {groundData.summary.data_coverage_notice}
                 </p>
-                <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-[11px] text-[#707070]">
+                <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-[11px] text-[#707070]">
                   <span>
                     Scope Match Dates: <strong className="text-[#B8B8B8] font-mono">{groundData.summary.earliest_date_in_scope}</strong> to <strong className="text-[#B8B8B8] font-mono">{groundData.summary.latest_date_in_scope}</strong>
                   </span>
@@ -528,11 +528,11 @@ export default function GroundAnalysis() {
           </div>
 
           {/* 5. Venue Scoring Profile: 1st Innings vs 2nd Innings */}
-          <section className="space-y-4">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+          <section className="space-y-3">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5">
               <div>
-                <h3 className="text-lg font-bold text-[#F2F2F2] flex items-center gap-2">
-                  <Zap className="w-5 h-5 text-[#D4AF57]" />
+                <h3 className="text-base sm:text-[17px] font-bold text-[#F2F2F2] flex items-center gap-2">
+                  <Zap className="w-4 h-4 text-[#D4AF57]" />
                   Venue Scoring Profile
                 </h3>
                 <p className="text-xs text-[#858585]">
@@ -541,46 +541,46 @@ export default function GroundAnalysis() {
               </div>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 sm:gap-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-5">
               {/* 1st Innings Profile Card */}
-              <div className="bg-[#121212] border border-[#2D2D2D] rounded-xl p-5 shadow-lg space-y-4">
-                <div className="flex items-center justify-between border-b border-[#222222] pb-3">
+              <div className="bg-[#121212] border border-[#2D2D2D] rounded-lg p-3.5 sm:p-4 shadow-md space-y-3">
+                <div className="flex items-center justify-between border-b border-[#222222] pb-2.5">
                   <div className="flex items-center gap-2">
-                    <div className="w-3 h-3 rounded-full bg-[#D4AF57]" />
-                    <h4 className="font-semibold text-sm sm:text-base text-[#F2F2F2]">
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#D4AF57]" />
+                    <h4 className="font-semibold text-xs sm:text-sm text-[#F2F2F2]">
                       1st Innings Scoring
                     </h4>
                   </div>
-                  <span className="text-xs px-2.5 py-0.5 rounded-md bg-[#1C1C1C] border border-[#2D2D2D] text-[#A3A3A3] tabular-nums">
+                  <span className="text-[11px] px-2 py-0.5 rounded bg-[#1C1C1C] border border-[#2D2D2D] text-[#A3A3A3] tabular-nums">
                     {groundData.scoring_profile.first_innings.sample_count} eligible innings
                   </span>
                 </div>
 
                 {/* Avg & Median Top Metrics */}
-                <div className="grid grid-cols-2 gap-3">
-                  <div className="bg-[#0A0A0A] border border-[#262626] rounded-lg p-3 text-center">
-                    <span className="text-[11px] uppercase font-semibold text-[#858585] tracking-wider block">
+                <div className="grid grid-cols-2 gap-2.5">
+                  <div className="bg-[#0A0A0A] border border-[#262626] rounded-md p-2.5 text-center">
+                    <span className="text-[10px] uppercase font-semibold text-[#858585] tracking-wider block">
                       Average Score
                     </span>
-                    <span className="text-2xl sm:text-3xl font-extrabold text-[#D4AF57] tabular-nums mt-1 block">
+                    <span className="text-xl sm:text-2xl font-extrabold text-[#D4AF57] tabular-nums mt-0.5 block">
                       {groundData.scoring_profile.first_innings.avg_score ?? '—'}
                     </span>
                   </div>
-                  <div className="bg-[#0A0A0A] border border-[#262626] rounded-lg p-3 text-center">
-                    <span className="text-[11px] uppercase font-semibold text-[#858585] tracking-wider block">
+                  <div className="bg-[#0A0A0A] border border-[#262626] rounded-md p-2.5 text-center">
+                    <span className="text-[10px] uppercase font-semibold text-[#858585] tracking-wider block">
                       Median Score
                     </span>
-                    <span className="text-2xl sm:text-3xl font-extrabold text-[#F2F2F2] tabular-nums mt-1 block">
+                    <span className="text-xl sm:text-2xl font-extrabold text-[#F2F2F2] tabular-nums mt-0.5 block">
                       {groundData.scoring_profile.first_innings.median_score ?? '—'}
                     </span>
                   </div>
                 </div>
 
                 {/* Highest & Lowest 1st Innings Totals */}
-                <div className="space-y-2 pt-1 font-sans text-xs">
+                <div className="space-y-1.5 pt-1 font-sans text-xs">
                   {/* Highest 1st Innings */}
                   {groundData.scoring_profile.first_innings.highest ? (
-                    <div className="bg-[#0D0D0D] border border-[#222222] rounded-lg p-3 space-y-1">
+                    <div className="bg-[#0D0D0D] border border-[#222222] rounded-md p-2.5 space-y-1">
                       <div className="flex items-center justify-between">
                         <span className="text-[#858585] font-semibold uppercase text-[10px] tracking-wider">
                           Highest 1st Innings Score
@@ -589,18 +589,18 @@ export default function GroundAnalysis() {
                           to={`/match/${groundData.scoring_profile.first_innings.highest.match_id}`}
                           className="text-[#D4AF57] hover:underline inline-flex items-center gap-1 text-[11px]"
                         >
-                          View Match <ExternalLink className="w-3 h-3" />
+                          View Match <ExternalLink className="w-2.5 h-2.5" />
                         </Link>
                       </div>
                       <div className="flex items-baseline justify-between pt-0.5">
-                        <span className="text-lg font-bold text-[#F2F2F2] tabular-nums">
+                        <span className="text-base font-bold text-[#F2F2F2] tabular-nums">
                           {groundData.scoring_profile.first_innings.highest.score_str}
                         </span>
-                        <span className="text-[#A3A3A3] font-medium text-right">
+                        <span className="text-[#A3A3A3] font-medium text-right text-xs">
                           {groundData.scoring_profile.first_innings.highest.team} vs {groundData.scoring_profile.first_innings.highest.opponent}
                         </span>
                       </div>
-                      <div className="text-[11px] text-[#707070] flex items-center justify-between pt-0.5">
+                      <div className="text-[10.5px] text-[#707070] flex items-center justify-between pt-0.5">
                         <span>{groundData.scoring_profile.first_innings.highest.result_description}</span>
                         <span className="font-mono">{groundData.scoring_profile.first_innings.highest.date}</span>
                       </div>
@@ -611,7 +611,7 @@ export default function GroundAnalysis() {
 
                   {/* Lowest 1st Innings */}
                   {groundData.scoring_profile.first_innings.lowest && (
-                    <div className="bg-[#0D0D0D] border border-[#222222] rounded-lg p-3 space-y-1">
+                    <div className="bg-[#0D0D0D] border border-[#222222] rounded-md p-2.5 space-y-1">
                       <div className="flex items-center justify-between">
                         <span className="text-[#858585] font-semibold uppercase text-[10px] tracking-wider">
                           Lowest 1st Innings Score
@@ -620,18 +620,18 @@ export default function GroundAnalysis() {
                           to={`/match/${groundData.scoring_profile.first_innings.lowest.match_id}`}
                           className="text-[#D4AF57] hover:underline inline-flex items-center gap-1 text-[11px]"
                         >
-                          View Match <ExternalLink className="w-3 h-3" />
+                          View Match <ExternalLink className="w-2.5 h-2.5" />
                         </Link>
                       </div>
                       <div className="flex items-baseline justify-between pt-0.5">
-                        <span className="text-lg font-bold text-[#F2F2F2] tabular-nums">
+                        <span className="text-base font-bold text-[#F2F2F2] tabular-nums">
                           {groundData.scoring_profile.first_innings.lowest.score_str}
                         </span>
-                        <span className="text-[#A3A3A3] font-medium text-right">
+                        <span className="text-[#A3A3A3] font-medium text-right text-xs">
                           {groundData.scoring_profile.first_innings.lowest.team} vs {groundData.scoring_profile.first_innings.lowest.opponent}
                         </span>
                       </div>
-                      <div className="text-[11px] text-[#707070] flex items-center justify-between pt-0.5">
+                      <div className="text-[10.5px] text-[#707070] flex items-center justify-between pt-0.5">
                         <span>{groundData.scoring_profile.first_innings.lowest.result_description}</span>
                         <span className="font-mono">{groundData.scoring_profile.first_innings.lowest.date}</span>
                       </div>
@@ -639,50 +639,50 @@ export default function GroundAnalysis() {
                   )}
                 </div>
 
-                <div className="text-[11px] text-[#707070] pt-1">
+                <div className="text-[10.5px] text-[#707070] pt-0.5">
                   *{groundData.scoring_profile.first_innings.eligibility_note}
                 </div>
               </div>
 
               {/* 2nd Innings Profile Card */}
-              <div className="bg-[#121212] border border-[#2D2D2D] rounded-xl p-5 shadow-lg space-y-4">
-                <div className="flex items-center justify-between border-b border-[#222222] pb-3">
+              <div className="bg-[#121212] border border-[#2D2D2D] rounded-lg p-3.5 sm:p-4 shadow-md space-y-3">
+                <div className="flex items-center justify-between border-b border-[#222222] pb-2.5">
                   <div className="flex items-center gap-2">
-                    <div className="w-3 h-3 rounded-full bg-[#5A9E60]" />
-                    <h4 className="font-semibold text-sm sm:text-base text-[#F2F2F2]">
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#5A9E60]" />
+                    <h4 className="font-semibold text-xs sm:text-sm text-[#F2F2F2]">
                       2nd Innings (Chasing) Scoring
                     </h4>
                   </div>
-                  <span className="text-xs px-2.5 py-0.5 rounded-md bg-[#1C1C1C] border border-[#2D2D2D] text-[#A3A3A3] tabular-nums">
+                  <span className="text-[11px] px-2 py-0.5 rounded bg-[#1C1C1C] border border-[#2D2D2D] text-[#A3A3A3] tabular-nums">
                     {groundData.scoring_profile.second_innings.sample_count} eligible innings
                   </span>
                 </div>
 
                 {/* Avg & Median Top Metrics */}
-                <div className="grid grid-cols-2 gap-3">
-                  <div className="bg-[#0A0A0A] border border-[#262626] rounded-lg p-3 text-center">
-                    <span className="text-[11px] uppercase font-semibold text-[#858585] tracking-wider block">
+                <div className="grid grid-cols-2 gap-2.5">
+                  <div className="bg-[#0A0A0A] border border-[#262626] rounded-md p-2.5 text-center">
+                    <span className="text-[10px] uppercase font-semibold text-[#858585] tracking-wider block">
                       Average Score
                     </span>
-                    <span className="text-2xl sm:text-3xl font-extrabold text-[#5A9E60] tabular-nums mt-1 block">
+                    <span className="text-xl sm:text-2xl font-extrabold text-[#5A9E60] tabular-nums mt-0.5 block">
                       {groundData.scoring_profile.second_innings.avg_score ?? '—'}
                     </span>
                   </div>
-                  <div className="bg-[#0A0A0A] border border-[#262626] rounded-lg p-3 text-center">
-                    <span className="text-[11px] uppercase font-semibold text-[#858585] tracking-wider block">
+                  <div className="bg-[#0A0A0A] border border-[#262626] rounded-md p-2.5 text-center">
+                    <span className="text-[10px] uppercase font-semibold text-[#858585] tracking-wider block">
                       Median Score
                     </span>
-                    <span className="text-2xl sm:text-3xl font-extrabold text-[#F2F2F2] tabular-nums mt-1 block">
+                    <span className="text-xl sm:text-2xl font-extrabold text-[#F2F2F2] tabular-nums mt-0.5 block">
                       {groundData.scoring_profile.second_innings.median_score ?? '—'}
                     </span>
                   </div>
                 </div>
 
                 {/* Highest & Lowest 2nd Innings Totals */}
-                <div className="space-y-2 pt-1 font-sans text-xs">
+                <div className="space-y-1.5 pt-1 font-sans text-xs">
                   {/* Highest 2nd Innings */}
                   {groundData.scoring_profile.second_innings.highest ? (
-                    <div className="bg-[#0D0D0D] border border-[#222222] rounded-lg p-3 space-y-1">
+                    <div className="bg-[#0D0D0D] border border-[#222222] rounded-md p-2.5 space-y-1">
                       <div className="flex items-center justify-between">
                         <span className="text-[#858585] font-semibold uppercase text-[10px] tracking-wider">
                           Highest 2nd Innings Total
@@ -691,18 +691,18 @@ export default function GroundAnalysis() {
                           to={`/match/${groundData.scoring_profile.second_innings.highest.match_id}`}
                           className="text-[#D4AF57] hover:underline inline-flex items-center gap-1 text-[11px]"
                         >
-                          View Match <ExternalLink className="w-3 h-3" />
+                          View Match <ExternalLink className="w-2.5 h-2.5" />
                         </Link>
                       </div>
                       <div className="flex items-baseline justify-between pt-0.5">
-                        <span className="text-lg font-bold text-[#F2F2F2] tabular-nums">
+                        <span className="text-base font-bold text-[#F2F2F2] tabular-nums">
                           {groundData.scoring_profile.second_innings.highest.score_str}
                         </span>
-                        <span className="text-[#A3A3A3] font-medium text-right">
+                        <span className="text-[#A3A3A3] font-medium text-right text-xs">
                           {groundData.scoring_profile.second_innings.highest.team} vs {groundData.scoring_profile.second_innings.highest.opponent}
                         </span>
                       </div>
-                      <div className="text-[11px] text-[#707070] flex items-center justify-between pt-0.5">
+                      <div className="text-[10.5px] text-[#707070] flex items-center justify-between pt-0.5">
                         <span>{groundData.scoring_profile.second_innings.highest.result_description}</span>
                         <span className="font-mono">{groundData.scoring_profile.second_innings.highest.date}</span>
                       </div>
@@ -713,7 +713,7 @@ export default function GroundAnalysis() {
 
                   {/* Lowest 2nd Innings */}
                   {groundData.scoring_profile.second_innings.lowest && (
-                    <div className="bg-[#0D0D0D] border border-[#222222] rounded-lg p-3 space-y-1">
+                    <div className="bg-[#0D0D0D] border border-[#222222] rounded-md p-2.5 space-y-1">
                       <div className="flex items-center justify-between">
                         <span className="text-[#858585] font-semibold uppercase text-[10px] tracking-wider">
                           Lowest 2nd Innings Total
@@ -722,18 +722,18 @@ export default function GroundAnalysis() {
                           to={`/match/${groundData.scoring_profile.second_innings.lowest.match_id}`}
                           className="text-[#D4AF57] hover:underline inline-flex items-center gap-1 text-[11px]"
                         >
-                          View Match <ExternalLink className="w-3 h-3" />
+                          View Match <ExternalLink className="w-2.5 h-2.5" />
                         </Link>
                       </div>
                       <div className="flex items-baseline justify-between pt-0.5">
-                        <span className="text-lg font-bold text-[#F2F2F2] tabular-nums">
+                        <span className="text-base font-bold text-[#F2F2F2] tabular-nums">
                           {groundData.scoring_profile.second_innings.lowest.score_str}
                         </span>
-                        <span className="text-[#A3A3A3] font-medium text-right">
+                        <span className="text-[#A3A3A3] font-medium text-right text-xs">
                           {groundData.scoring_profile.second_innings.lowest.team} vs {groundData.scoring_profile.second_innings.lowest.opponent}
                         </span>
                       </div>
-                      <div className="text-[11px] text-[#707070] flex items-center justify-between pt-0.5">
+                      <div className="text-[10.5px] text-[#707070] flex items-center justify-between pt-0.5">
                         <span>{groundData.scoring_profile.second_innings.lowest.result_description}</span>
                         <span className="font-mono">{groundData.scoring_profile.second_innings.lowest.date}</span>
                       </div>
@@ -741,7 +741,7 @@ export default function GroundAnalysis() {
                   )}
                 </div>
 
-                <div className="text-[11px] text-[#707070] pt-1">
+                <div className="text-[10.5px] text-[#707070] pt-0.5">
                   *{groundData.scoring_profile.second_innings.eligibility_note}
                 </div>
               </div>
@@ -749,13 +749,13 @@ export default function GroundAnalysis() {
           </section>
 
           {/* 6. Phase-Wise Scoring Profile (Powerplay, Middle Overs & Death Overs) */}
-          <section className="bg-[#121212] border border-[#2D2D2D] rounded-xl p-5 sm:p-6 shadow-xl space-y-6">
+          <section className="bg-[#121212] border border-[#2D2D2D] rounded-lg p-4 sm:p-5 shadow-lg space-y-4">
             {/* Header & Innings Selector */}
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-[#222222] pb-4">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 border-b border-[#222222] pb-3">
               <div>
                 <div className="flex items-center gap-2">
-                  <Clock className="w-5 h-5 text-[#D4AF57]" />
-                  <h3 className="text-lg font-bold text-[#F2F2F2]">
+                  <Clock className="w-4 h-4 text-[#D4AF57]" />
+                  <h3 className="text-base sm:text-[17px] font-bold text-[#F2F2F2]">
                     Phase-Wise Scoring Profile
                   </h3>
                 </div>
@@ -854,23 +854,23 @@ export default function GroundAnalysis() {
                   return (
                     <div
                       key={phaseKey}
-                      className="bg-[#0A0A0A] border border-[#262626] rounded-xl p-4 sm:p-5 flex flex-col justify-between space-y-4 shadow-lg hover:border-[#383838] transition-colors"
+                      className="bg-[#0A0A0A] border border-[#262626] rounded-lg p-3.5 sm:p-4 flex flex-col justify-between space-y-3 shadow-md hover:border-[#383838] transition-colors"
                     >
                       {/* Card Header */}
-                      <div className="flex items-start justify-between border-b border-[#1C1C1C] pb-3">
+                      <div className="flex items-start justify-between border-b border-[#1C1C1C] pb-2.5">
                         <div className="space-y-0.5">
                           <div className="flex items-center gap-2">
-                            <span className={`w-2.5 h-2.5 rounded-full ${phaseDotBg}`} />
-                            <h4 className="font-bold text-base text-[#F2F2F2]">
+                            <span className={`w-2 h-2 rounded-full ${phaseDotBg}`} />
+                            <h4 className="font-bold text-[14.5px] text-[#F2F2F2]">
                               {pData.phase_name}
                             </h4>
                           </div>
-                          <span className="text-[11px] font-mono text-[#858585] block">
+                          <span className="text-[10.5px] font-mono text-[#858585] block">
                             {pData.overs_range}
                           </span>
                         </div>
                         <span
-                          className="text-[11px] px-2.5 py-0.5 rounded-full bg-[#161616] border border-[#2D2D2D] text-[#A3A3A3] tabular-nums cursor-help"
+                          className="text-[10.5px] px-2 py-0.5 rounded-full bg-[#161616] border border-[#2D2D2D] text-[#A3A3A3] tabular-nums cursor-help"
                           title="Phase statistics include only fully completed phases from eligible standard 20-over matches."
                         >
                           {pData.sample_innings} eligible innings
@@ -879,31 +879,31 @@ export default function GroundAnalysis() {
 
                       {/* Card Content or Empty State */}
                       {pData.sample_innings === 0 ? (
-                        <div className="py-10 px-4 text-center space-y-1.5 my-auto">
+                        <div className="py-8 px-4 text-center space-y-1 my-auto">
                           <p className="text-xs font-medium text-[#858585]">
                             No fully completed {pData.phase_name.toLowerCase()} recorded for this selection.
                           </p>
-                          <p className="text-[11px] text-[#555555]">
+                          <p className="text-[10.5px] text-[#555555]">
                             Incomplete or unplayed phases are excluded from statistics.
                           </p>
                         </div>
                       ) : (
                         <>
                           {/* Primary Metrics: Avg & Median */}
-                          <div className="grid grid-cols-2 gap-3">
-                            <div className="bg-[#121212] border border-[#222222] rounded-lg p-3 text-center">
+                          <div className="grid grid-cols-2 gap-2.5">
+                            <div className="bg-[#121212] border border-[#222222] rounded-md p-2.5 text-center">
                               <span className="text-[10px] uppercase font-semibold text-[#858585] tracking-wider block">
                                 Average Runs
                               </span>
-                              <span className="text-2xl sm:text-3xl font-extrabold text-[#F2F2F2] tabular-nums mt-0.5 block">
+                              <span className="text-xl sm:text-2xl font-extrabold text-[#F2F2F2] tabular-nums mt-0.5 block">
                                 {pData.avg_runs ?? '—'}
                               </span>
                             </div>
-                            <div className="bg-[#121212] border border-[#222222] rounded-lg p-3 text-center">
+                            <div className="bg-[#121212] border border-[#222222] rounded-md p-2.5 text-center">
                               <span className="text-[10px] uppercase font-semibold text-[#858585] tracking-wider block">
                                 Median Runs
                               </span>
-                              <span className="text-2xl sm:text-3xl font-extrabold text-[#F2F2F2] tabular-nums mt-0.5 block">
+                              <span className="text-xl sm:text-2xl font-extrabold text-[#F2F2F2] tabular-nums mt-0.5 block">
                                 {pData.median_runs ?? '—'}
                               </span>
                             </div>
@@ -911,25 +911,25 @@ export default function GroundAnalysis() {
 
                           {/* Rate & Wickets Row */}
                           <div className="grid grid-cols-2 gap-2 text-xs">
-                            <div className="bg-[#121212] border border-[#222222] rounded-lg px-3 py-2 flex items-center justify-between">
+                            <div className="bg-[#121212] border border-[#222222] rounded-md px-2.5 py-1.5 flex items-center justify-between">
                               <span className="text-[#858585]">Run Rate:</span>
-                              <span className="font-bold text-[#F2F2F2] tabular-nums font-mono">
+                              <span className="font-bold text-[#F2F2F2] tabular-nums font-mono text-[11.5px]">
                                 {pData.run_rate !== null ? `${pData.run_rate} rpo` : '—'}
                               </span>
                             </div>
-                            <div className="bg-[#121212] border border-[#222222] rounded-lg px-3 py-2 flex items-center justify-between">
+                            <div className="bg-[#121212] border border-[#222222] rounded-md px-2.5 py-1.5 flex items-center justify-between">
                               <span className="text-[#858585]">Avg Wickets:</span>
-                              <span className="font-bold text-[#F2F2F2] tabular-nums font-mono">
+                              <span className="font-bold text-[#F2F2F2] tabular-nums font-mono text-[11.5px]">
                                 {pData.avg_wickets !== null ? `${pData.avg_wickets} wkts` : '—'}
                               </span>
                             </div>
                           </div>
 
                           {/* Ball-by-ball Dot & Boundary Percentages */}
-                          <div className="bg-[#121212] border border-[#222222] rounded-lg p-3 space-y-2">
+                          <div className="bg-[#121212] border border-[#222222] rounded-md p-2.5 space-y-1.5">
                             <div className="flex items-center justify-between text-xs">
                               <span className="text-[#858585]">Dot-Ball %</span>
-                              <span className="font-mono font-semibold text-[#F2F2F2] tabular-nums">
+                              <span className="font-mono font-semibold text-[#F2F2F2] tabular-nums text-[11.5px]">
                                 {pData.dot_percentage !== null ? `${pData.dot_percentage}%` : '—'}
                               </span>
                             </div>
@@ -940,9 +940,9 @@ export default function GroundAnalysis() {
                               />
                             </div>
 
-                            <div className="flex items-center justify-between text-xs pt-1">
+                            <div className="flex items-center justify-between text-xs pt-0.5">
                               <span className="text-[#858585]">Boundary %</span>
-                              <span className="font-mono font-semibold text-[#D4AF57] tabular-nums">
+                              <span className="font-mono font-semibold text-[#D4AF57] tabular-nums text-[11.5px]">
                                 {pData.boundary_percentage !== null ? `${pData.boundary_percentage}%` : '—'}
                               </span>
                             </div>
@@ -955,58 +955,58 @@ export default function GroundAnalysis() {
                           </div>
 
                           {/* Observed Extremes: Highest & Lowest Phase Scores */}
-                          <div className="space-y-2 text-xs">
+                          <div className="space-y-1.5 text-xs">
                             {pData.highest && (
-                              <div className="bg-[#121212] border border-[#222222] rounded-lg p-2.5 space-y-1">
+                              <div className="bg-[#121212] border border-[#222222] rounded-md p-2 space-y-0.5">
                                 <div className="flex items-center justify-between text-[10px]">
                                   <span className="uppercase font-semibold text-[#707070] tracking-wider">
                                     Highest Phase Score
                                   </span>
                                   <Link
                                     to={`/match/${pData.highest.match_id}`}
-                                    className="text-[#D4AF57] hover:underline inline-flex items-center gap-1"
+                                    className="text-[#D4AF57] hover:underline inline-flex items-center gap-1 text-[10.5px]"
                                   >
                                     View <ExternalLink className="w-2.5 h-2.5" />
                                   </Link>
                                 </div>
                                 <div className="flex items-baseline justify-between">
-                                  <span className="font-bold text-sm text-[#F2F2F2] tabular-nums font-mono">
+                                  <span className="font-bold text-xs sm:text-sm text-[#F2F2F2] tabular-nums font-mono">
                                     {pData.highest.score_str}
                                   </span>
-                                  <span className="text-[11px] text-[#A3A3A3] truncate max-w-[150px]">
+                                  <span className="text-[10.5px] text-[#A3A3A3] truncate max-w-[140px]">
                                     {pData.highest.team} vs {pData.highest.opponent}
                                   </span>
                                 </div>
                                 <div className="text-[10px] text-[#707070] flex justify-between">
-                                  <span className="truncate max-w-[140px]">{pData.highest.result_description}</span>
+                                  <span className="truncate max-w-[130px]">{pData.highest.result_description}</span>
                                   <span className="font-mono">{pData.highest.date}</span>
                                 </div>
                               </div>
                             )}
 
                             {pData.lowest && (
-                              <div className="bg-[#121212] border border-[#222222] rounded-lg p-2.5 space-y-1">
+                              <div className="bg-[#121212] border border-[#222222] rounded-md p-2 space-y-0.5">
                                 <div className="flex items-center justify-between text-[10px]">
                                   <span className="uppercase font-semibold text-[#707070] tracking-wider">
                                     Lowest Phase Score
                                   </span>
                                   <Link
                                     to={`/match/${pData.lowest.match_id}`}
-                                    className="text-[#D4AF57] hover:underline inline-flex items-center gap-1"
+                                    className="text-[#D4AF57] hover:underline inline-flex items-center gap-1 text-[10.5px]"
                                   >
                                     View <ExternalLink className="w-2.5 h-2.5" />
                                   </Link>
                                 </div>
                                 <div className="flex items-baseline justify-between">
-                                  <span className="font-bold text-sm text-[#F2F2F2] tabular-nums font-mono">
+                                  <span className="font-bold text-xs sm:text-sm text-[#F2F2F2] tabular-nums font-mono">
                                     {pData.lowest.score_str}
                                   </span>
-                                  <span className="text-[11px] text-[#A3A3A3] truncate max-w-[150px]">
+                                  <span className="text-[10.5px] text-[#A3A3A3] truncate max-w-[140px]">
                                     {pData.lowest.team} vs {pData.lowest.opponent}
                                   </span>
                                 </div>
                                 <div className="text-[10px] text-[#707070] flex justify-between">
-                                  <span className="truncate max-w-[140px]">{pData.lowest.result_description}</span>
+                                  <span className="truncate max-w-[130px]">{pData.lowest.result_description}</span>
                                   <span className="font-mono">{pData.lowest.date}</span>
                                 </div>
                               </div>
@@ -1022,36 +1022,36 @@ export default function GroundAnalysis() {
 
             {/* Venue Scoring Progression & Acceleration Insight Card */}
             {groundData.phase_analysis?.progression_insights && (
-              <div className="bg-[#0A0A0A] border border-[#262626] rounded-xl p-5 shadow-lg space-y-4">
-                <div className="flex items-center justify-between border-b border-[#1C1C1C] pb-3">
+              <div className="bg-[#0A0A0A] border border-[#262626] rounded-lg p-3.5 sm:p-4 shadow-md space-y-3">
+                <div className="flex items-center justify-between border-b border-[#1C1C1C] pb-2.5">
                   <div className="flex items-center gap-2">
                     <TrendingUp className="w-4 h-4 text-[#D4AF57]" />
-                    <h4 className="font-semibold text-sm sm:text-base text-[#F2F2F2]">
+                    <h4 className="font-semibold text-xs sm:text-sm text-[#F2F2F2]">
                       Venue Scoring Progression & Acceleration
                     </h4>
                   </div>
-                  <span className="text-[11px] px-2.5 py-0.5 rounded-full bg-[#1C1C1C] border border-[#2D2D2D] text-[#A3A3A3]">
+                  <span className="text-[10.5px] px-2 py-0.5 rounded-full bg-[#1C1C1C] border border-[#2D2D2D] text-[#A3A3A3]">
                     Historical Pattern
                   </span>
                 </div>
 
                 {/* Progression Bar Comparison */}
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                  <div className="bg-[#121212] border border-[#222222] rounded-lg p-3">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+                  <div className="bg-[#121212] border border-[#222222] rounded-md p-2.5">
                     <span className="text-[10px] uppercase font-semibold text-[#858585] tracking-wider block">
                       Powerplay Run Rate
                     </span>
-                    <span className="text-xl font-bold text-[#F2F2F2] tabular-nums font-mono mt-1 block">
+                    <span className="text-lg font-bold text-[#F2F2F2] tabular-nums font-mono mt-0.5 block">
                       {groundData.phase_analysis.progression_insights.powerplay_run_rate !== null
                         ? `${groundData.phase_analysis.progression_insights.powerplay_run_rate} rpo`
                         : '—'}
                     </span>
-                    <span className="text-[11px] text-[#707070] mt-1 block">
+                    <span className="text-[10.5px] text-[#707070] mt-0.5 block">
                       Avg wickets: {groundData.phase_analysis.progression_insights.pp_avg_wickets ?? '—'}
                     </span>
                   </div>
 
-                  <div className="bg-[#121212] border border-[#222222] rounded-lg p-3">
+                  <div className="bg-[#121212] border border-[#222222] rounded-md p-2.5">
                     <div className="flex items-center justify-between">
                       <span className="text-[10px] uppercase font-semibold text-[#858585] tracking-wider">
                         Middle Overs Run Rate
@@ -1069,17 +1069,17 @@ export default function GroundAnalysis() {
                         </span>
                       )}
                     </div>
-                    <span className="text-xl font-bold text-[#6BA8E5] tabular-nums font-mono mt-1 block">
+                    <span className="text-lg font-bold text-[#6BA8E5] tabular-nums font-mono mt-0.5 block">
                       {groundData.phase_analysis.progression_insights.middle_run_rate !== null
                         ? `${groundData.phase_analysis.progression_insights.middle_run_rate} rpo`
                         : '—'}
                     </span>
-                    <span className="text-[11px] text-[#707070] mt-1 block">
+                    <span className="text-[10.5px] text-[#707070] mt-0.5 block">
                       Avg wickets: {groundData.phase_analysis.progression_insights.middle_avg_wickets ?? '—'}
                     </span>
                   </div>
 
-                  <div className="bg-[#121212] border border-[#222222] rounded-lg p-3">
+                  <div className="bg-[#121212] border border-[#222222] rounded-md p-2.5">
                     <div className="flex items-center justify-between">
                       <span className="text-[10px] uppercase font-semibold text-[#858585] tracking-wider">
                         Death Overs Run Rate
@@ -1097,20 +1097,20 @@ export default function GroundAnalysis() {
                         </span>
                       )}
                     </div>
-                    <span className="text-xl font-bold text-[#D4AF57] tabular-nums font-mono mt-1 block">
+                    <span className="text-lg font-bold text-[#D4AF57] tabular-nums font-mono mt-0.5 block">
                       {groundData.phase_analysis.progression_insights.death_run_rate !== null
                         ? `${groundData.phase_analysis.progression_insights.death_run_rate} rpo`
                         : '—'}
                     </span>
-                    <span className="text-[11px] text-[#707070] mt-1 block">
+                    <span className="text-[10.5px] text-[#707070] mt-0.5 block">
                       Avg wickets: {groundData.phase_analysis.progression_insights.death_avg_wickets ?? '—'}
                     </span>
                   </div>
                 </div>
 
                 {/* Analytical Narrative */}
-                <div className="bg-[#121212] border border-[#1F1F1F] rounded-lg p-3.5 space-y-2 text-xs">
-                  <p className="text-[#E0E0E0] leading-relaxed">
+                <div className="bg-[#121212] border border-[#1F1F1F] rounded-md p-3 space-y-1.5 text-xs">
+                  <p className="text-[#E0E0E0] leading-relaxed text-[11.5px]">
                     {groundData.phase_analysis.progression_insights.rate_insight}
                   </p>
                   <p className="text-[#A3A3A3] leading-relaxed">
@@ -1387,11 +1387,11 @@ export default function GroundAnalysis() {
           </section>
 
           {/* 7. Successful Defending vs Successful Chasing (Chase vs Defend) */}
-          <section className="bg-[#121212] border border-[#2D2D2D] rounded-xl p-5 sm:p-6 shadow-xl space-y-5">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-[#222222] pb-4">
+          <section className="bg-[#121212] border border-[#2D2D2D] rounded-lg p-4 sm:p-5 shadow-lg space-y-4">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-[#222222] pb-3">
               <div>
-                <h3 className="text-lg font-bold text-[#F2F2F2] flex items-center gap-2">
-                  <Shield className="w-5 h-5 text-[#D4AF57]" />
+                <h3 className="text-base sm:text-[17px] font-bold text-[#F2F2F2] flex items-center gap-2">
+                  <Shield className="w-4 h-4 text-[#D4AF57]" />
                   Chase vs Defend Breakdown
                 </h3>
                 <p className="text-xs text-[#858585] mt-0.5">
@@ -1401,23 +1401,23 @@ export default function GroundAnalysis() {
 
               <div className="flex items-center gap-2 text-xs">
                 <span className="text-[#858585]">Decided Matches:</span>
-                <span className="px-2.5 py-0.5 rounded-full bg-[#1C1C1C] border border-[#2D2D2D] text-[#F2F2F2] font-semibold tabular-nums">
+                <span className="px-2.5 py-0.5 rounded-full bg-[#1C1C1C] border border-[#2D2D2D] text-[#F2F2F2] font-semibold tabular-nums text-[11px]">
                   {groundData.chase_vs_defend.decided_matches} of {groundData.chase_vs_defend.total_matches}
                 </span>
               </div>
             </div>
 
             {/* KPI Cards & Outcomes Summary */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
               {/* Defending Wins */}
-              <div className="bg-[#0A0A0A] border border-[#262626] rounded-xl p-4 flex flex-col justify-between">
+              <div className="bg-[#0A0A0A] border border-[#262626] rounded-lg p-3 sm:p-3.5 flex flex-col justify-between">
                 <div>
-                  <span className="text-xs uppercase font-semibold text-[#858585] tracking-wider flex items-center gap-1.5">
+                  <span className="text-[11px] uppercase font-semibold text-[#858585] tracking-wider flex items-center gap-1.5">
                     <Shield className="w-3.5 h-3.5 text-[#D4AF57]" />
                     Defending Wins (Bat 1st)
                   </span>
-                  <div className="mt-2 flex items-baseline gap-2">
-                    <span className="text-3xl font-extrabold text-[#D4AF57] tabular-nums">
+                  <div className="mt-1.5 flex items-baseline gap-2">
+                    <span className="text-2xl sm:text-[26px] font-extrabold text-[#D4AF57] tabular-nums">
                       {groundData.chase_vs_defend.defend_pct !== null ? `${groundData.chase_vs_defend.defend_pct}%` : 'N/A'}
                     </span>
                     <span className="text-xs text-[#858585] font-semibold tabular-nums">
@@ -1425,20 +1425,20 @@ export default function GroundAnalysis() {
                     </span>
                   </div>
                 </div>
-                <div className="text-[11px] text-[#707070] mt-2 pt-2 border-t border-[#1C1C1C]">
+                <div className="text-[10.5px] text-[#707070] mt-1.5 pt-1.5 border-t border-[#1C1C1C]">
                   Won defending 1st innings total
                 </div>
               </div>
 
               {/* Chasing Wins */}
-              <div className="bg-[#0A0A0A] border border-[#262626] rounded-xl p-4 flex flex-col justify-between">
+              <div className="bg-[#0A0A0A] border border-[#262626] rounded-lg p-3 sm:p-3.5 flex flex-col justify-between">
                 <div>
-                  <span className="text-xs uppercase font-semibold text-[#858585] tracking-wider flex items-center gap-1.5">
+                  <span className="text-[11px] uppercase font-semibold text-[#858585] tracking-wider flex items-center gap-1.5">
                     <Zap className="w-3.5 h-3.5 text-[#5A9E60]" />
                     Chasing Wins (Bat 2nd)
                   </span>
-                  <div className="mt-2 flex items-baseline gap-2">
-                    <span className="text-3xl font-extrabold text-[#5A9E60] tabular-nums">
+                  <div className="mt-1.5 flex items-baseline gap-2">
+                    <span className="text-2xl sm:text-[26px] font-extrabold text-[#5A9E60] tabular-nums">
                       {groundData.chase_vs_defend.chase_pct !== null ? `${groundData.chase_vs_defend.chase_pct}%` : 'N/A'}
                     </span>
                     <span className="text-xs text-[#858585] font-semibold tabular-nums">
@@ -1446,19 +1446,19 @@ export default function GroundAnalysis() {
                     </span>
                   </div>
                 </div>
-                <div className="text-[11px] text-[#707070] mt-2 pt-2 border-t border-[#1C1C1C]">
+                <div className="text-[10.5px] text-[#707070] mt-1.5 pt-1.5 border-t border-[#1C1C1C]">
                   Won chasing in 2nd innings
                 </div>
               </div>
 
               {/* Ties & Super Overs */}
-              <div className="bg-[#0A0A0A] border border-[#262626] rounded-xl p-4 flex flex-col justify-between">
+              <div className="bg-[#0A0A0A] border border-[#262626] rounded-lg p-3 sm:p-3.5 flex flex-col justify-between">
                 <div>
-                  <span className="text-xs uppercase font-semibold text-[#858585] tracking-wider">
+                  <span className="text-[11px] uppercase font-semibold text-[#858585] tracking-wider">
                     Ties & Super Overs
                   </span>
-                  <div className="mt-2 flex items-baseline gap-2">
-                    <span className="text-3xl font-extrabold text-[#F2F2F2] tabular-nums">
+                  <div className="mt-1.5 flex items-baseline gap-2">
+                    <span className="text-2xl sm:text-[26px] font-extrabold text-[#F2F2F2] tabular-nums">
                       {groundData.chase_vs_defend.ties_super_overs}
                     </span>
                     <span className="text-xs text-[#858585]">
@@ -1466,19 +1466,19 @@ export default function GroundAnalysis() {
                     </span>
                   </div>
                 </div>
-                <div className="text-[11px] text-[#707070] mt-2 pt-2 border-t border-[#1C1C1C]">
+                <div className="text-[10.5px] text-[#707070] mt-1.5 pt-1.5 border-t border-[#1C1C1C]">
                   Decided via super over or tied
                 </div>
               </div>
 
               {/* No Results & Abandoned */}
-              <div className="bg-[#0A0A0A] border border-[#262626] rounded-xl p-4 flex flex-col justify-between">
+              <div className="bg-[#0A0A0A] border border-[#262626] rounded-lg p-3 sm:p-3.5 flex flex-col justify-between">
                 <div>
-                  <span className="text-xs uppercase font-semibold text-[#858585] tracking-wider">
+                  <span className="text-[11px] uppercase font-semibold text-[#858585] tracking-wider">
                     No Results / Abandoned
                   </span>
-                  <div className="mt-2 flex items-baseline gap-2">
-                    <span className="text-3xl font-extrabold text-[#707070] tabular-nums">
+                  <div className="mt-1.5 flex items-baseline gap-2">
+                    <span className="text-2xl sm:text-[26px] font-extrabold text-[#707070] tabular-nums">
                       {groundData.chase_vs_defend.no_results_abandoned}
                     </span>
                     <span className="text-xs text-[#858585]">
@@ -1486,7 +1486,7 @@ export default function GroundAnalysis() {
                     </span>
                   </div>
                 </div>
-                <div className="text-[11px] text-[#707070] mt-2 pt-2 border-t border-[#1C1C1C]">
+                <div className="text-[10.5px] text-[#707070] mt-1.5 pt-1.5 border-t border-[#1C1C1C]">
                   Rain washed out or abandoned
                 </div>
               </div>
@@ -1494,7 +1494,7 @@ export default function GroundAnalysis() {
 
             {/* Visual Split Bar */}
             {groundData.chase_vs_defend.decided_matches > 0 && (
-              <div className="space-y-2 pt-2">
+              <div className="space-y-1.5 pt-1">
                 <div className="flex items-center justify-between text-xs font-semibold">
                   <span className="text-[#D4AF57] flex items-center gap-1.5">
                     <span>Defending Won</span>
@@ -1510,7 +1510,7 @@ export default function GroundAnalysis() {
                   </span>
                 </div>
 
-                <div className="h-4 w-full bg-[#1A1A1A] rounded-full overflow-hidden flex border border-[#2D2D2D]">
+                <div className="h-3.5 w-full bg-[#1A1A1A] rounded-full overflow-hidden flex border border-[#2D2D2D]">
                   <div
                     style={{ width: `${groundData.chase_vs_defend.defend_pct || 0}%` }}
                     className="h-full bg-gradient-to-r from-[#B8963D] to-[#D4AF57] transition-all duration-500"
@@ -1523,7 +1523,7 @@ export default function GroundAnalysis() {
                   />
                 </div>
 
-                <div className="text-[11px] text-[#707070] text-center pt-0.5">
+                <div className="text-[10.5px] text-[#707070] text-center pt-0.5">
                   *{groundData.chase_vs_defend.calculation_note}
                 </div>
               </div>
@@ -1531,11 +1531,11 @@ export default function GroundAnalysis() {
           </section>
 
           {/* 7. Historical Winning Scores & Benchmarks */}
-          <section className="space-y-4">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+          <section className="space-y-3">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5">
               <div>
-                <h3 className="text-lg font-bold text-[#F2F2F2] flex items-center gap-2">
-                  <Trophy className="w-5 h-5 text-[#D4AF57]" />
+                <h3 className="text-base sm:text-[17px] font-bold text-[#F2F2F2] flex items-center gap-2">
+                  <Trophy className="w-4 h-4 text-[#D4AF57]" />
                   Historical Winning Score Benchmarks
                 </h3>
                 <p className="text-xs text-[#858585]">
@@ -1544,24 +1544,24 @@ export default function GroundAnalysis() {
               </div>
 
               {groundData.historical_winning_scores.warning && (
-                <div className="flex items-center gap-1.5 text-xs text-[#E5A84B] bg-[#221808] border border-[#4D3612] px-3 py-1 rounded-md">
+                <div className="flex items-center gap-1.5 text-xs text-[#E5A84B] bg-[#221808] border border-[#4D3612] px-2.5 py-0.5 rounded">
                   <AlertTriangle className="w-3.5 h-3.5 shrink-0" />
                   <span>{groundData.historical_winning_scores.warning}</span>
                 </div>
               )}
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
               {/* Benchmark 1: Lowest Successful Defense */}
-              <div className="bg-[#121212] border border-[#2D2D2D] rounded-xl p-4 shadow-md flex flex-col justify-between">
+              <div className="bg-[#121212] border border-[#2D2D2D] rounded-lg p-3.5 shadow-sm flex flex-col justify-between">
                 <div>
-                  <span className="text-[11px] uppercase font-semibold text-[#858585] tracking-wider block">
+                  <span className="text-[10.5px] uppercase font-semibold text-[#858585] tracking-wider block">
                     Lowest Successful Defense
                   </span>
                   {groundData.historical_winning_scores.lowest_successful_defense ? (
-                    <div className="mt-2 space-y-1.5">
+                    <div className="mt-1.5 space-y-1">
                       <div className="flex items-baseline justify-between">
-                        <span className="text-2xl sm:text-3xl font-extrabold text-[#D4AF57] tabular-nums">
+                        <span className="text-xl sm:text-2xl font-extrabold text-[#D4AF57] tabular-nums">
                           {groundData.historical_winning_scores.lowest_successful_defense.first_innings_score}
                         </span>
                         <span className="text-xs text-[#858585] font-mono">
@@ -1574,10 +1574,10 @@ export default function GroundAnalysis() {
                       <div className="text-[11px] text-[#A3A3A3]">
                         defended vs {groundData.historical_winning_scores.lowest_successful_defense.chasing_team}
                       </div>
-                      <div className="text-[11px] text-[#707070]">
+                      <div className="text-[10.5px] text-[#707070]">
                         Chased: {groundData.historical_winning_scores.lowest_successful_defense.chasing_score_str}
                       </div>
-                      <div className="text-[11px] text-[#858585] font-mono">
+                      <div className="text-[10.5px] text-[#858585] font-mono">
                         {groundData.historical_winning_scores.lowest_successful_defense.date}
                       </div>
                     </div>
@@ -1587,7 +1587,7 @@ export default function GroundAnalysis() {
                 </div>
 
                 {groundData.historical_winning_scores.lowest_successful_defense && (
-                  <div className="mt-3 pt-2.5 border-t border-[#1F1F1F]">
+                  <div className="mt-2.5 pt-2 border-t border-[#1F1F1F]">
                     <Link
                       to={`/match/${groundData.historical_winning_scores.lowest_successful_defense.match_id}`}
                       className="text-xs text-[#D4AF57] hover:underline inline-flex items-center gap-1"
@@ -1599,15 +1599,15 @@ export default function GroundAnalysis() {
               </div>
 
               {/* Benchmark 2: Highest Successful Chase */}
-              <div className="bg-[#121212] border border-[#2D2D2D] rounded-xl p-4 shadow-md flex flex-col justify-between">
+              <div className="bg-[#121212] border border-[#2D2D2D] rounded-lg p-3.5 shadow-sm flex flex-col justify-between">
                 <div>
-                  <span className="text-[11px] uppercase font-semibold text-[#858585] tracking-wider block">
+                  <span className="text-[10.5px] uppercase font-semibold text-[#858585] tracking-wider block">
                     Highest Successful Chase
                   </span>
                   {groundData.historical_winning_scores.highest_successful_chase ? (
-                    <div className="mt-2 space-y-1.5">
+                    <div className="mt-1.5 space-y-1">
                       <div className="flex items-baseline justify-between">
-                        <span className="text-2xl sm:text-3xl font-extrabold text-[#5A9E60] tabular-nums">
+                        <span className="text-xl sm:text-2xl font-extrabold text-[#5A9E60] tabular-nums">
                           {groundData.historical_winning_scores.highest_successful_chase.chase_score}
                         </span>
                         <span className="text-xs text-[#858585] font-mono">
@@ -1620,10 +1620,10 @@ export default function GroundAnalysis() {
                       <div className="text-[11px] text-[#A3A3A3]">
                         Target hunted: {groundData.historical_winning_scores.highest_successful_chase.first_innings_score_str}
                       </div>
-                      <div className="text-[11px] text-[#707070]">
+                      <div className="text-[10.5px] text-[#707070]">
                         {groundData.historical_winning_scores.highest_successful_chase.result_description}
                       </div>
-                      <div className="text-[11px] text-[#858585] font-mono">
+                      <div className="text-[10.5px] text-[#858585] font-mono">
                         {groundData.historical_winning_scores.highest_successful_chase.date}
                       </div>
                     </div>
@@ -1633,7 +1633,7 @@ export default function GroundAnalysis() {
                 </div>
 
                 {groundData.historical_winning_scores.highest_successful_chase && (
-                  <div className="mt-3 pt-2.5 border-t border-[#1F1F1F]">
+                  <div className="mt-2.5 pt-2 border-t border-[#1F1F1F]">
                     <Link
                       to={`/match/${groundData.historical_winning_scores.highest_successful_chase.match_id}`}
                       className="text-xs text-[#D4AF57] hover:underline inline-flex items-center gap-1"
@@ -1645,22 +1645,22 @@ export default function GroundAnalysis() {
               </div>
 
               {/* Benchmark 4: Typical Winning Score (Median) */}
-              <div className="bg-[#121212] border border-[#2D2D2D] rounded-xl p-4 shadow-md flex flex-col justify-between">
+              <div className="bg-[#121212] border border-[#2D2D2D] rounded-lg p-3.5 shadow-sm flex flex-col justify-between">
                 <div>
-                  <span className="text-[11px] uppercase font-semibold text-[#858585] tracking-wider block">
+                  <span className="text-[10.5px] uppercase font-semibold text-[#858585] tracking-wider block">
                     Typical Winning Total
                   </span>
-                  <div className="mt-2 space-y-1.5">
+                  <div className="mt-1.5 space-y-1">
                     <div className="flex items-baseline justify-between">
-                      <span className="text-2xl sm:text-3xl font-extrabold text-[#F2F2F2] tabular-nums">
+                      <span className="text-xl sm:text-2xl font-extrabold text-[#F2F2F2] tabular-nums">
                         {groundData.historical_winning_scores.typical_winning_score.overall_median ?? '—'}
                       </span>
-                      <span className="text-xs text-[#858585]">
+                      <span className="text-[11px] text-[#858585]">
                         Overall Median
                       </span>
                     </div>
 
-                    <div className="space-y-1 pt-1 border-t border-[#1F1F1F] text-xs">
+                    <div className="space-y-0.5 pt-1 border-t border-[#1F1F1F] text-xs">
                       <div className="flex items-center justify-between text-[#D4AF57]">
                         <span>• Defending Median:</span>
                         <span className="font-bold tabular-nums">
@@ -1677,7 +1677,7 @@ export default function GroundAnalysis() {
                   </div>
                 </div>
 
-                <div className="mt-3 pt-2.5 border-t border-[#1F1F1F] text-[11px] text-[#707070]">
+                <div className="mt-2.5 pt-2 border-t border-[#1F1F1F] text-[10.5px] text-[#707070]">
                   Based on {groundData.historical_winning_scores.typical_winning_score.sample_count} winning match scores
                 </div>
               </div>
@@ -1685,11 +1685,11 @@ export default function GroundAnalysis() {
           </section>
 
           {/* 8. Season and Year Trends */}
-          <section className="bg-[#121212] border border-[#2D2D2D] rounded-xl p-5 sm:p-6 shadow-xl space-y-5">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-[#222222] pb-4">
+          <section className="bg-[#121212] border border-[#2D2D2D] rounded-lg p-4 sm:p-5 shadow-lg space-y-4">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-[#222222] pb-3">
               <div>
-                <h3 className="text-lg font-bold text-[#F2F2F2] flex items-center gap-2">
-                  <TrendingUp className="w-5 h-5 text-[#D4AF57]" />
+                <h3 className="text-base sm:text-[17px] font-bold text-[#F2F2F2] flex items-center gap-2">
+                  <TrendingUp className="w-4 h-4 text-[#D4AF57]" />
                   Season & Year-by-Year Trends
                 </h3>
                 <p className="text-xs text-[#858585] mt-0.5">
@@ -1933,11 +1933,11 @@ export default function GroundAnalysis() {
           </section>
 
           {/* 9. Recent Match History Table */}
-          <section className="bg-[#121212] border border-[#2D2D2D] rounded-xl p-5 sm:p-6 shadow-xl space-y-4">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-[#222222] pb-4">
+          <section className="bg-[#121212] border border-[#2D2D2D] rounded-lg p-4 sm:p-5 shadow-lg space-y-3">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 border-b border-[#222222] pb-3">
               <div>
-                <h3 className="text-lg font-bold text-[#F2F2F2] flex items-center gap-2">
-                  <Calendar className="w-5 h-5 text-[#D4AF57]" />
+                <h3 className="text-base sm:text-[17px] font-bold text-[#F2F2F2] flex items-center gap-2">
+                  <Calendar className="w-4 h-4 text-[#D4AF57]" />
                   Match History at Venue ({filteredMatches.length})
                 </h3>
                 <p className="text-xs text-[#858585] mt-0.5">
@@ -1947,7 +1947,7 @@ export default function GroundAnalysis() {
 
               {/* Match Search Input */}
               <div className="relative w-full sm:w-64">
-                <Search className="w-3.5 h-3.5 text-[#707070] absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" />
+                <Search className="w-3.5 h-3.5 text-[#707070] absolute left-2.5 top-1/2 -translate-y-1/2 pointer-events-none" />
                 <input
                   type="text"
                   placeholder="Filter by team or match ID..."
@@ -1956,7 +1956,7 @@ export default function GroundAnalysis() {
                     setMatchSearch(e.target.value);
                     setHistoryPage(1);
                   }}
-                  className="w-full bg-[#080808] text-[#F2F2F2] border border-[#2D2D2D] hover:border-[#404040] focus:border-[#D4AF57] focus:outline-hidden rounded-lg pl-8 pr-3 py-1.5 text-xs transition-colors"
+                  className="w-full h-8 bg-[#080808] text-[#F2F2F2] border border-[#2D2D2D] hover:border-[#404040] focus:border-[#D4AF57] focus:outline-hidden rounded-md pl-8 pr-2.5 py-1 text-xs transition-colors"
                 />
               </div>
             </div>
@@ -1966,26 +1966,26 @@ export default function GroundAnalysis() {
               <table className="w-full text-xs text-left">
                 <thead className="bg-[#0A0A0A] text-[#858585] font-semibold border-b border-[#222222]">
                   <tr>
-                    <th className="py-3 px-3">Date</th>
-                    <th className="py-3 px-3">Tournament</th>
-                    <th className="py-3 px-3">Matchup</th>
-                    <th className="py-3 px-3">1st Innings</th>
-                    <th className="py-3 px-3">2nd Innings</th>
-                    <th className="py-3 px-3">Result / Margin</th>
-                    <th className="py-3 px-3 text-center">Status</th>
-                    <th className="py-3 px-3 text-right">Action</th>
+                    <th className="py-2 px-2.5 sm:px-3 text-[11px] uppercase tracking-wider">Date</th>
+                    <th className="py-2 px-2.5 sm:px-3 text-[11px] uppercase tracking-wider">Tournament</th>
+                    <th className="py-2 px-2.5 sm:px-3 text-[11px] uppercase tracking-wider">Matchup</th>
+                    <th className="py-2 px-2.5 sm:px-3 text-[11px] uppercase tracking-wider">1st Innings</th>
+                    <th className="py-2 px-2.5 sm:px-3 text-[11px] uppercase tracking-wider">2nd Innings</th>
+                    <th className="py-2 px-2.5 sm:px-3 text-[11px] uppercase tracking-wider">Result / Margin</th>
+                    <th className="py-2 px-2.5 sm:px-3 text-[11px] uppercase tracking-wider text-center">Status</th>
+                    <th className="py-2 px-2.5 sm:px-3 text-[11px] uppercase tracking-wider text-right">Action</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-[#1A1A1A] text-[#F2F2F2]">
                   {currentMatchesPage.length > 0 ? (
                     currentMatchesPage.map((m) => (
                       <tr key={m.match_id} className="hover:bg-[#181818]/80 transition-colors">
-                        <td className="py-2.5 px-3 font-mono text-[#A3A3A3] whitespace-nowrap">
+                        <td className="py-2 px-2.5 sm:px-3 font-mono text-[#A3A3A3] whitespace-nowrap text-xs">
                           {m.date}
                         </td>
-                        <td className="py-2.5 px-3 whitespace-nowrap">
+                        <td className="py-2 px-2.5 sm:px-3 whitespace-nowrap">
                           <span
-                            className={`px-2 py-0.5 rounded text-[10px] font-semibold ${
+                            className={`px-1.5 py-0.5 rounded text-[10px] font-semibold ${
                               m.competition_code === 'ipl'
                                 ? 'bg-[#D4AF57]/15 text-[#D4AF57] border border-[#D4AF57]/30'
                                 : 'bg-[#3A6B9E]/20 text-[#6BA8E5] border border-[#3A6B9E]/30'
@@ -1994,46 +1994,46 @@ export default function GroundAnalysis() {
                             {m.competition}
                           </span>
                         </td>
-                        <td className="py-2.5 px-3">
-                          <div className="font-medium text-[#F2F2F2] whitespace-nowrap">
+                        <td className="py-2 px-2.5 sm:px-3">
+                          <div className="font-medium text-[#F2F2F2] whitespace-nowrap text-xs">
                             <span>{m.team1}</span>
-                            <span className="text-[#707070] mx-1.5">vs</span>
+                            <span className="text-[#707070] mx-1">vs</span>
                             <span>{m.team2}</span>
                           </div>
                         </td>
-                        <td className="py-2.5 px-3 whitespace-nowrap">
-                          <div className="font-mono text-[#E0E0E0]">{m.innings1_score}</div>
+                        <td className="py-2 px-2.5 sm:px-3 whitespace-nowrap">
+                          <div className="font-mono text-[#E0E0E0] text-xs">{m.innings1_score}</div>
                           <div className="text-[10px] text-[#707070] truncate max-w-[120px]">
                             {m.innings1_team}
                           </div>
                         </td>
-                        <td className="py-2.5 px-3 whitespace-nowrap">
-                          <div className="font-mono text-[#E0E0E0]">{m.innings2_score}</div>
+                        <td className="py-2 px-2.5 sm:px-3 whitespace-nowrap">
+                          <div className="font-mono text-[#E0E0E0] text-xs">{m.innings2_score}</div>
                           <div className="text-[10px] text-[#707070] truncate max-w-[120px]">
                             {m.innings2_team}
                           </div>
                         </td>
-                        <td className="py-2.5 px-3">
-                          <div className="font-medium text-[#D4AF57]">
+                        <td className="py-2 px-2.5 sm:px-3">
+                          <div className="font-medium text-[#D4AF57] text-xs">
                             {m.winner !== 'N/A' && m.winner ? `${m.winner}` : 'No Winner'}
                           </div>
-                          <div className="text-[11px] text-[#858585] truncate max-w-[170px]">
+                          <div className="text-[10.5px] text-[#858585] truncate max-w-[170px]">
                             {m.result_description}
                           </div>
                         </td>
-                        <td className="py-2.5 px-3 text-center whitespace-nowrap">
+                        <td className="py-2 px-2.5 sm:px-3 text-center whitespace-nowrap">
                           {/* Outcome / Result Badge */}
                           {m.is_no_result ? (
-                            <span className="px-2 py-0.5 rounded text-[10px] font-semibold bg-[#2E2E2E] text-[#9E9E9E] border border-[#444444]">
+                            <span className="px-1.5 py-0.5 rounded text-[10px] font-semibold bg-[#2E2E2E] text-[#9E9E9E] border border-[#444444]">
                               No Result
                             </span>
                           ) : m.is_super_over ? (
-                            <span className="px-2 py-0.5 rounded text-[10px] font-semibold bg-[#422B10] text-[#FFB347] border border-[#7A4E1B]">
+                            <span className="px-1.5 py-0.5 rounded text-[10px] font-semibold bg-[#422B10] text-[#FFB347] border border-[#7A4E1B]">
                               Super Over
                             </span>
                           ) : (
                             <span
-                              className={`px-2 py-0.5 rounded text-[10px] font-semibold ${
+                              className={`px-1.5 py-0.5 rounded text-[10px] font-semibold ${
                                 m.result_type === 'defend_win'
                                   ? 'bg-[#1E190A] text-[#D4AF57] border border-[#3E3414]'
                                   : 'bg-[#0E2012] text-[#5A9E60] border border-[#1A3D22]'
@@ -2049,27 +2049,27 @@ export default function GroundAnalysis() {
                             if (!badge) return null;
                             return (
                               <span
-                                className={`px-1.5 py-0.5 rounded text-[9px] font-semibold block mt-1 ${badge.className}`}
+                                className={`px-1.5 py-0.5 rounded text-[9px] font-semibold block mt-0.5 ${badge.className}`}
                               >
                                 {badge.label}
                               </span>
                             );
                           })()}
                         </td>
-                        <td className="py-2.5 px-3 text-right whitespace-nowrap">
+                        <td className="py-2 px-2.5 sm:px-3 text-right whitespace-nowrap">
                           <Link
                             to={m.match_url}
-                            className="inline-flex items-center gap-1 px-2.5 py-1 text-xs text-[#D4AF57] hover:text-[#F2F2F2] bg-[#1A1A1A] hover:bg-[#252525] border border-[#2D2D2D] rounded-md transition-colors"
+                            className="inline-flex items-center gap-1 px-2 py-0.5 text-[11px] text-[#D4AF57] hover:text-[#F2F2F2] bg-[#1A1A1A] hover:bg-[#252525] border border-[#2D2D2D] rounded transition-colors"
                           >
                             <span>Details</span>
-                            <ExternalLink className="w-3 h-3" />
+                            <ExternalLink className="w-2.5 h-2.5" />
                           </Link>
                         </td>
                       </tr>
                     ))
                   ) : (
                     <tr>
-                      <td colSpan={8} className="py-8 text-center text-[#858585]">
+                      <td colSpan={8} className="py-6 text-center text-[#858585]">
                         No matches found matching "{matchSearch}".
                       </td>
                     </tr>

@@ -26,7 +26,7 @@ function AppLayout() {
       <Navbar />
 
       {/* Main Content Area - Responsive width with min-w-0 to prevent flex blowout */}
-      <main className="flex-1 w-full max-w-[1850px] mx-auto px-3 sm:px-4 lg:px-6 py-4 sm:py-8 min-w-0">
+      <main className="flex-1 w-full max-w-[1680px] mx-auto px-3 sm:px-5 lg:px-6 py-3 sm:py-5 min-w-0">
         <Outlet />
       </main>
 

@@ -223,105 +223,105 @@ export default function LandingPage() {
       )}
 
       {/* 2. Hero Section */}
-      <section className="relative pt-8 pb-14 sm:pt-20 sm:pb-24 px-3 sm:px-8 lg:px-12 max-w-6xl mx-auto w-full text-center flex flex-col items-center min-w-0">
+      <section className="relative pt-6 pb-10 sm:pt-12 sm:pb-16 px-3 sm:px-8 lg:px-12 max-w-6xl mx-auto w-full text-center flex flex-col items-center min-w-0">
         {/* Subtle decorative glow */}
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] sm:w-[500px] h-[260px] bg-[#D4AF57]/5 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[260px] sm:w-[420px] h-[200px] bg-[#D4AF57]/5 rounded-full blur-3xl pointer-events-none" />
 
         {/* Eyebrow Badge */}
-        <div className="inline-flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 px-3 sm:px-3.5 py-1 rounded-full bg-[#161616] border border-[#2D2D2D] text-[#D4AF57] text-[10.5px] sm:text-[11px] font-semibold uppercase tracking-wider mb-6 shadow-xs max-w-full text-center">
-          <Sparkles className="w-3.5 h-3.5 text-[#D4AF57] shrink-0" />
+        <div className="inline-flex flex-wrap items-center justify-center gap-1.5 px-2.5 sm:px-3 py-0.5 rounded-full bg-[#161616] border border-[#2D2D2D] text-[#D4AF57] text-[10px] sm:text-[10.5px] font-semibold uppercase tracking-wider mb-4 shadow-xs max-w-full text-center">
+          <Sparkles className="w-3 h-3 text-[#D4AF57] shrink-0" />
           <span>Contextual Batter Evaluation Framework</span>
         </div>
 
         {/* Main Headline */}
-        <h1 className="font-heading text-[26px] xs:text-[30px] sm:text-[46px] md:text-[54px] font-bold text-[#F2F2F2] tracking-tight leading-[1.18] max-w-4xl break-words">
+        <h1 className="font-heading text-[22px] xs:text-[26px] sm:text-[34px] md:text-[38px] font-bold text-[#F2F2F2] tracking-tight leading-[1.18] max-w-4xl break-words">
           Measure the Impact.{' '}
           <span className="text-[#D4AF57] block sm:inline">Understand the Game.</span>
         </h1>
 
         {/* Supporting Description */}
-        <p className="mt-5 text-[15px] sm:text-[17px] text-[#B8B8B8] max-w-3xl leading-relaxed font-normal">
+        <p className="mt-3.5 text-[13px] sm:text-[14px] text-[#B8B8B8] max-w-2xl leading-relaxed font-normal">
           CricImpact goes beyond traditional scorecards to evaluate batting contribution in match context. Explore player careers, compare performances and discover ground-level insights across IPL and international T20 cricket.
         </p>
 
         {/* Call to Action Buttons */}
-        <div className="mt-8 flex flex-col sm:flex-row items-center gap-3.5 w-full sm:w-auto">
+        <div className="mt-5 flex flex-col sm:flex-row items-center gap-2.5 w-full sm:w-auto">
           <Link
             to="/dashboard"
-            className="btn-gold w-full sm:w-auto px-7 py-3 text-[14px] shadow-md flex items-center justify-center gap-2"
+            className="btn-gold w-full sm:w-auto h-8.5 sm:h-9 px-4 sm:px-5 text-[12px] sm:text-[12.5px] shadow-sm flex items-center justify-center gap-1.5"
           >
             <span>Explore Analytics</span>
-            <ArrowRight className="w-4 h-4" />
+            <ArrowRight className="w-3.5 h-3.5" />
           </Link>
           <Link
             to="/compare"
-            className="btn-secondary w-full sm:w-auto px-7 py-3 text-[14px] flex items-center justify-center gap-2"
+            className="btn-secondary w-full sm:w-auto h-8.5 sm:h-9 px-4 sm:px-5 text-[12px] sm:text-[12.5px] flex items-center justify-center gap-1.5"
           >
             <span>Compare Players</span>
-            <Users className="w-4 h-4 text-[#D4AF57]" />
+            <Users className="w-3.5 h-3.5 text-[#D4AF57]" />
           </Link>
         </div>
 
         {/* Contrast Visualizer Teaser: Beyond Runs and Strike Rate */}
-        <div className="mt-14 w-full max-w-4xl bg-[#161616] border border-[#2D2D2D] rounded-xl p-5 sm:p-7 shadow-xl text-left">
+        <div className="mt-8 sm:mt-10 w-full max-w-4xl bg-[#161616] border border-[#2D2D2D] rounded-xl p-3.5 sm:p-5 shadow-xl text-left">
           {/* Section Header */}
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-[#222222] gap-2">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-3 border-b border-[#222222] gap-1.5">
             <div>
-              <div className="flex items-center gap-2">
-                <Scale className="w-4 h-4 text-[#D4AF57]" />
-                <span className="text-[11px] font-mono uppercase tracking-wider text-[#D4AF57] font-semibold">
+              <div className="flex items-center gap-1.5">
+                <Scale className="w-3.5 h-3.5 text-[#D4AF57]" />
+                <span className="text-[10.5px] font-mono uppercase tracking-wider text-[#D4AF57] font-semibold">
                   Beyond Runs and Strike Rate
                 </span>
               </div>
-              <h3 className="font-heading text-[18px] sm:text-[22px] font-bold text-[#F2F2F2] mt-0.5">
+              <h3 className="font-heading text-[16px] sm:text-[18px] font-bold text-[#F2F2F2] mt-0.5">
                 Same Runs. Different Impact.
               </h3>
             </div>
-            <span className="text-[11px] font-mono text-[#858585] bg-[#101010] px-2.5 py-1 rounded border border-[#2D2D2D] self-start sm:self-auto shrink-0">
+            <span className="text-[10.5px] font-mono text-[#858585] bg-[#101010] px-2 py-0.5 rounded border border-[#2D2D2D] self-start sm:self-auto shrink-0">
               Verified IPL Telemetry
             </span>
           </div>
 
-          <p className="text-[13px] sm:text-[14px] text-[#A3A3A3] mt-3 leading-relaxed">
+          <p className="text-[12px] sm:text-[12.5px] text-[#A3A3A3] mt-2 leading-relaxed">
             47 runs off 36 balls. Two very different match situations, evaluated through situational context and team leverage.
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5 mt-3.5">
             {/* Example 1: B Sai Sudharsan */}
-            <div className="bg-[#101010] p-5 rounded-xl border border-[#2D2D2D] hover:border-[#3D351E] transition-colors flex flex-col justify-between space-y-4">
+            <div className="bg-[#101010] p-3.5 sm:p-4 rounded-xl border border-[#2D2D2D] hover:border-[#3D351E] transition-colors flex flex-col justify-between space-y-3">
               <div>
-                <div className="flex items-start justify-between gap-3">
+                <div className="flex items-start justify-between gap-2.5">
                   <div>
                     <Link
                       to="/match/1359536/player/B%20Sai%20Sudharsan"
-                      className="font-heading text-[16px] sm:text-[17px] font-bold text-[#F2F2F2] hover:text-[#D4AF57] transition-colors block"
+                      className="font-heading text-[14px] sm:text-[15px] font-bold text-[#F2F2F2] hover:text-[#D4AF57] transition-colors block"
                     >
                       {saiData?.player || 'B Sai Sudharsan'}
                     </Link>
-                    <span className="text-[12px] text-[#858585] block mt-0.5">
+                    <span className="text-[11px] text-[#858585] block mt-0.5">
                       {saiData?.team || 'Gujarat Titans'} • IPL {saiData?.season || '2023'}
                     </span>
                   </div>
-                  <span className="text-[10px] font-mono uppercase tracking-wider px-2.5 py-1 rounded bg-[#1C180E] text-[#D4AF57] border border-[#3D351E] shrink-0 font-medium">
+                  <span className="text-[9.5px] font-mono uppercase tracking-wider px-2 py-0.5 rounded bg-[#1C180E] text-[#D4AF57] border border-[#3D351E] shrink-0 font-medium">
                     {saiData?.impact_label || 'High Match Impact'}
                   </span>
                 </div>
 
-                <div className="mt-4 p-3.5 rounded-lg bg-[#141414] border border-[#222222] flex items-baseline justify-between">
-                  <span className="text-[11px] font-mono uppercase tracking-wider text-[#858585]">
+                <div className="mt-2.5 p-2.5 rounded-lg bg-[#141414] border border-[#222222] flex items-baseline justify-between">
+                  <span className="text-[10.5px] font-mono uppercase tracking-wider text-[#858585]">
                     CricImpact Score
                   </span>
                   <div className="flex items-baseline gap-1">
-                    <span className="font-mono text-[32px] sm:text-[36px] font-extrabold text-[#D4AF57] leading-none">
+                    <span className="font-mono text-[24px] sm:text-[28px] font-extrabold text-[#D4AF57] leading-none">
                       {saiData?.contribution_score !== undefined
                         ? saiData.contribution_score.toFixed(1)
                         : '93.4'}
                     </span>
-                    <span className="text-[12px] font-mono text-[#858585]">/ 100</span>
+                    <span className="text-[11px] font-mono text-[#858585]">/ 100</span>
                   </div>
                 </div>
 
-                <p className="mt-4 text-[13px] text-[#CCCCCC] leading-relaxed">
+                <p className="mt-2.5 text-[12px] text-[#CCCCCC] leading-relaxed">
                   {saiData?.concise_summary ||
                     "Anchored a dominant 147-run stand after an early breakthrough, transforming Gujarat's innings into a match-winning total."}
                 </p>
@@ -330,49 +330,49 @@ export default function LandingPage() {
               <div className="pt-2 border-t border-[#1C1C1C]">
                 <Link
                   to="/match/1359536/player/B%20Sai%20Sudharsan"
-                  className="text-[12px] text-[#D4AF57] hover:text-[#E6C670] inline-flex items-center gap-1 font-medium transition-colors"
+                  className="text-[11.5px] text-[#D4AF57] hover:text-[#E6C670] inline-flex items-center gap-1 font-medium transition-colors"
                 >
                   <span>View match breakdown</span>
-                  <ChevronRight className="w-3.5 h-3.5" />
+                  <ChevronRight className="w-3 h-3" />
                 </Link>
               </div>
             </div>
 
             {/* Example 2: M Shahrukh Khan */}
-            <div className="bg-[#101010] p-5 rounded-xl border border-[#2D2D2D] hover:border-[#3D2818] transition-colors flex flex-col justify-between space-y-4">
+            <div className="bg-[#101010] p-3.5 sm:p-4 rounded-xl border border-[#2D2D2D] hover:border-[#3D2818] transition-colors flex flex-col justify-between space-y-3">
               <div>
-                <div className="flex items-start justify-between gap-3">
+                <div className="flex items-start justify-between gap-2.5">
                   <div>
                     <Link
                       to="/match/1254065/player/M%20Shahrukh%20Khan"
-                      className="font-heading text-[16px] sm:text-[17px] font-bold text-[#F2F2F2] hover:text-[#D4AF57] transition-colors block"
+                      className="font-heading text-[14px] sm:text-[15px] font-bold text-[#F2F2F2] hover:text-[#D4AF57] transition-colors block"
                     >
                       {srkData?.player || 'M Shahrukh Khan'}
                     </Link>
-                    <span className="text-[12px] text-[#858585] block mt-0.5">
+                    <span className="text-[11px] text-[#858585] block mt-0.5">
                       {srkData?.team || 'Punjab Kings'} • IPL {srkData?.season || '2021'}
                     </span>
                   </div>
-                  <span className="text-[10px] font-mono uppercase tracking-wider px-2.5 py-1 rounded bg-[#211812] text-[#E5A869] border border-[#422A1D] shrink-0 font-medium">
+                  <span className="text-[9.5px] font-mono uppercase tracking-wider px-2 py-0.5 rounded bg-[#211812] text-[#E5A869] border border-[#422A1D] shrink-0 font-medium">
                     {srkData?.impact_label || 'Crisis Stabilization'}
                   </span>
                 </div>
 
-                <div className="mt-4 p-3.5 rounded-lg bg-[#141414] border border-[#222222] flex items-baseline justify-between">
-                  <span className="text-[11px] font-mono uppercase tracking-wider text-[#858585]">
+                <div className="mt-2.5 p-2.5 rounded-lg bg-[#141414] border border-[#222222] flex items-baseline justify-between">
+                  <span className="text-[10.5px] font-mono uppercase tracking-wider text-[#858585]">
                     CricImpact Score
                   </span>
                   <div className="flex items-baseline gap-1">
-                    <span className="font-mono text-[32px] sm:text-[36px] font-extrabold text-[#D4AF57] leading-none">
+                    <span className="font-mono text-[24px] sm:text-[28px] font-extrabold text-[#D4AF57] leading-none">
                       {srkData?.contribution_score !== undefined
                         ? srkData.contribution_score.toFixed(1)
                         : '63.7'}
                     </span>
-                    <span className="text-[12px] font-mono text-[#858585]">/ 100</span>
+                    <span className="text-[11px] font-mono text-[#858585]">/ 100</span>
                   </div>
                 </div>
 
-                <p className="mt-4 text-[13px] text-[#CCCCCC] leading-relaxed">
+                <p className="mt-2.5 text-[12px] text-[#CCCCCC] leading-relaxed">
                   {srkData?.concise_summary ||
                     "Rescued Punjab from a 19/4 collapse, batting through 15 overs to push the total past 100 despite partners falling."}
                 </p>
@@ -381,22 +381,22 @@ export default function LandingPage() {
               <div className="pt-2 border-t border-[#1C1C1C]">
                 <Link
                   to="/match/1254065/player/M%20Shahrukh%20Khan"
-                  className="text-[12px] text-[#D4AF57] hover:text-[#E6C670] inline-flex items-center gap-1 font-medium transition-colors"
+                  className="text-[11.5px] text-[#D4AF57] hover:text-[#E6C670] inline-flex items-center gap-1 font-medium transition-colors"
                 >
                   <span>View match breakdown</span>
-                  <ChevronRight className="w-3.5 h-3.5" />
+                  <ChevronRight className="w-3 h-3" />
                 </Link>
               </div>
             </div>
           </div>
 
           {/* Takeaway Banner */}
-          <div className="mt-5 p-3.5 sm:p-4 rounded-xl bg-[#101010] border border-[#262626] flex items-center gap-3">
-            <div className="w-7 h-7 rounded-lg bg-[#161616] border border-[#2D2D2D] flex items-center justify-center shrink-0 text-[#D4AF57]">
-              <Info className="w-3.5 h-3.5" />
+          <div className="mt-3.5 p-2.5 sm:p-3 rounded-xl bg-[#101010] border border-[#262626] flex items-center gap-2.5">
+            <div className="w-6 h-6 rounded-lg bg-[#161616] border border-[#2D2D2D] flex items-center justify-center shrink-0 text-[#D4AF57]">
+              <Info className="w-3 h-3" />
             </div>
-            <p className="text-[13px] text-[#B8B8B8] leading-relaxed">
-              <strong className="text-[#D4AF57] font-semibold mr-1.5">Takeaway:</strong>
+            <p className="text-[12px] text-[#B8B8B8] leading-relaxed">
+              <strong className="text-[#D4AF57] font-semibold mr-1">Takeaway:</strong>
               Runs indicate raw output. CricImpact evaluates how each innings altered match equity relative to expectations.
             </p>
           </div>
@@ -404,92 +404,92 @@ export default function LandingPage() {
       </section>
 
       {/* 3. Four Feature Sections */}
-      <div id="features" className="space-y-16 sm:space-y-24 py-12 sm:py-16">
+      <div id="features" className="space-y-8 sm:space-y-12 py-6 sm:py-10">
         {/* Feature A: Cricket Contribution Analytics */}
-        <section className="px-5 sm:px-8 lg:px-12 max-w-6xl mx-auto w-full">
-          <div className="bg-[#121212] border border-[#2D2D2D] rounded-2xl p-6 sm:p-9 shadow-xl space-y-8">
-            <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-[#222222] pb-6">
+        <section className="px-3 sm:px-8 lg:px-12 max-w-6xl mx-auto w-full">
+          <div className="bg-[#121212] border border-[#2D2D2D] rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-7 shadow-xl space-y-5">
+            <div className="flex flex-col md:flex-row md:items-end justify-between gap-3 border-b border-[#222222] pb-4">
               <div>
-                <div className="flex items-center gap-2 text-[11px] font-mono uppercase tracking-wider text-[#D4AF57] font-semibold mb-1">
-                  <Activity className="w-4 h-4" />
+                <div className="flex items-center gap-1.5 text-[10.5px] font-mono uppercase tracking-wider text-[#D4AF57] font-semibold mb-0.5">
+                  <Activity className="w-3.5 h-3.5" />
                   <span>CORE ANALYTICAL ENGINE</span>
                 </div>
-                <h2 className="font-heading text-[24px] sm:text-[30px] font-bold text-[#F2F2F2] tracking-tight">
+                <h2 className="font-heading text-[18px] sm:text-[22px] font-bold text-[#F2F2F2] tracking-tight">
                   Cricket Contribution Analytics
                 </h2>
-                <p className="text-[14px] sm:text-[15px] text-[#A3A3A3] mt-2 max-w-2xl leading-relaxed">
+                <p className="text-[12.5px] sm:text-[13px] text-[#A3A3A3] mt-1 max-w-2xl leading-relaxed">
                   CricImpact evaluates batting performance relative to expected baseline curves and match situations, rather than simply rewarding high run totals or strike rates without context.
                 </p>
               </div>
               <Link
                 to="/methodology"
-                className="btn-secondary text-[12.5px] py-2 px-4 self-start md:self-auto shrink-0 inline-flex items-center gap-1.5"
+                className="btn-secondary h-8 sm:h-8.5 text-[11.5px] sm:text-[12px] px-3 self-start md:self-auto shrink-0 inline-flex items-center gap-1"
               >
                 <span>Read Full Methodology</span>
-                <ChevronRight className="w-3.5 h-3.5" />
+                <ChevronRight className="w-3 h-3" />
               </Link>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-3.5">
               {/* Pillar 1 */}
-              <div className="bg-[#161616] p-5 sm:p-6 rounded-xl border border-[#262626] flex flex-col justify-between">
+              <div className="bg-[#161616] p-3.5 sm:p-4 rounded-xl border border-[#262626] flex flex-col justify-between">
                 <div>
-                  <div className="w-10 h-10 rounded-lg bg-[#1E190E] border border-[#3D351E] flex items-center justify-center text-[#D4AF57] mb-4">
-                    <Compass className="w-5 h-5" />
+                  <div className="w-8 h-8 rounded-lg bg-[#1E190E] border border-[#3D351E] flex items-center justify-center text-[#D4AF57] mb-2.5">
+                    <Compass className="w-4 h-4" />
                   </div>
-                  <h3 className="font-heading text-[16px] font-bold text-[#F2F2F2]">
+                  <h3 className="font-heading text-[14px] sm:text-[15px] font-bold text-[#F2F2F2]">
                     1. Match Context (P1)
                   </h3>
-                  <div className="text-[12px] italic text-[#D4AF57] font-medium mt-0.5">
+                  <div className="text-[11.5px] italic text-[#D4AF57] font-medium mt-0.5">
                     "What situation did the batter inherit?"
                   </div>
-                  <p className="text-[13px] text-[#A3A3A3] mt-2.5 leading-relaxed">
+                  <p className="text-[12px] text-[#A3A3A3] mt-1.5 leading-relaxed">
                     Evaluates situational leverage and pressure: entry phase (Powerplay, Middle, Death), wickets lost, required run rate, and pitch conditions.
                   </p>
                 </div>
-                <div className="mt-5 pt-3 border-t border-[#222222] text-[11px] font-mono text-[#858585]">
+                <div className="mt-3.5 pt-2 border-t border-[#222222] text-[10.5px] font-mono text-[#858585]">
                   Scales leverage multiplier [0.65, 1.35]
                 </div>
               </div>
 
               {/* Pillar 2 */}
-              <div className="bg-[#161616] p-5 sm:p-6 rounded-xl border border-[#262626] flex flex-col justify-between">
+              <div className="bg-[#161616] p-3.5 sm:p-4 rounded-xl border border-[#262626] flex flex-col justify-between">
                 <div>
-                  <div className="w-10 h-10 rounded-lg bg-[#1E190E] border border-[#3D351E] flex items-center justify-center text-[#D4AF57] mb-4">
-                    <Zap className="w-5 h-5" />
+                  <div className="w-8 h-8 rounded-lg bg-[#1E190E] border border-[#3D351E] flex items-center justify-center text-[#D4AF57] mb-2.5">
+                    <Zap className="w-4 h-4" />
                   </div>
-                  <h3 className="font-heading text-[16px] font-bold text-[#F2F2F2]">
+                  <h3 className="font-heading text-[14px] sm:text-[15px] font-bold text-[#F2F2F2]">
                     2. Batting Execution (P2)
                   </h3>
-                  <div className="text-[12px] italic text-[#D4AF57] font-medium mt-0.5">
+                  <div className="text-[11.5px] italic text-[#D4AF57] font-medium mt-0.5">
                     "What did the batter personally produce?"
                   </div>
-                  <p className="text-[13px] text-[#A3A3A3] mt-2.5 leading-relaxed">
+                  <p className="text-[12px] text-[#A3A3A3] mt-1.5 leading-relaxed">
                     Benchmarks individual runs and strike rate against empirical baseline curves calibrated for that exact phase and wicket state.
                   </p>
                 </div>
-                <div className="mt-5 pt-3 border-t border-[#222222] text-[11px] font-mono text-[#858585]">
+                <div className="mt-3.5 pt-2 border-t border-[#222222] text-[10.5px] font-mono text-[#858585]">
                   50% Weight of Final Evaluation
                 </div>
               </div>
 
               {/* Pillar 3 */}
-              <div className="bg-[#161616] p-5 sm:p-6 rounded-xl border border-[#262626] flex flex-col justify-between">
+              <div className="bg-[#161616] p-3.5 sm:p-4 rounded-xl border border-[#262626] flex flex-col justify-between">
                 <div>
-                  <div className="w-10 h-10 rounded-lg bg-[#152718] border border-[#2A4D30] flex items-center justify-center text-[#5A9E60] mb-4">
-                    <TrendingUp className="w-5 h-5" />
+                  <div className="w-8 h-8 rounded-lg bg-[#152718] border border-[#2A4D30] flex items-center justify-center text-[#5A9E60] mb-2.5">
+                    <TrendingUp className="w-4 h-4" />
                   </div>
-                  <h3 className="font-heading text-[16px] font-bold text-[#F2F2F2]">
+                  <h3 className="font-heading text-[14px] sm:text-[15px] font-bold text-[#F2F2F2]">
                     3. Team-State Impact (P3)
                   </h3>
-                  <div className="text-[12px] italic text-[#5A9E60] font-medium mt-0.5">
+                  <div className="text-[11.5px] italic text-[#5A9E60] font-medium mt-0.5">
                     "Did winning chances improve or decline?"
                   </div>
-                  <p className="text-[13px] text-[#A3A3A3] mt-2.5 leading-relaxed">
+                  <p className="text-[12px] text-[#A3A3A3] mt-1.5 leading-relaxed">
                     Tracks the change in projected score (1st innings) or required rate (chases) from the delivery the batter arrived to the delivery they departed.
                   </p>
                 </div>
-                <div className="mt-5 pt-3 border-t border-[#222222] text-[11px] font-mono text-[#858585]">
+                <div className="mt-3.5 pt-2 border-t border-[#222222] text-[10.5px] font-mono text-[#858585]">
                   50% Weight of Final Evaluation
                 </div>
               </div>
@@ -498,67 +498,67 @@ export default function LandingPage() {
         </section>
 
         {/* Feature B: Career Graph */}
-        <section className="px-5 sm:px-8 lg:px-12 max-w-6xl mx-auto w-full">
-          <div className="bg-[#121212] border border-[#2D2D2D] rounded-2xl p-6 sm:p-9 shadow-xl space-y-8">
-            <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-[#222222] pb-6">
+        <section className="px-3 sm:px-8 lg:px-12 max-w-6xl mx-auto w-full">
+          <div className="bg-[#121212] border border-[#2D2D2D] rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-7 shadow-xl space-y-5">
+            <div className="flex flex-col md:flex-row md:items-end justify-between gap-3 border-b border-[#222222] pb-4">
               <div>
-                <div className="flex items-center gap-2 text-[11px] font-mono uppercase tracking-wider text-[#D4AF57] font-semibold mb-1">
-                  <TrendingUp className="w-4 h-4" />
+                <div className="flex items-center gap-1.5 text-[10.5px] font-mono uppercase tracking-wider text-[#D4AF57] font-semibold mb-0.5">
+                  <TrendingUp className="w-3.5 h-3.5" />
                   <span>LONGITUDINAL VISUALIZATION</span>
                 </div>
-                <h2 className="font-heading text-[24px] sm:text-[30px] font-bold text-[#F2F2F2] tracking-tight">
+                <h2 className="font-heading text-[18px] sm:text-[22px] font-bold text-[#F2F2F2] tracking-tight">
                   Career Graph & Seasonal Performance
                 </h2>
-                <p className="text-[14px] sm:text-[15px] text-[#A3A3A3] mt-2 max-w-2xl leading-relaxed">
+                <p className="text-[12.5px] sm:text-[13px] text-[#A3A3A3] mt-1 max-w-2xl leading-relaxed">
                   Explore how a batter's impact evolves across seasons. Showcase seasonal trajectories across runs, strike rates, Strategy 4 contribution ratings, positive contribution frequency, and ball efficiency.
                 </p>
               </div>
               <Link
                 to="/career"
-                className="btn-gold text-[12.5px] py-2 px-4.5 self-start md:self-auto shrink-0 inline-flex items-center gap-2 shadow-sm"
+                className="btn-gold h-8 sm:h-8.5 text-[11.5px] sm:text-[12px] px-3.5 self-start md:self-auto shrink-0 inline-flex items-center gap-1.5 shadow-sm"
               >
                 <span>Explore Career Graphs</span>
-                <ChevronRight className="w-3.5 h-3.5" />
+                <ChevronRight className="w-3 h-3" />
               </Link>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              <div className="bg-[#161616] p-5 rounded-xl border border-[#262626] space-y-2">
-                <span className="text-[11px] font-mono uppercase tracking-wider text-[#D4AF57] font-semibold">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+              <div className="bg-[#161616] p-3.5 sm:p-4 rounded-xl border border-[#262626] space-y-1.5">
+                <span className="text-[10px] font-mono uppercase tracking-wider text-[#D4AF57] font-semibold">
                   Volume & Rate
                 </span>
-                <h4 className="font-heading text-[16px] font-bold text-[#F2F2F2]">Runs & Strike Rate</h4>
-                <p className="text-[12.5px] text-[#858585] leading-relaxed">
+                <h4 className="font-heading text-[14px] sm:text-[15px] font-bold text-[#F2F2F2]">Runs & Strike Rate</h4>
+                <p className="text-[11.5px] sm:text-[12px] text-[#858585] leading-relaxed">
                   Seasonal total runs, balls faced, and strike rate trends compared against league baselines across tournaments.
                 </p>
               </div>
 
-              <div className="bg-[#161616] p-5 rounded-xl border border-[#262626] space-y-2">
-                <span className="text-[11px] font-mono uppercase tracking-wider text-[#D4AF57] font-semibold">
+              <div className="bg-[#161616] p-3.5 sm:p-4 rounded-xl border border-[#262626] space-y-1.5">
+                <span className="text-[10px] font-mono uppercase tracking-wider text-[#D4AF57] font-semibold">
                   Contextual Quality
                 </span>
-                <h4 className="font-heading text-[16px] font-bold text-[#F2F2F2]">Average Contribution</h4>
-                <p className="text-[12.5px] text-[#858585] leading-relaxed">
+                <h4 className="font-heading text-[14px] sm:text-[15px] font-bold text-[#F2F2F2]">Average Contribution</h4>
+                <p className="text-[11.5px] sm:text-[12px] text-[#858585] leading-relaxed">
                   Seasonal Strategy 4 contribution ratings benchmarked against the 50.0 par baseline to measure situational value added.
                 </p>
               </div>
 
-              <div className="bg-[#161616] p-5 rounded-xl border border-[#262626] space-y-2">
-                <span className="text-[11px] font-mono uppercase tracking-wider text-[#5A9E60] font-semibold">
+              <div className="bg-[#161616] p-3.5 sm:p-4 rounded-xl border border-[#262626] space-y-1.5">
+                <span className="text-[10px] font-mono uppercase tracking-wider text-[#5A9E60] font-semibold">
                   Reliability Rate
                 </span>
-                <h4 className="font-heading text-[16px] font-bold text-[#F2F2F2]">Positive Contribution Rate</h4>
-                <p className="text-[12.5px] text-[#858585] leading-relaxed">
+                <h4 className="font-heading text-[14px] sm:text-[15px] font-bold text-[#F2F2F2]">Positive Contribution Rate</h4>
+                <p className="text-[11.5px] sm:text-[12px] text-[#858585] leading-relaxed">
                   Percentage of innings where the batter produced positive underlying contribution, measuring consistency of match equity.
                 </p>
               </div>
 
-              <div className="bg-[#161616] p-5 rounded-xl border border-[#262626] space-y-2">
-                <span className="text-[11px] font-mono uppercase tracking-wider text-[#D4AF57] font-semibold">
+              <div className="bg-[#161616] p-3.5 sm:p-4 rounded-xl border border-[#262626] space-y-1.5">
+                <span className="text-[10px] font-mono uppercase tracking-wider text-[#D4AF57] font-semibold">
                   Discipline & Splits
                 </span>
-                <h4 className="font-heading text-[16px] font-bold text-[#F2F2F2]">Dot-Balls & Bowling Splits</h4>
-                <p className="text-[12.5px] text-[#858585] leading-relaxed">
+                <h4 className="font-heading text-[14px] sm:text-[15px] font-bold text-[#F2F2F2]">Dot-Balls & Bowling Splits</h4>
+                <p className="text-[11.5px] sm:text-[12px] text-[#858585] leading-relaxed">
                   Dot-ball percentages, boundary percentages, and career progression trends against pace versus spin bowling.
                 </p>
               </div>
@@ -567,63 +567,63 @@ export default function LandingPage() {
         </section>
 
         {/* Feature C: Player Comparison */}
-        <section className="px-5 sm:px-8 lg:px-12 max-w-6xl mx-auto w-full">
-          <div className="bg-[#121212] border border-[#2D2D2D] rounded-2xl p-6 sm:p-9 shadow-xl space-y-8">
-            <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-[#222222] pb-6">
+        <section className="px-3 sm:px-8 lg:px-12 max-w-6xl mx-auto w-full">
+          <div className="bg-[#121212] border border-[#2D2D2D] rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-7 shadow-xl space-y-5">
+            <div className="flex flex-col md:flex-row md:items-end justify-between gap-3 border-b border-[#222222] pb-4">
               <div>
-                <div className="flex items-center gap-2 text-[11px] font-mono uppercase tracking-wider text-[#D4AF57] font-semibold mb-1">
-                  <Users className="w-4 h-4" />
+                <div className="flex items-center gap-1.5 text-[10.5px] font-mono uppercase tracking-wider text-[#D4AF57] font-semibold mb-0.5">
+                  <Users className="w-3.5 h-3.5" />
                   <span>HEAD-TO-HEAD BENCHMARKING</span>
                 </div>
-                <h2 className="font-heading text-[24px] sm:text-[30px] font-bold text-[#F2F2F2] tracking-tight">
+                <h2 className="font-heading text-[18px] sm:text-[22px] font-bold text-[#F2F2F2] tracking-tight">
                   Player Comparison
                 </h2>
-                <p className="text-[14px] sm:text-[15px] text-[#A3A3A3] mt-2 max-w-2xl leading-relaxed">
+                <p className="text-[12.5px] sm:text-[13px] text-[#A3A3A3] mt-1 max-w-2xl leading-relaxed">
                   Compare up to five batters head-to-head within any season using metrics supported by the existing application: contribution ratings, situational splits, phase performance, and team shares.
                 </p>
               </div>
               <Link
                 to="/compare"
-                className="btn-gold text-[12.5px] py-2 px-4.5 self-start md:self-auto shrink-0 inline-flex items-center gap-2 shadow-sm"
+                className="btn-gold h-8 sm:h-8.5 text-[11.5px] sm:text-[12px] px-3.5 self-start md:self-auto shrink-0 inline-flex items-center gap-1.5 shadow-sm"
               >
                 <span>Launch Player Comparison</span>
-                <ChevronRight className="w-3.5 h-3.5" />
+                <ChevronRight className="w-3 h-3" />
               </Link>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-              <div className="bg-[#161616] p-5 rounded-xl border border-[#262626] space-y-2.5">
-                <div className="flex items-center gap-2 text-[#D4AF57]">
-                  <BarChart3 className="w-4 h-4" />
-                  <span className="font-heading text-[15px] font-bold text-[#F2F2F2]">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-3.5">
+              <div className="bg-[#161616] p-3.5 sm:p-4 rounded-xl border border-[#262626] space-y-2">
+                <div className="flex items-center gap-1.5 text-[#D4AF57]">
+                  <BarChart3 className="w-3.5 h-3.5" />
+                  <span className="font-heading text-[13.5px] sm:text-[14px] font-bold text-[#F2F2F2]">
                     Contribution vs Par (50.0)
                   </span>
                 </div>
-                <p className="text-[13px] text-[#A3A3A3] leading-relaxed">
+                <p className="text-[12px] text-[#A3A3A3] leading-relaxed">
                   Direct side-by-side comparison of overall Contribution Scores, Positive Contribution volume, and team contribution shares.
                 </p>
               </div>
 
-              <div className="bg-[#161616] p-5 rounded-xl border border-[#262626] space-y-2.5">
-                <div className="flex items-center gap-2 text-[#D4AF57]">
-                  <Layers className="w-4 h-4" />
-                  <span className="font-heading text-[15px] font-bold text-[#F2F2F2]">
+              <div className="bg-[#161616] p-3.5 sm:p-4 rounded-xl border border-[#262626] space-y-2">
+                <div className="flex items-center gap-1.5 text-[#D4AF57]">
+                  <Layers className="w-3.5 h-3.5" />
+                  <span className="font-heading text-[13.5px] sm:text-[14px] font-bold text-[#F2F2F2]">
                     Three-Pillar Breakdown
                   </span>
                 </div>
-                <p className="text-[13px] text-[#A3A3A3] leading-relaxed">
+                <p className="text-[12px] text-[#A3A3A3] leading-relaxed">
                   Inspect the underlying pillars side-by-side: Match Context (P1), Individual Execution (P2), and Team-State Trajectory (P3).
                 </p>
               </div>
 
-              <div className="bg-[#161616] p-5 rounded-xl border border-[#262626] space-y-2.5">
-                <div className="flex items-center gap-2 text-[#D4AF57]">
-                  <Compass className="w-4 h-4" />
-                  <span className="font-heading text-[15px] font-bold text-[#F2F2F2]">
+              <div className="bg-[#161616] p-3.5 sm:p-4 rounded-xl border border-[#262626] space-y-2">
+                <div className="flex items-center gap-1.5 text-[#D4AF57]">
+                  <Compass className="w-3.5 h-3.5" />
+                  <span className="font-heading text-[13.5px] sm:text-[14px] font-bold text-[#F2F2F2]">
                     Phase & Situation Splits
                   </span>
                 </div>
-                <p className="text-[13px] text-[#A3A3A3] leading-relaxed">
+                <p className="text-[12px] text-[#A3A3A3] leading-relaxed">
                   Evaluate batters across 1st innings vs Chasing, Powerplay (0–6), Middle Overs (6–16), Death (16–20), and high-pressure situations.
                 </p>
               </div>
@@ -632,63 +632,63 @@ export default function LandingPage() {
         </section>
 
         {/* Feature D: Ground & Venue Analysis */}
-        <section className="px-5 sm:px-8 lg:px-12 max-w-6xl mx-auto w-full">
-          <div className="bg-[#121212] border border-[#2D2D2D] rounded-2xl p-6 sm:p-9 shadow-xl space-y-8">
-            <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-[#222222] pb-6">
+        <section className="px-3 sm:px-8 lg:px-12 max-w-6xl mx-auto w-full">
+          <div className="bg-[#121212] border border-[#2D2D2D] rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-7 shadow-xl space-y-5">
+            <div className="flex flex-col md:flex-row md:items-end justify-between gap-3 border-b border-[#222222] pb-4">
               <div>
-                <div className="flex items-center gap-2 text-[11px] font-mono uppercase tracking-wider text-[#D4AF57] font-semibold mb-1">
-                  <MapPin className="w-4 h-4" />
+                <div className="flex items-center gap-1.5 text-[10.5px] font-mono uppercase tracking-wider text-[#D4AF57] font-semibold mb-0.5">
+                  <MapPin className="w-3.5 h-3.5" />
                   <span>VENUE-LEVEL CONTEXT</span>
                 </div>
-                <h2 className="font-heading text-[24px] sm:text-[30px] font-bold text-[#F2F2F2] tracking-tight">
+                <h2 className="font-heading text-[18px] sm:text-[22px] font-bold text-[#F2F2F2] tracking-tight">
                   Ground & Venue Analysis
                 </h2>
-                <p className="text-[14px] sm:text-[15px] text-[#A3A3A3] mt-2 max-w-2xl leading-relaxed">
+                <p className="text-[12.5px] sm:text-[13px] text-[#A3A3A3] mt-1 max-w-2xl leading-relaxed">
                   Pitches and stadium dimensions directly influence match context. Explore ground-level statistics, first vs second innings scoring patterns, pace versus spin characteristics, and historical match logs.
                 </p>
               </div>
               <Link
                 to="/ground-analysis"
-                className="btn-gold text-[12.5px] py-2 px-4.5 self-start md:self-auto shrink-0 inline-flex items-center gap-2 shadow-sm"
+                className="btn-gold h-8 sm:h-8.5 text-[11.5px] sm:text-[12px] px-3.5 self-start md:self-auto shrink-0 inline-flex items-center gap-1.5 shadow-sm"
               >
                 <span>Explore Ground Analysis</span>
-                <ChevronRight className="w-3.5 h-3.5" />
+                <ChevronRight className="w-3 h-3" />
               </Link>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-              <div className="bg-[#161616] p-5 rounded-xl border border-[#262626] space-y-2.5">
-                <div className="flex items-center gap-2 text-[#D4AF57]">
-                  <Scale className="w-4 h-4" />
-                  <span className="font-heading text-[15px] font-bold text-[#F2F2F2]">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-3.5">
+              <div className="bg-[#161616] p-3.5 sm:p-4 rounded-xl border border-[#262626] space-y-2">
+                <div className="flex items-center gap-1.5 text-[#D4AF57]">
+                  <Scale className="w-3.5 h-3.5" />
+                  <span className="font-heading text-[13.5px] sm:text-[14px] font-bold text-[#F2F2F2]">
                     1st vs 2nd Innings Baselines
                   </span>
                 </div>
-                <p className="text-[13px] text-[#A3A3A3] leading-relaxed">
+                <p className="text-[12px] text-[#A3A3A3] leading-relaxed">
                   Average first and second innings scores, defend versus chase win percentages, and rolling 5-year versus all-time venue trends.
                 </p>
               </div>
 
-              <div className="bg-[#161616] p-5 rounded-xl border border-[#262626] space-y-2.5">
-                <div className="flex items-center gap-2 text-[#D4AF57]">
-                  <Zap className="w-4 h-4" />
-                  <span className="font-heading text-[15px] font-bold text-[#F2F2F2]">
+              <div className="bg-[#161616] p-3.5 sm:p-4 rounded-xl border border-[#262626] space-y-2">
+                <div className="flex items-center gap-1.5 text-[#D4AF57]">
+                  <Zap className="w-3.5 h-3.5" />
+                  <span className="font-heading text-[13.5px] sm:text-[14px] font-bold text-[#F2F2F2]">
                     Phase Tempo & Bowling Splits
                   </span>
                 </div>
-                <p className="text-[13px] text-[#A3A3A3] leading-relaxed">
+                <p className="text-[12px] text-[#A3A3A3] leading-relaxed">
                   Powerplay, middle, and death-over run rates, alongside bowling discipline profiles (pace vs spin wickets, averages, and economies).
                 </p>
               </div>
 
-              <div className="bg-[#161616] p-5 rounded-xl border border-[#262626] space-y-2.5">
-                <div className="flex items-center gap-2 text-[#D4AF57]">
-                  <Calendar className="w-4 h-4" />
-                  <span className="font-heading text-[15px] font-bold text-[#F2F2F2]">
+              <div className="bg-[#161616] p-3.5 sm:p-4 rounded-xl border border-[#262626] space-y-2">
+                <div className="flex items-center gap-1.5 text-[#D4AF57]">
+                  <Calendar className="w-3.5 h-3.5" />
+                  <span className="font-heading text-[13.5px] sm:text-[14px] font-bold text-[#F2F2F2]">
                     Match History & Conditions
                   </span>
                 </div>
-                <p className="text-[13px] text-[#A3A3A3] leading-relaxed">
+                <p className="text-[12px] text-[#A3A3A3] leading-relaxed">
                   Chronological match outcomes at each ground with condition disclosures for standard fixtures, DLS rain-shortened matches, and reduced overs.
                 </p>
               </div>
@@ -698,106 +698,106 @@ export default function LandingPage() {
       </div>
 
       {/* 4. Historical Cricket Data Coverage Section */}
-      <section className="py-14 sm:py-20 px-5 sm:px-8 lg:px-12 bg-[#0E0E0E] border-t border-[#202020]">
-        <div className="max-w-5xl mx-auto space-y-10">
+      <section className="py-8 sm:py-12 px-3 sm:px-8 lg:px-12 bg-[#0E0E0E] border-t border-[#202020]">
+        <div className="max-w-5xl mx-auto space-y-6 sm:space-y-8">
           <div className="text-center max-w-2xl mx-auto">
-            <span className="text-[11px] font-semibold uppercase tracking-widest text-[#D4AF57]">
+            <span className="text-[10.5px] font-semibold uppercase tracking-widest text-[#D4AF57]">
               DATASET SCOPE & INTEGRITY
             </span>
-            <h2 className="font-heading text-[24px] sm:text-[32px] font-bold text-[#F2F2F2] mt-1.5 tracking-tight">
+            <h2 className="font-heading text-[18px] sm:text-[22px] font-bold text-[#F2F2F2] mt-1 tracking-tight">
               Historical Cricket Data Coverage
             </h2>
-            <p className="text-[14px] sm:text-[15px] text-[#A3A3A3] mt-3 leading-relaxed">
+            <p className="text-[12.5px] sm:text-[13px] text-[#A3A3A3] mt-2 leading-relaxed">
               Explore historical cricket data across multiple seasons and tournament editions. Coverage varies by competition, season and source-data availability.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3.5">
             {/* IPL Card */}
-            <div className="bg-[#161616] p-6 rounded-xl border border-[#2D2D2D] hover:border-[#D4AF57]/60 transition-colors flex flex-col justify-between space-y-5">
+            <div className="bg-[#161616] p-3.5 sm:p-4 rounded-xl border border-[#2D2D2D] hover:border-[#D4AF57]/60 transition-colors flex flex-col justify-between space-y-3.5">
               <div>
-                <div className="flex items-center justify-between mb-4">
-                  <div className="w-10 h-10 rounded-lg bg-[#101010] border border-[#2D2D2D] flex items-center justify-center text-[#D4AF57]">
-                    <Trophy className="w-5 h-5" />
+                <div className="flex items-center justify-between mb-2.5">
+                  <div className="w-8 h-8 rounded-lg bg-[#101010] border border-[#2D2D2D] flex items-center justify-center text-[#D4AF57]">
+                    <Trophy className="w-4 h-4" />
                   </div>
                   <span className="badge-gold">IPL</span>
                 </div>
-                <h3 className="font-heading text-[17px] font-bold text-[#F2F2F2]">
+                <h3 className="font-heading text-[15px] sm:text-[16px] font-bold text-[#F2F2F2]">
                   Indian Premier League
                 </h3>
-                <p className="text-[13px] text-[#B8B8B8] mt-2.5 leading-relaxed">
+                <p className="text-[12px] text-[#B8B8B8] mt-1.5 leading-relaxed">
                   Extensive historical league coverage across multiple seasons, featuring complete situational ball-by-ball analysis and player season leaderboards.
                 </p>
               </div>
               <button
                 type="button"
                 onClick={() => handleSelectCompetition('ipl')}
-                className="w-full btn-secondary text-[12.5px] py-2 px-3 flex items-center justify-between cursor-pointer"
+                className="w-full btn-secondary h-8 sm:h-8.5 text-[11.5px] sm:text-[12px] py-1.5 px-3 flex items-center justify-between cursor-pointer"
               >
                 <span>Explore IPL Analytics</span>
-                <ChevronRight className="w-4 h-4 text-[#D4AF57]" />
+                <ChevronRight className="w-3.5 h-3.5 text-[#D4AF57]" />
               </button>
             </div>
 
             {/* International T20Is Card */}
-            <div className="bg-[#161616] p-6 rounded-xl border border-[#2D2D2D] hover:border-[#D4AF57]/60 transition-colors flex flex-col justify-between space-y-5">
+            <div className="bg-[#161616] p-3.5 sm:p-4 rounded-xl border border-[#2D2D2D] hover:border-[#D4AF57]/60 transition-colors flex flex-col justify-between space-y-3.5">
               <div>
-                <div className="flex items-center justify-between mb-4">
-                  <div className="w-10 h-10 rounded-lg bg-[#101010] border border-[#2D2D2D] flex items-center justify-center text-[#D4AF57]">
-                    <Globe className="w-5 h-5" />
+                <div className="flex items-center justify-between mb-2.5">
+                  <div className="w-8 h-8 rounded-lg bg-[#101010] border border-[#2D2D2D] flex items-center justify-center text-[#D4AF57]">
+                    <Globe className="w-4 h-4" />
                   </div>
                   <span className="badge-gold">T20I</span>
                 </div>
-                <h3 className="font-heading text-[17px] font-bold text-[#F2F2F2]">
+                <h3 className="font-heading text-[15px] sm:text-[16px] font-bold text-[#F2F2F2]">
                   International Men's T20Is
                 </h3>
-                <p className="text-[13px] text-[#B8B8B8] mt-2.5 leading-relaxed">
+                <p className="text-[12px] text-[#B8B8B8] mt-1.5 leading-relaxed">
                   International bilateral series and multi-nation tournaments across international cricket boards with situational evaluations against diverse global oppositions.
                 </p>
               </div>
               <button
                 type="button"
                 onClick={() => handleSelectCompetition('t20i')}
-                className="w-full btn-secondary text-[12.5px] py-2 px-3 flex items-center justify-between cursor-pointer"
+                className="w-full btn-secondary h-8 sm:h-8.5 text-[11.5px] sm:text-[12px] py-1.5 px-3 flex items-center justify-between cursor-pointer"
               >
                 <span>Explore T20I Analytics</span>
-                <ChevronRight className="w-4 h-4 text-[#D4AF57]" />
+                <ChevronRight className="w-3.5 h-3.5 text-[#D4AF57]" />
               </button>
             </div>
 
             {/* ICC T20 World Cup Historical Editions Card */}
-            <div className="bg-[#161616] p-6 rounded-xl border border-[#2D2D2D] hover:border-[#D4AF57]/60 transition-colors flex flex-col justify-between space-y-5">
+            <div className="bg-[#161616] p-3.5 sm:p-4 rounded-xl border border-[#2D2D2D] hover:border-[#D4AF57]/60 transition-colors flex flex-col justify-between space-y-3.5">
               <div>
-                <div className="flex items-center justify-between mb-4">
-                  <div className="w-10 h-10 rounded-lg bg-[#101010] border border-[#2D2D2D] flex items-center justify-center text-[#D4AF57]">
-                    <ShieldCheck className="w-5 h-5" />
+                <div className="flex items-center justify-between mb-2.5">
+                  <div className="w-8 h-8 rounded-lg bg-[#101010] border border-[#2D2D2D] flex items-center justify-center text-[#D4AF57]">
+                    <ShieldCheck className="w-4 h-4" />
                   </div>
                   <span className="badge-gold">WORLD CUP</span>
                 </div>
-                <h3 className="font-heading text-[17px] font-bold text-[#F2F2F2]">
+                <h3 className="font-heading text-[15px] sm:text-[16px] font-bold text-[#F2F2F2]">
                   ICC Men's T20 World Cups
                 </h3>
-                <p className="text-[13px] text-[#B8B8B8] mt-2.5 leading-relaxed">
+                <p className="text-[12px] text-[#B8B8B8] mt-1.5 leading-relaxed">
                   Official ICC Men's T20 World Cup historical tournament editions, enabling tournament-specific filtering to evaluate high-pressure world championship performances.
                 </p>
               </div>
               <button
                 type="button"
                 onClick={() => handleSelectCompetition('t20i')}
-                className="w-full btn-secondary text-[12.5px] py-2 px-3 flex items-center justify-between cursor-pointer"
+                className="w-full btn-secondary h-8 sm:h-8.5 text-[11.5px] sm:text-[12px] py-1.5 px-3 flex items-center justify-between cursor-pointer"
               >
                 <span>Explore World Cup Editions</span>
-                <ChevronRight className="w-4 h-4 text-[#D4AF57]" />
+                <ChevronRight className="w-3.5 h-3.5 text-[#D4AF57]" />
               </button>
             </div>
           </div>
 
           {/* Cautious Integrity Note */}
-          <div className="p-4 sm:p-5 rounded-xl bg-[#121212] border border-[#262626] flex items-start gap-3.5">
-            <div className="w-7 h-7 rounded-lg bg-[#161616] border border-[#2D2D2D] flex items-center justify-center shrink-0 text-[#D4AF57] mt-0.5">
-              <Info className="w-3.5 h-3.5" />
+          <div className="p-3 sm:p-4 rounded-xl bg-[#121212] border border-[#262626] flex items-start gap-3">
+            <div className="w-6 h-6 rounded-lg bg-[#161616] border border-[#2D2D2D] flex items-center justify-center shrink-0 text-[#D4AF57] mt-0.5">
+              <Info className="w-3 h-3" />
             </div>
-            <div className="text-[12.5px] sm:text-[13px] text-[#858585] leading-relaxed space-y-1">
+            <div className="text-[11.5px] sm:text-[12px] text-[#858585] leading-relaxed space-y-0.5">
               <span className="text-[#D4AF57] font-semibold block">Coverage Transparency & Data Standards:</span>
               <span>
                 CricImpact calculates contextual contribution strictly from verified ball-by-ball delivery telemetry. Records require delivery-level match events (runs, wickets, balls remaining, extras, and match situations) to generate valid contextual baselines. Matches with incomplete delivery logs are excluded to prevent skewed historical ratings.
@@ -808,110 +808,110 @@ export default function LandingPage() {
       </section>
 
       {/* 5. How It Works Pipeline Section */}
-      <section id="how-it-works" className="py-14 sm:py-20 px-5 sm:px-8 lg:px-12 bg-[#080808] border-t border-[#202020]">
+      <section id="how-it-works" className="py-8 sm:py-12 px-3 sm:px-8 lg:px-12 bg-[#080808] border-t border-[#202020]">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center max-w-xl mx-auto mb-12">
-            <span className="text-[11px] font-semibold uppercase tracking-widest text-[#D4AF57]">
+          <div className="text-center max-w-xl mx-auto mb-8">
+            <span className="text-[10.5px] font-semibold uppercase tracking-widest text-[#D4AF57]">
               EVALUATION PIPELINE
             </span>
-            <h2 className="font-heading text-[24px] sm:text-[30px] font-bold text-[#F2F2F2] mt-1.5 tracking-tight">
+            <h2 className="font-heading text-[18px] sm:text-[22px] font-bold text-[#F2F2F2] mt-1 tracking-tight">
               How the Contribution Score Works
             </h2>
-            <p className="text-[13px] text-[#858585] mt-2 leading-relaxed">
+            <p className="text-[12px] sm:text-[12.5px] text-[#858585] mt-1.5 leading-relaxed">
               Every delivery in every innings is calibrated through a validated three-stage pipeline.
             </p>
           </div>
 
-          <div className="space-y-4">
+          <div className="space-y-3">
             {/* Step 1 */}
-            <div className="bg-[#121212] p-5 sm:p-6 rounded-xl border border-[#262626] flex flex-col sm:flex-row sm:items-start gap-4">
-              <div className="w-8 h-8 rounded-full bg-[#1E190E] border border-[#3D351E] text-[#D4AF57] font-mono font-bold text-[13px] flex items-center justify-center shrink-0">
+            <div className="bg-[#121212] p-3.5 sm:p-4 rounded-xl border border-[#262626] flex flex-col sm:flex-row sm:items-start gap-3">
+              <div className="w-7 h-7 rounded-full bg-[#1E190E] border border-[#3D351E] text-[#D4AF57] font-mono font-bold text-[12px] flex items-center justify-center shrink-0">
                 1
               </div>
               <div className="flex-1">
-                <h3 className="font-heading text-[16px] font-bold text-[#F2F2F2]">
+                <h3 className="font-heading text-[14px] sm:text-[15px] font-bold text-[#F2F2F2]">
                   Understand the situation
                 </h3>
-                <p className="text-[13px] text-[#B8B8B8] mt-1 leading-relaxed">
+                <p className="text-[12px] text-[#B8B8B8] mt-0.5 leading-relaxed">
                   Identify the match conditions and the opportunity available to the batter: current run rate, required rate, wickets lost, pitch venue index, and phase of match (overs 1–6 powerplay, 7–15 middle, 16–20 death).
                 </p>
               </div>
             </div>
 
             {/* Step 2 */}
-            <div className="bg-[#121212] p-5 sm:p-6 rounded-xl border border-[#262626] flex flex-col sm:flex-row sm:items-start gap-4">
-              <div className="w-8 h-8 rounded-full bg-[#1E190E] border border-[#3D351E] text-[#D4AF57] font-mono font-bold text-[13px] flex items-center justify-center shrink-0">
+            <div className="bg-[#121212] p-3.5 sm:p-4 rounded-xl border border-[#262626] flex flex-col sm:flex-row sm:items-start gap-3">
+              <div className="w-7 h-7 rounded-full bg-[#1E190E] border border-[#3D351E] text-[#D4AF57] font-mono font-bold text-[12px] flex items-center justify-center shrink-0">
                 2
               </div>
               <div className="flex-1">
-                <h3 className="font-heading text-[16px] font-bold text-[#F2F2F2]">
+                <h3 className="font-heading text-[14px] sm:text-[15px] font-bold text-[#F2F2F2]">
                   Evaluate the performance
                 </h3>
-                <p className="text-[13px] text-[#B8B8B8] mt-1 leading-relaxed">
+                <p className="text-[12px] text-[#B8B8B8] mt-0.5 leading-relaxed">
                   Compare what happened with the expected performance for that situation. A batter who scores 35 runs when the situational expectation was 22 receives positive performance equity; a batter who consumes balls below par receives negative performance equity.
                 </p>
               </div>
             </div>
 
             {/* Step 3 */}
-            <div className="bg-[#121212] p-5 sm:p-6 rounded-xl border border-[#262626] flex flex-col sm:flex-row sm:items-start gap-4">
-              <div className="w-8 h-8 rounded-full bg-[#1E190E] border border-[#3D351E] text-[#D4AF57] font-mono font-bold text-[13px] flex items-center justify-center shrink-0">
+            <div className="bg-[#121212] p-3.5 sm:p-4 rounded-xl border border-[#262626] flex flex-col sm:flex-row sm:items-start gap-3">
+              <div className="w-7 h-7 rounded-full bg-[#1E190E] border border-[#3D351E] text-[#D4AF57] font-mono font-bold text-[12px] flex items-center justify-center shrink-0">
                 3
               </div>
               <div className="flex-1">
-                <h3 className="font-heading text-[16px] font-bold text-[#F2F2F2]">
+                <h3 className="font-heading text-[14px] sm:text-[15px] font-bold text-[#F2F2F2]">
                   Explore the contribution
                 </h3>
-                <p className="text-[13px] text-[#B8B8B8] mt-1 leading-relaxed">
+                <p className="text-[12px] text-[#B8B8B8] mt-0.5 leading-relaxed">
                   See the resulting contribution score bounded between 0.1 and 99.9 (where 50.0 represents situational par), alongside team contribution shares and match leverage shifts.
                 </p>
               </div>
             </div>
           </div>
 
-          <div className="mt-8 text-center">
+          <div className="mt-6 text-center">
             <Link
               to="/methodology"
-              className="inline-flex items-center gap-2 text-[13px] font-semibold text-[#D4AF57] hover:text-[#E1C878] transition-colors"
+              className="inline-flex items-center gap-1.5 text-[12px] sm:text-[12.5px] font-semibold text-[#D4AF57] hover:text-[#E1C878] transition-colors"
             >
-              <Calculator className="w-4 h-4" />
+              <Calculator className="w-3.5 h-3.5" />
               <span>Read Full Mathematical Methodology & Formulas</span>
-              <ArrowRight className="w-3.5 h-3.5" />
+              <ArrowRight className="w-3 h-3" />
             </Link>
           </div>
         </div>
       </section>
 
       {/* 6. Final Call to Action Banner */}
-      <section className="py-14 sm:py-20 px-5 sm:px-8 lg:px-12 bg-[#0E0E0E] border-t border-[#202020]">
-        <div className="max-w-4xl mx-auto bg-gradient-to-b from-[#181818] to-[#121212] border border-[#3D351E]/60 rounded-2xl p-8 sm:p-12 text-center space-y-6 shadow-2xl">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1E190E] border border-[#3D351E] text-[#D4AF57] text-[11px] font-semibold uppercase tracking-wider">
-            <Sparkles className="w-3.5 h-3.5" />
+      <section className="py-8 sm:py-14 px-3 sm:px-8 lg:px-12 bg-[#0E0E0E] border-t border-[#202020]">
+        <div className="max-w-4xl mx-auto bg-gradient-to-b from-[#181818] to-[#121212] border border-[#3D351E]/60 rounded-xl sm:rounded-2xl p-5 sm:p-8 text-center space-y-4 shadow-2xl">
+          <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#1E190E] border border-[#3D351E] text-[#D4AF57] text-[10.5px] font-semibold uppercase tracking-wider">
+            <Sparkles className="w-3 h-3" />
             <span>Launch CricImpact</span>
           </div>
 
-          <h2 className="font-heading text-[26px] sm:text-[34px] font-bold text-[#F2F2F2] tracking-tight">
+          <h2 className="font-heading text-[20px] sm:text-[24px] font-bold text-[#F2F2F2] tracking-tight">
             Ready to Explore Contextual Cricket Analytics?
           </h2>
 
-          <p className="text-[14px] sm:text-[16px] text-[#B8B8B8] max-w-xl mx-auto leading-relaxed">
+          <p className="text-[12.5px] sm:text-[13.5px] text-[#B8B8B8] max-w-xl mx-auto leading-relaxed">
             Dive into season leaderboards, analyze player match contributions, and uncover insights across IPL and international T20 cricket.
           </p>
 
-          <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3.5 w-full sm:w-auto">
+          <div className="pt-1 flex flex-col sm:flex-row items-center justify-center gap-2.5 w-full sm:w-auto">
             <Link
               to="/dashboard"
-              className="btn-gold w-full sm:w-auto px-7 py-3 text-[14px] shadow-md flex items-center justify-center gap-2"
+              className="btn-gold w-full sm:w-auto h-8.5 sm:h-9 px-4 sm:px-5 text-[12px] sm:text-[12.5px] shadow-sm flex items-center justify-center gap-1.5"
             >
               <span>Explore Analytics</span>
-              <ArrowRight className="w-4 h-4" />
+              <ArrowRight className="w-3.5 h-3.5" />
             </Link>
             <Link
               to="/compare"
-              className="btn-secondary w-full sm:w-auto px-7 py-3 text-[14px] flex items-center justify-center gap-2"
+              className="btn-secondary w-full sm:w-auto h-8.5 sm:h-9 px-4 sm:px-5 text-[12px] sm:text-[12.5px] flex items-center justify-center gap-1.5"
             >
               <span>Compare Players</span>
-              <Users className="w-4 h-4 text-[#D4AF57]" />
+              <Users className="w-3.5 h-3.5 text-[#D4AF57]" />
             </Link>
           </div>
         </div>

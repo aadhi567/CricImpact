@@ -273,7 +273,7 @@ export default function CareerGraph() {
 
   return (
     <ErrorBoundary title="Career Graph Analytics Error">
-      <div className="w-full space-y-7 font-sans text-[#F2F2F2]">
+      <div className="w-full space-y-4 sm:space-y-5 font-sans text-[#F2F2F2]">
       {/* Breadcrumbs */}
       <Breadcrumbs
         items={[
@@ -286,16 +286,16 @@ export default function CareerGraph() {
       />
 
       {/* Page Header */}
-      <div className="bg-[#161616] rounded-xl p-5 sm:p-7 border border-[#2D2D2D] flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+      <div className="bg-[#161616] rounded-lg p-4 sm:p-5 border border-[#2D2D2D] flex flex-col lg:flex-row lg:items-center justify-between gap-4">
         <div>
-          <div className="flex items-center gap-2 text-[12px] font-semibold text-[#D4AF57] tracking-wider mb-1 uppercase">
-            <TrendingUp className="w-4 h-4" />
+          <div className="flex items-center gap-1.5 text-[11px] font-semibold text-[#D4AF57] tracking-wider mb-1 uppercase">
+            <TrendingUp className="w-3.5 h-3.5" />
             <span>Batting Evolution &amp; Contribution Trajectory</span>
           </div>
-          <h1 className="font-heading text-[28px] sm:text-[34px] font-bold text-[#F2F2F2] tracking-tight leading-tight">
+          <h1 className="font-heading text-xl sm:text-2xl lg:text-[26px] font-bold text-[#F2F2F2] tracking-tight leading-tight">
             Player Career Graph
           </h1>
-          <p className="text-[14px] sm:text-[15px] text-[#B8B8B8] mt-1.5 max-w-3xl leading-relaxed">
+          <p className="text-xs sm:text-[13.5px] text-[#B8B8B8] mt-1 max-w-3xl leading-relaxed">
             Explore how batting volume, scoring velocity, and CricImpact contribution metrics evolve across a player's career span in IPL, International T20Is, and Combined Career.
           </p>
         </div>
@@ -303,7 +303,7 @@ export default function CareerGraph() {
         {/* Player Search Bar with Autocomplete */}
         <div ref={searchRef} className="relative w-full lg:w-96 shrink-0">
           <div className="relative">
-            <Search className="w-4 h-4 text-[#858585] absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
+            <Search className="w-4 h-4 text-[#858585] absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" />
             <input
               type="text"
               value={searchInput}
@@ -313,7 +313,7 @@ export default function CareerGraph() {
               }}
               onFocus={() => setSearchOpen(true)}
               placeholder="Search batter (e.g. Kohli, Rohit, Dhoni)..."
-              className="w-full pl-10 pr-9 py-2.5 bg-[#101010] border border-[#2D2D2D] hover:border-[#D4AF57]/60 focus:border-[#D4AF57] rounded-lg text-sm text-[#F2F2F2] placeholder-[#666666] outline-none transition-all shadow-xs"
+              className="w-full h-9 pl-9 pr-8 py-1 bg-[#101010] border border-[#2D2D2D] hover:border-[#D4AF57]/60 focus:border-[#D4AF57] rounded-md text-xs sm:text-[13px] text-[#F2F2F2] placeholder-[#666666] outline-hidden transition-all shadow-xs"
             />
             {searchInput && (
               <button
@@ -322,7 +322,7 @@ export default function CareerGraph() {
                   setSearchInput('');
                   setSearchResults([]);
                 }}
-                className="absolute right-3 top-1/2 -translate-y-1/2 text-[#858585] hover:text-[#F2F2F2]"
+                className="absolute right-2.5 top-1/2 -translate-y-1/2 text-[#858585] hover:text-[#F2F2F2]"
               >
                 <X className="w-3.5 h-3.5" />
               </button>
@@ -341,10 +341,10 @@ export default function CareerGraph() {
                       key={res.player}
                       type="button"
                       onClick={() => handleSelectPlayer(res.player)}
-                      className="w-full text-left p-3 hover:bg-[#1A1A1A] transition-colors flex items-center justify-between cursor-pointer"
+                      className="w-full text-left p-2.5 hover:bg-[#1A1A1A] transition-colors flex items-center justify-between cursor-pointer"
                     >
                       <div>
-                        <div className="font-semibold text-sm text-[#F2F2F2]">{res.player}</div>
+                        <div className="font-semibold text-xs sm:text-sm text-[#F2F2F2]">{res.player}</div>
                         <div className="text-[11px] text-[#858585] truncate max-w-[240px]">
                           {res.teams?.join(', ') || 'Cricket Batter'}
                         </div>
@@ -367,8 +367,8 @@ export default function CareerGraph() {
       </div>
 
       {/* Featured Quick-Select Batters */}
-      <div className="flex items-center gap-2 overflow-x-auto pb-1 text-xs">
-        <span className="text-[#858585] font-semibold shrink-0">Featured Batters:</span>
+      <div className="flex items-center gap-1.5 overflow-x-auto pb-1 text-xs">
+        <span className="text-[#858585] font-semibold shrink-0 text-[11px]">Featured Batters:</span>
         {FEATURED_BATTERS.map((p) => {
           const isActive = selectedPlayer.toLowerCase() === p.toLowerCase();
           return (
@@ -376,7 +376,7 @@ export default function CareerGraph() {
               key={p}
               type="button"
               onClick={() => handleSelectPlayer(p)}
-              className={`px-3 py-1 rounded-full border transition-all shrink-0 cursor-pointer ${
+              className={`px-2.5 py-0.5 rounded-full border transition-all shrink-0 cursor-pointer text-[11px] ${
                 isActive
                   ? 'bg-[#D4AF57] text-[#080808] font-bold border-[#D4AF57] shadow-xs'
                   : 'bg-[#101010] text-[#B8B8B8] hover:text-[#F2F2F2] hover:bg-[#181818] border-[#2D2D2D]'
@@ -390,12 +390,12 @@ export default function CareerGraph() {
 
       {/* Competition View Switcher & Data Coverage Indicator */}
       <div className="space-y-1.5">
-        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-3 bg-[#161616] p-2.5 sm:p-3 rounded-xl border border-[#2D2D2D]">
+        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-2.5 bg-[#161616] p-2 sm:p-2.5 rounded-lg border border-[#2D2D2D]">
           <div className="flex items-center gap-1.5 flex-wrap">
             <button
               type="button"
               onClick={() => handleSelectCompetition('combined')}
-              className={`flex items-center gap-2 px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
+              className={`flex items-center gap-1.5 px-3 py-1 rounded-md text-xs font-semibold transition-all cursor-pointer ${
                 competitionView === 'combined'
                   ? 'bg-[#D4AF57] text-[#080808] font-bold shadow-xs'
                   : 'text-[#858585] hover:text-[#F2F2F2] hover:bg-[#121212]'
@@ -408,7 +408,7 @@ export default function CareerGraph() {
             <button
               type="button"
               onClick={() => handleSelectCompetition('ipl')}
-              className={`flex items-center gap-2 px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
+              className={`flex items-center gap-1.5 px-3 py-1 rounded-md text-xs font-semibold transition-all cursor-pointer ${
                 competitionView === 'ipl'
                   ? 'bg-[#D4AF57] text-[#080808] font-bold shadow-xs'
                   : 'text-[#858585] hover:text-[#F2F2F2] hover:bg-[#121212]'
@@ -423,7 +423,7 @@ export default function CareerGraph() {
             <button
               type="button"
               onClick={() => handleSelectCompetition('t20i')}
-              className={`flex items-center gap-2 px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
+              className={`flex items-center gap-1.5 px-3 py-1 rounded-md text-xs font-semibold transition-all cursor-pointer ${
                 competitionView === 't20i'
                   ? 'bg-[#D4AF57] text-[#080808] font-bold shadow-xs'
                   : 'text-[#858585] hover:text-[#F2F2F2] hover:bg-[#121212]'
@@ -437,9 +437,9 @@ export default function CareerGraph() {
           </div>
 
           {/* Compact Data Coverage Indicator */}
-          <div className="flex items-center gap-2 px-3 py-1.5 bg-[#101010] rounded-lg border border-[#D4AF57]/40 text-xs shadow-xs shrink-0">
+          <div className="flex items-center gap-2 px-2.5 py-1 bg-[#101010] rounded-md border border-[#D4AF57]/40 text-xs shadow-xs shrink-0">
             <Calendar className="w-3.5 h-3.5 text-[#D4AF57] shrink-0" />
-            <span className="text-[#858585] text-[11px] font-semibold uppercase tracking-wider shrink-0">
+            <span className="text-[#858585] text-[10.5px] font-semibold uppercase tracking-wider shrink-0">
               Data Coverage:
             </span>
             {renderCoverageIndicator()}
@@ -549,18 +549,18 @@ export default function CareerGraph() {
       ) : (
         <>
           {/* 1. CAREER SUMMARY BANNER & KPI CARDS */}
-          <div className="bg-[#161616] rounded-xl p-6 border border-[#2D2D2D] space-y-5">
-            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-[#222222] pb-4">
+          <div className="bg-[#161616] rounded-lg p-4 sm:p-5 border border-[#2D2D2D] space-y-4">
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 border-b border-[#222222] pb-3">
               <div>
-                <div className="flex items-center gap-3">
-                  <h2 className="text-2xl sm:text-3xl font-bold text-[#F2F2F2] tracking-tight">
+                <div className="flex items-center gap-2.5">
+                  <h2 className="text-xl sm:text-2xl font-bold text-[#F2F2F2] tracking-tight">
                     {summary.player}
                   </h2>
-                  <span className="text-[11px] font-semibold px-2.5 py-0.5 rounded-full bg-[#1A1A1A] text-[#D4AF57] border border-[#A8893D]/40">
+                  <span className="text-[10.5px] font-semibold px-2 py-0.5 rounded-full bg-[#1A1A1A] text-[#D4AF57] border border-[#A8893D]/40">
                     {summary.career_span}
                   </span>
                 </div>
-                <div className="text-xs text-[#858585] mt-1">
+                <div className="text-xs text-[#858585] mt-0.5">
                   Teams: <span className="text-[#B8B8B8]">{summary.teams?.join(' • ') || 'Cricket Batter'}</span>
                 </div>
               </div>
@@ -568,71 +568,71 @@ export default function CareerGraph() {
               <div className="flex items-center gap-2 self-start md:self-auto">
                 <Link
                   to={`/player/${encodeURIComponent(summary.player)}`}
-                  className="px-3 py-1.5 bg-[#101010] border border-[#2D2D2D] hover:border-[#D4AF57] text-xs font-semibold rounded-lg text-[#F2F2F2] transition-colors flex items-center gap-1.5"
+                  className="px-2.5 py-1 bg-[#101010] border border-[#2D2D2D] hover:border-[#D4AF57] text-xs font-semibold rounded-md text-[#F2F2F2] transition-colors flex items-center gap-1.5"
                 >
                   <span>Season Profile</span>
-                  <ExternalLink className="w-3.5 h-3.5 text-[#D4AF57]" />
+                  <ExternalLink className="w-3 h-3 text-[#D4AF57]" />
                 </Link>
               </div>
             </div>
 
             {/* 6 Restrained KPI Cards */}
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 font-sans">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2.5 font-sans">
               {/* Card 1: Matches & Innings */}
-              <div className="bg-[#101010] p-3.5 rounded-xl border border-[#2D2D2D] flex flex-col justify-between">
+              <div className="bg-[#101010] p-2.5 sm:p-3 rounded-lg border border-[#2D2D2D] flex flex-col justify-between">
                 <div>
-                  <span className="text-[11px] font-semibold text-[#858585] block">Matches &amp; Innings</span>
-                  <div className="text-[20px] font-bold text-[#F2F2F2] tabular-nums font-sans mt-1">
-                    {summary.matches} <span className="text-xs text-[#858585] font-normal">matches</span>
+                  <span className="text-[10.5px] font-semibold text-[#858585] block">Matches &amp; Innings</span>
+                  <div className="text-[18px] sm:text-[20px] font-bold text-[#F2F2F2] tabular-nums font-sans mt-0.5">
+                    {summary.matches} <span className="text-[11px] text-[#858585] font-normal">matches</span>
                   </div>
                 </div>
-                <div className="text-[11px] text-[#858585] mt-2 pt-1 border-t border-[#222222]">
+                <div className="text-[10.5px] text-[#858585] mt-1.5 pt-1 border-t border-[#222222]">
                   {summary.batting_innings} inn • {summary.dnb_matches} DNB
                 </div>
               </div>
 
               {/* Card 2: Total Runs */}
-              <div className="bg-[#101010] p-3.5 rounded-xl border border-[#2D2D2D] flex flex-col justify-between">
+              <div className="bg-[#101010] p-2.5 sm:p-3 rounded-lg border border-[#2D2D2D] flex flex-col justify-between">
                 <div>
-                  <span className="text-[11px] font-semibold text-[#858585] block">Career Runs</span>
-                  <div className="text-[20px] font-bold text-[#D4AF57] tabular-nums font-sans mt-1">
+                  <span className="text-[10.5px] font-semibold text-[#858585] block">Career Runs</span>
+                  <div className="text-[18px] sm:text-[20px] font-bold text-[#D4AF57] tabular-nums font-sans mt-0.5">
                     {summary.runs?.toLocaleString()}
                   </div>
                 </div>
-                <div className="text-[11px] text-[#858585] mt-2 pt-1 border-t border-[#222222]">
+                <div className="text-[10.5px] text-[#858585] mt-1.5 pt-1 border-t border-[#222222]">
                   from {summary.balls_faced?.toLocaleString()} balls
                 </div>
               </div>
 
               {/* Card 3: Strike Rate */}
-              <div className="bg-[#101010] p-3.5 rounded-xl border border-[#2D2D2D] flex flex-col justify-between">
+              <div className="bg-[#101010] p-2.5 sm:p-3 rounded-lg border border-[#2D2D2D] flex flex-col justify-between">
                 <div>
-                  <span className="text-[11px] font-semibold text-[#858585] block">Career Strike Rate</span>
-                  <div className="text-[20px] font-bold text-[#F2F2F2] tabular-nums font-sans mt-1">
+                  <span className="text-[10.5px] font-semibold text-[#858585] block">Career Strike Rate</span>
+                  <div className="text-[18px] sm:text-[20px] font-bold text-[#F2F2F2] tabular-nums font-sans mt-0.5">
                     {summary.strike_rate ?? '—'}
                   </div>
                 </div>
-                <div className="text-[11px] text-[#858585] mt-2 pt-1 border-t border-[#222222]">
+                <div className="text-[10.5px] text-[#858585] mt-1.5 pt-1 border-t border-[#222222]">
                   (Runs &divide; Balls) &times; 100
                 </div>
               </div>
 
               {/* Card 4: Avg Contribution */}
-              <div className="bg-[#101010] p-3.5 rounded-xl border border-[#2D2D2D] flex flex-col justify-between">
+              <div className="bg-[#101010] p-2.5 sm:p-3 rounded-lg border border-[#2D2D2D] flex flex-col justify-between">
                 <div>
                   <div className="flex items-center justify-between">
-                    <span className="text-[11px] font-semibold text-[#858585]">Avg Contribution</span>
+                    <span className="text-[10.5px] font-semibold text-[#858585]">Avg Contribution</span>
                     <span className="text-[10px] text-[#D4AF57] font-semibold">Par 50</span>
                   </div>
                   <div
-                    className={`text-[20px] font-bold tabular-nums font-sans mt-1 ${
+                    className={`text-[18px] sm:text-[20px] font-bold tabular-nums font-sans mt-0.5 ${
                       summary.average_contribution >= 50.0 ? 'text-[#5A9E60]' : 'text-[#C25454]'
                     }`}
                   >
                     {summary.average_contribution?.toFixed(1) ?? '—'}
                   </div>
                 </div>
-                <div className="text-[11px] text-[#858585] mt-2 pt-1 border-t border-[#222222]">
+                <div className="text-[10.5px] text-[#858585] mt-1.5 pt-1 border-t border-[#222222]">
                   {summary.average_contribution >= 50.0
                     ? `+${(summary.average_contribution - 50.0).toFixed(1)} above Par`
                     : `${(summary.average_contribution - 50.0).toFixed(1)} below Par`}
@@ -640,27 +640,27 @@ export default function CareerGraph() {
               </div>
 
               {/* Card 5: Positive Contribution Rate */}
-              <div className="bg-[#101010] p-3.5 rounded-xl border border-[#2D2D2D] flex flex-col justify-between">
+              <div className="bg-[#101010] p-2.5 sm:p-3 rounded-lg border border-[#2D2D2D] flex flex-col justify-between">
                 <div>
-                  <span className="text-[11px] font-semibold text-[#858585] block">Positive Contrib Rate</span>
-                  <div className="text-[20px] font-bold text-[#5A9E60] tabular-nums font-sans mt-1">
+                  <span className="text-[10.5px] font-semibold text-[#858585] block">Positive Contrib Rate</span>
+                  <div className="text-[18px] sm:text-[20px] font-bold text-[#5A9E60] tabular-nums font-sans mt-0.5">
                     {summary.positive_contribution_rate !== null ? `${summary.positive_contribution_rate}%` : '—'}
                   </div>
                 </div>
-                <div className="text-[11px] text-[#858585] mt-2 pt-1 border-t border-[#222222]">
-                  {summary.positive_appearances} / {summary.eligible_appearances} innings &gt; 50
+                <div className="text-[10.5px] text-[#858585] mt-1.5 pt-1 border-t border-[#222222]">
+                  {summary.positive_appearances} / {summary.eligible_appearances} inn &gt; 50
                 </div>
               </div>
 
               {/* Card 6: Dot-Ball Percentage */}
-              <div className="bg-[#101010] p-3.5 rounded-xl border border-[#2D2D2D] flex flex-col justify-between">
+              <div className="bg-[#101010] p-2.5 sm:p-3 rounded-lg border border-[#2D2D2D] flex flex-col justify-between">
                 <div>
-                  <span className="text-[11px] font-semibold text-[#858585] block">Dot-Ball %</span>
-                  <div className="text-[20px] font-bold text-[#E1C878] tabular-nums font-sans mt-1">
+                  <span className="text-[10.5px] font-semibold text-[#858585] block">Dot-Ball %</span>
+                  <div className="text-[18px] sm:text-[20px] font-bold text-[#E1C878] tabular-nums font-sans mt-0.5">
                     {summary.dot_ball_percentage !== null ? `${summary.dot_ball_percentage}%` : '—'}
                   </div>
                 </div>
-                <div className="text-[11px] text-[#858585] mt-2 pt-1 border-t border-[#222222]">
+                <div className="text-[10.5px] text-[#858585] mt-1.5 pt-1 border-t border-[#222222]">
                   {summary.dot_balls} / {summary.eligible_balls} balls
                 </div>
               </div>
@@ -670,9 +670,9 @@ export default function CareerGraph() {
           {/* 2. FIVE INTERACTIVE CAREER GRAPHS SECTION */}
           <div className="space-y-4">
             {/* Graph Filter Tabs */}
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-[#222222] pb-3">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 border-b border-[#222222] pb-2.5">
               <div>
-                <h3 className="font-heading text-lg font-bold text-[#F2F2F2]">
+                <h3 className="font-heading text-base sm:text-[17px] font-bold text-[#F2F2F2]">
                   Career Performance &amp; Contribution Trajectory
                 </h3>
                 <p className="text-xs text-[#858585] mt-0.5">
@@ -680,7 +680,7 @@ export default function CareerGraph() {
                 </p>
               </div>
 
-              <div className="flex items-center gap-1 overflow-x-auto bg-[#161616] p-1 rounded-lg border border-[#2D2D2D] text-xs">
+              <div className="flex items-center gap-1 overflow-x-auto bg-[#161616] p-1 rounded-md border border-[#2D2D2D] text-xs">
                 {[
                   { id: 'all', label: 'All Graphs' },
                   { id: 'bowling', label: 'Pace vs Spin' },
@@ -694,7 +694,7 @@ export default function CareerGraph() {
                     key={tab.id}
                     type="button"
                     onClick={() => setActiveGraphTab(tab.id)}
-                    className={`px-3 py-1 rounded-md transition-all cursor-pointer whitespace-nowrap ${
+                    className={`px-2.5 py-1 rounded transition-all cursor-pointer whitespace-nowrap text-xs ${
                       activeGraphTab === tab.id
                         ? 'bg-[#D4AF57] text-[#080808] font-bold shadow-xs'
                         : 'text-[#858585] hover:text-[#F2F2F2]'
@@ -707,19 +707,19 @@ export default function CareerGraph() {
             </div>
 
             {/* Graphs Grid */}
-            <div className="space-y-6">
+            <div className="space-y-4 sm:space-y-5">
               {/* GRAPH A: Runs by Season/Year */}
               {(activeGraphTab === 'all' || activeGraphTab === 'runs') && (
-                <div className="bg-[#161616] rounded-xl p-5 sm:p-6 border border-[#2D2D2D] shadow-xs space-y-3">
-                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-[#222222] pb-3">
+                <div className="bg-[#161616] rounded-lg p-3.5 sm:p-4 border border-[#2D2D2D] shadow-xs space-y-2.5">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 border-b border-[#222222] pb-2">
                     <div>
                       <div className="flex items-center gap-2">
-                        <span className="text-xs font-bold text-[#D4AF57] tracking-wider uppercase">Graph A</span>
-                        <h4 className="font-heading text-base font-bold text-[#F2F2F2]">
+                        <span className="text-[11px] font-bold text-[#D4AF57] tracking-wider uppercase">Graph A</span>
+                        <h4 className="font-heading text-sm sm:text-base font-bold text-[#F2F2F2]">
                           Runs by Season / Calendar Year
                         </h4>
                       </div>
-                      <p className="text-xs text-[#858585] mt-0.5">
+                      <p className="text-[11px] text-[#858585] mt-0.5">
                         Volume of total runs scored per season. Hover bars to inspect batting innings and balls faced.
                       </p>
                     </div>
@@ -730,16 +730,16 @@ export default function CareerGraph() {
 
               {/* GRAPH B: Strike Rate Trend */}
               {(activeGraphTab === 'all' || activeGraphTab === 'sr') && (
-                <div className="bg-[#161616] rounded-xl p-5 sm:p-6 border border-[#2D2D2D] shadow-xs space-y-3">
-                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-[#222222] pb-3">
+                <div className="bg-[#161616] rounded-lg p-3.5 sm:p-4 border border-[#2D2D2D] shadow-xs space-y-2.5">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 border-b border-[#222222] pb-2">
                     <div>
                       <div className="flex items-center gap-2">
-                        <span className="text-xs font-bold text-[#D4AF57] tracking-wider uppercase">Graph B</span>
-                        <h4 className="font-heading text-base font-bold text-[#F2F2F2]">
+                        <span className="text-[11px] font-bold text-[#D4AF57] tracking-wider uppercase">Graph B</span>
+                        <h4 className="font-heading text-sm sm:text-base font-bold text-[#F2F2F2]">
                           Strike Rate Trend
                         </h4>
                       </div>
-                      <p className="text-xs text-[#858585] mt-0.5">
+                      <p className="text-[11px] text-[#858585] mt-0.5">
                         Scoring speed calculated as (Total Runs &divide; Balls Faced) &times; 100. Benchmarked against career SR.
                       </p>
                     </div>
@@ -750,16 +750,16 @@ export default function CareerGraph() {
 
               {/* GRAPH C: Average Contribution Trend */}
               {(activeGraphTab === 'all' || activeGraphTab === 'contrib') && (
-                <div className="bg-[#161616] rounded-xl p-5 sm:p-6 border border-[#2D2D2D] shadow-xs space-y-3">
-                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-[#222222] pb-3">
+                <div className="bg-[#161616] rounded-lg p-3.5 sm:p-4 border border-[#2D2D2D] shadow-xs space-y-2.5">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 border-b border-[#222222] pb-2">
                     <div>
                       <div className="flex items-center gap-2">
-                        <span className="text-xs font-bold text-[#D4AF57] tracking-wider uppercase">Graph C</span>
-                        <h4 className="font-heading text-base font-bold text-[#F2F2F2]">
+                        <span className="text-[11px] font-bold text-[#D4AF57] tracking-wider uppercase">Graph C</span>
+                        <h4 className="font-heading text-sm sm:text-base font-bold text-[#F2F2F2]">
                           Average Contribution Score Trend (Par = 50.0)
                         </h4>
                       </div>
-                      <p className="text-xs text-[#858585] mt-0.5">
+                      <p className="text-[11px] text-[#858585] mt-0.5">
                         Contextual impact from Strategy 4 Hybrid engine. Values &gt; 50.0 indicate above-par team value addition.
                       </p>
                     </div>
@@ -769,19 +769,19 @@ export default function CareerGraph() {
               )}
 
               {/* 2-Column Grid for Graph D and Graph E when in 'all' view */}
-              <div className={activeGraphTab === 'all' ? 'grid grid-cols-1 lg:grid-cols-2 gap-6' : 'space-y-6'}>
+              <div className={activeGraphTab === 'all' ? 'grid grid-cols-1 lg:grid-cols-2 gap-4' : 'space-y-4'}>
                 {/* GRAPH D: Positive Contribution Rate */}
                 {(activeGraphTab === 'all' || activeGraphTab === 'pos') && (
-                  <div className="bg-[#161616] rounded-xl p-5 sm:p-6 border border-[#2D2D2D] shadow-xs space-y-3">
-                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-[#222222] pb-3">
+                  <div className="bg-[#161616] rounded-lg p-3.5 sm:p-4 border border-[#2D2D2D] shadow-xs space-y-2.5">
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 border-b border-[#222222] pb-2">
                       <div>
                         <div className="flex items-center gap-2">
-                          <span className="text-xs font-bold text-[#5A9E60] tracking-wider uppercase">Graph D</span>
-                          <h4 className="font-heading text-base font-bold text-[#F2F2F2]">
+                          <span className="text-[11px] font-bold text-[#5A9E60] tracking-wider uppercase">Graph D</span>
+                          <h4 className="font-heading text-sm sm:text-base font-bold text-[#F2F2F2]">
                             Positive Contribution Rate (%)
                           </h4>
                         </div>
-                        <p className="text-xs text-[#858585] mt-0.5">
+                        <p className="text-[11px] text-[#858585] mt-0.5">
                           % of eligible batting innings exceeding Par (&gt; 50.0). DNB matches strictly excluded from denominator.
                         </p>
                       </div>
@@ -792,16 +792,16 @@ export default function CareerGraph() {
 
                 {/* GRAPH E: Dot-Ball Percentage */}
                 {(activeGraphTab === 'all' || activeGraphTab === 'dots') && (
-                  <div className="bg-[#161616] rounded-xl p-5 sm:p-6 border border-[#2D2D2D] shadow-xs space-y-3">
-                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-[#222222] pb-3">
+                  <div className="bg-[#161616] rounded-lg p-3.5 sm:p-4 border border-[#2D2D2D] shadow-xs space-y-2.5">
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 border-b border-[#222222] pb-2">
                       <div>
                         <div className="flex items-center gap-2">
-                          <span className="text-xs font-bold text-[#E1C878] tracking-wider uppercase">Graph E</span>
-                          <h4 className="font-heading text-base font-bold text-[#F2F2F2]">
+                          <span className="text-[11px] font-bold text-[#E1C878] tracking-wider uppercase">Graph E</span>
+                          <h4 className="font-heading text-sm sm:text-base font-bold text-[#F2F2F2]">
                             Dot-Ball Percentage (%)
                           </h4>
                         </div>
-                        <p className="text-xs text-[#858585] mt-0.5">
+                        <p className="text-[11px] text-[#858585] mt-0.5">
                           Delivery-level dot ball frequency. Lower dot % reflects elite strike rotation and defensive control.
                         </p>
                       </div>
@@ -822,10 +822,10 @@ export default function CareerGraph() {
           )}
 
           {/* 4. SEASON-BY-SEASON CAREER ARCHIVE TABLE */}
-          <div className="bg-[#161616] rounded-xl border border-[#2D2D2D] shadow-xs overflow-hidden">
-            <div className="p-4 sm:p-5 border-b border-[#2D2D2D] flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div className="bg-[#161616] rounded-lg border border-[#2D2D2D] shadow-xs overflow-hidden">
+            <div className="p-3 sm:p-3.5 border-b border-[#2D2D2D] flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
               <div>
-                <h3 className="font-heading text-base font-bold text-[#F2F2F2]">
+                <h3 className="font-heading text-sm sm:text-base font-bold text-[#F2F2F2]">
                   Season-by-Season Analytical Archive
                 </h3>
                 <p className="text-xs text-[#858585] mt-0.5">
@@ -840,95 +840,95 @@ export default function CareerGraph() {
             <div className="overflow-x-auto max-w-full">
               <table className="w-full text-left border-collapse font-sans">
                 <thead>
-                  <tr className="border-b border-[#2D2D2D] bg-[#121212] text-[#858585] text-xs font-semibold uppercase tracking-wider">
+                  <tr className="border-b border-[#2D2D2D] bg-[#121212] text-[#858585] text-[11px] font-semibold uppercase tracking-wider">
                     <th
-                      className="py-3 px-4 cursor-pointer hover:text-[#F2F2F2]"
+                      className="py-2 px-3 cursor-pointer hover:text-[#F2F2F2]"
                       onClick={() => handleSort('season')}
                     >
-                      <div className="flex items-center gap-1.5">
+                      <div className="flex items-center gap-1">
                         <span>Season / Year</span>
-                        <ArrowUpDown className="w-3.5 h-3.5" />
+                        <ArrowUpDown className="w-3 h-3" />
                       </div>
                     </th>
-                    <th className="py-3 px-3 text-center">Scope</th>
+                    <th className="py-2 px-2.5 text-center">Scope</th>
                     <th
-                      className="py-3 px-3 text-right cursor-pointer hover:text-[#F2F2F2]"
+                      className="py-2 px-2.5 text-right cursor-pointer hover:text-[#F2F2F2]"
                       onClick={() => handleSort('matches')}
                     >
                       <div className="flex items-center justify-end gap-1">
                         <span>Matches</span>
-                        <ArrowUpDown className="w-3.5 h-3.5" />
+                        <ArrowUpDown className="w-3 h-3" />
                       </div>
                     </th>
                     <th
-                      className="py-3 px-3 text-right cursor-pointer hover:text-[#F2F2F2]"
+                      className="py-2 px-2.5 text-right cursor-pointer hover:text-[#F2F2F2]"
                       onClick={() => handleSort('batting_innings')}
                     >
                       <div className="flex items-center justify-end gap-1">
                         <span>Innings</span>
-                        <ArrowUpDown className="w-3.5 h-3.5" />
+                        <ArrowUpDown className="w-3 h-3" />
                       </div>
                     </th>
-                    <th className="py-3 px-2.5 text-right text-[#858585]">DNB</th>
+                    <th className="py-2 px-2 text-right text-[#858585]">DNB</th>
                     <th
-                      className="py-3 px-3.5 text-right cursor-pointer hover:text-[#F2F2F2]"
+                      className="py-2 px-2.5 text-right cursor-pointer hover:text-[#F2F2F2]"
                       onClick={() => handleSort('runs')}
                     >
                       <div className="flex items-center justify-end gap-1">
                         <span>Runs</span>
-                        <ArrowUpDown className="w-3.5 h-3.5" />
+                        <ArrowUpDown className="w-3 h-3" />
                       </div>
                     </th>
                     <th
-                      className="py-3 px-3 text-right cursor-pointer hover:text-[#F2F2F2]"
+                      className="py-2 px-2.5 text-right cursor-pointer hover:text-[#F2F2F2]"
                       onClick={() => handleSort('balls_faced')}
                     >
                       <div className="flex items-center justify-end gap-1">
                         <span>Balls</span>
-                        <ArrowUpDown className="w-3.5 h-3.5" />
+                        <ArrowUpDown className="w-3 h-3" />
                       </div>
                     </th>
                     <th
-                      className="py-3 px-3.5 text-right cursor-pointer hover:text-[#F2F2F2]"
+                      className="py-2 px-2.5 text-right cursor-pointer hover:text-[#F2F2F2]"
                       onClick={() => handleSort('strike_rate')}
                     >
                       <div className="flex items-center justify-end gap-1">
                         <span>SR</span>
-                        <ArrowUpDown className="w-3.5 h-3.5" />
+                        <ArrowUpDown className="w-3 h-3" />
                       </div>
                     </th>
                     <th
-                      className="py-3 px-4 text-center cursor-pointer hover:text-[#F2F2F2]"
+                      className="py-2 px-3 text-center cursor-pointer hover:text-[#F2F2F2]"
                       onClick={() => handleSort('average_contribution')}
                     >
                       <div className="flex items-center justify-center gap-1">
                         <span>Avg Contrib</span>
-                        <ArrowUpDown className="w-3.5 h-3.5" />
+                        <ArrowUpDown className="w-3 h-3" />
                       </div>
                     </th>
                     <th
-                      className="py-3 px-3 text-right cursor-pointer hover:text-[#F2F2F2]"
+                      className="py-2 px-2.5 text-right cursor-pointer hover:text-[#F2F2F2]"
                       onClick={() => handleSort('positive_contribution_rate')}
                     >
                       <div className="flex items-center justify-end gap-1">
                         <span>Pos Rate</span>
-                        <ArrowUpDown className="w-3.5 h-3.5" />
+                        <ArrowUpDown className="w-3 h-3" />
                       </div>
                     </th>
-                    <th className="py-3 px-3 text-right text-[#858585]">Dots</th>
+                    <th className="py-2 px-2.5 text-right text-[#858585]">Dots</th>
                     <th
-                      className="py-3 px-3.5 text-right cursor-pointer hover:text-[#F2F2F2]"
+                      className="py-2 px-2.5 text-right cursor-pointer hover:text-[#F2F2F2]"
                       onClick={() => handleSort('dot_ball_percentage')}
                     >
                       <div className="flex items-center justify-end gap-1">
                         <span>Dot %</span>
-                        <ArrowUpDown className="w-3.5 h-3.5" />
+                        <ArrowUpDown className="w-3 h-3" />
                       </div>
                     </th>
                   </tr>
                 </thead>
 
-                <tbody className="divide-y divide-[#222222] text-[#F2F2F2] text-xs sm:text-sm">
+                <tbody className="divide-y divide-[#222222] text-[#F2F2F2] text-xs">
                   {sortedTimeline.map((row) => {
                     const score = row.average_contribution;
                     const isAbovePar = score !== null && score >= 50.0;
@@ -939,40 +939,40 @@ export default function CareerGraph() {
                         id={`season-row-${row.season}`}
                         className="hover:bg-[#1A1A1A] transition-colors"
                       >
-                        <td className="py-3 px-4 font-semibold text-[#F2F2F2] whitespace-nowrap">
+                        <td className="py-2 px-3 font-semibold text-[#F2F2F2] whitespace-nowrap">
                           {row.season}
                         </td>
-                        <td className="py-3 px-3 text-center whitespace-nowrap">
-                          <span className="text-[11px] font-medium px-2 py-0.5 rounded bg-[#101010] border border-[#2D2D2D] text-[#858585]">
+                        <td className="py-2 px-2.5 text-center whitespace-nowrap">
+                          <span className="text-[10.5px] font-medium px-1.5 py-0.5 rounded bg-[#101010] border border-[#2D2D2D] text-[#858585]">
                             {row.competition}
                           </span>
                         </td>
-                        <td className="py-3 px-3 text-right tabular-nums text-[#858585]">
+                        <td className="py-2 px-2.5 text-right tabular-nums text-[#858585]">
                           {row.matches}
                         </td>
-                        <td className="py-3 px-3 text-right tabular-nums font-medium text-[#F2F2F2]">
+                        <td className="py-2 px-2.5 text-right tabular-nums font-medium text-[#F2F2F2]">
                           {row.batting_innings}
                         </td>
-                        <td className="py-3 px-2.5 text-right tabular-nums text-[#858585]">
+                        <td className="py-2 px-2 text-right tabular-nums text-[#858585]">
                           {row.dnb_matches > 0 ? (
                             <span className="text-[#858585]">{row.dnb_matches}</span>
                           ) : (
                             '0'
                           )}
                         </td>
-                        <td className="py-3 px-3.5 text-right tabular-nums font-bold text-[#F2F2F2]">
+                        <td className="py-2 px-2.5 text-right tabular-nums font-bold text-[#F2F2F2]">
                           {row.runs}
                         </td>
-                        <td className="py-3 px-3 text-right tabular-nums text-[#858585]">
+                        <td className="py-2 px-2.5 text-right tabular-nums text-[#858585]">
                           {row.balls_faced}
                         </td>
-                        <td className="py-3 px-3.5 text-right tabular-nums font-semibold text-[#D4AF57]">
+                        <td className="py-2 px-2.5 text-right tabular-nums font-semibold text-[#D4AF57]">
                           {row.strike_rate !== null ? row.strike_rate : '—'}
                         </td>
-                        <td className="py-3 px-4 text-center whitespace-nowrap">
+                        <td className="py-2 px-3 text-center whitespace-nowrap">
                           {score !== null ? (
                             <span
-                              className={`inline-block px-2.5 py-0.5 rounded-full text-xs font-semibold tabular-nums border ${
+                              className={`inline-block px-2 py-0.5 rounded-full text-[11px] font-semibold tabular-nums border ${
                                 isAbovePar
                                   ? 'bg-[#152718] text-[#5A9E60] border-[#2A4D30]'
                                   : 'bg-[#271414] text-[#C25454] border-[#4D2626]'
@@ -984,15 +984,15 @@ export default function CareerGraph() {
                             <span className="text-[#858585]">—</span>
                           )}
                         </td>
-                        <td className="py-3 px-3 text-right tabular-nums font-semibold text-[#5A9E60]">
+                        <td className="py-2 px-2.5 text-right tabular-nums font-semibold text-[#5A9E60]">
                           {row.positive_contribution_rate !== null
                             ? `${row.positive_contribution_rate}%`
                             : '—'}
                         </td>
-                        <td className="py-3 px-3 text-right tabular-nums text-[#858585]">
+                        <td className="py-2 px-2.5 text-right tabular-nums text-[#858585]">
                           {row.dot_balls}
                         </td>
-                        <td className="py-3 px-3.5 text-right tabular-nums text-[#E1C878]">
+                        <td className="py-2 px-2.5 text-right tabular-nums text-[#E1C878]">
                           {row.dot_ball_percentage !== null ? `${row.dot_ball_percentage}%` : '—'}
                         </td>
                       </tr>

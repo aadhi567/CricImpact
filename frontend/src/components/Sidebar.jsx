@@ -4,6 +4,7 @@ import {
   Home,
   LayoutDashboard,
   Users,
+  TrendingUp,
   Calendar,
   Layers,
   GitCompare,
@@ -55,6 +56,13 @@ export default function Sidebar({
           tooltip: 'Analyze individual players',
           icon: Users,
           matcher: (path) => path === '/players' || path.startsWith('/player/'),
+        },
+        {
+          to: '/career',
+          label: 'Career Graph',
+          tooltip: 'Career batting & contribution graph',
+          icon: TrendingUp,
+          matcher: (path) => path.startsWith('/career'),
         },
         {
           to: '/matches',

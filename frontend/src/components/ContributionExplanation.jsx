@@ -92,7 +92,7 @@ export default function ContributionExplanation({
               <span className="font-semibold text-[#858585] block text-[11px]">
                 Step 1: P1 context
               </span>
-              <span className="text-[#F2F2F2] text-[14px] font-bold mt-1 block tabular-nums font-mono">
+              <span className="text-[#F2F2F2] text-[14px] font-bold mt-1 block tabular-nums font-sans">
                 {p1IsNull ? '—' : Number(p1Score).toFixed(1)} / 100
               </span>
             </div>
@@ -104,12 +104,12 @@ export default function ContributionExplanation({
               <span className="font-semibold text-[#858585] block text-[11px]">
                 Step 2: Leverage multiplier
               </span>
-              <span className="text-[#D4AF57] text-[14px] font-mono font-bold mt-1 block tabular-nums">
-                L(P1) = {Number(levVal).toFixed(3)}×
+              <span className="text-[#D4AF57] text-[14px] font-sans font-bold mt-1 block tabular-nums">
+                L(P1) = {Number(levVal).toFixed(3)}&times;
               </span>
             </div>
             <span className="text-[11px] text-[#858585] mt-1">
-              Bounds [0.65×, 1.35×] • {levVal > 1.0 ? 'Amplifies deviations' : levVal < 1.0 ? 'Dampens deviations' : 'Neutral par'}
+              Bounds [0.65&times;, 1.35&times;] • {levVal > 1.0 ? 'Amplifies deviations' : levVal < 1.0 ? 'Dampens deviations' : 'Neutral par'}
             </span>
           </div>
 
@@ -118,11 +118,11 @@ export default function ContributionExplanation({
               <span className="font-semibold text-[#858585] block text-[11px]">
                 Step 3: Adjusted P2 & P3
               </span>
-              <span className="text-[#F2F2F2] text-[13px] font-medium mt-1 block tabular-nums font-mono">
+              <span className="text-[#F2F2F2] text-[13px] font-medium mt-1 block tabular-nums font-sans">
                 P2: {adjP2 !== null ? Number(adjP2).toFixed(1) : '—'} • P3: {adjP3 !== null ? Number(adjP3).toFixed(1) : '—'}
               </span>
             </div>
-            <span className="text-[11px] text-[#858585] mt-1">Adjusted = 50 + (Raw - 50) × L</span>
+            <span className="text-[11px] text-[#858585] mt-1">Adjusted = 50 + (Raw - 50) &times; L</span>
           </div>
 
           <div className="bg-[#152718] p-3 rounded-lg border border-[#2A4D30] flex flex-col justify-between">
@@ -130,7 +130,7 @@ export default function ContributionExplanation({
               <span className="font-semibold text-[#5A9E60] block text-[11px]">
                 Step 4: Final 50/50 score
               </span>
-              <span className="text-[#5A9E60] text-[14px] font-bold mt-1 block tabular-nums font-mono">
+              <span className="text-[#5A9E60] text-[14px] font-bold mt-1 block tabular-nums font-sans">
                 Score: {score !== null && score !== undefined ? Number(score).toFixed(1) : '—'}
               </span>
             </div>
@@ -162,10 +162,10 @@ export default function ContributionExplanation({
               Context difficulty (P1)
             </span>
             <div className="flex items-baseline gap-2">
-              <span className="text-[28px] font-bold text-[#F2F2F2] tabular-nums font-mono leading-none">
+              <span className="text-[28px] font-bold text-[#F2F2F2] tabular-nums font-sans leading-none">
                 {p1IsNull ? '—' : Number(p1Score).toFixed(1)}
               </span>
-              <span className="text-[#858585] font-mono text-[13px]">/ 100</span>
+              <span className="text-[#858585] text-[13px]">/ 100</span>
             </div>
             <p className="text-[12px] text-[#858585] mt-2 leading-relaxed">
               {p1Pillar.description || 'Evaluates situational difficulty, match leverage, entry point, phase demands, and collapse pressure.'}
@@ -286,23 +286,23 @@ export default function ContributionExplanation({
             <div className="mt-5 pt-3 border-t border-[#2D2D2D] space-y-2">
               <div className="flex items-center justify-between text-[12px] text-[#858585]">
                 <span>Raw execution score (P2):</span>
-                <span className="font-mono font-semibold text-[#F2F2F2] tabular-nums">
+                <span className="font-sans font-semibold text-[#F2F2F2] tabular-nums">
                   {p2IsNull ? '—' : Number(rawP2).toFixed(1)} / 100
                 </span>
               </div>
               <div className="flex items-center justify-between text-[12px] text-[#858585]">
                 <span>Context leverage applied:</span>
-                <span className="font-mono font-semibold text-[#D4AF57]">
-                  × {Number(levVal).toFixed(3)}
+                <span className="font-sans font-semibold text-[#D4AF57] tabular-nums">
+                  &times; {Number(levVal).toFixed(3)}
                 </span>
               </div>
               <div className="flex items-baseline justify-between pt-1 border-t border-[#2D2D2D]">
                 <span className="text-[12px] font-semibold text-[#D4AF57]">Adjusted P2 (50% weight):</span>
                 <div className="text-right">
-                  <span className="text-[28px] font-bold text-[#F2F2F2] tabular-nums font-mono leading-none">
+                  <span className="text-[28px] font-bold text-[#F2F2F2] tabular-nums font-sans leading-none">
                     {adjP2 !== null ? Number(adjP2).toFixed(1) : '—'}
                   </span>
-                  <span className="text-[12px] text-[#858585] font-mono"> / 100</span>
+                  <span className="text-[12px] text-[#858585]"> / 100</span>
                 </div>
               </div>
             </div>
@@ -333,23 +333,23 @@ export default function ContributionExplanation({
             <div className="mt-5 pt-3 border-t border-[#2D2D2D] space-y-2">
               <div className="flex items-center justify-between text-[12px] text-[#858585]">
                 <span>Raw state impact (P3):</span>
-                <span className="font-mono font-semibold text-[#F2F2F2] tabular-nums">
+                <span className="font-sans font-semibold text-[#F2F2F2] tabular-nums">
                   {p3IsNull ? '—' : Number(rawP3).toFixed(1)} / 100
                 </span>
               </div>
               <div className="flex items-center justify-between text-[12px] text-[#858585]">
                 <span>Context leverage applied:</span>
-                <span className="font-mono font-semibold text-[#D4AF57]">
-                  × {Number(levVal).toFixed(3)}
+                <span className="font-sans font-semibold text-[#D4AF57] tabular-nums">
+                  &times; {Number(levVal).toFixed(3)}
                 </span>
               </div>
               <div className="flex items-baseline justify-between pt-1 border-t border-[#2D2D2D]">
                 <span className="text-[12px] font-semibold text-[#5A9E60]">Adjusted P3 (50% weight):</span>
                 <div className="text-right">
-                  <span className="text-[28px] font-bold text-[#F2F2F2] tabular-nums font-mono leading-none">
+                  <span className="text-[28px] font-bold text-[#F2F2F2] tabular-nums font-sans leading-none">
                     {adjP3 !== null ? Number(adjP3).toFixed(1) : '—'}
                   </span>
-                  <span className="text-[12px] text-[#858585] font-mono"> / 100</span>
+                  <span className="text-[12px] text-[#858585]"> / 100</span>
                 </div>
               </div>
             </div>
@@ -362,13 +362,13 @@ export default function ContributionExplanation({
         <div className="flex items-center gap-2">
           <Scale className="w-4 h-4 text-[#5A9E60]" />
           <span className="font-semibold text-[#F2F2F2]">Score synthesis:</span>
-          <span className="text-[#858585] font-mono tabular-nums">
-            0.50 × ({adjP2 !== null ? Number(adjP2).toFixed(1) : '—'}) + 0.50 × ({adjP3 !== null ? Number(adjP3).toFixed(1) : '—'})
+          <span className="text-[#858585] font-sans tabular-nums">
+            0.50 &times; ({adjP2 !== null ? Number(adjP2).toFixed(1) : '—'}) + 0.50 &times; ({adjP3 !== null ? Number(adjP3).toFixed(1) : '—'})
           </span>
         </div>
         <div className="flex items-center gap-2">
           <span className="text-[#858585]">Final contribution score:</span>
-          <span className="text-[18px] font-bold text-[#D4AF57] font-mono tabular-nums">
+          <span className="text-[18px] font-bold text-[#D4AF57] font-sans tabular-nums">
             {score !== null && score !== undefined ? Number(score).toFixed(1) : '—'}
           </span>
         </div>

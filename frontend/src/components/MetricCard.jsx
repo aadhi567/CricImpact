@@ -41,30 +41,30 @@ export default function MetricCard({
   }
 
   return (
-    <div className="bg-[#161616] rounded-xl p-4 sm:p-5 border border-[#2D2D2D] transition-all hover:border-[#3D3D3D] flex flex-col justify-between font-mono">
+    <div className="bg-[#161616] rounded-lg p-3 sm:p-3.5 border border-[#2D2D2D] transition-all hover:border-[#3D3D3D] flex flex-col justify-between font-sans">
       <div>
         <div className="flex items-center justify-between gap-2">
-          <div className="flex items-center gap-1.5 text-[12px] sm:text-[12.5px] font-semibold text-[#858585] tracking-wider uppercase truncate">
+          <div className="flex items-center gap-1 text-[11px] sm:text-[11.5px] font-semibold text-[#858585] tracking-wider uppercase truncate">
             <span className="truncate">{title}</span>
             {tooltip && (
               <span title={tooltip} className="cursor-help text-[#858585] hover:text-[#D4AF57] shrink-0">
-                <HelpCircle className="w-3.5 h-3.5" />
+                <HelpCircle className="w-3 h-3" />
               </span>
             )}
           </div>
           {Icon && (
-            <div className="w-7 h-7 rounded-lg bg-[#101010] border border-[#2D2D2D] flex items-center justify-center text-[#D4AF57] shrink-0">
-              <Icon className="w-4 h-4" />
+            <div className="w-6 h-6 rounded-md bg-[#101010] border border-[#2D2D2D] flex items-center justify-center text-[#D4AF57] shrink-0">
+              <Icon className="w-3.5 h-3.5" />
             </div>
           )}
         </div>
 
-        <div className="mt-2.5 flex items-baseline gap-2.5">
-          <span className={`text-[28px] sm:text-[32px] font-semibold tracking-tight tabular-nums font-mono leading-none ${valueColor}`}>
+        <div className="mt-2 flex items-baseline gap-2">
+          <span className={`text-[20px] sm:text-[24px] font-semibold tracking-tight tabular-nums font-sans leading-none ${valueColor}`}>
             {displayValue}
           </span>
           {badge && (
-            <span className="text-[12px] px-2 py-0.5 rounded font-mono bg-[#101010] text-[#D4AF57] border border-[#2D2D2D]">
+            <span className="text-[11px] px-1.5 py-0.5 rounded font-sans bg-[#101010] text-[#D4AF57] border border-[#2D2D2D]">
               {badge}
             </span>
           )}
@@ -72,7 +72,7 @@ export default function MetricCard({
       </div>
 
       {subtitle && (
-        <div className="mt-3 pt-2 border-t border-[#222222] text-[12px] sm:text-[12.5px] font-normal text-[#858585] truncate font-mono">
+        <div className="mt-2 pt-1.5 border-t border-[#222222] text-[11px] sm:text-[11.5px] font-normal text-[#858585] truncate font-sans">
           {subtitle}
         </div>
       )}

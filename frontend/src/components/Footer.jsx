@@ -14,8 +14,8 @@ export default function Footer() {
 
   return (
     <footer className="border-t border-[#202020] bg-[#080808] text-[#858585] text-xs mt-auto font-ui w-full">
-      <div className="w-full max-w-[1850px] mx-auto px-3 sm:px-4 lg:px-6 py-8 sm:py-12">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12 pb-8 border-b border-[#1C1C1C]">
+      <div className="w-full max-w-[1680px] mx-auto px-3 sm:px-4 lg:px-6 py-6 sm:py-8">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 lg:gap-10 pb-6 border-b border-[#1C1C1C]">
           {/* Brand & Description Column */}
           <div className="md:col-span-4 lg:col-span-4 space-y-3">
             <div className="flex items-center gap-3">

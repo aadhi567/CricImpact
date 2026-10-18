@@ -199,7 +199,7 @@ export default function MatchDetail() {
   const phaseLabel = ctx.phase || (entryOver < 6 ? 'Powerplay' : entryOver >= 16 ? 'Death Overs' : 'Middle Overs');
 
   return (
-    <div className="w-full space-y-8">
+    <div className="w-full space-y-6 sm:space-y-7">
       {/* Top Breadcrumb Navigation */}
       <Breadcrumbs
         items={[
@@ -212,38 +212,38 @@ export default function MatchDetail() {
       />
 
       {/* Match Context Banner */}
-      <div className="bg-[#161616] rounded-xl p-6 sm:p-7 border border-[#2D2D2D] shadow-xs flex flex-col md:flex-row md:items-center justify-between gap-4">
+      <div className="bg-[#161616] rounded-xl p-4 sm:p-5 border border-[#2D2D2D] shadow-xs flex flex-col md:flex-row md:items-center justify-between gap-3.5">
         <div>
-          <div className="text-[12px] font-semibold text-[#D4AF57] tracking-wider uppercase mb-1.5 font-mono">
+          <div className="text-[11.5px] font-semibold text-[#D4AF57] tracking-wider uppercase mb-1 font-sans">
             CricImpact Match Analysis
           </div>
-          <div className="flex flex-wrap items-center gap-3">
-            <h1 className="font-heading text-[28px] sm:text-[32px] lg:text-[36px] font-bold text-[#F2F2F2] tracking-tight">
+          <div className="flex flex-wrap items-center gap-2.5">
+            <h1 className="font-heading text-[22px] sm:text-[26px] lg:text-[28px] font-bold text-[#F2F2F2] tracking-tight">
               {matchData.player}
             </h1>
-            <span className="text-[#858585] font-semibold text-[15px]">
+            <span className="text-[#858585] font-semibold text-[14px]">
               ({matchData.team})
             </span>
             <span className="text-[#2D2D2D]">•</span>
-            <span className="text-[16px] font-semibold text-[#F2F2F2]">
+            <span className="text-[14.5px] font-semibold text-[#F2F2F2]">
               vs {matchData.opponent}
             </span>
-            <span className="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-[#1F1C14] text-[#D4AF57] border border-[#A8893D]/40">
+            <span className="px-2 py-0.5 rounded-full text-[11px] font-semibold bg-[#1F1C14] text-[#D4AF57] border border-[#A8893D]/40">
               Innings {ctx.innings || 1}
             </span>
             {isOpener && (
-              <span className="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-[#101010] text-[#858585] border border-[#2D2D2D]">
+              <span className="px-2 py-0.5 rounded-full text-[11px] font-semibold bg-[#101010] text-[#858585] border border-[#2D2D2D]">
                 Opener
               </span>
             )}
             {matchData.event_name && matchData.event_name !== 'Indian Premier League' && (
-              <span className="px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-[#1F1C14] text-[#D4AF57] border border-[#D4AF57]/40 uppercase tracking-wide">
+              <span className="px-2 py-0.5 rounded-full text-[10.5px] font-semibold bg-[#1F1C14] text-[#D4AF57] border border-[#D4AF57]/40 uppercase tracking-wide">
                 {matchData.event_name}{matchData.stage ? ` • ${matchData.stage}` : ''}
               </span>
             )}
           </div>
 
-          <div className="mt-3 flex flex-wrap items-center gap-3 text-[13px] text-[#858585]">
+          <div className="mt-2 flex flex-wrap items-center gap-2.5 text-[12px] text-[#858585]">
             <span className="flex items-center gap-1.5">
               <Calendar className="w-3.5 h-3.5" />
               {matchData.date}
@@ -256,18 +256,18 @@ export default function MatchDetail() {
           </div>
         </div>
 
-        <div className="flex items-center gap-3 self-start md:self-auto">
+        <div className="flex items-center gap-2.5 self-start md:self-auto">
           <span
-            className={`inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full ${
+            className={`inline-flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1 rounded-full ${
               matchData.team_result === 'Won'
                 ? 'bg-[#152718] text-[#5A9E60] border border-[#2A4D30]'
                 : 'bg-[#271414] text-[#C25454] border border-[#4D2626]'
             }`}
           >
             {matchData.team_result === 'Won' ? (
-              <CheckCircle2 className="w-4 h-4" />
+              <CheckCircle2 className="w-3.5 h-3.5" />
             ) : (
-              <XCircle className="w-4 h-4" />
+              <XCircle className="w-3.5 h-3.5" />
             )}
             Team {matchData.team_result}
           </span>
@@ -275,46 +275,46 @@ export default function MatchDetail() {
       </div>
 
       {/* SECTION 1: BATTING PERFORMANCE */}
-      <div className="bg-[#161616] rounded-xl p-6 sm:p-7 border border-[#2D2D2D] shadow-xs space-y-6">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-[#2D2D2D] pb-4">
-          <div className="flex items-start gap-3">
-            <div className="p-2.5 rounded-lg bg-[#1F1C14] border border-[#A8893D]/30 text-[#D4AF57] mt-0.5">
-              <Zap className="w-5 h-5" />
+      <div className="bg-[#161616] rounded-xl p-4 sm:p-5 border border-[#2D2D2D] shadow-xs space-y-4">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 border-b border-[#2D2D2D] pb-3">
+          <div className="flex items-start gap-2.5">
+            <div className="p-2 rounded-lg bg-[#1F1C14] border border-[#A8893D]/30 text-[#D4AF57] mt-0.5">
+              <Zap className="w-4 h-4" />
             </div>
             <div>
-              <h2 className="font-heading text-[21px] sm:text-[23px] font-bold text-[#F2F2F2] tracking-tight">
+              <h2 className="font-heading text-[17px] sm:text-[19px] font-bold text-[#F2F2F2] tracking-tight">
                 1. Batting Performance
               </h2>
-              <p className="text-[13px] text-[#858585] mt-1">
+              <p className="text-[12px] text-[#858585] mt-0.5">
                 Individual execution, scoring output, pace, and boundary profile.
               </p>
             </div>
           </div>
 
           <div className="flex items-center gap-2">
-            <span className="px-2.5 py-1 rounded-md text-xs font-semibold bg-[#1F1C14] text-[#D4AF57] border border-[#A8893D]/30">
+            <span className="px-2 py-0.5 rounded-md text-[11px] font-semibold bg-[#1F1C14] text-[#D4AF57] border border-[#A8893D]/30">
               {getP2Tier(p2Val)}
             </span>
           </div>
         </div>
 
         {/* Prominent P2 Display & Core Metrics */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 items-stretch">
           {/* Prominent Score Tile */}
-          <div className="lg:col-span-4 bg-[#101010] p-5 rounded-xl border border-[#2D2D2D] flex flex-col justify-between">
+          <div className="lg:col-span-4 bg-[#101010] p-4 rounded-lg border border-[#2D2D2D] flex flex-col justify-between">
             <div>
-              <span className="text-[11px] font-semibold text-[#858585] tracking-wider uppercase block">
+              <span className="text-[10.5px] font-semibold text-[#858585] tracking-wider uppercase block">
                 P2 — Batting Execution Score
               </span>
-              <div className="mt-2 flex items-baseline gap-1.5">
-                <span className="font-mono text-4xl sm:text-5xl font-bold text-[#F2F2F2] tabular-nums">
+              <div className="mt-1.5 flex items-baseline gap-1.5">
+                <span className="font-mono text-2xl sm:text-3xl font-bold text-[#F2F2F2] tabular-nums">
                   {p2Val !== null && p2Val !== undefined ? Number(p2Val).toFixed(1) : '—'}
                 </span>
-                <span className="text-lg font-normal text-[#858585]">/ 100</span>
+                <span className="text-sm font-normal text-[#858585]">/ 100</span>
               </div>
             </div>
 
-            <div className="mt-4 pt-3 border-t border-[#2D2D2D] flex flex-wrap items-center justify-between gap-2 text-xs">
+            <div className="mt-3 pt-2.5 border-t border-[#2D2D2D] flex flex-wrap items-center justify-between gap-2 text-[11.5px]">
               <span className="text-[#858585]">Adjusted P2 (with leverage):</span>
               <span className="font-mono font-bold text-[#D4AF57]">
                 {adjP2 !== null && adjP2 !== undefined ? `${Number(adjP2).toFixed(1)} / 100` : '—'}
@@ -389,46 +389,46 @@ export default function MatchDetail() {
       </div>
 
       {/* SECTION 2: TEAM CONTRIBUTION */}
-      <div className="bg-[#161616] rounded-xl p-6 sm:p-7 border border-[#2D2D2D] shadow-xs space-y-6">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-[#2D2D2D] pb-4">
-          <div className="flex items-start gap-3">
-            <div className="p-2.5 rounded-lg bg-[#1F1C14] border border-[#A8893D]/30 text-[#D4AF57] mt-0.5">
-              <Users className="w-5 h-5" />
+      <div className="bg-[#161616] rounded-xl p-4 sm:p-5 border border-[#2D2D2D] shadow-xs space-y-4">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 border-b border-[#2D2D2D] pb-3">
+          <div className="flex items-start gap-2.5">
+            <div className="p-2 rounded-lg bg-[#1F1C14] border border-[#A8893D]/30 text-[#D4AF57] mt-0.5">
+              <Users className="w-4 h-4" />
             </div>
             <div>
-              <h2 className="font-heading text-[21px] sm:text-[23px] font-bold text-[#F2F2F2] tracking-tight">
+              <h2 className="font-heading text-[17px] sm:text-[19px] font-bold text-[#F2F2F2] tracking-tight">
                 2. Team Contribution
               </h2>
-              <p className="text-[13px] text-[#858585] mt-1">
+              <p className="text-[12px] text-[#858585] mt-0.5">
                 Player's assessed contribution to team progress, crease occupation, and match situation.
               </p>
             </div>
           </div>
 
           <div className="flex items-center gap-2">
-            <span className="px-2.5 py-1 rounded-md text-xs font-semibold bg-[#1F1C14] text-[#D4AF57] border border-[#A8893D]/30">
+            <span className="px-2 py-0.5 rounded-md text-[11px] font-semibold bg-[#1F1C14] text-[#D4AF57] border border-[#A8893D]/30">
               {getP3Tier(p3Val)}
             </span>
           </div>
         </div>
 
         {/* Prominent P3 Display & Team Situation Metrics */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 items-stretch">
           {/* Prominent Score Tile */}
-          <div className="lg:col-span-4 bg-[#101010] p-5 rounded-xl border border-[#2D2D2D] flex flex-col justify-between">
+          <div className="lg:col-span-4 bg-[#101010] p-4 rounded-lg border border-[#2D2D2D] flex flex-col justify-between">
             <div>
-              <span className="text-[11px] font-semibold text-[#858585] tracking-wider uppercase block">
+              <span className="text-[10.5px] font-semibold text-[#858585] tracking-wider uppercase block">
                 P3 — Team Contribution Score
               </span>
-              <div className="mt-2 flex items-baseline gap-1.5">
-                <span className="font-mono text-4xl sm:text-5xl font-bold text-[#F2F2F2] tabular-nums">
+              <div className="mt-1.5 flex items-baseline gap-1.5">
+                <span className="font-mono text-2xl sm:text-3xl font-bold text-[#F2F2F2] tabular-nums">
                   {p3Val !== null && p3Val !== undefined ? Number(p3Val).toFixed(1) : '—'}
                 </span>
-                <span className="text-lg font-normal text-[#858585]">/ 100</span>
+                <span className="text-sm font-normal text-[#858585]">/ 100</span>
               </div>
             </div>
 
-            <div className="mt-4 pt-3 border-t border-[#2D2D2D] flex flex-wrap items-center justify-between gap-2 text-xs">
+            <div className="mt-3 pt-2.5 border-t border-[#2D2D2D] flex flex-wrap items-center justify-between gap-2 text-[11.5px]">
               <span className="text-[#858585]">Adjusted P3 (with leverage):</span>
               <span className="font-mono font-bold text-[#D4AF57]">
                 {adjP3 !== null && adjP3 !== undefined ? `${Number(adjP3).toFixed(1)} / 100` : '—'}
@@ -437,43 +437,43 @@ export default function MatchDetail() {
           </div>
 
           {/* Match Situation & Progression Tiles */}
-          <div className="lg:col-span-8 grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
-            <div className="bg-[#101010] p-3.5 rounded-lg border border-[#2D2D2D]">
-              <span className="text-[11px] font-semibold text-[#858585] block">State at Entry</span>
-              <span className="text-xl font-bold text-[#F2F2F2] mt-1 block font-mono tabular-nums">
+          <div className="lg:col-span-8 grid grid-cols-2 sm:grid-cols-4 gap-2.5 text-xs">
+            <div className="bg-[#101010] p-3 rounded-lg border border-[#2D2D2D]">
+              <span className="text-[10.5px] font-semibold text-[#858585] block">State at Entry</span>
+              <span className="text-lg font-bold text-[#F2F2F2] mt-0.5 block font-mono tabular-nums">
                 {scoreEntry}/{wktsDownEntry}
               </span>
-              <span className="text-[11px] text-[#858585] mt-1 block">
-                Over {entryOver} ({wktsRemEntry} wkts left)
+              <span className="text-[10.5px] text-[#858585] mt-0.5 block">
+                Over {entryOver} ({wktsRemEntry} left)
               </span>
             </div>
 
-            <div className="bg-[#101010] p-3.5 rounded-lg border border-[#2D2D2D]">
-              <span className="text-[11px] font-semibold text-[#858585] block">Crease Occupation</span>
-              <span className="text-xl font-bold text-[#F2F2F2] mt-1 block font-mono tabular-nums">
-                {oversSpent} <span className="text-xs font-normal text-[#858585]">ov</span>
+            <div className="bg-[#101010] p-3 rounded-lg border border-[#2D2D2D]">
+              <span className="text-[10.5px] font-semibold text-[#858585] block">Crease Occupation</span>
+              <span className="text-lg font-bold text-[#F2F2F2] mt-0.5 block font-mono tabular-nums">
+                {oversSpent} <span className="text-[11px] font-normal text-[#858585]">ov</span>
               </span>
-              <span className="text-[11px] text-[#858585] mt-1 block font-mono">
+              <span className="text-[10.5px] text-[#858585] mt-0.5 block font-mono">
                 Ov {entryOver} to {exitOver}
               </span>
             </div>
 
-            <div className="bg-[#101010] p-3.5 rounded-lg border border-[#2D2D2D]">
-              <span className="text-[11px] font-semibold text-[#858585] block">Team Progression</span>
-              <span className="text-xl font-bold text-[#F2F2F2] mt-1 block font-mono tabular-nums">
+            <div className="bg-[#101010] p-3 rounded-lg border border-[#2D2D2D]">
+              <span className="text-[10.5px] font-semibold text-[#858585] block">Team Progression</span>
+              <span className="text-lg font-bold text-[#F2F2F2] mt-0.5 block font-mono tabular-nums">
                 {scoreEntry} → {scoreExit}
               </span>
-              <span className="text-[11px] text-[#858585] mt-1 block font-mono">
-                +{teamRunsAdded} team runs added
+              <span className="text-[10.5px] text-[#858585] mt-0.5 block font-mono">
+                +{teamRunsAdded} team runs
               </span>
             </div>
 
-            <div className="bg-[#101010] p-3.5 rounded-lg border border-[#2D2D2D]">
-              <span className="text-[11px] font-semibold text-[#858585] block">Partnership Share</span>
-              <span className="text-xl font-bold text-[#D4AF57] mt-1 block font-mono tabular-nums">
+            <div className="bg-[#101010] p-3 rounded-lg border border-[#2D2D2D]">
+              <span className="text-[10.5px] font-semibold text-[#858585] block">Partnership Share</span>
+              <span className="text-lg font-bold text-[#D4AF57] mt-0.5 block font-mono tabular-nums">
                 {partShare}%
               </span>
-              <span className="text-[11px] text-[#858585] mt-1 block font-mono">
+              <span className="text-[10.5px] text-[#858585] mt-0.5 block font-mono">
                 {runs} of {partRuns} runs
               </span>
             </div>
@@ -481,11 +481,11 @@ export default function MatchDetail() {
         </div>
 
         {/* Concise Team Contribution Explanation (Concise Bullet Points) */}
-        <div className="bg-[#101010] p-4 sm:p-5 rounded-lg border border-[#2D2D2D] space-y-2.5">
-          <h3 className="text-xs font-semibold text-[#D4AF57] tracking-wider uppercase">
+        <div className="bg-[#101010] p-3.5 sm:p-4 rounded-lg border border-[#2D2D2D] space-y-2">
+          <h3 className="text-[11.5px] font-semibold text-[#D4AF57] tracking-wider uppercase">
             Team Contribution & Match Situation Analysis
           </h3>
-          <ul className="space-y-2 text-xs sm:text-[13px] text-[#F2F2F2] list-disc list-inside leading-relaxed">
+          <ul className="space-y-1.5 text-xs sm:text-[12.5px] text-[#F2F2F2] list-disc list-inside leading-relaxed">
             <li>
               {isFirstInn
                 ? `Entered at over ${entryOver} during the ${phaseLabel} with the team at ${scoreEntry}/${wktsDownEntry} (${wktsRemEntry} wickets in hand), tasked with constructing the first-innings total.`
@@ -512,44 +512,44 @@ export default function MatchDetail() {
       </div>
 
       {/* SECTION 3: OVERALL PERFORMANCE */}
-      <div className="bg-[#161616] rounded-xl p-6 sm:p-7 border border-[#2D2D2D] shadow-xs space-y-6">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-[#2D2D2D] pb-4">
-          <div className="flex items-start gap-3">
-            <div className="p-2.5 rounded-lg bg-[#1F1C14] border border-[#A8893D]/30 text-[#D4AF57] mt-0.5">
-              <Award className="w-5 h-5" />
+      <div className="bg-[#161616] rounded-xl p-4 sm:p-5 border border-[#2D2D2D] shadow-xs space-y-4">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 border-b border-[#2D2D2D] pb-3">
+          <div className="flex items-start gap-2.5">
+            <div className="p-2 rounded-lg bg-[#1F1C14] border border-[#A8893D]/30 text-[#D4AF57] mt-0.5">
+              <Award className="w-4 h-4" />
             </div>
             <div>
-              <h2 className="font-heading text-[21px] sm:text-[23px] font-bold text-[#F2F2F2] tracking-tight">
+              <h2 className="font-heading text-[17px] sm:text-[19px] font-bold text-[#F2F2F2] tracking-tight">
                 3. Overall Performance
               </h2>
-              <p className="text-[13px] text-[#858585] mt-1">
+              <p className="text-[12px] text-[#858585] mt-0.5">
                 Approved CricImpact score synthesizing Adjusted P2 and Adjusted P3 under context leverage.
               </p>
             </div>
           </div>
 
           <div className="flex items-center gap-2">
-            <span className="px-2.5 py-1 rounded-md text-xs font-semibold bg-[#101010] text-[#858585] border border-[#2D2D2D]">
+            <span className="px-2 py-0.5 rounded-md text-[11px] font-semibold bg-[#101010] text-[#858585] border border-[#2D2D2D]">
               Par Benchmark = 50.0 / 100
             </span>
           </div>
         </div>
 
         {/* Prominent Approved CricImpact Score */}
-        <div className="bg-[#101010] p-6 rounded-xl border border-[#2D2D2D] flex flex-col sm:flex-row sm:items-center justify-between gap-6">
+        <div className="bg-[#101010] p-4 sm:p-5 rounded-xl border border-[#2D2D2D] flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
-            <span className="text-[11px] font-semibold text-[#858585] tracking-wider uppercase block">
+            <span className="text-[10.5px] font-semibold text-[#858585] tracking-wider uppercase block">
               Final Approved CricImpact Score
             </span>
-            <div className="mt-2 flex items-baseline gap-2">
-              <span className="font-mono text-5xl sm:text-6xl font-bold text-[#D4AF57] tabular-nums leading-none">
+            <div className="mt-1.5 flex items-baseline gap-1.5">
+              <span className="font-mono text-[26px] sm:text-[32px] font-bold text-[#D4AF57] tabular-nums leading-none">
                 {contributionScore !== null && contributionScore !== undefined
                   ? Number(contributionScore).toFixed(1)
                   : '—'}
               </span>
-              <span className="text-xl font-normal text-[#858585]">/ 100</span>
+              <span className="text-sm font-normal text-[#858585]">/ 100</span>
             </div>
-            <div className="mt-2 text-xs text-[#858585] flex items-center gap-2">
+            <div className="mt-1.5 text-[11.5px] text-[#858585] flex items-center gap-2">
               <span>Par = 50.0</span>
               <span className="text-[#2D2D2D]">•</span>
               <span className={`font-mono font-semibold ${
@@ -563,88 +563,88 @@ export default function MatchDetail() {
           </div>
 
           {matchData.verdict && (
-            <div className="sm:max-w-md p-4 rounded-lg bg-[#152718] border border-[#2A4D30] text-xs sm:text-[13px] text-[#F2F2F2]">
-              <strong className="text-[#5A9E60] block mb-1">Model Analytical Verdict:</strong>
+            <div className="sm:max-w-md p-3 rounded-lg bg-[#152718] border border-[#2A4D30] text-xs text-[#F2F2F2]">
+              <strong className="text-[#5A9E60] block mb-0.5">Model Analytical Verdict:</strong>
               {matchData.verdict}
             </div>
           )}
         </div>
 
         {/* 50/50 Architecture Synthesis */}
-        <div className="bg-[#101010] p-5 rounded-xl border border-[#2D2D2D] space-y-4">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-[#2D2D2D] pb-3">
-            <div className="flex items-center gap-2">
-              <Scale className="w-4 h-4 text-[#D4AF57]" />
-              <h3 className="text-xs font-semibold text-[#F2F2F2] uppercase tracking-wider">
+        <div className="bg-[#101010] p-4 rounded-xl border border-[#2D2D2D] space-y-3">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 border-b border-[#2D2D2D] pb-2.5">
+            <div className="flex items-center gap-1.5">
+              <Scale className="w-3.5 h-3.5 text-[#D4AF57]" />
+              <h3 className="text-[11.5px] font-semibold text-[#F2F2F2] uppercase tracking-wider">
                 50/50 Synthesis Architecture
               </h3>
             </div>
-            <span className="font-mono text-xs text-[#D4AF57] bg-[#161616] px-2.5 py-1 rounded border border-[#2D2D2D]">
+            <span className="font-mono text-[11px] text-[#D4AF57] bg-[#161616] px-2 py-0.5 rounded border border-[#2D2D2D]">
               Formula: 0.50 × Adjusted P2 + 0.50 × Adjusted P3
             </span>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
             {/* Adjusted P2 Component */}
-            <div className="bg-[#161616] p-4 rounded-lg border border-[#2D2D2D] space-y-1.5">
-              <span className="text-[11px] font-semibold text-[#858585] block">
+            <div className="bg-[#161616] p-3 rounded-lg border border-[#2D2D2D] space-y-1">
+              <span className="text-[10.5px] font-semibold text-[#858585] block">
                 Adjusted P2 (Execution)
               </span>
               <div className="flex items-baseline gap-1">
-                <span className="font-mono text-2xl font-bold text-[#F2F2F2] tabular-nums">
+                <span className="font-mono text-xl font-bold text-[#F2F2F2] tabular-nums">
                   {adjP2 !== null && adjP2 !== undefined ? Number(adjP2).toFixed(1) : '—'}
                 </span>
                 <span className="text-xs text-[#858585]">/ 100</span>
               </div>
-              <p className="text-[11px] text-[#858585]">
+              <p className="text-[10.5px] text-[#858585]">
                 Raw P2: <span className="font-mono text-[#F2F2F2]">{p2Val !== null ? Number(p2Val).toFixed(1) : '—'}</span> (50% weight)
               </p>
-              <div className="pt-2 border-t border-[#2D2D2D] text-[11px] font-mono text-[#D4AF57]">
+              <div className="pt-1.5 border-t border-[#2D2D2D] text-[10.5px] font-mono text-[#D4AF57]">
                 0.50 × {adjP2 !== null ? Number(adjP2).toFixed(1) : '0.0'} = {adjP2 !== null ? (0.5 * Number(adjP2)).toFixed(1) : '0.0'}
               </div>
             </div>
 
             {/* Adjusted P3 Component */}
-            <div className="bg-[#161616] p-4 rounded-lg border border-[#2D2D2D] space-y-1.5">
-              <span className="text-[11px] font-semibold text-[#858585] block">
+            <div className="bg-[#161616] p-3 rounded-lg border border-[#2D2D2D] space-y-1">
+              <span className="text-[10.5px] font-semibold text-[#858585] block">
                 Adjusted P3 (Team Contribution)
               </span>
               <div className="flex items-baseline gap-1">
-                <span className="font-mono text-2xl font-bold text-[#F2F2F2] tabular-nums">
+                <span className="font-mono text-xl font-bold text-[#F2F2F2] tabular-nums">
                   {adjP3 !== null && adjP3 !== undefined ? Number(adjP3).toFixed(1) : '—'}
                 </span>
                 <span className="text-xs text-[#858585]">/ 100</span>
               </div>
-              <p className="text-[11px] text-[#858585]">
+              <p className="text-[10.5px] text-[#858585]">
                 Raw P3: <span className="font-mono text-[#F2F2F2]">{p3Val !== null ? Number(p3Val).toFixed(1) : '—'}</span> (50% weight)
               </p>
-              <div className="pt-2 border-t border-[#2D2D2D] text-[11px] font-mono text-[#D4AF57]">
+              <div className="pt-1.5 border-t border-[#2D2D2D] text-[10.5px] font-mono text-[#D4AF57]">
                 0.50 × {adjP3 !== null ? Number(adjP3).toFixed(1) : '0.0'} = {adjP3 !== null ? (0.5 * Number(adjP3)).toFixed(1) : '0.0'}
               </div>
             </div>
 
             {/* Context Leverage Scaling */}
-            <div className="bg-[#161616] p-4 rounded-lg border border-[#2D2D2D] space-y-1.5">
-              <span className="text-[11px] font-semibold text-[#858585] block">
+            <div className="bg-[#161616] p-3 rounded-lg border border-[#2D2D2D] space-y-1">
+              <span className="text-[10.5px] font-semibold text-[#858585] block">
                 Context Leverage λ(P1)
               </span>
               <div className="flex items-baseline gap-1">
-                <span className="font-mono text-2xl font-bold text-[#D4AF57] tabular-nums">
+                <span className="font-mono text-xl font-bold text-[#D4AF57] tabular-nums">
                   {Number(levVal).toFixed(2)}×
                 </span>
               </div>
-              <p className="text-[11px] text-[#858585]">
+              <p className="text-[10.5px] text-[#858585]">
                 Context P1: <span className="font-mono text-[#F2F2F2]">{p1Val !== null ? Number(p1Val).toFixed(1) : '—'}</span> / 100
               </p>
-              <div className="pt-2 border-t border-[#2D2D2D] text-[11px] text-[#858585]">
+              <div className="pt-1.5 border-t border-[#2D2D2D] text-[10.5px] text-[#858585]">
                 Scales deviations from par (50.0) based on situation pressure
               </div>
             </div>
           </div>
 
           {/* Concise Overall Explanation Bullets */}
-          <div className="pt-3 border-t border-[#2D2D2D]">
-            <ul className="space-y-2 text-xs sm:text-[13px] text-[#F2F2F2] list-disc list-inside leading-relaxed">
+          <div className="pt-2.5 border-t border-[#2D2D2D]">
+            <ul className="space-y-1.5 text-xs sm:text-[12.5px] text-[#F2F2F2] list-disc list-inside leading-relaxed">
               <li>
                 The final rating combines individual execution (<strong className="text-[#F2F2F2] font-mono">Adjusted P2: {adjP2 !== null ? Number(adjP2).toFixed(1) : '—'} / 100</strong>) and assessed team-state impact (<strong className="text-[#F2F2F2] font-mono">Adjusted P3: {adjP3 !== null ? Number(adjP3).toFixed(1) : '—'} / 100</strong>) using the existing 50/50 weighting.
               </li>
