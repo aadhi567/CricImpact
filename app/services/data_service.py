@@ -1407,6 +1407,99 @@ class DataService:
             })
         return items
 
+    def _compute_batter_phase_and_dot_metrics(
+        self,
+        player_name: str,
+        season_str: str,
+        norm_comp: str,
+        c_sub: pd.DataFrame,
+        delivs_sub_ipl: Optional[pd.DataFrame] = None,
+    ) -> Dict[str, Any]:
+        """
+        Calculates dot-ball metrics and phase-wise strike rates for a batter
+        from delivery data, adhering to strict cricket definitions:
+        - Legal balls: wides == 0 (wides are bowler extras, not balls faced by batter).
+          No-balls count as legal balls faced by the batter.
+        - Dot ball: legal ball faced with 0 runs off the bat (batter_runs == 0).
+          Byes/leg-byes/penalties are team extras, so batter_runs == 0 constitutes a dot ball for the batter.
+        - Powerplay: Overs 1–6 (delivery over 0–5).
+        - Middle Overs: Overs 7–16 (delivery over 6–15).
+        - Death Overs: Overs 17–20 (delivery over 16–19).
+        - Phase strike rate: (runs scored off bat in phase / legal balls faced in phase) * 100.
+        """
+        legal_balls: List[Dict[str, Any]] = []
+
+        if norm_comp == "ipl":
+            if delivs_sub_ipl is not None and not delivs_sub_ipl.empty:
+                p_delivs = delivs_sub_ipl[delivs_sub_ipl["batter"].str.lower() == player_name.lower()]
+                if not p_delivs.empty:
+                    p_legal = p_delivs[p_delivs["wides"] == 0]
+                    if not p_legal.empty:
+                        legal_balls = p_legal[["over", "ball", "batter_runs"]].to_dict("records")
+        elif norm_comp == "t20i":
+            if not c_sub.empty:
+                player_mids = c_sub["match_id"].astype(str).unique()
+                for mid in player_mids:
+                    match_delivs = self._get_t20i_match_deliveries(mid)
+                    for d in match_delivs:
+                        if d.get("batter", "").lower() == player_name.lower() and int(d.get("wides", 0)) == 0:
+                            legal_balls.append({
+                                "over": int(d.get("over", 0)),
+                                "ball": int(d.get("ball", 1)),
+                                "batter_runs": int(d.get("batter_runs", 0)),
+                            })
+
+        if legal_balls:
+            total_legal = len(legal_balls)
+            dot_balls = sum(1 for d in legal_balls if int(d.get("batter_runs", 0)) == 0)
+            dot_pct = round(float(dot_balls) / total_legal * 100.0, 1) if total_legal > 0 else None
+
+            # Phase split
+            pp_balls = [d for d in legal_balls if int(d.get("over", 0)) < 6]
+            pp_runs = sum(int(d.get("batter_runs", 0)) for d in pp_balls)
+            pp_sr = round(float(pp_runs) / len(pp_balls) * 100.0, 1) if pp_balls else None
+
+            mid_balls = [d for d in legal_balls if 6 <= int(d.get("over", 0)) < 16]
+            mid_runs = sum(int(d.get("batter_runs", 0)) for d in mid_balls)
+            mid_sr = round(float(mid_runs) / len(mid_balls) * 100.0, 1) if mid_balls else None
+
+            death_balls = [d for d in legal_balls if int(d.get("over", 0)) >= 16]
+            death_runs = sum(int(d.get("batter_runs", 0)) for d in death_balls)
+            death_sr = round(float(death_runs) / len(death_balls) * 100.0, 1) if death_balls else None
+
+            return {
+                "legal_balls": total_legal,
+                "dot_balls": dot_balls,
+                "dot_ball_percentage": dot_pct,
+                "powerplay_strike_rate": pp_sr,
+                "middle_over_strike_rate": mid_sr,
+                "death_over_strike_rate": death_sr,
+            }
+
+        # Fallback to match contributions if delivery records are not available
+        if not c_sub.empty and "dot_balls" in c_sub.columns and "balls_faced" in c_sub.columns:
+            tot_dots = clean_int(c_sub["dot_balls"].sum())
+            tot_balls = clean_int(c_sub["balls_faced"].sum())
+            if tot_balls and tot_balls > 0:
+                dot_pct = round(float(tot_dots or 0) / tot_balls * 100.0, 1)
+                return {
+                    "legal_balls": tot_balls,
+                    "dot_balls": tot_dots,
+                    "dot_ball_percentage": dot_pct,
+                    "powerplay_strike_rate": None,
+                    "middle_over_strike_rate": None,
+                    "death_over_strike_rate": None,
+                }
+
+        return {
+            "legal_balls": 0,
+            "dot_balls": None,
+            "dot_ball_percentage": None,
+            "powerplay_strike_rate": None,
+            "middle_over_strike_rate": None,
+            "death_over_strike_rate": None,
+        }
+
     def compare_players(
         self,
         season: str,
@@ -1457,6 +1550,21 @@ class DataService:
 
         compared_list = []
         contrib_df = self.get_contributions_df(competition)
+
+        # Slice IPL deliveries once for the comparison season
+        delivs_sub_ipl = None
+        if norm_comp == "ipl":
+            df_ipl = self._get_ipl_deliveries_df()
+            if df_ipl is not None and not df_ipl.empty:
+                if is_dynamic and m_ids is not None:
+                    delivs_sub_ipl = df_ipl[df_ipl["match_id"].astype(str).isin(m_ids)]
+                else:
+                    delivs_sub_ipl = df_ipl[df_ipl["season"].astype(str) == season_str]
+                    if delivs_sub_ipl.empty:
+                        alias_season = "2022/23" if season_str == "2022" else ("2022" if season_str == "2022/23" else None)
+                        if alias_season:
+                            delivs_sub_ipl = df_ipl[df_ipl["season"].astype(str) == alias_season]
+
         for p_name in unique_players:
             p_sub = df_season[df_season["player"].str.lower() == p_name.lower()]
             if p_sub.empty:
@@ -1510,12 +1618,37 @@ class DataService:
                 adj_p2 = clean_num(c_sub["adjusted_p2"].mean(), 1) if "adjusted_p2" in c_sub.columns else None
                 adj_p3 = clean_num(c_sub["adjusted_p3"].mean(), 1) if "adjusted_p3" in c_sub.columns else None
 
+            # Calculate dot ball metrics and phase-wise strike rates from delivery data
+            if not is_dnb:
+                dot_metrics = self._compute_batter_phase_and_dot_metrics(
+                    player_name=p_name,
+                    season_str=season_str,
+                    norm_comp=norm_comp,
+                    c_sub=c_sub,
+                    delivs_sub_ipl=delivs_sub_ipl,
+                )
+            else:
+                dot_metrics = {
+                    "legal_balls": 0,
+                    "dot_balls": None,
+                    "dot_ball_percentage": None,
+                    "powerplay_strike_rate": None,
+                    "middle_over_strike_rate": None,
+                    "death_over_strike_rate": None,
+                }
+
             # Metrics according to View A vs View B with strict DNB null preservation
             if is_dnb:
                 score = None
                 pos_contrib = None
                 team_share = None
                 contrib_opp = None
+                first_inns = None
+                chase_contrib = None
+                pp_contrib = None
+                mid_contrib = None
+                death_contrib = None
+                press_contrib = None
             else:
                 if view == "view_a":
                     score = clean_num(row.get("average_contribution_score"), 2)
@@ -1527,6 +1660,13 @@ class DataService:
                     team_share = clean_num(row.get("qualified_team_contribution_share"), 2)
                 contrib_opp = clean_num(row.get("contribution_per_batting_opportunity"), 4)
 
+                first_inns = clean_num(row.get("first_innings_contribution"), 2)
+                chase_contrib = clean_num(row.get("chase_contribution"), 2)
+                pp_contrib = clean_num(row.get("powerplay_contribution"), 2)
+                mid_contrib = clean_num(row.get("middle_over_contribution"), 2)
+                death_contrib = clean_num(row.get("death_over_contribution"), 2)
+                press_contrib = clean_num(row.get("high_pressure_contribution"), 2)
+
             compared_list.append({
                 "player": str(row["player"]),
                 "season": season_str,
@@ -1534,6 +1674,8 @@ class DataService:
                 "actual_runs": actual_runs,
                 "balls_faced": balls_faced,
                 "strike_rate": strike_rate,
+                "dot_balls": dot_metrics["dot_balls"],
+                "dot_ball_percentage": dot_metrics["dot_ball_percentage"],
                 "batting_innings": batting_innings,
                 "did_not_bat_matches": clean_int(row.get("did_not_bat_matches")),
                 "matches_played": clean_int(row.get("matches_played")),
@@ -1542,6 +1684,15 @@ class DataService:
                 "total_positive_raw_contribution": pos_contrib,
                 "season_team_contribution_share": team_share,
                 "contribution_per_batting_opportunity": contrib_opp,
+                "first_innings_contribution": first_inns,
+                "chase_contribution": chase_contrib,
+                "powerplay_contribution": pp_contrib,
+                "powerplay_strike_rate": dot_metrics["powerplay_strike_rate"],
+                "middle_over_contribution": mid_contrib,
+                "middle_over_strike_rate": dot_metrics["middle_over_strike_rate"],
+                "death_over_contribution": death_contrib,
+                "death_over_strike_rate": dot_metrics["death_over_strike_rate"],
+                "high_pressure_contribution": press_contrib,
                 "pillars": {
                     "pillar1_match_context": p1,
                     "p1_leverage": p1_lev,
@@ -1552,12 +1703,17 @@ class DataService:
                     "pillar4_counterfactual_value": p4,
                 },
                 "context_breakdown": {
-                    "first_innings_contribution": clean_num(row.get("first_innings_contribution"), 2),
-                    "chase_contribution": clean_num(row.get("chase_contribution"), 2),
-                    "powerplay_contribution": clean_num(row.get("powerplay_contribution"), 2),
-                    "middle_over_contribution": clean_num(row.get("middle_over_contribution"), 2),
-                    "death_over_contribution": clean_num(row.get("death_over_contribution"), 2),
-                    "high_pressure_contribution": clean_num(row.get("high_pressure_contribution"), 2),
+                    "first_innings_contribution": first_inns,
+                    "chase_contribution": chase_contrib,
+                    "powerplay_contribution": pp_contrib,
+                    "powerplay_strike_rate": dot_metrics["powerplay_strike_rate"],
+                    "middle_over_contribution": mid_contrib,
+                    "middle_over_strike_rate": dot_metrics["middle_over_strike_rate"],
+                    "death_over_contribution": death_contrib,
+                    "death_over_strike_rate": dot_metrics["death_over_strike_rate"],
+                    "high_pressure_contribution": press_contrib,
+                    "dot_balls": dot_metrics["dot_balls"],
+                    "dot_ball_percentage": dot_metrics["dot_ball_percentage"],
                 },
                 "is_dnb": is_dnb,
             })

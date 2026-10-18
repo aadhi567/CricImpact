@@ -13,6 +13,21 @@ import Breadcrumbs from '../components/Breadcrumbs';
 import { getSeasons, getTeams, getPlayers, comparePlayers } from '../services/api';
 import { useCompetition, TOURNAMENT_TYPES, resolveDefaultSeason } from '../context/CompetitionContext';
 
+/**
+ * Safely formats numeric metrics, guarding against undefined, null, NaN, and Infinity.
+ * Distinguishes missing data ('N/A' or '—') from genuine numeric zero (e.g. 0.0).
+ */
+const formatMetric = (val, decimals = 1, suffix = '', fallback = 'N/A') => {
+  if (val === null || val === undefined || val === '') {
+    return fallback;
+  }
+  const n = Number(val);
+  if (Number.isNaN(n) || !Number.isFinite(n)) {
+    return fallback;
+  }
+  return `${n.toFixed(decimals)}${suffix}`;
+};
+
 export default function PlayerComparison() {
   const [searchParams, setSearchParams] = useSearchParams();
   const {
@@ -714,9 +729,26 @@ export default function PlayerComparison() {
                     </td>
                     {playersList.map((p) => (
                       <td key={p.player} className="py-1.5 sm:py-2 px-3 text-center font-sans text-[#F2F2F2] tabular-nums">
-                        {p.strike_rate !== null ? p.strike_rate.toFixed(1) : '—'}
+                        {formatMetric(p.strike_rate, 1, '', '—')}
                       </td>
                     ))}
+                  </tr>
+                  <tr className="hover:bg-[#1A1A1A] transition-colors">
+                    <td className="py-1.5 sm:py-2 px-3 font-semibold text-[#B8B8B8] sticky left-0 bg-[#161616]">
+                      Dot-Ball Percentage
+                    </td>
+                    {playersList.map((p) => {
+                      const dotPct = p.dot_ball_percentage ?? p.context_breakdown?.dot_ball_percentage;
+                      return (
+                        <td
+                          key={p.player}
+                          className="py-1.5 sm:py-2 px-3 text-center font-sans text-[#F2F2F2] tabular-nums"
+                          title={dotPct == null ? "No legal deliveries faced or DNB" : `${p.dot_balls ?? '—'} dot balls`}
+                        >
+                          {formatMetric(dotPct, 1, '%', 'N/A')}
+                        </td>
+                      );
+                    })}
                   </tr>
                   <tr className="hover:bg-[#1A1A1A] transition-colors">
                     <td className="py-1.5 sm:py-2 px-3 font-semibold text-[#B8B8B8] sticky left-0 bg-[#161616]">
@@ -877,61 +909,154 @@ export default function PlayerComparison() {
                     <td className="py-1.5 sm:py-2 px-3 font-semibold text-[#B8B8B8] sticky left-0 bg-[#161616]">
                       1st Innings Contribution
                     </td>
-                    {playersList.map((p) => (
-                      <td key={p.player} className="py-1.5 sm:py-2 px-3 text-center font-sans text-[#F2F2F2] tabular-nums">
-                        {p.first_innings_contribution !== null ? Number(p.first_innings_contribution).toFixed(1) : '—'}
-                      </td>
-                    ))}
+                    {playersList.map((p) => {
+                      const val = p.first_innings_contribution ?? p.context_breakdown?.first_innings_contribution;
+                      return (
+                        <td
+                          key={p.player}
+                          className="py-1.5 sm:py-2 px-3 text-center font-sans text-[#F2F2F2] tabular-nums"
+                          title={val == null ? "No 1st innings batting data for this batter" : undefined}
+                        >
+                          {formatMetric(val, 1, '', 'N/A')}
+                        </td>
+                      );
+                    })}
                   </tr>
                   <tr className="hover:bg-[#1A1A1A] transition-colors">
                     <td className="py-1.5 sm:py-2 px-3 font-semibold text-[#B8B8B8] sticky left-0 bg-[#161616]">
                       Chase (2nd Innings) Contribution
                     </td>
-                    {playersList.map((p) => (
-                      <td key={p.player} className="py-1.5 sm:py-2 px-3 text-center font-sans text-[#F2F2F2] tabular-nums">
-                        {p.chase_contribution !== null ? Number(p.chase_contribution).toFixed(1) : '—'}
-                      </td>
-                    ))}
+                    {playersList.map((p) => {
+                      const val = p.chase_contribution ?? p.context_breakdown?.chase_contribution;
+                      return (
+                        <td
+                          key={p.player}
+                          className="py-1.5 sm:py-2 px-3 text-center font-sans text-[#F2F2F2] tabular-nums"
+                          title={val == null ? "No chase/2nd innings batting data for this batter" : undefined}
+                        >
+                          {formatMetric(val, 1, '', 'N/A')}
+                        </td>
+                      );
+                    })}
                   </tr>
                   <tr className="hover:bg-[#1A1A1A] transition-colors">
                     <td className="py-1.5 sm:py-2 px-3 font-semibold text-[#B8B8B8] sticky left-0 bg-[#161616]">
-                      Powerplay (0–6)
+                      Powerplay (Overs 1–6) Contribution
                     </td>
-                    {playersList.map((p) => (
-                      <td key={p.player} className="py-1.5 sm:py-2 px-3 text-center font-sans text-[#F2F2F2] tabular-nums">
-                        {p.powerplay_contribution !== null ? Number(p.powerplay_contribution).toFixed(1) : '—'}
-                      </td>
-                    ))}
+                    {playersList.map((p) => {
+                      const val = p.powerplay_contribution ?? p.context_breakdown?.powerplay_contribution;
+                      return (
+                        <td
+                          key={p.player}
+                          className="py-1.5 sm:py-2 px-3 text-center font-sans text-[#F2F2F2] tabular-nums"
+                          title={val == null ? "No qualifying innings in Powerplay" : undefined}
+                        >
+                          {formatMetric(val, 1, '', 'N/A')}
+                        </td>
+                      );
+                    })}
+                  </tr>
+                  <tr className="hover:bg-[#1A1A1A] transition-colors">
+                    <td className="py-1.5 sm:py-2 px-3 font-medium text-[#858585] sticky left-0 bg-[#161616] pl-6 text-xs sm:text-[13px]">
+                      ↳ Powerplay Strike Rate
+                    </td>
+                    {playersList.map((p) => {
+                      const val = p.powerplay_strike_rate ?? p.context_breakdown?.powerplay_strike_rate;
+                      return (
+                        <td
+                          key={p.player}
+                          className="py-1.5 sm:py-2 px-3 text-center font-sans text-[#D4AF57] tabular-nums"
+                          title={val == null ? "No legal deliveries faced in Powerplay" : undefined}
+                        >
+                          {formatMetric(val, 1, '', 'N/A')}
+                        </td>
+                      );
+                    })}
                   </tr>
                   <tr className="hover:bg-[#1A1A1A] transition-colors">
                     <td className="py-1.5 sm:py-2 px-3 font-semibold text-[#B8B8B8] sticky left-0 bg-[#161616]">
-                      Middle Overs (6–16)
+                      Middle Overs (Overs 7–16) Contribution
                     </td>
-                    {playersList.map((p) => (
-                      <td key={p.player} className="py-1.5 sm:py-2 px-3 text-center font-sans text-[#F2F2F2] tabular-nums">
-                        {p.middle_over_contribution !== null ? Number(p.middle_over_contribution).toFixed(1) : '—'}
-                      </td>
-                    ))}
+                    {playersList.map((p) => {
+                      const val = p.middle_over_contribution ?? p.context_breakdown?.middle_over_contribution;
+                      return (
+                        <td
+                          key={p.player}
+                          className="py-1.5 sm:py-2 px-3 text-center font-sans text-[#F2F2F2] tabular-nums"
+                          title={val == null ? "No qualifying innings in Middle Overs" : undefined}
+                        >
+                          {formatMetric(val, 1, '', 'N/A')}
+                        </td>
+                      );
+                    })}
+                  </tr>
+                  <tr className="hover:bg-[#1A1A1A] transition-colors">
+                    <td className="py-1.5 sm:py-2 px-3 font-medium text-[#858585] sticky left-0 bg-[#161616] pl-6 text-xs sm:text-[13px]">
+                      ↳ Middle Overs Strike Rate
+                    </td>
+                    {playersList.map((p) => {
+                      const val = p.middle_over_strike_rate ?? p.context_breakdown?.middle_over_strike_rate;
+                      return (
+                        <td
+                          key={p.player}
+                          className="py-1.5 sm:py-2 px-3 text-center font-sans text-[#D4AF57] tabular-nums"
+                          title={val == null ? "No legal deliveries faced in Middle Overs" : undefined}
+                        >
+                          {formatMetric(val, 1, '', 'N/A')}
+                        </td>
+                      );
+                    })}
                   </tr>
                   <tr className="hover:bg-[#1A1A1A] transition-colors">
                     <td className="py-1.5 sm:py-2 px-3 font-semibold text-[#B8B8B8] sticky left-0 bg-[#161616]">
-                      Death Overs (16–20)
+                      Death Overs (Overs 17–20) Contribution
                     </td>
-                    {playersList.map((p) => (
-                      <td key={p.player} className="py-1.5 sm:py-2 px-3 text-center font-sans text-[#F2F2F2] tabular-nums">
-                        {p.death_over_contribution !== null ? Number(p.death_over_contribution).toFixed(1) : '—'}
-                      </td>
-                    ))}
+                    {playersList.map((p) => {
+                      const val = p.death_over_contribution ?? p.context_breakdown?.death_over_contribution;
+                      return (
+                        <td
+                          key={p.player}
+                          className="py-1.5 sm:py-2 px-3 text-center font-sans text-[#F2F2F2] tabular-nums"
+                          title={val == null ? "No qualifying innings in Death Overs" : undefined}
+                        >
+                          {formatMetric(val, 1, '', 'N/A')}
+                        </td>
+                      );
+                    })}
+                  </tr>
+                  <tr className="hover:bg-[#1A1A1A] transition-colors">
+                    <td className="py-1.5 sm:py-2 px-3 font-medium text-[#858585] sticky left-0 bg-[#161616] pl-6 text-xs sm:text-[13px]">
+                      ↳ Death Overs Strike Rate
+                    </td>
+                    {playersList.map((p) => {
+                      const val = p.death_over_strike_rate ?? p.context_breakdown?.death_over_strike_rate;
+                      return (
+                        <td
+                          key={p.player}
+                          className="py-1.5 sm:py-2 px-3 text-center font-sans text-[#D4AF57] tabular-nums"
+                          title={val == null ? "No legal deliveries faced in Death Overs" : undefined}
+                        >
+                          {formatMetric(val, 1, '', 'N/A')}
+                        </td>
+                      );
+                    })}
                   </tr>
                   <tr className="hover:bg-[#1A1A1A] transition-colors">
                     <td className="py-1.5 sm:py-2 px-3 font-semibold text-[#B8B8B8] sticky left-0 bg-[#161616]">
-                      High Pressure
+                      High Pressure Contribution
                     </td>
-                    {playersList.map((p) => (
-                      <td key={p.player} className="py-1.5 sm:py-2 px-3 text-center font-sans text-[#F2F2F2] tabular-nums">
-                        {p.high_pressure_contribution !== null ? Number(p.high_pressure_contribution).toFixed(1) : '—'}
-                      </td>
-                    ))}
+                    {playersList.map((p) => {
+                      const val = p.high_pressure_contribution ?? p.context_breakdown?.high_pressure_contribution;
+                      return (
+                        <td
+                          key={p.player}
+                          className="py-1.5 sm:py-2 px-3 text-center font-sans text-[#F2F2F2] tabular-nums"
+                          title={val == null ? "No high-pressure situations faced (leverage < 60)" : undefined}
+                        >
+                          {formatMetric(val, 1, '', 'N/A')}
+                        </td>
+                      );
+                    })}
                   </tr>
                 </tbody>
               </table>

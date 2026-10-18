@@ -228,4 +228,154 @@ def test_team_share_calculated_from_existing_season_aggregation():
         assert rahul["season_team_contribution_share"] == 9.72
 
 
+def test_comparison_phase_metrics_top_level_and_no_nan():
+    """
+    Regression test for Contextual Phase Breakdown NaN issue.
+    Verifies that all 6 phase metrics exist at top level AND inside context_breakdown,
+    and that none are NaN or undefined.
+    """
+    res = client.get("/api/contribution/compare?season=2016&players=V%20Kohli,AB%20de%20Villiers")
+    assert res.status_code == 200
+    data = res.json()
+    assert len(data["players"]) == 2
+
+    for p in data["players"]:
+        for field in [
+            "first_innings_contribution",
+            "chase_contribution",
+            "powerplay_contribution",
+            "middle_over_contribution",
+            "death_over_contribution",
+            "high_pressure_contribution",
+        ]:
+            assert field in p, f"Missing top-level field {field}"
+            assert field in p["context_breakdown"], f"Missing context_breakdown field {field}"
+            # Both top-level and context_breakdown must match
+            assert p[field] == p["context_breakdown"][field]
+            # Ensure valid numeric value (neither None nor NaN for active qualified batters)
+            val = p[field]
+            assert val is not None, f"Expected numeric value for {field} on {p['player']}"
+            assert isinstance(val, (int, float))
+            assert str(val).lower() != "nan"
+
+    kohli = [p for p in data["players"] if p["player"] == "V Kohli"][0]
+    ab = [p for p in data["players"] if p["player"] == "AB de Villiers"][0]
+    assert kohli["first_innings_contribution"] == 82.61
+    assert kohli["chase_contribution"] == 66.72
+    assert ab["first_innings_contribution"] == 65.41
+    assert ab["chase_contribution"] == 56.12
+
+
+def test_comparison_dot_ball_percentage_and_extras_handling():
+    """
+    Regression test for dot-ball percentage:
+    Dot-ball percentage = (legal balls with zero runs off bat / total legal balls faced) * 100
+    Verifies:
+    1. Wides are excluded from legal balls faced and dot balls.
+    2. Zero runs off the bat counts as a dot ball even if byes/leg-byes occurred.
+    3. Dot-ball percentage is exposed at top-level and inside context_breakdown.
+    4. Numeric value is bounded between 0.0 and 100.0.
+    """
+    res = client.get("/api/contribution/compare?season=2016&players=V%20Kohli,AB%20de%20Villiers")
+    assert res.status_code == 200
+    data = res.json()
+
+    kohli = [p for p in data["players"] if p["player"] == "V Kohli"][0]
+    ab = [p for p in data["players"] if p["player"] == "AB de Villiers"][0]
+
+    assert kohli["dot_balls"] == 169
+    assert kohli["dot_ball_percentage"] == 26.4
+    assert kohli["dot_ball_percentage"] == kohli["context_breakdown"]["dot_ball_percentage"]
+    assert 0.0 <= kohli["dot_ball_percentage"] <= 100.0
+
+    assert ab["dot_balls"] == 104
+    assert ab["dot_ball_percentage"] == 25.6
+    assert ab["dot_ball_percentage"] == ab["context_breakdown"]["dot_ball_percentage"]
+    assert 0.0 <= ab["dot_ball_percentage"] <= 100.0
+
+
+def test_comparison_phase_wise_strike_rates_and_boundaries():
+    """
+    Regression test for phase-wise strike rates and boundaries:
+    Powerplay: Overs 1–6 (delivery over 0–5)
+    Middle Overs: Overs 7–16 (delivery over 6–15)
+    Death Overs: Overs 17–20 (delivery over 16–19)
+    SR = runs scored in phase / legal balls in phase * 100
+    """
+    res = client.get("/api/contribution/compare?season=2016&players=V%20Kohli,AB%20de%20Villiers")
+    assert res.status_code == 200
+    data = res.json()
+
+    kohli = [p for p in data["players"] if p["player"] == "V Kohli"][0]
+    ab = [p for p in data["players"] if p["player"] == "AB de Villiers"][0]
+
+    # Kohli 2016 phase strike rates
+    assert kohli["powerplay_strike_rate"] == 120.9
+    assert kohli["middle_over_strike_rate"] == 150.8
+    assert kohli["death_over_strike_rate"] == 241.2
+
+    assert kohli["powerplay_strike_rate"] == kohli["context_breakdown"]["powerplay_strike_rate"]
+    assert kohli["middle_over_strike_rate"] == kohli["context_breakdown"]["middle_over_strike_rate"]
+    assert kohli["death_over_strike_rate"] == kohli["context_breakdown"]["death_over_strike_rate"]
+
+    # AB de Villiers 2016 phase strike rates
+    assert ab["powerplay_strike_rate"] == 147.4
+    assert ab["middle_over_strike_rate"] == 168.7
+    assert ab["death_over_strike_rate"] == 215.6
+
+
+def test_comparison_dnb_and_missing_phase_values_vs_genuine_zero():
+    """
+    Verifies that:
+    1. DNB players have None for all phase contributions, dot balls, and phase strike rates.
+    2. DNB players do not become artificial zero-contribution batting innings.
+    3. Missing data is represented as None (null in JSON), distinguishing it from genuine 0.
+    """
+    res = client.get("/api/contribution/compare?season=2016&players=V%20Kohli,YS%20Chahal")
+    assert res.status_code == 200
+    data = res.json()
+    chahal = [p for p in data["players"] if p["player"] == "YS Chahal"][0]
+
+    assert chahal["is_dnb"] is True
+    assert chahal["batting_innings"] == 0
+    assert chahal["dot_balls"] is None
+    assert chahal["dot_ball_percentage"] is None
+    assert chahal["powerplay_strike_rate"] is None
+    assert chahal["middle_over_strike_rate"] is None
+    assert chahal["death_over_strike_rate"] is None
+    assert chahal["first_innings_contribution"] is None
+    assert chahal["chase_contribution"] is None
+    assert chahal["powerplay_contribution"] is None
+    assert chahal["middle_over_contribution"] is None
+    assert chahal["death_over_contribution"] is None
+    assert chahal["high_pressure_contribution"] is None
+
+
+def test_comparison_t20i_multi_batter_metrics():
+    """
+    Verifies that T20I comparison (e.g. 2022/23 V Kohli, SA Yadav) correctly calculates
+    dot-ball percentage, phase strike rates, and phase contributions from match deliveries.
+    """
+    res = client.get("/api/contribution/compare?season=2022/23&players=V%20Kohli,SA%20Yadav&competition=t20i")
+    assert res.status_code == 200
+    data = res.json()
+    assert len(data["players"]) == 2
+
+    kohli = [p for p in data["players"] if p["player"] == "V Kohli"][0]
+    surya = [p for p in data["players"] if p["player"] == "SA Yadav"][0]
+
+    assert kohli["dot_balls"] == 74
+    assert kohli["dot_ball_percentage"] == 29.1
+    assert kohli["powerplay_strike_rate"] == 89.8
+    assert kohli["middle_over_strike_rate"] == 125.0
+    assert kohli["death_over_strike_rate"] == 225.5
+
+    assert surya["dot_balls"] == 127
+    assert surya["dot_ball_percentage"] == 30.0
+    assert surya["powerplay_strike_rate"] == 105.4
+    assert surya["middle_over_strike_rate"] == 173.9
+    assert surya["death_over_strike_rate"] == 236.1
+
+
+
 
