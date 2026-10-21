@@ -12,6 +12,7 @@ import ContributionBreakdown from '../components/ContributionBreakdown';
 import MatchContributionTable from '../components/MatchContributionTable';
 import MatchScoreTimeline from '../components/Charts/MatchScoreTimeline';
 import Breadcrumbs from '../components/Breadcrumbs';
+import PlayerPortrait from '../components/PlayerPortrait';
 import { getPlayerSeason, getPlayerMatches, getSeasons } from '../services/api';
 import { useCompetition, resolveDefaultSeason } from '../context/CompetitionContext';
 
@@ -122,7 +123,14 @@ export default function PlayerAnalysis() {
 
       {/* Header Banner */}
       <div className="bg-[#161616] rounded-xl p-3.5 sm:p-4 md:p-5 border border-[#2D2D2D] shadow-xs flex flex-col md:flex-row md:items-center justify-between gap-4 min-w-0">
-        <div>
+        <div className="flex items-center gap-3.5 sm:gap-4 min-w-0">
+          <PlayerPortrait
+            playerName={playerData.player}
+            playerId={playerId}
+            size="lg"
+            className="shrink-0"
+          />
+          <div className="min-w-0">
           <div className="flex flex-wrap items-center gap-2">
             <h1 className="font-heading text-[20px] sm:text-[24px] lg:text-[26px] font-bold text-[#F2F2F2] tracking-wide leading-tight break-words">
               {playerData.player}
@@ -150,6 +158,7 @@ export default function PlayerAnalysis() {
               </>
             )}
           </div>
+        </div>
         </div>
 
         {/* Participation Badges & Career Action */}
