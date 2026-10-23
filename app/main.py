@@ -562,18 +562,80 @@ def process_completed_match(
 
 @app.get("/api/pipeline/status")
 def get_pipeline_status():
-    """Returns current status of post-match processor and registered processed matches."""
+    """Returns current status of post-match processor, registered processed matches, and last sync status."""
     from app.adapters.factory import get_cricket_adapter
     from app.services.post_match_processor import PostMatchProcessor
+    from pathlib import Path
+    import json
 
     adapter = get_cricket_adapter()
     processor = PostMatchProcessor(adapter=adapter)
+
+    last_sync = None
+    sync_status_file = Path("data/processed/last_sync_status.json")
+    if sync_status_file.exists():
+        try:
+            with open(sync_status_file, "r", encoding="utf-8") as f:
+                last_sync = json.load(f)
+        except Exception:
+            pass
+
     return {
         "status": "ready",
         "provider": adapter.provider_name,
         "processed_matches_count": len(processor._registry),
         "registry_path": str(processor.registry_path),
+        "last_sync": last_sync,
     }
+
+
+@app.get("/api/pipeline/sync-status")
+def get_pipeline_sync_status():
+    """Returns the most recent automated match update sync status and telemetry."""
+    from pathlib import Path
+    import json
+
+    sync_status_file = Path("data/processed/last_sync_status.json")
+    if not sync_status_file.exists():
+        return {
+            "status": "NEVER_RUN",
+            "message": "No match update sync has been executed yet.",
+            "last_successful_sync": None,
+        }
+    try:
+        with open(sync_status_file, "r", encoding="utf-8") as f:
+            return json.load(f)
+    except Exception as exc:
+        raise HTTPException(status_code=500, detail=f"Failed to read sync status: {str(exc)}")
+
+
+@app.post("/api/pipeline/sync")
+def trigger_match_sync(
+    dry_run: bool = Query(False, description="If true, simulate match discovery and validation without committing"),
+    competition: str = Query("t20i", description="Competition to sync: 't20i' or 'ipl'"),
+    cutoff_date: Optional[str] = Query(None, description="Optional ISO cutoff date (default: '2026-10-06')"),
+):
+    """
+    Triggers the automatic match updater pipeline.
+    Validates eligible new matches, computes Strategy 4 contributions,
+    updates rosters and Ground Analysis, and commits atomically.
+    """
+    from app.services.match_updater import MatchUpdateService
+
+    service = MatchUpdateService()
+    try:
+        result = service.sync(
+            competition=competition,
+            cutoff_date=cutoff_date,
+            dry_run=dry_run,
+        )
+        return result
+    except RuntimeError as exc:
+        raise HTTPException(status_code=409, detail=str(exc))
+    except Exception as exc:
+        logger.error(f"Error during match sync: {exc}", exc_info=True)
+        raise HTTPException(status_code=500, detail=str(exc))
+
 
 
 # -------------------------------------------------------------

@@ -29,9 +29,16 @@ def test_1_all_t20is_filtering():
     assert "2022" in data_seasons["seasons"]
     assert len(data_seasons["seasons"]) >= 4
 
-    # 2. Total matches across all T20Is in underlying data service
+    # 2. Total matches across all T20Is in underlying data service (expanded to 1,498 with World Cup remediation)
     df_t20i = data_service.get_matches_df("t20i")
-    assert len(df_t20i) == 665, f"Expected 665 T20I matches in total, got {len(df_t20i)}"
+    assert len(df_t20i) in (1468, 1498, 1503), f"Expected 1468, 1498, or 1503 T20I matches in total, got {len(df_t20i)}"
+    # Verify all 665 baseline matches remain present and unmodified
+    from pathlib import Path
+    import pandas as pd
+    backup_matches_path = Path("data/backups/t20i_pre_historical_expansion_20261013/matches.csv")
+    if backup_matches_path.exists():
+        df_base = pd.read_csv(backup_matches_path, dtype={"match_id": str})
+        assert set(df_base["match_id"]).issubset(set(df_t20i["match_id"].astype(str))), "All 665 baseline matches must remain present"
 
     # 3. Matches endpoint query with tournament_type=all
     res_matches = client.get("/api/matches?competition=t20i&tournament_type=all&limit=500")

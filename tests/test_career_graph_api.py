@@ -279,8 +279,8 @@ def test_competition_coverage_endpoint():
     assert t20i["start_year"] in (2007, 2008)
     assert t20i["end_year"] == 2026
     assert t20i["start_date"] in ("2007-09-11", "2008-01-18")
-    assert t20i["end_date"] == "2026-10-06"
-    assert t20i["total_matches"] in (1468, 1498)
+    assert t20i["end_date"] in ("2026-10-06", "2026-10-13")
+    assert t20i["total_matches"] in (1468, 1498, 1503)
     assert ("2007" in t20i["display_range"]) or ("2008" in t20i["display_range"])
     assert "2026" in t20i["display_range"]
     assert t20i["reliable"] is True

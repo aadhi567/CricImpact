@@ -1,4 +1,9 @@
 match_id,season,date,venue,city,team1,team2,toss_winner,toss_decision,winner,win_by_runs,win_by_wickets,player_of_match,innings_count,event_name,stage,match_number
+1550710,2026/27,2026-10-13,Rawalpindi Cricket Stadium,Rawalpindi,Pakistan,Sri Lanka,Sri Lanka,field,Sri Lanka,,8.0,BKG Mendis,2,Sri Lanka tour of Pakistan,,3
+1550709,2026/27,2026-10-11,Rawalpindi Cricket Stadium,Rawalpindi,Pakistan,Sri Lanka,Sri Lanka,field,Pakistan,82.0,,Maaz Sadaqat,2,Sri Lanka tour of Pakistan,,2
+1529232,2026/27,2026-10-11,"Holkar Cricket Stadium, Indore",Indore,India,West Indies,West Indies,field,India,14.0,,Arshdeep Singh,2,West Indies tour of India,,3
+1550708,2026/27,2026-10-09,Rawalpindi Cricket Stadium,Rawalpindi,Sri Lanka,Pakistan,Sri Lanka,bat,Pakistan,,4.0,Sahibzada Farhan,2,Sri Lanka tour of Pakistan,,1
+1529231,2026/27,2026-10-09,"JSCA International Stadium Complex, Ranchi",Ranchi,India,West Indies,West Indies,field,West Indies,,6.0,SD Hope,2,West Indies tour of India,,2
 1529230,2026/27,2026-10-06,"Bharat Ratna Shri Atal Bihari Vajpayee Ekana Cricket Stadium, Lucknow",Lucknow,West Indies,India,India,field,India,,8.0,SS Iyer,2,West Indies tour of India,,1.0
 1552779,2026,2026-10-03,Korogi Sports Park,Nisshin,India,Pakistan,India,bat,India,19.0,,,2,Asian Games Men's Cricket Competition,Final,
 1552778,2026,2026-10-03,Korogi Sports Park,Nisshin,Sri Lanka,Bangladesh,Sri Lanka,bat,Sri Lanka,63.0,,,2,Asian Games Men's Cricket Competition,3rd Place Play-Off,
@@ -664,3 +669,836 @@ match_id,season,date,venue,city,team1,team2,toss_winner,toss_decision,winner,win
 1256722,2021/22,2022-01-26,"Kensington Oval, Bridgetown, Barbados",Bridgetown,West Indies,England,England,field,West Indies,20.0,,R Powell,2,England tour of West Indies,,3.0
 1256721,2021/22,2022-01-23,"Kensington Oval, Bridgetown, Barbados",Bridgetown,England,West Indies,West Indies,field,England,1.0,,MM Ali,2,England tour of West Indies,,2.0
 1256720,2021/22,2022-01-22,"Kensington Oval, Bridgetown, Barbados",Bridgetown,England,West Indies,West Indies,field,West Indies,,9.0,JO Holder,2,England tour of West Indies,,1.0
+1291188,2021/22,2021-12-23,"Central Broward Regional Park Stadium Turf Ground, Lauderhill",Lauderhill,Ireland,United States of America,United States of America,field,Ireland,9.0,,L Tucker,2,Ireland tour of United States of America and West Indies,,2.0
+1291187,2021/22,2021-12-22,"Central Broward Regional Park Stadium Turf Ground, Lauderhill",Lauderhill,United States of America,Ireland,United States of America,bat,United States of America,26.0,,G Singh,2,Ireland tour of United States of America and West Indies,,1.0
+1287775,2021/22,2021-12-16,"National Stadium, Karachi",Karachi,West Indies,Pakistan,West Indies,bat,Pakistan,,7.0,Mohammad Rizwan,2,West Indies tour of Pakistan,,3.0
+1287774,2021/22,2021-12-14,"National Stadium, Karachi",Karachi,Pakistan,West Indies,Pakistan,bat,Pakistan,9.0,,Shadab Khan,2,West Indies tour of Pakistan,,2.0
+1287773,2021/22,2021-12-13,"National Stadium, Karachi",Karachi,Pakistan,West Indies,West Indies,field,Pakistan,63.0,,Haider Ali,2,West Indies tour of Pakistan,,1.0
+1277976,2021/22,2021-11-22,"Shere Bangla National Stadium, Mirpur",Dhaka,Bangladesh,Pakistan,Bangladesh,bat,Pakistan,,5.0,Haider Ali,2,Pakistan tour of Bangladesh,,3.0
+1278673,2021/22,2021-11-21,"Eden Gardens, Kolkata",Kolkata,India,New Zealand,India,bat,India,73.0,,AR Patel,2,New Zealand tour of India,,3.0
+1277975,2021/22,2021-11-20,"Shere Bangla National Stadium, Mirpur",Dhaka,Bangladesh,Pakistan,Bangladesh,bat,Pakistan,,8.0,Fakhar Zaman,2,Pakistan tour of Bangladesh,,2.0
+1278672,2021/22,2021-11-19,"JSCA International Stadium Complex, Ranchi",Ranchi,New Zealand,India,India,field,India,,7.0,HV Patel,2,New Zealand tour of India,,2.0
+1277974,2021/22,2021-11-19,"Shere Bangla National Stadium, Mirpur",Dhaka,Bangladesh,Pakistan,Bangladesh,bat,Pakistan,,4.0,Hasan Ali,2,Pakistan tour of Bangladesh,,1.0
+1278671,2021/22,2021-11-17,"Sawai Mansingh Stadium, Jaipur",Jaipur,New Zealand,India,India,field,India,,5.0,SA Yadav,2,New Zealand tour of India,,1.0
+1273756,2021/22,2021-11-14,Dubai International Cricket Stadium,Dubai,New Zealand,Australia,Australia,field,Australia,,8.0,MR Marsh,2,ICC Men's T20 World Cup,Final,
+1286682,2021/22,2021-11-13,"Coolidge Cricket Ground, Antigua",Coolidge,Bahamas,United States of America,Bahamas,bat,United States of America,,10.0,NK Patel,2,ICC Men's T20 World Cup Americas Region Qualifier,,16.0
+1286681,2021/22,2021-11-11,"Sir Vivian Richards Stadium, North Sound, Antigua",North Sound,Argentina,United States of America,Argentina,bat,United States of America,,8.0,G Singh,2,ICC Men's T20 World Cup Americas Region Qualifier,,15.0
+1273755,2021/22,2021-11-11,Dubai International Cricket Stadium,Dubai,Pakistan,Australia,Australia,field,Australia,,5.0,MS Wade,2,ICC Men's T20 World Cup,Semi Final,
+1286674,2021/22,2021-11-10,"Coolidge Cricket Ground, Antigua",Coolidge,Canada,United States of America,Canada,bat,United States of America,,,K Gore,4,ICC Men's T20 World Cup Americas Region Qualifier,,10.0
+1273754,2021/22,2021-11-10,"Zayed Cricket Stadium, Abu Dhabi",Abu Dhabi,England,New Zealand,New Zealand,field,New Zealand,,5.0,DJ Mitchell,2,ICC Men's T20 World Cup,Semi Final,
+1286673,2021/22,2021-11-08,"Sir Vivian Richards Stadium, North Sound, Antigua",North Sound,United States of America,Bermuda,United States of America,bat,United States of America,23.0,,Aaron Jones,2,ICC Men's T20 World Cup Americas Region Qualifier,,7.0
+1273753,2021/22,2021-11-08,Dubai International Cricket Stadium,Dubai,Namibia,India,India,field,India,,9.0,RA Jadeja,2,ICC Men's T20 World Cup,,42.0
+1286667,2021/22,2021-11-07,"Coolidge Cricket Ground, Antigua",Coolidge,Belize,United States of America,United States of America,field,United States of America,,10.0,SR Taylor,2,ICC Men's T20 World Cup Americas Region Qualifier,,1.0
+1273752,2021/22,2021-11-07,Sharjah Cricket Stadium,Sharjah,Pakistan,Scotland,Pakistan,bat,Pakistan,72.0,,Shoaib Malik,2,ICC Men's T20 World Cup,,41.0
+1273750,2021/22,2021-11-06,Sharjah Cricket Stadium,Sharjah,South Africa,England,England,field,South Africa,10.0,,HE van der Dussen,2,ICC Men's T20 World Cup,,39.0
+1273749,2021/22,2021-11-06,"Zayed Cricket Stadium, Abu Dhabi",Abu Dhabi,West Indies,Australia,Australia,field,Australia,,8.0,DA Warner,2,ICC Men's T20 World Cup,,38.0
+1273748,2021/22,2021-11-05,Dubai International Cricket Stadium,Dubai,Scotland,India,India,field,India,,8.0,RA Jadeja,2,ICC Men's T20 World Cup,,37.0
+1273747,2021/22,2021-11-05,Sharjah Cricket Stadium,Sharjah,New Zealand,Namibia,Namibia,field,New Zealand,52.0,,JDS Neesham,2,ICC Men's T20 World Cup,,36.0
+1273746,2021/22,2021-11-04,"Zayed Cricket Stadium, Abu Dhabi",Abu Dhabi,Sri Lanka,West Indies,West Indies,field,Sri Lanka,20.0,,KIC Asalanka,2,ICC Men's T20 World Cup,,35.0
+1273745,2021/22,2021-11-04,Dubai International Cricket Stadium,Dubai,Bangladesh,Australia,Australia,field,Australia,,8.0,A Zampa,2,ICC Men's T20 World Cup,,34.0
+1273743,2021/22,2021-11-03,Dubai International Cricket Stadium,Dubai,New Zealand,Scotland,Scotland,field,New Zealand,16.0,,MJ Guptill,2,ICC Men's T20 World Cup,,32.0
+1273742,2021/22,2021-11-02,"Zayed Cricket Stadium, Abu Dhabi",Abu Dhabi,Pakistan,Namibia,Pakistan,bat,Pakistan,45.0,,Mohammad Rizwan,2,ICC Men's T20 World Cup,,31.0
+1273741,2021/22,2021-11-02,"Zayed Cricket Stadium, Abu Dhabi",Abu Dhabi,Bangladesh,South Africa,South Africa,field,South Africa,,6.0,K Rabada,2,ICC Men's T20 World Cup,,30.0
+1273740,2021/22,2021-11-01,Sharjah Cricket Stadium,Sharjah,England,Sri Lanka,Sri Lanka,field,England,26.0,,JC Buttler,2,ICC Men's T20 World Cup,,29.0
+1273739,2021/22,2021-10-31,Dubai International Cricket Stadium,Dubai,India,New Zealand,New Zealand,field,New Zealand,,8.0,IS Sodhi,2,ICC Men's T20 World Cup,,28.0
+1273737,2021/22,2021-10-30,Dubai International Cricket Stadium,Dubai,Australia,England,England,field,England,,8.0,CJ Jordan,2,ICC Men's T20 World Cup,,26.0
+1273736,2021/22,2021-10-30,Sharjah Cricket Stadium,Sharjah,Sri Lanka,South Africa,South Africa,field,South Africa,,4.0,T Shamsi,2,ICC Men's T20 World Cup,,25.0
+1273734,2021/22,2021-10-29,Sharjah Cricket Stadium,Sharjah,West Indies,Bangladesh,Bangladesh,field,West Indies,3.0,,N Pooran,2,ICC Men's T20 World Cup,,23.0
+1273733,2021/22,2021-10-28,Dubai International Cricket Stadium,Dubai,Sri Lanka,Australia,Australia,field,Australia,,7.0,A Zampa,2,ICC Men's T20 World Cup,,22.0
+1273732,2021/22,2021-10-27,"Zayed Cricket Stadium, Abu Dhabi",Abu Dhabi,Scotland,Namibia,Namibia,field,Namibia,,4.0,R Trumpelmann,2,ICC Men's T20 World Cup,,21.0
+1273731,2021/22,2021-10-27,"Zayed Cricket Stadium, Abu Dhabi",Abu Dhabi,Bangladesh,England,Bangladesh,bat,England,,8.0,JJ Roy,2,ICC Men's T20 World Cup,,20.0
+1273730,2021/22,2021-10-26,Sharjah Cricket Stadium,Sharjah,New Zealand,Pakistan,Pakistan,field,Pakistan,,5.0,Haris Rauf,2,ICC Men's T20 World Cup,,19.0
+1273729,2021/22,2021-10-26,Dubai International Cricket Stadium,Dubai,West Indies,South Africa,South Africa,field,South Africa,,8.0,A Nortje,2,ICC Men's T20 World Cup,,18.0
+1273727,2021/22,2021-10-24,Dubai International Cricket Stadium,Dubai,India,Pakistan,Pakistan,field,Pakistan,,10.0,Shaheen Shah Afridi,2,ICC Men's T20 World Cup,,16.0
+1273726,2021/22,2021-10-24,Sharjah Cricket Stadium,Sharjah,Bangladesh,Sri Lanka,Sri Lanka,field,Sri Lanka,,5.0,KIC Asalanka,2,ICC Men's T20 World Cup,,15.0
+1273725,2021/22,2021-10-23,Dubai International Cricket Stadium,Dubai,West Indies,England,England,field,England,,6.0,MM Ali,2,ICC Men's T20 World Cup,,14.0
+1273724,2021/22,2021-10-23,"Zayed Cricket Stadium, Abu Dhabi",Abu Dhabi,South Africa,Australia,Australia,field,Australia,,5.0,JR Hazlewood,2,ICC Men's T20 World Cup,,13.0
+1273723,2021/22,2021-10-22,Sharjah Cricket Stadium,Sharjah,Netherlands,Sri Lanka,Sri Lanka,field,Sri Lanka,,8.0,CBRLS Kumara,2,ICC Men's T20 World Cup,,12.0
+1273722,2021/22,2021-10-22,Sharjah Cricket Stadium,Sharjah,Ireland,Namibia,Ireland,bat,Namibia,,8.0,D Wiese,2,ICC Men's T20 World Cup,,11.0
+1273721,2021/22,2021-10-21,Al Amerat Cricket Ground Oman Cricket (Ministry Turf 1),Al Amarat,Oman,Scotland,Oman,bat,Scotland,,8.0,JH Davey,2,ICC Men's T20 World Cup,,10.0
+1273720,2021/22,2021-10-21,Al Amerat Cricket Ground Oman Cricket (Ministry Turf 1),Al Amarat,Bangladesh,Papua New Guinea,Bangladesh,bat,Bangladesh,84.0,,Shakib Al Hasan,2,ICC Men's T20 World Cup,,9.0
+1273719,2021/22,2021-10-20,"Zayed Cricket Stadium, Abu Dhabi",Abu Dhabi,Sri Lanka,Ireland,Ireland,field,Sri Lanka,70.0,,PWH de Silva,2,ICC Men's T20 World Cup,,8.0
+1273718,2021/22,2021-10-20,"Zayed Cricket Stadium, Abu Dhabi",Abu Dhabi,Netherlands,Namibia,Namibia,field,Namibia,,6.0,D Wiese,2,ICC Men's T20 World Cup,,7.0
+1273717,2021/22,2021-10-19,Al Amerat Cricket Ground Oman Cricket (Ministry Turf 1),Al Amarat,Bangladesh,Oman,Bangladesh,bat,Bangladesh,26.0,,Shakib Al Hasan,2,ICC Men's T20 World Cup,,6.0
+1273716,2021/22,2021-10-19,Al Amerat Cricket Ground Oman Cricket (Ministry Turf 1),Al Amarat,Scotland,Papua New Guinea,Scotland,bat,Scotland,17.0,,RD Berrington,2,ICC Men's T20 World Cup,,5.0
+1273715,2021/22,2021-10-18,"Zayed Cricket Stadium, Abu Dhabi",Abu Dhabi,Namibia,Sri Lanka,Sri Lanka,field,Sri Lanka,,7.0,M Theekshana,2,ICC Men's T20 World Cup,,4.0
+1273714,2021/22,2021-10-18,"Zayed Cricket Stadium, Abu Dhabi",Abu Dhabi,Netherlands,Ireland,Netherlands,bat,Ireland,,7.0,C Campher,2,ICC Men's T20 World Cup,,3.0
+1273713,2021/22,2021-10-17,Al Amerat Cricket Ground Oman Cricket (Ministry Turf 1),Al Amarat,Scotland,Bangladesh,Bangladesh,field,Scotland,6.0,,CN Greaves,2,ICC Men's T20 World Cup,,2.0
+1273712,2021/22,2021-10-17,Al Amerat Cricket Ground Oman Cricket (Ministry Turf 1),Al Amarat,Papua New Guinea,Oman,Oman,field,Oman,,10.0,Zeeshan Maqsood,2,ICC Men's T20 World Cup,,1.0
+1280062,2021/22,2021-10-10,"ICC Academy, Dubai",Dubai,Ireland,United Arab Emirates,United Arab Emirates,field,United Arab Emirates,,7.0,Waseem Muhammad,2,Ireland tour of United Arab Emirates,,3.0
+1280058,2021/22,2021-10-09,"ICC Academy, Dubai",Dubai,Scotland,Namibia,Namibia,field,Namibia,,5.0,CG Williams,2,Namibia v Scotland T20I Match,,
+1280063,2021/22,2021-10-08,"ICC Academy, Dubai",Dubai,Papua New Guinea,Scotland,Papua New Guinea,bat,Scotland,,8.0,HG Munsey,2,Papua New Guinea v Scotland T20I Match,,
+1280061,2021/22,2021-10-08,"ICC Academy, Dubai",Dubai,United Arab Emirates,Ireland,Ireland,field,United Arab Emirates,54.0,,KP Meiyappan,2,Ireland tour of United Arab Emirates,,2.0
+1280060,2021/22,2021-10-07,"ICC Academy, Dubai",Dubai,United Arab Emirates,Ireland,United Arab Emirates,bat,Ireland,,7.0,,2,Ireland tour of United Arab Emirates,,1.0
+1273273,2021,2021-09-19,"Grange Cricket Club Ground, Raeburn Place, Edinburgh",Edinburgh,Scotland,Zimbabwe,Scotland,bat,Zimbabwe,,6.0,,2,Zimbabwe tour of Ireland and Scotland,,3.0
+1273272,2021,2021-09-17,"Grange Cricket Club Ground, Raeburn Place, Edinburgh",Edinburgh,Zimbabwe,Scotland,Zimbabwe,bat,Zimbabwe,10.0,,,2,Zimbabwe tour of Ireland and Scotland,,2.0
+1273271,2021,2021-09-15,"Grange Cricket Club Ground, Raeburn Place, Edinburgh",Edinburgh,Scotland,Zimbabwe,Scotland,bat,Scotland,7.0,,,2,Zimbabwe tour of Ireland and Scotland,,1.0
+1271632,2021,2021-09-14,"R Premadasa Stadium, Colombo",Colombo,Sri Lanka,South Africa,Sri Lanka,bat,South Africa,,10.0,Q de Kock,2,South Africa tour of Sri Lanka,,3.0
+1271631,2021,2021-09-12,"R Premadasa Stadium, Colombo",Colombo,Sri Lanka,South Africa,Sri Lanka,bat,South Africa,,9.0,T Shamsi,2,South Africa tour of Sri Lanka,,2.0
+1272097,2021,2021-09-10,"Shere Bangla National Stadium, Mirpur",Dhaka,New Zealand,Bangladesh,New Zealand,bat,New Zealand,27.0,,TWM Latham,2,New Zealand tour of Bangladesh,,5.0
+1271630,2021,2021-09-10,"R Premadasa Stadium, Colombo",Colombo,South Africa,Sri Lanka,South Africa,bat,South Africa,28.0,,AK Markram,2,South Africa tour of Sri Lanka,,1.0
+1272096,2021,2021-09-08,"Shere Bangla National Stadium, Mirpur",Dhaka,New Zealand,Bangladesh,New Zealand,bat,Bangladesh,,6.0,Nasum Ahmed,2,New Zealand tour of Bangladesh,,4.0
+1272095,2021,2021-09-05,"Shere Bangla National Stadium, Mirpur",Dhaka,New Zealand,Bangladesh,New Zealand,bat,New Zealand,52.0,,AY Patel,2,New Zealand tour of Bangladesh,,3.0
+1272377,2021,2021-09-04,"Bready Cricket Club, Magheramason, Bready",Bready,Zimbabwe,Ireland,Zimbabwe,bat,Zimbabwe,5.0,,CR Ervine,2,Zimbabwe tour of Ireland and Scotland,,5.0
+1272094,2021,2021-09-03,"Shere Bangla National Stadium, Mirpur",Dhaka,Bangladesh,New Zealand,Bangladesh,bat,Bangladesh,4.0,,Mahmudullah,2,New Zealand tour of Bangladesh,,2.0
+1272376,2021,2021-09-02,"Bready Cricket Club, Magheramason, Bready",Bready,Ireland,Zimbabwe,Zimbabwe,field,Ireland,64.0,,MR Adair,2,Zimbabwe tour of Ireland and Scotland,,4.0
+1272375,2021,2021-09-01,"Bready Cricket Club, Magheramason, Bready",Bready,Ireland,Zimbabwe,Zimbabwe,field,Ireland,40.0,,PR Stirling,2,Zimbabwe tour of Ireland and Scotland,,3.0
+1272093,2021,2021-09-01,"Shere Bangla National Stadium, Mirpur",Dhaka,New Zealand,Bangladesh,New Zealand,bat,Bangladesh,,7.0,Shakib Al Hasan,2,New Zealand tour of Bangladesh,,1.0
+1272374,2021,2021-08-29,"Castle Avenue, Dublin",Dublin,Zimbabwe,Ireland,Zimbabwe,bat,Ireland,,7.0,KJ O'Brien,2,Zimbabwe tour of Ireland and Scotland,,2.0
+1272373,2021,2021-08-27,"Castle Avenue, Dublin",Dublin,Zimbabwe,Ireland,Ireland,field,Zimbabwe,3.0,,RW Chakabva,2,Zimbabwe tour of Ireland and Scotland,,1.0
+1270838,2021,2021-08-09,"Shere Bangla National Stadium, Mirpur",Dhaka,Bangladesh,Australia,Bangladesh,bat,Bangladesh,60.0,,Shakib Al Hasan,2,Australia tour of Bangladesh,,5.0
+1270837,2021,2021-08-07,"Shere Bangla National Stadium, Mirpur",Dhaka,Bangladesh,Australia,Bangladesh,bat,Australia,,3.0,MJ Swepson,2,Australia tour of Bangladesh,,4.0
+1270836,2021,2021-08-06,"Shere Bangla National Stadium, Mirpur",Dhaka,Bangladesh,Australia,Bangladesh,bat,Bangladesh,10.0,,Mahmudullah,2,Australia tour of Bangladesh,,3.0
+1270835,2021,2021-08-04,"Shere Bangla National Stadium, Mirpur",Dhaka,Australia,Bangladesh,Australia,bat,Bangladesh,,5.0,Afif Hossain,2,Australia tour of Bangladesh,,2.0
+1270834,2021,2021-08-03,"Shere Bangla National Stadium, Mirpur",Dhaka,Bangladesh,Australia,Australia,field,Bangladesh,23.0,,Nasum Ahmed,2,Australia tour of Bangladesh,,1.0
+1263167,2021,2021-08-03,"Providence Stadium, Guyana",Providence,West Indies,Pakistan,Pakistan,field,,,,,1,Pakistan tour of West Indies,,4.0
+1263166,2021,2021-08-01,"Providence Stadium, Guyana",Providence,West Indies,Pakistan,West Indies,bat,,,,,1,Pakistan tour of West Indies,,3.0
+1263165,2021,2021-07-31,"Providence Stadium, Guyana",Providence,Pakistan,West Indies,West Indies,field,Pakistan,7.0,,Mohammad Hafeez,2,Pakistan tour of West Indies,,2.0
+1262760,2021,2021-07-29,"R Premadasa Stadium, Colombo",Colombo,India,Sri Lanka,India,bat,Sri Lanka,,7.0,PWH de Silva,2,India tour of Sri Lanka,,3.0
+1263164,2021,2021-07-28,"Kensington Oval, Bridgetown, Barbados",Bridgetown,West Indies,Pakistan,Pakistan,field,,,,,1,Pakistan tour of West Indies,,1.0
+1262759,2021,2021-07-28,"R Premadasa Stadium, Colombo",Colombo,India,Sri Lanka,Sri Lanka,field,Sri Lanka,,4.0,DM de Silva,2,India tour of Sri Lanka,,2.0
+1267682,2021,2021-07-25,Harare Sports Club,Harare,Zimbabwe,Bangladesh,Zimbabwe,bat,Bangladesh,,5.0,Soumya Sarkar,2,Bangladesh tour of Zimbabwe,,3.0
+1262758,2021,2021-07-25,"R Premadasa Stadium, Colombo",Colombo,India,Sri Lanka,Sri Lanka,field,India,38.0,,B Kumar,2,India tour of Sri Lanka,,1.0
+1251955,2021,2021-07-24,"Civil Service Cricket Club, Stormont, Belfast",Belfast,South Africa,Ireland,South Africa,bat,South Africa,49.0,,T Bavuma,2,South Africa tour of Ireland,,3.0
+1267681,2021,2021-07-23,Harare Sports Club,Harare,Zimbabwe,Bangladesh,Zimbabwe,bat,Zimbabwe,23.0,,W Madhevere,2,Bangladesh tour of Zimbabwe,,2.0
+1267680,2021,2021-07-22,Harare Sports Club,Harare,Zimbabwe,Bangladesh,Zimbabwe,bat,Bangladesh,,8.0,Soumya Sarkar,2,Bangladesh tour of Zimbabwe,,1.0
+1251954,2021,2021-07-22,"Civil Service Cricket Club, Stormont, Belfast",Belfast,South Africa,Ireland,South Africa,bat,South Africa,42.0,,DA Miller,2,South Africa tour of Ireland,,2.0
+1239542,2021,2021-07-20,"Old Trafford, Manchester",Manchester,Pakistan,England,Pakistan,bat,England,,3.0,JJ Roy,2,Pakistan tour of England,,3.0
+1251953,2021,2021-07-19,"The Village, Malahide, Dublin",Dublin,South Africa,Ireland,Ireland,field,South Africa,33.0,,T Shamsi,2,South Africa tour of Ireland,,1.0
+1239541,2021,2021-07-18,"Headingley, Leeds",Leeds,England,Pakistan,Pakistan,field,England,45.0,,MM Ali,2,Pakistan tour of England,,2.0
+1263160,2021,2021-07-16,"Daren Sammy National Cricket Stadium, Gros Islet, St Lucia",Gros Islet,West Indies,Australia,West Indies,bat,West Indies,16.0,,E Lewis,2,Australia tour of West Indies,,5.0
+1239540,2021,2021-07-16,"Trent Bridge, Nottingham",Nottingham,Pakistan,England,England,field,Pakistan,31.0,,Shaheen Shah Afridi,2,Pakistan tour of England,,1.0
+1263159,2021,2021-07-14,"Daren Sammy National Cricket Stadium, Gros Islet, St Lucia",Gros Islet,Australia,West Indies,Australia,bat,Australia,4.0,,MR Marsh,2,Australia tour of West Indies,,4.0
+1263158,2021,2021-07-12,"Daren Sammy National Cricket Stadium, Gros Islet, St Lucia",Gros Islet,Australia,West Indies,Australia,bat,West Indies,,6.0,CH Gayle,2,Australia tour of West Indies,,3.0
+1263157,2021,2021-07-10,"Daren Sammy National Cricket Stadium, Gros Islet, St Lucia",Gros Islet,West Indies,Australia,Australia,field,West Indies,56.0,,SO Hetmyer,2,Australia tour of West Indies,,2.0
+1263156,2021,2021-07-09,"Daren Sammy National Cricket Stadium, Gros Islet, St Lucia",Gros Islet,West Indies,Australia,Australia,field,West Indies,18.0,,OC McCoy,2,Australia tour of West Indies,,1.0
+1263155,2021,2021-07-03,"National Cricket Stadium, St George's, Grenada",St George's,South Africa,West Indies,South Africa,bat,South Africa,25.0,,AK Markram,2,South Africa tour of West Indies,,5.0
+1263154,2021,2021-07-01,"National Cricket Stadium, St George's, Grenada",St George's,West Indies,South Africa,South Africa,field,West Indies,21.0,,KA Pollard,2,South Africa tour of West Indies,,4.0
+1263153,2021,2021-06-29,"National Cricket Stadium, St George's, Grenada",St George's,South Africa,West Indies,West Indies,field,South Africa,1.0,,T Shamsi,2,South Africa tour of West Indies,,3.0
+1263152,2021,2021-06-27,"National Cricket Stadium, St George's, Grenada",St George's,South Africa,West Indies,West Indies,field,South Africa,16.0,,GF Linde,2,South Africa tour of West Indies,,2.0
+1263151,2021,2021-06-26,"National Cricket Stadium, St George's, Grenada",St George's,South Africa,West Indies,West Indies,field,West Indies,,8.0,E Lewis,2,South Africa tour of West Indies,,1.0
+1249208,2021,2021-06-26,"The Rose Bowl, Southampton",Southampton,England,Sri Lanka,Sri Lanka,field,England,89.0,,DJ Malan,2,Sri Lanka tour of England,,3.0
+1249207,2021,2021-06-24,"Sophia Gardens, Cardiff",Cardiff,Sri Lanka,England,Sri Lanka,bat,England,,5.0,LS Livingstone,2,Sri Lanka tour of England,,2.0
+1249206,2021,2021-06-23,"Sophia Gardens, Cardiff",Cardiff,Sri Lanka,England,Sri Lanka,bat,England,,8.0,JC Buttler,2,Sri Lanka tour of England,,1.0
+1257185,2021,2021-04-25,Harare Sports Club,Harare,Pakistan,Zimbabwe,Pakistan,bat,Pakistan,24.0,,Hasan Ali,2,Pakistan tour of Zimbabwe,,3.0
+1257184,2021,2021-04-23,Harare Sports Club,Harare,Zimbabwe,Pakistan,Pakistan,field,Zimbabwe,19.0,,LM Jongwe,2,Pakistan tour of Zimbabwe,,2.0
+1257183,2021,2021-04-21,Harare Sports Club,Harare,Pakistan,Zimbabwe,Zimbabwe,field,Pakistan,11.0,,Mohammad Rizwan,2,Pakistan tour of Zimbabwe,,1.0
+1251578,2021,2021-04-16,"SuperSport Park, Centurion",Centurion,South Africa,Pakistan,Pakistan,field,Pakistan,,3.0,Faheem Ashraf,2,Pakistan tour of South Africa,,4.0
+1251577,2021,2021-04-14,"SuperSport Park, Centurion",Centurion,South Africa,Pakistan,Pakistan,field,Pakistan,,9.0,Babar Azam,2,Pakistan tour of South Africa,,3.0
+1251576,2021,2021-04-12,"The Wanderers Stadium, Johannesburg",Johannesburg,Pakistan,South Africa,Pakistan,bat,South Africa,,6.0,GF Linde,2,Pakistan tour of South Africa,,2.0
+1251575,2021,2021-04-10,"The Wanderers Stadium, Johannesburg",Johannesburg,South Africa,Pakistan,South Africa,bat,Pakistan,,4.0,Mohammad Rizwan,2,Pakistan tour of South Africa,,1.0
+1233981,2020/21,2021-04-01,Eden Park,Auckland,New Zealand,Bangladesh,Bangladesh,field,New Zealand,65.0,,FH Allen,2,Bangladesh tour of New Zealand,,3.0
+1233980,2020/21,2021-03-30,McLean Park,Napier,New Zealand,Bangladesh,Bangladesh,field,New Zealand,28.0,,GD Phillips,2,Bangladesh tour of New Zealand,,2.0
+1233979,2020/21,2021-03-28,Seddon Park,Hamilton,New Zealand,Bangladesh,New Zealand,bat,New Zealand,66.0,,DP Conway,2,Bangladesh tour of New Zealand,,1.0
+1243392,2020/21,2021-03-20,Narendra Modi Stadium,Ahmedabad,India,England,England,field,India,36.0,,B Kumar,2,England tour of India,,5.0
+1243391,2020/21,2021-03-18,Narendra Modi Stadium,Ahmedabad,India,England,England,field,India,8.0,,SA Yadav,2,England tour of India,,4.0
+1243390,2020/21,2021-03-16,Narendra Modi Stadium,Ahmedabad,India,England,England,field,England,,8.0,JC Buttler,2,England tour of India,,3.0
+1243389,2020/21,2021-03-14,Narendra Modi Stadium,Ahmedabad,England,India,India,field,India,,7.0,Ishan Kishan,2,England tour of India,,2.0
+1243388,2020/21,2021-03-12,Narendra Modi Stadium,Ahmedabad,India,England,England,field,England,,8.0,JC Archer,2,India v England,,1.0
+1252068,2020/21,2021-03-07,"Coolidge Cricket Ground, Antigua",Coolidge,Sri Lanka,West Indies,Sri Lanka,bat,West Indies,,3.0,FA Allen,2,Sri Lanka tour of West Indies,,3.0
+1233975,2020/21,2021-03-07,Sky Stadium,Wellington,Australia,New Zealand,Australia,bat,New Zealand,,7.0,MJ Guptill,2,Australia tour of New Zealand,,5.0
+1252067,2020/21,2021-03-05,"Coolidge Cricket Ground, Antigua",Coolidge,Sri Lanka,West Indies,Sri Lanka,bat,Sri Lanka,43.0,,PWH de Silva,2,Sri Lanka tour of West Indies,,2.0
+1233974,2020/21,2021-03-05,Westpac Stadium,Wellington,Australia,New Zealand,Australia,bat,Australia,50.0,,AJ Finch,2,Australia tour of New Zealand,,4.0
+1252066,2020/21,2021-03-03,"Coolidge Cricket Ground, Antigua",Coolidge,Sri Lanka,West Indies,West Indies,field,West Indies,,4.0,KA Pollard,2,Sri Lanka tour of West Indies,,1.0
+1233973,2020/21,2021-03-03,Westpac Stadium,Wellington,Australia,New Zealand,New Zealand,field,Australia,64.0,,AC Agar,2,Australia tour of New Zealand,,3.0
+1233972,2020/21,2021-02-25,University Oval,Dunedin,New Zealand,Australia,Australia,field,New Zealand,4.0,,MJ Guptill,2,Australia tour of New Zealand,,2.0
+1233971,2020/21,2021-02-22,Hagley Oval,Christchurch,New Zealand,Australia,Australia,field,New Zealand,53.0,,DP Conway,2,Australia tour of New Zealand,,1.0
+1243021,2020/21,2021-02-14,Gaddafi Stadium,Lahore,South Africa,Pakistan,Pakistan,field,Pakistan,,4.0,Mohammad Nawaz (3),2,South Africa tour of Pakistan,,3.0
+1243020,2020/21,2021-02-13,Gaddafi Stadium,Lahore,Pakistan,South Africa,South Africa,field,South Africa,,6.0,D Pretorius,2,South Africa tour of Pakistan,,2.0
+1243019,2020/21,2021-02-11,Gaddafi Stadium,Lahore,Pakistan,South Africa,South Africa,field,Pakistan,3.0,,Mohammad Rizwan,2,South Africa tour of Pakistan,,1.0
+1233961,2020/21,2020-12-22,McLean Park,Napier,New Zealand,Pakistan,Pakistan,field,Pakistan,,4.0,Mohammad Rizwan,2,Pakistan tour of New Zealand,,3.0
+1233960,2020/21,2020-12-20,Seddon Park,Hamilton,Pakistan,New Zealand,Pakistan,bat,New Zealand,,9.0,TG Southee,2,Pakistan tour of New Zealand,,2.0
+1233959,2020/21,2020-12-18,Eden Park,Auckland,Pakistan,New Zealand,Pakistan,bat,New Zealand,,5.0,JA Duffy,2,Pakistan tour of New Zealand,,1.0
+1223954,2020/21,2020-12-08,Sydney Cricket Ground,Sydney,Australia,India,India,field,Australia,12.0,,MJ Swepson,2,India tour of Australia,,3.0
+1223953,2020/21,2020-12-06,Sydney Cricket Ground,Sydney,Australia,India,India,field,India,,6.0,HH Pandya,2,India tour of Australia,,2.0
+1223952,2020/21,2020-12-04,Manuka Oval,Canberra,India,Australia,Australia,field,India,11.0,,YS Chahal,2,India tour of Australia,,1.0
+1237124,2020/21,2020-12-01,Newlands,Cape Town,South Africa,England,South Africa,bat,England,,9.0,DJ Malan,2,England tour of South Africa,,3.0
+1233956,2020/21,2020-11-30,Bay Oval,Mount Maunganui,West Indies,New Zealand,New Zealand,field,,,,,1,West Indies tour of New Zealand,,3.0
+1237123,2020/21,2020-11-29,Boland Park,Paarl,South Africa,England,England,field,England,,4.0,DJ Malan,2,England tour of South Africa,,2.0
+1233955,2020/21,2020-11-29,Bay Oval,Mount Maunganui,New Zealand,West Indies,West Indies,field,New Zealand,72.0,,GD Phillips,2,West Indies tour of New Zealand,,2.0
+1237122,2020/21,2020-11-27,Newlands,Cape Town,South Africa,England,England,field,England,,5.0,JM Bairstow,2,England tour of South Africa,,1.0
+1233954,2020/21,2020-11-27,Eden Park,Auckland,West Indies,New Zealand,New Zealand,field,New Zealand,,5.0,LH Ferguson,2,West Indies tour of New Zealand,,1.0
+1233466,2020/21,2020-11-10,Rawalpindi Cricket Stadium,,Zimbabwe,Pakistan,Zimbabwe,bat,Pakistan,,8.0,Usman Qadir,2,Zimbabwe tour of Pakistan,,3.0
+1233465,2020/21,2020-11-08,Rawalpindi Cricket Stadium,,Zimbabwe,Pakistan,Pakistan,field,Pakistan,,8.0,Haider Ali,2,Zimbabwe tour of Pakistan,,2.0
+1233464,2020/21,2020-11-07,Rawalpindi Cricket Stadium,,Zimbabwe,Pakistan,Zimbabwe,bat,Pakistan,,6.0,Babar Azam,2,Zimbabwe tour of Pakistan,,1.0
+1198237,2020,2020-09-08,The Rose Bowl,Southampton,England,Australia,Australia,field,Australia,,5.0,MR Marsh,2,Australia tour of England,,3.0
+1198236,2020,2020-09-06,The Rose Bowl,Southampton,Australia,England,Australia,bat,England,,6.0,JC Buttler,2,Australia tour of England,,2.0
+1198235,2020,2020-09-04,The Rose Bowl,Southampton,England,Australia,Australia,field,England,2.0,,DJ Malan,2,Australia tour of England,,1.0
+1198246,2020,2020-09-01,Old Trafford,Manchester,Pakistan,England,England,field,Pakistan,5.0,,Mohammad Hafeez,2,Pakistan tour of England,,3.0
+1198245,2020,2020-08-30,Old Trafford,Manchester,Pakistan,England,England,field,England,,5.0,EJG Morgan,2,Pakistan tour of England,,2.0
+1198244,2020,2020-08-28,Old Trafford,Manchester,England,Pakistan,Pakistan,field,,,,,1,Pakistan tour of England,,1.0
+1214671,2019/20,2020-03-11,"Shere Bangla National Stadium, Mirpur",Dhaka,Bangladesh,Zimbabwe,Bangladesh,field,Bangladesh,,9.0,Liton Das,2,Zimbabwe tour of Bangladesh,,2.0
+1214670,2019/20,2020-03-09,"Shere Bangla National Stadium, Mirpur",Dhaka,Bangladesh,Zimbabwe,Zimbabwe,field,Bangladesh,48.0,,Soumya Sarkar,2,Zimbabwe tour of Bangladesh,,1.0
+1213875,2019/20,2020-03-06,Pallekele International Cricket Stadium,Kandy,Sri Lanka,West Indies,West Indies,field,West Indies,,7.0,AD Russell,2,West Indies tour of Sri Lanka,,2.0
+1213874,2019/20,2020-03-04,Pallekele International Cricket Stadium,Kandy,Sri Lanka,West Indies,West Indies,bat,West Indies,25.0,,O Thomas,2,West Indies tour of Sri Lanka,,1.0
+1185318,2019/20,2020-02-26,Newlands,Cape Town,South Africa,Australia,South Africa,field,Australia,97.0,,MA Starc,2,Australia tour of South Africa,,3.0
+1185317,2019/20,2020-02-23,St George's Park,Port Elizabeth,South Africa,Australia,South Africa,bat,South Africa,12.0,,Q de Kock,2,Australia tour of South Africa,,2.0
+1185316,2019/20,2020-02-21,The Wanderers Stadium,Johannesburg,South Africa,Australia,South Africa,field,Australia,107.0,,AC Agar,2,Australia tour of South Africa,,1.0
+1185315,2019/20,2020-02-16,SuperSport Park,Centurion,South Africa,England,South Africa,bat,England,,5.0,EJG Morgan,2,England tour of South Africa,,3.0
+1185314,2019/20,2020-02-14,Kingsmead,Durban,South Africa,England,South Africa,field,England,2.0,,MM Ali,2,England tour of South Africa,,2.0
+1185313,2019/20,2020-02-12,Buffalo Park,East London,South Africa,England,England,field,South Africa,1.0,,L Ngidi,2,England tour of South Africa,,1.0
+1187681,2019/20,2020-02-02,Bay Oval,Mount Maunganui,New Zealand,India,India,bat,India,7.0,,JJ Bumrah,2,India tour of New Zealand,,5.0
+1187680,2019/20,2020-01-31,Westpac Stadium,Wellington,New Zealand,India,New Zealand,field,India,,,SN Thakur,4,India tour of New Zealand,,4.0
+1187679,2019/20,2020-01-29,Seddon Park,Hamilton,New Zealand,India,New Zealand,field,India,,,RG Sharma,4,India tour of New Zealand,,3.0
+1187678,2019/20,2020-01-26,Eden Park,Auckland,New Zealand,India,New Zealand,bat,India,,7.0,KL Rahul,2,India tour of New Zealand,,2.0
+1213059,2019/20,2020-01-25,Gaddafi Stadium,Lahore,Pakistan,Bangladesh,Bangladesh,bat,Pakistan,,9.0,Babar Azam,2,Bangladesh tour of Pakistan,,2.0
+1213058,2019/20,2020-01-24,Gaddafi Stadium,Lahore,Pakistan,Bangladesh,Bangladesh,bat,Pakistan,,5.0,Shoaib Malik,2,Bangladesh tour of Pakistan,,1.0
+1187677,2019/20,2020-01-24,Eden Park,Auckland,New Zealand,India,India,field,India,,6.0,SS Iyer,2,India tour of New Zealand,,1.0
+1203678,2019/20,2020-01-19,"Warner Park, St Kitts",Basseterre,West Indies,Ireland,West Indies,field,West Indies,,9.0,LMP Simmons,2,Ireland tour of West Indies,,3.0
+1203677,2019/20,2020-01-18,"Warner Park, St Kitts",Basseterre,West Indies,Ireland,West Indies,field,,,,,2,Ireland tour of West Indies,,2.0
+1203676,2019/20,2020-01-15,"National Cricket Stadium, Grenada",St George's,West Indies,Ireland,Ireland,bat,Ireland,4.0,,PR Stirling,2,Ireland tour of West Indies,,1.0
+1202244,2019/20,2020-01-10,Maharashtra Cricket Association Stadium,Pune,India,Sri Lanka,Sri Lanka,field,India,78.0,,SN Thakur,2,Sri Lanka tour of India,,3.0
+1202243,2019/20,2020-01-07,Holkar Cricket Stadium,Indore,India,Sri Lanka,India,field,India,,7.0,Navdeep Saini,2,Sri Lanka tour of India,,2.0
+1187020,2019/20,2019-12-11,Wankhede Stadium,Mumbai,India,West Indies,West Indies,field,India,67.0,,KL Rahul,2,West Indies tour of India,,3.0
+1187019,2019/20,2019-12-08,Greenfield International Stadium,Thiruvananthapuram,India,West Indies,West Indies,field,West Indies,,8.0,LMP Simmons,2,West Indies tour of India,,2.0
+1187018,2019/20,2019-12-06,"Rajiv Gandhi International Stadium, Uppal",Hyderabad,India,West Indies,India,field,India,,6.0,V Kohli,2,West Indies tour of India,,1.0
+1187669,2019/20,2019-11-10,Eden Park,Auckland,New Zealand,England,England,field,England,,,JM Bairstow,4,England tour of New Zealand,,5.0
+1187015,2019/20,2019-11-10,"Vidarbha Cricket Association Stadium, Jamtha",Nagpur,India,Bangladesh,Bangladesh,field,India,30.0,,DL Chahar,2,Bangladesh tour of India,,3.0
+1187668,2019/20,2019-11-08,McLean Park,Napier,New Zealand,England,New Zealand,field,England,76.0,,DJ Malan,2,England tour of New Zealand,,4.0
+1183529,2019/20,2019-11-08,Perth Stadium,Perth,Australia,Pakistan,Australia,field,Australia,,10.0,SA Abbott,2,Pakistan tour of Australia,,3.0
+1187014,2019/20,2019-11-07,Saurashtra Cricket Association Stadium,Rajkot,India,Bangladesh,India,field,India,,8.0,RG Sharma,2,Bangladesh tour of India,,2.0
+1187667,2019/20,2019-11-05,Saxton Oval,Nelson,New Zealand,England,New Zealand,bat,New Zealand,14.0,,C de Grandhomme,2,England tour of New Zealand,,3.0
+1183528,2019/20,2019-11-05,Manuka Oval,Canberra,Australia,Pakistan,Pakistan,bat,Australia,,7.0,SPD Smith,2,Pakistan tour of Australia,,2.0
+1187666,2019/20,2019-11-03,Westpac Stadium,Wellington,New Zealand,England,England,field,New Zealand,21.0,,MJ Santner,2,England tour of New Zealand,,2.0
+1187013,2019/20,2019-11-03,Arun Jaitley Stadium,Delhi,India,Bangladesh,Bangladesh,field,Bangladesh,,7.0,Mushfiqur Rahim,2,Bangladesh tour of India,,1.0
+1183527,2019/20,2019-11-03,Sydney Cricket Ground,Sydney,Australia,Pakistan,Australia,field,,,,,2,Pakistan tour of Australia,,1.0
+1199548,2019/20,2019-11-02,Dubai International Cricket Stadium,Dubai,Ireland,Namibia,Ireland,bat,Ireland,27.0,,Simi Singh,2,ICC Men's T20 World Cup Qualifier,3rd Place Play-Off,
+1199546,2019/20,2019-11-01,Dubai International Cricket Stadium,Dubai,Ireland,Netherlands,Ireland,field,Netherlands,21.0,,RE van der Merwe,2,ICC Men's T20 World Cup Qualifier,Semi Final,
+1187665,2019/20,2019-11-01,Hagley Oval,Christchurch,New Zealand,England,England,field,England,,7.0,JM Vince,2,England tour of New Zealand,,1.0
+1183526,2019/20,2019-11-01,Melbourne Cricket Ground,Melbourne,Australia,Sri Lanka,Australia,field,Australia,,7.0,DA Warner,2,Sri Lanka tour of Australia,,3.0
+1199545,2019/20,2019-10-31,ICC Academy,Dubai,Oman,Scotland,Oman,bat,Scotland,,5.0,MH Cross,2,ICC Men's T20 World Cup Qualifier,5th Place Play-Off,
+1199543,2019/20,2019-10-30,Dubai International Cricket Stadium,Dubai,United Arab Emirates,Scotland,Scotland,bat,Scotland,90.0,,HG Munsey,2,ICC Men's T20 World Cup Qualifier,Qualifier 3,
+1183525,2019/20,2019-10-30,"Brisbane Cricket Ground, Woolloongabba",Brisbane,Australia,Sri Lanka,Sri Lanka,bat,Australia,,9.0,DA Warner,2,Sri Lanka tour of Australia,,2.0
+1199539,2019/20,2019-10-27,Dubai International Cricket Stadium,Dubai,Netherlands,Scotland,Netherlands,field,Netherlands,,4.0,PM Seelaar,2,ICC Men's T20 World Cup Qualifier,,41.0
+1183524,2019/20,2019-10-27,Adelaide Oval,Adelaide,Australia,Sri Lanka,Sri Lanka,field,Australia,134.0,,DA Warner,2,Sri Lanka tour of Australia,,1.0
+1199533,2019/20,2019-10-26,Sheikh Zayed Stadium,Abu Dhabi,Ireland,Nigeria,Nigeria,bat,Ireland,,8.0,CA Young,2,ICC Men's T20 World Cup Qualifier,,35.0
+1199530,2019/20,2019-10-25,Tolerance Oval,Abu Dhabi,Ireland,Jersey,Ireland,field,Ireland,,8.0,MR Adair,2,ICC Men's T20 World Cup Qualifier,,32.0
+1199528,2019/20,2019-10-24,Dubai International Cricket Stadium,Dubai,Bermuda,Scotland,Bermuda,field,Scotland,46.0,,CS MacLeod,2,ICC Men's T20 World Cup Qualifier,,30.0
+1199523,2019/20,2019-10-23,Sheikh Zayed Stadium,Abu Dhabi,Canada,Ireland,Canada,bat,Canada,10.0,,NR Kumar,2,ICC Men's T20 World Cup Qualifier,,25.0
+1199517,2019/20,2019-10-22,ICC Academy,Dubai,Namibia,Scotland,Namibia,bat,Namibia,24.0,,JJ Smit,2,ICC Men's T20 World Cup Qualifier,,19.0
+1199514,2019/20,2019-10-21,Tolerance Oval,Abu Dhabi,Ireland,Oman,Oman,field,Ireland,35.0,,GJ Delany,2,ICC Men's T20 World Cup Qualifier,,16.0
+1199512,2019/20,2019-10-21,ICC Academy,Dubai,Papua New Guinea,Scotland,Scotland,bat,Scotland,4.0,,Hamza Tahir,2,ICC Men's T20 World Cup Qualifier,,14.0
+1199507,2019/20,2019-10-19,Sheikh Zayed Stadium,Abu Dhabi,United Arab Emirates,Ireland,United Arab Emirates,field,United Arab Emirates,,5.0,Rohan Mustafa,2,ICC Men's T20 World Cup Qualifier,,9.0
+1199506,2019/20,2019-10-19,ICC Academy Ground No 2,Dubai,Kenya,Scotland,Scotland,bat,Scotland,31.0,,RD Berrington,2,ICC Men's T20 World Cup Qualifier,,8.0
+1199500,2019/20,2019-10-18,Sheikh Zayed Stadium,Abu Dhabi,Hong Kong,Ireland,Hong Kong,bat,Ireland,,8.0,PR Stirling,2,ICC Men's T20 World Cup Qualifier,,2.0
+1199499,2019/20,2019-10-18,ICC Academy,Dubai,Scotland,Singapore,Scotland,field,Singapore,2.0,,S Vijayakumar,2,ICC Men's T20 World Cup Qualifier,,1.0
+1198491,2019/20,2019-10-09,Gaddafi Stadium,Lahore,Pakistan,Sri Lanka,Sri Lanka,bat,Sri Lanka,13.0,,PWH de Silva,2,Sri Lanka tour of Pakistan,,3.0
+1197526,2019/20,2019-10-09,Al Amerat Cricket Ground Oman Cricket (Ministry Turf 1),Al Amarat,Ireland,Nepal,Ireland,bat,Ireland,13.0,,,2,Oman Pentangular T20I Series,,7.0
+1198490,2019/20,2019-10-07,Gaddafi Stadium,Lahore,Pakistan,Sri Lanka,Sri Lanka,bat,Sri Lanka,35.0,,PBB Rajapaksa,2,Sri Lanka tour of Pakistan,,2.0
+1197525,2019/20,2019-10-07,Al Amerat Cricket Ground Oman Cricket (Ministry Turf 1),Al Amarat,Hong Kong,Ireland,Ireland,bat,Ireland,66.0,,,2,Oman Pentangular T20I Series,,6.0
+1197522,2019/20,2019-10-06,Al Amerat Cricket Ground Oman Cricket (Ministry Turf 1),Al Amarat,Oman,Ireland,Ireland,field,Oman,43.0,,,2,Oman Pentangular T20I Series,,3.0
+1198489,2019/20,2019-10-05,Gaddafi Stadium,Lahore,Pakistan,Sri Lanka,Pakistan,field,Sri Lanka,64.0,,MD Gunathilaka,2,Sri Lanka tour of Pakistan,,1.0
+1197521,2019/20,2019-10-05,Al Amerat Cricket Ground Oman Cricket (Ministry Turf 1),Al Amarat,Ireland,Netherlands,Ireland,field,Ireland,,6.0,,2,Oman Pentangular T20I Series,,2.0
+1201685,2019/20,2019-10-03,Indian Association Ground,Singapore,Singapore,Zimbabwe,Zimbabwe,field,Zimbabwe,,8.0,PJ Moor,2,Singapore Twenty20 Tri-Series,,6.0
+1201683,2019/20,2019-10-01,Indian Association Ground,Singapore,Nepal,Zimbabwe,Nepal,field,Zimbabwe,40.0,,SC Williams,2,Singapore Twenty20 Tri-Series,,4.0
+1201682,2019/20,2019-09-29,Indian Association Ground,Singapore,Singapore,Zimbabwe,Singapore,bat,Singapore,4.0,,SC Williams,2,Singapore Twenty20 Tri-Series,,3.0
+1201680,2019/20,2019-09-27,Indian Association Ground,Singapore,Nepal,Zimbabwe,Nepal,bat,Zimbabwe,,5.0,R Mutumbami,2,Singapore Twenty20 Tri-Series,,1.0
+1187006,2019/20,2019-09-22,M.Chinnaswamy Stadium,Bengaluru,India,South Africa,India,bat,South Africa,,9.0,BE Hendricks,2,South Africa tour of India,,3.0
+1200428,2019,2019-09-19,"The Village, Malahide",Dublin,Netherlands,Scotland,Netherlands,bat,Scotland,,6.0,,2,Ireland Tri-Nation T20I Series,,5.0
+1200427,2019,2019-09-18,"The Village, Malahide",Dublin,Ireland,Netherlands,Ireland,bat,Netherlands,,6.0,BN Cooper,2,Ireland Tri-Nation T20I Series,,4.0
+1197143,2019,2019-09-18,Zahur Ahmed Chowdhury Stadium,Chattogram,Bangladesh,Zimbabwe,Zimbabwe,field,Bangladesh,39.0,,Mahmudullah,2,Bangladesh Twenty20 Tri-Series,,4.0
+1187005,2019/20,2019-09-18,"Punjab Cricket Association IS Bindra Stadium, Mohali",Chandigarh,India,South Africa,India,field,India,,7.0,V Kohli,2,South Africa tour of India,,2.0
+1200426,2019,2019-09-17,"The Village, Malahide",Dublin,Ireland,Scotland,Scotland,bat,Ireland,,4.0,A Balbirnie,2,Ireland Tri-Nation T20I Series,,3.0
+1200425,2019,2019-09-16,"The Village, Malahide",Dublin,Netherlands,Scotland,Netherlands,field,Scotland,58.0,,HG Munsey,2,Ireland Tri-Nation T20I Series,,2.0
+1197140,2019,2019-09-13,"Shere Bangla National Stadium, Mirpur",Dhaka,Bangladesh,Zimbabwe,Bangladesh,field,Bangladesh,,3.0,Afif Hossain,2,Bangladesh Twenty20 Tri-Series,,1.0
+1192877,2019,2019-09-06,Pallekele International Cricket Stadium,Kandy,Sri Lanka,New Zealand,Sri Lanka,bat,Sri Lanka,37.0,,SL Malinga,2,New Zealand tour of Sri Lanka,,3.0
+1192876,2019,2019-09-03,Pallekele International Cricket Stadium,Kandy,Sri Lanka,New Zealand,Sri Lanka,bat,New Zealand,,4.0,TG Southee,2,New Zealand tour of Sri Lanka,,2.0
+1192875,2019,2019-09-01,Pallekele International Cricket Stadium,Kandy,Sri Lanka,New Zealand,Sri Lanka,bat,New Zealand,,5.0,LRPL Taylor,2,New Zealand tour of Sri Lanka,,1.0
+1197406,2019,2019-08-25,"White Hill Field, Sandys Parish",Hamilton,Canada,United States of America,United States of America,field,Canada,15.0,,Ravinderpal Singh,2,ICC Men's T20 World Cup Americas Region Final,,11.0
+1197404,2019,2019-08-24,"White Hill Field, Sandys Parish",Hamilton,Cayman Islands,United States of America,Cayman Islands,bat,United States of America,,9.0,SR Taylor,2,ICC Men's T20 World Cup Americas Region Final,,9.0
+1197403,2019,2019-08-22,Bermuda National Stadium,Hamilton,United States of America,Bermuda,Bermuda,field,Bermuda,,4.0,DAP Darrell,2,ICC Men's T20 World Cup Americas Region Final,,8.0
+1197401,2019,2019-08-21,"White Hill Field, Sandys Parish",Hamilton,Canada,United States of America,United States of America,bat,Canada,,4.0,NS Dhaliwal,2,ICC Men's T20 World Cup Americas Region Final,,6.0
+1197399,2019,2019-08-19,National Stadium,Hamilton,Cayman Islands,United States of America,United States of America,field,United States of America,10.0,,,2,ICC Men's T20 World Cup Americas Region Final,,4.0
+1197396,2019,2019-08-18,"White Hill Field, Sandys Parish",Hamilton,Bermuda,United States of America,Bermuda,bat,Bermuda,6.0,,DMW Rawlins,2,ICC Men's T20 World Cup Americas Region Final,,1.0
+1188623,2019,2019-08-06,"Providence Stadium, Guyana",Providence,West Indies,India,India,field,India,,7.0,DL Chahar,2,India tour of United States of America and West Indies,,3.0
+1188622,2019,2019-08-04,Central Broward Regional Park Stadium Turf Ground,Lauderhill,India,West Indies,India,bat,India,22.0,,KH Pandya,2,India tour of United States of America and West Indies,,2.0
+1188621,2019,2019-08-03,Central Broward Regional Park Stadium Turf Ground,Lauderhill,India,West Indies,India,field,India,,4.0,Navdeep Saini,2,India tour of United States of America and West Indies,,1.0
+1168522,2019,2019-07-14,Bready,Derry,Ireland,Zimbabwe,Zimbabwe,field,Zimbabwe,,8.0,,2,Ireland v Zimbabwe,,3.0
+1168521,2019,2019-07-12,"Bready Cricket Club, Magheramason",Bready,Ireland,Zimbabwe,Ireland,field,Ireland,,9.0,,2,Zimbabwe tour of Netherlands and Ireland,,2.0
+1188380,2019,2019-06-25,Hazelaarweg,Rotterdam,Netherlands,Zimbabwe,Netherlands,bat,Zimbabwe,,,,4,Zimbabwe tour of Netherlands and Ireland,,2.0
+1188379,2019,2019-06-23,Hazelaarweg,Rotterdam,Netherlands,Zimbabwe,Zimbabwe,field,Netherlands,49.0,,,2,Zimbabwe tour of Netherlands and Ireland,,1.0
+1152840,2019,2019-05-05,Sophia Gardens,Cardiff,England,Pakistan,Pakistan,bat,England,,7.0,EJG Morgan,2,Pakistan tour of England,,
+1144174,2018/19,2019-03-24,The Wanderers Stadium,Johannesburg,South Africa,Sri Lanka,Sri Lanka,field,South Africa,45.0,,D Pretorius,2,Sri Lanka tour of South Africa,,3.0
+1144173,2018/19,2019-03-22,SuperSport Park,Centurion,South Africa,Sri Lanka,Sri Lanka,field,South Africa,16.0,,HE van der Dussen,2,Sri Lanka tour of South Africa,,2.0
+1144172,2018/19,2019-03-19,Newlands,Cape Town,South Africa,Sri Lanka,South Africa,field,South Africa,,,DA Miller,4,Sri Lanka tour of South Africa,,1.0
+1177485,2018/19,2019-03-16,ICC Academy,Dubai,United Arab Emirates,United States of America,United Arab Emirates,bat,United Arab Emirates,24.0,,Shaiman Anwar,2,United States of America tour of United Arab Emirates,,2.0
+1177484,2018/19,2019-03-15,ICC Academy,Dubai,United Arab Emirates,United States of America,United Arab Emirates,field,,,,,2,United States of America tour of United Arab Emirates,,1.0
+1158073,2018/19,2019-03-10,"Warner Park, St Kitts",Basseterre,West Indies,England,West Indies,bat,England,,8.0,DJ Willey,2,England tour of West Indies,,3.0
+1158072,2018/19,2019-03-08,"Warner Park, St Kitts",Basseterre,West Indies,England,West Indies,field,England,137.0,,SW Billings,2,England tour of West Indies,,2.0
+1158071,2018/19,2019-03-05,"Darren Sammy National Cricket Stadium, St Lucia",Gros Islet,West Indies,England,England,field,England,,4.0,JM Bairstow,2,England tour of West Indies,,1.0
+1168248,2018/19,2019-02-27,M.Chinnaswamy Stadium,Bengaluru,India,Australia,Australia,field,Australia,,7.0,GJ Maxwell,2,Australia tour of India,,2.0
+1168247,2018/19,2019-02-24,Dr. Y.S. Rajasekhara Reddy ACA-VDCA Cricket Stadium,Visakhapatnam,India,Australia,Australia,field,Australia,,3.0,NM Coulter-Nile,2,Australia tour of India,,1.0
+1172510,2018/19,2019-02-17,Al Amerat Cricket Ground Oman Cricket (Ministry Turf 1),Al Amarat,Oman,Scotland,Scotland,field,Scotland,,7.0,A Neill,2,Oman Quadrangular T20I Series,,6.0
+1172509,2018/19,2019-02-17,Al Amerat Cricket Ground Oman Cricket (Ministry Turf 1),Al Amarat,Ireland,Netherlands,Ireland,field,Ireland,,1.0,A Balbirnie,2,Oman Quadrangular T20I Series,,5.0
+1172508,2018/19,2019-02-15,Al Amerat Cricket Ground Oman Cricket (Ministry Turf 1),Al Amarat,Ireland,Scotland,Scotland,field,Scotland,,6.0,KJ Coetzer,2,Oman Quadrangular T20I Series,,4.0
+1172506,2018/19,2019-02-13,Al Amerat Cricket Ground Oman Cricket (Ministry Turf 1),Al Amarat,Oman,Ireland,Oman,field,Ireland,15.0,,PR Stirling,2,Oman Quadrangular T20I Series,,2.0
+1172505,2018/19,2019-02-13,Al Amerat Cricket Ground Oman Cricket (Ministry Turf 1),Al Amarat,Netherlands,Scotland,Netherlands,field,Netherlands,,7.0,TP Visee,2,Oman Quadrangular T20I Series,,1.0
+1153698,2018/19,2019-02-10,Seddon Park,Hamilton,New Zealand,India,India,field,New Zealand,4.0,,C Munro,2,India tour of New Zealand,,3.0
+1153697,2018/19,2019-02-08,Eden Park,Auckland,New Zealand,India,New Zealand,bat,India,,7.0,KH Pandya,2,India tour of New Zealand,,2.0
+1153696,2018/19,2019-02-06,Westpac Stadium,Wellington,New Zealand,India,India,field,New Zealand,80.0,,TL Seifert,2,India tour of New Zealand,,1.0
+1144163,2018/19,2019-02-06,SuperSport Park,Centurion,South Africa,Pakistan,South Africa,field,Pakistan,27.0,,Shadab Khan,2,Pakistan tour of South Africa,,3.0
+1144162,2018/19,2019-02-03,The Wanderers Stadium,Johannesburg,South Africa,Pakistan,Pakistan,field,South Africa,7.0,,DA Miller,2,Pakistan tour of South Africa,,2.0
+1144161,2018/19,2019-02-01,Newlands,Cape Town,South Africa,Pakistan,Pakistan,field,South Africa,6.0,,DA Miller,2,Pakistan tour of South Africa,,1.0
+1153843,2018/19,2019-01-11,Eden Park,Auckland,New Zealand,Sri Lanka,Sri Lanka,field,New Zealand,35.0,,DAJ Bracewell,2,Sri Lanka tour of New Zealand,,
+1153319,2018/19,2018-12-22,"Shere Bangla National Stadium, Mirpur",Dhaka,Bangladesh,West Indies,Bangladesh,field,West Indies,50.0,,E Lewis,2,West Indies tour of Bangladesh,,3.0
+1153318,2018/19,2018-12-20,"Shere Bangla National Stadium, Mirpur",Dhaka,Bangladesh,West Indies,West Indies,field,Bangladesh,36.0,,Shakib Al Hasan,2,West Indies tour of Bangladesh,,2.0
+1153317,2018/19,2018-12-17,Sylhet International Cricket Stadium,Sylhet,Bangladesh,West Indies,Bangladesh,bat,West Indies,,8.0,SS Cottrell,2,West Indies tour of Bangladesh,,1.0
+1144992,2018/19,2018-11-25,Sydney Cricket Ground,,Australia,India,Australia,bat,India,,6.0,KH Pandya,2,India tour of Australia,,3.0
+1144991,2018/19,2018-11-23,Melbourne Cricket Ground,,Australia,India,India,field,,,,,1,India tour of Australia,,2.0
+1144990,2018/19,2018-11-21,"Brisbane Cricket Ground, Woolloongabba",Brisbane,Australia,India,India,field,Australia,4.0,,A Zampa,2,India tour of Australia,,1.0
+1144989,2018/19,2018-11-17,Carrara Oval,,South Africa,Australia,Australia,field,South Africa,21.0,,T Shamsi,2,South Africa tour of Australia,,
+1157761,2018/19,2018-11-11,"MA Chidambaram Stadium, Chepauk",Chennai,West Indies,India,West Indies,bat,India,,6.0,S Dhawan,2,West Indies tour of India,,3.0
+1157760,2018/19,2018-11-06,Bharat Ratna Shri Atal Bihari Vajpayee Ekana Cricket Stadium,Lucknow,India,West Indies,West Indies,field,India,71.0,,RG Sharma,2,West Indies tour of India,,2.0
+1157759,2018/19,2018-11-04,Eden Gardens,Kolkata,West Indies,India,India,field,India,,5.0,Kuldeep Yadav,2,West Indies tour of India,,1.0
+1157377,2018/19,2018-11-04,Dubai International Cricket Stadium,,Pakistan,New Zealand,Pakistan,bat,Pakistan,47.0,,Babar Azam,2,New Zealand tour of United Arab Emirates,,3.0
+1157376,2018/19,2018-11-02,Dubai International Cricket Stadium,,New Zealand,Pakistan,New Zealand,bat,Pakistan,,6.0,Shaheen Shah Afridi,2,New Zealand tour of United Arab Emirates,,2.0
+1157375,2018/19,2018-10-31,Sheikh Zayed Stadium,Abu Dhabi,Pakistan,New Zealand,Pakistan,bat,Pakistan,2.0,,Mohammad Hafeez,2,New Zealand tour of United Arab Emirates,,1.0
+1157374,2018/19,2018-10-28,Dubai International Cricket Stadium,,Pakistan,Australia,Pakistan,bat,Pakistan,33.0,,Shadab Khan,2,Australia tour of United Arab Emirates,,3.0
+1140384,2018/19,2018-10-27,"R.Premadasa Stadium, Khettarama",Colombo,England,Sri Lanka,Sri Lanka,field,England,30.0,,JL Denly,2,England tour of Sri Lanka,,
+1157373,2018/19,2018-10-26,Dubai International Cricket Stadium,,Pakistan,Australia,Pakistan,bat,Pakistan,11.0,,Imad Wasim,2,Australia tour of United Arab Emirates,,2.0
+1157372,2018/19,2018-10-24,Sheikh Zayed Stadium,Abu Dhabi,Pakistan,Australia,Australia,field,Pakistan,66.0,,Imad Wasim,2,Australia tour of United Arab Emirates,,1.0
+1162727,2018/19,2018-10-22,Tolerance Oval,Abu Dhabi,United Arab Emirates,Australia,United Arab Emirates,bat,Australia,,7.0,DJM Short,2,Australia tour of United Arab Emirates,,
+1144150,2018/19,2018-10-12,Senwes Park,Potchefstroom,Zimbabwe,South Africa,Zimbabwe,bat,South Africa,,6.0,D Paterson,2,Zimbabwe tour of South Africa,,2.0
+1144149,2018/19,2018-10-09,Buffalo Park,East London,South Africa,Zimbabwe,South Africa,bat,South Africa,34.0,,Imran Tahir,2,Zimbabwe tour of South Africa,,1.0
+1142589,2018,2018-08-14,"R.Premadasa Stadium, Khettarama",Colombo,South Africa,Sri Lanka,South Africa,bat,Sri Lanka,,3.0,DM de Silva,2,South Africa tour of Sri Lanka,,
+1146725,2018,2018-08-05,Central Broward Regional Park Stadium Turf Ground,Lauderhill,Bangladesh,West Indies,Bangladesh,bat,Bangladesh,19.0,,Liton Das,2,Bangladesh tour of West Indies and United States of America,,3.0
+1146724,2018,2018-08-04,Central Broward Regional Park Stadium Turf Ground,Lauderhill,Bangladesh,West Indies,West Indies,field,Bangladesh,12.0,,Tamim Iqbal,2,Bangladesh tour of West Indies and United States of America,,2.0
+1146723,2018,2018-07-31,"Warner Park, Basseterre",St Kitts,Bangladesh,West Indies,West Indies,field,West Indies,,7.0,AD Russell,2,Bangladesh tour of West Indies and United States of America,,1.0
+1142919,2018,2018-07-08,Harare Sports Club,,Australia,Pakistan,Australia,bat,Pakistan,,6.0,Fakhar Zaman,2,Zimbabwe Twenty20 Tri-Series,Final,
+1119545,2018,2018-07-08,County Ground,Bristol,England,India,India,field,India,,7.0,RG Sharma,2,India tour of Ireland and England,,3.0
+1142918,2018,2018-07-06,Harare Sports Club,,Zimbabwe,Australia,Zimbabwe,bat,Australia,,5.0,AJ Tye,2,Zimbabwe Twenty20 Tri-Series,,6.0
+1119544,2018,2018-07-06,Sophia Gardens,Cardiff,India,England,England,field,England,,5.0,AD Hales,2,India tour of Ireland and England,,2.0
+1142917,2018,2018-07-05,Harare Sports Club,,Pakistan,Australia,Australia,field,Pakistan,45.0,,Fakhar Zaman,2,Zimbabwe Twenty20 Tri-Series,,5.0
+1142916,2018,2018-07-04,Harare Sports Club,,Zimbabwe,Pakistan,Pakistan,field,Pakistan,,7.0,SF Mire,2,Zimbabwe Twenty20 Tri-Series,,4.0
+1142915,2018,2018-07-03,Harare Sports Club,,Australia,Zimbabwe,Zimbabwe,field,Australia,100.0,,AJ Finch,2,Zimbabwe Twenty20 Tri-Series,,3.0
+1119543,2018,2018-07-03,Old Trafford,Manchester,England,India,India,field,India,,8.0,Kuldeep Yadav,2,India tour of Ireland and England,,1.0
+1142914,2018,2018-07-02,Harare Sports Club,,Pakistan,Australia,Australia,field,Australia,,9.0,B Stanlake,2,Zimbabwe Twenty20 Tri-Series,,2.0
+1142913,2018,2018-07-01,Harare Sports Club,,Pakistan,Zimbabwe,Zimbabwe,field,Pakistan,74.0,,Asif Ali,2,Zimbabwe Twenty20 Tri-Series,,1.0
+1140993,2018,2018-06-29,"The Village, Malahide",Dublin,India,Ireland,Ireland,field,India,143.0,,KL Rahul,2,India tour of Ireland and England,,2.0
+1140992,2018,2018-06-27,"The Village, Malahide",Dublin,India,Ireland,Ireland,field,India,76.0,,Kuldeep Yadav,2,India tour of Ireland and England,,1.0
+1119542,2018,2018-06-27,Edgbaston,Birmingham,England,Australia,Australia,field,England,28.0,,AU Rashid,2,Australia tour of England,,
+1142506,2018,2018-06-20,VRA Ground,Amstelveen,Scotland,Netherlands,Scotland,bat,Scotland,115.0,,,2,Netherlands Tri-Nation T20I Series,,6.0
+1142505,2018,2018-06-19,VRA Ground,Amstelveen,Netherlands,Scotland,Netherlands,bat,Scotland,,7.0,,2,Netherlands Tri-Nation T20I Series,,5.0
+1142504,2018,2018-06-17,Sportpark Het Schootsveld,Deventer,Scotland,Ireland,Scotland,bat,,,,,2,Netherlands Tri-Nation T20I Series,,4.0
+1142503,2018,2018-06-16,Sportpark Het Schootsveld,Deventer,Ireland,Scotland,Ireland,bat,Ireland,46.0,,,2,Netherlands Tri-Nation T20I Series,,3.0
+1142502,2018,2018-06-13,Hazelaarweg,Rotterdam,Ireland,Netherlands,Ireland,bat,Netherlands,,4.0,,2,Netherlands Tri-Nation T20I Series,,2.0
+1127301,2018,2018-06-13,"Grange Cricket Club, Raeburn Place",Edinburgh,Pakistan,Scotland,Pakistan,bat,Pakistan,84.0,,Usman Shinwari,2,"Pakistan tour of Ireland, England and Scotland",,2.0
+1142501,2018,2018-06-12,Hazelaarweg,Rotterdam,Netherlands,Ireland,Ireland,field,Netherlands,4.0,,,2,Netherlands Tri-Nation T20I Series,,1.0
+1127300,2018,2018-06-12,"Grange Cricket Club, Raeburn Place",Edinburgh,Pakistan,Scotland,Pakistan,bat,Pakistan,48.0,,Sarfraz Ahmed,2,"Pakistan tour of Ireland, England and Scotland",,1.0
+1141232,2018,2018-05-31,Lord's,London,West Indies,ICC World XI,ICC World XI,field,West Indies,72.0,,E Lewis,2,ICC World XI tour of England,,
+1140071,2018,2018-04-03,National Stadium,Karachi,West Indies,Pakistan,West Indies,bat,Pakistan,,8.0,Fakhar Zaman,2,West Indies tour of Pakistan,,3.0
+1140070,2018,2018-04-02,National Stadium,Karachi,Pakistan,West Indies,Pakistan,bat,Pakistan,82.0,,Babar Azam,2,West Indies tour of Pakistan,,2.0
+1140069,2018,2018-04-01,National Stadium,Karachi,Pakistan,West Indies,West Indies,field,Pakistan,143.0,,Hussain Talat,2,West Indies tour of Pakistan,,1.0
+1133823,2017/18,2018-03-18,"R.Premadasa Stadium, Khettarama",Colombo,Bangladesh,India,India,field,India,,4.0,KD Karthik,2,Nidahas Trophy,Final,
+1133822,2017/18,2018-03-16,"R.Premadasa Stadium, Khettarama",Colombo,Sri Lanka,Bangladesh,Bangladesh,field,Bangladesh,,2.0,Mahmudullah,2,Nidahas Trophy,,6.0
+1133821,2017/18,2018-03-14,"R.Premadasa Stadium, Khettarama",Colombo,India,Bangladesh,Bangladesh,field,India,17.0,,RG Sharma,2,Nidahas Trophy,,5.0
+1133820,2017/18,2018-03-12,"R.Premadasa Stadium, Khettarama",Colombo,Sri Lanka,India,India,field,India,,6.0,SN Thakur,2,Nidahas Trophy,,4.0
+1133819,2017/18,2018-03-10,"R.Premadasa Stadium, Khettarama",Colombo,Sri Lanka,Bangladesh,Bangladesh,field,Bangladesh,,5.0,Mushfiqur Rahim,2,Nidahas Trophy,,3.0
+1133818,2017/18,2018-03-08,"R.Premadasa Stadium, Khettarama",Colombo,Bangladesh,India,India,field,India,,6.0,V Shankar,2,Nidahas Trophy,,2.0
+1133817,2017/18,2018-03-06,"R.Premadasa Stadium, Khettarama",Colombo,India,Sri Lanka,Sri Lanka,field,Sri Lanka,,5.0,MDKJ Perera,2,Nidahas Trophy,,1.0
+1122287,2017/18,2018-02-24,Newlands,Cape Town,India,South Africa,South Africa,field,India,7.0,,SK Raina,2,India tour of South Africa,,3.0
+1122286,2017/18,2018-02-21,SuperSport Park,Centurion,India,South Africa,South Africa,field,South Africa,,6.0,H Klaasen,2,India tour of South Africa,,2.0
+1072322,2017/18,2018-02-21,Eden Park,Auckland,New Zealand,Australia,New Zealand,bat,Australia,19.0,,AC Agar,2,Trans-Tasman Twenty20 Trophy,Final,
+1130747,2017/18,2018-02-18,Sylhet International Cricket Stadium,,Sri Lanka,Bangladesh,Bangladesh,field,Sri Lanka,75.0,,BKG Mendis,2,Sri Lanka tour of Bangladesh,,2.0
+1122285,2017/18,2018-02-18,The Wanderers Stadium,Johannesburg,India,South Africa,South Africa,field,India,28.0,,B Kumar,2,India tour of South Africa,,1.0
+1072321,2017/18,2018-02-18,Seddon Park,Hamilton,England,New Zealand,New Zealand,field,England,2.0,,EJG Morgan,2,Trans-Tasman Twenty20 Trophy,,6.0
+1072320,2017/18,2018-02-16,Eden Park,Auckland,New Zealand,Australia,New Zealand,bat,Australia,,5.0,DJM Short,2,Trans-Tasman Twenty20 Trophy,,5.0
+1130746,2017/18,2018-02-15,"Shere Bangla National Stadium, Mirpur",Dhaka,Bangladesh,Sri Lanka,Bangladesh,bat,Sri Lanka,,6.0,BKG Mendis,2,Sri Lanka tour of Bangladesh,,1.0
+1072319,2017/18,2018-02-13,Westpac Stadium,Wellington,New Zealand,England,England,field,New Zealand,12.0,,KS Williamson,2,Trans-Tasman Twenty20 Trophy,,4.0
+1072318,2017/18,2018-02-10,Melbourne Cricket Ground,,England,Australia,Australia,field,Australia,,7.0,KW Richardson,2,Trans-Tasman Twenty20 Trophy,,3.0
+1072317,2017/18,2018-02-07,Bellerive Oval,Hobart,England,Australia,Australia,field,Australia,,5.0,GJ Maxwell,2,Trans-Tasman Twenty20 Trophy,,2.0
+1072316,2017/18,2018-02-03,Sydney Cricket Ground,,New Zealand,Australia,Australia,field,Australia,,7.0,B Stanlake,2,Trans-Tasman Twenty20 Trophy,,1.0
+1115809,2017/18,2018-01-28,Bay Oval,Mount Maunganui,Pakistan,New Zealand,Pakistan,bat,Pakistan,18.0,,Shadab Khan,2,Pakistan tour of New Zealand,,3.0
+1115808,2017/18,2018-01-25,Eden Park,Auckland,Pakistan,New Zealand,Pakistan,bat,Pakistan,48.0,,Fakhar Zaman,2,Pakistan tour of New Zealand,,2.0
+1115807,2017/18,2018-01-22,Westpac Stadium,Wellington,Pakistan,New Zealand,New Zealand,field,New Zealand,,7.0,C Munro,2,Pakistan tour of New Zealand,,1.0
+1115800,2017/18,2018-01-03,Bay Oval,Mount Maunganui,New Zealand,West Indies,New Zealand,bat,New Zealand,119.0,,C Munro,2,West Indies tour of New Zealand,,3.0
+1115799,2017/18,2018-01-01,Bay Oval,Mount Maunganui,New Zealand,West Indies,West Indies,field,,,,,1,West Indies tour of New Zealand,,2.0
+1115798,2017/18,2017-12-29,Saxton Oval,Nelson,New Zealand,West Indies,West Indies,field,New Zealand,47.0,,GD Phillips,2,West Indies tour of New Zealand,,1.0
+1122731,2017/18,2017-12-24,Wankhede Stadium,Mumbai,Sri Lanka,India,India,field,India,,5.0,JD Unadkat,2,Sri Lanka tour of India,,3.0
+1122730,2017/18,2017-12-22,Holkar Cricket Stadium,Indore,India,Sri Lanka,Sri Lanka,field,India,88.0,,RG Sharma,2,Sri Lanka tour of India,,2.0
+1122729,2017/18,2017-12-20,Barabati Stadium,Cuttack,India,Sri Lanka,Sri Lanka,field,India,93.0,,YS Chahal,2,Sri Lanka tour of India,,1.0
+1120095,2017/18,2017-11-07,Greenfield International Stadium,Thiruvananthapuram,India,New Zealand,New Zealand,field,India,6.0,,JJ Bumrah,2,New Zealand tour of India,,3.0
+1120094,2017/18,2017-11-04,Saurashtra Cricket Association Stadium,Rajkot,New Zealand,India,New Zealand,bat,New Zealand,40.0,,C Munro,2,New Zealand tour of India,,2.0
+1120093,2017/18,2017-11-01,Arun Jaitley Stadium,Delhi,India,New Zealand,New Zealand,field,India,53.0,,S Dhawan,2,New Zealand tour of India,,1.0
+1120293,2017/18,2017-10-29,Gaddafi Stadium,Lahore,Pakistan,Sri Lanka,Sri Lanka,field,Pakistan,36.0,,Shoaib Malik,2,Sri Lanka tour of United Arab Emirates and Pakistan,,3.0
+1075508,2017/18,2017-10-29,Senwes Park,Potchefstroom,South Africa,Bangladesh,Bangladesh,field,South Africa,83.0,,DA Miller,2,Bangladesh tour of South Africa,,2.0
+1120292,2017/18,2017-10-27,Sheikh Zayed Stadium,Abu Dhabi,Sri Lanka,Pakistan,Pakistan,field,Pakistan,,2.0,Shadab Khan,2,Sri Lanka tour of United Arab Emirates and Pakistan,,2.0
+1120291,2017/18,2017-10-26,Sheikh Zayed Stadium,Abu Dhabi,Sri Lanka,Pakistan,Pakistan,field,Pakistan,,7.0,Usman Shinwari,2,Sri Lanka tour of United Arab Emirates and Pakistan,,1.0
+1075507,2017/18,2017-10-26,Mangaung Oval,Bloemfontein,South Africa,Bangladesh,South Africa,bat,South Africa,20.0,,AB de Villiers,2,Bangladesh tour of South Africa,,1.0
+1119502,2017/18,2017-10-10,Barsapara Cricket Stadium,Guwahati,India,Australia,Australia,field,Australia,,8.0,JP Behrendorff,2,Australia tour of India,,2.0
+1119501,2017/18,2017-10-07,JSCA International Stadium Complex,Ranchi,Australia,India,India,field,India,,9.0,Kuldeep Yadav,2,Australia tour of India,,1.0
+1031665,2017,2017-09-16,Riverside Ground,Chester-le-Street,West Indies,England,England,field,West Indies,21.0,,SP Narine,2,West Indies tour of England,,
+1117824,2017/18,2017-09-15,Gaddafi Stadium,Lahore,Pakistan,ICC World XI,ICC World XI,field,Pakistan,33.0,,Ahmed Shehzad,2,Independence Cup,,3.0
+1117822,2017/18,2017-09-13,Gaddafi Stadium,Lahore,Pakistan,ICC World XI,Pakistan,bat,ICC World XI,,7.0,NLTC Perera,2,Independence Cup,,2.0
+1117821,2017/18,2017-09-12,Gaddafi Stadium,Lahore,Pakistan,ICC World XI,ICC World XI,field,Pakistan,20.0,,Babar Azam,2,Independence Cup,,1.0
+1109610,2017,2017-09-06,"R.Premadasa Stadium, Khettarama",Colombo,Sri Lanka,India,India,field,India,,7.0,V Kohli,2,India tour of Sri Lanka,,
+1098211,2017,2017-07-09,"Sabina Park, Kingston",Jamaica,West Indies,India,West Indies,field,West Indies,,9.0,E Lewis,2,,,
+1031435,2017,2017-06-25,Sophia Gardens,Cardiff,England,South Africa,South Africa,field,England,19.0,,DJ Malan,2,South Africa in England T20I Series,,3.0
+1031433,2017,2017-06-23,County Ground,Taunton,England,South Africa,England,field,South Africa,3.0,,CH Morris,2,South Africa in England T20I Series,,2.0
+1031431,2017,2017-06-21,The Rose Bowl,Southampton,England,South Africa,South Africa,bat,England,,9.0,JM Bairstow,2,South Africa in England T20I Series,,1.0
+1083450,2016/17,2017-04-06,R Premadasa Stadium,Colombo,Sri Lanka,Bangladesh,Bangladesh,bat,Bangladesh,45.0,,Shakib Al Hasan,2,Bangladesh in Sri Lanka T20I Series,,2.0
+1083449,2016/17,2017-04-04,R Premadasa Stadium,Colombo,Sri Lanka,Bangladesh,Bangladesh,bat,Sri Lanka,,6.0,MDKJ Perera,2,Bangladesh in Sri Lanka T20I Series,,1.0
+1085496,2017,2017-04-02,"Queen's Park Oval, Port of Spain",Trinidad,West Indies,Pakistan,Pakistan,field,Pakistan,,7.0,Hasan Ali,2,Pakistan in West Indies T20I Series,,4.0
+1085495,2017,2017-04-01,"Queen's Park Oval, Port of Spain",Trinidad,West Indies,Pakistan,Pakistan,bat,West Indies,,7.0,E Lewis,2,Pakistan in West Indies T20I Series,,3.0
+1077948,2017,2017-03-30,"Queen's Park Oval, Port of Spain",Trinidad,West Indies,Pakistan,West Indies,field,Pakistan,3.0,,Shadab Khan,2,Pakistan in West Indies T20I Series,,2.0
+1077947,2017,2017-03-26,"Kensington Oval, Bridgetown",Barbados,West Indies,Pakistan,Pakistan,field,Pakistan,,6.0,Shadab Khan,2,Pakistan in West Indies T20I Series,,1.0
+1001353,2016/17,2017-02-22,Adelaide Oval,,Australia,Sri Lanka,Sri Lanka,field,Australia,41.0,,A Zampa,2,Sri Lanka in Australia T20I Series,,3.0
+1001351,2016/17,2017-02-19,"Simonds Stadium, South Geelong",Victoria,Australia,Sri Lanka,Sri Lanka,field,Sri Lanka,,2.0,DAS Gunaratne,2,Sri Lanka in Australia T20I Series,,2.0
+1020029,2016/17,2017-02-17,Eden Park,Auckland,New Zealand,South Africa,New Zealand,field,South Africa,78.0,,Imran Tahir,2,,,
+1001349,2016/17,2017-02-17,Melbourne Cricket Ground,,Australia,Sri Lanka,Sri Lanka,field,Sri Lanka,,5.0,DAS Gunaratne,2,Sri Lanka in Australia T20I Series,,1.0
+1034829,2016/17,2017-02-01,M Chinnaswamy Stadium,Bangalore,India,England,England,field,India,75.0,,YS Chahal,2,England in India T20I Series,,3.0
+1034827,2016/17,2017-01-29,"Vidarbha Cricket Association Stadium, Jamtha",Nagpur,India,England,England,field,India,5.0,,JJ Bumrah,2,England in India T20I Series,,2.0
+1034825,2016/17,2017-01-26,Green Park,Kanpur,India,England,England,field,England,,7.0,MM Ali,2,England in India T20I Series,,1.0
+936157,2016/17,2017-01-25,Newlands,Cape Town,South Africa,Sri Lanka,South Africa,bat,Sri Lanka,,5.0,N Dickwella,2,Sri Lanka in South Africa T20I Series,,3.0
+936155,2016/17,2017-01-22,New Wanderers Stadium,Johannesburg,South Africa,Sri Lanka,South Africa,bat,Sri Lanka,,3.0,AD Mathews,2,Sri Lanka in South Africa T20I Series,,2.0
+936153,2016/17,2017-01-20,SuperSport Park,Centurion,South Africa,Sri Lanka,Sri Lanka,field,South Africa,19.0,,L Ngidi,2,Sri Lanka in South Africa T20I Series,,1.0
+1074970,2016/17,2017-01-20,Dubai International Cricket Stadium,,Ireland,Scotland,Scotland,field,Ireland,98.0,,GC Wilson,2,Desert T20 Challenge,Semi Final,
+1074968,2016/17,2017-01-19,Dubai International Cricket Stadium,,Oman,Scotland,Oman,bat,Scotland,,7.0,MH Cross,2,Desert T20 Challenge,,12.0
+1074965,2016/17,2017-01-18,Dubai International Cricket Stadium,,United Arab Emirates,Ireland,Ireland,bat,Ireland,24.0,,WB Rankin,2,Desert T20 Challenge,,9.0
+1074964,2016/17,2017-01-17,Sheikh Zayed Stadium,Abu Dhabi,Netherlands,Scotland,Netherlands,field,Scotland,7.0,,JH Davey,2,Desert T20 Challenge,,8.0
+1074957,2016/17,2017-01-14,Sheikh Zayed Stadium,Abu Dhabi,Hong Kong,Scotland,Scotland,bat,Scotland,24.0,,CS MacLeod,2,Desert T20 Challenge,,1.0
+1019983,2016/17,2017-01-08,Bay Oval,Mount Maunganui,New Zealand,Bangladesh,Bangladesh,field,New Zealand,27.0,,CJ Anderson,2,Bangladesh in New Zealand T20I Series,,3.0
+1019981,2016/17,2017-01-06,Bay Oval,Mount Maunganui,New Zealand,Bangladesh,Bangladesh,field,New Zealand,47.0,,C Munro,2,Bangladesh in New Zealand T20I Series,,2.0
+1019979,2016/17,2017-01-03,McLean Park,Napier,New Zealand,Bangladesh,Bangladesh,bat,New Zealand,,6.0,KS Williamson,2,Bangladesh in New Zealand T20I Series,,1.0
+1050221,2016/17,2016-09-27,Sheikh Zayed Stadium,Abu Dhabi,Pakistan,West Indies,Pakistan,field,Pakistan,,8.0,Imad Wasim,2,Pakistan v West Indies T20I Series,,3.0
+1050219,2016/17,2016-09-24,Dubai International Cricket Stadium,,Pakistan,West Indies,West Indies,field,Pakistan,16.0,,Sarfraz Ahmed,2,Pakistan v West Indies T20I Series,,2.0
+1050217,2016/17,2016-09-23,Dubai International Cricket Stadium,,Pakistan,West Indies,Pakistan,field,Pakistan,,9.0,Imad Wasim,2,Pakistan v West Indies T20I Series,,1.0
+995469,2016,2016-09-09,R Premadasa Stadium,Colombo,Sri Lanka,Australia,Sri Lanka,bat,Australia,,4.0,GJ Maxwell,2,Australia in Sri Lanka T20I Series,,2.0
+913663,2016,2016-09-07,Old Trafford,Manchester,England,Pakistan,England,bat,Pakistan,,9.0,Wahab Riaz,2,,,
+995467,2016,2016-09-06,Pallekele International Cricket Stadium,,Sri Lanka,Australia,Sri Lanka,field,Australia,85.0,,GJ Maxwell,2,Australia in Sri Lanka T20I Series,,1.0
+1004729,2016,2016-09-05,"Bready Cricket Club, Magheramason",Londonderry,Ireland,Hong Kong,Hong Kong,bat,Hong Kong,40.0,,,2,Hong Kong in Ireland T20I Series,,1.0
+1041617,2016,2016-08-28,Central Broward Regional Park Stadium Turf Ground,Lauderhill,India,West Indies,India,field,,,,,2,West Indies v India T20I Series,,2.0
+1041615,2016,2016-08-27,Central Broward Regional Park Stadium Turf Ground,Lauderhill,India,West Indies,India,field,West Indies,1.0,,E Lewis,2,West Indies v India T20I Series,,1.0
+913633,2016,2016-07-05,The Rose Bowl,Southampton,England,Sri Lanka,Sri Lanka,bat,England,,8.0,JC Buttler,2,,,
+1007659,2016,2016-06-22,Harare Sports Club,,Zimbabwe,India,Zimbabwe,field,India,3.0,,KM Jadhav,2,India in Zimbabwe T20I Series,,3.0
+1007657,2016,2016-06-20,Harare Sports Club,,Zimbabwe,India,Zimbabwe,bat,India,,10.0,BB Sran,2,India in Zimbabwe T20I Series,,2.0
+1007655,2016,2016-06-18,Harare Sports Club,,Zimbabwe,India,India,field,Zimbabwe,2.0,,E Chigumbura,2,India in Zimbabwe T20I Series,,1.0
+951373,2015/16,2016-04-03,Eden Gardens,Kolkata,England,West Indies,West Indies,field,West Indies,,4.0,MN Samuels,2,World T20,Final,
+951371,2015/16,2016-03-31,Wankhede Stadium,Mumbai,India,West Indies,West Indies,field,West Indies,,7.0,LMP Simmons,2,World T20,Semi Final,
+951369,2015/16,2016-03-30,Feroz Shah Kotla,Delhi,England,New Zealand,England,field,England,,7.0,JJ Roy,2,World T20,Semi Final,
+951367,2015/16,2016-03-28,Feroz Shah Kotla,Delhi,South Africa,Sri Lanka,South Africa,field,South Africa,,8.0,AM Phangiso,2,World T20,Super 10,32.0
+951363,2015/16,2016-03-27,"Punjab Cricket Association IS Bindra Stadium, Mohali",Chandigarh,India,Australia,Australia,bat,India,,6.0,V Kohli,2,World T20,Super 10,31.0
+951361,2015/16,2016-03-26,Feroz Shah Kotla,Delhi,England,Sri Lanka,Sri Lanka,field,England,10.0,,JC Buttler,2,World T20,Super 10,29.0
+951359,2015/16,2016-03-26,Eden Gardens,Kolkata,Bangladesh,New Zealand,New Zealand,bat,New Zealand,75.0,,KS Williamson,2,World T20,Super 10,28.0
+951357,2015/16,2016-03-25,"Vidarbha Cricket Association Stadium, Jamtha",Nagpur,South Africa,West Indies,West Indies,field,West Indies,,3.0,MN Samuels,2,World T20,Super 10,27.0
+951355,2015/16,2016-03-25,"Punjab Cricket Association IS Bindra Stadium, Mohali",Chandigarh,Australia,Pakistan,Australia,bat,Australia,21.0,,JP Faulkner,2,World T20,Super 10,26.0
+951353,2015/16,2016-03-23,M Chinnaswamy Stadium,Bangalore,India,Bangladesh,Bangladesh,field,India,1.0,,R Ashwin,2,World T20,Super 10,25.0
+951349,2015/16,2016-03-22,"Punjab Cricket Association IS Bindra Stadium, Mohali",Chandigarh,New Zealand,Pakistan,New Zealand,bat,New Zealand,22.0,,MJ Guptill,2,World T20,Super 10,23.0
+951347,2015/16,2016-03-21,M Chinnaswamy Stadium,Bangalore,Australia,Bangladesh,Australia,field,Australia,,3.0,A Zampa,2,World T20,Super 10,22.0
+951345,2015/16,2016-03-20,M Chinnaswamy Stadium,Bangalore,Sri Lanka,West Indies,West Indies,field,West Indies,,7.0,ADS Fletcher,2,World T20,Super 10,21.0
+951341,2015/16,2016-03-19,Eden Gardens,Kolkata,India,Pakistan,India,field,India,,6.0,V Kohli,2,World T20,Super 10,19.0
+951339,2015/16,2016-03-18,Wankhede Stadium,Mumbai,England,South Africa,England,field,England,,2.0,JE Root,2,World T20,Super 10,18.0
+951337,2015/16,2016-03-18,Himachal Pradesh Cricket Association Stadium,Dharamsala,Australia,New Zealand,New Zealand,bat,New Zealand,8.0,,MJ McClenaghan,2,World T20,Super 10,17.0
+951333,2015/16,2016-03-16,Eden Gardens,Kolkata,Bangladesh,Pakistan,Pakistan,bat,Pakistan,55.0,,Shahid Afridi,2,World T20,Super 10,14.0
+951331,2015/16,2016-03-16,Wankhede Stadium,Mumbai,England,West Indies,West Indies,field,West Indies,,6.0,CH Gayle,2,World T20,Super 10,15.0
+951329,2015/16,2016-03-15,"Vidarbha Cricket Association Stadium, Jamtha",Nagpur,India,New Zealand,New Zealand,bat,New Zealand,47.0,,MJ Santner,2,World T20,Super 10,13.0
+951327,2015/16,2016-03-13,Himachal Pradesh Cricket Association Stadium,Dharamsala,Bangladesh,Oman,Oman,field,Bangladesh,54.0,,Tamim Iqbal,2,World T20,First Round,12.0
+951325,2015/16,2016-03-13,Himachal Pradesh Cricket Association Stadium,Dharamsala,Ireland,Netherlands,Ireland,field,Netherlands,12.0,,PA van Meekeren,2,World T20,First Round,11.0
+951323,2015/16,2016-03-12,"Vidarbha Cricket Association Stadium, Jamtha",Nagpur,Hong Kong,Scotland,Hong Kong,bat,Scotland,,8.0,MW Machan,2,World T20,First Round,10.0
+951319,2015/16,2016-03-11,Himachal Pradesh Cricket Association Stadium,Dharamsala,Bangladesh,Ireland,Ireland,field,,,,,1,World T20,First Round,8.0
+951313,2015/16,2016-03-10,"Vidarbha Cricket Association Stadium, Jamtha",Nagpur,Scotland,Zimbabwe,Zimbabwe,bat,Zimbabwe,11.0,,WP Masakadza,2,World T20,First Round,5.0
+951311,2015/16,2016-03-09,Himachal Pradesh Cricket Association Stadium,Dharamsala,Ireland,Oman,Ireland,bat,Oman,,2.0,Amir Ali,2,World T20,First Round,4.0
+951309,2015/16,2016-03-09,Himachal Pradesh Cricket Association Stadium,Dharamsala,Bangladesh,Netherlands,Netherlands,field,Bangladesh,8.0,,Tamim Iqbal,2,World T20,First Round,3.0
+884351,2015/16,2016-03-09,Newlands,Cape Town,South Africa,Australia,South Africa,bat,Australia,,6.0,HM Amla,2,Australia in South Africa T20I Series,,3.0
+951305,2015/16,2016-03-08,"Vidarbha Cricket Association Stadium, Jamtha",Nagpur,Hong Kong,Zimbabwe,Hong Kong,field,Zimbabwe,14.0,,V Sibanda,2,ICC World Twenty20,First Round,1.0
+966765,2015/16,2016-03-06,Shere Bangla National Stadium,Mirpur,Bangladesh,India,India,field,India,,8.0,S Dhawan,2,Asia Cup,Final,
+884349,2015/16,2016-03-06,New Wanderers Stadium,Johannesburg,South Africa,Australia,Australia,field,Australia,,5.0,DA Warner,2,Australia in South Africa T20I Series,,2.0
+966763,2015/16,2016-03-04,Shere Bangla National Stadium,Mirpur,Pakistan,Sri Lanka,Pakistan,field,Pakistan,,6.0,Umar Akmal,2,Asia Cup,,10.0
+884347,2015/16,2016-03-04,Kingsmead,Durban,South Africa,Australia,Australia,bat,South Africa,,3.0,DA Miller,2,Australia in South Africa T20I Series,,1.0
+966761,2015/16,2016-03-03,Shere Bangla National Stadium,Mirpur,India,United Arab Emirates,United Arab Emirates,bat,India,,9.0,RG Sharma,2,Asia Cup,,9.0
+966759,2015/16,2016-03-02,Shere Bangla National Stadium,Mirpur,Bangladesh,Pakistan,Pakistan,bat,Bangladesh,,5.0,Soumya Sarkar,2,Asia Cup,,8.0
+966757,2015/16,2016-03-01,Shere Bangla National Stadium,Mirpur,India,Sri Lanka,India,field,India,,5.0,V Kohli,2,Asia Cup,,7.0
+966755,2015/16,2016-02-29,Shere Bangla National Stadium,Mirpur,Pakistan,United Arab Emirates,United Arab Emirates,bat,Pakistan,,7.0,Shoaib Malik,2,Asia Cup,,6.0
+966753,2015/16,2016-02-28,Shere Bangla National Stadium,Mirpur,Bangladesh,Sri Lanka,Bangladesh,bat,Bangladesh,23.0,,Sabbir Rahman,2,Asia Cup,,5.0
+966751,2015/16,2016-02-27,Shere Bangla National Stadium,Mirpur,India,Pakistan,India,field,India,,5.0,V Kohli,2,Asia Cup,,4.0
+966749,2015/16,2016-02-26,Shere Bangla National Stadium,Mirpur,Bangladesh,United Arab Emirates,United Arab Emirates,field,Bangladesh,51.0,,Mahmudullah,2,Asia Cup,,3.0
+966747,2015/16,2016-02-25,Shere Bangla National Stadium,Mirpur,Sri Lanka,United Arab Emirates,United Arab Emirates,field,Sri Lanka,14.0,,SL Malinga,2,Asia Cup,,2.0
+966745,2015/16,2016-02-24,Shere Bangla National Stadium,Dhaka,India,Bangladesh,Bangladesh,field,India,45.0,,RG Sharma,2,Asia Cup,,1.0
+800481,2015/16,2016-02-21,New Wanderers Stadium,Johannesburg,South Africa,England,South Africa,field,South Africa,,9.0,AB de Villiers,2,England in South Africa T20I Series,,2.0
+800479,2015/16,2016-02-19,Newlands,Cape Town,South Africa,England,South Africa,field,South Africa,,3.0,Imran Tahir,2,England in South Africa T20I Series,,1.0
+954743,2015/16,2016-02-16,Sheikh Zayed Stadium,Abu Dhabi,United Arab Emirates,Ireland,United Arab Emirates,bat,United Arab Emirates,5.0,,,2,Ireland in United Arab Emirates T20I Series,,2.0
+963701,2015/16,2016-02-14,Dr. Y.S. Rajasekhara Reddy ACA-VDCA Cricket Stadium,Visakhapatnam,India,Sri Lanka,India,field,India,,9.0,R Ashwin,2,Sri Lanka in India T20I Series,,3.0
+954741,2015/16,2016-02-14,Sheikh Zayed Stadium,Abu Dhabi,United Arab Emirates,Ireland,United Arab Emirates,field,Ireland,34.0,,,2,Ireland in United Arab Emirates T20I Series,,1.0
+963699,2015/16,2016-02-12,JSCA International Stadium Complex,Ranchi,India,Sri Lanka,Sri Lanka,field,India,69.0,,S Dhawan,2,Sri Lanka in India T20I Series,,2.0
+963697,2015/16,2016-02-09,Maharashtra Cricket Association Stadium,Pune,India,Sri Lanka,Sri Lanka,field,Sri Lanka,,5.0,CAK Rajitha,2,Sri Lanka in India T20I Series,,1.0
+954737,2015/16,2016-02-09,Tony Ireland Stadium,Townsville,Ireland,Papua New Guinea,Papua New Guinea,bat,Papua New Guinea,11.0,,,2,Papua New Guinea v Ireland T20I Series,,3.0
+954735,2015/16,2016-02-07,Tony Ireland Stadium,Townsville,Ireland,Papua New Guinea,Papua New Guinea,field,Ireland,7.0,,,2,Papua New Guinea v Ireland T20I Series,,2.0
+966373,2015/16,2016-02-04,ICC Academy,Dubai,United Arab Emirates,Scotland,United Arab Emirates,bat,United Arab Emirates,9.0,,Amjad Javed,2,,,
+953105,2015/16,2016-01-31,"Mission Road Ground, Mong Kok",Hong Kong,Hong Kong,Scotland,Hong Kong,field,Scotland,37.0,,KJ Coetzer,2,Scotland in Hong Kong T20I Series,,2.0
+895821,2015/16,2016-01-31,Sydney Cricket Ground,,Australia,India,Australia,bat,India,,7.0,SR Watson,2,India in Australia T20I Series,,3.0
+953103,2015/16,2016-01-30,"Mission Road Ground, Mong Kok",Hong Kong,Hong Kong,Scotland,Hong Kong,field,Hong Kong,,9.0,Babar Hayat,2,Scotland in Hong Kong T20I Series,,1.0
+895819,2015/16,2016-01-29,Melbourne Cricket Ground,,Australia,India,Australia,field,India,27.0,,V Kohli,2,India in Australia T20I Series,,2.0
+895817,2015/16,2016-01-26,Adelaide Oval,,Australia,India,Australia,field,India,37.0,,V Kohli,2,India in Australia T20I Series,,1.0
+958421,2015/16,2016-01-22,Sheikh Abu Naser Stadium,Khulna,Bangladesh,Zimbabwe,Zimbabwe,bat,Zimbabwe,18.0,,H Masakadza,2,Walton T20 Cricket Series,,4.0
+914225,2015/16,2016-01-22,Westpac Stadium,Wellington,New Zealand,Pakistan,Pakistan,field,New Zealand,95.0,,CJ Anderson,2,Pakistan in New Zealand T20I Series,,3.0
+958419,2015/16,2016-01-20,Sheikh Abu Naser Stadium,Khulna,Bangladesh,Zimbabwe,Zimbabwe,bat,Zimbabwe,31.0,,MN Waller,2,Walton T20 Cricket Series,,3.0
+958417,2015/16,2016-01-17,Sheikh Abu Naser Stadium,Khulna,Bangladesh,Zimbabwe,Bangladesh,bat,Bangladesh,42.0,,Sabbir Rahman,2,Walton T20 Cricket Series,,2.0
+914223,2015/16,2016-01-17,Seddon Park,Hamilton,New Zealand,Pakistan,Pakistan,bat,New Zealand,,10.0,MJ Guptill,2,Pakistan in New Zealand T20I Series,,2.0
+958415,2015/16,2016-01-15,Sheikh Abu Naser Stadium,Khulna,Bangladesh,Zimbabwe,Zimbabwe,bat,Bangladesh,,4.0,H Masakadza,2,Walton T20 Cricket Series,,1.0
+914221,2015/16,2016-01-15,Eden Park,Auckland,New Zealand,Pakistan,New Zealand,field,Pakistan,16.0,,Shahid Afridi,2,Pakistan in New Zealand T20I Series,,1.0
+914219,2015/16,2016-01-10,Eden Park,Auckland,New Zealand,Sri Lanka,New Zealand,field,New Zealand,,9.0,C Munro,2,Sri Lanka in New Zealand T20I Series,,2.0
+914217,2015/16,2016-01-07,Bay Oval,Mount Maunganui,New Zealand,Sri Lanka,Sri Lanka,field,New Zealand,3.0,,TA Boult,2,Sri Lanka in New Zealand T20I Series,,1.0
+902653,2015/16,2015-11-30,Sharjah Cricket Stadium,,England,Pakistan,England,bat,England,,,Shoaib Malik,4,Pakistan v England T20I Series,,3.0
+902651,2015/16,2015-11-27,Dubai International Cricket Stadium,,England,Pakistan,England,bat,England,3.0,,LE Plunkett,2,Pakistan v England T20I Series,,2.0
+902649,2015/16,2015-11-26,Dubai International Cricket Stadium,,England,Pakistan,England,bat,England,14.0,,SW Billings,2,Pakistan v England T20I Series,,1.0
+931398,2015/16,2015-11-15,Shere Bangla National Stadium,Mirpur,Bangladesh,Zimbabwe,Bangladesh,bat,Zimbabwe,,3.0,N Madziva,2,Zimbabwe in Bangladesh T20I Series,,2.0
+931396,2015/16,2015-11-13,Shere Bangla National Stadium,Mirpur,Bangladesh,Zimbabwe,Bangladesh,field,Bangladesh,,4.0,MN Waller,2,Zimbabwe in Bangladesh T20I Series,,1.0
+915785,2015/16,2015-11-11,R Premadasa Stadium,Colombo,Sri Lanka,West Indies,West Indies,bat,West Indies,23.0,,DJ Bravo,2,West Indies in Sri Lanka T20I Series,,2.0
+915783,2015/16,2015-11-09,Pallekele International Cricket Stadium,,Sri Lanka,West Indies,West Indies,field,Sri Lanka,30.0,,SMSM Senanayake,2,West Indies in Sri Lanka T20I Series,,1.0
+903589,2015/16,2015-10-05,Barabati Stadium,Cuttack,India,South Africa,South Africa,field,South Africa,,6.0,JA Morkel,2,South Africa in India T20I Series,,2.0
+903587,2015/16,2015-10-02,Himachal Pradesh Cricket Association Stadium,Dharmasala,India,South Africa,South Africa,field,South Africa,,7.0,JP Duminy,2,South Africa in India T20I Series,,1.0
+919605,2015/16,2015-09-29,Harare Sports Club,,Zimbabwe,Pakistan,Pakistan,bat,Pakistan,15.0,,Umar Akmal,2,Pakistan in Zimbabwe T20I Series,,2.0
+919603,2015/16,2015-09-27,Harare Sports Club,,Zimbabwe,Pakistan,Pakistan,bat,Pakistan,13.0,,Imad Wasim,2,Pakistan in Zimbabwe T20I Series,,1.0
+743975,2015,2015-08-31,Sophia Gardens,Cardiff,England,Australia,Australia,field,England,5.0,,MM Ali,2,,,
+848841,2015,2015-08-16,SuperSport Park,Centurion,South Africa,New Zealand,New Zealand,bat,New Zealand,32.0,,MJ Guptill,2,New Zealand in South Africa T20I Series,,2.0
+848839,2015,2015-08-14,Kingsmead,Durban,South Africa,New Zealand,South Africa,field,South Africa,,6.0,AM Phangiso,2,New Zealand in South Africa T20I Series,,1.0
+894293,2015,2015-08-09,Harare Sports Club,,Zimbabwe,New Zealand,Zimbabwe,field,New Zealand,80.0,,GH Worker,2,,,
+860281,2015,2015-08-01,R Premadasa Stadium,Colombo,Sri Lanka,Pakistan,Sri Lanka,bat,Pakistan,,1.0,Anwar Ali,2,Pakistan in Sri Lanka T20I Series,,2.0
+860279,2015,2015-07-30,R Premadasa Stadium,Colombo,Sri Lanka,Pakistan,Pakistan,bat,Pakistan,29.0,,Sohail Tanvir,2,Pakistan in Sri Lanka T20I Series,,1.0
+875553,2015,2015-07-25,"The Village, Malahide",Dublin,Ireland,Netherlands,Netherlands,field,Netherlands,,5.0,Mudassar Bukhari,2,ICC World Twenty20 Qualifier,Semi Final,
+875549,2015,2015-07-25,"The Village, Malahide",Dublin,Hong Kong,Scotland,Scotland,field,Scotland,,5.0,RML Taylor,2,ICC World Twenty20 Qualifier,Semi Final,
+885971,2015,2015-07-19,Harare Sports Club,,Zimbabwe,India,Zimbabwe,bat,Zimbabwe,10.0,,CJ Chibhabha,2,India in Zimbabwe T20I Series,,2.0
+885969,2015,2015-07-17,Harare Sports Club,,Zimbabwe,India,India,bat,India,54.0,,AR Patel,2,India in Zimbabwe T20I Series,,1.0
+875521,2015,2015-07-17,"The Village, Malahide",Dublin,Ireland,Hong Kong,Ireland,field,Hong Kong,5.0,,Irfan Ahmed,2,ICC World Twenty20 Qualifier,,33.0
+875501,2015,2015-07-15,"Civil Service Cricket Club, Stormont",Belfast,Ireland,Papua New Guinea,Ireland,bat,Papua New Guinea,,2.0,N Vanua,2,ICC World Twenty20 Qualifier,,23.0
+875491,2015,2015-07-13,"Civil Service Cricket Club, Stormont",Belfast,Nepal,Ireland,Ireland,field,Ireland,,8.0,KJ O'Brien,2,ICC World Twenty20 Qualifier,,18.0
+875471,2015,2015-07-11,"Grange Cricket Club Ground, Raeburn Place",Edinburgh,Scotland,Netherlands,Netherlands,bat,Netherlands,32.0,,AC Evans,2,ICC World Twenty20 Qualifier,,8.0
+875457,2015,2015-07-09,"Grange Cricket Club Ground, Raeburn Place",Edinburgh,Scotland,United Arab Emirates,Scotland,field,Scotland,,9.0,HG Munsey,2,ICC World Twenty20 Qualifier,,1.0
+817205,2015,2015-07-07,Shere Bangla National Stadium,Mirpur,Bangladesh,South Africa,South Africa,bat,South Africa,31.0,,E Leie,2,South Africa in Bangladesh T20I Series,,2.0
+817203,2015,2015-07-05,Shere Bangla National Stadium,Mirpur,Bangladesh,South Africa,South Africa,bat,South Africa,52.0,,F du Plessis,2,South Africa in Bangladesh T20I Series,,1.0
+743953,2015,2015-06-23,Old Trafford,Manchester,England,New Zealand,England,bat,England,56.0,,JE Root,2,,,
+889463,2015,2015-06-20,"Bready Cricket Club, Magheramason",Londonderry,Ireland,Scotland,Scotland,field,Scotland,,6.0,,2,Scotland in Ireland T20I Series,,3.0
+868725,2015,2015-05-24,Gaddafi Stadium,Lahore,Pakistan,Zimbabwe,Zimbabwe,bat,Pakistan,,2.0,Mukhtar Ahmed,2,Zimbabwe in Pakistan T20I Series,,2.0
+868723,2015,2015-05-22,Gaddafi Stadium,Lahore,Pakistan,Zimbabwe,Zimbabwe,bat,Pakistan,,5.0,Mukhtar Ahmed,2,Zimbabwe in Pakistan T20I Series,,1.0
+858491,2015,2015-04-24,Shere Bangla National Stadium,Mirpur,Bangladesh,Pakistan,Pakistan,bat,Bangladesh,,7.0,Sabbir Rahman,2,,,
+736063,2014/15,2015-01-14,Kingsmead,Durban,South Africa,West Indies,West Indies,field,South Africa,69.0,,MN van Wyk,2,West Indies in South Africa T20I Series,,3.0
+722337,2014/15,2015-01-11,New Wanderers Stadium,Johannesburg,South Africa,West Indies,West Indies,field,West Indies,,4.0,CH Gayle,2,West Indies in South Africa T20I Series,,2.0
+722335,2014/15,2015-01-09,Newlands,Cape Town,South Africa,West Indies,South Africa,bat,West Indies,,4.0,CH Gayle,2,West Indies in South Africa T20I Series,,1.0
+754039,2014/15,2014-12-05,Dubai International Cricket Stadium,,New Zealand,Pakistan,Pakistan,field,New Zealand,17.0,,AP Devcich,2,Pakistan v New Zealand T20I Series,,2.0
+742617,2014/15,2014-12-04,Dubai International Cricket Stadium,,New Zealand,Pakistan,Pakistan,field,Pakistan,,7.0,Sarfraz Ahmed,2,Pakistan v New Zealand T20I Series,,1.0
+754721,2014/15,2014-11-09,Stadium Australia,Sydney,Australia,South Africa,Australia,field,Australia,,2.0,CL White,2,South Africa in Australia T20I Series,,3.0
+754719,2014/15,2014-11-07,Melbourne Cricket Ground,,Australia,South Africa,South Africa,bat,Australia,,7.0,CJ Boyce,2,South Africa in Australia T20I Series,,2.0
+754717,2014/15,2014-11-05,Adelaide Oval,,Australia,South Africa,Australia,bat,South Africa,,7.0,RR Rossouw,2,South Africa in Australia T20I Series,,1.0
+727917,2014/15,2014-10-05,Dubai International Cricket Stadium,,Australia,Pakistan,Pakistan,bat,Australia,,6.0,GJ Maxwell,2,,,
+667731,2014,2014-09-07,Edgbaston,Birmingham,England,India,England,bat,England,3.0,,EJG Morgan,2,,,
+730293,2014,2014-08-27,"Warner Park, Basseterre",St Kitts,West Indies,Bangladesh,Bangladesh,bat,,,,,1,,,
+730285,2014,2014-07-06,"Windsor Park, Roseau",Dominica,West Indies,New Zealand,New Zealand,field,West Indies,39.0,,ADS Fletcher,2,New Zealand in West Indies T20I Series,,2.0
+730283,2014,2014-07-05,"Windsor Park, Roseau",Dominica,West Indies,New Zealand,New Zealand,field,New Zealand,12.0,,ADS Fletcher,2,New Zealand in West Indies T20I Series,,1.0
+667887,2014,2014-05-20,Kennington Oval,London,England,Sri Lanka,England,field,Sri Lanka,9.0,,NLTC Perera,2,,,
+682965,2013/14,2014-04-06,Shere Bangla National Stadium,Mirpur,India,Sri Lanka,Sri Lanka,field,Sri Lanka,,6.0,KC Sangakkara,2,World T20,Final,
+682963,2013/14,2014-04-04,Shere Bangla National Stadium,Mirpur,India,South Africa,South Africa,bat,India,,6.0,V Kohli,2,World T20,Semi Final,
+682961,2013/14,2014-04-03,Shere Bangla National Stadium,Mirpur,Sri Lanka,West Indies,Sri Lanka,bat,Sri Lanka,27.0,,AD Mathews,2,World T20,Semi Final,
+682959,2013/14,2014-04-01,Shere Bangla National Stadium,Mirpur,Pakistan,West Indies,West Indies,bat,West Indies,84.0,,DJ Bravo,2,World T20,,32.0
+682957,2013/14,2014-04-01,Shere Bangla National Stadium,Mirpur,Bangladesh,Australia,Bangladesh,bat,Australia,,7.0,AJ Finch,2,World T20,,31.0
+682955,2013/14,2014-03-31,Zahur Ahmed Chowdhury Stadium,Chittagong,New Zealand,Sri Lanka,New Zealand,field,Sri Lanka,59.0,,HMRKB Herath,2,World T20,,30.0
+682953,2013/14,2014-03-31,Zahur Ahmed Chowdhury Stadium,Chittagong,England,Netherlands,England,field,Netherlands,45.0,,Mudassar Bukhari,2,World T20,,29.0
+682951,2013/14,2014-03-30,Shere Bangla National Stadium,Mirpur,Australia,India,Australia,field,India,73.0,,R Ashwin,2,World T20,,28.0
+682949,2013/14,2014-03-30,Shere Bangla National Stadium,Mirpur,Bangladesh,Pakistan,Pakistan,bat,Pakistan,50.0,,Ahmed Shehzad,2,World T20,,27.0
+682947,2013/14,2014-03-29,Zahur Ahmed Chowdhury Stadium,Chittagong,England,South Africa,England,field,South Africa,3.0,,AB de Villiers,2,World T20,,26.0
+682945,2013/14,2014-03-29,Zahur Ahmed Chowdhury Stadium,Chittagong,Netherlands,New Zealand,New Zealand,field,New Zealand,,6.0,BB McCullum,2,World T20,,25.0
+682943,2013/14,2014-03-28,Shere Bangla National Stadium,Mirpur,Bangladesh,India,India,field,India,,8.0,R Ashwin,2,World T20,,24.0
+682941,2013/14,2014-03-28,Shere Bangla National Stadium,Mirpur,Australia,West Indies,Australia,bat,West Indies,,6.0,DJG Sammy,2,World T20,,23.0
+682939,2013/14,2014-03-27,Zahur Ahmed Chowdhury Stadium,Chittagong,England,Sri Lanka,England,field,England,,6.0,AD Hales,2,World T20,,22.0
+682937,2013/14,2014-03-27,Zahur Ahmed Chowdhury Stadium,Chittagong,Netherlands,South Africa,Netherlands,field,South Africa,6.0,,Imran Tahir,2,World T20,,21.0
+682935,2013/14,2014-03-25,Shere Bangla National Stadium,Mirpur,Bangladesh,West Indies,Bangladesh,field,West Indies,73.0,,DR Smith,2,World T20,,20.0
+682933,2013/14,2014-03-24,Zahur Ahmed Chowdhury Stadium,Chittagong,Netherlands,Sri Lanka,Sri Lanka,field,Sri Lanka,,9.0,AD Mathews,2,World T20,,19.0
+682931,2013/14,2014-03-24,Zahur Ahmed Chowdhury Stadium,Chittagong,New Zealand,South Africa,New Zealand,field,South Africa,2.0,,JP Duminy,2,World T20,,18.0
+682929,2013/14,2014-03-23,Shere Bangla National Stadium,Mirpur,India,West Indies,India,field,India,,7.0,A Mishra,2,World T20,,17.0
+682927,2013/14,2014-03-23,Shere Bangla National Stadium,Mirpur,Australia,Pakistan,Australia,field,Pakistan,16.0,,Umar Akmal,2,World T20,,16.0
+682925,2013/14,2014-03-22,Zahur Ahmed Chowdhury Stadium,Chattogram,England,New Zealand,New Zealand,field,New Zealand,9.0,,CJ Anderson,2,ICC Men's T20 World Cup,,15.0
+682923,2013/14,2014-03-22,Zahur Ahmed Chowdhury Stadium,Chittagong,South Africa,Sri Lanka,Sri Lanka,bat,Sri Lanka,5.0,,MDKJ Perera,2,World T20,,14.0
+682921,2013/14,2014-03-21,Shere Bangla National Stadium,Mirpur,India,Pakistan,India,field,India,,7.0,A Mishra,2,World T20,,13.0
+682919,2013/14,2014-03-21,Sylhet Stadium,,Ireland,Netherlands,Netherlands,field,Netherlands,,6.0,SJ Myburgh,2,World T20,First Round,12.0
+682917,2013/14,2014-03-21,Sylhet Stadium,,United Arab Emirates,Zimbabwe,Zimbabwe,field,Zimbabwe,,5.0,E Chigumbura,2,World T20,First Round,11.0
+682915,2013/14,2014-03-20,Zahur Ahmed Chowdhury Stadium,Chittagong,Bangladesh,Hong Kong,Hong Kong,field,Hong Kong,,2.0,Nadeem Ahmed,2,World T20,First Round,10.0
+682911,2013/14,2014-03-19,Sylhet Stadium,,Ireland,United Arab Emirates,Ireland,field,Ireland,21.0,,EC Joyce,2,World T20,First Round,8.0
+682909,2013/14,2014-03-19,Sylhet Stadium,,Netherlands,Zimbabwe,Netherlands,bat,Zimbabwe,,5.0,BRM Taylor,2,World T20,First Round,7.0
+682907,2013/14,2014-03-18,Zahur Ahmed Chowdhury Stadium,Chittagong,Bangladesh,Nepal,Bangladesh,field,Bangladesh,,8.0,Al-Amin Hossain,2,World T20,First Round,6.0
+682903,2013/14,2014-03-17,Sylhet Stadium,,Netherlands,United Arab Emirates,United Arab Emirates,bat,Netherlands,,6.0,TLW Cooper,2,World T20,First Round,4.0
+682901,2013/14,2014-03-17,Sylhet Stadium,,Ireland,Zimbabwe,Ireland,field,Ireland,,3.0,PR Stirling,2,World T20,First Round,3.0
+682899,2013/14,2014-03-16,Zahur Ahmed Chowdhury Stadium,Chittagong,Hong Kong,Nepal,Hong Kong,field,Nepal,80.0,,SP Gauchan,2,World T20,First Round,2.0
+648683,2013/14,2014-03-14,SuperSport Park,Centurion,South Africa,Australia,Australia,field,Australia,,6.0,MA Starc,2,Australia in South Africa T20I Series,,3.0
+636538,2013/14,2014-03-13,"Kensington Oval, Bridgetown",Barbados,West Indies,England,England,bat,England,5.0,,CJ Jordan,2,England in West Indies T20I Series,,3.0
+648681,2013/14,2014-03-12,Kingsmead,Durban,South Africa,Australia,Australia,field,Australia,,5.0,BJ Hodge,2,Australia in South Africa T20I Series,,2.0
+636537,2013/14,2014-03-11,"Kensington Oval, Bridgetown",Barbados,West Indies,England,England,bat,West Indies,,5.0,K Santokie,2,England in West Indies T20I Series,,2.0
+636536,2013/14,2014-03-09,"Kensington Oval, Bridgetown",Barbados,West Indies,England,West Indies,bat,West Indies,27.0,,MN Samuels,2,England in West Indies T20I Series,,1.0
+702143,2013/14,2014-02-21,"Sabina Park, Kingston",Jamaica,West Indies,Ireland,Ireland,field,West Indies,11.0,,DJG Sammy,2,Ireland in West Indies T20I Series,,2.0
+702141,2013/14,2014-02-19,"Sabina Park, Kingston",Jamaica,West Indies,Ireland,West Indies,bat,Ireland,,6.0,EC Joyce,2,Ireland in West Indies T20I Series,,1.0
+690353,2013/14,2014-02-14,Zahur Ahmed Chowdhury Stadium,Chittagong,Bangladesh,Sri Lanka,Bangladesh,bat,Sri Lanka,,3.0,NLTC Perera,2,Sri Lanka in Bangladesh T20I Series,,2.0
+690351,2013/14,2014-02-12,Zahur Ahmed Chowdhury Stadium,Chittagong,Bangladesh,Sri Lanka,Bangladesh,field,Sri Lanka,2.0,,MDKJ Perera,2,Sri Lanka in Bangladesh T20I Series,,1.0
+636166,2013/14,2014-02-02,Stadium Australia,Sydney,Australia,England,Australia,bat,Australia,84.0,,GJ Bailey,2,England in Australia T20I Series,,3.0
+636165,2013/14,2014-01-31,Melbourne Cricket Ground,,Australia,England,England,bat,Australia,,8.0,JR Hazlewood,2,England in Australia T20I Series,,2.0
+636164,2013/14,2014-01-29,Bellerive Oval,Hobart,Australia,England,Australia,bat,Australia,13.0,,CL White,2,England in Australia T20I Series,,1.0
+661697,2013/14,2014-01-15,Westpac Stadium,Wellington,New Zealand,West Indies,West Indies,bat,New Zealand,,4.0,L Ronchi,2,West Indies in New Zealand T20I Series,,2.0
+661695,2013/14,2014-01-11,Eden Park,Auckland,New Zealand,West Indies,New Zealand,bat,New Zealand,81.0,,L Ronchi,2,West Indies in New Zealand T20I Series,,1.0
+657635,2013/14,2013-12-13,Dubai International Cricket Stadium,,Pakistan,Sri Lanka,Pakistan,field,Sri Lanka,24.0,,MDKJ Perera,2,Pakistan v Sri Lanka T20I Series,,2.0
+657633,2013/14,2013-12-11,Dubai International Cricket Stadium,,Pakistan,Sri Lanka,Pakistan,field,Pakistan,,3.0,Shahid Afridi,2,Pakistan v Sri Lanka T20I Series,,1.0
+660223,2013/14,2013-11-28,Sheikh Zayed Stadium,Abu Dhabi,Netherlands,Scotland,Scotland,bat,Netherlands,,8.0,W Barresi,2,ICC World Twenty20 Qualifier,Qualifying Play-off,
+685729,2013/14,2013-11-22,Newlands,Cape Town,South Africa,Pakistan,Pakistan,bat,Pakistan,6.0,,Mohammad Hafeez,2,Pakistan in South Africa T20I Series,,2.0
+660173,2013/14,2013-11-22,ICC Academy,Dubai,Netherlands,Scotland,Netherlands,field,Scotland,15.0,,RML Taylor,2,ICC World Twenty20 Qualifier,,41.0
+668969,2013/14,2013-11-21,Pallekele International Cricket Stadium,,Sri Lanka,New Zealand,Sri Lanka,field,Sri Lanka,,8.0,MDKJ Perera,2,New Zealand in Sri Lanka T20I Series,,2.0
+685727,2013/14,2013-11-20,New Wanderers Stadium,Johannesburg,South Africa,Pakistan,Pakistan,field,South Africa,4.0,,Q de Kock,2,Pakistan in South Africa T20I Series,,1.0
+660149,2013/14,2013-11-19,ICC Academy,Dubai,Kenya,Scotland,Kenya,bat,Kenya,92.0,,RG Aga,2,ICC World Twenty20 Qualifier,,29.0
+660113,2013/14,2013-11-16,Sheikh Zayed Stadium,Abu Dhabi,Canada,Ireland,Canada,field,Ireland,2.0,,A Bagai,2,ICC World Twenty20 Qualifier,,11.0
+649103,2013/14,2013-11-15,Dubai International Cricket Stadium,,Pakistan,South Africa,South Africa,bat,South Africa,6.0,,F du Plessis,2,Pakistan v South Africa T20I Series,,2.0
+649101,2013/14,2013-11-13,Dubai International Cricket Stadium,,Pakistan,South Africa,Pakistan,bat,South Africa,,9.0,DW Steyn,2,Pakistan v South Africa T20I Series,,1.0
+668959,2013/14,2013-11-06,Shere Bangla National Stadium,Mirpur,Bangladesh,New Zealand,New Zealand,bat,New Zealand,15.0,,C Munro,2,,,
+647247,2013/14,2013-10-10,Saurashtra Cricket Association Stadium,Rajkot,India,Australia,India,field,India,,6.0,Yuvraj Singh,2,,,
+566938,2013,2013-08-31,Riverside Ground,Chester-le-Street,England,Australia,Australia,field,England,27.0,,AD Hales,2,Australia in England T20I Series,,2.0
+566937,2013,2013-08-29,The Rose Bowl,Southampton,England,Australia,England,field,Australia,39.0,,AJ Finch,2,Australia in England T20I Series,,1.0
+659547,2013,2013-08-24,Harare Sports Club,,Zimbabwe,Pakistan,Zimbabwe,field,Pakistan,19.0,,Ahmed Shehzad,2,Pakistan in Zimbabwe T20I Series,,2.0
+659545,2013,2013-08-23,Harare Sports Club,,Zimbabwe,Pakistan,Zimbabwe,field,Pakistan,25.0,,Ahmed Shehzad,2,Pakistan in Zimbabwe T20I Series,,1.0
+635660,2013,2013-08-06,"Mahinda Rajapaksa International Cricket Stadium, Sooriyawewa",Hambantota,Sri Lanka,South Africa,South Africa,bat,Sri Lanka,,6.0,TM Dilshan,2,South Africa in Sri Lanka T20I Series,,3.0
+635659,2013,2013-08-04,"Mahinda Rajapaksa International Cricket Stadium, Sooriyawewa",Hambantota,Sri Lanka,South Africa,South Africa,bat,South Africa,22.0,,DA Miller,2,South Africa in Sri Lanka T20I Series,,2.0
+635658,2013,2013-08-02,R Premadasa Stadium,Colombo,Sri Lanka,South Africa,South Africa,bat,South Africa,12.0,,JP Duminy,2,South Africa in Sri Lanka T20I Series,,1.0
+645647,2013,2013-07-28,"Arnos Vale Ground, Kingstown",St Vincent,West Indies,Pakistan,Pakistan,bat,Pakistan,11.0,,Umar Akmal,2,Pakistan in West Indies T20I Series,,2.0
+645645,2013,2013-07-27,"Arnos Vale Ground, Kingstown",St Vincent,West Indies,Pakistan,West Indies,bat,Pakistan,,2.0,Shahid Afridi,2,Pakistan in West Indies T20I Series,,1.0
+566927,2013,2013-06-27,Kennington Oval,London,England,New Zealand,New Zealand,field,,,,,1,New Zealand in England T20I Series,,2.0
+566926,2013,2013-06-25,Kennington Oval,London,England,New Zealand,England,field,New Zealand,5.0,,HD Rutherford,2,New Zealand in England T20I Series,,1.0
+623572,2013,2013-05-12,Queens Sports Club,Bulawayo,Zimbabwe,Bangladesh,Bangladesh,bat,Bangladesh,34.0,,Shakib Al Hasan,2,Bangladesh in Zimbabwe T20I Series,,2.0
+623571,2013,2013-05-11,Queens Sports Club,Bulawayo,Zimbabwe,Bangladesh,Zimbabwe,bat,Zimbabwe,6.0,,H Masakadza,2,Bangladesh in Zimbabwe T20I Series,,1.0
+602477,2012/13,2013-03-31,Pallekele International Cricket Stadium,,Sri Lanka,Bangladesh,Bangladesh,field,Sri Lanka,17.0,,MDKJ Perera,2,,,
+593987,2012/13,2013-03-03,"Sir Vivian Richards Stadium, North Sound",Antigua,West Indies,Zimbabwe,West Indies,bat,West Indies,41.0,,S Badree,2,Zimbabwe in West Indies T20I Series,,2.0
+567367,2012/13,2013-03-03,SuperSport Park,Centurion,South Africa,Pakistan,Pakistan,bat,Pakistan,95.0,,Mohammad Hafeez,2,Pakistan in South Africa T20I Series,,2.0
+593986,2012/13,2013-03-02,"Sir Vivian Richards Stadium, North Sound",Antigua,West Indies,Zimbabwe,Zimbabwe,bat,West Indies,,8.0,LMP Simmons,2,Zimbabwe in West Indies T20I Series,,1.0
+569239,2012/13,2013-02-15,Westpac Stadium,Wellington,New Zealand,England,England,field,England,,10.0,AD Hales,2,England in New Zealand T20I Series,,3.0
+573027,2012/13,2013-02-13,"Brisbane Cricket Ground, Woolloongabba",Brisbane,Australia,West Indies,West Indies,bat,West Indies,27.0,,KA Pollard,2,,,
+569238,2012/13,2013-02-12,Seddon Park,Hamilton,New Zealand,England,England,field,New Zealand,55.0,,BB McCullum,2,England in New Zealand T20I Series,,2.0
+569237,2012/13,2013-02-09,Eden Park,Auckland,New Zealand,England,New Zealand,field,England,40.0,,SCJ Broad,2,England in New Zealand T20I Series,,1.0
+573020,2012/13,2013-01-28,Melbourne Cricket Ground,,Australia,Sri Lanka,Australia,field,Sri Lanka,2.0,,NLTC Perera,2,Sri Lanka in Australia T20I Series,,2.0
+573019,2012/13,2013-01-26,Stadium Australia,Sydney,Australia,Sri Lanka,Australia,bat,Sri Lanka,,5.0,DA Warner,2,Sri Lanka in Australia T20I Series,,1.0
+589307,2012/13,2012-12-28,"Sardar Patel Stadium, Motera",Ahmedabad,India,Pakistan,Pakistan,field,India,11.0,,Yuvraj Singh,2,Pakistan in India T20I Series,,2.0
+567355,2012/13,2012-12-26,St George's Park,Port Elizabeth,South Africa,New Zealand,South Africa,bat,South Africa,33.0,,H Davids,2,New Zealand in South Africa T20I Series,,3.0
+589306,2012/13,2012-12-25,M Chinnaswamy Stadium,Bangalore,India,Pakistan,Pakistan,field,Pakistan,,5.0,Mohammad Hafeez,2,Pakistan in India T20I Series,,1.0
+567354,2012/13,2012-12-23,Buffalo Park,East London,South Africa,New Zealand,New Zealand,field,New Zealand,,8.0,MJ Guptill,2,New Zealand in South Africa T20I Series,,2.0
+565811,2012/13,2012-12-22,Wankhede Stadium,Mumbai,India,England,England,field,England,,6.0,EJG Morgan,2,England in India T20I Series,,2.0
+567353,2012/13,2012-12-21,Kingsmead,Durban,South Africa,New Zealand,New Zealand,bat,South Africa,,8.0,RK Kleinveldt,2,New Zealand in South Africa T20I Series,,1.0
+565810,2012/13,2012-12-20,Subrata Roy Sahara Stadium,Pune,India,England,India,field,India,,5.0,Yuvraj Singh,2,England in India T20I Series,,1.0
+587476,2012/13,2012-12-10,Shere Bangla National Stadium,Mirpur,Bangladesh,West Indies,West Indies,bat,West Indies,18.0,,MN Samuels,2,,,
+582186,2012/13,2012-10-30,Pallekele International Cricket Stadium,,Sri Lanka,New Zealand,Sri Lanka,field,,,,,2,,,
+533298,2012/13,2012-10-07,R Premadasa Stadium,Colombo,Sri Lanka,West Indies,West Indies,bat,West Indies,36.0,,MN Samuels,2,ICC World Twenty20,Final,
+533297,2012/13,2012-10-05,R Premadasa Stadium,Colombo,Australia,West Indies,West Indies,bat,West Indies,74.0,,CH Gayle,2,ICC World Twenty20,Semi Final,
+533296,2012/13,2012-10-04,R Premadasa Stadium,Colombo,Sri Lanka,Pakistan,Sri Lanka,bat,Sri Lanka,16.0,,DPMD Jayawardene,2,ICC World Twenty20,Semi Final,
+533295,2012/13,2012-10-02,R Premadasa Stadium,Colombo,India,South Africa,South Africa,field,India,1.0,,Yuvraj Singh,2,ICC World Twenty20,,24.0
+533294,2012/13,2012-10-02,R Premadasa Stadium,Colombo,Australia,Pakistan,Australia,field,Pakistan,32.0,,Raza Hasan,2,ICC World Twenty20,,23.0
+533293,2012/13,2012-10-01,Pallekele International Cricket Stadium,,Sri Lanka,England,England,field,Sri Lanka,19.0,,SL Malinga,2,ICC World Twenty20,,22.0
+533292,2012/13,2012-10-01,Pallekele International Cricket Stadium,,New Zealand,West Indies,New Zealand,field,West Indies,,,SP Narine,4,ICC World Twenty20,,21.0
+533291,2012/13,2012-09-30,R Premadasa Stadium,Colombo,India,Pakistan,Pakistan,bat,India,,8.0,V Kohli,2,ICC World Twenty20,,20.0
+533290,2012/13,2012-09-30,R Premadasa Stadium,Colombo,Australia,South Africa,Australia,field,Australia,,8.0,SR Watson,2,ICC World Twenty20,,19.0
+533289,2012/13,2012-09-29,Pallekele International Cricket Stadium,,Sri Lanka,West Indies,West Indies,bat,Sri Lanka,,9.0,DPMD Jayawardene,2,ICC World Twenty20,,18.0
+533288,2012/13,2012-09-29,Pallekele International Cricket Stadium,,England,New Zealand,New Zealand,bat,England,,6.0,LJ Wright,2,ICC World Twenty20,,17.0
+533287,2012/13,2012-09-28,R Premadasa Stadium,Colombo,Australia,India,India,bat,Australia,,9.0,SR Watson,2,ICC World Twenty20,,16.0
+533286,2012/13,2012-09-28,R Premadasa Stadium,Colombo,Pakistan,South Africa,South Africa,bat,Pakistan,,2.0,Umar Gul,2,ICC World Twenty20,,15.0
+533285,2012/13,2012-09-27,Pallekele International Cricket Stadium,,England,West Indies,West Indies,bat,West Indies,15.0,,J Charles,2,ICC World Twenty20,,14.0
+533284,2012/13,2012-09-27,Pallekele International Cricket Stadium,,Sri Lanka,New Zealand,New Zealand,bat,Sri Lanka,,,TM Dilshan,4,ICC World Twenty20,,13.0
+533283,2012/13,2012-09-25,Pallekele International Cricket Stadium,,Bangladesh,Pakistan,Bangladesh,bat,Pakistan,,8.0,Imran Nazir,2,ICC World Twenty20,,12.0
+533282,2012/13,2012-09-24,R Premadasa Stadium,Colombo,Ireland,West Indies,West Indies,field,,,,,1,ICC World Twenty20,,11.0
+533281,2012/13,2012-09-23,R Premadasa Stadium,Colombo,England,India,England,field,India,90.0,,Harbhajan Singh,2,ICC World Twenty20,,10.0
+533280,2012/13,2012-09-23,Pallekele International Cricket Stadium,,New Zealand,Pakistan,Pakistan,bat,Pakistan,13.0,,Nasir Jamshed,2,ICC World Twenty20,,9.0
+533279,2012/13,2012-09-22,R Premadasa Stadium,Colombo,Australia,West Indies,West Indies,bat,Australia,17.0,,SR Watson,2,ICC World Twenty20,,8.0
+533278,2012/13,2012-09-22,"Mahinda Rajapaksa International Cricket Stadium, Sooriyawewa",Hambantota,Sri Lanka,South Africa,Sri Lanka,field,South Africa,32.0,,AB de Villiers,2,ICC World Twenty20,,7.0
+533276,2012/13,2012-09-21,Pallekele International Cricket Stadium,,Bangladesh,New Zealand,Bangladesh,field,New Zealand,59.0,,BB McCullum,2,ICC World Twenty20,,5.0
+533275,2012/13,2012-09-20,"Mahinda Rajapaksa International Cricket Stadium, Sooriyawewa",Hambantota,South Africa,Zimbabwe,South Africa,field,South Africa,,10.0,JH Kallis,2,ICC World Twenty20,,4.0
+533273,2012/13,2012-09-19,R Premadasa Stadium,Colombo,Australia,Ireland,Ireland,bat,Australia,,7.0,SR Watson,2,ICC World Twenty20,,2.0
+533272,2012/13,2012-09-18,"Mahinda Rajapaksa International Cricket Stadium, Sooriyawewa",Hambantota,Sri Lanka,Zimbabwe,Zimbabwe,field,Sri Lanka,82.0,,BAW Mendis,2,ICC World Twenty20,,1.0
+534235,2012,2012-09-12,Edgbaston,Birmingham,England,South Africa,South Africa,field,England,28.0,,JC Buttler,2,South Africa in England T20I Series,,3.0
+565820,2012,2012-09-11,"MA Chidambaram Stadium, Chepauk",Chennai,India,New Zealand,India,field,New Zealand,1.0,,BB McCullum,2,New Zealand in India T20I Series,,2.0
+571150,2012,2012-09-10,Dubai International Cricket Stadium,,Australia,Pakistan,Pakistan,field,Australia,94.0,,DA Warner,2,Pakistan v Australia T20I Series,,3.0
+534234,2012,2012-09-10,Old Trafford,Manchester,England,South Africa,England,field,,,,,2,South Africa in England T20I Series,,2.0
+534233,2012,2012-09-08,Riverside Ground,Chester-le-Street,England,South Africa,South Africa,field,South Africa,,7.0,DW Steyn,2,South Africa in England T20I Series,,1.0
+571149,2012,2012-09-07,Dubai International Cricket Stadium,,Australia,Pakistan,Pakistan,bat,Pakistan,,,Saeed Ajmal,4,Pakistan v Australia T20I Series,,2.0
+571148,2012,2012-09-05,Dubai International Cricket Stadium,,Australia,Pakistan,Pakistan,field,Pakistan,,7.0,Mohammad Hafeez,2,Pakistan v Australia T20I Series,,1.0
+564786,2012,2012-08-07,Pallekele International Cricket Stadium,,Sri Lanka,India,Sri Lanka,field,India,39.0,,IK Pathan,2,,,
+573672,2012,2012-07-26,Sportpark Westvliet,The Hague,Netherlands,Bangladesh,Bangladesh,bat,Netherlands,,1.0,,2,Bangladesh in Netherlands T20I Series,,2.0
+567205,2012,2012-07-25,Sportpark Westvliet,The Hague,Netherlands,Bangladesh,Netherlands,bat,Bangladesh,,8.0,,2,Bangladesh in Netherlands T20I Series,,1.0
+567071,2012,2012-07-18,"Civil Service Cricket Club, Stormont",Belfast,Ireland,Bangladesh,Ireland,field,Bangladesh,71.0,,Elias Sunny,2,Bangladesh in Ireland T20I Series,,1.0
+560922,2012,2012-07-01,Central Broward Regional Park Stadium Turf Ground,Lauderhill,New Zealand,West Indies,West Indies,bat,West Indies,61.0,,SP Narine,2,New Zealand v West Indies T20I Series,,2.0
+560921,2012,2012-06-30,Central Broward Regional Park Stadium Turf Ground,Lauderhill,New Zealand,West Indies,New Zealand,field,West Indies,56.0,,CH Gayle,2,New Zealand v West Indies T20I Series,,1.0
+534208,2012,2012-06-24,Trent Bridge,Nottingham,England,West Indies,West Indies,bat,England,,7.0,AD Hales,2,,,
+562438,2012,2012-06-03,"Mahinda Rajapaksa International Cricket Stadium, Sooriyawewa",Hambantota,Sri Lanka,Pakistan,Pakistan,bat,Pakistan,23.0,,Shahid Afridi,2,Pakistan in Sri Lanka T20I Series,,2.0
+562437,2012,2012-06-01,"Mahinda Rajapaksa International Cricket Stadium, Sooriyawewa",Hambantota,Sri Lanka,Pakistan,Sri Lanka,bat,Sri Lanka,37.0,,NLTC Perera,2,Pakistan in Sri Lanka T20I Series,,1.0
+556252,2011/12,2012-03-30,New Wanderers Stadium,Johannesburg,South Africa,India,India,field,South Africa,11.0,,CA Ingram,2,,,
+540174,2011/12,2012-03-30,"Kensington Oval, Bridgetown",Barbados,West Indies,Australia,West Indies,bat,West Indies,14.0,,DR Smith,2,Australia in West Indies T20I Series,,2.0
+540173,2011/12,2012-03-27,"Beausejour Stadium, Gros Islet",St Lucia,West Indies,Australia,West Indies,bat,Australia,,8.0,SR Watson,2,Australia in West Indies T20I Series,,1.0
+546473,2011/12,2012-03-23,Dubai International Cricket Stadium,,Canada,Scotland,Canada,bat,Scotland,,4.0,RD Berrington,2,ICC World Twenty20 Qualifier,5th Place Play-Off,
+546470,2011/12,2012-03-23,Dubai International Cricket Stadium,,Ireland,Netherlands,Ireland,field,Ireland,,7.0,KJ O'Brien,2,ICC World Twenty20 Qualifier,Preliminary Final,
+546462,2011/12,2012-03-22,Dubai International Cricket Stadium,,Canada,Ireland,Canada,bat,Ireland,,10.0,PR Stirling,2,ICC World Twenty20 Qualifier,Preliminary Final,
+546442,2011/12,2012-03-18,Dubai International Cricket Stadium,,Ireland,Scotland,Ireland,bat,Ireland,17.0,,EC Joyce,2,ICC World Twenty20 Qualifier,,38.0
+546414,2011/12,2012-03-14,Dubai International Cricket Stadium,,Ireland,Kenya,Kenya,bat,Ireland,,10.0,WB Rankin,2,ICC World Twenty20 Qualifier,,9.0
+531637,2011/12,2012-02-27,Sheikh Zayed Stadium,Abu Dhabi,England,Pakistan,England,bat,England,5.0,,KP Pietersen,2,Pakistan v England T20I Series,,3.0
+531636,2011/12,2012-02-25,Dubai International Cricket Stadium,,England,Pakistan,England,bat,England,38.0,,JM Bairstow,2,Pakistan v England T20I Series,,2.0
+543885,2011/12,2012-02-24,Mombasa Sports Club Ground,,Kenya,Ireland,Ireland,bat,Ireland,2.0,,SO Ngoche,2,Ireland in Kenya T20I Series,,3.0
+543884,2011/12,2012-02-23,Mombasa Sports Club Ground,,Kenya,Ireland,Kenya,bat,Ireland,,8.0,PR Stirling,2,Ireland in Kenya T20I Series,,2.0
+531635,2011/12,2012-02-23,Dubai International Cricket Stadium,,England,Pakistan,England,field,Pakistan,8.0,,Umar Gul,2,Pakistan v England T20I Series,,1.0
+543883,2011/12,2012-02-22,Mombasa Sports Club Ground,,Kenya,Ireland,Ireland,field,Ireland,,6.0,GH Dockrell,2,Ireland in Kenya T20I Series,,1.0
+520599,2011/12,2012-02-22,Eden Park,Auckland,New Zealand,South Africa,New Zealand,field,South Africa,3.0,,J Botha,2,South Africa in New Zealand T20I Series,,3.0
+520598,2011/12,2012-02-19,Seddon Park,Hamilton,New Zealand,South Africa,South Africa,field,South Africa,,8.0,RE Levi,2,South Africa in New Zealand T20I Series,,2.0
+520597,2011/12,2012-02-17,Westpac Stadium,Wellington,New Zealand,South Africa,New Zealand,field,New Zealand,,6.0,MJ Guptill,2,South Africa in New Zealand T20I Series,,1.0
+520596,2011/12,2012-02-14,Seddon Park,Hamilton,New Zealand,Zimbabwe,Zimbabwe,bat,New Zealand,,5.0,JEC Franklin,2,Zimbabwe in New Zealand T20I Series,,2.0
+520595,2011/12,2012-02-11,Eden Park,Auckland,New Zealand,Zimbabwe,Zimbabwe,bat,New Zealand,,7.0,MJ Guptill,2,Zimbabwe in New Zealand T20I Series,,1.0
+518955,2011/12,2012-02-03,Melbourne Cricket Ground,,Australia,India,Australia,bat,India,,8.0,RA Jadeja,2,India in Australia T20I Series,,2.0
+518954,2011/12,2012-02-01,Stadium Australia,Sydney,Australia,India,India,field,Australia,31.0,,MS Wade,2,India in Australia T20I Series,,1.0
+538068,2011/12,2011-11-29,Shere Bangla National Stadium,Mirpur,Bangladesh,Pakistan,Pakistan,bat,Pakistan,50.0,,Mohammad Hafeez,2,,,
+530432,2011/12,2011-11-25,Sheikh Zayed Stadium,Abu Dhabi,Pakistan,Sri Lanka,Sri Lanka,bat,Pakistan,,5.0,Aizaz Cheema,2,,,
+521217,2011/12,2011-10-29,Eden Gardens,Kolkata,India,England,India,bat,England,,6.0,KP Pietersen,2,,,
+527013,2011/12,2011-10-17,Harare Sports Club,,Zimbabwe,New Zealand,Zimbabwe,field,New Zealand,34.0,,MJ Guptill,2,New Zealand in Zimbabwe T20I Series,,2.0
+514024,2011/12,2011-10-16,New Wanderers Stadium,Johannesburg,South Africa,Australia,Australia,bat,South Africa,,3.0,J Theron,2,Australia in South Africa T20I Series,,2.0
+527012,2011/12,2011-10-15,Harare Sports Club,,Zimbabwe,New Zealand,New Zealand,field,New Zealand,,10.0,BB McCullum,2,New Zealand in Zimbabwe T20I Series,,1.0
+514023,2011/12,2011-10-13,Newlands,Cape Town,South Africa,Australia,South Africa,bat,Australia,,5.0,SR Watson,2,Australia in South Africa T20I Series,,1.0
+531982,2011/12,2011-10-11,Shere Bangla National Stadium,Mirpur,Bangladesh,West Indies,Bangladesh,field,Bangladesh,,3.0,Mushfiqur Rahim,2,,,
+525817,2011,2011-09-25,Kennington Oval,London,England,West Indies,England,field,West Indies,25.0,,GE Mathurin,2,West Indies in England T20I Series,,2.0
+525816,2011,2011-09-23,Kennington Oval,London,England,West Indies,England,field,England,,10.0,RS Bopara,2,West Indies in England T20I Series,,1.0
+523736,2011,2011-09-18,Harare Sports Club,,Zimbabwe,Pakistan,Pakistan,bat,Pakistan,5.0,,Mohammad Hafeez,2,Pakistan in Zimbabwe T20I Series,,2.0
+523735,2011,2011-09-16,Harare Sports Club,,Zimbabwe,Pakistan,Zimbabwe,field,Pakistan,85.0,,Mohammad Hafeez,2,Pakistan in Zimbabwe T20I Series,,1.0
+474476,2011,2011-08-31,Old Trafford,Manchester,England,India,India,bat,England,,6.0,JW Dernbach,2,,,
+516205,2011,2011-08-08,Pallekele International Cricket Stadium,,Sri Lanka,Australia,Sri Lanka,bat,Sri Lanka,8.0,,BAW Mendis,2,Australia in Sri Lanka T20I Series,,2.0
+516204,2011,2011-08-06,Pallekele International Cricket Stadium,,Sri Lanka,Australia,Australia,field,Sri Lanka,35.0,,TM Dilshan,2,Australia in Sri Lanka T20I Series,,1.0
+474466,2011,2011-06-25,County Ground,Bristol,England,Sri Lanka,Sri Lanka,field,Sri Lanka,,9.0,DPMD Jayawardene,2,,,
+489220,2011,2011-06-04,"Queen's Park Oval, Port of Spain",Trinidad,West Indies,India,West Indies,field,India,16.0,,S Badrinath,2,,,
+489212,2011,2011-04-21,"Beausejour Stadium, Gros Islet",St Lucia,West Indies,Pakistan,West Indies,bat,West Indies,7.0,,D Bishoo,2,,,
+446961,2010/11,2011-01-14,Melbourne Cricket Ground,,Australia,England,Australia,bat,Australia,4.0,,AJ Finch,2,England in Australia T20I Series,,2.0
+446960,2010/11,2011-01-12,Adelaide Oval,,Australia,England,Australia,bat,England,,1.0,SR Watson,2,England in Australia T20I Series,,1.0
+463149,2010/11,2011-01-09,Moses Mabhida Stadium,Durban,South Africa,India,India,bat,India,21.0,,RG Sharma,2,,,
+473920,2010/11,2010-12-30,AMI Stadium,Christchurch,New Zealand,Pakistan,Pakistan,bat,Pakistan,103.0,,Abdul Razzaq,2,Pakistan in New Zealand T20I Series,,3.0
+473919,2010/11,2010-12-28,Seddon Park,Hamilton,New Zealand,Pakistan,Pakistan,field,New Zealand,39.0,,NL McCullum,2,Pakistan in New Zealand T20I Series,,2.0
+473918,2010/11,2010-12-26,Eden Park,Auckland,New Zealand,Pakistan,New Zealand,field,New Zealand,,5.0,TG Southee,2,Pakistan in New Zealand T20I Series,,1.0
+446956,2010/11,2010-10-31,Western Australia Cricket Association Ground,Perth,Australia,Sri Lanka,Australia,bat,Sri Lanka,,7.0,S Randiv,2,,,
+461565,2010/11,2010-10-27,Sheikh Zayed Stadium,Abu Dhabi,Pakistan,South Africa,Pakistan,bat,South Africa,,6.0,J Theron,2,Pakistan v South Africa T20I Series,,2.0
+478279,2010/11,2010-10-26,Sheikh Zayed Stadium,Abu Dhabi,Pakistan,South Africa,Pakistan,bat,South Africa,,6.0,JP Duminy,2,Pakistan v South Africa T20I Series,,1.0
+463142,2010/11,2010-10-10,De Beers Diamond Oval,Kimberley,South Africa,Zimbabwe,South Africa,bat,South Africa,8.0,,JP Duminy,2,Zimbabwe in South Africa T20I Series,,2.0
+463141,2010/11,2010-10-08,OUTsurance Oval,Bloemfontein,South Africa,Zimbabwe,Zimbabwe,bat,South Africa,,7.0,GC Smith,2,Zimbabwe in South Africa T20I Series,,1.0
+426418,2010,2010-09-07,Sophia Gardens,Cardiff,England,Pakistan,Pakistan,bat,England,,6.0,TT Bresnan,2,Pakistan in England T20I Series,,2.0
+426417,2010,2010-09-05,Sophia Gardens,Cardiff,England,Pakistan,England,field,England,,5.0,MH Yardy,2,Pakistan in England T20I Series,,1.0
+426393,2010,2010-07-06,Edgbaston,Birmingham,Australia,Pakistan,Pakistan,bat,Pakistan,11.0,,Mohammad Amir,2,MCC Spirit of Cricket T20I Series,,2.0
+426392,2010,2010-07-05,Edgbaston,Birmingham,Australia,Pakistan,Pakistan,bat,Pakistan,23.0,,Umar Akmal,2,MCC Spirit of Cricket T20I Series,,1.0
+452154,2010,2010-06-13,Harare Sports Club,,Zimbabwe,India,India,field,India,,7.0,SK Raina,2,India in Zimbabwe T20I Series,,2.0
+452153,2010,2010-06-12,Harare Sports Club,,Zimbabwe,India,India,field,India,,6.0,YK Pathan,2,India in Zimbabwe T20I Series,,1.0
+456992,2010,2010-05-23,Central Broward Regional Park Stadium Turf Ground,Lauderhill,New Zealand,Sri Lanka,New Zealand,bat,Sri Lanka,,7.0,KMDN Kulasekara,2,New Zealand v Sri Lanka T20I Series,,2.0
+456991,2010,2010-05-22,Central Broward Regional Park Stadium Turf Ground,Lauderhill,New Zealand,Sri Lanka,New Zealand,bat,New Zealand,28.0,,SB Styris,2,New Zealand v Sri Lanka T20I Series,,1.0
+447539,2010,2010-05-20,"Sir Vivian Richards Stadium, North Sound",Antigua,West Indies,South Africa,West Indies,field,South Africa,1.0,,J Botha,2,South Africa in West Indies T20I Series,,2.0
+439146,2010,2010-05-19,"Sir Vivian Richards Stadium, North Sound",Antigua,West Indies,South Africa,West Indies,field,South Africa,13.0,,R McLaren,2,South Africa in West Indies T20I Series,,1.0
+412703,2010,2010-05-16,"Kensington Oval, Bridgetown",Barbados,Australia,England,England,field,England,,7.0,C Kieswetter,2,ICC World Twenty20,Final,
+412702,2010,2010-05-14,"Beausejour Stadium, Gros Islet",St Lucia,Australia,Pakistan,Australia,field,Australia,,3.0,MEK Hussey,2,ICC World Twenty20,Semi Final,
+412701,2010,2010-05-13,"Beausejour Stadium, Gros Islet",St Lucia,England,Sri Lanka,Sri Lanka,bat,England,,7.0,SCJ Broad,2,ICC World Twenty20,Semi Final,
+412700,2010,2010-05-11,"Beausejour Stadium, Gros Islet",St Lucia,West Indies,Australia,West Indies,bat,Australia,,6.0,SPD Smith,2,ICC World Twenty20,,24.0
+412699,2010,2010-05-11,"Beausejour Stadium, Gros Islet",St Lucia,India,Sri Lanka,India,bat,Sri Lanka,,5.0,AD Mathews,2,ICC World Twenty20,,23.0
+412698,2010,2010-05-10,"Beausejour Stadium, Gros Islet",St Lucia,England,New Zealand,New Zealand,bat,England,,3.0,TT Bresnan,2,ICC World Twenty20,,22.0
+412697,2010,2010-05-10,"Beausejour Stadium, Gros Islet",St Lucia,Pakistan,South Africa,Pakistan,bat,Pakistan,11.0,,Umar Akmal,2,ICC World Twenty20,,21.0
+412696,2010,2010-05-09,"Kensington Oval, Bridgetown",Barbados,Australia,Sri Lanka,Australia,bat,Australia,81.0,,CL White,2,ICC World Twenty20,,20.0
+412695,2010,2010-05-09,"Kensington Oval, Bridgetown",Barbados,West Indies,India,India,field,West Indies,14.0,,CH Gayle,2,ICC World Twenty20,,19.0
+412694,2010,2010-05-08,"Kensington Oval, Bridgetown",Barbados,England,South Africa,England,bat,England,39.0,,KP Pietersen,2,ICC World Twenty20,,18.0
+412693,2010,2010-05-08,"Kensington Oval, Bridgetown",Barbados,New Zealand,Pakistan,Pakistan,field,New Zealand,1.0,,IG Butler,2,ICC World Twenty20,,17.0
+412692,2010,2010-05-07,"Kensington Oval, Bridgetown",Barbados,West Indies,Sri Lanka,Sri Lanka,bat,Sri Lanka,57.0,,DPMD Jayawardene,2,ICC World Twenty20,,16.0
+412691,2010,2010-05-07,"Kensington Oval, Bridgetown",Barbados,Australia,India,India,field,Australia,49.0,,DA Warner,2,ICC World Twenty20,,15.0
+412690,2010,2010-05-06,"Kensington Oval, Bridgetown",Barbados,New Zealand,South Africa,South Africa,bat,South Africa,13.0,,JA Morkel,2,ICC World Twenty20,,14.0
+412689,2010,2010-05-06,"Kensington Oval, Bridgetown",Barbados,England,Pakistan,England,field,England,,6.0,KP Pietersen,2,ICC World Twenty20,,13.0
+412688,2010,2010-05-05,"Kensington Oval, Bridgetown",Barbados,Australia,Bangladesh,Australia,bat,Australia,27.0,,MEK Hussey,2,ICC World Twenty20,,11.0
+412684,2010,2010-05-04,Providence Stadium,Guyana,New Zealand,Zimbabwe,New Zealand,field,New Zealand,7.0,,NL McCullum,2,ICC World Twenty20,,9.0
+412681,2010,2010-05-04,Providence Stadium,Guyana,England,Ireland,Ireland,field,,,,,2,ICC World Twenty20,,10.0
+412686,2010,2010-05-03,Providence Stadium,Guyana,Sri Lanka,Zimbabwe,Sri Lanka,bat,Sri Lanka,14.0,,DPMD Jayawardene,2,ICC World Twenty20,,7.0
+412685,2010,2010-05-03,Providence Stadium,Guyana,West Indies,England,West Indies,field,West Indies,,8.0,DJG Sammy,2,ICC World Twenty20,,8.0
+412683,2010,2010-05-02,"Beausejour Stadium, Gros Islet",St Lucia,Australia,Pakistan,Australia,bat,Australia,34.0,,SR Watson,2,ICC World Twenty20,,6.0
+412682,2010,2010-05-02,"Beausejour Stadium, Gros Islet",St Lucia,India,South Africa,South Africa,field,India,14.0,,SK Raina,2,ICC World Twenty20,,5.0
+412680,2010,2010-05-01,"Beausejour Stadium, Gros Islet",St Lucia,Bangladesh,Pakistan,Pakistan,bat,Pakistan,21.0,,Salman Butt,2,ICC World Twenty20,,4.0
+412678,2010,2010-04-30,Providence Stadium,Guyana,New Zealand,Sri Lanka,Sri Lanka,bat,New Zealand,,2.0,NL McCullum,2,ICC World Twenty20,,1.0
+412677,2010,2010-04-30,Providence Stadium,Guyana,West Indies,Ireland,West Indies,bat,West Indies,70.0,,DJG Sammy,2,ICC World Twenty20,,2.0
+439139,2009/10,2010-02-28,"Queen's Park Oval, Port of Spain",Trinidad,West Indies,Zimbabwe,Zimbabwe,bat,Zimbabwe,26.0,,AG Cremer,2,,,
+423788,2009/10,2010-02-28,AMI Stadium,Christchurch,New Zealand,Australia,New Zealand,bat,New Zealand,,,BB McCullum,4,Australia in New Zealand T20I Series,,2.0
+423787,2009/10,2010-02-26,Westpac Stadium,Wellington,New Zealand,Australia,New Zealand,bat,Australia,,6.0,MG Johnson,2,Australia in New Zealand T20I Series,,1.0
+406198,2009/10,2010-02-23,Sydney Cricket Ground,,Australia,West Indies,West Indies,bat,Australia,,8.0,DA Warner,2,West Indies in Australia T20I Series,,2.0
+406197,2009/10,2010-02-21,Bellerive Oval,Hobart,Australia,West Indies,Australia,bat,Australia,38.0,,SW Tait,2,West Indies in Australia T20I Series,,1.0
+440946,2009/10,2010-02-20,Dubai International Cricket Stadium,,England,Pakistan,Pakistan,field,Pakistan,,4.0,Abdul Razzaq,2,Pakistan v England T20I Series,,2.0
+440945,2009/10,2010-02-19,Dubai International Cricket Stadium,,England,Pakistan,Pakistan,bat,England,,7.0,EJG Morgan,2,Pakistan v England T20I Series,,1.0
+439510,2009/10,2010-02-13,Dubai International Cricket Stadium,,Ireland,Netherlands,Ireland,bat,Ireland,65.0,,AR Cusack,2,ICC World Twenty20 Qualifier,,16.0
+439505,2009/10,2010-02-11,Dubai International Cricket Stadium,,Ireland,Scotland,Ireland,bat,Ireland,37.0,,DT Johnston,2,ICC World Twenty20 Qualifier,,12.0
+406207,2009/10,2010-02-05,Melbourne Cricket Ground,,Australia,Pakistan,Australia,bat,Australia,2.0,,SW Tait,2,,,
+423782,2009/10,2010-02-03,Seddon Park,Hamilton,New Zealand,Bangladesh,Bangladesh,bat,New Zealand,,10.0,DL Vettori,2,,,
+430885,2009/10,2009-12-12,"Punjab Cricket Association Stadium, Mohali",Chandigarh,India,Sri Lanka,Sri Lanka,bat,India,,6.0,Yuvraj Singh,2,Sri Lanka in India T20I Series,,2.0
+430884,2009/10,2009-12-09,"Vidarbha Cricket Association Stadium, Jamtha",Nagpur,India,Sri Lanka,India,field,Sri Lanka,29.0,,KC Sangakkara,2,Sri Lanka in India T20I Series,,1.0
+387564,2009/10,2009-11-15,SuperSport Park,Centurion,South Africa,England,South Africa,bat,South Africa,84.0,,LE Bosman,2,England in South Africa T20I Series,,2.0
+426724,2009/10,2009-11-13,Dubai International Cricket Stadium,,New Zealand,Pakistan,Pakistan,bat,Pakistan,7.0,,Umar Akmal,2,Pakistan v New Zealand T20I Series,,2.0
+387563,2009/10,2009-11-13,New Wanderers Stadium,Johannesburg,South Africa,England,South Africa,field,England,1.0,,EJG Morgan,2,England in South Africa T20I Series,,1.0
+426723,2009/10,2009-11-12,Dubai International Cricket Stadium,,New Zealand,Pakistan,New Zealand,field,Pakistan,49.0,,Imran Nazir,2,Pakistan v New Zealand T20I Series,,1.0
+403386,2009,2009-09-04,R Premadasa Stadium,Colombo,Sri Lanka,New Zealand,New Zealand,bat,New Zealand,22.0,,JD Ryder,2,New Zealand in Sri Lanka T20I Series,,2.0
+403385,2009,2009-09-02,R Premadasa Stadium,Colombo,Sri Lanka,New Zealand,New Zealand,bat,New Zealand,3.0,,DL Vettori,2,New Zealand in Sri Lanka T20I Series,,1.0
+350050,2009,2009-08-30,Old Trafford,Manchester,England,Australia,England,field,,,,,2,Australia in England T20I Series,,1.0
+403375,2009,2009-08-12,R Premadasa Stadium,Colombo,Sri Lanka,Pakistan,Pakistan,bat,Pakistan,52.0,,Shahid Afridi,2,,,
+401076,2009,2009-08-02,"Warner Park, Basseterre",St Kitts,West Indies,Bangladesh,Bangladesh,bat,West Indies,,5.0,DJG Sammy,2,,,
+356017,2009,2009-06-21,Lord's,London,Pakistan,Sri Lanka,Sri Lanka,bat,Pakistan,,8.0,Shahid Afridi,2,ICC World Twenty20,Final,
+356016,2009,2009-06-19,Kennington Oval,London,Sri Lanka,West Indies,West Indies,field,Sri Lanka,57.0,,TM Dilshan,2,ICC World Twenty20,Semi Final,
+356015,2009,2009-06-18,Trent Bridge,Nottingham,Pakistan,South Africa,Pakistan,bat,Pakistan,7.0,,Shahid Afridi,2,ICC World Twenty20,Semi Final,
+356014,2009,2009-06-16,Trent Bridge,Nottingham,India,South Africa,South Africa,bat,South Africa,12.0,,AB de Villiers,2,ICC World Twenty20,,24.0
+356013,2009,2009-06-16,Trent Bridge,Nottingham,New Zealand,Sri Lanka,Sri Lanka,bat,Sri Lanka,48.0,,BAW Mendis,2,ICC World Twenty20,,23.0
+356012,2009,2009-06-15,Kennington Oval,London,Ireland,Pakistan,Pakistan,bat,Pakistan,39.0,,Kamran Akmal,2,ICC World Twenty20,,21.0
+356011,2009,2009-06-15,Kennington Oval,London,England,West Indies,England,bat,West Indies,,5.0,RR Sarwan,2,ICC World Twenty20,,22.0
+356010,2009,2009-06-14,Lord's,London,England,India,India,field,England,3.0,,RJ Sidebottom,2,ICC World Twenty20,,20.0
+356009,2009,2009-06-14,Lord's,London,Ireland,Sri Lanka,Sri Lanka,bat,Sri Lanka,9.0,,DPMD Jayawardene,2,ICC World Twenty20,,19.0
+356008,2009,2009-06-13,Kennington Oval,London,New Zealand,Pakistan,New Zealand,bat,Pakistan,,6.0,Umar Gul,2,ICC World Twenty20,,18.0
+356007,2009,2009-06-13,Kennington Oval,London,South Africa,West Indies,West Indies,field,South Africa,20.0,,WD Parnell,2,ICC World Twenty20,,17.0
+356006,2009,2009-06-12,Lord's,London,India,West Indies,India,bat,West Indies,,7.0,DJ Bravo,2,ICC World Twenty20,,16.0
+356005,2009,2009-06-12,Lord's,London,Pakistan,Sri Lanka,Sri Lanka,bat,Sri Lanka,19.0,,TM Dilshan,2,ICC World Twenty20,,15.0
+356004,2009,2009-06-11,Trent Bridge,Nottingham,England,South Africa,England,bat,South Africa,,7.0,JH Kallis,2,ICC World Twenty20,,14.0
+356003,2009,2009-06-11,Trent Bridge,Nottingham,Ireland,New Zealand,Ireland,field,New Zealand,83.0,,AJ Redmond,2,ICC World Twenty20,,13.0
+356002,2009,2009-06-10,Trent Bridge,Nottingham,Sri Lanka,West Indies,West Indies,field,Sri Lanka,15.0,,ST Jayasuriya,2,ICC World Twenty20,,11.0
+356001,2009,2009-06-10,Trent Bridge,Nottingham,India,Ireland,India,field,India,,8.0,Z Khan,2,ICC World Twenty20,,12.0
+356000,2009,2009-06-09,Lord's,London,New Zealand,South Africa,New Zealand,field,South Africa,1.0,,RE van der Merwe,2,ICC World Twenty20,,10.0
+355999,2009,2009-06-09,Lord's,London,Netherlands,Pakistan,Pakistan,bat,Pakistan,82.0,,Kamran Akmal,2,ICC World Twenty20,,9.0
+355998,2009,2009-06-08,Trent Bridge,Nottingham,Australia,Sri Lanka,Sri Lanka,field,Sri Lanka,,6.0,KC Sangakkara,2,ICC World Twenty20,,8.0
+355997,2009,2009-06-08,Trent Bridge,Nottingham,Bangladesh,Ireland,Ireland,field,Ireland,,6.0,NJ O'Brien,2,ICC World Twenty20,,7.0
+355996,2009,2009-06-07,Kennington Oval,London,England,Pakistan,Pakistan,field,England,48.0,,LJ Wright,2,ICC World Twenty20,,6.0
+355995,2009,2009-06-07,Kennington Oval,London,Scotland,South Africa,Scotland,field,South Africa,130.0,,AB de Villiers,2,ICC World Twenty20,,5.0
+355994,2009,2009-06-06,Trent Bridge,Nottingham,Bangladesh,India,India,bat,India,25.0,,PP Ojha,2,ICC World Twenty20,,4.0
+355993,2009,2009-06-06,Kennington Oval,London,Australia,West Indies,Australia,bat,West Indies,,7.0,CH Gayle,2,ICC World Twenty20,,3.0
+355992,2009,2009-06-06,Kennington Oval,London,New Zealand,Scotland,New Zealand,field,New Zealand,,7.0,IG Butler,2,ICC World Twenty20,,2.0
+355991,2009,2009-06-05,Lord's,London,England,Netherlands,Netherlands,field,Netherlands,,4.0,TN de Grooth,2,ICC World Twenty20,,1.0
+392615,2009,2009-05-07,Dubai International Cricket Stadium,,Australia,Pakistan,Pakistan,field,Pakistan,,7.0,"Shahid Afridi, Umar Gul",2,,,
+350476,2008/09,2009-03-29,SuperSport Park,Centurion,South Africa,Australia,Australia,field,South Africa,17.0,,RE van der Merwe,2,Australia in South Africa T20I Series,,2.0
+350475,2008/09,2009-03-27,New Wanderers Stadium,Johannesburg,South Africa,Australia,South Africa,field,South Africa,,4.0,DJ Hussey,2,Australia in South Africa T20I Series,,1.0
+352674,2008/09,2009-03-15,"Queen's Park Oval, Port of Spain",Trinidad,West Indies,England,West Indies,field,West Indies,,6.0,RR Sarwan,2,,,
+366622,2008/09,2009-02-27,Westpac Stadium,Wellington,New Zealand,India,New Zealand,field,New Zealand,,5.0,BB McCullum,2,India in New Zealand T20I Series,,2.0
+386494,2008/09,2009-02-25,AMI Stadium,Christchurch,New Zealand,India,New Zealand,field,New Zealand,,7.0,BB McCullum,2,India in New Zealand T20I Series,,1.0
+351696,2008/09,2009-02-15,Sydney Cricket Ground,,Australia,New Zealand,Australia,bat,Australia,1.0,,NW Bracken,2,,,
+386535,2008/09,2009-02-10,R Premadasa Stadium,Colombo,Sri Lanka,India,Sri Lanka,bat,India,,3.0,YK Pathan,2,,,
+351695,2008/09,2009-01-13,"Brisbane Cricket Ground, Woolloongabba",Brisbane,Australia,South Africa,South Africa,bat,Australia,,6.0,MEK Hussey,2,South Africa in Australia T20I Series,,2.0
+351694,2008/09,2009-01-11,Melbourne Cricket Ground,,Australia,South Africa,Australia,bat,Australia,52.0,,DA Warner,2,South Africa in Australia T20I Series,,1.0
+366708,2008/09,2008-12-28,Seddon Park,Hamilton,New Zealand,West Indies,New Zealand,bat,New Zealand,36.0,,JD Ryder,2,West Indies in New Zealand T20I Series,,2.0
+366707,2008/09,2008-12-26,"Eden Park, Auckland",Auckland,New Zealand,West Indies,New Zealand,bat,West Indies,,,CH Gayle,4,West Indies tour of New Zealand,,1.0
+350347,2008/09,2008-11-05,New Wanderers Stadium,Johannesburg,South Africa,Bangladesh,Bangladesh,field,South Africa,12.0,,Abdur Razzak,2,,,
+361660,2008/09,2008-10-13,Maple Leaf North-West Ground,King City,Pakistan,Sri Lanka,Sri Lanka,field,Sri Lanka,,5.0,ST Jayasuriya,2,T20 Canada,Final,
+361656,2008/09,2008-10-11,Maple Leaf North-West Ground,King City,Pakistan,Sri Lanka,Pakistan,field,Pakistan,,3.0,Shoaib Malik,2,T20 Canada,,4.0
+361531,2008,2008-08-04,"Civil Service Cricket Club, Stormont",Belfast,Netherlands,Scotland,Netherlands,field,Netherlands,,5.0,RN ten Doeschate,2,ICC World Twenty20 Qualifier,Semi Final,
+361530,2008,2008-08-04,"Civil Service Cricket Club, Stormont",Belfast,Ireland,Kenya,Ireland,field,Ireland,,4.0,AC Botha,2,ICC World Twenty20 Qualifier,Semi Final,
+354456,2008,2008-08-03,"Civil Service Cricket Club, Stormont",Belfast,Bermuda,Scotland,Scotland,field,Scotland,,8.0,JD Nel,2,ICC World Twenty20 Qualifier,,4.0
+319142,2008,2008-06-20,"Kensington Oval, Bridgetown",Barbados,West Indies,Australia,West Indies,field,West Indies,,7.0,XM Marshall,2,,,
+296903,2008,2008-06-13,Old Trafford,Manchester,England,New Zealand,England,field,England,,9.0,IR Bell,2,,,
+343764,2007/08,2008-04-20,National Stadium,Karachi,Pakistan,Bangladesh,Pakistan,bat,Pakistan,102.0,,Misbah-ul-Haq,2,,,
+300436,2007/08,2008-02-07,Jade Stadium,Christchurch,New Zealand,England,England,bat,England,50.0,,PD Collingwood,2,England in New Zealand T20I Series,,2.0
+300435,2007/08,2008-02-05,Eden Park,Auckland,New Zealand,England,New Zealand,field,England,32.0,,AD Mascarenhas,2,England in New Zealand T20I Series,,1.0
+291356,2007/08,2008-02-01,Melbourne Cricket Ground,,Australia,India,India,bat,Australia,,9.0,MJ Clarke,2,,,
+298804,2007/08,2008-01-18,New Wanderers Stadium,Johannesburg,South Africa,West Indies,South Africa,field,South Africa,,4.0,SM Pollock,2,West Indies in South Africa T20I Series,,2.0
+287879,2007/08,2007-09-24,New Wanderers Stadium,Johannesburg,India,Pakistan,India,bat,India,5.0,,IK Pathan,2,ICC World Twenty20,Final,
+287878,2007/08,2007-09-22,Kingsmead,Durban,Australia,India,India,bat,India,15.0,,Yuvraj Singh,2,ICC World Twenty20,Semi Final,
+287877,2007/08,2007-09-22,Newlands,Cape Town,New Zealand,Pakistan,New Zealand,bat,Pakistan,,6.0,Umar Gul,2,ICC World Twenty20,Semi Final,
+287876,2007/08,2007-09-20,Kingsmead,Durban,South Africa,India,India,bat,India,37.0,,RG Sharma,2,ICC World Twenty20,,24.0
+287875,2007/08,2007-09-20,Newlands,Cape Town,Bangladesh,Pakistan,Pakistan,field,Pakistan,,4.0,Junaid Siddique,2,ICC World Twenty20,,23.0
+287874,2007/08,2007-09-20,Newlands,Cape Town,Australia,Sri Lanka,Australia,field,Australia,,10.0,SR Clark,2,ICC World Twenty20,,22.0
+287873,2007/08,2007-09-19,Kingsmead,Durban,England,India,India,bat,India,18.0,,Yuvraj Singh,2,ICC World Twenty20,,21.0
+287872,2007/08,2007-09-19,Kingsmead,Durban,South Africa,New Zealand,South Africa,field,South Africa,,6.0,JM Kemp,2,ICC World Twenty20,,20.0
+287871,2007/08,2007-09-18,New Wanderers Stadium,Johannesburg,Bangladesh,Sri Lanka,Bangladesh,field,Sri Lanka,64.0,,CRD Fernando,2,ICC World Twenty20,,19.0
+287870,2007/08,2007-09-18,New Wanderers Stadium,Johannesburg,Australia,Pakistan,Pakistan,field,Pakistan,,6.0,Misbah-ul-Haq,2,ICC World Twenty20,,18.0
+287869,2007/08,2007-09-18,Kingsmead,Durban,England,New Zealand,England,field,New Zealand,5.0,,CD McMillan,2,ICC World Twenty20,,17.0
+287868,2007/08,2007-09-17,New Wanderers Stadium,Johannesburg,Pakistan,Sri Lanka,Sri Lanka,field,Pakistan,33.0,,Younis Khan,2,ICC World Twenty20,,16.0
+287867,2007/08,2007-09-16,Newlands,Cape Town,South Africa,England,England,field,South Africa,19.0,,JA Morkel,2,ICC World Twenty20,,15.0
+287866,2007/08,2007-09-16,Newlands,Cape Town,Australia,Bangladesh,Australia,field,Australia,,9.0,B Lee,2,ICC World Twenty20,,14.0
+287865,2007/08,2007-09-16,New Wanderers Stadium,Johannesburg,India,New Zealand,India,field,New Zealand,10.0,,DL Vettori,2,ICC World Twenty20,,13.0
+287864,2007/08,2007-09-15,Newlands,Cape Town,South Africa,Bangladesh,South Africa,field,South Africa,,7.0,M Morkel,2,ICC World Twenty20,,12.0
+287863,2007/08,2007-09-15,New Wanderers Stadium,Johannesburg,New Zealand,Sri Lanka,New Zealand,bat,Sri Lanka,,7.0,ST Jayasuriya,2,ICC World Twenty20,,11.0
+287862,2007/08,2007-09-14,Kingsmead,Durban,India,Pakistan,Pakistan,field,,,,Mohammad Asif,2,ICC World Twenty20,,10.0
+287861,2007/08,2007-09-14,Newlands,Cape Town,Australia,England,England,bat,Australia,,8.0,NW Bracken,2,ICC World Twenty20,,9.0
+287860,2007/08,2007-09-14,New Wanderers Stadium,Johannesburg,Kenya,Sri Lanka,Kenya,field,Sri Lanka,172.0,,ST Jayasuriya,2,ICC World Twenty20,,8.0
+287858,2007/08,2007-09-13,Newlands,Cape Town,England,Zimbabwe,England,bat,England,50.0,,KP Pietersen,2,ICC World Twenty20,,6.0
+287857,2007/08,2007-09-13,New Wanderers Stadium,Johannesburg,Bangladesh,West Indies,Bangladesh,field,Bangladesh,,6.0,Mohammad Ashraful,2,ICC World Twenty20,,5.0
+287856,2007/08,2007-09-12,Newlands,Cape Town,Australia,Zimbabwe,Australia,bat,Zimbabwe,,5.0,BRM Taylor,2,ICC World Twenty20,,4.0
+287855,2007/08,2007-09-12,Kingsmead,Durban,Pakistan,Scotland,Scotland,field,Pakistan,51.0,,Shahid Afridi,2,ICC World Twenty20,,3.0
+287854,2007/08,2007-09-12,Kingsmead,Durban,Kenya,New Zealand,New Zealand,field,New Zealand,,9.0,MR Gillespie,2,ICC World Twenty20,,2.0
+287853,2007/08,2007-09-11,New Wanderers Stadium,Johannesburg,South Africa,West Indies,South Africa,field,South Africa,,8.0,CH Gayle,2,ICC World Twenty20,,1.0
