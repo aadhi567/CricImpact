@@ -1,5 +1,5 @@
 {
-  "last_successful_sync": "2026-10-23T16:20:36Z",
+  "last_successful_sync": "2026-10-23T17:39:08Z",
   "status": "UP_TO_DATE",
   "matches_discovered": 0,
   "matches_imported": 0,
@@ -14,5 +14,5 @@
     "eligible_new_matches": 0
   },
   "message": "Datasets are already up to date. Zero new eligible matches discovered.",
-  "duration_seconds": 1.387
+  "duration_seconds": 2.516
 }

@@ -47,7 +47,7 @@ def test_1_backfilled_matches_integrity():
     df_contrib = pd.read_csv(T20I_DIR / "batter_match_contributions.csv", dtype={"match_id": str}, low_memory=False)
 
     match_ids_set = set(df_matches["match_id"])
-    assert len(df_matches) == 1503, f"Expected 1503 total T20I matches, got {len(df_matches)}"
+    assert len(df_matches) == 1524, f"Expected 1524 total T20I matches, got {len(df_matches)}"
 
     for mid in BACKFILLED_MATCH_IDS:
         # Match in registry
@@ -91,15 +91,15 @@ def test_2_updater_idempotency_and_duplicate_detection():
 
     # Check that datasets still have exact counts
     df_matches = pd.read_csv(T20I_DIR / "matches.csv", dtype={"match_id": str})
-    assert len(df_matches) == 1503, "Repeated run altered match count!"
+    assert len(df_matches) == 1524, "Repeated run altered match count!"
     assert not df_matches.duplicated(subset=["match_id"]).any(), "Duplicate match IDs found!"
 
     df_rosters = pd.read_csv(T20I_DIR / "match_rosters.csv", dtype={"match_id": str})
-    assert len(df_rosters) == 33070, "Repeated run altered roster count!"
+    assert len(df_rosters) == 33534, "Repeated run altered roster count!"
     assert not df_rosters.duplicated(subset=["match_id", "player"]).any(), "Duplicate roster entries found!"
 
     df_contrib = pd.read_csv(T20I_DIR / "batter_match_contributions.csv", dtype={"match_id": str}, low_memory=False)
-    assert len(df_contrib) == 24112, "Repeated run altered contribution count!"
+    assert len(df_contrib) == 24468, "Repeated run altered contribution count!"
     assert not df_contrib.duplicated(subset=["match_id", "innings", "player"]).any(), "Duplicate contribution entries found!"
 
 

@@ -1,9 +1,9 @@
 match_id,season,date,venue,city,team1,team2,toss_winner,toss_decision,winner,win_by_runs,win_by_wickets,player_of_match,innings_count,event_name,stage,match_number
-1550710,2026/27,2026-10-13,Rawalpindi Cricket Stadium,Rawalpindi,Pakistan,Sri Lanka,Sri Lanka,field,Sri Lanka,,8.0,BKG Mendis,2,Sri Lanka tour of Pakistan,,3
-1550709,2026/27,2026-10-11,Rawalpindi Cricket Stadium,Rawalpindi,Pakistan,Sri Lanka,Sri Lanka,field,Pakistan,82.0,,Maaz Sadaqat,2,Sri Lanka tour of Pakistan,,2
-1529232,2026/27,2026-10-11,"Holkar Cricket Stadium, Indore",Indore,India,West Indies,West Indies,field,India,14.0,,Arshdeep Singh,2,West Indies tour of India,,3
-1550708,2026/27,2026-10-09,Rawalpindi Cricket Stadium,Rawalpindi,Sri Lanka,Pakistan,Sri Lanka,bat,Pakistan,,4.0,Sahibzada Farhan,2,Sri Lanka tour of Pakistan,,1
-1529231,2026/27,2026-10-09,"JSCA International Stadium Complex, Ranchi",Ranchi,India,West Indies,West Indies,field,West Indies,,6.0,SD Hope,2,West Indies tour of India,,2
+1550710,2026/27,2026-10-13,Rawalpindi Cricket Stadium,Rawalpindi,Pakistan,Sri Lanka,Sri Lanka,field,Sri Lanka,,8.0,BKG Mendis,2,Sri Lanka tour of Pakistan,,3.0
+1550709,2026/27,2026-10-11,Rawalpindi Cricket Stadium,Rawalpindi,Pakistan,Sri Lanka,Sri Lanka,field,Pakistan,82.0,,Maaz Sadaqat,2,Sri Lanka tour of Pakistan,,2.0
+1529232,2026/27,2026-10-11,"Holkar Cricket Stadium, Indore",Indore,India,West Indies,West Indies,field,India,14.0,,Arshdeep Singh,2,West Indies tour of India,,3.0
+1550708,2026/27,2026-10-09,Rawalpindi Cricket Stadium,Rawalpindi,Sri Lanka,Pakistan,Sri Lanka,bat,Pakistan,,4.0,Sahibzada Farhan,2,Sri Lanka tour of Pakistan,,1.0
+1529231,2026/27,2026-10-09,"JSCA International Stadium Complex, Ranchi",Ranchi,India,West Indies,West Indies,field,West Indies,,6.0,SD Hope,2,West Indies tour of India,,2.0
 1529230,2026/27,2026-10-06,"Bharat Ratna Shri Atal Bihari Vajpayee Ekana Cricket Stadium, Lucknow",Lucknow,West Indies,India,India,field,India,,8.0,SS Iyer,2,West Indies tour of India,,1.0
 1552779,2026,2026-10-03,Korogi Sports Park,Nisshin,India,Pakistan,India,bat,India,19.0,,,2,Asian Games Men's Cricket Competition,Final,
 1552778,2026,2026-10-03,Korogi Sports Park,Nisshin,Sri Lanka,Bangladesh,Sri Lanka,bat,Sri Lanka,63.0,,,2,Asian Games Men's Cricket Competition,3rd Place Play-Off,
@@ -1476,6 +1476,10 @@ match_id,season,date,venue,city,team1,team2,toss_winner,toss_decision,winner,win
 300435,2007/08,2008-02-05,Eden Park,Auckland,New Zealand,England,New Zealand,field,England,32.0,,AD Mascarenhas,2,England in New Zealand T20I Series,,1.0
 291356,2007/08,2008-02-01,Melbourne Cricket Ground,,Australia,India,India,bat,Australia,,9.0,MJ Clarke,2,,,
 298804,2007/08,2008-01-18,New Wanderers Stadium,Johannesburg,South Africa,West Indies,South Africa,field,South Africa,,4.0,SM Pollock,2,West Indies in South Africa T20I Series,,2.0
+319112,2007/08,2007-12-16,St George's Park,Port Elizabeth,South Africa,West Indies,West Indies,field,West Indies,,5.0,JE Taylor,2,West Indies in South Africa T20I Series,,1
+291343,2007/08,2007-12-11,Western Australia Cricket Association Ground,Perth,Australia,New Zealand,Australia,bat,Australia,54.0,,A Symonds,2,,,
+298795,2007/08,2007-11-23,New Wanderers Stadium,Johannesburg,South Africa,New Zealand,South Africa,field,South Africa,,3.0,AB de Villiers,2,,,
+297800,2007/08,2007-10-20,Brabourne Stadium,Mumbai,India,Australia,Australia,bat,India,,7.0,G Gambhir,2,,,
 287879,2007/08,2007-09-24,New Wanderers Stadium,Johannesburg,India,Pakistan,India,bat,India,5.0,,IK Pathan,2,ICC World Twenty20,Final,
 287878,2007/08,2007-09-22,Kingsmead,Durban,Australia,India,India,bat,India,15.0,,Yuvraj Singh,2,ICC World Twenty20,Semi Final,
 287877,2007/08,2007-09-22,Newlands,Cape Town,New Zealand,Pakistan,New Zealand,bat,Pakistan,,6.0,Umar Gul,2,ICC World Twenty20,Semi Final,
@@ -1502,3 +1506,20 @@ match_id,season,date,venue,city,team1,team2,toss_winner,toss_decision,winner,win
 287855,2007/08,2007-09-12,Kingsmead,Durban,Pakistan,Scotland,Scotland,field,Pakistan,51.0,,Shahid Afridi,2,ICC World Twenty20,,3.0
 287854,2007/08,2007-09-12,Kingsmead,Durban,Kenya,New Zealand,New Zealand,field,New Zealand,,9.0,MR Gillespie,2,ICC World Twenty20,,2.0
 287853,2007/08,2007-09-11,New Wanderers Stadium,Johannesburg,South Africa,West Indies,South Africa,field,South Africa,,8.0,CH Gayle,2,ICC World Twenty20,,1.0
+306991,2007/08,2007-09-04,Gymkhana Club Ground,Nairobi,Kenya,Pakistan,Kenya,bat,Pakistan,,8.0,Younis Khan,2,Twenty20 Quadrangular (in Kenya),,3
+306989,2007/08,2007-09-02,Gymkhana Club Ground,Nairobi,Bangladesh,Pakistan,Bangladesh,field,Pakistan,30.0,,Imran Nazir,2,Twenty20 Quadrangular (in Kenya),,2
+306987,2007/08,2007-09-01,Gymkhana Club Ground,Nairobi,Kenya,Bangladesh,Bangladesh,field,Bangladesh,,5.0,Nazimuddin,2,Twenty20 Quadrangular (in Kenya),,1
+258464,2007,2007-06-29,Kennington Oval,London,England,West Indies,West Indies,bat,England,,5.0,OA Shah,2,West Indies in England T20I Series,,2
+258463,2007,2007-06-28,Kennington Oval,London,England,West Indies,West Indies,bat,West Indies,15.0,,PD Collingwood,2,West Indies in England T20I Series,,1
+249227,2006/07,2007-01-09,Sydney Cricket Ground,,Australia,England,Australia,bat,Australia,77.0,,CL White,2,,,
+251488,2006/07,2006-12-26,Eden Park,Auckland,New Zealand,Sri Lanka,New Zealand,field,New Zealand,,5.0,JEC Franklin,2,Sri Lanka in New Zealand T20I Series,,2
+251487,2006/07,2006-12-22,Westpac Stadium,Wellington,New Zealand,Sri Lanka,New Zealand,bat,Sri Lanka,18.0,,ST Jayasuriya,2,Sri Lanka in New Zealand T20I Series,,1
+255954,2006/07,2006-12-01,New Wanderers Stadium,Johannesburg,South Africa,India,South Africa,bat,India,,6.0,KD Karthik,2,,,
+225263,2006,2006-08-28,County Ground,Bristol,England,Pakistan,England,bat,Pakistan,,5.0,Shahid Afridi,2,,,
+225271,2006,2006-06-15,The Rose Bowl,Southampton,England,Sri Lanka,Sri Lanka,bat,Sri Lanka,2.0,,ST Jayasuriya,2,,,
+238195,2005/06,2006-02-24,New Wanderers Stadium,Johannesburg,South Africa,Australia,South Africa,bat,South Africa,2.0,,GC Smith,2,,,
+237242,2005/06,2006-02-16,Eden Park,Auckland,New Zealand,West Indies,New Zealand,field,,,,DR Smith,2,,,
+226374,2005/06,2006-01-09,"Brisbane Cricket Ground, Woolloongabba",Brisbane,Australia,South Africa,Australia,bat,Australia,95.0,,DR Martyn,2,,,
+222678,2005/06,2005-10-21,New Wanderers Stadium,Johannesburg,South Africa,New Zealand,New Zealand,field,New Zealand,,5.0,JS Patel,2,,,
+211028,2005,2005-06-13,The Rose Bowl,Southampton,England,Australia,England,bat,England,100.0,,KP Pietersen,2,,,
+211048,2004/05,2005-02-17,Eden Park,Auckland,New Zealand,Australia,Australia,bat,Australia,44.0,,RT Ponting,2,,,

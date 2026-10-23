@@ -285,9 +285,9 @@ class MatchUpdateService:
             if not m_row:
                 raise ValueError(f"Match {mid} failed match metadata parsing.")
 
-            # Validation: exactly 22 roster players (11 per team)
-            if len(r_rows) != 22:
-                raise ValueError(f"Match {mid} roster incomplete: found {len(r_rows)} players, expected 22.")
+            # Validation: valid roster size (20-26 players, supporting standard 22, concussion subs 23, and SuperSub 24)
+            if len(r_rows) < 20 or len(r_rows) > 26:
+                raise ValueError(f"Match {mid} roster invalid: found {len(r_rows)} players, expected 20-26.")
 
             # Validation: active batting appearances
             if len(b_rows) == 0:

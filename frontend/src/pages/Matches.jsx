@@ -12,6 +12,8 @@ import {
   RotateCcw,
   ChevronDown,
   ChevronUp,
+  ChevronLeft,
+  ChevronRight,
 } from 'lucide-react';
 import { getSeasons, getTeams, getMatches } from '../services/api';
 import { useCompetition, TOURNAMENT_TYPES, resolveDefaultSeason } from '../context/CompetitionContext';
@@ -41,6 +43,10 @@ export default function Matches() {
   const [matches, setMatches] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+
+  // Pagination State
+  const [pageSize, setPageSize] = useState(50);
+  const [currentPage, setCurrentPage] = useState(1);
 
   // 1. Load available seasons on mount or when competition/tournamentType changes
   useEffect(() => {
@@ -95,7 +101,7 @@ export default function Matches() {
           team: selectedTeam,
           opponent: selectedOpponent,
           search: searchQuery,
-          limit: 300,
+          limit: 5000,
           competition,
           tournamentType,
         });
@@ -130,14 +136,30 @@ export default function Matches() {
     });
   }, [matches, selectedResult, selectedTeam]);
 
+  // Reset pagination on filter changes
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [selectedSeason, selectedTeam, selectedOpponent, selectedResult, searchQuery, tournamentType, competition]);
+
+  const totalPages = useMemo(() => {
+    if (pageSize === 'all') return 1;
+    return Math.ceil(filteredMatches.length / Number(pageSize)) || 1;
+  }, [filteredMatches.length, pageSize]);
+
+  const paginatedMatches = useMemo(() => {
+    if (pageSize === 'all') return filteredMatches;
+    const start = (currentPage - 1) * Number(pageSize);
+    return filteredMatches.slice(start, start + Number(pageSize));
+  }, [filteredMatches, currentPage, pageSize]);
+
   const activeTournamentMeta = useMemo(() => {
     return TOURNAMENT_TYPES.find((t) => t.id === tournamentType) || TOURNAMENT_TYPES[0];
   }, [tournamentType]);
 
   const currentSeasonLabel = useMemo(() => {
+    if (selectedSeason === 'All Seasons' || !selectedSeason) return 'All Seasons';
     const opt = seasonOptions.find((o) => o.value === selectedSeason);
     if (opt) return opt.label;
-    if (!selectedSeason) return 'All Seasons';
     return competition === 't20i' ? selectedSeason : `${selectedSeason} Season`;
   }, [seasonOptions, selectedSeason, competition]);
 
@@ -268,14 +290,17 @@ export default function Matches() {
               }}
               className="w-full bg-[#101010] border border-[#2D2D2D] text-[#F2F2F2] rounded-md px-2.5 py-1.5 focus:outline-hidden focus:border-[#D4AF57] transition-colors cursor-pointer text-[12.5px] sm:text-[13px]"
             >
+              <option value="All Seasons" className="bg-[#101010] text-[#F2F2F2]">
+                All Seasons
+              </option>
               {seasonOptions.length > 0 ? (
-                seasonOptions.map((opt) => (
+                seasonOptions.filter((opt) => opt.value !== 'All Seasons').map((opt) => (
                   <option key={opt.value} value={opt.value} className="bg-[#101010] text-[#F2F2F2]">
                     {opt.label}
                   </option>
                 ))
               ) : (
-                seasons.map((s) => (
+                seasons.filter((s) => s !== 'All Seasons').map((s) => (
                   <option key={s} value={s} className="bg-[#101010] text-[#F2F2F2]">
                     {competition === 't20i' ? s : `${s} Season`}
                   </option>
@@ -434,7 +459,7 @@ export default function Matches() {
                 </tr>
               </thead>
               <tbody className="divide-y divide-[#222222] text-[#F2F2F2] text-[12.5px]">
-                {filteredMatches.map((m) => {
+                {paginatedMatches.map((m) => {
                   const isT1Winner = m.winner === m.team1;
                   const isT2Winner = m.winner === m.team2;
 
@@ -552,6 +577,73 @@ export default function Matches() {
                 })}
               </tbody>
             </table>
+          </div>
+        )}
+
+        {/* Pagination Bar */}
+        {filteredMatches.length > 0 && (
+          <div className="p-3 sm:p-3.5 border-t border-[#2D2D2D] bg-[#101010] flex flex-col sm:flex-row items-center justify-between gap-2.5 text-[12px]">
+            <div className="flex items-center gap-2.5 text-[#858585]">
+              <span>
+                Showing{' '}
+                <strong className="text-[#F2F2F2] font-semibold">
+                  {pageSize === 'all'
+                    ? 1
+                    : Math.min((currentPage - 1) * Number(pageSize) + 1, filteredMatches.length)}
+                </strong>{' '}
+                to{' '}
+                <strong className="text-[#F2F2F2] font-semibold">
+                  {pageSize === 'all'
+                    ? filteredMatches.length
+                    : Math.min(currentPage * Number(pageSize), filteredMatches.length)}
+                </strong>{' '}
+                of <strong className="text-[#D4AF57] font-semibold">{filteredMatches.length}</strong> matches
+              </span>
+
+              <div className="flex items-center gap-1.5 ml-2">
+                <span className="text-[#858585]">Rows:</span>
+                <select
+                  value={pageSize}
+                  onChange={(e) => {
+                    setPageSize(e.target.value === 'all' ? 'all' : Number(e.target.value));
+                    setCurrentPage(1);
+                  }}
+                  className="bg-[#161616] text-[#F2F2F2] border border-[#2D2D2D] rounded px-2 py-0.5 text-[11.5px] focus:outline-hidden focus:border-[#D4AF57]"
+                >
+                  <option value={25}>25</option>
+                  <option value={50}>50</option>
+                  <option value={100}>100</option>
+                  <option value="all">All</option>
+                </select>
+              </div>
+            </div>
+
+            {pageSize !== 'all' && totalPages > 1 && (
+              <div className="flex items-center gap-1.5">
+                <button
+                  type="button"
+                  onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
+                  disabled={currentPage === 1}
+                  className="p-1.5 rounded-md bg-[#161616] border border-[#2D2D2D] text-[#858585] hover:text-[#F2F2F2] hover:border-[#D4AF57]/40 disabled:opacity-40 disabled:pointer-events-none transition-colors cursor-pointer"
+                  title="Previous page"
+                >
+                  <ChevronLeft className="w-3.5 h-3.5" />
+                </button>
+                <span className="text-[#858585] px-2 text-[11.5px]">
+                  Page <strong className="text-[#F2F2F2]">{currentPage}</strong> of{' '}
+                  <strong className="text-[#F2F2F2]">{totalPages}</strong>
+                </span>
+                <button
+                  type="button"
+                  onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
+                  disabled={currentPage === totalPages}
+                  className="p-1.5 rounded-md bg-[#161616] border border-[#2D2D2D] text-[#858585] hover:text-[#F2F2F2] hover:border-[#D4AF57]/40 disabled:opacity-40 disabled:pointer-events-none transition-colors cursor-pointer"
+                  title="Next page"
+                >
+                  <ChevronRight className="w-3.5 h-3.5" />
+                </button>
+              </div>
+            )}
           </div>
         )}
       </div>

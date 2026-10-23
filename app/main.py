@@ -490,7 +490,7 @@ def list_matches(
     opponent: Optional[str] = Query(None, description="Optional opponent filter"),
     tournament: Optional[str] = Query(None, description="Optional tournament filter (e.g. ICC Men's T20 World Cup)"),
     search: Optional[str] = Query(None, description="Search team or venue name"),
-    limit: int = Query(200, ge=1, le=1000, description="Max matches to return"),
+    limit: int = Query(200, ge=1, le=5000, description="Max matches to return"),
     competition: str = Query("ipl", description="Competition: ipl, t20i"),
     tournament_type: Optional[str] = Query(None, description="Tournament Type: all, world_cup, asia_cup, bilateral, other"),
 ):
