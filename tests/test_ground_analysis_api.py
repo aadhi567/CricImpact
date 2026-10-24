@@ -288,20 +288,20 @@ def test_phase_metrics_calculations():
 
     for ph_key in ("powerplay", "middle", "death"):
         ph = comb[ph_key]
-        if ph["sample_innings"] > 0:
-            assert ph["avg_runs"] > 0
-            assert ph["median_runs"] > 0
-            assert ph["run_rate"] > 0
-            assert 0.0 <= ph["dot_percentage"] <= 100.0
-            assert 0.0 <= ph["boundary_percentage"] <= 100.0
-            assert ph["highest"]["runs"] >= ph["lowest"]["runs"]
-            assert ph["highest"]["runs"] >= ph["median_runs"]
-            assert ph["lowest"]["runs"] <= ph["median_runs"]
-            # Check context fields in highest/lowest
-            assert "score_str" in ph["highest"]
-            assert "opponent" in ph["highest"]
-            assert "date" in ph["highest"]
-            assert "match_id" in ph["highest"]
+        assert ph["sample_innings"] > 0, f"Expected {ph_key} to have eligible innings, got 0"
+        assert ph["avg_runs"] > 0
+        assert ph["median_runs"] > 0
+        assert ph["run_rate"] > 0
+        assert 0.0 <= ph["dot_percentage"] <= 100.0
+        assert 0.0 <= ph["boundary_percentage"] <= 100.0
+        assert ph["highest"]["runs"] >= ph["lowest"]["runs"]
+        assert ph["highest"]["runs"] >= ph["median_runs"]
+        assert ph["lowest"]["runs"] <= ph["median_runs"]
+        # Check context fields in highest/lowest
+        assert "score_str" in ph["highest"]
+        assert "opponent" in ph["highest"]
+        assert "date" in ph["highest"]
+        assert "match_id" in ph["highest"]
 
 
 def test_unplayed_phase_exclusion():
@@ -531,3 +531,62 @@ def test_metrics_consistency_across_all_metrics():
                 elif ph == "death":
                     assert card["highest"]["legal_balls"] >= 30
                     assert card["lowest"]["legal_balls"] >= 30
+
+
+def test_wankhede_stadium_phase_analysis_regression():
+    """
+    Regression test ensuring Wankhede Stadium phase analysis is populated with real existing data.
+    Guarantees:
+    - 50+ standard 20-over matches available in rolling 5-year window.
+    - Powerplay, Middle Overs, and Death Overs each have >0 eligible innings (PP >= 100, Mid >= 100, Death >= 50).
+    - Run rates, avg runs, and avg wickets are non-null and positive.
+    - Both 1st and 2nd innings have populated phase breakdowns.
+    - Venue Scoring Progression & Acceleration reports reliable pattern (is_reliable == True).
+    - Rate insight does not claim insufficient sample size.
+    """
+    res = client.get("/api/ground-analysis/venue/Wankhede Stadium, Mumbai?competition=combined&period=rolling_5yr")
+    assert res.status_code == 200
+    data = res.json()
+    pa = data.get("phase_analysis")
+    assert pa is not None
+
+    # 1. Scope summary
+    scope = pa["scope_summary"]
+    assert scope["eligible_standard_matches"] >= 50
+    assert scope["total_matches_in_period"] >= scope["eligible_standard_matches"]
+
+    # 2. Combined phases non-zero sample sizes and non-null rates
+    comb = pa["combined"]
+    for ph_key in ("powerplay", "middle", "death"):
+        ph = comb[ph_key]
+        assert ph["sample_innings"] > 0, f"Expected {ph_key} sample_innings > 0, got 0"
+        assert ph["sample_matches"] > 0
+        assert ph["avg_runs"] is not None and ph["avg_runs"] > 0
+        assert ph["median_runs"] is not None and ph["median_runs"] > 0
+        assert ph["run_rate"] is not None and ph["run_rate"] > 0
+        assert ph["avg_wickets"] is not None and ph["avg_wickets"] > 0
+        assert ph["highest"] is not None
+        assert ph["lowest"] is not None
+        assert ph["highest"]["runs"] >= ph["lowest"]["runs"]
+
+    # Wankhede expected volume in rolling 5-year window
+    assert comb["powerplay"]["sample_innings"] >= 100
+    assert comb["middle"]["sample_innings"] >= 100
+    assert comb["death"]["sample_innings"] >= 50
+
+    # 3. Innings separation (1st and 2nd innings)
+    for inn in ("first_innings", "second_innings"):
+        assert pa[inn]["powerplay"]["sample_innings"] >= 50
+        assert pa[inn]["powerplay"]["run_rate"] is not None
+        assert pa[inn]["middle"]["sample_innings"] >= 50
+        assert pa[inn]["middle"]["run_rate"] is not None
+        assert pa[inn]["death"]["sample_innings"] >= 20
+        assert pa[inn]["death"]["run_rate"] is not None
+
+    # 4. Progression insights reliability
+    insights = pa["progression_insights"]
+    assert insights["is_reliable"] is True
+    assert insights["powerplay_run_rate"] is not None and insights["powerplay_run_rate"] > 7.0
+    assert insights["middle_run_rate"] is not None and insights["middle_run_rate"] > 7.0
+    assert insights["death_run_rate"] is not None and insights["death_run_rate"] > 9.0
+    assert "insufficient" not in insights["rate_insight"].lower()

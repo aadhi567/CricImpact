@@ -80,9 +80,10 @@ def test_vercel_spa_routing_regex():
     assert "rewrites" in config
     assert len(config["rewrites"]) >= 1
 
-    rewrite = config["rewrites"][0]
-    source_pattern = rewrite["source"]
-    destination = rewrite["destination"]
+    spa_rewrite = next((r for r in config["rewrites"] if r.get("destination") == "/index.html"), None)
+    assert spa_rewrite is not None, "A rewrite with destination '/index.html' must exist for SPA routing"
+    source_pattern = spa_rewrite["source"]
+    destination = spa_rewrite["destination"]
 
     assert destination == "/index.html"
 

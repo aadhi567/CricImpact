@@ -158,11 +158,11 @@ def test_api_tournaments_and_filtering():
     assert len(wc_matches) > 0
     assert all(m["event_name"] == "ICC Men's T20 World Cup" for m in wc_matches)
 
-    # 3. Filter matches by Asia Cup
+    # 3. Filter matches by Asia Cup (8 in 2022 + 11 in 2016 = 19 matches)
     res_asia = client.get("/api/matches?competition=t20i&tournament=Asia Cup&limit=300")
     assert res_asia.status_code == 200
     asia_matches = res_asia.json()["matches"]
-    assert len(asia_matches) == 8
+    assert len(asia_matches) == 19
     assert all(m["event_name"] == "Asia Cup" for m in asia_matches)
 
     # 4. Tournaments for IPL

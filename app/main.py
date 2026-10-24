@@ -614,6 +614,7 @@ def trigger_match_sync(
     dry_run: bool = Query(False, description="If true, simulate match discovery and validation without committing"),
     competition: str = Query("t20i", description="Competition to sync: 't20i' or 'ipl'"),
     cutoff_date: Optional[str] = Query(None, description="Optional ISO cutoff date (default: '2026-10-06')"),
+    force_download: bool = Query(False, description="If true, bypass local cache and re-probe/download upstream Cricsheet archive"),
 ):
     """
     Triggers the automatic match updater pipeline.
@@ -628,6 +629,7 @@ def trigger_match_sync(
             competition=competition,
             cutoff_date=cutoff_date,
             dry_run=dry_run,
+            force_download=force_download,
         )
         return result
     except RuntimeError as exc:

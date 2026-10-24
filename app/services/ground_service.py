@@ -10,11 +10,14 @@ Strict adherence:
 """
 
 import datetime
+import logging
 import math
 from typing import Dict, Any, List, Optional
 import numpy as np
 import pandas as pd
 from app.services.data_service import data_service
+
+logger = logging.getLogger(__name__)
 
 # Pre-verified DLS rain-affected matches across active IPL and T20I datasets
 DLS_MATCH_IDS = {
@@ -858,11 +861,36 @@ class GroundAnalysisService:
             return
         import json
         from pathlib import Path
-        p = Path(__file__).resolve().parent.parent.parent / "data" / "processed" / "phase_summaries.json"
-        if p.exists():
-            with open(p, "r", encoding="utf-8") as fp:
-                self._phases_data = json.load(fp)
+        
+        candidates = [
+            Path(__file__).resolve().parent.parent.parent / "data" / "processed" / "phase_summaries.json",
+            Path.cwd() / "data" / "processed" / "phase_summaries.json",
+            Path(__file__).resolve().parents[2] / "data" / "processed" / "phase_summaries.json",
+        ]
+        
+        target_path = None
+        for candidate in candidates:
+            if candidate.exists():
+                target_path = candidate
+                break
+                
+        if target_path is not None:
+            try:
+                with open(target_path, "r", encoding="utf-8") as fp:
+                    self._phases_data = json.load(fp)
+                logger.info(
+                    "Loaded phase summaries from %s (%d matches indexed)",
+                    target_path,
+                    len(self._phases_data.get("phases", {})),
+                )
+            except Exception as e:
+                logger.error("Failed to parse phase summaries at %s: %s", target_path, e)
+                self._phases_data = {"conditions": {}, "phases": {}}
         else:
+            logger.warning(
+                "Phase summaries file not found in search paths: %s. Phase statistics will be unavailable.",
+                [str(c) for c in candidates],
+            )
             self._phases_data = {"conditions": {}, "phases": {}}
 
     def _ensure_indexed(self):
