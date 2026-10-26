@@ -97,6 +97,7 @@ jobs:
           git add data/processed/t20i/matches.csv
           git add data/processed/t20i/match_rosters.csv
           git add data/processed/t20i/batter_match_contributions.csv
+          git add data/processed/t20i/deliveries.csv
           git add data/processed/t20i/phase6_season_metrics.csv
           git add data/processed/phase_summaries.json
           git add data/processed/processed_matches_registry.json

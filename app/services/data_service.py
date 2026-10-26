@@ -158,6 +158,7 @@ class DataService:
         self._dataset_coverage_cache: Optional[Dict[str, Any]] = None
         self._bowler_classification_cache: Optional[Dict[str, str]] = None
         self._ipl_deliveries_df_cache: Optional[pd.DataFrame] = None
+        self._t20i_deliveries_df_cache: Optional[pd.DataFrame] = None
         self._t20i_deliveries_cache: Dict[str, List[Dict[str, Any]]] = {}
 
     @property
@@ -1508,17 +1509,28 @@ class DataService:
                         legal_balls = p_legal[["over", "ball", "batter_runs"]].to_dict("records")
         elif norm_comp == "t20i":
             if not c_sub.empty:
-                player_mids = c_sub["match_id"].astype(str).unique()
-                for mid in player_mids:
-                    match_delivs = self._get_t20i_match_deliveries(mid)
-                    for d in match_delivs:
-                        d_batter = d.get("batter", "").lower().strip()
-                        if (d_batter in cand_names) and int(d.get("wides", 0)) == 0:
-                            legal_balls.append({
-                                "over": int(d.get("over", 0)),
-                                "ball": int(d.get("ball", 1)),
-                                "batter_runs": int(d.get("batter_runs", 0)),
-                            })
+                player_mids = set(c_sub["match_id"].astype(str).unique())
+                df_t20i_deliv = self._get_t20i_deliveries_df()
+                if df_t20i_deliv is not None and not df_t20i_deliv.empty:
+                    p_delivs = df_t20i_deliv[
+                        (df_t20i_deliv["match_id"].isin(player_mids))
+                        & (df_t20i_deliv["batter"].str.lower().isin(cand_names))
+                    ]
+                    if not p_delivs.empty:
+                        p_legal = p_delivs[p_delivs["wides"].fillna(0) == 0]
+                        if not p_legal.empty:
+                            legal_balls = p_legal[["over", "ball", "batter_runs"]].to_dict("records")
+                else:
+                    for mid in player_mids:
+                        match_delivs = self._get_t20i_match_deliveries(mid)
+                        for d in match_delivs:
+                            d_batter = d.get("batter", "").lower().strip()
+                            if (d_batter in cand_names) and int(d.get("wides", 0)) == 0:
+                                legal_balls.append({
+                                    "over": int(d.get("over", 0)),
+                                    "ball": int(d.get("ball", 1)),
+                                    "batter_runs": int(d.get("batter_runs", 0)),
+                                })
 
         if legal_balls:
             total_legal = len(legal_balls)
@@ -2554,17 +2566,26 @@ class DataService:
                         "total_balls_faced": 0,
                         "classified_balls_faced": 0,
                         "unclassified_balls_faced": 0,
-                        "coverage_percentage": 100.0,
-                        "is_coverage_complete": True,
+                        "coverage_percentage": None,
+                        "is_coverage_complete": False,
                         "pace": self._empty_bowling_stats(),
                         "spin": self._empty_bowling_stats(),
+                        "pace_dismissals": 0,
+                        "spin_dismissals": 0,
+                        "unclassified_dismissals": 0,
+                        "bowler_credited_dismissals": 0,
+                        "dismissals_coverage_percentage": None,
                     },
                     "seasons": [],
                     "coverage_info": {
                         "total_balls_faced": 0,
                         "classified_balls": 0,
                         "unclassified_balls": 0,
-                        "coverage_percentage": 100.0,
+                        "coverage_percentage": None,
+                        "total_bowler_dismissals": 0,
+                        "classified_bowler_dismissals": 0,
+                        "unclassified_bowler_dismissals": 0,
+                        "dismissals_coverage_percentage": None,
                         "classification_source": "Auditable Bowler Style Registry (577 bowlers)",
                         "unclassified_bowlers_count": 0,
                         "unclassified_bowlers": [],
@@ -2969,6 +2990,32 @@ class DataService:
                 self._ipl_deliveries_df_cache = pd.DataFrame()
         return self._ipl_deliveries_df_cache
 
+    def _get_t20i_deliveries_df(self) -> Optional[pd.DataFrame]:
+        """Loads and caches T20I ball-by-ball delivery dataset."""
+        if self._t20i_deliveries_df_cache is None:
+            fpath = DATA_DIR / "t20i" / "deliveries.csv"
+            if fpath.exists():
+                cols = [
+                    "match_id",
+                    "innings_number",
+                    "over",
+                    "ball",
+                    "season",
+                    "batter",
+                    "bowler",
+                    "batter_runs",
+                    "total_runs",
+                    "wides",
+                    "player_dismissed",
+                    "dismissal_kind",
+                ]
+                df = pd.read_csv(fpath, usecols=cols, low_memory=False)
+                df["match_id"] = df["match_id"].astype(str)
+                self._t20i_deliveries_df_cache = df
+            else:
+                self._t20i_deliveries_df_cache = pd.DataFrame()
+        return self._t20i_deliveries_df_cache
+
     def _get_t20i_match_deliveries(self, match_id: Any) -> List[Dict[str, Any]]:
         """Parses and caches T20I match ball-by-ball deliveries from raw match JSON."""
         mid_str = str(match_id)
@@ -3129,17 +3176,28 @@ class DataService:
 
         # 2. T20I deliveries
         t20i_mids = set(str(a["match_id"]) for a in appearances if a.get("competition") == "International")
-        for mid in t20i_mids:
-            t20i_delivs = self._get_t20i_match_deliveries(mid)
-            if t20i_delivs:
-                relevant = [
-                    d for d in t20i_delivs
-                    if d.get("batter") == player_name
-                    or d.get("player_dismissed") == player_name
-                    or any(w.get("player_out") == player_name for w in d.get("wickets", []))
+        if t20i_mids:
+            df_t20i_deliv = self._get_t20i_deliveries_df()
+            if df_t20i_deliv is not None and not df_t20i_deliv.empty:
+                sub_t20i = df_t20i_deliv[
+                    (df_t20i_deliv["match_id"].isin(t20i_mids))
+                    & ((df_t20i_deliv["batter"] == player_name) | (df_t20i_deliv["player_dismissed"] == player_name))
                 ]
-                if relevant:
-                    deliv_by_mid[str(mid)] = relevant
+                for row in sub_t20i.to_dict("records"):
+                    mid = str(row["match_id"])
+                    deliv_by_mid.setdefault(mid, []).append(row)
+            else:
+                for mid in t20i_mids:
+                    t20i_delivs = self._get_t20i_match_deliveries(mid)
+                    if t20i_delivs:
+                        relevant = [
+                            d for d in t20i_delivs
+                            if d.get("batter") == player_name
+                            or d.get("player_dismissed") == player_name
+                            or any(w.get("player_out") == player_name for w in d.get("wickets", []))
+                        ]
+                        if relevant:
+                            deliv_by_mid[str(mid)] = relevant
 
         # Build seasons breakdown
         seasons_list: List[Dict[str, Any]] = []
@@ -3210,7 +3268,7 @@ class DataService:
             tot_balls = len(balls_faced)
             class_balls = len(pace_balls) + len(spin_balls)
             unclass_balls_cnt = len(unclass_balls)
-            cov_pct = clean_num(class_balls / tot_balls * 100.0, 1) if tot_balls > 0 else 100.0
+            cov_pct = clean_num(class_balls / tot_balls * 100.0, 1) if tot_balls > 0 else None
 
             ipl_apps = [a for a in group_apps if a.get("competition") == "IPL"]
             t20i_apps = [a for a in group_apps if a.get("competition") == "International"]
@@ -3254,19 +3312,19 @@ class DataService:
         tot_career_balls = len(all_career_balls_faced)
         class_career_balls = len(career_pace_balls) + len(career_spin_balls)
         unclass_career_balls = len(career_unclass_balls)
-        career_cov_pct = clean_num(class_career_balls / tot_career_balls * 100.0, 1) if tot_career_balls > 0 else 100.0
+        career_cov_pct = clean_num(class_career_balls / tot_career_balls * 100.0, 1) if tot_career_balls > 0 else None
 
         tot_career_outs = len(all_career_outs)
         class_career_outs = len(career_pace_outs) + len(career_spin_outs)
         unclass_career_outs = len(career_unclass_outs)
-        dismissals_cov_pct = clean_num(class_career_outs / tot_career_outs * 100.0, 1) if tot_career_outs > 0 else 100.0
+        dismissals_cov_pct = clean_num(class_career_outs / tot_career_outs * 100.0, 1) if tot_career_outs > 0 else None
 
         summary = {
             "total_balls_faced": tot_career_balls,
             "classified_balls_faced": class_career_balls,
             "unclassified_balls_faced": unclass_career_balls,
             "coverage_percentage": career_cov_pct,
-            "is_coverage_complete": (unclass_career_balls == 0 and unclass_career_outs == 0),
+            "is_coverage_complete": (unclass_career_balls == 0 and unclass_career_outs == 0) if tot_career_balls > 0 else False,
             "pace": career_pace_stats,
             "spin": career_spin_stats,
             "pace_dismissals": career_pace_stats["dismissals"],

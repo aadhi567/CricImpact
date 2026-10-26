@@ -572,6 +572,71 @@ class MatchUpdateService:
         df_comb_b.to_csv(b_path, index=False, encoding="utf-8")
         logger.info(f"Committed {b_path} ({len(df_comb_b)} rows)")
 
+        # 4b. Combine and save deliveries.csv for T20I
+        d_path = self.processed_t20_dir / "deliveries.csv"
+        staged_delivs = []
+        for item in discovered_matches:
+            mid = str(item["match_id"])
+            m_dict = item.get("data")
+            if not m_dict and item.get("raw_json_str"):
+                try:
+                    m_dict = json.loads(item["raw_json_str"])
+                except Exception:
+                    m_dict = {}
+            if not m_dict:
+                continue
+            info = m_dict.get("info", {})
+            season_str = str(info.get("season", "")).strip()
+            raw_teams = [normalize_team(t) for t in info.get("teams", [])]
+            t1 = raw_teams[0] if len(raw_teams) > 0 else None
+            t2 = raw_teams[1] if len(raw_teams) > 1 else None
+
+            for inn_idx, inn in enumerate(m_dict.get("innings", []), start=1):
+                b_team = normalize_team(inn.get("team"))
+                bowl_team = t2 if b_team == t1 else t1
+                for over_obj in inn.get("overs", []):
+                    over_num = over_obj.get("over", 0)
+                    for b_idx, deliv in enumerate(over_obj.get("deliveries", [])):
+                        runs_dict = deliv.get("runs", {})
+                        extras = deliv.get("extras", {})
+                        wickets = deliv.get("wickets", [])
+                        staged_delivs.append({
+                            "match_id": mid,
+                            "season": season_str,
+                            "innings_number": inn_idx,
+                            "over": over_num,
+                            "ball": b_idx + 1,
+                            "batting_team": b_team,
+                            "bowling_team": bowl_team,
+                            "batter": deliv.get("batter"),
+                            "non_striker": deliv.get("non_striker"),
+                            "bowler": deliv.get("bowler"),
+                            "batter_runs": int(runs_dict.get("batter", 0)),
+                            "extras_runs": int(runs_dict.get("extras", 0)),
+                            "total_runs": int(runs_dict.get("total", 0)),
+                            "extra_type": ", ".join(extras.keys()) if extras else None,
+                            "player_dismissed": wickets[0].get("player_out") if wickets else None,
+                            "dismissal_kind": wickets[0].get("kind") if wickets else None,
+                            "is_wicket": bool(wickets),
+                            "wides": int(extras.get("wides", 0)),
+                            "noballs": int(extras.get("noballs", 0)),
+                            "byes": int(extras.get("byes", 0)),
+                            "legbyes": int(extras.get("legbyes", 0)),
+                            "penalty": int(extras.get("penalty", 0)),
+                        })
+
+        if staged_delivs:
+            df_old_d = pd.read_csv(d_path, dtype={"match_id": str}, low_memory=False) if d_path.exists() else pd.DataFrame()
+            df_new_d = pd.DataFrame(staged_delivs)
+            df_comb_d = pd.concat([df_old_d, df_new_d], ignore_index=True)
+            df_comb_d = df_comb_d.drop_duplicates(
+                subset=["match_id", "innings_number", "over", "ball"]
+            ).sort_values(
+                by=["match_id", "innings_number", "over", "ball"]
+            ).reset_index(drop=True)
+            df_comb_d.to_csv(d_path, index=False, encoding="utf-8")
+            logger.info(f"Committed {d_path} ({len(df_comb_d)} rows)")
+
         # 5. Recompute season metrics
         s_path = self.processed_t20_dir / "phase6_season_metrics.csv"
         logger.info("Recomputing comprehensive season metrics...")
@@ -608,6 +673,8 @@ class MatchUpdateService:
             data_service._dynamic_metrics_cache.clear()
             data_service._career_players_cache = None
             data_service._dataset_coverage_cache = None
+            data_service._t20i_deliveries_df_cache = None
+            data_service._t20i_deliveries_cache.clear()
             data_service._ensure_loaded("t20i")
 
             from app.services.ground_service import ground_service

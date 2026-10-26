@@ -161,7 +161,7 @@ function CustomBowlingTooltip({ active, payload, label, selectedBowlingType = 'b
           <div className="text-[10px] text-[#858585] pt-1 border-t border-[#222222] flex items-center justify-between">
             <span>Verified Data Coverage:</span>
             <span className="font-semibold text-[#D4AF57]">
-              {data.coverage_percentage !== undefined ? `${data.coverage_percentage}%` : '100%'}
+              {data.coverage_percentage !== null && data.coverage_percentage !== undefined ? `${data.coverage_percentage}%` : '—'}
             </span>
           </div>
         </div>
@@ -203,8 +203,9 @@ export default function BowlingTypeTrendsChart({ bowlingTrends }) {
   // Overall career benchmarks
   const paceSummary = summary?.pace || {};
   const spinSummary = summary?.spin || {};
-  const isCompleteCoverage = summary?.is_coverage_complete !== false;
-  const coveragePct = summary?.coverage_percentage ?? 100.0;
+  const totalBalls = summary?.total_balls_faced ?? 0;
+  const isCompleteCoverage = summary?.is_coverage_complete !== false && totalBalls > 0;
+  const coveragePct = summary?.coverage_percentage ?? (totalBalls === 0 ? null : 100.0);
 
   // Sortable season table
   const sortedSeasons = useMemo(() => {
@@ -393,19 +394,25 @@ export default function BowlingTypeTrendsChart({ bowlingTrends }) {
               </div>
               <span
                 className={`text-[11px] font-bold px-2 py-0.5 rounded border ${
-                  isCompleteCoverage
+                  totalBalls === 0
+                    ? 'text-[#858585] bg-[#1A1A1A] border-[#2D2D2D]'
+                    : isCompleteCoverage
                     ? 'text-[#5A9E60] bg-[#152718] border-[#2A4D30]'
                     : 'text-[#E5A84B] bg-[#271E10] border-[#5E441D]'
                 }`}
               >
-                {coveragePct}% Verified
+                {totalBalls === 0
+                  ? 'N/A'
+                  : coveragePct !== null && coveragePct !== undefined
+                  ? `${coveragePct}% Verified`
+                  : 'N/A'}
               </span>
             </div>
             <div className="mt-2.5 space-y-1.5 text-xs text-[#858585]">
               <div className="flex items-center justify-between">
                 <span>Classified Balls:</span>
                 <span className="text-[#F2F2F2] font-semibold tabular-nums">
-                  {summary?.classified_balls_faced?.toLocaleString()} / {summary?.total_balls_faced?.toLocaleString()}
+                  {summary?.classified_balls_faced?.toLocaleString() ?? 0} / {summary?.total_balls_faced?.toLocaleString() ?? 0}
                 </span>
               </div>
               <div className="flex items-center justify-between">
@@ -421,7 +428,12 @@ export default function BowlingTypeTrendsChart({ bowlingTrends }) {
             </div>
           </div>
           <div className="text-[11px] text-[#858585] pt-2 border-t border-[#222222]">
-            {isCompleteCoverage ? (
+            {totalBalls === 0 ? (
+              <span className="text-[#858585] flex items-center gap-1 font-medium">
+                <AlertTriangle className="w-3.5 h-3.5 shrink-0" />
+                No batting observations recorded for this selection.
+              </span>
+            ) : isCompleteCoverage ? (
               <span className="text-[#5A9E60] flex items-center gap-1 font-medium">
                 <CheckCircle2 className="w-3.5 h-3.5" />
                 100% verified classification across all deliveries.
@@ -886,12 +898,14 @@ export default function BowlingTypeTrendsChart({ bowlingTrends }) {
                     <td className="py-2.5 px-3 text-center border-l border-[#2D2D2D] whitespace-nowrap">
                       <span
                         className={`text-[11px] font-semibold tabular-nums px-1.5 py-0.5 rounded ${
-                          row.coverage_percentage >= 99.9
+                          row.coverage_percentage === null || row.coverage_percentage === undefined
+                            ? 'text-[#858585] bg-[#1A1A1A]'
+                            : row.coverage_percentage >= 99.9
                             ? 'text-[#5A9E60] bg-[#152718]'
                             : 'text-[#E5A84B] bg-[#271E10]'
                         }`}
                       >
-                        {row.coverage_percentage !== undefined ? `${row.coverage_percentage}%` : '100%'}
+                        {row.coverage_percentage !== null && row.coverage_percentage !== undefined ? `${row.coverage_percentage}%` : '—'}
                       </span>
                     </td>
                   </tr>

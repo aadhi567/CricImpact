@@ -1,0 +1,78 @@
+# ==============================================================================
+# CricImpact Backend — .dockerignore for Google Cloud Run
+# ==============================================================================
+# Excludes secrets, local machine caches, virtual environments, raw data dumps,
+# and frontend assets from the backend container build context.
+# ==============================================================================
+
+# Version control and Git history
+.git/
+.gitignore
+.gitattributes
+
+# Environment files and credentials
+.env
+.env.local
+.env.*
+!.env.example
+
+# Python virtual environments & bytecode caches
+.venv/
+venv/
+env/
+ENV/
+*.py[cod]
+*$py.class
+__pycache__/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Node & Frontend dependencies and build outputs
+frontend/
+node_modules/
+*/node_modules/
+*/dist/
+
+# Raw match archives, dumps, and staging caches
+data/raw/
+data/t20s_json/
+data/smat_json/
+data/staging/
+data/backups/
+backups/
+*.zip
+
+# Intermediate, candidate and backup CSVs
+*backup*.csv
+*pre_pp_fix*.csv
+data/processed/phase7q_batter_match_contributions.csv
+*comparison*.csv
+*reconciliation*.csv
+*shift*.csv
+*matrix*.csv
+*inclusion_exclusion*.csv
+data/audits/
+
+# Temporary scratch files and logs
+scratch/
+*.log
+npm-debug.log*
+yarn-debug.log*
+
+# Test suites and offline scripts (not needed for runtime container)
+tests/
+scripts/
+
+# Documentation and markdown audits
+docs/
+*.md
+
+# IDE, OS, and editor clutter
+.idea/
+.vscode/
+.run/
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
