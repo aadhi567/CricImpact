@@ -23,6 +23,7 @@ import CareerPositiveRateChart from '../components/CareerGraphs/CareerPositiveRa
 import CareerDotBallChart from '../components/CareerGraphs/CareerDotBallChart';
 import CareerHighsLows from '../components/CareerGraphs/CareerHighsLows';
 import BowlingTypeTrendsChart from '../components/CareerGraphs/BowlingTypeTrendsChart';
+import PlayerPortrait from '../components/PlayerPortrait';
 import { getPlayerCareer, searchCareerPlayers, getDatasetCoverage } from '../services/api';
 
 const FEATURED_BATTERS = [
@@ -551,17 +552,20 @@ export default function CareerGraph() {
           {/* 1. CAREER SUMMARY BANNER & KPI CARDS */}
           <div className="bg-[#161616] rounded-lg p-3 sm:p-5 border border-[#2D2D2D] space-y-3 sm:space-y-4">
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 border-b border-[#222222] pb-3">
-              <div>
-                <div className="flex items-center gap-2.5">
-                  <h2 className="text-xl sm:text-2xl font-bold text-[#F2F2F2] tracking-tight">
-                    {summary.player}
-                  </h2>
-                  <span className="text-[10.5px] font-semibold px-2 py-0.5 rounded-full bg-[#1A1A1A] text-[#D4AF57] border border-[#A8893D]/40">
-                    {summary.career_span}
-                  </span>
-                </div>
-                <div className="text-xs text-[#858585] mt-0.5">
-                  Teams: <span className="text-[#B8B8B8]">{summary.teams?.join(' • ') || 'Cricket Batter'}</span>
+              <div className="flex items-center gap-3">
+                <PlayerPortrait playerName={summary.player} size="lg" />
+                <div>
+                  <div className="flex items-center gap-2.5">
+                    <h2 className="text-xl sm:text-2xl font-bold text-[#F2F2F2] tracking-tight">
+                      {summary.player}
+                    </h2>
+                    <span className="text-[10.5px] font-semibold px-2 py-0.5 rounded-full bg-[#1A1A1A] text-[#D4AF57] border border-[#A8893D]/40">
+                      {summary.career_span}
+                    </span>
+                  </div>
+                  <div className="text-xs text-[#858585] mt-0.5">
+                    Teams: <span className="text-[#B8B8B8]">{summary.teams?.join(' • ') || 'Cricket Batter'}</span>
+                  </div>
                 </div>
               </div>
 

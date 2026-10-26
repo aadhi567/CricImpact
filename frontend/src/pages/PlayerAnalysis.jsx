@@ -127,7 +127,7 @@ export default function PlayerAnalysis() {
           <PlayerPortrait
             playerName={playerData.player}
             playerId={playerId}
-            size="lg"
+            size="profile"
             className="shrink-0"
           />
           <div className="min-w-0">

@@ -11,6 +11,7 @@ import {
   ChevronRight,
 } from 'lucide-react';
 import SeasonFilter from '../components/SeasonFilter';
+import PlayerPortrait from '../components/PlayerPortrait';
 import {
   getSeasons,
   getTeams,
@@ -599,14 +600,19 @@ export default function Players() {
                     >
                       {/* Player */}
                       <td className="py-2 px-3 sm:px-3.5 whitespace-nowrap">
-                        <span className="font-semibold text-[13px] sm:text-[13.5px] text-[#F2F2F2] hover:text-[#D4AF57] transition-colors">
-                          {p.player}
-                        </span>
-                        {p.not_outs > 0 && (
-                          <span className="text-[11px] font-normal text-[#858585] ml-1 font-sans">
-                            ({p.not_outs} NO)
-                          </span>
-                        )}
+                        <div className="flex items-center gap-2.5">
+                          <PlayerPortrait playerName={p.player} size="xs" />
+                          <div className="min-w-0">
+                            <span className="font-semibold text-[13px] sm:text-[13.5px] text-[#F2F2F2] hover:text-[#D4AF57] transition-colors">
+                              {p.player}
+                            </span>
+                            {p.not_outs > 0 && (
+                              <span className="text-[11px] font-normal text-[#858585] ml-1 font-sans">
+                                ({p.not_outs} NO)
+                              </span>
+                            )}
+                          </div>
+                        </div>
                       </td>
 
                       {/* Team */}

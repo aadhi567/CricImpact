@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import { User } from 'lucide-react';
 import { getPlayerImageUrl, getPlayerInitials } from '../utils/playerImageMap';
 
@@ -33,26 +33,29 @@ export default function PlayerPortrait({
     md: 'w-12 h-12 text-sm rounded-xl',
     lg: 'w-16 h-16 sm:w-20 sm:h-20 text-base sm:text-lg rounded-2xl',
     xl: 'w-24 h-24 sm:w-28 sm:h-28 text-xl sm:text-2xl rounded-2xl',
+    profile: 'w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 text-2xl sm:text-3xl rounded-2xl',
   };
 
   const containerSize = sizeClasses[size] || sizeClasses.lg;
   const borderStyles = showBorder
-    ? 'border border-[#A8893D]/35 shadow-xs ring-1 ring-[#D4AF57]/15'
+    ? 'border border-[#A8893D]/45 shadow-sm ring-1 ring-[#D4AF57]/20'
     : 'border border-[#2D2D2D]';
 
   const shouldRenderImage = Boolean(initialImageUrl) && !hasError;
+  const isHighPriority = size === 'profile' || size === 'xl';
 
   return (
     <div
-      className={`relative shrink-0 overflow-hidden bg-[#121212] flex items-center justify-center select-none ${containerSize} ${borderStyles} ${className}`}
+      className={`relative shrink-0 aspect-square overflow-hidden bg-[#121212] flex items-center justify-center select-none ${containerSize} ${borderStyles} ${className}`}
       data-testid="player-portrait"
     >
       {shouldRenderImage ? (
         <img
           src={initialImageUrl}
           alt={alt || `${playerName || 'Player'} portrait`}
-          loading="lazy"
+          loading={isHighPriority ? 'eager' : 'lazy'}
           decoding="async"
+          fetchpriority={isHighPriority ? 'high' : 'auto'}
           onError={() => setHasError(true)}
           className="w-full h-full object-cover object-top transition-transform duration-300 hover:scale-105"
         />
