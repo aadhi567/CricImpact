@@ -29,9 +29,9 @@ def test_1_all_t20is_filtering():
     assert "2022" in data_seasons["seasons"]
     assert len(data_seasons["seasons"]) >= 4
 
-    # 2. Total matches across all T20Is in underlying data service (expanded to 1,498 with World Cup remediation)
+    # 2. Total matches across all T20Is in underlying data service
     df_t20i = data_service.get_matches_df("t20i")
-    assert len(df_t20i) in (1468, 1498, 1503, 1524), f"Expected 1468, 1498, 1503, or 1524 T20I matches in total, got {len(df_t20i)}"
+    assert len(df_t20i) in (1468, 1498, 1503, 1524, 1528), f"Expected 1468, 1498, 1503, 1524, or 1528 T20I matches in total, got {len(df_t20i)}"
     # Verify all 665 baseline matches remain present and unmodified
     from pathlib import Path
     import pandas as pd

@@ -46,6 +46,11 @@ const CompetitionContext = createContext({
 export function CompetitionProvider({ children }) {
   const [competition, setCompetitionState] = useState(() => {
     try {
+      const params = new URLSearchParams(window.location.search);
+      const urlComp = params.get('competition');
+      if (urlComp && ['ipl', 't20i'].includes(urlComp.toLowerCase())) {
+        return urlComp.toLowerCase();
+      }
       const saved = localStorage.getItem('cricket_competition');
       if (saved && ['ipl', 't20i'].includes(saved.toLowerCase())) {
         return saved.toLowerCase();
@@ -58,6 +63,11 @@ export function CompetitionProvider({ children }) {
 
   const [tournamentType, setTournamentTypeState] = useState(() => {
     try {
+      const params = new URLSearchParams(window.location.search);
+      const urlTourn = params.get('tournament_type');
+      if (urlTourn && TOURNAMENT_TYPES.some((t) => t.id === urlTourn)) {
+        return urlTourn;
+      }
       const saved = localStorage.getItem('cricket_tournament_type');
       if (saved && TOURNAMENT_TYPES.some((t) => t.id === saved)) {
         return saved;

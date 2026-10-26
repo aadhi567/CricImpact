@@ -1,45 +1,51 @@
 {
-  "last_successful_sync": "2026-10-24T16:05:28Z",
+  "last_successful_sync": "2026-10-26T13:33:29Z",
   "status": "UP_TO_DATE",
   "upstream_source_url": "https://cricsheet.org/downloads/t20s_male_json.zip",
-  "upstream_last_modified": "Wed, 14 Oct 2026 22:23:09 GMT",
-  "upstream_publication_date": "2026-10-14",
-  "latest_source_match_date": "2026-10-14",
-  "latest_eligible_match_date": "2026-10-13",
-  "latest_imported_match_date": "2026-10-13",
-  "latest_production_match_date": "2026-10-13",
+  "upstream_last_modified": "Sun, 25 Oct 2026 18:43:27 GMT",
+  "upstream_publication_date": "2026-10-25",
+  "latest_source_match_date": "2026-10-25",
+  "latest_eligible_match_date": "2026-10-24",
+  "latest_imported_match_date": "2026-10-24",
+  "latest_production_match_date": "2026-10-24",
   "matches_discovered": 0,
   "matches_imported": 0,
-  "matches_skipped_duplicates": 5,
+  "matches_skipped_duplicates": 9,
   "stats": {
-    "total_scanned": 3627,
-    "after_cutoff_date": 35,
+    "total_scanned": 3646,
+    "after_cutoff_date": 54,
     "skipped_non_t20": 0,
     "skipped_non_male": 0,
-    "skipped_unapproved_teams": 30,
-    "skipped_already_processed": 5,
+    "skipped_unapproved_teams": 45,
+    "skipped_already_processed": 9,
     "eligible_new_matches": 0,
-    "latest_source_match_date": "2026-10-14",
-    "latest_eligible_match_date": "2026-10-13",
-    "latest_imported_match_date": "2026-10-13",
+    "latest_source_match_date": "2026-10-25",
+    "latest_eligible_match_date": "2026-10-24",
+    "latest_imported_match_date": "2026-10-24",
     "investigated_targets": {
       "1529233": {
         "fixture": "India vs West Indies (4th T20I)",
         "date": "2026-10-14",
-        "status": "AWAITING_UPSTREAM_SOURCE_PUBLICATION",
-        "reason": "Match completed on 2026-10-14. Upstream Cricsheet publication (Last-Modified: 2026-10-14T22:23:09Z) does not yet contain ball-by-ball records for this fixture."
+        "status": "IMPORTED",
+        "reason": "Match records and ball-by-ball deliveries successfully imported."
       },
       "1529234": {
         "fixture": "India vs West Indies (5th T20I)",
         "date": "2026-10-17",
-        "status": "AWAITING_UPSTREAM_SOURCE_PUBLICATION",
-        "reason": "Curtailed to 9 overs, rain-abandoned / no-result. Upstream Cricsheet has not published records beyond 2026-10-14."
+        "status": "IMPORTED",
+        "reason": "Curtailed to 9 overs, rain-abandoned / no-result imported."
       },
-      "nz_ind_1": {
+      "1539432": {
         "fixture": "New Zealand vs India (1st T20I)",
         "date": "2026-10-22",
-        "status": "AWAITING_UPSTREAM_SOURCE_PUBLICATION",
-        "reason": "Match completed on 2026-10-22 at Hagley Oval. Upstream Cricsheet has not published records beyond 2026-10-14."
+        "status": "IMPORTED",
+        "reason": "Match completed on 2026-10-22 at Hagley Oval. Ball-by-ball deliveries successfully imported."
+      },
+      "1539433": {
+        "fixture": "New Zealand vs India (2nd T20I)",
+        "date": "2026-10-24",
+        "status": "IMPORTED",
+        "reason": "Match completed on 2026-10-24 at Hagley Oval. Ball-by-ball deliveries successfully imported."
       }
     }
   },
@@ -47,22 +53,28 @@
     "1529233": {
       "fixture": "India vs West Indies (4th T20I)",
       "date": "2026-10-14",
-      "status": "AWAITING_UPSTREAM_SOURCE_PUBLICATION",
-      "reason": "Match completed on 2026-10-14. Upstream Cricsheet publication (Last-Modified: 2026-10-14T22:23:09Z) does not yet contain ball-by-ball records for this fixture."
+      "status": "IMPORTED",
+      "reason": "Match records and ball-by-ball deliveries successfully imported."
     },
     "1529234": {
       "fixture": "India vs West Indies (5th T20I)",
       "date": "2026-10-17",
-      "status": "AWAITING_UPSTREAM_SOURCE_PUBLICATION",
-      "reason": "Curtailed to 9 overs, rain-abandoned / no-result. Upstream Cricsheet has not published records beyond 2026-10-14."
+      "status": "IMPORTED",
+      "reason": "Curtailed to 9 overs, rain-abandoned / no-result imported."
     },
-    "nz_ind_1": {
+    "1539432": {
       "fixture": "New Zealand vs India (1st T20I)",
       "date": "2026-10-22",
-      "status": "AWAITING_UPSTREAM_SOURCE_PUBLICATION",
-      "reason": "Match completed on 2026-10-22 at Hagley Oval. Upstream Cricsheet has not published records beyond 2026-10-14."
+      "status": "IMPORTED",
+      "reason": "Match completed on 2026-10-22 at Hagley Oval. Ball-by-ball deliveries successfully imported."
+    },
+    "1539433": {
+      "fixture": "New Zealand vs India (2nd T20I)",
+      "date": "2026-10-24",
+      "status": "IMPORTED",
+      "reason": "Match completed on 2026-10-24 at Hagley Oval. Ball-by-ball deliveries successfully imported."
     }
   },
-  "message": "Datasets are already up to date with authoritative source data. Upstream Cricsheet publication date is October 14, 2026 (22:23:09 GMT). Zero new eligible completed matches with validated ball-by-ball records are available upstream.",
-  "duration_seconds": 5.656
+  "message": "Datasets are already up to date with authoritative source data. Upstream Cricsheet publication date is 2026-10-25 (Sun, 25 Oct 2026 18:43:27 GMT). Zero new eligible completed matches with validated ball-by-ball records are available upstream.",
+  "duration_seconds": 1.954
 }

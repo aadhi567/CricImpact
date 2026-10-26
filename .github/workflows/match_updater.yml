@@ -1,0 +1,120 @@
+name: Scheduled Match Updater
+
+on:
+  schedule:
+    # Run twice daily at 03:00 and 15:00 UTC
+    - cron: '0 3,15 * * *'
+  workflow_dispatch:
+    inputs:
+      competition:
+        description: 'Competition to update'
+        required: false
+        default: 't20i'
+        type: choice
+        options:
+          - t20i
+          - ipl
+      force_download:
+        description: 'Force fresh download of upstream archive'
+        required: false
+        default: true
+        type: boolean
+      dry_run:
+        description: 'Simulate without committing changes'
+        required: false
+        default: false
+        type: boolean
+
+concurrency:
+  group: match-updater-pipeline
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  update-matches:
+    name: Sync and Validate Matches
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Execute Match Updater
+        id: updater
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            DRY_RUN_FLAG=""
+            if [ "${{ inputs.dry_run }}" = "true" ]; then
+              DRY_RUN_FLAG="--dry-run"
+            fi
+            FORCE_FLAG=""
+            if [ "${{ inputs.force_download }}" = "true" ]; then
+              FORCE_FLAG="--force-download"
+            fi
+            python scripts/automatic_match_updater.py --competition "${{ inputs.competition }}" $FORCE_FLAG $DRY_RUN_FLAG
+          else
+            # Scheduled run: update t20i with force-download to refresh upstream HEAD and metadata
+            python scripts/automatic_match_updater.py --competition t20i --force-download
+          fi
+
+      - name: Validate Datasets and Invariants
+        run: |
+          pytest tests/test_automatic_match_updater.py tests/test_career_graph_api.py tests/test_tournament_type_filtering.py tests/test_t20i_historical_expansion_phase5.py
+
+      - name: Detect Modified Datasets
+        id: git-check
+        run: |
+          if [ -n "$(git status --porcelain data/)" ]; then
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+            echo "Changes detected in data directory."
+          else
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+            echo "No data changes detected."
+          fi
+
+      - name: Commit and Push Updated Datasets
+        if: steps.git-check.outputs.has_changes == 'true' && (github.event_name == 'schedule' || inputs.dry_run != true)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          
+          # Stage ONLY approved data deliverables
+          git add data/processed/t20i/matches.csv
+          git add data/processed/t20i/match_rosters.csv
+          git add data/processed/t20i/batter_match_contributions.csv
+          git add data/processed/t20i/phase6_season_metrics.csv
+          git add data/processed/phase_summaries.json
+          git add data/processed/processed_matches_registry.json
+          git add data/processed/last_sync_status.json
+          if [ -d "data/t20s_json" ]; then
+            git add data/t20s_json/
+          fi
+
+          git commit -m "data: automated match sync [skip ci]"
+          
+          # Pull latest rebase before push to avoid push conflicts
+          git pull --rebase origin main
+          git push origin main
+
+      - name: Trigger Render Deploy Hook (if configured)
+        if: steps.git-check.outputs.has_changes == 'true' && (github.event_name == 'schedule' || inputs.dry_run != true) && env.RENDER_DEPLOY_HOOK != ''
+        env:
+          RENDER_DEPLOY_HOOK: ${{ secrets.RENDER_DEPLOY_HOOK }}
+        run: |
+          echo "Triggering Render redeployment hook..."
+          curl -s -X POST "$RENDER_DEPLOY_HOOK"

@@ -55,7 +55,7 @@ def test_1_historical_match_eligibility():
     assert len(candidates) == 803
 
     df_matches = pd.read_csv(T20I_DIR / "matches.csv", dtype={"match_id": str})
-    assert len(df_matches) in (1468, 1498, 1503, 1524)
+    assert len(df_matches) in (1468, 1498, 1503, 1524, 1528)
 
     cand_ids = set(c["match_id"] for c in candidates)
     hist_matches = df_matches[df_matches["match_id"].isin(cand_ids)]
@@ -101,16 +101,16 @@ def test_2_duplicates_and_foreign_keys():
     df_contrib = pd.read_csv(T20I_DIR / "batter_match_contributions.csv", dtype={"match_id": str}, low_memory=False)
 
     match_ids = set(df_matches["match_id"])
-    assert len(match_ids) in (1468, 1498, 1503, 1524)
+    assert len(match_ids) in (1468, 1498, 1503, 1524, 1528)
     assert not df_matches.duplicated(subset=["match_id"]).any()
 
     # Roster integrity
-    assert len(df_rosters) in (32300, 32960, 33070, 33534)
+    assert len(df_rosters) in (32300, 32960, 33070, 33534, 33622)
     assert not df_rosters.duplicated(subset=["match_id", "player"]).any()
     assert set(df_rosters["match_id"]).issubset(match_ids)
 
     # Contribution integrity
-    assert len(df_contrib) in (23539, 24035, 24112, 24468)
+    assert len(df_contrib) in (23539, 24035, 24112, 24468, 24519)
     assert not df_contrib.duplicated(subset=["match_id", "innings", "player"]).any()
     assert set(df_contrib["match_id"]).issubset(match_ids)
 
@@ -130,10 +130,10 @@ def test_3_strict_dnb_and_scoring_invariants():
 
     # 2. Season metrics DNB integrity
     df_seasons = pd.read_csv(T20I_DIR / "phase6_season_metrics.csv")
-    assert len(df_seasons) in (8263, 8354, 8389, 8652)
+    assert len(df_seasons) in (8263, 8354, 8389, 8652, 8667)
 
     dnb_seasons = df_seasons[df_seasons["batting_innings"] == 0]
-    assert len(dnb_seasons) in (1042, 1038, 1039, 1089)
+    assert len(dnb_seasons) in (1042, 1038, 1039, 1089, 1095)
     assert dnb_seasons["average_contribution_score"].isna().all()
     assert dnb_seasons["season_team_contribution_share"].isna().all()
     assert dnb_seasons["contribution_per_batting_opportunity"].isna().all()
@@ -142,7 +142,7 @@ def test_3_strict_dnb_and_scoring_invariants():
 
     # Active batters must have non-null scores
     active_seasons = df_seasons[df_seasons["batting_innings"] > 0]
-    assert len(active_seasons) in (7221, 7316, 7350, 7563)
+    assert len(active_seasons) in (7221, 7316, 7350, 7563, 7572)
     assert not active_seasons["average_contribution_score"].isna().any()
 
     # 3. Super Over exclusion: innings restricted to 1 and 2
@@ -179,7 +179,7 @@ def test_4_registry_discrepancy_detection_read_only():
 
     # Confirm runtime data service retrieves all matches without issue
     df_runtime = data_service.get_matches_df("t20i")
-    assert len(df_runtime) in (1468, 1498, 1503, 1524)
+    assert len(df_runtime) in (1468, 1498, 1503, 1524, 1528)
     assert set(df_runtime["match_id"].astype(str)) == match_ids
 
 
@@ -229,6 +229,6 @@ def test_6_api_endpoints_and_career_graph():
 
     # Coverage metadata
     cov = cg_comb["dataset_coverage"]
-    assert cov["t20i"]["total_matches"] in (1468, 1498, 1503, 1524)
+    assert cov["t20i"]["total_matches"] in (1468, 1498, 1503, 1524, 1528)
     assert cov["ipl"]["total_matches"] == 1243
     assert cov["t20i"]["start_year"] in (2005, 2007, 2008)

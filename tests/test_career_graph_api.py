@@ -274,13 +274,13 @@ def test_competition_coverage_endpoint():
     assert "2026" in ipl["display_range"]
     assert ipl["reliable"] is True
 
-    # Verify T20I actual records (expanded to 2005-2026 / 1,524 matches with historical backfill)
+    # Verify T20I actual records (expanded to 2005-2026 / 1,524-1,528 matches with historical backfill)
     t20i = data["t20i"]
     assert t20i["start_year"] in (2005, 2007, 2008)
     assert t20i["end_year"] == 2026
     assert t20i["start_date"] in ("2005-02-17", "2007-09-11", "2008-01-18")
-    assert t20i["end_date"] in ("2026-10-06", "2026-10-13")
-    assert t20i["total_matches"] in (1468, 1498, 1503, 1524)
+    assert t20i["end_date"] in ("2026-10-06", "2026-10-13", "2026-10-24")
+    assert t20i["total_matches"] in (1468, 1498, 1503, 1524, 1528)
     assert ("2005" in t20i["display_range"]) or ("2007" in t20i["display_range"]) or ("2008" in t20i["display_range"])
     assert "2026" in t20i["display_range"]
     assert t20i["reliable"] is True
