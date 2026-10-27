@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "oxlint",
-    "test": "node --test src/services/api.test.js src/services/layout.test.js src/services/comparison.test.js src/services/playerImages.test.js",
+    "test": "node --test src/services/api.test.js src/services/layout.test.js src/services/comparison.test.js src/services/playerImages.test.js src/services/matchScoreTimeline.test.js",
     "preview": "vite preview"
   },
   "dependencies": {
