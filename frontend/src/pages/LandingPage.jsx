@@ -712,7 +712,7 @@ export default function LandingPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-3.5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5">
             {/* IPL Card */}
             <div className="bg-[#161616] p-3.5 sm:p-4 rounded-xl border border-[#2D2D2D] hover:border-[#D4AF57]/60 transition-colors flex flex-col justify-between space-y-3.5">
               <div>
@@ -761,6 +761,32 @@ export default function LandingPage() {
                 className="w-full btn-secondary h-8 sm:h-8.5 text-[11.5px] sm:text-[12px] py-1.5 px-3 flex items-center justify-between cursor-pointer"
               >
                 <span>Explore T20I Analytics</span>
+                <ChevronRight className="w-3.5 h-3.5 text-[#D4AF57]" />
+              </button>
+            </div>
+
+            {/* SA20 League Card */}
+            <div className="bg-[#161616] p-3.5 sm:p-4 rounded-xl border border-[#2D2D2D] hover:border-[#D4AF57]/60 transition-colors flex flex-col justify-between space-y-3.5">
+              <div>
+                <div className="flex items-center justify-between mb-2.5">
+                  <div className="w-8 h-8 rounded-lg bg-[#101010] border border-[#2D2D2D] flex items-center justify-center text-[#D4AF57]">
+                    <Trophy className="w-4 h-4" />
+                  </div>
+                  <span className="badge-gold">SA20</span>
+                </div>
+                <h3 className="font-heading text-[15px] sm:text-[16px] font-bold text-[#F2F2F2]">
+                  SA20 League
+                </h3>
+                <p className="text-[12px] text-[#B8B8B8] mt-1.5 leading-relaxed">
+                  South Africa's premier franchise T20 league across all 4 historical seasons (2022/23–2025/26), featuring situational ratings and venue profiles.
+                </p>
+              </div>
+              <button
+                type="button"
+                onClick={() => handleSelectCompetition('sa20')}
+                className="w-full btn-secondary h-8 sm:h-8.5 text-[11.5px] sm:text-[12px] py-1.5 px-3 flex items-center justify-between cursor-pointer"
+              >
+                <span>Explore SA20 Analytics</span>
                 <ChevronRight className="w-3.5 h-3.5 text-[#D4AF57]" />
               </button>
             </div>

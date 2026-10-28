@@ -23,6 +23,15 @@ export const DEFAULT_COMPETITIONS = [
     description: "Global Men's International T20s from 2022 onwards",
     coverage: '2022+ (2,264 matches)',
   },
+  {
+    id: 'sa20',
+    name: 'SA20',
+    short_name: 'SA20',
+    badge: 'SA20',
+    format: 'T20',
+    description: "South Africa's Premier T20 League (2022/23–2025/26)",
+    coverage: 'Complete (130 matches)',
+  },
 ];
 
 export const TOURNAMENT_TYPES = [
@@ -48,11 +57,11 @@ export function CompetitionProvider({ children }) {
     try {
       const params = new URLSearchParams(window.location.search);
       const urlComp = params.get('competition');
-      if (urlComp && ['ipl', 't20i'].includes(urlComp.toLowerCase())) {
+      if (urlComp && ['ipl', 't20i', 'sa20'].includes(urlComp.toLowerCase())) {
         return urlComp.toLowerCase();
       }
       const saved = localStorage.getItem('cricket_competition');
-      if (saved && ['ipl', 't20i'].includes(saved.toLowerCase())) {
+      if (saved && ['ipl', 't20i', 'sa20'].includes(saved.toLowerCase())) {
         return saved.toLowerCase();
       }
     } catch {

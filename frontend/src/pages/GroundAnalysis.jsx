@@ -298,11 +298,12 @@ export default function GroundAnalysis() {
               <Layers className="w-3.5 h-3.5 text-[#D4AF57]" />
               Competition Scope
             </label>
-            <div className="grid grid-cols-3 gap-1 bg-[#080808] p-1 rounded-md border border-[#2D2D2D] h-9 items-center">
+            <div className="grid grid-cols-4 gap-1 bg-[#080808] p-1 rounded-md border border-[#2D2D2D] h-9 items-center">
               {[
                 { id: 'combined', label: 'Combined' },
                 { id: 'ipl', label: 'IPL' },
                 { id: 't20i', label: 'T20I' },
+                { id: 'sa20', label: 'SA20' },
               ].map((comp) => (
                 <button
                   key={comp.id}
@@ -411,9 +412,11 @@ export default function GroundAnalysis() {
               <span className="text-[#F2F2F2] font-semibold capitalize">
                 {groundData.filters.competition === 't20i'
                   ? 'International T20I'
+                  : groundData.filters.competition === 'sa20'
+                  ? 'SA20'
                   : groundData.filters.competition === 'ipl'
                   ? 'Indian Premier League'
-                  : 'Combined (IPL & T20I)'}
+                  : 'Combined (IPL, T20I & SA20)'}
               </span>
               <span>•</span>
               <span>{groundData.summary.total_matches_in_period} matches in period</span>
@@ -1254,7 +1257,7 @@ export default function GroundAnalysis() {
                                   <div className="flex justify-between">
                                     <span>Scope:</span>
                                     <span className="text-[#A3A3A3]">
-                                      {selectedCompetition === 'ipl' ? 'IPL' : selectedCompetition === 't20i' ? 'T20I' : 'Combined'} • {groundData?.filters?.period_label?.split(' ')[0] || 'Period'}
+                                      {selectedCompetition === 'ipl' ? 'IPL' : selectedCompetition === 't20i' ? 'T20I' : selectedCompetition === 'sa20' ? 'SA20' : 'Combined'} • {groundData?.filters?.period_label?.split(' ')[0] || 'Period'}
                                     </span>
                                   </div>
                                 </div>
@@ -2011,6 +2014,8 @@ export default function GroundAnalysis() {
                             className={`px-1.5 py-0.5 rounded text-[10px] font-semibold ${
                               m.competition_code === 'ipl'
                                 ? 'bg-[#D4AF57]/15 text-[#D4AF57] border border-[#D4AF57]/30'
+                                : m.competition_code === 'sa20'
+                                ? 'bg-[#10B981]/20 text-[#34D399] border border-[#10B981]/30'
                                 : 'bg-[#3A6B9E]/20 text-[#6BA8E5] border border-[#3A6B9E]/30'
                             }`}
                           >

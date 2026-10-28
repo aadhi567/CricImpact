@@ -126,6 +126,13 @@ COMPETITION_METADATA = [
         "type": "international",
         "default_season": "2024",
     },
+    {
+        "id": "sa20",
+        "name": "SA20",
+        "code": "SA20",
+        "type": "franchise",
+        "default_season": "2025/26",
+    },
 ]
 
 TOURNAMENT_TYPES = [
@@ -138,7 +145,7 @@ TOURNAMENT_TYPES = [
 
 class DataService:
     def __init__(self):
-        self._competitions = ["ipl", "t20i"]
+        self._competitions = ["ipl", "t20i", "sa20"]
         self._cache: Dict[str, Dict[str, Optional[pd.DataFrame]]] = {
             c: {
                 "season_metrics": None,
@@ -159,6 +166,7 @@ class DataService:
         self._bowler_classification_cache: Optional[Dict[str, str]] = None
         self._ipl_deliveries_df_cache: Optional[pd.DataFrame] = None
         self._t20i_deliveries_df_cache: Optional[pd.DataFrame] = None
+        self._sa20_deliveries_df_cache: Optional[pd.DataFrame] = None
         self._t20i_deliveries_cache: Dict[str, List[Dict[str, Any]]] = {}
 
     @property
@@ -378,6 +386,16 @@ class DataService:
                 "season_options": options,
                 "default_season": self._resolve_dynamic_default_season(seasons),
                 "competition": "ipl",
+                "tournament_type": None,
+            }
+        elif comp == "sa20":
+            seasons = self.get_seasons("sa20")
+            options = [{"value": s, "label": f"{s} Season"} for s in seasons]
+            return {
+                "seasons": seasons,
+                "season_options": options,
+                "default_season": self._resolve_dynamic_default_season(seasons),
+                "competition": "sa20",
                 "tournament_type": None,
             }
         # SMAT season metadata preserved for future reactivation:
@@ -1531,6 +1549,19 @@ class DataService:
                                     "ball": int(d.get("ball", 1)),
                                     "batter_runs": int(d.get("batter_runs", 0)),
                                 })
+        elif norm_comp == "sa20":
+            if not c_sub.empty:
+                player_mids = set(c_sub["match_id"].astype(str).unique())
+                df_sa20_deliv = self._get_sa20_deliveries_df()
+                if df_sa20_deliv is not None and not df_sa20_deliv.empty:
+                    p_delivs = df_sa20_deliv[
+                        (df_sa20_deliv["match_id"].isin(player_mids))
+                        & (df_sa20_deliv["batter"].str.lower().isin(cand_names))
+                    ]
+                    if not p_delivs.empty:
+                        p_legal = p_delivs[p_delivs["wides"].fillna(0) == 0]
+                        if not p_legal.empty:
+                            legal_balls = p_legal[["over", "ball", "batter_runs"]].to_dict("records")
 
         if legal_balls:
             total_legal = len(legal_balls)
@@ -2046,7 +2077,7 @@ class DataService:
             if "event_name" in df.columns:
                 df = df[df["event_name"].fillna("").str.lower() == t_clean]
             else:
-                default_name = "indian premier league" if norm_comp == "ipl" else "syed mushtaq ali trophy"
+                default_name = "indian premier league" if norm_comp == "ipl" else ("sa20" if norm_comp == "sa20" else "syed mushtaq ali trophy")
                 if t_clean != default_name:
                     return []
         if search:
@@ -2142,7 +2173,7 @@ class DataService:
                 t1_score = inns1.get("score")
                 t2_score = inns2.get("score")
 
-            ev_name = str(mr.get("event_name", "")) if pd.notnull(mr.get("event_name")) and str(mr.get("event_name", "")).strip() else ("Indian Premier League" if norm_comp == "ipl" else None)
+            ev_name = str(mr.get("event_name", "")) if pd.notnull(mr.get("event_name")) and str(mr.get("event_name", "")).strip() else ("Indian Premier League" if norm_comp == "ipl" else ("SA20" if norm_comp == "sa20" else None))
             stage_val = str(mr.get("stage", "")) if pd.notnull(mr.get("stage")) and str(mr.get("stage", "")).strip() else None
             match_num_val = str(mr.get("match_number", "")) if pd.notnull(mr.get("match_number")) and str(mr.get("match_number", "")).strip() else None
 
@@ -2280,7 +2311,7 @@ class DataService:
         t2 = str(mr.get("team2", ""))
 
         out_mid = int(match_id) if str(match_id).isdigit() else str(match_id)
-        ev_name = str(mr.get("event_name", "")) if pd.notnull(mr.get("event_name")) and str(mr.get("event_name", "")).strip() else ("Indian Premier League" if norm_comp == "ipl" else None)
+        ev_name = str(mr.get("event_name", "")) if pd.notnull(mr.get("event_name")) and str(mr.get("event_name", "")).strip() else ("Indian Premier League" if norm_comp == "ipl" else ("SA20" if norm_comp == "sa20" else None))
         stage_val = str(mr.get("stage", "")) if pd.notnull(mr.get("stage")) and str(mr.get("stage", "")).strip() else None
         match_num_val = str(mr.get("match_number", "")) if pd.notnull(mr.get("match_number")) and str(mr.get("match_number", "")).strip() else None
 
@@ -2316,19 +2347,25 @@ class DataService:
         """Builds and caches the list of all available batters across competitions."""
         self._ensure_loaded("ipl")
         self._ensure_loaded("t20i")
+        self._ensure_loaded("sa20")
 
         r_ipl = self.get_rosters_df("ipl")
         r_t20i = self.get_rosters_df("t20i")
+        r_sa20 = self.get_rosters_df("sa20")
         df_ipl = self.get_contributions_df("ipl")
         df_t20i = self.get_contributions_df("t20i")
+        df_sa20 = self.get_contributions_df("sa20")
         m_ipl = self.get_matches_df("ipl")
         m_t20i = self.get_matches_df("t20i")
+        m_sa20 = self.get_matches_df("sa20")
 
         runs_ipl = df_ipl.groupby("player")["actual_runs"].sum().to_dict() if df_ipl is not None and not df_ipl.empty else {}
         runs_t20i = df_t20i.groupby("player")["actual_runs"].sum().to_dict() if df_t20i is not None and not df_t20i.empty else {}
+        runs_sa20 = df_sa20.groupby("player")["actual_runs"].sum().to_dict() if df_sa20 is not None and not df_sa20.empty else {}
 
         ipl_roster_players = set(r_ipl["player"].dropna().unique()) if r_ipl is not None and not r_ipl.empty else set()
         t20i_roster_players = set(r_t20i["player"].dropna().unique()) if r_t20i is not None and not r_t20i.empty else set()
+        sa20_roster_players = set(r_sa20["player"].dropna().unique()) if r_sa20 is not None and not r_sa20.empty else set()
 
         ipl_teams_by_player: Dict[str, set] = {}
         if r_ipl is not None and not r_ipl.empty:
@@ -2339,6 +2376,11 @@ class DataService:
         if r_t20i is not None and not r_t20i.empty:
             for _, r in r_t20i[["player", "team"]].dropna().drop_duplicates().iterrows():
                 t20i_teams_by_player.setdefault(str(r["player"]), set()).add(str(r["team"]))
+
+        sa20_teams_by_player: Dict[str, set] = {}
+        if r_sa20 is not None and not r_sa20.empty:
+            for _, r in r_sa20[["player", "team"]].dropna().drop_duplicates().iterrows():
+                sa20_teams_by_player.setdefault(str(r["player"]), set()).add(str(r["team"]))
 
         # Years
         years_by_player: Dict[str, set] = {}
@@ -2354,15 +2396,26 @@ class DataService:
             for _, r in merged_t20i[["player", "year"]].dropna().drop_duplicates().iterrows():
                 years_by_player.setdefault(str(r["player"]), set()).add(int(r["year"]))
 
-        all_players = sorted(list(ipl_roster_players.union(t20i_roster_players)))
+        if r_sa20 is not None and not r_sa20.empty and m_sa20 is not None and not m_sa20.empty:
+            merged_sa20 = r_sa20[["match_id", "player"]].merge(m_sa20[["match_id", "date"]], on="match_id")
+            merged_sa20["year"] = pd.to_datetime(merged_sa20["date"], errors="coerce").dt.year
+            for _, r in merged_sa20[["player", "year"]].dropna().drop_duplicates().iterrows():
+                years_by_player.setdefault(str(r["player"]), set()).add(int(r["year"]))
+
+        all_players = sorted(list(ipl_roster_players.union(t20i_roster_players).union(sa20_roster_players)))
         index_records = []
 
         for p in all_players:
             has_ipl = p in ipl_roster_players
             has_t20i = p in t20i_roster_players
-            r_tot = int(runs_ipl.get(p, 0) + runs_t20i.get(p, 0))
+            has_sa20 = p in sa20_roster_players
+            r_tot = int(runs_ipl.get(p, 0) + runs_t20i.get(p, 0) + runs_sa20.get(p, 0))
 
-            teams = sorted(list(ipl_teams_by_player.get(p, set()).union(t20i_teams_by_player.get(p, set()))))
+            teams = sorted(list(
+                ipl_teams_by_player.get(p, set())
+                .union(t20i_teams_by_player.get(p, set()))
+                .union(sa20_teams_by_player.get(p, set()))
+            ))
             years = sorted(list(years_by_player.get(p, set())))
 
             if years:
@@ -2375,11 +2428,14 @@ class DataService:
                 comps.append("ipl")
             if has_t20i:
                 comps.append("t20i")
+            if has_sa20:
+                comps.append("sa20")
 
             index_records.append({
                 "player": p,
                 "has_ipl": has_ipl,
                 "has_t20i": has_t20i,
+                "has_sa20": has_sa20,
                 "competitions": comps,
                 "total_runs": r_tot,
                 "teams": teams,
@@ -2396,7 +2452,7 @@ class DataService:
         competition: Optional[str] = None,
         limit: int = 20,
     ) -> List[Dict[str, Any]]:
-        """Searches batters across IPL and International coverage."""
+        """Searches batters across IPL, International, and SA20 coverage."""
         if self._career_players_cache is None:
             self._build_career_players_index()
 
@@ -2407,6 +2463,8 @@ class DataService:
             records = [r for r in records if r["has_ipl"]]
         elif comp == "t20i":
             records = [r for r in records if r["has_t20i"]]
+        elif comp == "sa20":
+            records = [r for r in records if r.get("has_sa20")]
 
         if query:
             q = query.strip().lower()
@@ -2421,33 +2479,39 @@ class DataService:
     ) -> Optional[Dict[str, Any]]:
         """
         Computes accurate player career aggregation and year/season timeline
-        across IPL, International (T20I), or Combined Career.
+        across IPL, International (T20I), SA20, or Combined Career.
         """
         self._ensure_loaded("ipl")
         self._ensure_loaded("t20i")
+        self._ensure_loaded("sa20")
 
         df_ipl = self.get_contributions_df("ipl")
         df_t20i = self.get_contributions_df("t20i")
+        df_sa20 = self.get_contributions_df("sa20")
         m_ipl = self.get_matches_df("ipl")
         m_t20i = self.get_matches_df("t20i")
+        m_sa20 = self.get_matches_df("sa20")
         r_ipl = self.get_rosters_df("ipl")
         r_t20i = self.get_rosters_df("t20i")
+        r_sa20 = self.get_rosters_df("sa20")
 
         pid_lower = player_id.strip().lower()
 
         # Locate canonical player name
         p_ipl = [p for p in r_ipl["player"].dropna().unique() if p.lower() == pid_lower] if r_ipl is not None and not r_ipl.empty else []
         p_t20i = [p for p in r_t20i["player"].dropna().unique() if p.lower() == pid_lower] if r_t20i is not None and not r_t20i.empty else []
+        p_sa20 = [p for p in r_sa20["player"].dropna().unique() if p.lower() == pid_lower] if r_sa20 is not None and not r_sa20.empty else []
 
-        if not p_ipl and not p_t20i:
+        if not p_ipl and not p_t20i and not p_sa20:
             return None
 
-        actual_name = p_ipl[0] if p_ipl else p_t20i[0]
+        actual_name = p_ipl[0] if p_ipl else (p_t20i[0] if p_t20i else p_sa20[0])
         has_ipl = len(p_ipl) > 0
         has_t20i = len(p_t20i) > 0
+        has_sa20 = len(p_sa20) > 0
 
         norm_comp = competition.strip().lower()
-        if norm_comp not in ("ipl", "t20i", "combined"):
+        if norm_comp not in ("ipl", "t20i", "sa20", "combined"):
             norm_comp = "combined"
 
         # Match metadata maps
@@ -2471,6 +2535,17 @@ class DataService:
                     "season": str(r.get("season", "")),
                     "year": int(pd.to_datetime(d_str).year) if pd.notnull(r.get("date")) and d_str else None,
                     "competition": "International",
+                }
+
+        m_sa20_dict = {}
+        if m_sa20 is not None and not m_sa20.empty:
+            for _, r in m_sa20.iterrows():
+                d_str = str(r.get("date", ""))
+                m_sa20_dict[str(r["match_id"])] = {
+                    "date": d_str,
+                    "season": str(r.get("season", "")),
+                    "year": int(pd.to_datetime(d_str).year) if pd.notnull(r.get("date")) and d_str else None,
+                    "competition": "SA20",
                 }
 
         appearances: List[Dict[str, Any]] = []
@@ -2536,11 +2611,42 @@ class DataService:
                 }
                 appearances.append(app)
 
+        # SA20 appearances
+        if norm_comp in ("sa20", "combined") and has_sa20 and r_sa20 is not None and not r_sa20.empty:
+            sub_r = r_sa20[r_sa20["player"] == actual_name]
+            sub_c = df_sa20[df_sa20["player"] == actual_name] if df_sa20 is not None and not df_sa20.empty else pd.DataFrame()
+            c_by_mid = {str(r["match_id"]): r for _, r in sub_c.iterrows()} if not sub_c.empty else {}
+
+            for _, r in sub_r.iterrows():
+                mid = str(r["match_id"])
+                minfo = m_sa20_dict.get(mid, {})
+                c_row = c_by_mid.get(mid)
+                is_dnb = c_row is None
+
+                team = str(r.get("team", ""))
+                season_str = minfo.get("season", str(r.get("season", "")))
+
+                app = {
+                    "match_id": mid,
+                    "competition": "SA20",
+                    "team": team,
+                    "season_label": season_str,
+                    "year": minfo.get("year"),
+                    "date": minfo.get("date"),
+                    "is_dnb": is_dnb,
+                    "runs": int(c_row.get("actual_runs", 0)) if not is_dnb else 0,
+                    "balls_faced": int(c_row.get("balls_faced", 0)) if not is_dnb else 0,
+                    "dot_balls": int(c_row.get("dot_balls", 0)) if not is_dnb and pd.notnull(c_row.get("dot_balls")) else 0,
+                    "contribution_score": clean_num(c_row.get("contribution_score"), 2) if not is_dnb else None,
+                    "raw_contribution": clean_num(c_row.get("raw_contribution"), 4) if not is_dnb else None,
+                }
+                appearances.append(app)
+
         if not appearances:
             return {
                 "player": actual_name,
                 "competition": norm_comp,
-                "available_competitions": {"ipl": has_ipl, "t20i": has_t20i},
+                "available_competitions": {"ipl": has_ipl, "t20i": has_t20i, "sa20": has_sa20},
                 "career_summary": {
                     "player": actual_name,
                     "teams": [],
@@ -2596,7 +2702,7 @@ class DataService:
             }
 
         def get_group_key(app):
-            if norm_comp == "ipl":
+            if norm_comp in ("ipl", "sa20"):
                 return app["season_label"]
             elif norm_comp == "t20i":
                 return str(app["year"]) if app["year"] else app["season_label"]
@@ -2642,18 +2748,31 @@ class DataService:
 
             ipl_apps = [a for a in batted_apps if a["competition"] == "IPL"]
             t20i_apps = [a for a in batted_apps if a["competition"] == "International"]
+            sa20_apps = [a for a in batted_apps if a["competition"] == "SA20"]
 
             ipl_runs = sum(a["runs"] for a in ipl_apps)
             t20i_runs = sum(a["runs"] for a in t20i_apps)
+            sa20_runs = sum(a["runs"] for a in sa20_apps)
 
             ipl_scores = [a["contribution_score"] for a in ipl_apps if a["contribution_score"] is not None]
             t20i_scores = [a["contribution_score"] for a in t20i_apps if a["contribution_score"] is not None]
+            sa20_scores = [a["contribution_score"] for a in sa20_apps if a["contribution_score"] is not None]
 
-            comp_label = (
-                "IPL" if norm_comp == "ipl"
-                else "International" if norm_comp == "t20i"
-                else ("IPL + INL" if (len(ipl_apps) > 0 and len(t20i_apps) > 0) else ("IPL" if len(ipl_apps) > 0 else "International"))
-            )
+            if norm_comp == "ipl":
+                comp_label = "IPL"
+            elif norm_comp == "t20i":
+                comp_label = "International"
+            elif norm_comp == "sa20":
+                comp_label = "SA20"
+            else:
+                comps_in_group = []
+                if len(ipl_apps) > 0:
+                    comps_in_group.append("IPL")
+                if len(t20i_apps) > 0:
+                    comps_in_group.append("INL")
+                if len(sa20_apps) > 0:
+                    comps_in_group.append("SA20")
+                comp_label = " + ".join(comps_in_group) if comps_in_group else "Combined"
 
             timeline.append({
                 "season": k,
@@ -2673,10 +2792,13 @@ class DataService:
                 "dot_ball_percentage": dot_pct,
                 "ipl_runs": ipl_runs if norm_comp == "combined" else None,
                 "t20i_runs": t20i_runs if norm_comp == "combined" else None,
+                "sa20_runs": sa20_runs if norm_comp == "combined" else None,
                 "ipl_innings": len(ipl_apps) if norm_comp == "combined" else None,
                 "t20i_innings": len(t20i_apps) if norm_comp == "combined" else None,
+                "sa20_innings": len(sa20_apps) if norm_comp == "combined" else None,
                 "ipl_avg_contribution": clean_num(float(np.mean(ipl_scores)), 2) if ipl_scores else None,
                 "t20i_avg_contribution": clean_num(float(np.mean(t20i_scores)), 2) if t20i_scores else None,
+                "sa20_avg_contribution": clean_num(float(np.mean(sa20_scores)), 2) if sa20_scores else None,
             })
 
         tot_matches = len(appearances)
@@ -2737,7 +2859,7 @@ class DataService:
         return {
             "player": actual_name,
             "competition": norm_comp,
-            "available_competitions": {"ipl": has_ipl, "t20i": has_t20i},
+            "available_competitions": {"ipl": has_ipl, "t20i": has_t20i, "sa20": has_sa20},
             "career_summary": summary,
             "career_highs_lows": highs_lows,
             "bowling_type_trends": bowling_trends,
@@ -3016,6 +3138,32 @@ class DataService:
                 self._t20i_deliveries_df_cache = pd.DataFrame()
         return self._t20i_deliveries_df_cache
 
+    def _get_sa20_deliveries_df(self) -> Optional[pd.DataFrame]:
+        """Loads and caches SA20 ball-by-ball delivery dataset."""
+        if self._sa20_deliveries_df_cache is None:
+            fpath = DATA_DIR / "sa20" / "deliveries.csv"
+            if fpath.exists():
+                cols = [
+                    "match_id",
+                    "innings_number",
+                    "over",
+                    "ball",
+                    "season",
+                    "batter",
+                    "bowler",
+                    "batter_runs",
+                    "total_runs",
+                    "wides",
+                    "player_dismissed",
+                    "dismissal_kind",
+                ]
+                df = pd.read_csv(fpath, usecols=cols, low_memory=False)
+                df["match_id"] = df["match_id"].astype(str)
+                self._sa20_deliveries_df_cache = df
+            else:
+                self._sa20_deliveries_df_cache = pd.DataFrame()
+        return self._sa20_deliveries_df_cache
+
     def _get_t20i_match_deliveries(self, match_id: Any) -> List[Dict[str, Any]]:
         """Parses and caches T20I match ball-by-ball deliveries from raw match JSON."""
         mid_str = str(match_id)
@@ -3199,6 +3347,19 @@ class DataService:
                         if relevant:
                             deliv_by_mid[str(mid)] = relevant
 
+        # 3. SA20 deliveries
+        sa20_mids = set(str(a["match_id"]) for a in appearances if a.get("competition") == "SA20")
+        if sa20_mids:
+            df_sa20_deliv = self._get_sa20_deliveries_df()
+            if df_sa20_deliv is not None and not df_sa20_deliv.empty:
+                sub_sa20 = df_sa20_deliv[
+                    (df_sa20_deliv["match_id"].isin(sa20_mids))
+                    & ((df_sa20_deliv["batter"] == player_name) | (df_sa20_deliv["player_dismissed"] == player_name))
+                ]
+                for row in sub_sa20.to_dict("records"):
+                    mid = str(row["match_id"])
+                    deliv_by_mid.setdefault(mid, []).append(row)
+
         # Build seasons breakdown
         seasons_list: List[Dict[str, Any]] = []
         all_career_balls_faced: List[Dict[str, Any]] = []
@@ -3272,11 +3433,22 @@ class DataService:
 
             ipl_apps = [a for a in group_apps if a.get("competition") == "IPL"]
             t20i_apps = [a for a in group_apps if a.get("competition") == "International"]
-            comp_label = (
-                "IPL" if norm_comp == "ipl"
-                else "International" if norm_comp == "t20i"
-                else ("IPL + INL" if (len(ipl_apps) > 0 and len(t20i_apps) > 0) else ("IPL" if len(ipl_apps) > 0 else "International"))
-            )
+            sa20_apps = [a for a in group_apps if a.get("competition") == "SA20"]
+            if norm_comp == "ipl":
+                comp_label = "IPL"
+            elif norm_comp == "t20i":
+                comp_label = "International"
+            elif norm_comp == "sa20":
+                comp_label = "SA20"
+            else:
+                comps_in_group = []
+                if len(ipl_apps) > 0:
+                    comps_in_group.append("IPL")
+                if len(t20i_apps) > 0:
+                    comps_in_group.append("INL")
+                if len(sa20_apps) > 0:
+                    comps_in_group.append("SA20")
+                comp_label = " + ".join(comps_in_group) if comps_in_group else "Combined"
 
             seasons_list.append({
                 "season": k,
@@ -3362,10 +3534,10 @@ class DataService:
         """
         if self._dataset_coverage_cache is None:
             coverage = {}
-            for comp in ("ipl", "t20i"):
+            for comp in ("ipl", "t20i", "sa20"):
                 self._ensure_loaded(comp)
                 matches_df = self.get_matches_df(comp)
-                label = "IPL Records" if comp == "ipl" else "International T20I Records"
+                label = "IPL Records" if comp == "ipl" else ("SA20 Records" if comp == "sa20" else "International T20I Records")
 
                 if matches_df is None or matches_df.empty:
                     coverage[comp] = {

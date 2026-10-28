@@ -1254,6 +1254,190 @@ class GroundAnalysisService:
                     "innings2": inn2,
                 })
 
+        # 3. Process SA20 matches and contributions
+        data_service._ensure_loaded("sa20")
+        sa20_m = data_service.get_matches_df("sa20")
+        sa20_c = data_service.get_contributions_df("sa20")
+
+        sa20_inn_dict = {}
+        if sa20_c is not None and not sa20_c.empty:
+            for mid, g in sa20_c.groupby("match_id"):
+                m_str = str(mid)
+                g1 = g[g["innings"] == 1]
+                g2 = g[g["innings"] == 2]
+
+                inn1_data = None
+                if len(g1) > 0:
+                    runs1 = clean_num(g1["final_team_score"].iloc[0])
+                    wkts1 = int(sum(g1["dismissal_status"] == "out"))
+                    ov1 = clean_num(g1["exit_over"].max(), 1)
+                    team1 = str(g1["team"].iloc[0])
+                    inn1_data = {
+                        "team": team1,
+                        "runs": int(runs1) if runs1 is not None else None,
+                        "wickets": wkts1,
+                        "overs": ov1,
+                        "is_all_out": wkts1 == 10,
+                    }
+
+                inn2_data = None
+                if len(g2) > 0:
+                    runs2 = clean_num(g2["final_team_score"].iloc[0])
+                    wkts2 = int(sum(g2["dismissal_status"] == "out"))
+                    ov2 = clean_num(g2["exit_over"].max(), 1)
+                    team2 = str(g2["team"].iloc[0])
+                    tgt2 = clean_num(g2["target"].iloc[0]) if "target" in g2 else None
+                    inn2_data = {
+                        "team": team2,
+                        "runs": int(runs2) if runs2 is not None else None,
+                        "wickets": wkts2,
+                        "overs": ov2,
+                        "target": tgt2,
+                        "is_all_out": wkts2 == 10,
+                    }
+
+                sa20_inn_dict[m_str] = {
+                    "inn1": inn1_data,
+                    "inn2": inn2_data,
+                }
+
+        if sa20_m is not None and not sa20_m.empty:
+            for _, r in sa20_m.iterrows():
+                mid = str(r["match_id"])
+                raw_venue = str(r.get("venue", "")).strip()
+                canon_venue = raw_to_canon.get(raw_venue, raw_venue)
+                v_def = CANONICAL_VENUE_DEFINITIONS.get(canon_venue, {
+                    "canonical_name": canon_venue,
+                    "city": str(r.get("city", "Unknown")),
+                    "country": "South Africa",
+                })
+
+                d_str = str(r.get("date", ""))
+                try:
+                    dt = pd.to_datetime(d_str)
+                    yr = int(dt.year)
+                    formatted_date = dt.strftime("%Y-%m-%d")
+                except Exception:
+                    yr = 2023
+                    formatted_date = d_str
+
+                inn_info = sa20_inn_dict.get(mid, {})
+                inn1_raw = inn_info.get("inn1")
+                inn2_raw = inn_info.get("inn2")
+
+                winner = str(r.get("winner")) if pd.notnull(r.get("winner")) else None
+                ic = int(r.get("innings_count", 2))
+
+                cond = conditions_map.get(mid, {})
+                is_dls = cond.get("is_dls", False)
+                is_super_over = ic >= 4 or mid == "1494261"
+                is_no_result = cond.get("is_no_result", winner is None or ic < 2)
+                is_standard_20ov = cond.get("is_standard_20ov", not (is_dls or is_no_result))
+                condition_label = cond.get(
+                    "condition_label",
+                    "Standard 20-over match" if is_standard_20ov else ("Rain-interrupted / DLS" if is_dls else "Reduced overs (non-DLS)")
+                )
+
+                inn1 = None
+                if inn1_raw:
+                    runs1 = inn1_raw["runs"]
+                    wkts1 = inn1_raw["wickets"]
+                    ov1 = inn1_raw["overs"]
+                    is_full1 = bool(not is_dls and (ov1 is not None and ov1 >= 19.1 or wkts1 == 10))
+                    inn1 = {
+                        "team": inn1_raw["team"],
+                        "runs": runs1,
+                        "wickets": wkts1,
+                        "overs": ov1,
+                        "is_all_out": wkts1 == 10,
+                        "is_full_innings": is_full1,
+                        "score_str": f"{runs1}/{wkts1} ({ov1:.1f} ov)" if runs1 is not None and ov1 is not None else "N/A",
+                    }
+
+                inn2 = None
+                if inn2_raw:
+                    runs2 = inn2_raw["runs"]
+                    wkts2 = inn2_raw["wickets"]
+                    ov2 = inn2_raw["overs"]
+                    tgt2 = inn2_raw.get("target")
+                    target_reached = bool(runs2 is not None and tgt2 is not None and runs2 >= tgt2)
+                    is_full2 = bool(not is_dls and is_full1 and (target_reached or wkts2 == 10 or (ov2 is not None and ov2 >= 19.1)))
+                    inn2 = {
+                        "team": inn2_raw["team"],
+                        "runs": runs2,
+                        "wickets": wkts2,
+                        "overs": ov2,
+                        "target": tgt2,
+                        "is_target_reached": target_reached,
+                        "is_all_out": wkts2 == 10,
+                        "is_full_innings": is_full2,
+                        "score_str": f"{runs2}/{wkts2} ({ov2:.1f} ov)" if runs2 is not None and ov2 is not None else "N/A",
+                    }
+
+                result_type = "no_result"
+                result_desc = "No result / Match abandoned"
+                margin_str = ""
+
+                w_runs = clean_num(r.get("win_by_runs"))
+                w_wkts = clean_num(r.get("win_by_wickets"))
+
+                if is_no_result:
+                    result_type = "no_result"
+                    result_desc = "No result / Match abandoned"
+                elif is_super_over:
+                    result_type = "tie_super_over"
+                    result_desc = f"{winner} won via Super Over" if winner else "Match tied"
+                    margin_str = "Super Over"
+                elif winner:
+                    if inn1 and winner == inn1["team"]:
+                        result_type = "defend_win"
+                        if w_runs:
+                            result_desc = f"{winner} won by {int(w_runs)} runs"
+                            margin_str = f"{int(w_runs)} runs"
+                        else:
+                            result_desc = f"{winner} won defending"
+                            margin_str = "Defended"
+                    elif inn2 and winner == inn2["team"]:
+                        result_type = "chase_win"
+                        if w_wkts:
+                            result_desc = f"{winner} won by {int(w_wkts)} wkts"
+                            margin_str = f"{int(w_wkts)} wkts"
+                        else:
+                            result_desc = f"{winner} won chasing"
+                            margin_str = "Chased"
+                    else:
+                        result_type = "chase_win" if w_wkts else "defend_win"
+                        result_desc = f"{winner} won"
+
+                if is_dls and not is_no_result:
+                    result_desc += " (DLS method)"
+
+                all_records.append({
+                    "match_id": mid,
+                    "competition": "sa20",
+                    "competition_name": "SA20",
+                    "season": str(r.get("season", "")),
+                    "date": formatted_date,
+                    "year": yr,
+                    "venue_raw": raw_venue,
+                    "venue": canon_venue,
+                    "city": v_def["city"],
+                    "country": v_def["country"],
+                    "team1": str(r.get("team1", "")),
+                    "team2": str(r.get("team2", "")),
+                    "winner": winner,
+                    "result_type": result_type,
+                    "result_description": result_desc,
+                    "margin": margin_str,
+                    "is_dls": is_dls,
+                    "is_super_over": is_super_over,
+                    "is_no_result": is_no_result,
+                    "is_standard_20ov": is_standard_20ov,
+                    "condition_label": condition_label,
+                    "innings1": inn1,
+                    "innings2": inn2,
+                })
+
         self._matches_cache = all_records
 
     def get_countries_and_venues(
@@ -1268,7 +1452,7 @@ class GroundAnalysisService:
         matches = self._matches_cache or []
 
         norm_comp = competition.strip().lower() if competition else "combined"
-        if norm_comp in ("ipl", "t20i"):
+        if norm_comp in ("ipl", "t20i", "sa20"):
             matches = [m for m in matches if m["competition"] == norm_comp]
 
         # 1. Tally available countries
@@ -1301,6 +1485,7 @@ class GroundAnalysisService:
                     "total_matches": 0,
                     "ipl_matches": 0,
                     "t20i_matches": 0,
+                    "sa20_matches": 0,
                     "earliest_date": m["date"],
                     "latest_date": m["date"],
                 }
@@ -1308,6 +1493,8 @@ class GroundAnalysisService:
             st["total_matches"] += 1
             if m["competition"] == "ipl":
                 st["ipl_matches"] += 1
+            elif m["competition"] == "sa20":
+                st["sa20_matches"] += 1
             else:
                 st["t20i_matches"] += 1
 
@@ -1370,7 +1557,7 @@ class GroundAnalysisService:
         # Filter by Competition
         norm_comp = competition.strip().lower() if competition else "combined"
         comp_matches = venue_all_matches
-        if norm_comp in ("ipl", "t20i"):
+        if norm_comp in ("ipl", "t20i", "sa20"):
             comp_matches = [m for m in venue_all_matches if m["competition"] == norm_comp]
 
         # Dataset absolute span for this venue

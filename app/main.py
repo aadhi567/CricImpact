@@ -648,7 +648,7 @@ from app.services.ground_service import ground_service
 
 @app.get("/api/ground-analysis/venues")
 def get_ground_analysis_venues(
-    competition: Optional[str] = Query("combined", description="Competition: 'combined', 'ipl', or 't20i'"),
+    competition: Optional[str] = Query("combined", description="Competition: 'combined', 'ipl', 't20i', or 'sa20'"),
     country: Optional[str] = Query(None, description="Optional country filter"),
 ):
     """
@@ -656,10 +656,10 @@ def get_ground_analysis_venues(
     filtered by competition and country.
     """
     comp = (competition or "combined").strip().lower()
-    if comp not in ("combined", "ipl", "t20i"):
+    if comp not in ("combined", "ipl", "t20i", "sa20"):
         raise HTTPException(
             status_code=400,
-            detail=f"Invalid competition '{competition}'. Must be 'combined', 'ipl', or 't20i'."
+            detail=f"Invalid competition '{competition}'. Must be 'combined', 'ipl', 't20i', or 'sa20'."
         )
     return ground_service.get_countries_and_venues(competition=comp, country=country)
 
@@ -667,7 +667,7 @@ def get_ground_analysis_venues(
 @app.get("/api/ground-analysis/venue/{venue_id}")
 def get_ground_analysis_detail(
     venue_id: str,
-    competition: Optional[str] = Query("combined", description="Competition: 'combined', 'ipl', or 't20i'"),
+    competition: Optional[str] = Query("combined", description="Competition: 'combined', 'ipl', 't20i', or 'sa20'"),
     period: Optional[str] = Query("rolling_5yr", description="Period: 'rolling_5yr', 'all_time', 'rolling_3yr', or 'custom'"),
     start_date: Optional[str] = Query(None, description="Optional custom start date (YYYY-MM-DD)"),
     end_date: Optional[str] = Query(None, description="Optional custom end date (YYYY-MM-DD)"),
@@ -677,10 +677,10 @@ def get_ground_analysis_detail(
     season-wise trends, and recent match history for the specified venue.
     """
     comp = (competition or "combined").strip().lower()
-    if comp not in ("combined", "ipl", "t20i"):
+    if comp not in ("combined", "ipl", "t20i", "sa20"):
         raise HTTPException(
             status_code=400,
-            detail=f"Invalid competition '{competition}'. Must be 'combined', 'ipl', or 't20i'."
+            detail=f"Invalid competition '{competition}'. Must be 'combined', 'ipl', 't20i', or 'sa20'."
         )
     if period and period not in ("rolling_5yr", "all_time", "rolling_3yr", "custom"):
         raise HTTPException(

@@ -205,7 +205,7 @@ export default function CareerGraph() {
 
   const summary = careerData?.career_summary;
   const timeline = careerData?.timeline || [];
-  const availableComps = careerData?.available_competitions || { ipl: true, t20i: true };
+  const availableComps = careerData?.available_competitions || { ipl: true, t20i: true, sa20: true };
 
   const renderCoverageIndicator = () => {
     const iplCov = datasetCoverage?.ipl;
@@ -254,9 +254,32 @@ export default function CareerGraph() {
       );
     }
 
+    if (competitionView === 'sa20') {
+      const sa20Cov = datasetCoverage?.sa20;
+      const isSa20Reliable = sa20Cov?.reliable !== false;
+      const range = sa20Cov?.display_range || (sa20Cov?.start_year ? `${sa20Cov.start_year} – ${sa20Cov.end_year}` : '2023 – 2026');
+      return (
+        <div className="flex flex-wrap items-center gap-2 text-xs">
+          <span className="font-semibold text-[#F2F2F2]">
+            SA20 Records:{' '}
+            <span className="text-[#D4AF57] font-bold tracking-wide">{range}</span>
+          </span>
+          {sa20Cov?.total_matches ? (
+            <span className="text-[10px] text-[#A8893D] bg-[#1F1B12] px-2 py-0.5 rounded border border-[#A8893D]/30 font-medium">
+              {sa20Cov.total_matches.toLocaleString()} matches
+            </span>
+          ) : null}
+          {!isSa20Reliable && (
+            <span className="text-[10px] text-[#C25454]">(Date coverage incomplete)</span>
+          )}
+        </div>
+      );
+    }
+
     // Combined View
     const iplRange = iplCov?.display_range || '2008 – 2026';
     const t20iRange = t20iCov?.display_range || '2022 – 2026';
+    const sa20Range = datasetCoverage?.sa20?.display_range || '2023 – 2026';
     return (
       <div className="flex flex-wrap items-center gap-2 sm:gap-3 text-xs">
         <span className="font-semibold text-[#F2F2F2]">
@@ -267,6 +290,11 @@ export default function CareerGraph() {
         <span className="font-semibold text-[#F2F2F2]">
           International T20I Records:{' '}
           <span className="text-[#D4AF57] font-bold tracking-wide">{t20iRange}</span>
+        </span>
+        <span className="text-[#4D4D4D] hidden sm:inline">•</span>
+        <span className="font-semibold text-[#F2F2F2]">
+          SA20 Records:{' '}
+          <span className="text-[#D4AF57] font-bold tracking-wide">{sa20Range}</span>
         </span>
       </div>
     );
@@ -435,6 +463,21 @@ export default function CareerGraph() {
               <span>International (INL)</span>
               {!availableComps.t20i && <span className="text-[10px] text-[#C25454]">(None)</span>}
             </button>
+
+            <button
+              type="button"
+              onClick={() => handleSelectCompetition('sa20')}
+              className={`flex items-center gap-1.5 px-3 py-1 rounded-md text-xs font-semibold transition-all cursor-pointer ${
+                competitionView === 'sa20'
+                  ? 'bg-[#D4AF57] text-[#080808] font-bold shadow-xs'
+                  : 'text-[#858585] hover:text-[#F2F2F2] hover:bg-[#121212]'
+              } ${!availableComps.sa20 ? 'opacity-50' : ''}`}
+              title={availableComps.sa20 ? 'SA20 records' : 'No SA20 matches for this player'}
+            >
+              <Trophy className="w-3.5 h-3.5" />
+              <span>SA20</span>
+              {!availableComps.sa20 && <span className="text-[10px] text-[#C25454]">(None)</span>}
+            </button>
           </div>
 
           {/* Compact Data Coverage Indicator */}
@@ -456,16 +499,20 @@ export default function CareerGraph() {
               {competitionView === 'ipl'
                 ? `${datasetCoverage?.ipl?.total_matches?.toLocaleString() || '1,243'} IPL matches`
                 : competitionView === 't20i'
-                ? `${datasetCoverage?.t20i?.total_matches?.toLocaleString() || '665'} T20I matches`
-                : `${datasetCoverage?.ipl?.total_matches?.toLocaleString() || '1,243'} IPL & ${datasetCoverage?.t20i?.total_matches?.toLocaleString() || '665'} T20I matches`}
+                ? `${datasetCoverage?.t20i?.total_matches?.toLocaleString() || '2,264'} T20I matches`
+                : competitionView === 'sa20'
+                ? `${datasetCoverage?.sa20?.total_matches?.toLocaleString() || '130'} SA20 matches`
+                : `${datasetCoverage?.ipl?.total_matches?.toLocaleString() || '1,243'} IPL, ${datasetCoverage?.t20i?.total_matches?.toLocaleString() || '2,264'} T20I & ${datasetCoverage?.sa20?.total_matches?.toLocaleString() || '130'} SA20 matches`}
               ); does not imply complete historical coverage of every tournament match.
             </span>
           </span>
           <span className="text-[#666666]">
             {competitionView === 'combined'
-              ? 'Aggregated across IPL & International T20 records'
+              ? 'Aggregated across IPL, International T20 & SA20 records'
               : competitionView === 'ipl'
               ? 'Official Indian Premier League tournament records'
+              : competitionView === 'sa20'
+              ? 'Official SA20 tournament records'
               : 'Men’s International T20 match records'}
           </span>
         </div>

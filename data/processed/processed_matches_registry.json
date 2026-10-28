@@ -38937,5 +38937,1565 @@
       "India"
     ],
     "winner": "India"
+  },
+  "1343941": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2022/23",
+    "date": "2023-01-10",
+    "teams": [
+      "Paarl Royals",
+      "MI Cape Town"
+    ],
+    "winner": "MI Cape Town"
+  },
+  "1343942": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2022/23",
+    "date": "2023-01-11",
+    "teams": [
+      "Joburg Super Kings",
+      "Durban's Super Giants"
+    ],
+    "winner": "Joburg Super Kings"
+  },
+  "1343943": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2022/23",
+    "date": "2023-01-12",
+    "teams": [
+      "Pretoria Capitals",
+      "Sunrisers Eastern Cape"
+    ],
+    "winner": "Pretoria Capitals"
+  },
+  "1343944": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2022/23",
+    "date": "2023-01-13",
+    "teams": [
+      "Joburg Super Kings",
+      "Paarl Royals"
+    ],
+    "winner": "Paarl Royals"
+  },
+  "1343945": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2022/23",
+    "date": "2023-01-13",
+    "teams": [
+      "MI Cape Town",
+      "Durban's Super Giants"
+    ],
+    "winner": "Durban's Super Giants"
+  },
+  "1343946": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2022/23",
+    "date": "2023-01-14",
+    "teams": [
+      "Pretoria Capitals",
+      "Sunrisers Eastern Cape"
+    ],
+    "winner": "Pretoria Capitals"
+  },
+  "1343947": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2022/23",
+    "date": "2023-01-14",
+    "teams": [
+      "Joburg Super Kings",
+      "MI Cape Town"
+    ],
+    "winner": "MI Cape Town"
+  },
+  "1343948": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2022/23",
+    "date": "2023-01-15",
+    "teams": [
+      "Durban's Super Giants",
+      "Paarl Royals"
+    ],
+    "winner": "Durban's Super Giants"
+  },
+  "1343949": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2022/23",
+    "date": "2023-01-16",
+    "teams": [
+      "MI Cape Town",
+      "Sunrisers Eastern Cape"
+    ],
+    "winner": "Sunrisers Eastern Cape"
+  },
+  "1343950": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2022/23",
+    "date": "2023-01-17",
+    "teams": [
+      "Paarl Royals",
+      "Durban's Super Giants"
+    ],
+    "winner": "Paarl Royals"
+  },
+  "1343951": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2022/23",
+    "date": "2023-01-17",
+    "teams": [
+      "Joburg Super Kings",
+      "Pretoria Capitals"
+    ],
+    "winner": "Joburg Super Kings"
+  },
+  "1343952": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2022/23",
+    "date": "2023-01-18",
+    "teams": [
+      "MI Cape Town",
+      "Sunrisers Eastern Cape"
+    ],
+    "winner": "Sunrisers Eastern Cape"
+  },
+  "1343953": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2022/23",
+    "date": "2023-01-18",
+    "teams": [
+      "Joburg Super Kings",
+      "Pretoria Capitals"
+    ],
+    "winner": "Pretoria Capitals"
+  },
+  "1343954": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2022/23",
+    "date": "2023-01-19",
+    "teams": [
+      "Paarl Royals",
+      "Sunrisers Eastern Cape"
+    ],
+    "winner": "Sunrisers Eastern Cape"
+  },
+  "1343955": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2022/23",
+    "date": "2023-01-20",
+    "teams": [
+      "Durban's Super Giants",
+      "Pretoria Capitals"
+    ],
+    "winner": "Pretoria Capitals"
+  },
+  "1343956": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2022/23",
+    "date": "2023-01-21",
+    "teams": [
+      "MI Cape Town",
+      "Paarl Royals"
+    ],
+    "winner": "MI Cape Town"
+  },
+  "1343957": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2022/23",
+    "date": "2023-01-21",
+    "teams": [
+      "Sunrisers Eastern Cape",
+      "Joburg Super Kings"
+    ],
+    "winner": "Joburg Super Kings"
+  },
+  "1343958": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2022/23",
+    "date": "2023-01-22",
+    "teams": [
+      "Pretoria Capitals",
+      "Paarl Royals"
+    ],
+    "winner": "Paarl Royals"
+  },
+  "1343959": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2022/23",
+    "date": "2023-01-22",
+    "teams": [
+      "Sunrisers Eastern Cape",
+      "Durban's Super Giants"
+    ],
+    "winner": "Sunrisers Eastern Cape"
+  },
+  "1343960": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2022/23",
+    "date": "2023-01-23",
+    "teams": [
+      "Pretoria Capitals",
+      "MI Cape Town"
+    ],
+    "winner": "Pretoria Capitals"
+  },
+  "1343961": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2022/23",
+    "date": "2023-01-24",
+    "teams": [
+      "Sunrisers Eastern Cape",
+      "Paarl Royals"
+    ],
+    "winner": "Paarl Royals"
+  },
+  "1343962": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2022/23",
+    "date": "2023-01-24",
+    "teams": [
+      "Durban's Super Giants",
+      "Joburg Super Kings"
+    ],
+    "winner": "Joburg Super Kings"
+  },
+  "1343963": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2022/23",
+    "date": "2023-02-02",
+    "teams": [
+      "MI Cape Town",
+      "Durban's Super Giants"
+    ],
+    "winner": "Durban's Super Giants"
+  },
+  "1343964": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2022/23",
+    "date": "2023-02-03",
+    "teams": [
+      "Paarl Royals",
+      "Joburg Super Kings"
+    ],
+    "winner": null
+  },
+  "1343965": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2022/23",
+    "date": "2023-02-03",
+    "teams": [
+      "Sunrisers Eastern Cape",
+      "Durban's Super Giants"
+    ],
+    "winner": null
+  },
+  "1343966": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2022/23",
+    "date": "2023-02-04",
+    "teams": [
+      "MI Cape Town",
+      "Pretoria Capitals"
+    ],
+    "winner": "Pretoria Capitals"
+  },
+  "1343967": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2022/23",
+    "date": "2023-02-05",
+    "teams": [
+      "Joburg Super Kings",
+      "Sunrisers Eastern Cape"
+    ],
+    "winner": "Joburg Super Kings"
+  },
+  "1343968": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2022/23",
+    "date": "2023-02-05",
+    "teams": [
+      "Durban's Super Giants",
+      "Pretoria Capitals"
+    ],
+    "winner": "Durban's Super Giants"
+  },
+  "1343969": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2022/23",
+    "date": "2023-02-06",
+    "teams": [
+      "Joburg Super Kings",
+      "MI Cape Town"
+    ],
+    "winner": "Joburg Super Kings"
+  },
+  "1343970": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2022/23",
+    "date": "2023-02-07",
+    "teams": [
+      "Pretoria Capitals",
+      "Paarl Royals"
+    ],
+    "winner": "Pretoria Capitals"
+  },
+  "1343971": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2022/23",
+    "date": "2023-02-08",
+    "teams": [
+      "Pretoria Capitals",
+      "Paarl Royals"
+    ],
+    "winner": "Pretoria Capitals"
+  },
+  "1343972": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2022/23",
+    "date": "2023-02-09",
+    "teams": [
+      "Sunrisers Eastern Cape",
+      "Joburg Super Kings"
+    ],
+    "winner": "Sunrisers Eastern Cape"
+  },
+  "1343973": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2022/23",
+    "date": "2023-02-11",
+    "teams": [
+      "Pretoria Capitals",
+      "Sunrisers Eastern Cape"
+    ],
+    "winner": "Sunrisers Eastern Cape"
+  },
+  "1392653": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2023/24",
+    "date": "2024-01-11",
+    "teams": [
+      "MI Cape Town",
+      "Durban's Super Giants"
+    ],
+    "winner": "Durban's Super Giants"
+  },
+  "1392654": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2023/24",
+    "date": "2024-01-12",
+    "teams": [
+      "Paarl Royals",
+      "Pretoria Capitals"
+    ],
+    "winner": "Paarl Royals"
+  },
+  "1392655": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2023/24",
+    "date": "2024-01-13",
+    "teams": [
+      "MI Cape Town",
+      "Joburg Super Kings"
+    ],
+    "winner": "MI Cape Town"
+  },
+  "1392656": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2023/24",
+    "date": "2024-01-13",
+    "teams": [
+      "Durban's Super Giants",
+      "Sunrisers Eastern Cape"
+    ],
+    "winner": "Durban's Super Giants"
+  },
+  "1392657": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2023/24",
+    "date": "2024-01-14",
+    "teams": [
+      "Paarl Royals",
+      "Pretoria Capitals"
+    ],
+    "winner": "Paarl Royals"
+  },
+  "1392658": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2023/24",
+    "date": "2024-01-15",
+    "teams": [
+      "Durban's Super Giants",
+      "Joburg Super Kings"
+    ],
+    "winner": "Durban's Super Giants"
+  },
+  "1392659": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2023/24",
+    "date": "2024-01-16",
+    "teams": [
+      "Sunrisers Eastern Cape",
+      "MI Cape Town"
+    ],
+    "winner": "Sunrisers Eastern Cape"
+  },
+  "1392660": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2023/24",
+    "date": "2024-01-17",
+    "teams": [
+      "Joburg Super Kings",
+      "Paarl Royals"
+    ],
+    "winner": "Paarl Royals"
+  },
+  "1392661": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2023/24",
+    "date": "2024-01-18",
+    "teams": [
+      "Pretoria Capitals",
+      "Durban's Super Giants"
+    ],
+    "winner": "Pretoria Capitals"
+  },
+  "1392662": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2023/24",
+    "date": "2024-01-19",
+    "teams": [
+      "Paarl Royals",
+      "MI Cape Town"
+    ],
+    "winner": "MI Cape Town"
+  },
+  "1392663": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2023/24",
+    "date": "2024-01-20",
+    "teams": [
+      "Durban's Super Giants",
+      "Sunrisers Eastern Cape"
+    ],
+    "winner": "Sunrisers Eastern Cape"
+  },
+  "1392664": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2023/24",
+    "date": "2024-01-20",
+    "teams": [
+      "Pretoria Capitals",
+      "Joburg Super Kings"
+    ],
+    "winner": "Joburg Super Kings"
+  },
+  "1392665": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2023/24",
+    "date": "2024-01-21",
+    "teams": [
+      "Paarl Royals",
+      "MI Cape Town"
+    ],
+    "winner": "Paarl Royals"
+  },
+  "1392666": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2023/24",
+    "date": "2024-01-22",
+    "teams": [
+      "Pretoria Capitals",
+      "Sunrisers Eastern Cape"
+    ],
+    "winner": "Sunrisers Eastern Cape"
+  },
+  "1392667": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2023/24",
+    "date": "2024-01-23",
+    "teams": [
+      "Durban's Super Giants",
+      "MI Cape Town"
+    ],
+    "winner": "Durban's Super Giants"
+  },
+  "1392668": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2023/24",
+    "date": "2024-01-24",
+    "teams": [
+      "Joburg Super Kings",
+      "Paarl Royals"
+    ],
+    "winner": "Paarl Royals"
+  },
+  "1392669": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2023/24",
+    "date": "2024-01-25",
+    "teams": [
+      "Pretoria Capitals",
+      "Sunrisers Eastern Cape"
+    ],
+    "winner": "Pretoria Capitals"
+  },
+  "1392670": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2023/24",
+    "date": "2024-01-26",
+    "teams": [
+      "Durban's Super Giants",
+      "Paarl Royals"
+    ],
+    "winner": "Durban's Super Giants"
+  },
+  "1392671": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2023/24",
+    "date": "2024-01-27",
+    "teams": [
+      "Sunrisers Eastern Cape",
+      "MI Cape Town"
+    ],
+    "winner": "Sunrisers Eastern Cape"
+  },
+  "1392672": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2023/24",
+    "date": "2024-01-27",
+    "teams": [
+      "Joburg Super Kings",
+      "Pretoria Capitals"
+    ],
+    "winner": null
+  },
+  "1392673": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2023/24",
+    "date": "2024-01-28",
+    "teams": [
+      "Durban's Super Giants",
+      "Paarl Royals"
+    ],
+    "winner": "Durban's Super Giants"
+  },
+  "1392674": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2023/24",
+    "date": "2024-01-29",
+    "teams": [
+      "MI Cape Town",
+      "Joburg Super Kings"
+    ],
+    "winner": "Joburg Super Kings"
+  },
+  "1392675": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2023/24",
+    "date": "2024-01-30",
+    "teams": [
+      "Durban's Super Giants",
+      "Pretoria Capitals"
+    ],
+    "winner": "Durban's Super Giants"
+  },
+  "1392676": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2023/24",
+    "date": "2024-01-31",
+    "teams": [
+      "Joburg Super Kings",
+      "Sunrisers Eastern Cape"
+    ],
+    "winner": "Sunrisers Eastern Cape"
+  },
+  "1392677": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2023/24",
+    "date": "2024-02-01",
+    "teams": [
+      "MI Cape Town",
+      "Pretoria Capitals"
+    ],
+    "winner": "MI Cape Town"
+  },
+  "1392678": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2023/24",
+    "date": "2024-02-02",
+    "teams": [
+      "Sunrisers Eastern Cape",
+      "Paarl Royals"
+    ],
+    "winner": "Sunrisers Eastern Cape"
+  },
+  "1392679": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2023/24",
+    "date": "2024-02-03",
+    "teams": [
+      "MI Cape Town",
+      "Pretoria Capitals"
+    ],
+    "winner": "Pretoria Capitals"
+  },
+  "1392680": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2023/24",
+    "date": "2024-02-03",
+    "teams": [
+      "Durban's Super Giants",
+      "Joburg Super Kings"
+    ],
+    "winner": "Joburg Super Kings"
+  },
+  "1392681": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2023/24",
+    "date": "2024-02-04",
+    "teams": [
+      "Paarl Royals",
+      "Sunrisers Eastern Cape"
+    ],
+    "winner": "Sunrisers Eastern Cape"
+  },
+  "1392682": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2023/24",
+    "date": "2024-02-06",
+    "teams": [
+      "Sunrisers Eastern Cape",
+      "Durban's Super Giants"
+    ],
+    "winner": "Sunrisers Eastern Cape"
+  },
+  "1392683": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2023/24",
+    "date": "2024-02-07",
+    "teams": [
+      "Paarl Royals",
+      "Joburg Super Kings"
+    ],
+    "winner": "Joburg Super Kings"
+  },
+  "1392684": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2023/24",
+    "date": "2024-02-08",
+    "teams": [
+      "Durban's Super Giants",
+      "Joburg Super Kings"
+    ],
+    "winner": "Durban's Super Giants"
+  },
+  "1392685": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2023/24",
+    "date": "2024-02-10",
+    "teams": [
+      "Sunrisers Eastern Cape",
+      "Durban's Super Giants"
+    ],
+    "winner": "Sunrisers Eastern Cape"
+  },
+  "1449634": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2024/25",
+    "date": "2025-01-09",
+    "teams": [
+      "MI Cape Town",
+      "Sunrisers Eastern Cape"
+    ],
+    "winner": "MI Cape Town"
+  },
+  "1449635": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2024/25",
+    "date": "2025-01-10",
+    "teams": [
+      "Durban's Super Giants",
+      "Pretoria Capitals"
+    ],
+    "winner": "Durban's Super Giants"
+  },
+  "1449636": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2024/25",
+    "date": "2025-01-11",
+    "teams": [
+      "Sunrisers Eastern Cape",
+      "Paarl Royals"
+    ],
+    "winner": "Paarl Royals"
+  },
+  "1449637": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2024/25",
+    "date": "2025-01-11",
+    "teams": [
+      "MI Cape Town",
+      "Joburg Super Kings"
+    ],
+    "winner": "Joburg Super Kings"
+  },
+  "1449639": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2024/25",
+    "date": "2025-01-13",
+    "teams": [
+      "MI Cape Town",
+      "Paarl Royals"
+    ],
+    "winner": "MI Cape Town"
+  },
+  "1449640": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2024/25",
+    "date": "2025-01-14",
+    "teams": [
+      "Sunrisers Eastern Cape",
+      "Pretoria Capitals"
+    ],
+    "winner": "Pretoria Capitals"
+  },
+  "1449641": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2024/25",
+    "date": "2025-01-14",
+    "teams": [
+      "Joburg Super Kings",
+      "Durban's Super Giants"
+    ],
+    "winner": "Joburg Super Kings"
+  },
+  "1449642": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2024/25",
+    "date": "2025-01-15",
+    "teams": [
+      "MI Cape Town",
+      "Paarl Royals"
+    ],
+    "winner": "Paarl Royals"
+  },
+  "1449643": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2024/25",
+    "date": "2025-01-16",
+    "teams": [
+      "Pretoria Capitals",
+      "Joburg Super Kings"
+    ],
+    "winner": null
+  },
+  "1449644": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2024/25",
+    "date": "2025-01-17",
+    "teams": [
+      "Sunrisers Eastern Cape",
+      "Durban's Super Giants"
+    ],
+    "winner": "Sunrisers Eastern Cape"
+  },
+  "1449645": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2024/25",
+    "date": "2025-01-18",
+    "teams": [
+      "Pretoria Capitals",
+      "Paarl Royals"
+    ],
+    "winner": "Paarl Royals"
+  },
+  "1449646": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2024/25",
+    "date": "2025-01-18",
+    "teams": [
+      "Joburg Super Kings",
+      "MI Cape Town"
+    ],
+    "winner": "MI Cape Town"
+  },
+  "1449647": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2024/25",
+    "date": "2025-01-19",
+    "teams": [
+      "Durban's Super Giants",
+      "Sunrisers Eastern Cape"
+    ],
+    "winner": "Sunrisers Eastern Cape"
+  },
+  "1449648": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2024/25",
+    "date": "2025-01-20",
+    "teams": [
+      "Joburg Super Kings",
+      "Paarl Royals"
+    ],
+    "winner": "Paarl Royals"
+  },
+  "1449649": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2024/25",
+    "date": "2025-01-21",
+    "teams": [
+      "MI Cape Town",
+      "Durban's Super Giants"
+    ],
+    "winner": null
+  },
+  "1449650": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2024/25",
+    "date": "2025-01-22",
+    "teams": [
+      "Sunrisers Eastern Cape",
+      "Pretoria Capitals"
+    ],
+    "winner": "Sunrisers Eastern Cape"
+  },
+  "1449651": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2024/25",
+    "date": "2025-01-23",
+    "teams": [
+      "Durban's Super Giants",
+      "Paarl Royals"
+    ],
+    "winner": "Paarl Royals"
+  },
+  "1449652": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2024/25",
+    "date": "2025-01-24",
+    "teams": [
+      "Sunrisers Eastern Cape",
+      "Joburg Super Kings"
+    ],
+    "winner": "Sunrisers Eastern Cape"
+  },
+  "1449653": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2024/25",
+    "date": "2025-01-25",
+    "teams": [
+      "Paarl Royals",
+      "Pretoria Capitals"
+    ],
+    "winner": "Paarl Royals"
+  },
+  "1449654": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2024/25",
+    "date": "2025-01-25",
+    "teams": [
+      "Durban's Super Giants",
+      "MI Cape Town"
+    ],
+    "winner": "MI Cape Town"
+  },
+  "1449655": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2024/25",
+    "date": "2025-01-26",
+    "teams": [
+      "Sunrisers Eastern Cape",
+      "Joburg Super Kings"
+    ],
+    "winner": "Joburg Super Kings"
+  },
+  "1449656": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2024/25",
+    "date": "2025-01-27",
+    "teams": [
+      "Durban's Super Giants",
+      "Paarl Royals"
+    ],
+    "winner": "Paarl Royals"
+  },
+  "1449657": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2024/25",
+    "date": "2025-01-28",
+    "teams": [
+      "Joburg Super Kings",
+      "Pretoria Capitals"
+    ],
+    "winner": "Pretoria Capitals"
+  },
+  "1449658": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2024/25",
+    "date": "2025-01-29",
+    "teams": [
+      "Sunrisers Eastern Cape",
+      "MI Cape Town"
+    ],
+    "winner": "MI Cape Town"
+  },
+  "1449659": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2024/25",
+    "date": "2025-01-30",
+    "teams": [
+      "Paarl Royals",
+      "Joburg Super Kings"
+    ],
+    "winner": "Joburg Super Kings"
+  },
+  "1449660": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2024/25",
+    "date": "2025-01-31",
+    "teams": [
+      "MI Cape Town",
+      "Pretoria Capitals"
+    ],
+    "winner": "MI Cape Town"
+  },
+  "1449661": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2024/25",
+    "date": "2025-02-01",
+    "teams": [
+      "Sunrisers Eastern Cape",
+      "Paarl Royals"
+    ],
+    "winner": "Sunrisers Eastern Cape"
+  },
+  "1449662": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2024/25",
+    "date": "2025-02-01",
+    "teams": [
+      "Durban's Super Giants",
+      "Joburg Super Kings"
+    ],
+    "winner": "Durban's Super Giants"
+  },
+  "1449663": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2024/25",
+    "date": "2025-02-02",
+    "teams": [
+      "MI Cape Town",
+      "Pretoria Capitals"
+    ],
+    "winner": "MI Cape Town"
+  },
+  "1449664": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2024/25",
+    "date": "2025-02-04",
+    "teams": [
+      "MI Cape Town",
+      "Paarl Royals"
+    ],
+    "winner": "MI Cape Town"
+  },
+  "1449665": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2024/25",
+    "date": "2025-02-05",
+    "teams": [
+      "Sunrisers Eastern Cape",
+      "Joburg Super Kings"
+    ],
+    "winner": "Sunrisers Eastern Cape"
+  },
+  "1449666": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2024/25",
+    "date": "2025-02-06",
+    "teams": [
+      "Paarl Royals",
+      "Sunrisers Eastern Cape"
+    ],
+    "winner": "Sunrisers Eastern Cape"
+  },
+  "1449667": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2024/25",
+    "date": "2025-02-08",
+    "teams": [
+      "MI Cape Town",
+      "Sunrisers Eastern Cape"
+    ],
+    "winner": "MI Cape Town"
+  },
+  "1494253": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2025/26",
+    "date": "2025-12-26",
+    "teams": [
+      "Durban's Super Giants",
+      "MI Cape Town"
+    ],
+    "winner": "Durban's Super Giants"
+  },
+  "1494254": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2025/26",
+    "date": "2025-12-27",
+    "teams": [
+      "Joburg Super Kings",
+      "Pretoria Capitals"
+    ],
+    "winner": "Joburg Super Kings"
+  },
+  "1494255": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2025/26",
+    "date": "2025-12-27",
+    "teams": [
+      "Sunrisers Eastern Cape",
+      "Paarl Royals"
+    ],
+    "winner": "Sunrisers Eastern Cape"
+  },
+  "1494256": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2025/26",
+    "date": "2025-12-28",
+    "teams": [
+      "Durban's Super Giants",
+      "MI Cape Town"
+    ],
+    "winner": null
+  },
+  "1494257": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2025/26",
+    "date": "2025-12-29",
+    "teams": [
+      "Sunrisers Eastern Cape",
+      "Pretoria Capitals"
+    ],
+    "winner": "Sunrisers Eastern Cape"
+  },
+  "1494258": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2025/26",
+    "date": "2025-12-30",
+    "teams": [
+      "Durban's Super Giants",
+      "Joburg Super Kings"
+    ],
+    "winner": "Joburg Super Kings"
+  },
+  "1494259": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2025/26",
+    "date": "2025-12-31",
+    "teams": [
+      "Sunrisers Eastern Cape",
+      "Paarl Royals"
+    ],
+    "winner": "Paarl Royals"
+  },
+  "1494260": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2025/26",
+    "date": "2025-12-31",
+    "teams": [
+      "Pretoria Capitals",
+      "MI Cape Town"
+    ],
+    "winner": "Pretoria Capitals"
+  },
+  "1494261": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2025/26",
+    "date": "2026-01-01",
+    "teams": [
+      "Joburg Super Kings",
+      "Durban's Super Giants"
+    ],
+    "winner": "Joburg Super Kings"
+  },
+  "1494262": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2025/26",
+    "date": "2026-01-02",
+    "teams": [
+      "Paarl Royals",
+      "MI Cape Town"
+    ],
+    "winner": "Paarl Royals"
+  },
+  "1494265": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2025/26",
+    "date": "2026-01-04",
+    "teams": [
+      "MI Cape Town",
+      "Paarl Royals"
+    ],
+    "winner": "Paarl Royals"
+  },
+  "1494266": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2025/26",
+    "date": "2026-01-05",
+    "teams": [
+      "Pretoria Capitals",
+      "Sunrisers Eastern Cape"
+    ],
+    "winner": "Sunrisers Eastern Cape"
+  },
+  "1494267": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2025/26",
+    "date": "2026-01-06",
+    "teams": [
+      "Joburg Super Kings",
+      "MI Cape Town"
+    ],
+    "winner": "MI Cape Town"
+  },
+  "1494268": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2025/26",
+    "date": "2026-01-07",
+    "teams": [
+      "Pretoria Capitals",
+      "Durban's Super Giants"
+    ],
+    "winner": "Pretoria Capitals"
+  },
+  "1494269": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2025/26",
+    "date": "2026-01-08",
+    "teams": [
+      "Joburg Super Kings",
+      "Paarl Royals"
+    ],
+    "winner": null
+  },
+  "1494271": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2025/26",
+    "date": "2026-01-10",
+    "teams": [
+      "Pretoria Capitals",
+      "Paarl Royals"
+    ],
+    "winner": "Pretoria Capitals"
+  },
+  "1494272": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2025/26",
+    "date": "2026-01-10",
+    "teams": [
+      "MI Cape Town",
+      "Joburg Super Kings"
+    ],
+    "winner": "MI Cape Town"
+  },
+  "1494273": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2025/26",
+    "date": "2026-01-11",
+    "teams": [
+      "Sunrisers Eastern Cape",
+      "Durban's Super Giants"
+    ],
+    "winner": "Durban's Super Giants"
+  },
+  "1494274": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2025/26",
+    "date": "2026-01-12",
+    "teams": [
+      "Pretoria Capitals",
+      "MI Cape Town"
+    ],
+    "winner": "Pretoria Capitals"
+  },
+  "1494275": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2025/26",
+    "date": "2026-01-13",
+    "teams": [
+      "Durban's Super Giants",
+      "Paarl Royals"
+    ],
+    "winner": "Paarl Royals"
+  },
+  "1494276": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2025/26",
+    "date": "2026-01-14",
+    "teams": [
+      "Sunrisers Eastern Cape",
+      "Joburg Super Kings"
+    ],
+    "winner": "Sunrisers Eastern Cape"
+  },
+  "1494277": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2025/26",
+    "date": "2026-01-15",
+    "teams": [
+      "Pretoria Capitals",
+      "Paarl Royals"
+    ],
+    "winner": "Paarl Royals"
+  },
+  "1494278": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2025/26",
+    "date": "2026-01-16",
+    "teams": [
+      "Sunrisers Eastern Cape",
+      "MI Cape Town"
+    ],
+    "winner": "MI Cape Town"
+  },
+  "1494279": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2025/26",
+    "date": "2026-01-17",
+    "teams": [
+      "Durban's Super Giants",
+      "Paarl Royals"
+    ],
+    "winner": "Durban's Super Giants"
+  },
+  "1494280": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2025/26",
+    "date": "2026-01-17",
+    "teams": [
+      "Pretoria Capitals",
+      "Joburg Super Kings"
+    ],
+    "winner": "Pretoria Capitals"
+  },
+  "1494281": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2025/26",
+    "date": "2026-01-18",
+    "teams": [
+      "MI Cape Town",
+      "Sunrisers Eastern Cape"
+    ],
+    "winner": "Sunrisers Eastern Cape"
+  },
+  "1494282": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2025/26",
+    "date": "2026-01-19",
+    "teams": [
+      "Joburg Super Kings",
+      "Paarl Royals"
+    ],
+    "winner": "Joburg Super Kings"
+  },
+  "1494283": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2025/26",
+    "date": "2026-01-21",
+    "teams": [
+      "Sunrisers Eastern Cape",
+      "Pretoria Capitals"
+    ],
+    "winner": "Pretoria Capitals"
+  },
+  "1494284": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2025/26",
+    "date": "2026-01-22",
+    "teams": [
+      "Paarl Royals",
+      "Joburg Super Kings"
+    ],
+    "winner": "Paarl Royals"
+  },
+  "1494285": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2025/26",
+    "date": "2026-01-23",
+    "teams": [
+      "Paarl Royals",
+      "Sunrisers Eastern Cape"
+    ],
+    "winner": "Sunrisers Eastern Cape"
+  },
+  "1494286": {
+    "competition": "SA20",
+    "format": "T20",
+    "processed_at": "2026-10-28T13:01:21Z",
+    "season": "2025/26",
+    "date": "2026-01-25",
+    "teams": [
+      "Pretoria Capitals",
+      "Sunrisers Eastern Cape"
+    ],
+    "winner": "Sunrisers Eastern Cape"
   }
 }
