@@ -259,3 +259,25 @@ def test_8_end_to_end_player_and_match_apis():
     pindi_data = res_pindi.json()
     assert str(pindi_data["match_id"]) == "1550708"
     assert "Pakistan" in (pindi_data["team1"], pindi_data["team2"])
+
+
+def test_9_corrupt_archive_download_validation(tmp_path):
+    """Verify that fetch_source_archive rejects non-zip or truncated payloads and protects target path."""
+    updater = MatchUpdateService()
+    corrupt_zip = tmp_path / "test_corrupt.zip"
+
+    # Non-zip payload should raise RuntimeError when retries exhausted
+    bad_file = tmp_path / "bad.txt"
+    bad_file.write_text("Not a valid zip content" * 100)
+
+    with pytest.raises(RuntimeError, match="Failed to download Cricsheet source archive"):
+        updater.fetch_source_archive(
+            url=bad_file.as_uri(),
+            cached_zip_path=corrupt_zip,
+            max_retries=1,
+            force_download=True,
+        )
+
+    # Ensure corrupt file was not left at destination
+    assert not corrupt_zip.exists()
+

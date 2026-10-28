@@ -137,12 +137,14 @@ class MatchUpdateService:
 
         remote_last_modified = None
         remote_content_length = None
-        headers = {"User-Agent": "CricImpact-Updater/1.0"}
+        headers = {
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 CricImpact/1.0"
+        }
 
         # Probe remote archive headers
         try:
             head_req = urllib.request.Request(url, headers=headers, method="HEAD")
-            with urllib.request.urlopen(head_req, timeout=10) as head_resp:
+            with urllib.request.urlopen(head_req, timeout=15) as head_resp:
                 remote_last_modified = head_resp.headers.get("Last-Modified")
                 remote_content_length = head_resp.headers.get("Content-Length")
                 logger.info(f"Cricsheet upstream HEAD: Last-Modified={remote_last_modified}, Length={remote_content_length}")
@@ -150,7 +152,7 @@ class MatchUpdateService:
             logger.warning(f"Could not probe remote HEAD for {url}: {e}")
 
         # Check if local zip is already fresh (< 2 hours old and > 10MB) when force_download is False
-        if not force_download and zip_path.exists() and zip_path.stat().st_size > 10000000:
+        if not force_download and zip_path.exists() and zip_path.stat().st_size > 10000000 and zipfile.is_zipfile(zip_path):
             age_hours = (time.time() - zip_path.stat().st_mtime) / 3600.0
             if age_hours < 2.0:
                 logger.info(f"Using fresh cached archive at {zip_path} (age: {age_hours:.1f}h)")
@@ -167,13 +169,22 @@ class MatchUpdateService:
             try:
                 logger.info(f"Downloading source archive from {url} (Attempt {attempt}/{max_retries})...")
                 req = urllib.request.Request(url, headers=headers)
-                with urllib.request.urlopen(req, timeout=45) as resp:
+                with urllib.request.urlopen(req, timeout=60) as resp:
                     data = resp.read()
                     remote_last_modified = resp.headers.get("Last-Modified") or remote_last_modified
                     remote_content_length = resp.headers.get("Content-Length") or str(len(data))
+                    
+                    if len(data) < 1000000:
+                        raise ValueError(f"Downloaded payload too small ({len(data):,} bytes), likely truncated or blocked")
+                    
                     temp_path = zip_path.with_suffix(".tmp")
                     with open(temp_path, "wb") as f:
                         f.write(data)
+
+                    if not zipfile.is_zipfile(temp_path):
+                        temp_path.unlink(missing_ok=True)
+                        raise zipfile.BadZipFile(f"Downloaded file ({len(data):,} bytes) is not a valid zip archive")
+
                     temp_path.replace(zip_path)
                 logger.info(f"Successfully downloaded {len(data):,} bytes to {zip_path}")
                 self.archive_meta = {
@@ -189,9 +200,9 @@ class MatchUpdateService:
                 logger.warning(f"Download attempt {attempt} failed: {e}. Retrying in {wait_time}s...")
                 time.sleep(wait_time)
 
-        # Fallback to existing file if available
-        if zip_path.exists():
-            logger.warning(f"Download retries exhausted. Falling back to existing archive at {zip_path}")
+        # Fallback to existing file if available and valid
+        if zip_path.exists() and zipfile.is_zipfile(zip_path):
+            logger.warning(f"Download retries exhausted. Falling back to existing valid archive at {zip_path}")
             self.archive_meta = {
                 "upstream_url": url,
                 "upstream_last_modified": remote_last_modified or "Sun, 25 Oct 2026 18:43:27 GMT",
