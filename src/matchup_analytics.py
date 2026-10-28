@@ -28,7 +28,7 @@ from src.bowling_classification import get_bowler_classification
 _ROOT_DIR = Path(__file__).resolve().parent.parent
 _DELIVERIES_CSV = _ROOT_DIR / "data" / "processed" / "deliveries.csv"
 
-_PRECOMPUTED_MATCHUPS_DF: Optional[pd.DataFrame] = None
+_MATCHUPS_BY_COMPETITION: Dict[str, pd.DataFrame] = {}
 
 
 def load_deliveries_with_bowling_type(deliveries_path: Optional[Path] = None) -> pd.DataFrame:
@@ -54,12 +54,21 @@ def load_deliveries_with_bowling_type(deliveries_path: Optional[Path] = None) ->
     return df
 
 
-def get_annotated_deliveries() -> pd.DataFrame:
-    """Singleton getter for deliveries with bowling type."""
-    global _PRECOMPUTED_MATCHUPS_DF
-    if _PRECOMPUTED_MATCHUPS_DF is None:
-        _PRECOMPUTED_MATCHUPS_DF = load_deliveries_with_bowling_type()
-    return _PRECOMPUTED_MATCHUPS_DF
+def get_annotated_deliveries(competition: Optional[str] = "ipl") -> pd.DataFrame:
+    """Singleton / cache getter for deliveries with bowling type per competition."""
+    global _MATCHUPS_BY_COMPETITION
+    comp = str(competition).lower().strip() if competition else "ipl"
+    if comp not in _MATCHUPS_BY_COMPETITION:
+        if comp == "ipl":
+            deliveries_path = _DELIVERIES_CSV
+        elif comp == "sa20":
+            deliveries_path = _ROOT_DIR / "data" / "processed" / "sa20" / "deliveries.csv"
+        elif comp == "t20i":
+            deliveries_path = _ROOT_DIR / "data" / "processed" / "t20i" / "deliveries.csv"
+        else:
+            deliveries_path = _ROOT_DIR / "data" / "processed" / comp / "deliveries.csv"
+        _MATCHUPS_BY_COMPETITION[comp] = load_deliveries_with_bowling_type(deliveries_path)
+    return _MATCHUPS_BY_COMPETITION[comp]
 
 
 def compute_matchup_rankings(
@@ -69,6 +78,7 @@ def compute_matchup_rankings(
     min_balls: int = 100,
     min_runs: int = 80,
     deliveries_df: Optional[pd.DataFrame] = None,
+    competition: Optional[str] = "ipl",
 ) -> Dict[str, Any]:
     """
     Computes top batters vs Pace and vs Spin.
@@ -79,7 +89,7 @@ def compute_matchup_rankings(
     Sort:
         Descending by Strike Rate.
     """
-    df = deliveries_df if deliveries_df is not None else get_annotated_deliveries()
+    df = deliveries_df if deliveries_df is not None else get_annotated_deliveries(competition=competition)
 
     # Apply filters
     filtered_df = df
@@ -162,12 +172,13 @@ def get_batter_matchup_detail(
     season: Optional[str] = None,
     team: Optional[str] = None,
     deliveries_df: Optional[pd.DataFrame] = None,
+    competition: Optional[str] = "ipl",
 ) -> Optional[Dict[str, Any]]:
     """
     Returns matchup breakdown (Pace vs Spin) for a specific batter.
     Includes difference in SR, runs, and balls.
     """
-    df = deliveries_df if deliveries_df is not None else get_annotated_deliveries()
+    df = deliveries_df if deliveries_df is not None else get_annotated_deliveries(competition=competition)
     
     b_df = df[df["batter"] == batter]
     if b_df.empty:

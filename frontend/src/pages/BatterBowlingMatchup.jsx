@@ -221,10 +221,10 @@ export default function BatterBowlingMatchup() {
           </div>
         </div>
 
-        {competition !== 'ipl' && (
+        {!['ipl', 'sa20'].includes(competition) && (
           <div className="mt-3 p-3 rounded-lg bg-[#1F1C14] border border-[#D4AF57]/40 text-[#E0C068] text-xs sm:text-[13px] flex items-center justify-between">
             <span>
-              Pace vs Spin matchup classification is currently configured for <strong>IPL</strong> matches. Switch to <strong>IPL</strong> in the competition selector to view bowler-type splits.
+              Pace vs Spin matchup classification is currently configured for <strong>IPL</strong> and <strong>SA20</strong> matches. Switch to <strong>IPL</strong> or <strong>SA20</strong> in the competition selector to view bowler-type splits.
             </span>
           </div>
         )}

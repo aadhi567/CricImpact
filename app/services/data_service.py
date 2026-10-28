@@ -1934,7 +1934,8 @@ class DataService:
         competition: Optional[str] = "ipl",
     ) -> Dict[str, Any]:
         """Returns rankings of batters vs Pace and vs Spin."""
-        if self._normalize_competition(competition) != "ipl":
+        norm_comp = self._normalize_competition(competition)
+        if norm_comp not in ("ipl", "sa20"):
             return {
                 "filters": {
                     "season": season or "All Seasons",
@@ -1965,6 +1966,7 @@ class DataService:
             bowling_type=bowling_type,
             min_balls=min_balls,
             min_runs=min_runs,
+            competition=norm_comp,
         )
 
     def get_batter_matchup_detail(
@@ -1975,13 +1977,15 @@ class DataService:
         competition: Optional[str] = "ipl",
     ) -> Optional[Dict[str, Any]]:
         """Returns Pace vs Spin matchup breakdown for a specific batter."""
-        if self._normalize_competition(competition) != "ipl":
+        norm_comp = self._normalize_competition(competition)
+        if norm_comp not in ("ipl", "sa20"):
             return None
         from src.matchup_analytics import get_batter_matchup_detail
         return get_batter_matchup_detail(
             batter=batter,
             season=season,
             team=team,
+            competition=norm_comp,
         )
 
 

@@ -271,7 +271,7 @@ export default function Seasons() {
             return (
               <div
                 key={`top3-${p.player}`}
-                onClick={() => navigate(`/player/${encodeURIComponent(p.player)}/${selectedSeason}`)}
+                onClick={() => navigate(`/player/${encodeURIComponent(p.player)}/${encodeURIComponent(selectedSeason || p.season)}?competition=${encodeURIComponent(competition || 'ipl')}`)}
                 className={`p-4 sm:p-4.5 rounded-lg border shadow-xs transition-all hover:bg-[#1C1C1C] cursor-pointer space-y-2.5 ${cardAccent}`}
               >
                 <div className="flex items-center justify-between">
@@ -378,7 +378,7 @@ export default function Seasons() {
                   return (
                     <tr
                       key={`top10-${p.player}`}
-                      onClick={() => navigate(`/player/${encodeURIComponent(p.player)}/${selectedSeason}`)}
+                      onClick={() => navigate(`/player/${encodeURIComponent(p.player)}/${encodeURIComponent(selectedSeason || p.season)}?competition=${encodeURIComponent(competition || 'ipl')}`)}
                       className="cursor-pointer hover:bg-[#1A1A1A] transition-colors"
                     >
                       {/* Rank */}
@@ -453,7 +453,7 @@ export default function Seasons() {
                       {/* Action */}
                       <td className="py-2 px-3 text-center whitespace-nowrap">
                         <Link
-                          to={`/player/${encodeURIComponent(p.player)}/${selectedSeason}`}
+                          to={`/player/${encodeURIComponent(p.player)}/${encodeURIComponent(selectedSeason || p.season)}?competition=${encodeURIComponent(competition || 'ipl')}`}
                           onClick={(e) => e.stopPropagation()}
                           className="inline-flex items-center gap-1 text-[12px] font-semibold text-[#D4AF57] hover:text-[#E1C878] hover:underline"
                         >

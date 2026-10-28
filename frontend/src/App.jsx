@@ -94,6 +94,14 @@ export default function App() {
               path="/player/:playerId/:season"
               element={<PlayerAnalysis />}
             />
+            <Route
+              path="/player/:playerId/:season/*"
+              element={<PlayerAnalysis />}
+            />
+            <Route
+              path="/player/:playerId/*"
+              element={<PlayerAnalysis />}
+            />
 
             <Route path="/audit" element={<AuditInsights />} />
             <Route path="/about" element={<About />} />

@@ -7,6 +7,7 @@ Backend is the SINGLE SOURCE OF TRUTH.
 import os
 import logging
 from typing import Optional
+from contextlib import asynccontextmanager
 from fastapi import FastAPI, HTTPException, Query, Request
 from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
@@ -57,10 +58,22 @@ def get_cors_configuration():
     return origins, allow_credentials
 
 
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    try:
+        from app.services.ground_service import ground_service
+        logger.info("Pre-warming ground analysis index...")
+        ground_service._ensure_indexed()
+    except Exception as exc:
+        logger.warning("Ground service pre-warm notice: %s", exc)
+    yield
+
+
 app = FastAPI(
     title="Cricket Batter Contribution Analytics API",
     description="Backend API serving Phase 5B Contextual Contribution and Phase 6A Season Aggregations.",
     version="1.0.0",
+    lifespan=lifespan,
 )
 
 cors_origins, cors_allow_credentials = get_cors_configuration()
@@ -125,7 +138,7 @@ def get_competition_coverage(
 
 @app.get("/api/seasons")
 def list_seasons(
-    competition: str = Query("ipl", description="Competition: ipl, t20i"),
+    competition: str = Query("ipl", description="Competition: ipl, sa20, t20i"),
     tournament_type: Optional[str] = Query(None, description="Tournament Type: all, world_cup, asia_cup, bilateral, other"),
 ):
     """Returns available seasons in chronological order with display labels and default season."""
@@ -143,7 +156,7 @@ def list_seasons(
 @app.get("/api/teams")
 def list_teams(
     season: Optional[str] = Query(None, description="Optional season filter"),
-    competition: str = Query("ipl", description="Competition: ipl, t20i"),
+    competition: str = Query("ipl", description="Competition: ipl, sa20, t20i"),
     tournament_type: Optional[str] = Query(None, description="Tournament Type: all, world_cup, asia_cup, bilateral, other"),
 ):
     """Returns teams available, optionally filtered by season and tournament type."""
@@ -162,7 +175,7 @@ def get_dashboard_summary(
     season: Optional[str] = Query(None, description="Season (e.g. 2024 or 2016)"),
     team: Optional[str] = Query(None, description="Team name"),
     min_runs: int = Query(0, ge=0, description="Minimum runs threshold (e.g. 100, 200, 300)"),
-    competition: str = Query("ipl", description="Competition: ipl, t20i"),
+    competition: str = Query("ipl", description="Competition: ipl, sa20, t20i"),
     tournament_type: Optional[str] = Query(None, description="Tournament Type: all, world_cup, asia_cup, bilateral, other"),
 ):
     """
@@ -191,7 +204,7 @@ def list_players(
     min_balls: int = Query(0, ge=0, description="Minimum balls faced filter"),
     search: Optional[str] = Query(None, description="Search player name"),
     limit: int = Query(500, ge=1, le=2000, description="Max rows to return"),
-    competition: str = Query("ipl", description="Competition: ipl, t20i"),
+    competition: str = Query("ipl", description="Competition: ipl, sa20, t20i"),
     tournament_type: Optional[str] = Query(None, description="Tournament Type: all, world_cup, asia_cup, bilateral, other"),
 ):
     """
@@ -255,7 +268,7 @@ def get_player_career(
 def get_player_season(
     player_id: str,
     season: str,
-    competition: str = Query("ipl", description="Competition: ipl, t20i"),
+    competition: str = Query("ipl", description="Competition: ipl, sa20, t20i"),
     tournament_type: Optional[str] = Query(None, description="Tournament type filter (e.g. world_cup)"),
 ):
     """
@@ -282,7 +295,7 @@ def get_player_season(
 def get_player_matches(
     player_id: str,
     season: str = Query(..., description="Season"),
-    competition: str = Query("ipl", description="Competition: ipl, t20i"),
+    competition: str = Query("ipl", description="Competition: ipl, sa20, t20i"),
     tournament_type: Optional[str] = Query(None, description="Tournament type filter (e.g. world_cup)"),
 ):
     """
@@ -311,7 +324,7 @@ def get_player_matches(
 def get_match_detail(
     match_id: str,
     player_id: str,
-    competition: str = Query("ipl", description="Competition: ipl, t20i"),
+    competition: str = Query("ipl", description="Competition: ipl, sa20, t20i"),
 ):
     """
     Returns granular match contribution breakdown:
@@ -333,7 +346,7 @@ def get_match_detail(
 def get_anchor_analysis(
     match_id: str,
     player_id: str,
-    competition: str = Query("ipl", description="Competition: ipl, t20i"),
+    competition: str = Query("ipl", description="Competition: ipl, sa20, t20i"),
 ):
     """
     Returns structured Anchor Innings Analysis:
@@ -365,7 +378,7 @@ def get_scatter_data(
     team: Optional[str] = Query(None, description="Team"),
     player: Optional[str] = Query(None, description="Player"),
     limit: int = Query(1500, ge=10, le=5000),
-    competition: str = Query("ipl", description="Competition: ipl, t20i"),
+    competition: str = Query("ipl", description="Competition: ipl, sa20, t20i"),
     tournament_type: Optional[str] = Query(None, description="Tournament Type: all, world_cup, asia_cup, bilateral, other"),
 ):
     """
@@ -389,7 +402,7 @@ def compare_players(
     season: str = Query(..., description="Season to compare batters in (mandatory)"),
     players: str = Query(..., description="Comma-separated player names (min 2, max 5)"),
     view: str = Query("view_a", description="View mode: 'view_a' (primary) or 'view_b' (qualified)"),
-    competition: str = Query("ipl", description="Competition: ipl, t20i"),
+    competition: str = Query("ipl", description="Competition: ipl, sa20, t20i"),
     tournament_type: Optional[str] = Query(None, description="Tournament Type: all, world_cup, asia_cup, bilateral, other"),
 ):
     """
@@ -429,7 +442,7 @@ def get_matchup_rankings(
     bowling_type: Optional[str] = Query(None, description="'pace', 'spin', or omit for both"),
     min_balls: int = Query(100, ge=0, description="Minimum balls faced (default 100)"),
     min_runs: int = Query(80, ge=0, description="Minimum runs scored (default 80)"),
-    competition: str = Query("ipl", description="Competition: ipl, t20i"),
+    competition: str = Query("ipl", description="Competition: ipl, sa20, t20i"),
 ):
     """
     Returns rankings of top batters against Pace and Spin.
@@ -452,7 +465,7 @@ def get_batter_matchup_detail(
     player_id: str,
     season: Optional[str] = Query(None, description="Optional season filter"),
     team: Optional[str] = Query(None, description="Optional batting team filter"),
-    competition: str = Query("ipl", description="Competition: ipl, t20i"),
+    competition: str = Query("ipl", description="Competition: ipl, sa20, t20i"),
 ):
     """
     Returns matchup breakdown (vs Pace and vs Spin) for a specific batter.
@@ -491,7 +504,7 @@ def list_matches(
     tournament: Optional[str] = Query(None, description="Optional tournament filter (e.g. ICC Men's T20 World Cup)"),
     search: Optional[str] = Query(None, description="Search team or venue name"),
     limit: int = Query(200, ge=1, le=5000, description="Max matches to return"),
-    competition: str = Query("ipl", description="Competition: ipl, t20i"),
+    competition: str = Query("ipl", description="Competition: ipl, sa20, t20i"),
     tournament_type: Optional[str] = Query(None, description="Tournament Type: all, world_cup, asia_cup, bilateral, other"),
 ):
     """
@@ -522,7 +535,7 @@ def list_matches(
 @app.get("/api/match/{match_id}")
 def get_match_overview(
     match_id: str,
-    competition: str = Query("ipl", description="Competition: ipl, t20i"),
+    competition: str = Query("ipl", description="Competition: ipl, sa20, t20i"),
 ):
     """
     Returns comprehensive match summary and all batter contribution ratings.
@@ -664,7 +677,7 @@ def get_ground_analysis_venues(
     return ground_service.get_countries_and_venues(competition=comp, country=country)
 
 
-@app.get("/api/ground-analysis/venue/{venue_id}")
+@app.get("/api/ground-analysis/venue/{venue_id:path}")
 def get_ground_analysis_detail(
     venue_id: str,
     competition: Optional[str] = Query("combined", description="Competition: 'combined', 'ipl', 't20i', or 'sa20'"),

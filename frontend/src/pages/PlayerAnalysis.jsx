@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, useSearchParams, Link } from 'react-router-dom';
 import {
   Award,
   TrendingUp,
@@ -17,8 +17,24 @@ import { getPlayerSeason, getPlayerMatches, getSeasons } from '../services/api';
 import { useCompetition, resolveDefaultSeason } from '../context/CompetitionContext';
 
 export default function PlayerAnalysis() {
-  const { playerId, season: routeSeason } = useParams();
-  const { competition, activeMeta, selectedSeason: globalSeason, tournamentType } = useCompetition();
+  const params = useParams();
+  const playerId = params.playerId;
+  const routeSeason = params.season
+    ? (params['*'] ? `${params.season}/${params['*']}` : params.season)
+    : (params['*'] || '');
+  const [searchParams] = useSearchParams();
+  const { competition, setCompetition, activeMeta, selectedSeason: globalSeason, tournamentType } = useCompetition();
+
+  const queryComp = searchParams.get('competition');
+  const effectiveCompetition = queryComp && ['ipl', 't20i', 'sa20'].includes(queryComp.toLowerCase())
+    ? queryComp.toLowerCase()
+    : competition;
+
+  useEffect(() => {
+    if (queryComp && ['ipl', 't20i', 'sa20'].includes(queryComp.toLowerCase()) && queryComp.toLowerCase() !== competition) {
+      setCompetition(queryComp.toLowerCase());
+    }
+  }, [queryComp, competition, setCompetition]);
 
   const [playerData, setPlayerData] = useState(null);
   const [matches, setMatches] = useState([]);
@@ -37,7 +53,7 @@ export default function PlayerAnalysis() {
           if (globalSeason) {
             targetSeason = globalSeason;
           } else {
-            const seasonsData = await getSeasons(competition, tournamentType);
+            const seasonsData = await getSeasons(effectiveCompetition, tournamentType);
             targetSeason = resolveDefaultSeason(seasonsData.seasons || [], seasonsData.default_season);
           }
         }
@@ -46,8 +62,8 @@ export default function PlayerAnalysis() {
         }
 
         const [profile, matchRes] = await Promise.all([
-          getPlayerSeason(playerId, targetSeason, competition, tournamentType),
-          getPlayerMatches(playerId, targetSeason, competition, tournamentType),
+          getPlayerSeason(playerId, targetSeason, effectiveCompetition, tournamentType),
+          getPlayerMatches(playerId, targetSeason, effectiveCompetition, tournamentType),
         ]);
 
         if (isMounted) {
@@ -66,7 +82,7 @@ export default function PlayerAnalysis() {
     return () => {
       isMounted = false;
     };
-  }, [playerId, routeSeason, competition, tournamentType, globalSeason]);
+  }, [playerId, routeSeason, effectiveCompetition, tournamentType, globalSeason]);
 
   if (loading) {
     return (

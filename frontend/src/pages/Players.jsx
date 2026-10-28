@@ -594,7 +594,7 @@ export default function Players() {
                     <tr
                       key={`${p.player}-${p.season}-${p.team}`}
                       onClick={() =>
-                        navigate(`/player/${encodeURIComponent(p.player)}/${selectedSeason}`)
+                        navigate(`/player/${encodeURIComponent(p.player)}/${encodeURIComponent(selectedSeason || p.season)}?competition=${encodeURIComponent(competition || 'ipl')}`)
                       }
                       className="cursor-pointer transition-colors hover:bg-[#1A1A1A]"
                     >
@@ -683,7 +683,7 @@ export default function Players() {
                       <td className="py-2 px-2.5 text-center whitespace-nowrap">
                         <div className="flex items-center justify-center gap-1.5">
                           <Link
-                            to={`/player/${encodeURIComponent(p.player)}/${selectedSeason}`}
+                            to={`/player/${encodeURIComponent(p.player)}/${encodeURIComponent(selectedSeason || p.season)}?competition=${encodeURIComponent(competition || 'ipl')}`}
                             onClick={(e) => e.stopPropagation()}
                             className="inline-flex items-center gap-1 text-[12px] text-[#D4AF57] hover:text-[#E1C878] font-semibold hover:underline px-1 py-0.5"
                             title="Open Player Profile"
