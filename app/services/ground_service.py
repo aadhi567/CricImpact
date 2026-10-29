@@ -1741,8 +1741,22 @@ class GroundAnalysisService:
                 match_phases = phases_map.get(mid, {})
                 for inn_num in inns_to_check:
                     inn_key = str(inn_num)
-                    ph_data = match_phases.get(inn_key, {}).get(phase_id)
-                    if not ph_data or not ph_data.get("played"):
+                    inn_d = match_phases.get(inn_key)
+                    if inn_d is None:
+                        alt_d = match_phases.get(f"innings{inn_num}")
+                        if isinstance(alt_d, dict):
+                            inn_d = alt_d.get("phases", alt_d)
+                    if not isinstance(inn_d, dict):
+                        continue
+
+                    ph_data = inn_d.get(phase_id)
+                    if not ph_data:
+                        continue
+
+                    is_played = ph_data.get("played")
+                    if is_played is None:
+                        is_played = ph_data.get("legal_balls", 0) > 0 or ph_data.get("runs", 0) > 0
+                    if not is_played:
                         continue
 
                     # Full-phase eligibility check:
@@ -1752,13 +1766,16 @@ class GroundAnalysisService:
                     # - Death Overs: overs 16–20 (powerplay complete, middle complete, AND all 5 scheduled overs completed: 30 legal balls)
                     is_comp = ph_data.get("complete")
                     if is_comp is None:
-                        pp_d = match_phases.get(inn_key, {}).get("powerplay", {})
-                        mid_d = match_phases.get(inn_key, {}).get("middle", {})
-                        dth_d = match_phases.get(inn_key, {}).get("death", {})
+                        pp_d = inn_d.get("powerplay", {})
+                        mid_d = inn_d.get("middle", {})
+                        dth_d = inn_d.get("death", {})
                         is_std = m.get("is_standard_20ov", False)
-                        pp_ok = bool(is_std and pp_d.get("played") and (mid_d.get("played") or pp_d.get("legal_balls", 0) >= 36))
-                        mid_ok = bool(is_std and pp_ok and mid_d.get("played") and (dth_d.get("played") or mid_d.get("legal_balls", 0) >= 54))
-                        dth_ok = bool(is_std and pp_ok and mid_ok and dth_d.get("played") and (dth_d.get("legal_balls", 0) >= 30))
+                        pp_played = pp_d.get("played", pp_d.get("legal_balls", 0) > 0)
+                        mid_played = mid_d.get("played", mid_d.get("legal_balls", 0) > 0)
+                        dth_played = dth_d.get("played", dth_d.get("legal_balls", 0) > 0)
+                        pp_ok = bool(is_std and pp_played and (mid_played or pp_d.get("legal_balls", 0) >= 36))
+                        mid_ok = bool(is_std and pp_ok and mid_played and (dth_played or mid_d.get("legal_balls", 0) >= 54))
+                        dth_ok = bool(is_std and pp_ok and mid_ok and dth_played and (dth_d.get("legal_balls", 0) >= 30))
                         if phase_id == "powerplay":
                             is_comp = pp_ok
                         elif phase_id == "middle":
@@ -2014,15 +2031,26 @@ class GroundAnalysisService:
                 mid = str(m["match_id"])
                 mph = phases_map.get(mid, {})
                 for inn_k in ("1", "2"):
-                    inn_d = mph.get(inn_k, {})
+                    inn_d = mph.get(inn_k)
+                    if inn_d is None:
+                        alt_d = mph.get(f"innings{inn_k}")
+                        if isinstance(alt_d, dict):
+                            inn_d = alt_d.get("phases", alt_d)
+                    if not isinstance(inn_d, dict):
+                        continue
+
                     pp_d = inn_d.get("powerplay", {})
                     mid_d = inn_d.get("middle", {})
                     dth_d = inn_d.get("death", {})
 
                     is_std = m.get("is_standard_20ov", False)
-                    pp_ok = pp_d.get("complete") if pp_d.get("complete") is not None else bool(is_std and pp_d.get("played") and (mid_d.get("played") or pp_d.get("legal_balls", 0) >= 36))
-                    mid_ok = mid_d.get("complete") if mid_d.get("complete") is not None else bool(is_std and pp_ok and mid_d.get("played") and (dth_d.get("played") or mid_d.get("legal_balls", 0) >= 54))
-                    dth_ok = dth_d.get("complete") if dth_d.get("complete") is not None else bool(is_std and pp_ok and mid_ok and dth_d.get("played") and (dth_d.get("legal_balls", 0) >= 30))
+                    pp_played = pp_d.get("played", pp_d.get("legal_balls", 0) > 0)
+                    mid_played = mid_d.get("played", mid_d.get("legal_balls", 0) > 0)
+                    dth_played = dth_d.get("played", dth_d.get("legal_balls", 0) > 0)
+
+                    pp_ok = pp_d.get("complete") if pp_d.get("complete") is not None else bool(is_std and pp_played and (mid_played or pp_d.get("legal_balls", 0) >= 36))
+                    mid_ok = mid_d.get("complete") if mid_d.get("complete") is not None else bool(is_std and pp_ok and mid_played and (dth_played or mid_d.get("legal_balls", 0) >= 54))
+                    dth_ok = dth_d.get("complete") if dth_d.get("complete") is not None else bool(is_std and pp_ok and mid_ok and dth_played and (dth_d.get("legal_balls", 0) >= 30))
 
                     if pp_ok:
                         y_pp_runs.append(pp_d["runs"])

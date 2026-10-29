@@ -215,26 +215,28 @@ export async function getMatchupRankings({
   season,
   team,
   bowlingType,
-  minBalls = 100,
-  minRuns = 80,
+  minBalls,
+  minRuns,
   competition = 'ipl',
 } = {}) {
   const params = new URLSearchParams();
   if (season && season !== 'All Seasons') params.append('season', season);
   if (team && team !== 'All Teams') params.append('team', team);
   if (bowlingType && bowlingType !== 'all') params.append('bowling_type', bowlingType);
-  if (minBalls !== undefined) params.append('min_balls', minBalls);
-  if (minRuns !== undefined) params.append('min_runs', minRuns);
+  if (minBalls !== undefined && minBalls !== null) params.append('min_balls', minBalls);
+  if (minRuns !== undefined && minRuns !== null) params.append('min_runs', minRuns);
   if (competition) params.append('competition', competition);
   const query = params.toString() ? `?${params.toString()}` : '';
   return fetchJson(buildApiUrl(`/matchups/rankings${query}`));
 }
 
-export async function getBatterMatchupDetail(playerId, { season, team, competition = 'ipl' } = {}) {
+export async function getBatterMatchupDetail(playerId, { season, team, competition = 'ipl', minBalls, minRuns } = {}) {
   const params = new URLSearchParams();
   if (season && season !== 'All Seasons') params.append('season', season);
   if (team && team !== 'All Teams') params.append('team', team);
   if (competition) params.append('competition', competition);
+  if (minBalls !== undefined && minBalls !== null) params.append('min_balls', minBalls);
+  if (minRuns !== undefined && minRuns !== null) params.append('min_runs', minRuns);
   const query = params.toString() ? `?${params.toString()}` : '';
   return fetchJson(buildApiUrl(`/matchups/player/${encodeURIComponent(playerId)}${query}`));
 }

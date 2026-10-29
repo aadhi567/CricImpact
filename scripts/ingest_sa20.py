@@ -226,9 +226,9 @@ def parse_sa20_match(
 
         # Phase aggregates: powerplay (ov 0-5), middle (ov 6-14), death (ov 15-19)
         phase_stats = {
-            "powerplay": {"runs": 0, "wickets": 0, "legal_balls": 0},
-            "middle": {"runs": 0, "wickets": 0, "legal_balls": 0},
-            "death": {"runs": 0, "wickets": 0, "legal_balls": 0},
+            "powerplay": {"runs": 0, "wickets": 0, "legal_balls": 0, "dot_balls": 0, "boundary_balls": 0},
+            "middle": {"runs": 0, "wickets": 0, "legal_balls": 0, "dot_balls": 0, "boundary_balls": 0},
+            "death": {"runs": 0, "wickets": 0, "legal_balls": 0, "dot_balls": 0, "boundary_balls": 0},
         }
 
         overs_data = inn.get("overs", [])
@@ -299,6 +299,10 @@ def parse_sa20_match(
                 phase_stats[p_name]["runs"] += tot_runs
                 if is_legal:
                     phase_stats[p_name]["legal_balls"] += 1
+                    if tot_runs == 0:
+                        phase_stats[p_name]["dot_balls"] += 1
+                    if b_runs in (4, 6):
+                        phase_stats[p_name]["boundary_balls"] += 1
 
                 wickets_list = deliv.get("wickets", [])
                 p_out = wickets_list[0].get("player_out") if wickets_list else None
@@ -489,13 +493,13 @@ def parse_sa20_match(
             b_row["context_zone"] = model_res["context_zone"]
             batter_rows.append(b_row)
 
-        inn_phases[f"innings{innings_num}"] = {
-            "team": batting_team,
-            "runs": total_runs,
-            "wickets": wickets_down,
-            "overs": round(legal_balls / 6.0, 1),
-            "phases": phase_stats,
-        }
+        for p_name, p_stat in phase_stats.items():
+            lb = p_stat["legal_balls"]
+            p_stat["played"] = lb > 0
+            p_stat["run_rate"] = round((p_stat["runs"] / lb) * 6, 2) if lb > 0 else 0.0
+            p_stat["complete"] = False
+
+        inn_phases[str(innings_num)] = phase_stats
 
         if innings_num == 1:
             first_innings_total = total_runs
@@ -517,6 +521,20 @@ def parse_sa20_match(
         "sched_overs": 20,
         "target_overs": 20,
     }
+
+    if is_standard_20ov:
+        for inn_k in ("1", "2"):
+            if inn_k in inn_phases:
+                ph_map = inn_phases[inn_k]
+                pp = ph_map.get("powerplay", {})
+                mid_p = ph_map.get("middle", {})
+                dth = ph_map.get("death", {})
+                pp_ok = bool(pp.get("played") and (mid_p.get("played") or pp.get("legal_balls", 0) >= 36))
+                mid_ok = bool(pp_ok and mid_p.get("played") and (dth.get("played") or mid_p.get("legal_balls", 0) >= 54))
+                dth_ok = bool(pp_ok and mid_ok and dth.get("played") and dth.get("legal_balls", 0) >= 30)
+                pp["complete"] = pp_ok
+                mid_p["complete"] = mid_ok
+                dth["complete"] = dth_ok
 
     return match_row, roster_rows, batter_rows, delivery_rows, condition_info, inn_phases
 

@@ -75,8 +75,8 @@ def compute_matchup_rankings(
     season: Optional[str] = None,
     team: Optional[str] = None,
     bowling_type: Optional[str] = None,  # "Pace", "Spin", or None (both)
-    min_balls: int = 100,
-    min_runs: int = 80,
+    min_balls: Optional[int] = None,
+    min_runs: Optional[int] = None,
     deliveries_df: Optional[pd.DataFrame] = None,
     competition: Optional[str] = "ipl",
 ) -> Dict[str, Any]:
@@ -84,11 +84,24 @@ def compute_matchup_rankings(
     Computes top batters vs Pace and vs Spin.
 
     Eligibility Rule:
-        Balls Faced >= min_balls OR Runs >= min_runs
+        Balls Faced >= min_balls OR Runs >= min_runs (defaults: 100B / 80R for IPL, 30B / 40R for SA20).
 
     Sort:
         Descending by Strike Rate.
     """
+    comp_norm = str(competition).lower().strip() if competition else "ipl"
+    if comp_norm == "sa20":
+        effective_min_balls = 30 if min_balls is None else min_balls
+        effective_min_runs = 40 if min_runs is None else min_runs
+        if effective_min_balls == 30 and effective_min_runs == 40:
+            rule_text = "Minimum sample rule: 30 legal balls OR 40 runs."
+        else:
+            rule_text = f"Minimum sample: {effective_min_balls} balls or {effective_min_runs} runs."
+    else:
+        effective_min_balls = 100 if min_balls is None else min_balls
+        effective_min_runs = 80 if min_runs is None else min_runs
+        rule_text = f"Minimum sample: {effective_min_balls} balls or {effective_min_runs} runs."
+
     df = deliveries_df if deliveries_df is not None else get_annotated_deliveries(competition=competition)
 
     # Apply filters
@@ -132,7 +145,7 @@ def compute_matchup_rankings(
         )
 
         # 4. Minimum sample rule
-        eligible_mask = (stat_df["balls"] >= min_balls) | (stat_df["runs"] >= min_runs)
+        eligible_mask = (stat_df["balls"] >= effective_min_balls) | (stat_df["runs"] >= effective_min_runs)
         stat_df["is_eligible"] = eligible_mask
 
         # Filter to eligible
@@ -159,9 +172,10 @@ def compute_matchup_rankings(
         "filters": {
             "season": season or "All Seasons",
             "team": team or "All Teams",
-            "min_balls": min_balls,
-            "min_runs": min_runs,
-            "eligibility_rule": f"Minimum sample: {min_balls} balls or {min_runs} runs.",
+            "min_balls": effective_min_balls,
+            "min_runs": effective_min_runs,
+            "eligibility_rule": rule_text,
+            "competition": comp_norm,
         },
         "results": results,
     }
@@ -173,11 +187,26 @@ def get_batter_matchup_detail(
     team: Optional[str] = None,
     deliveries_df: Optional[pd.DataFrame] = None,
     competition: Optional[str] = "ipl",
+    min_balls: Optional[int] = None,
+    min_runs: Optional[int] = None,
 ) -> Optional[Dict[str, Any]]:
     """
     Returns matchup breakdown (Pace vs Spin) for a specific batter.
     Includes difference in SR, runs, and balls.
     """
+    comp_norm = str(competition).lower().strip() if competition else "ipl"
+    if comp_norm == "sa20":
+        effective_min_balls = 30 if min_balls is None else min_balls
+        effective_min_runs = 40 if min_runs is None else min_runs
+        if effective_min_balls == 30 and effective_min_runs == 40:
+            rule_text = "Minimum sample rule: 30 legal balls OR 40 runs."
+        else:
+            rule_text = f"Minimum sample: {effective_min_balls} balls or {effective_min_runs} runs."
+    else:
+        effective_min_balls = 100 if min_balls is None else min_balls
+        effective_min_runs = 80 if min_runs is None else min_runs
+        rule_text = f"Minimum sample: {effective_min_balls} balls or {effective_min_runs} runs."
+
     df = deliveries_df if deliveries_df is not None else get_annotated_deliveries(competition=competition)
     
     b_df = df[df["batter"] == batter]
@@ -197,11 +226,13 @@ def get_batter_matchup_detail(
         runs = int(sub["batter_runs"].sum())
         balls = int(sub[sub["is_legal"]].shape[0])
         sr = round((runs / balls * 100.0), 1) if balls > 0 else 0.0
+        is_eligible = bool((balls >= effective_min_balls) or (runs >= effective_min_runs))
         return {
             "bowling_type": b_type,
             "runs": runs,
             "balls": balls,
             "strike_rate": sr,
+            "is_eligible": is_eligible,
         }
 
     pace_stats = _stats_for("Pace")
@@ -226,6 +257,7 @@ def get_batter_matchup_detail(
         "batter": batter,
         "season": season or "All Seasons",
         "team": team or "All Teams",
+        "competition": comp_norm,
         "pace": pace_stats,
         "spin": spin_stats,
         "difference": {
@@ -235,5 +267,8 @@ def get_batter_matchup_detail(
             "advantage_text": advantage_text,
             "advantage_type": advantage_type,
         },
+        "eligibility_rule": rule_text,
+        "min_balls": effective_min_balls,
+        "min_runs": effective_min_runs,
         "note": "This is purely matchup performance, not the Contribution Score.",
     }

@@ -21,6 +21,10 @@ export default function BatterBowlingMatchup() {
   const tabParam = searchParams.get('tab');
   const { competition } = useCompetition();
 
+  const isSa20 = competition === 'sa20';
+  const defaultMinBalls = isSa20 ? 30 : 100;
+  const defaultMinRuns = isSa20 ? 40 : 80;
+
   // Filters
   const [seasons, setSeasons] = useState([]);
   const [teams, setTeams] = useState([]);
@@ -32,8 +36,8 @@ export default function BatterBowlingMatchup() {
   const [searchTerm, setSearchTerm] = useState('');
   
   // Minimum sample rule
-  const [minBalls, setMinBalls] = useState(100);
-  const [minRuns, setMinRuns] = useState(80);
+  const [minBalls, setMinBalls] = useState(defaultMinBalls);
+  const [minRuns, setMinRuns] = useState(defaultMinRuns);
   const [customSampleOpen, setCustomSampleOpen] = useState(false);
 
   // Data states
@@ -57,6 +61,11 @@ export default function BatterBowlingMatchup() {
           setSelectedSeason('All Seasons');
           setSelectedTeam('All Teams');
           setSelectedBatter(null);
+          // Sync sample thresholds with current competition default
+          const compDefaultBalls = competition === 'sa20' ? 30 : 100;
+          const compDefaultRuns = competition === 'sa20' ? 40 : 80;
+          setMinBalls(compDefaultBalls);
+          setMinRuns(compDefaultRuns);
         }
       } catch (err) {
         console.error('Failed to load seasons:', err);
@@ -135,6 +144,8 @@ export default function BatterBowlingMatchup() {
           season: selectedSeason,
           team: selectedTeam,
           competition,
+          minBalls,
+          minRuns,
         });
         if (isMounted) {
           setBatterDetail(detail);
@@ -152,7 +163,7 @@ export default function BatterBowlingMatchup() {
     return () => {
       isMounted = false;
     };
-  }, [selectedBatter, selectedSeason, selectedTeam, competition]);
+  }, [selectedBatter, selectedSeason, selectedTeam, competition, minBalls, minRuns]);
 
   // Filter lists by search term
   const filteredPace = useMemo(() => {
@@ -206,7 +217,9 @@ export default function BatterBowlingMatchup() {
               </p>
               <p className="mt-1 text-[11.5px] sm:text-xs text-[#858585]">
                 <span className="font-semibold text-[#F2F2F2]">Minimum sample rule:</span>{' '}
-                <span className="text-[#D4AF57] font-semibold">100 balls or 80 runs.</span>{' '}
+                <span className="text-[#D4AF57] font-semibold">
+                  {isSa20 ? '30 legal balls OR 40 runs.' : '100 balls or 80 runs.'}
+                </span>{' '}
                 This prevents extremely small samples from dominating the leaderboards.
               </p>
             </div>
@@ -335,7 +348,7 @@ export default function BatterBowlingMatchup() {
               type="button"
               onClick={() => setCustomSampleOpen(!customSampleOpen)}
               className={`h-8.5 sm:h-9 text-xs px-2.5 rounded-lg border flex items-center gap-1.5 transition-colors cursor-pointer ${
-                minBalls !== 100 || minRuns !== 80
+                minBalls !== defaultMinBalls || minRuns !== defaultMinRuns
                   ? 'bg-[#1F1C14] border-[#A8893D] text-[#D4AF57] font-semibold'
                   : 'bg-[#101010] border-[#2D2D2D] text-[#858585] hover:text-[#F2F2F2]'
               }`}
@@ -381,12 +394,12 @@ export default function BatterBowlingMatchup() {
               <button
                 type="button"
                 onClick={() => {
-                  setMinBalls(100);
-                  setMinRuns(80);
+                  setMinBalls(defaultMinBalls);
+                  setMinRuns(defaultMinRuns);
                 }}
                 className="text-[11px] px-2.5 py-1 text-[#858585] hover:text-[#F2F2F2] underline cursor-pointer"
               >
-                Reset to Default (100B / 80R)
+                Reset to Default ({defaultMinBalls}B / {defaultMinRuns}R)
               </button>
               <button
                 type="button"
@@ -527,10 +540,24 @@ export default function BatterBowlingMatchup() {
                           {batterDetail.pace.balls}
                         </span>
                       </div>
-                      <div className="flex justify-between text-xs pt-1 border-t border-[#2D2D2D]">
+                      <div className="flex justify-between items-center text-xs pt-1 border-t border-[#2D2D2D]">
                         <span className="font-semibold text-[#F2F2F2]">Strike Rate:</span>
                         <span className="font-bold text-sm text-[#D4AF57] tabular-nums font-mono">
                           {batterDetail.pace.strike_rate.toFixed(1)}
+                        </span>
+                      </div>
+                      <div className="flex justify-between items-center text-[11px] pt-1 border-t border-[#222222]">
+                        <span className="text-[#858585]">Eligibility:</span>
+                        <span
+                          className={`px-1.5 py-0.5 rounded text-[10px] font-semibold ${
+                            (batterDetail.pace.is_eligible ?? (batterDetail.pace.balls >= defaultMinBalls || batterDetail.pace.runs >= defaultMinRuns))
+                              ? 'bg-[#152718] text-[#5A9E60] border border-[#2A4D30]'
+                              : 'bg-[#222222] text-[#858585] border border-[#3E3E3E]'
+                          }`}
+                        >
+                          {(batterDetail.pace.is_eligible ?? (batterDetail.pace.balls >= defaultMinBalls || batterDetail.pace.runs >= defaultMinRuns))
+                            ? `Qualified (≥${defaultMinBalls}B or ≥${defaultMinRuns}R)`
+                            : `Below Sample (<${defaultMinBalls}B and <${defaultMinRuns}R)`}
                         </span>
                       </div>
                     </div>
@@ -561,10 +588,24 @@ export default function BatterBowlingMatchup() {
                           {batterDetail.spin.balls}
                         </span>
                       </div>
-                      <div className="flex justify-between text-xs pt-1 border-t border-[#2D2D2D]">
+                      <div className="flex justify-between items-center text-xs pt-1 border-t border-[#2D2D2D]">
                         <span className="font-semibold text-[#F2F2F2]">Strike Rate:</span>
                         <span className="font-bold text-sm text-[#D4AF57] tabular-nums font-mono">
                           {batterDetail.spin.strike_rate.toFixed(1)}
+                        </span>
+                      </div>
+                      <div className="flex justify-between items-center text-[11px] pt-1 border-t border-[#222222]">
+                        <span className="text-[#858585]">Eligibility:</span>
+                        <span
+                          className={`px-1.5 py-0.5 rounded text-[10px] font-semibold ${
+                            (batterDetail.spin.is_eligible ?? (batterDetail.spin.balls >= defaultMinBalls || batterDetail.spin.runs >= defaultMinRuns))
+                              ? 'bg-[#152718] text-[#5A9E60] border border-[#2A4D30]'
+                              : 'bg-[#222222] text-[#858585] border border-[#3E3E3E]'
+                          }`}
+                        >
+                          {(batterDetail.spin.is_eligible ?? (batterDetail.spin.balls >= defaultMinBalls || batterDetail.spin.runs >= defaultMinRuns))
+                            ? `Qualified (≥${defaultMinBalls}B or ≥${defaultMinRuns}R)`
+                            : `Below Sample (<${defaultMinBalls}B and <${defaultMinRuns}R)`}
                         </span>
                       </div>
                     </div>
@@ -619,8 +660,11 @@ export default function BatterBowlingMatchup() {
                 </div>
 
                 {/* Non-Contribution Model Disclaimer */}
-                <div className="p-2 bg-[#101010] rounded text-[11px] text-[#858585] text-center border border-[#2D2D2D]">
-                  Pure matchup performance • Distinct from Contribution Score
+                <div className="p-2 bg-[#101010] rounded text-[11px] text-[#858585] text-center border border-[#2D2D2D] space-y-0.5">
+                  <div>Pure matchup performance • Distinct from Contribution Score</div>
+                  <div className="text-[10px] text-[#D4AF57]">
+                    {batterDetail.eligibility_rule || (isSa20 ? 'Minimum sample rule: 30 legal balls OR 40 runs.' : 'Minimum sample: 100 balls or 80 runs.')}
+                  </div>
                 </div>
               </div>
             ) : (

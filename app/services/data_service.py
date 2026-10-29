@@ -1929,20 +1929,30 @@ class DataService:
         season: Optional[str] = None,
         team: Optional[str] = None,
         bowling_type: Optional[str] = None,
-        min_balls: int = 100,
-        min_runs: int = 80,
+        min_balls: Optional[int] = None,
+        min_runs: Optional[int] = None,
         competition: Optional[str] = "ipl",
     ) -> Dict[str, Any]:
         """Returns rankings of batters vs Pace and vs Spin."""
         norm_comp = self._normalize_competition(competition)
         if norm_comp not in ("ipl", "sa20"):
+            default_b = 30 if norm_comp == "sa20" else 100
+            default_r = 40 if norm_comp == "sa20" else 80
+            b_val = min_balls if min_balls is not None else default_b
+            r_val = min_runs if min_runs is not None else default_r
+            rule_text = (
+                "Minimum sample rule: 30 legal balls OR 40 runs."
+                if norm_comp == "sa20" and b_val == 30 and r_val == 40
+                else f"Minimum sample: {b_val} balls or {r_val} runs."
+            )
             return {
                 "filters": {
                     "season": season or "All Seasons",
                     "team": team or "All Teams",
-                    "min_balls": min_balls,
-                    "min_runs": min_runs,
-                    "eligibility_rule": f"Minimum sample: {min_balls} balls or {min_runs} runs.",
+                    "min_balls": b_val,
+                    "min_runs": r_val,
+                    "eligibility_rule": rule_text,
+                    "competition": norm_comp,
                 },
                 "results": {
                     "pace": {
@@ -1975,6 +1985,8 @@ class DataService:
         season: Optional[str] = None,
         team: Optional[str] = None,
         competition: Optional[str] = "ipl",
+        min_balls: Optional[int] = None,
+        min_runs: Optional[int] = None,
     ) -> Optional[Dict[str, Any]]:
         """Returns Pace vs Spin matchup breakdown for a specific batter."""
         norm_comp = self._normalize_competition(competition)
@@ -1986,6 +1998,8 @@ class DataService:
             season=season,
             team=team,
             competition=norm_comp,
+            min_balls=min_balls,
+            min_runs=min_runs,
         )
 
 

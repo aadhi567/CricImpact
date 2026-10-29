@@ -440,8 +440,8 @@ def get_matchup_rankings(
     season: Optional[str] = Query(None, description="Optional season filter"),
     team: Optional[str] = Query(None, description="Optional batting team filter"),
     bowling_type: Optional[str] = Query(None, description="'pace', 'spin', or omit for both"),
-    min_balls: int = Query(100, ge=0, description="Minimum balls faced (default 100)"),
-    min_runs: int = Query(80, ge=0, description="Minimum runs scored (default 80)"),
+    min_balls: Optional[int] = Query(None, ge=0, description="Minimum balls faced (default: 100 for IPL, 30 for SA20)"),
+    min_runs: Optional[int] = Query(None, ge=0, description="Minimum runs scored (default: 80 for IPL, 40 for SA20)"),
     competition: str = Query("ipl", description="Competition: ipl, sa20, t20i"),
 ):
     """
@@ -466,6 +466,8 @@ def get_batter_matchup_detail(
     season: Optional[str] = Query(None, description="Optional season filter"),
     team: Optional[str] = Query(None, description="Optional batting team filter"),
     competition: str = Query("ipl", description="Competition: ipl, sa20, t20i"),
+    min_balls: Optional[int] = Query(None, ge=0, description="Optional minimum balls threshold"),
+    min_runs: Optional[int] = Query(None, ge=0, description="Optional minimum runs threshold"),
 ):
     """
     Returns matchup breakdown (vs Pace and vs Spin) for a specific batter.
@@ -476,6 +478,8 @@ def get_batter_matchup_detail(
         season=season,
         team=team,
         competition=competition,
+        min_balls=min_balls,
+        min_runs=min_runs,
     )
     if not res:
         raise HTTPException(
