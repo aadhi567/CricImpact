@@ -1,5 +1,5 @@
 {
-  "last_successful_sync": "2026-10-30T19:51:42Z",
+  "last_successful_sync": "2026-10-31T09:19:04Z",
   "status": "UP_TO_DATE",
   "upstream_source_url": "https://cricsheet.org/downloads/t20s_male_json.zip",
   "upstream_last_modified": "Sun, 25 Oct 2026 18:43:27 GMT",
@@ -76,5 +76,5 @@
     }
   },
   "message": "Datasets are already up to date with authoritative source data. Upstream Cricsheet publication date is 2026-10-25 (Sun, 25 Oct 2026 18:43:27 GMT). Zero new eligible completed matches with validated ball-by-ball records are available upstream.",
-  "duration_seconds": 2.228
+  "duration_seconds": 1.886
 }
